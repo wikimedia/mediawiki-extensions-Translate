@@ -688,8 +688,8 @@
 				requestData = $request.data( 'data' );
 
 			if ( query.length === 0 ||
-				requestData.username.toLowerCase().indexOf( query ) === 0 ||
-				requestData.email.toLowerCase().indexOf( query ) === 0
+				requestData.username.toLowerCase().startsWith( query ) ||
+				requestData.email.toLowerCase().startsWith( query )
 			) {
 				$request.removeClass( 'hide' );
 			} else {

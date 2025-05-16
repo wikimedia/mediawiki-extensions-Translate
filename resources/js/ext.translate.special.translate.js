@@ -31,11 +31,11 @@
 			}
 
 			var sourceType;
-			if ( group.id.indexOf( 'agg-' ) === 0 ) {
+			if ( group.id.startsWith( 'agg-' ) ) {
 				sourceType = 'aggregate-group';
-			} else if ( group.id.indexOf( 'page-' ) === 0 ) {
+			} else if ( group.id.startsWith( 'page-' ) ) {
 				sourceType = 'translatable-page';
-			} else if ( group.id.indexOf( 'messagebundle-' ) === 0 ) {
+			} else if ( group.id.startsWith( 'messagebundle-' ) ) {
 				sourceType = 'message-bundle';
 			} else {
 				sourceType = 'normal-message-group';
