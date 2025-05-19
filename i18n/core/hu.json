@@ -223,6 +223,7 @@
 	"supportedlanguages-recenttranslations": "friss fordítások",
 	"supportedlanguages-count": "Összesen {{PLURAL:$1|egy|$1}} nyelv.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|egy|$2}} szerkesztés, a legutóbb {{PLURAL:$3|egy|$3}} napja szerkesztett",
+	"translate-supportedlanguages-cached": "Ez az információ $1 ezelőtt lett gyorsítótárazva.",
 	"translate-activelanguages-invalid-code": "A(z) „$1” nyelvkód ismeretlen vagy nincs engedélyezve a fordításhoz.",
 	"abusefilter-edit-builder-vars-translate-source-text": "A fordítási egység forrásszövege ($1)",
 	"abusefilter-edit-builder-vars-translate-target-language": "A fordítás célnyelve ($1)",
@@ -441,6 +442,7 @@
 	"translate-error-association-failure": "A következő {{PLURAL:$2|csoport nem adható|csoportok nem adhatók}} hozzá az összesített csoporthoz: $1",
 	"translate-error-invalid-aggregategroup": "Érvénytelen összesített üzenetcsoport: $1",
 	"translate-error-aggregategroup-source-language-mismatch": "A(z) $1 {{PLURAL:$3|csoport forrásnyelve nem egyezik|csoportok forrásnyelvei nem egyeznek}} meg az összesített csoport forrásnyelvével ($2).",
+	"translate-error-duplicate-aggregategroup": "Már létezik $1 nevű összesített üzenetcsoport.",
 	"log-action-filter-translationreview": "Művelet típusa:",
 	"log-action-filter-translationreview-message": "Egyes fordításüzenetek átnézése",
 	"log-action-filter-translationreview-group": "Változások a fordítások előrehaladásának állapotában",
@@ -453,5 +455,7 @@
 	"notification-body-translate-mgs-message-added": "$1 új vagy frissített {{PLURAL:$1|üzenet}}",
 	"notification-link-mgs-group-translate": "$1 fordítása",
 	"tpt-cleanchanges-language": "Nyelv:",
-	"tpt-cleanchanges-language-na": "összes"
+	"tpt-cleanchanges-language-na": "összes",
+	"namespaceinfo-description-ns1198": "Fordítási egységeket – azaz [[Special:PageTranslation|lefordítható lapok]] és [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|üzenetcsomagok]] egyes fordítható és lefordított részleteit – tartalmazó névtér.",
+	"namespaceinfo-description-ns1199": "A fordítási egységekhez kapcsolódó vitalapok"
 }
