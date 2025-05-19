@@ -596,7 +596,7 @@
 				filter = filter || '';
 			}
 
-			if ( filter === undefined ) {
+			if ( filter === null ) {
 				filter = '!translated';
 			}
 
