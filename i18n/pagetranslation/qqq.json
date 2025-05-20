@@ -64,7 +64,7 @@
 	"tpt-showpage-intro": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
 	"tpt-mark-summary": "This message is used as an edit summary.",
 	"tpt-mark-nochanges": "A note in Special:PageTranslation when marking a revision of a page for translation.",
-	"tpt-edit-failed": "Used as error message when marking/unmarking a page for translation (typically using [[Special:PageTranslation]]). Parameters:\n* $1 - page title",
+	"tpt-edit-failed": "Used as error message when marking/unmarking a page for translation (typically using [[Special:PageTranslation]]). Parameters:\n* $1 - specific error message, generally localized",
 	"tpt-duplicate": "Used as error message.\n\nSee definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-invalid": "Used as error message.\n\nSee definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-unit-title-too-long": "Error message displayed if the combined length of translation unit name, and the translatable page title are too long.\n\nParameters:\n* $1 - translation unit ID (name)\n* $2 - current size of the page title\n* $3 - maximum allowed size for page titles in MediaWiki\n* $4 - translatable page title",

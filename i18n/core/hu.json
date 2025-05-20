@@ -223,6 +223,7 @@
 	"supportedlanguages-recenttranslations": "friss fordítások",
 	"supportedlanguages-count": "Összesen {{PLURAL:$1|egy|$1}} nyelv.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|egy|$2}} szerkesztés, a legutóbb {{PLURAL:$3|egy|$3}} napja szerkesztett",
+	"translate-supportedlanguages-cached": "Ez az információ $1 ezelőtt lett gyorsítótárazva.",
 	"translate-activelanguages-invalid-code": "A(z) „$1” nyelvkód ismeretlen vagy nincs engedélyezve a fordításhoz.",
 	"abusefilter-edit-builder-vars-translate-source-text": "A fordítási egység forrásszövege",
 	"abusefilter-edit-builder-vars-translate-target-language": "A fordítás célnyelve",
