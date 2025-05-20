@@ -16,7 +16,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialVersion;
 use MediaWiki\Title\Title;
-use RuntimeException;
 
 /**
  * FileFormat class that implements support for gettext file format.
@@ -75,6 +74,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		return $parsedData;
 	}
 
+	/** @throws GettextParseException */
 	private function parseGettext( string $data ): array {
 		$mangler = $this->group->getMangler();
 		$useCtxtAsKey = $this->extra['CtxtAsKey'] ?? false;
@@ -109,7 +109,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 				$potmode = $this->allowPotMode;
 			}
 		} else {
-			$message = "Gettext file header was not found:\n\n$data";
+			$message = "Gettext file header was not found:\n\n$headerSection";
 			throw new GettextParseException( $message );
 		}
 
@@ -194,7 +194,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		if ( $match !== null ) {
 			$item['id'] = $this->formatForWiki( $match );
 		} else {
-			throw new RuntimeException( "Unable to parse msgid:\n\n$section" );
+			throw new GettextParseException( "Unable to parse msgid:\n\n$section" );
 		}
 
 		$match = $this->expectKeyword( 'msgctxt', $section );
@@ -222,7 +222,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			if ( $match !== null ) {
 				$item['str'] = $this->formatForWiki( $match );
 			} else {
-				throw new RuntimeException( "Unable to parse msgstr:\n\n$section" );
+				throw new GettextParseException( "Unable to parse msgstr:\n\n$section" );
 			}
 		}
 

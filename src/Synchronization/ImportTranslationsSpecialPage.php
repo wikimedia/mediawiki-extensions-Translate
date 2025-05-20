@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Html\Html;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Xml\Xml;
 use MessageGroupBase;
@@ -129,8 +130,9 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		// translate-import-err-dl-failed, translate-import-err-ul-failed,
 		// translate-import-err-invalid-title, translate-import-err-no-such-file,
 		// translate-import-err-stale-group, translate-import-err-no-headers,
+		// translate-import-err-gettext-parse-failed,
 		if ( $msg[0] !== 'ok' ) {
-			$errorWrap = "<div class='error'>\n$1\n</div>";
+			$errorWrap = Html::errorBox( '$1' );
 			$msg[0] = 'translate-import-err-' . $msg[0];
 			$this->getOutput()->wrapWikiMsg( $errorWrap, $msg );
 			$this->outputForm();
@@ -208,7 +210,10 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		try {
 			$parseOutput = $ffs->readFromVariable( $data );
 		} catch ( GettextParseException $e ) {
-			return [ 'no-headers' ];
+			return [
+				'gettext-parse-failed',
+				Message::rawParam( Html::element( 'pre', [], $e->getMessage() ) )
+			];
 		}
 
 		// Special data added by GettextFormat

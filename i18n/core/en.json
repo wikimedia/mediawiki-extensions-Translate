@@ -301,6 +301,7 @@
 	"translate-import-err-no-such-file": "File <nowiki>$1</nowiki> does not exist or has not been uploaded locally.",
 	"translate-import-err-stale-group": "The message group this file belongs to does not exist.",
 	"translate-import-err-no-headers": "File is not a well formed Gettext file in Translate extension format:\nUnable to determine message group and language from file headers.",
+	"translate-import-err-gettext-parse-failed": "File is not a well-formed Gettext file:\n$1",
 	"translate-js-support-unsaved-warning": "You have unpublished translations.",
 	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "Translations",

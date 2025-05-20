@@ -342,6 +342,7 @@
 	"translate-import-err-no-such-file": "Used as error message in [[Special:ImportTranslations]]. Parameters:\n* $1 - filename\n{{Related|Translate-import-err}}",
 	"translate-import-err-stale-group": "Used as error message in [[Special:ImportTranslations]].\n{{Related|Translate-import-err}}",
 	"translate-import-err-no-headers": "Used as error message in [[Special:ImportTranslations]].\n{{Related|Translate-import-err}}",
+	"translate-import-err-gettext-parse-failed": "Used as error message in [[Special:ImportTranslations]]. Parameters:\n* $1 - untranslated error details\n{{Related|Translate-import-err}}",
 	"translate-js-support-unsaved-warning": "A warning shown in a dialog box if a user tries to close a page without saving a translation written .",
 	"translate-documentation-language": "This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always. It might be easier to translate it as \"translation guidelines\" or \"translation help\".\n{{Identical|Message documentation}}",
 	"translate-searchprofile": "Tab in [[Special:Search]]\n{{Identical|Translation}}",
