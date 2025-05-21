@@ -29,5 +29,6 @@
 	"tux-sst-match-message": "Minden fordítás látható, ami legalább egy keresett szót tartalmaz. $1",
 	"tux-sst-case-sensitive": "Kisbetű/nagybetű-érzékeny",
 	"tux-sst-error-offset": "Nem lehet több keresési találatot megjeleníteni. Kérjük, szűkítsd a keresésedet.",
-	"tux-sst-error-language": "Ez a nyelv nem használható ezzel a kereséstípussal."
+	"tux-sst-error-language": "Ez a nyelv nem használható ezzel a kereséstípussal.",
+	"tux-sst-error-unsupported-language": "A(z) <code>$1</code> nyelven történő keresés nem támogatott."
 }

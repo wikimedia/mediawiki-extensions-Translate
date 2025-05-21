@@ -16,7 +16,8 @@
 			"The Evil IP address",
 			"TomatoCake",
 			"Umherirrender",
-			"Vogone"
+			"Vogone",
+			"Tacsipacsi"
 		]
 	},
 	"pagetranslation": "Seiten übersetzen",
@@ -46,7 +47,7 @@
 	"tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.",
 	"tpt-mark-summary": "Diese Seite wurde zum Übersetzen freigegeben",
 	"tpt-mark-nochanges": "Es existieren keine Änderungen zum Überprüfen. Das Markieren dieser Seite zur Übersetzung wird weder die Seite noch eine vorhandene Übersetzungseinheit bearbeiten.",
-	"tpt-edit-failed": "Seite kann nicht aktualisiert werden: $1",
+	"tpt-edit-failed": "Die Seite kann nicht aktualisiert werden: $1",
 	"tpt-duplicate": "Der Übersetzungseinheitname <strong><bdi>$1</bdi></strong> wird mehr als einmal verwendet.",
 	"tpt-invalid": "Der Name der Übersetzungseinheit <strong><bdi>$1</bdi></strong> darf keinen Unterstrich oder Schrägstrich enthalten.",
 	"tpt-unit-title-too-long": "Der Name der Übersetzungseinheit <strong><bdi>$1</bdi></strong> ist zu lang. Die kombinierte Länge des übersetzbaren Seitentitels mit Namensraum-Präfix, dem Namen der Übersetzungseinheit und dem Sprachcode beträgt $2 {{PLURAL:$2|Byte|Bytes}}, was länger als die maximal unterstützte Länge von $3 {{PLURAL:$3|Byte|Bytes}} ist. Kürze den Namen der Übersetzungseinheit (falls er angepasst wurde) oder [[Special:MovePage/$4|benenne die übersetzbare Seite]] auf einen kürzeren Namen um, damit die Übersetzung ermöglicht wird.",

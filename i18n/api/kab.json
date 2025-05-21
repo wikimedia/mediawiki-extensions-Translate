@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Belkacem77"
+			"Belkacem77",
+			"ButterflyOfFire"
 		]
 	},
 	"apihelp-groupreview-param-group": "Agraw n yiznan.",
@@ -23,6 +24,7 @@
 	"apihelp-translationaids-param-title": "Azwel ummid n yizen yettwassnen.",
 	"apihelp-translationaids-param-group": "Agraw n yiznan aniɣer ittekka yizen. Ma d ilem, ihi agraw agejdan yettwaseqdec.",
 	"apihelp-translationaids-param-prop": "Anta tallelt n tsuqilt ara yeddun.",
+	"apihelp-translationstash-param-subaction": "Tigawt.",
 	"apihelp-ttmserver-param-sourcelanguage": "Tangalt n tutlayt n uḍris n uɣbalu.",
 	"apihelp-searchtranslations-param-service": "Anwa imeẓla n tsuqilt yellan ara tesqedceḍ.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Tangalt n tutlayt n uḍris n uɣbalu.",
