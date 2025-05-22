@@ -145,7 +145,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			}
 
 			if ( $useCtxtAsKey ) {
-				if ( !isset( $item['ctxt'] ) ) {
+				if ( $item['ctxt'] === false ) {
 					error_log( "ctxt missing for: $section" );
 					continue;
 				}
