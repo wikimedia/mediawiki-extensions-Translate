@@ -3,7 +3,8 @@
 		"authors": [
 			"Belkacem77",
 			"Bilalbill",
-			"Mmistmurt"
+			"Mmistmurt",
+			"ButterflyOfFire"
 		]
 	},
 	"translate": "Suqel",
@@ -119,10 +120,13 @@
 	"translate-mgs-submit": "Sken tidaddanin",
 	"translate-mgs-column-language": "Tutlayt",
 	"translate-mgs-totals": "Akk tutlayin i meṛṛa",
+	"translate-tes-optgroup-group": "Igrawen",
 	"supportedlanguages": "Tutlayin yettusefraken",
 	"supportedlanguages-recenttranslations": "tisuqilin tineggura",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|tutlayt|tutlayin}} s umata.",
 	"managemessagegroups": "Asefrek n ugraw n yiznan",
+	"translate-smg-rename-cancel": "Semmet",
+	"translate-smg-strong-sync-help": "Tallelt",
 	"translate-manage-import-diff": "Iznan $1 | Tiggawin: $2",
 	"translate-manage-import-new": "Izen amaynut $1",
 	"translate-manage-import-deleted": "Izen yettwakkes $1",
@@ -130,6 +134,7 @@
 	"translate-manage-action-conflict": "Kter sakin creḍ d arewway",
 	"translate-manage-action-ignore": "Zgel",
 	"translate-manage-action-fuzzy": "Kter sakin creḍ tisuqilin d tirewwayin",
+	"translate-manage-action-rename": "Snifel isem",
 	"translate-manage-import-summary": "Akter n lqem amaynut seg teɣbalut tazɣarayt",
 	"translate-manage-submit": "Selkem",
 	"translate-manage-import-ok": "Ttwaketren: $1",

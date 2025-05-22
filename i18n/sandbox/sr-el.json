@@ -19,6 +19,7 @@
 	"translate-translationstash-initialtranslation": "Vaš početni prevod",
 	"tsb-create-user-page": "Napravljena osnovna korisnička stranica",
 	"log-name-translatorsandbox": "Dnevnik prevoda u pesku",
+	"log-description-translatorsandbox": "Dnevnik zahteva za prevodioca",
 	"logentry-translatorsandbox-promoted": "$1 je {{GENDER:$2|unapredio|unapredila}} $3 u {{GENDER:$4|prevodioca}}",
 	"logentry-translatorsandbox-rejected": "$1 je {{GENDER:$2|odbio|odbila}} zahtev korisnika/ce „$3” da postane prevodilac"
 }
