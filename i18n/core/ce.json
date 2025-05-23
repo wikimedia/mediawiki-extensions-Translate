@@ -297,6 +297,7 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> йац, йа локалан чуйаьккхина йац.",
 	"translate-import-err-stale-group": "ХӀара файл йукъайогӀуш йолу хаамийн тоба йац.",
 	"translate-import-err-no-headers": "Гочдаран шуьйрачу форматехь нийса билгалйаьккхина йац Gettext-файл.\nФайлан кортош тӀера тоба а, мотт а къасто йиш йац.",
+	"translate-import-err-gettext-parse-failed": "Файл дика кхоьллина Gettext файл йац:\n$1",
 	"translate-js-support-unsaved-warning": "ДӀайазданза гочдарш ду хьан.",
 	"translate-documentation-language": "Хаамийн документаци",
 	"translate-searchprofile": "Гочдинарш",

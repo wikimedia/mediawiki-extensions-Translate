@@ -299,6 +299,7 @@
 	"translate-import-err-no-such-file": "O ficheiro \"<nowiki>$1</nowiki>\" non existe ou non foi cargado localmente.",
 	"translate-import-err-stale-group": "O grupo de mensaxes ao que pertence este ficheiro non existe.",
 	"translate-import-err-no-headers": "O ficheiro non é un ficheiro Gettext ben formado co formato da extensión Translate:\nnon se poden determinar o grupo e a lingua a partir das cabeceiras do ficheiro.",
+	"translate-import-err-gettext-parse-failed": "O ficheiro non é un ficheiro Gettext ben formado:\n$1",
 	"translate-js-support-unsaved-warning": "Ten algunha tradución sen publicar.",
 	"translate-documentation-language": "documentación das mensaxes",
 	"translate-searchprofile": "Traducións",

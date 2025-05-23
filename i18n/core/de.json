@@ -316,6 +316,7 @@
 	"translate-import-err-no-such-file": "Die Datei <nowiki>$1</nowiki> existiert nicht oder wurde nicht lokal hochgeladen.",
 	"translate-import-err-stale-group": "Die Nachrichtengruppe, der diese Datei zugeordnet wurde, ist nicht vorhanden.",
 	"translate-import-err-no-headers": "Die Datei ist keine Datei im Gettext-Format der Erweiterung „Translate“:\nDie Gruppen und Sprache konnten nicht aus dem Dateikopf ermittelt werden.",
+	"translate-import-err-gettext-parse-failed": "Die Datei ist keine wohlgeformte Gettext-Datei:\n$1",
 	"translate-js-support-unsaved-warning": "Es sind nicht veröffentlichte Übersetzungen vorhanden.",
 	"translate-documentation-language": "Nachrichtendokumentation",
 	"translate-searchprofile": "Übersetzungen",
