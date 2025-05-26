@@ -291,6 +291,7 @@
 	"translate-import-err-no-such-file": "Le file <nowiki>$1</nowiki> non existe o non ha essite incargate localmente.",
 	"translate-import-err-stale-group": "Le gruppo de messages al qual iste file pertine non existe.",
 	"translate-import-err-no-headers": "Le file non es un file Gettext ben formate in le formato del extension Translate:\nNon pote determinar le gruppo e lingua ex le capites del file.",
+	"translate-import-err-gettext-parse-failed": "Le file non es un file Gettext ben formate:\n$1",
 	"translate-js-support-unsaved-warning": "Tu ha traductiones non publicate.",
 	"translate-documentation-language": "documentation de messages",
 	"translate-searchprofile": "Traductiones",
