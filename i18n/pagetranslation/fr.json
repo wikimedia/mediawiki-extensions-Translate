@@ -40,7 +40,8 @@
 			"Mahabarata",
 			"SleaY",
 			"JLTRY",
-			"Rileyblondin"
+			"Rileyblondin",
+			"Tacsipacsi"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -73,7 +74,7 @@
 	"tpt-showpage-intro": "Ci-dessous, les nouvelles traductions, celles existantes et supprimées.\nAvant de marquer cette version comme étant à traduire, vérifiez que les modifications des unités de traduction ont été minimisées afin d’éviter du travail inutile aux traducteurs.",
 	"tpt-mark-summary": "Cette version a été marquée à traduire",
 	"tpt-mark-nochanges": "Aucune modification à relire. Marquer cette page à traduire ne va modifier ni la page, ni aucune unité de traduction existante.",
-	"tpt-edit-failed": "Impossible de mettre à jour la page « $1 »",
+	"tpt-edit-failed": "Impossible de mettre à jour la page : $1",
 	"tpt-duplicate": "Le nom de l’unité traduction $1 est utilisé plus d’une fois.",
 	"tpt-invalid": "Le nom « $1 » de l’unité de traduction ne peut contenir aucun tiret de soulignement (_), ni aucune barre oblique (/).",
 	"tpt-unmarked": "La page [[:$1]] n’est plus marquée à traduire.",

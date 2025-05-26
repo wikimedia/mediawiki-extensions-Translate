@@ -67,7 +67,7 @@
 	"tpt-showpage-intro": "See definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].",
 	"tpt-mark-summary": "This message is used as an edit summary.",
 	"tpt-mark-nochanges": "A note in Special:PageTranslation when marking a revision of a page for translation.",
-	"tpt-edit-failed": "Used as error message when marking/unmarking a page for translation (typically using [[Special:PageTranslation]]). Parameters:\n* $1 - page title",
+	"tpt-edit-failed": "Used as error message when marking/unmarking a page for translation (typically using [[Special:PageTranslation]]). Parameters:\n* $1 - specific error message, generally localized",
 	"tpt-duplicate": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-invalid": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-unmarked": "Used as success message for unmarking page for translation.\n\nTranslate this as \"Page $1 has been unmarked for translation\".\n\nSee definition on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - page title",

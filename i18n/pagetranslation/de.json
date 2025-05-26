@@ -16,7 +16,8 @@
 			"Umherirrender",
 			"Vogone",
 			"Justman10000",
-			"TomatoCake"
+			"TomatoCake",
+			"Tacsipacsi"
 		]
 	},
 	"pagetranslation": "Seiten übersetzen",
@@ -49,7 +50,7 @@
 	"tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.",
 	"tpt-mark-summary": "Diese Seite wurde zum Übersetzen freigegeben",
 	"tpt-mark-nochanges": "Es existieren keine Änderungen zum Überprüfen. Das Markieren dieser Seite zur Übersetzung wird weder die Seite noch eine vorhandene Übersetzungseinheit bearbeiten.",
-	"tpt-edit-failed": "Seite kann nicht aktualisiert werden: $1",
+	"tpt-edit-failed": "Die Seite kann nicht aktualisiert werden: $1",
 	"tpt-duplicate": "Der Übersetzungseinheitname $1 wird mehr als einmal verwendet.",
 	"tpt-invalid": "Der Name der Übersetzungseinheit $1 darf keinen Unterstrich oder Schrägstrich enthalten.",
 	"tpt-unmarked": "Seite [[:$1]] ist nicht länger zum Übersetzen markiert.",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Belkacem77"
+			"Belkacem77",
+			"ButterflyOfFire"
 		]
 	},
 	"pagetranslation": "Asebter n tsuqilt",
@@ -27,6 +28,7 @@
 	"tpt-old-pages-title": "Isebtar yettwasqqalen tura",
 	"tpt-other-pages-title": "Isebtar s tuccḍiwin",
 	"tpt-select-prioritylangs-reason": "Taɣẓint :",
+	"tpt-sections-prioritylangs": "Tutlayin tuzwirin",
 	"tpt-rev-mark": "creḍ i tsuqilt",
 	"tpt-rev-unmark": "kkes si tsuqilt",
 	"tpt-rev-encourage": "err-d",

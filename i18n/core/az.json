@@ -252,7 +252,7 @@
 	"tux-editor-doc-editor-placeholder": "Mesaj sənədləşməsi",
 	"tux-editor-doc-editor-save": "Sənədi yayımla",
 	"tux-editor-doc-editor-cancel": "İmtina",
-	"tux-messagetable-more-messages": "$1 daha çox {{PLURAL:$1|mesaj}}",
+	"tux-messagetable-more-messages": "Daha $1 {{PLURAL:$1|mesaj}}",
 	"tux-messagetable-loading-messages": "$1 {{PLURAL:$1|mesaj}} yüklənir.",
 	"tux-message-filter-placeholder": "Siyahını filtrlə",
 	"tux-message-filter-result": "\"$2\" üçün $1 nəticə {{PLURAL:$1|tapıldı}}",

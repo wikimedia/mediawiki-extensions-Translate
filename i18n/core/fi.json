@@ -247,6 +247,7 @@
 	"translate-smg-rename-new": "Lisää uutena...",
 	"translate-smg-rename-rename": "Lisää uudelleennimettynä...",
 	"translate-smg-strong-sync-help": "Ohje",
+	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|viesti, jossa|viestiä, joissa}} on virheitä:",
 	"translate-smg-group-message-action-history": "Historia",
 	"translate-smg-group-action-resolve": "Merkitse ratkaistuksi",
 	"translate-smg-group-message-tag-outdated": "Vanhentunut",
@@ -431,9 +432,13 @@
 	"tux-nojs": "Tämä työkalu ei toimi ilman JavaScriptiä. JavaScript on poistettu käytöstä, se ei toimi, tai tätä selainta ei tueta.",
 	"specialpages-group-translation": "Käännös",
 	"content-model-translate-messagebundle": "Käännettävä viestinippu",
+	"translate-messagebundle-validation-error": "Virheellinen viestinippu: $1",
+	"translate-messagebundle-error-key-empty": "Viestinippu ei saa sisältää tyhjää avainta",
 	"translate-messagebundle-error-key-too-long": "Avain \"$1\" on liian pitkä",
 	"translate-messagebundle-error-empty-value": "Avaimella \"$1\" ei ole arvoa",
 	"translate-messagebundle-error-metadata-type": "Metatietojen on oltava taulukko.",
 	"translate-messagebundle-error-invalid-sourcelanguage": "Lähteen kielikoodia \"$1\" ei tueta.",
-	"translate-messagebundle-change-sourcelanguage": "Viestinipun lähdekieli asetettu metatietojen perusteella."
+	"translate-messagebundle-change-sourcelanguage": "Viestinipun lähdekieli asetettu metatietojen perusteella.",
+	"translate-messagebundle-sourcelanguage-changed": "Viestinipun lähdekieltä ei voi muuttaa sen luomisen jälkeen.",
+	"log-action-filter-translationreview": "Toiminnon tyyppi:"
 }
