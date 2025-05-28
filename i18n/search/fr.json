@@ -10,7 +10,8 @@
 			"TomT0m",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Derugon"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -38,5 +39,6 @@
 	"tux-sst-match-message": "Les traductions correspondant à n’importe quel mot de la recherche sont affichées. $1",
 	"tux-sst-case-sensitive": "Sensible à la casse",
 	"tux-sst-error-offset": "Il n’est pas possible d’afficher davantage de résultats de recherche. Veuillez affiner votre recherche.",
-	"tux-sst-error-language": "Cette langue ne peut pas être utilisée avec ce type de recherche."
+	"tux-sst-error-language": "Cette langue ne peut pas être utilisée avec ce type de recherche.",
+	"tux-sst-error-unsupported-language": "La recherche dans la langue <code>$1</code> n’est pas prise en charge."
 }
