@@ -17,7 +17,7 @@ use Wikimedia\ParamValidator\ParamValidator;
 /**
  * API module for managing aggregate message groups
  * Only supports aggregate message groups defined inside the wiki.
- * Aggregate message group defined in YAML configuration cannot be altered.
+ * Aggregate message group defined in the YAML configuration cannot be altered.
  * @author Santhosh Thottingal
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Santhosh Thottingal
@@ -94,16 +94,11 @@ class AggregateGroupsActionApi extends ApiBase {
 				'aggregategroup-id' => $aggregateGroupId,
 			];
 
-			/* To allow removing no longer existing groups from aggregate message groups,
-			 * the message group object $group might not always be available.
-			 * In this case, we need to fake some title. */
 			foreach ( $groupIdsToLog as $subgroupId ) {
 				$title = $this->aggregateGroupManager->getTargetTitleByGroupId( $subgroupId );
 				$entry = new ManualLogEntry( 'pagetranslation', $action );
 				$entry->setPerformer( $this->getUser() );
 				$entry->setTarget( $title );
-				// @todo
-				// $entry->setComment( $comment );
 				$entry->setParameters( $logParams );
 
 				$logId = $entry->insert();
@@ -269,7 +264,7 @@ class AggregateGroupsActionApi extends ApiBase {
 				ParamValidator::PARAM_DEPRECATED => true,
 			],
 			'groups' => [
-				// Not providing list of values, to allow dissociation of unknown groups
+				// Not providing a list of values to allow dissociation of unknown groups
 				ParamValidator::PARAM_TYPE => 'string',
 				ParamValidator::PARAM_ISMULTI => true,
 			],

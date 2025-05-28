@@ -30,7 +30,7 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 	 */
 	protected $pre = null;
 	/**
-	 * The named paramater from the regex that should be used as post
+	 * The named parameter from the regex that should be used as post
 	 * @var string
 	 */
 	protected $post = null;
