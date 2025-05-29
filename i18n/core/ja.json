@@ -219,7 +219,7 @@
 	"translate-mgs-pagename": "メッセージ群別の翻訳状況",
 	"translate-mgs-fieldset": "表示設定",
 	"translate-mgs-group": "メッセージ群:",
-	"translate-mgs-prefix": "メッセージのプレフィックス:",
+	"translate-mgs-prefix": "メッセージの接頭辞:",
 	"translate-mgs-group-or-prefix": "メッセージ群または接頭辞:",
 	"translate-mgs-nocomplete": "翻訳が完了した言語を表示しない",
 	"translate-mgs-noempty": "翻訳が1つもない言語を表示しない",

@@ -154,7 +154,7 @@
 	"translate-statsf-count-registrations": "مستخدمون جدد",
 	"translate-statsf-count-reviews": "مراجعات الترجمة",
 	"translate-statsf-count-reviewers": "المراجعون",
-	"translate-statsf-language": "قائمة بأكواد اللغات مفصولة بفاصلة:",
+	"translate-statsf-language": "قائمة برموز اللغات مفصولة بفاصلة:",
 	"translate-statsf-group": "قائمة بأكواد المجموعات مفصولة بفاصلة:",
 	"translate-statsf-submit": "عرض مسبق",
 	"translate-tag-page-desc": "ترجمة صفحة الويكي [[$2|$1]] من $3 ($4).",
