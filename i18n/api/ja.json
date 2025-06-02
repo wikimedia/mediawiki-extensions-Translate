@@ -84,7 +84,7 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "翻訳原文の言語コード。",
 	"apihelp-searchtranslations-param-language": "文字列を検索する言語コード。",
 	"apihelp-searchtranslations-param-group": "文字列を検索するメッセージ群 ID。",
-	"apihelp-searchtranslations-param-filter": "メッセージの翻訳状態のフィルタ。",
+	"apihelp-searchtranslations-param-filter": "メッセージの翻訳状態のフィルター。",
 	"apihelp-searchtranslations-param-match": "任意/すべて の検索ワードのマッチ",
 	"apihelp-searchtranslations-param-case": "大文字小文字を識別 (しない)。",
 	"apihelp-searchtranslations-param-limit": "詮索結果のサイズ。",

@@ -4,20 +4,28 @@
 			"Joanmp17"
 		]
 	},
-	"searchtranslations": "ኣብ ውሽጢ ትርጉማት ድለይ",
-	"tux-sst-edit": "ትርጉም ኣመዓራርይ",
+	"searchtranslations": "ኣብ ትርጉማት ድለይ",
+	"tux-sst-edit": "ትርጉም ኣርትዕ",
 	"tux-sst-view-foreign": "ኣብ $1 ርኣይ",
 	"tux-sst-search": "ድለይ",
 	"tux-sst-search-ph": "ትርጉማት ድለይ",
 	"tux-sst-count": "{{PLURAL:$1|ሓደ ውጽኢት ተረኺቡ|$1 ውጺኢታት ተረኺቦም}}",
 	"tux-sst-facet-language": "ቋንቋታት",
 	"tux-sst-facet-group": "ጉጅለታት መልእኽትታት",
-	"tux-sst-nosolr-title": "ምድላይ ዘይርከብ",
-	"tux-sst-solr-offline-title": "ምድላይ ዘይርከብ",
+	"tux-sst-nosolr-title": "ምድላይ ኣይተረኽበን",
+	"tux-sst-nosolr-body": "እዚ ዊኪ እዚ ናይ ትርጉማት ምድላይ ኣገልግሎት የብሉን።",
+	"tux-sst-solr-offline-title": "ምድላይ ኣይተረኽበን",
+	"tux-sst-solr-offline-body": "እቲ ናይ ምድላይ ኣገልግሎት ግዝያዊ ኮይኑ ኣይርከብን።",
 	"tux-sst-next": "ዝቕጽል ›",
 	"tux-sst-prev": "‹ ዝቐደመ",
 	"tux-sst-default": "ትርጉማት",
 	"tux-sst-translated": "ትርጉማት ካብ $1",
 	"tux-sst-untranslated": "ካብ $1 ብዘይ ትርጉም",
-	"tux-sst-ellipsis-untranslated": "ብዘይ ትርጉም"
+	"tux-sst-outdated": "ካብ $1 ዘይተሓደሱ ትርጉማት",
+	"tux-sst-ellipsis-untranslated": "ብዘይ ትርጉም",
+	"tux-sst-ellipsis-outdated": "ዘይተሓደሱ ትርጉማት",
+	"tux-sst-link-all-match": "ኩሎም ናይ ምድላይ ቃላት ጠለብ።",
+	"tux-sst-match-message": "ምስ ዝኾነ ካብቶም ናይ ምድላይ ቃላት ዝሰማምዑ ትርጉማት ምርኣይ። $1",
+	"tux-sst-error-offset": "ካብዚ ንላዕሊ ውጽኢታት ክረአ ኣይክእሉን እዮም። እቲ ምድላይ ክድረት ኣለዎ።",
+	"tux-sst-error-language": "እዚ ቋንቋ እዚ ምስዚ ዓይነት ምድላይ ክጥቀመሉ ኣይክእልን እዩ።"
 }
