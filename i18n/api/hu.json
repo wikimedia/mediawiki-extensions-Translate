@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Krisztina",
 			"Tacsipacsi"
 		]
 	},
@@ -67,7 +68,7 @@
 	"apihelp-query+messagegroupstats-param-group": "Az üzenetcsoport azonosítója. A lehetséges értékekért lásd: <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Ne jelenjenek meg a teljesen lefordított nyelvek",
 	"apihelp-query+messagegroupstats-param-suppressempty": "Ne jelenjenek meg azok a nyelvek, amelyeknek nincs egyetlen fordítása sem",
-	"apihelp-query+messagegroupstats-example-1": "Fordításiállapot-statisztika lekérése a „page-Example” csoporthoz",
+	"apihelp-query+messagegroupstats-example-1": "Fordításiállapot-statisztika lekérése a \"page-Example\" csoporthoz",
 	"apihelp-query+messagegroupsubscription-summary": "Azon üzenetcsoportok listázása, amelyekre az aktuális felhasználó feliratkozott.",
 	"apihelp-query+messagetranslations-summary": "Egy üzenet összes fordításának lekérdezése.",
 	"apihelp-query+messagetranslations-param-title": "Egy ismert üzenet lapcíme, névtérrel és nyelvkóddal.",
