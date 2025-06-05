@@ -4,7 +4,8 @@
 			"Af420",
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
-			"Baloch Khan"
+			"Baloch Khan",
+			"شاه زمان پټان"
 		]
 	},
 	"pagetranslation": "د مخ ژباړه",
@@ -49,7 +50,7 @@
 	"pt-deletepage-action-other": "موخه بدلول",
 	"pt-deletepage-lang-legend": "د ژباړې مخ ړنگول",
 	"pt-deletepage-tp-legend": "د ژباړې وړ مخ ړنگول",
-	"pt-deletepage-any-legend": "د ژباړې وړ مخ يا د ژباړې مخ ړنگول",
+	"pt-deletepage-any-legend": "د ژباړې‌وړ مخ، پيغام‌ټولگه يا ژباړې مخ ړنگول",
 	"pt-deletepage-current": "د مخ نوم:",
 	"pt-deletepage-reason": "سبب:",
 	"pt-deletepage-subpages": "ټول واړه مخونه ړنگول",
@@ -59,11 +60,11 @@
 	"pt-deletepage-list-other": "نور واړه مخونه",
 	"pm-savepages-button-label": "خوندي کول",
 	"pm-cancel-button-label": "ناگارل",
-	"pm-page-does-not-exist": "$1 نشته.",
+	"pm-page-does-not-exist": "$1 مخ نشته.",
 	"tpt-translate-title": "د مخ سرليک د ژباړې پرېښه",
 	"pp-pagename-placeholder": "د مخ نوم ورکړئ",
 	"pp-prepare-button-label": "چمتو کول",
-	"pp-save-button-label": "خوندي کول",
+	"pp-save-button-label": "خپرول",
 	"pp-cancel-button-label": "ناگارل",
 	"pp-pagename-missing": "لطفاً د مخ نوم مو ورکړئ.",
 	"pp-diff-old-header": "د سرچينې متن"
