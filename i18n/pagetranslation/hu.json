@@ -312,7 +312,7 @@
 	"tpt-fuzzy-select-custom": "Egyedi választás",
 	"tpt-generic-confirm": "Kérjük, erősítsd meg a műveletet.",
 	"tpt-generic-button": "Megerősítés",
-	"tpt-validation-not-insertable": "A(z) \"$1\" fordításiváltozó-név nem használható beszúrható változóként a fordítási felületen. Kerüld a speciális karakterek használatát.",
+	"tpt-validation-not-insertable": "A(z) „$1” fordításiváltozó-név nem használható beszúrható változóként a fordítási felületen. Kerüld a speciális karakterek használatát.",
 	"tpt-validation-name-reuse": "A(z) „$1” többször van definiálva eltérő tartalommal. Módosítsd a változóneveket úgy, hogy egy fordítási egységen belül egyediek legyenek.",
 	"visualeditor-annotations-translate-start": "Lefordítható tartalom kezdete",
 	"visualeditor-annotations-translate-end": "Lefordítható tartalom vége",
