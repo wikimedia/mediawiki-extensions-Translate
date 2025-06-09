@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Krisztina"
 		]
 	},
 	"apihelp-aggregategroups-description": "Összesített üzenetcsoportok kezelése.\n\nHozzá tudsz adni és el tudsz távolítani összesített üzenetcsoportokat, és hozzájuk tudsz adni vagy el tudsz távolítani belőlük üzenetcsoportokat (egyszerre egyet).",
@@ -51,7 +52,7 @@
 	"apihelp-query+messagegroupstats-param-group": "Üzenetcsoport azonosítója.",
 	"apihelp-query+messagegroupstats-param-suppresscomplete": "Ne jelenjenek meg a teljesen lefordított nyelvek",
 	"apihelp-query+messagegroupstats-param-suppressempty": "Ne jelenjenek meg azok a nyelvek, amelyeknek nincs egyetlen fordítása sem",
-	"apihelp-query+messagegroupstats-example-1": "Fordításiállapot-statisztika lekérése a „page-Example” csoporthoz",
+	"apihelp-query+messagegroupstats-example-1": "Fordításiállapot-statisztika lekérése a \"page-Example\" csoporthoz",
 	"apihelp-query+messagetranslations-description": "Egy üzenet összes fordításának lekérdezése.",
 	"apihelp-query+messagetranslations-summary": "Egy üzenet összes fordításának lekérdezése.",
 	"apihelp-query+messagetranslations-param-title": "Egy ismert üzenet teljes címe.",

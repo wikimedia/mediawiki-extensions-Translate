@@ -4,10 +4,15 @@
 			"LiteHell",
 			"Revi",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"YeBoy371"
 		]
 	},
+	"apihelp-aggregategroups-summary": "집계 메시지 그룹을 관리합니다.",
+	"apihelp-aggregategroups-param-aggregategroup": "집계 메시지 그룹 ID.",
 	"apihelp-aggregategroups-param-group": "메시지 그룹 ID.",
+	"apihelp-aggregategroups-param-groupname": "집계 메시지 그룹 이름.",
+	"apihelp-aggregategroups-param-groupdescription": "집계 메시지 그룹 설명.",
 	"apihelp-groupreview-param-group": "메시지 그룹.",
 	"apihelp-groupreview-param-language": "언어 코드.",
 	"apihelp-query+languagestats-param-language": "언어 코드입니다.",

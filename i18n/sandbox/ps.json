@@ -11,7 +11,7 @@
 	"tsb-email-promoted-subject": "اوس تاسې په {{SITENAME}} کې يو ژباړن ياست",
 	"tsb-request-count": "$1 {{PLURAL:$1|غوښتنه|غوښتنې}}",
 	"tsb-all-languages-button-label": "ټولې ژبې",
-	"tsb-search-requests": "د پلټنې غوښتنې",
+	"tsb-search-requests": "په تمه غوښتنې پلټل",
 	"tsb-accept-button-label": "منل",
 	"tsb-reject-button-label": "ردول",
 	"tsb-selected-count": "{{PLURAL:$1|$1 کارن ټاکل شوی|$1 کارنان ټاکل شوي}}",
