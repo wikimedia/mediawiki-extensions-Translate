@@ -1,23 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"apihelp-aggregategroups-param-do": "د پيغام ډلې راغونډولو سره څه کولی شو.",
 	"apihelp-aggregategroups-param-aggregategroup": "د پيغام ډلې پېژند راغونډول.",
-	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند.",
+	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-aggregategroups-param-groupname": "د پيغام ډلې نوم راغونډول.",
 	"apihelp-aggregategroups-param-groupdescription": "د پيغام ډلې څرگندونه راغونډول.",
 	"apihelp-aggregategroups-example-1": "يوه ډله اړوندول",
-	"apihelp-groupreview-param-group": "پيغام ډله.",
+	"apihelp-groupreview-param-group": "پيغام ډله. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-groupreview-param-language": "د ژبې کوډ.",
 	"apihelp-query+languagestats-param-language": "د ژبې کوډ.",
-	"apihelp-query+messagecollection-param-group": "پيغام ډله.",
+	"apihelp-query+messagecollection-param-group": "پيغام ډله. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-query+messagecollection-param-language": "د ژبې کوډ.",
 	"apihelp-query+messagecollection-example-1": "د ملاتړو ژبو لړليک",
 	"apihelp-query+messagegroups-example-1": "پيغام ډلې ښکاره کول",
-	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند.",
+	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-translatesandbox-param-do": "څه کولی شم.",
 	"apihelp-translationstash-param-subaction": "کړنه.",
 	"apihelp-searchtranslations-param-limit": "د پايلې کچه.",
