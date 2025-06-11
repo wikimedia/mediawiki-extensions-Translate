@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use Article;
@@ -1547,22 +1549,37 @@ class Hooks {
 	}
 
 	/**
-	 * Converts the edit tab (if exists) for translation pages to translate tab.
+	 * Converts the edit tab (if exists) for translation pages to translate tab, and
+	 * adds a "mark for translation" page action link for source translatable pages.
 	 * Hook: SkinTemplateNavigation::Universal
 	 * @param Skin $skin
 	 * @param array &$tabs
 	 */
-	public static function translateTab( Skin $skin, array &$tabs ) {
+	public static function onSkinTemplateNavigation__Universal( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		$handle = new MessageHandle( $title );
 		$code = $handle->getCode();
+		$user = $skin->getUser();
+
+		if ( TranslatablePage::isSourcePage( $title ) ) {
+			if ( $user->isAllowed( 'pagetranslation' ) ) {
+				$tabs['actions']['marktranslation'] = [
+					'text' => $skin->msg( 'translate-ca-marktranslation' )->text(),
+					'href' => SpecialPage::getTitleFor( 'PageTranslation' )->getLocalURL( [
+						'target' => $title->getPrefixedText(),
+						'do' => 'mark',
+					] ),
+				];
+			}
+			return;
+		}
+
 		$page = TranslatablePage::isTranslationPage( $title );
 		// The source language has a subpage too, but cannot be translated
 		if ( !$page || $page->getSourceLanguageCode() === $code ) {
 			return;
 		}
 
-		$user = $skin->getUser();
 		if ( isset( $tabs['views']['edit'] ) ) {
 			// There is an edit tab, just replace its text and URL with ours, keeping the tooltip and access key
 			$tabs['views']['edit']['text'] = $skin->msg( 'tpt-tab-translate' )->text();

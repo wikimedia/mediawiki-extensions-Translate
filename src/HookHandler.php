@@ -306,8 +306,9 @@ class HookHandler implements
 			// Replace subpage logic behavior
 			$hooks['SkinSubPageSubtitle'][] = [ Hooks::class, 'replaceSubtitle' ];
 
-			// Replaced edit tab with translation tab for translation pages
-			$hooks['SkinTemplateNavigation::Universal'][] = [ Hooks::class, 'translateTab' ];
+			// Replace edit tab with translation tab for translation pages, and add
+			// "mark for translation" tab/link on source translatable pages
+			$hooks['SkinTemplateNavigation::Universal'][] = [ Hooks::class, 'onSkinTemplateNavigation__Universal' ];
 
 			// Update translated page when translation unit is moved
 			$hooks['PageMoveComplete'][] = [ Hooks::class, 'onMovePageTranslationUnits' ];
