@@ -47,6 +47,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 
 		// Security and validity checks
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
@@ -100,8 +101,9 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		$code = $data['EXTRA']['METADATA']['code'];
 
 		if ( !MessageGroups::exists( $groupId ) ) {
-			$errorWrap = "<div class='error'>\n$1\n</div>";
-			$this->getOutput()->wrapWikiMsg( $errorWrap, 'translate-import-err-stale-group' );
+			$this->getOutput()->addHTML(
+				Html::errorBox( $this->msg( 'translate-import-err-stale-group' )->parse() )
+			);
 
 			return;
 		}

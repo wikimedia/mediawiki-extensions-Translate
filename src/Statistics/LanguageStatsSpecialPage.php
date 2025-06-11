@@ -113,6 +113,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( 'ext.translate.statstable' );
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 
 		$params = $par ? explode( '/', $par ) : [];
 
@@ -152,9 +153,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 			$stats = $this->loadStatistics( $this->target, MessageGroupStats::FLAG_CACHE_ONLY );
 			$output = $this->getTable( $stats );
 			if ( $this->incomplete ) {
-				$out->wrapWikiMsg(
-					"<div class='error'>$1</div>",
-					'translate-langstats-incomplete'
+				$out->addHTML(
+					Html::warningBox( $this->msg( 'translate-langstats-incomplete' )->parse() )
 				);
 			}
 
@@ -181,7 +181,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 				} );
 			}
 			if ( $this->nothing ) {
-				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
+				$out->addHTML(
+					Html::errorBox( $this->msg( 'translate-mgs-nothing' )->parse() )
+				);
 			}
 			$out->addHTML( $output );
 		} elseif ( $submitted ) {
@@ -212,9 +214,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 	/** Called when the target is unknown. */
 	private function invalidTarget(): void {
-		$this->getOutput()->wrapWikiMsg(
-			"<div class='error'>$1</div>",
-			'translate-page-no-such-language'
+		$this->getOutput()->addHTML(
+			Html::errorBox( $this->msg( 'translate-page-no-such-language' )->parse() )
 		);
 	}
 

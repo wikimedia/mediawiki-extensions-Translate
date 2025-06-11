@@ -69,13 +69,13 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$this->outputForm();
 		$out->addModules( 'ext.translate.special.exporttranslations' );
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 
 		if ( $this->groupId ) {
 			$status = $this->checkInput();
 			if ( !$status->isGood() ) {
-				$out->wrapWikiTextAsInterface(
-					'error',
-					$this->statusFormatter->getWikiText( $status )
+				$out->addHTML(
+					Html::errorBox( $this->statusFormatter->getHTML( $status, [ 'lang' => $lang ] ) )
 				);
 				return;
 			}

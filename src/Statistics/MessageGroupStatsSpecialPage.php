@@ -163,9 +163,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 			$incomplete = $messageGroupStatsTable->areStatsIncomplete();
 			if ( $incomplete ) {
-				$out->wrapWikiMsg(
-					"<div class='error'>$1</div>",
-					'translate-langstats-incomplete'
+				$out->addHTML(
+					Html::warningBox( $this->msg( 'translate-langstats-incomplete' )->parse() )
 				);
 			}
 
@@ -261,9 +260,8 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	}
 
 	private function invalidTarget(): void {
-		$this->getOutput()->wrapWikiMsg(
-			"<div class='error'>$1</div>",
-			[ 'translate-mgs-invalid-group', $this->target ]
+		$this->getOutput()->addHTML(
+			Html::errorBox( $this->msg( 'translate-mgs-invalid-group', $this->target )->parse() )
 		);
 	}
 
