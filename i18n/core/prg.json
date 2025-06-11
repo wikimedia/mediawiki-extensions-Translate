@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nērtiks Jōrgesuns"
+			"Nērtiks Jōrgesuns",
+			"Kxeo"
 		]
 	},
-	"translate-documentation-language": "Pawakīsenjas dōkumentaciōni"
+	"translate-documentation-language": "Pawakīsenjas dōkumentaciōni",
+	"tux-tab-translated": "Tulkauts",
+	"tux-message-filter-optional-messages-label": "Opciōnalai waīstis"
 }

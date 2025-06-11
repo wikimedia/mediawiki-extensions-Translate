@@ -229,6 +229,7 @@
 	"translate-msggroupselector-search-recent": "Viimased",
 	"translate-msggroupselector-search-watched": "Jälgimisel",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|alamrühm|alamrühma}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Halda enda tellimusi",
 	"tux-languageselector": "Keel",
 	"tux-watch-group": "Jälgi",
 	"tux-unwatch-group": "Lõpeta jälgimine",

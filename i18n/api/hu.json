@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Krisztina"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Összesített üzenetcsoportok kezelése.",

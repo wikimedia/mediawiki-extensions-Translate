@@ -157,5 +157,21 @@
 	"pm-import-button-label": "Impordi",
 	"pm-savepages-button-label": "Salvesta",
 	"pm-cancel-button-label": "Loobu",
-	"pm-pagetitle-invalid": "Lehekülje siire toimib ainult tõlkelehekülgedel nagu \"Lehekülg/de\". Ette antud pealkiri pole korrektne."
+	"pm-pagetitle-invalid": "Lehekülje siire toimib ainult tõlkelehekülgedel nagu \"Lehekülg/de\". Ette antud pealkiri pole korrektne.",
+	"tpt-manage-message-group-subscriptions-normal-legend": "Sõnumirühmade tellimuste tühistamine",
+	"tpt-manage-message-group-subscriptions-normal-explain": "Allpool on näidatud sõnumirühmad, mida tellid. Sõnumirühma eemaldamiseks märgi ruut selle kõrval ja klõpsa nuppu \"{{int:tpt-manage-message-group-subscriptions-normal-submit}}\". Saad muuta ka [[Special:ManageMessageGroupSubscriptions/raw|loendi toorandmeid]].",
+	"tpt-manage-message-group-subscriptions-normal-submit": "Eemalda tellimused",
+	"tpt-manage-message-group-subscriptions-raw-explain": "Allpool on näidatud sinu sõnumirühmade tellimused, mida saad muuta neid loendisse lisades või neid sealt eemaldades, üks sõnumirühm rea kohta. Kui oled valmis, klõpsa nuppu \"{{int:Tpt-manage-message-group-subscriptions-raw-submit}}\".",
+	"tpt-manage-message-group-subscriptions-raw-legend": "Tellimuste toorandmete muutmine",
+	"tpt-manage-message-group-subscriptions-edit-raw-title": "Tellimuste toorandmete muutmine",
+	"tpt-manage-message-group-subscriptions-edit-normal-title": "Tellimuste eemaldamine",
+	"tpt-manage-message-group-subscriptions-raw-done": "Sinu tellimused on uuendatud.",
+	"tpt-manage-message-group-subscriptions-raw-added": "{{PLURAL:$1|1 tellimus|$1 tellimust}} on lisatud.",
+	"tpt-manage-message-group-subscriptions-raw-removed": "{{PLURAL:$1|1 tellimus|$1 tellimust}} on eemaldatud.",
+	"tpt-manage-message-group-subscriptions-edit-too-many'": "Sinu tellimused on uuendatud.",
+	"tpt-manage-message-group-subscriptions-too-many": "Sinu tellimused on uuendatud. Siin kuvamiseks on rühmi liiga palju.",
+	"tpt-manage-message-group-subscriptions-normal-done": "{{PLURAL:$1|1 sõnumirühm|$1 sõnumirühma}} eemaldati sinu tellimuste hulgast:",
+	"tpt-manage-message-group-subscriptions-raw-titles": "Rühmad:",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Märgi kõik",
+	"tpt-manage-message-group-subscriptions-raw-submit": "Uuenda tellimusi"
 }
