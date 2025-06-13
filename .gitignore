@@ -13,3 +13,4 @@ extensions/
 vendor/
 node_modules/
 .eslintcache
+/.stylelintcache
