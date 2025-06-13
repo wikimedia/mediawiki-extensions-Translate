@@ -99,7 +99,7 @@
 	"tpt-translation-intro": "Denne siden er en <span class=\"plainlinks\">[$1 oversatt versjon]</span> av siden [[$2]] og oversettelsen er $3 % ferdig.",
 	"tpt-translation-intro-fuzzy": "Utdaterte oversettelser er markert på denne måten.",
 	"tpt-languages-legend": "På andre språk:",
-	"tpt-languages-zero": "Begynn oversettelse for dette språket",
+	"tpt-languages-zero": "Start en oversettelse til dette språket",
 	"tpt-languages-nonzero": "$1 ($2 % oversatt)",
 	"tpt-tab-translate": "Oversett",
 	"tpt-target-page": "Denne siden kan ikke oppdateres manuelt.\nDenne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].",
