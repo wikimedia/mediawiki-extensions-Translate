@@ -101,6 +101,8 @@
 	"tpt-translation-settings-ignored-notice": "Die Benutzer haben angegeben, dass diese Seite <em>nicht</em> zur Übersetzung markiert werden sollte.",
 	"tpt-translation-settings-proposed-editor-notice": "Übersetzungsadministratoren wird empfohlen, diese Seite zur Übersetzung zu markieren. {{#FORMAL|Du kannst|Sie können}} Übersetzungen beitragen, sobald sie die Seite zur Übersetzung markiert haben.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Die Benutzer haben angegeben, dass diese Seite zur Übersetzung markiert werden sollte. Du kannst [$1 die Seite markieren], indem du [$2 sie bearbeitest] oder indem du [$3 {{#Special:PagePreparation}}] verwendest.",
+	"translate-ca-marktranslation": "Zur Übersetzung markieren",
+	"tooltip-ca-marktranslation": "Diese Seite zur Übersetzung freigeben",
 	"translate-tag-translate-link-desc": "Diese Seite übersetzen",
 	"translate-tag-markthis": "Diese Seite zur Übersetzung freigeben",
 	"translate-tag-markthisagain": "Diese Seite wurde <span class=\"plainlinks\">[$1 bearbeitet]</span>, nachdem sie zuletzt <span class=\"plainlinks\">[$2 zur Übersetzung freigegeben]</span> wurde.",

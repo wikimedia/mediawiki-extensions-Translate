@@ -87,6 +87,8 @@
 	"tpt-translation-settings-ignored-notice": "Уредниците посочиле дека оваа страница <em>не треба</em> да се означува за преведување.",
 	"tpt-translation-settings-proposed-editor-notice": "На преводните администратори ќе им се препорача да ја означат оваа страница за преведување. Можете да преведувате откако тие ќе ја означат страницава за преведување.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Уредниците посочиле дека оваа страница треба да се означи за преведување. Можете да [$1 ја означите странивата] со тоа што [$2 ќе ја уредите] или користејќи [$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "Означи за преведување",
+	"tooltip-ca-marktranslation": "Означи ја страницава за преведување",
 	"translate-tag-translate-link-desc": "Преведете ја страницава",
 	"translate-tag-markthis": "Обележи ја оваа страница со 'за преведување'",
 	"translate-tag-markthisagain": "Оваа страница има <span class=\"plainlinks\">[$1 промени]</span> од последниот пат кога <span class=\"plainlinks\">[$2 обележана за преведување]</span>.",

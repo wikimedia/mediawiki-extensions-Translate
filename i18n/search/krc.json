@@ -6,6 +6,31 @@
 			"Къарачайлы"
 		]
 	},
+	"searchtranslations": "Кёчюрюулени изле",
+	"tux-sst-edit": "Кёчюрюуню тюзет",
+	"tux-sst-view-foreign": "$1 юсюнде кёргюз",
+	"tux-sst-search": "Изле",
+	"tux-sst-search-ph": "Кёчюрюулени изле",
+	"tux-sst-search-info": "Излеу критерийлени андан да кескинлешдирир ючюн <code>language:</code> неда <code>group:</code> операторланы хайырландыр",
+	"tux-sst-count": "{{PLURAL:$1|Бир эсе табылды|$1 эсеб табылды}}",
 	"tux-sst-facet-language": "Тилле",
-	"tux-sst-facet-group": "Билдириу къауумла"
+	"tux-sst-facet-group": "Билдириу къауумла",
+	"tux-sst-nosolr-title": "Излем хайырландырылалмайды",
+	"tux-sst-nosolr-body": "Бу викиде кёчюрю излеу къуллукъ джокъду.",
+	"tux-sst-solr-offline-title": "Излеу хайырландырылалмайды",
+	"tux-sst-solr-offline-body": "Излеу къуллукъ болджаллы халда хайырландырылалмайды.",
+	"tux-sst-next": "Эндиги ›",
+	"tux-sst-prev": "‹ Аллындагъы",
+	"tux-sst-default": "Кёчюрюуле",
+	"tux-sst-translated": "$1 тилден кёчюрюуле",
+	"tux-sst-untranslated": "$1 тилден кёчюрюуле джокъдула",
+	"tux-sst-outdated": "$1 тилден эскиленнген кёчюрюуле",
+	"tux-sst-ellipsis-untranslated": "Кёчюрюуле джокъдула",
+	"tux-sst-ellipsis-outdated": "Эскиленнген кёчюрюуле",
+	"tux-sst-link-all-match": "Бютеу излеу сёзлени амалсызгъа сана.",
+	"tux-sst-match-message": "Изленнген сёзлени къайсысы болса да бирине келишген кёчюрюуле кёргюзюледиле. $1",
+	"tux-sst-case-sensitive": "Регистрни эсге алгъан",
+	"tux-sst-error-offset": "Андан аслам излеу эсеб кёргюзюрча тюлдю. Тилейбиз излеуюгюзню тарыракъ этигиз.",
+	"tux-sst-error-language": "Бу тил бу излеу тип ючюн хайырландырылалмаз.",
+	"tux-sst-error-unsupported-language": "<code>$1</code> тилде излемге дагъан берилмейди."
 }

@@ -67,6 +67,8 @@
 	"tpt-translation-settings-unstable": "Dësen Inhalt ass nach net stabil",
 	"tpt-translation-settings-propose": "Den Inhalt ass stabil a prett",
 	"tpt-translation-settings-restricted": "Dir sidd net berechtegt dës Säit ze kucken.",
+	"translate-ca-marktranslation": "Fir d'Iwwersetzung markéieren",
+	"tooltip-ca-marktranslation": "Dës Säit fir d'Iwwersetzung markéieren",
 	"translate-tag-translate-link-desc": "Dës Säit iwwersetzen",
 	"translate-tag-markthis": "Dës Säit fir d'Iwwersetzung markéieren",
 	"translate-tag-markthisagain": "Dës Säit huet <span class=\"plainlinks\">[$1 Ännerungen]</span> zënter datt se fir d'lescht <span class=\"plainlinks\">[$2 fir d'Iwwersetzung markéiert gouf]</span>.",

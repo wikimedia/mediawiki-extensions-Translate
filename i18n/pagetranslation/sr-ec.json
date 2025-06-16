@@ -75,6 +75,8 @@
 	"tpt-translation-settings-ignored-notice": "Уредници су одредили да ова страница <em>није</em> за превођење.",
 	"tpt-translation-settings-proposed-editor-notice": "Администраторима превода ова страница ће бити предложена за превођење. Можете допринети превођењеу пошто је они означе за за превођење.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Уредници су одредили да је ова страница за превођење. Можете [$1 означити страницу] [$2 уређивањем исте] или коришћењем [$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "Означи за превођење",
+	"tooltip-ca-marktranslation": "Означи страницу за превођење",
 	"translate-tag-translate-link-desc": "Преведите ову страницу",
 	"translate-tag-markthis": "Означи страницу за превођење",
 	"translate-tag-markthisagain": "Ова страница има <span class=\"plainlinks\">[$1 измена]</span> од када је последњи пут <span class=\"plainlinks\">[$2 означена за превођење]</span>.",

@@ -47,6 +47,8 @@
 	"tpt-rev-encourage": "পুনরুদ্ধার",
 	"tpt-rev-mark-tooltip": "অনুবাদের জন্য এই পৃষ্ঠার সর্বশেষ সংস্করণ চিহ্নিত করুন।",
 	"tpt-rev-unmark-tooltip": "অনুবাদ থেকে এই পাতাটি সরান।",
+	"translate-ca-marktranslation": "অনুবাদের জন্য চিহ্নিত করুন",
+	"tooltip-ca-marktranslation": "অনুবাদের জন্য এই পাতা চিহ্নিত করুন",
 	"translate-tag-translate-link-desc": "এই পাতাটি অনুবাদ করুন",
 	"translate-tag-markthis": "অনুবাদের জন্য এই পাতা চিহ্নিত করুন",
 	"translate-tag-markthisagain": "<span class=\"plainlinks\">[$2 অনুবাদের জন্য সর্বশেষ চিহ্নিত করার]</span> পর থেকে এই পাতাটিতে <span class=\"plainlinks\">[$1 পরিবর্তন ঘটেছে]</span>।",

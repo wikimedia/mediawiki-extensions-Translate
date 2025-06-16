@@ -90,6 +90,8 @@
 	"tpt-translation-settings-ignored-notice": "Os editores indicaron que esta páxina <em>non</em> debería estar marcada para a súa tradución.",
 	"tpt-translation-settings-proposed-editor-notice": "Recomendaráselles aos administradores de tradución que marquen esta páxina para a súa tradución. Podes contribuír con traducións unha vez que marquen a páxina para a súa tradución.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Os editores indicaron que esta páxina debería estar marcada para a súa tradución. Podes [$1 marcar a páxina] [$2 editándoa] ou usando [$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "Marcar para traducir",
+	"tooltip-ca-marktranslation": "Marcar esta páxina para a súa tradución",
 	"translate-tag-translate-link-desc": "Traducir esta páxina",
 	"translate-tag-markthis": "Marcar esta páxina para a súa tradución",
 	"translate-tag-markthisagain": "Esta páxina sufriu <span class=\"plainlinks\">[$1 cambios]</span> desde que foi <span class=\"plainlinks\">[$2 marcada para a súa tradución]</span> por última vez.",

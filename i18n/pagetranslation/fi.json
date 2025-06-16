@@ -90,6 +90,7 @@
 	"tpt-translation-settings-restricted": "Sinulla ei ole oikeutta katsoa tätä sivua.",
 	"tpt-translation-settings-unstable-notice": "Sivun sisältö ei ole vielä tarpeeksi vakaa käännettäväksi merkitsemistä varten.",
 	"tpt-translation-settings-ignored-notice": "Muokkaajat ovat ilmaisseet, että tätä sivua <em>ei</em> tulisi merkitä käännettäväksi.",
+	"tooltip-ca-marktranslation": "Merkitse tämä sivu käännettäväksi",
 	"translate-tag-translate-link-desc": "Käännä tämä sivu",
 	"translate-tag-markthis": "Merkitse tämä sivu käännettäväksi",
 	"translate-tag-markthisagain": "Tähän sivuun on tehty <span class=\"plainlinks\">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class=\"plainlinks\">[$2 merkittiin käännettäväksi]</span>.",

@@ -86,6 +86,8 @@
 	"tpt-translation-settings-ignored-notice": "Redactores ha indicate que iste pagina <em>non</em> debe esser marcate pro traduction.",
 	"tpt-translation-settings-proposed-editor-notice": "Essera recommendate al administratores de traduction marcar iste pagina pro traduction. Tu potera contribuer traductiones post que illes habera marcate le pagina pro traduction.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Redactores ha indicate que iste pagina debe esser marcate pro traduction. Pro [$1 marcar le pagina], [$2 modifica lo] o usa [$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "Marcar pro traduction",
+	"tooltip-ca-marktranslation": "Marcar iste pagina pro traduction",
 	"translate-tag-translate-link-desc": "Traducer iste pagina",
 	"translate-tag-markthis": "Marcar iste pagina pro traduction",
 	"translate-tag-markthisagain": "Iste pagina ha <span class=\"plainlinks\">[$1 modificationes]</span> depost le ultime vice que illo esseva <span class=\"plainlinks\">[$2 marcate pro traduction]</span>.",
