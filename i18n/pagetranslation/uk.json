@@ -104,6 +104,8 @@
 	"tpt-translation-settings-ignored-notice": "Редактори вказали, що цю сторінку <em>не</em> слід позначати для перекладу.",
 	"tpt-translation-settings-proposed-editor-notice": "Адміністраторам перекладу буде рекомендовано позначити цю сторінку для перекладу. Ви можете робити переклади, коли вони позначать сторінку для перекладу.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Редактори вказали, що цю сторінку слід позначити для перекладу. Ви можете [$1 розмітити сторінку], [$2 редагуючи її] або використовуючи [$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "Позначити для перекладу",
+	"tooltip-ca-marktranslation": "Позначити цю сторінку для перекладу",
 	"translate-tag-translate-link-desc": "Перекласти цю сторінку",
 	"translate-tag-markthis": "Позначити цю сторінку для перекладу",
 	"translate-tag-markthisagain": "На цій сторінці {{PLURAL:$1|була здійснена|були здійснені}} <span class=\"plainlinks\">[$1 {{PLURAL:$1|зміна|зміни}}]</span> з моменту, коли вона востаннє була <span class=\"plainlinks\">[$2 відмічена до перекладу]</span>.",

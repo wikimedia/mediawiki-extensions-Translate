@@ -72,6 +72,8 @@
 	"tpt-translation-settings-unstable": "Il contenuto non è ancora stabile",
 	"tpt-translation-settings-propose": "Il contenuto è stabile e pronto",
 	"tpt-translation-settings-unstable-notice": "Il contenuto della pagina non è ancora sufficientemente stabile per essere contrassegnato per la traduzione.",
+	"translate-ca-marktranslation": "Segna per la traduzione",
+	"tooltip-ca-marktranslation": "Segna questa pagina per la traduzione",
 	"translate-tag-translate-link-desc": "Traduci questa pagina",
 	"translate-tag-markthis": "Segna questa pagina per la traduzione",
 	"translate-tag-markthisagain": "Questa pagina è stata <span class=\"plainlinks\">[$1 modificata]</span> da quando era stata <span class=\"plainlinks\">[$2 segnata per la traduzione]</span>.",
