@@ -234,6 +234,7 @@
 	"tux-status-saving": "Ukladanie...",
 	"tux-status-unsaved": "Neuložené",
 	"tux-save-unknown-error": "Došlo k neznámej chybe.",
+	"tux-editor-placeholder-language": "Váš preklad v jazyku $1",
 	"tux-editor-editsummary-placeholder": "Nepovinné zhrnutie",
 	"tux-editor-paste-original-button-label": "Vložiť zdrojový text",
 	"tux-editor-discard-changes-button-label": "Zahodiť zmeny",
