@@ -84,6 +84,7 @@
 	"tpt-translation-settings-propose-hint": "커뮤니티 번역을 위해 이 문서를 나열합니다.",
 	"tpt-translation-settings-restricted": "이 문서를 볼 수 있는 권한이 없습니다.",
 	"tpt-translation-settings-unstable-notice": "문서의 콘텐츠가 번역을 위해 표시할 정도로 아직 안정적이지 않습니다.",
+	"translate-ca-marktranslation": "번역한 것으로 표시",
 	"translate-tag-translate-link-desc": "이 문서 번역하기",
 	"translate-tag-markthis": "이 문서를 번역 대상으로 표시",
 	"translate-tag-markthisagain": "이 문서에는 최근 <span class=\"plainlinks\">[$2 번역 대상으로 표시]</span>한 이후 <span class=\"plainlinks\">[$1 바뀜]</span>이 있습니다.",
