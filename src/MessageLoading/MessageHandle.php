@@ -58,8 +58,7 @@ class MessageHandle {
 			if ( $known || $pos === false ) {
 				$this->languageCode = '';
 			} else {
-				// For keys like Foo/, substr returns false instead of ''
-				$this->languageCode = (string)( substr( $this->key, $pos + 1 ) );
+				$this->languageCode = substr( $this->key, $pos + 1 );
 				$this->key = substr( $this->key, 0, $pos );
 			}
 		}

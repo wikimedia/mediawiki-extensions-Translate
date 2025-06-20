@@ -2,6 +2,8 @@
 
 $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.php';
 
+$cfg['minimum_target_php_version'] = '8.1';
+
 // These are too spammy for now. TODO enable
 $cfg['null_casts_as_any_type'] = true;
 

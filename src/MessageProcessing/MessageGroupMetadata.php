@@ -22,14 +22,12 @@ class MessageGroupMetadata {
 	/** Map of (database group id => key => value) */
 	private array $cache = [];
 	private ?array $priorityCache = null;
-	private IConnectionProvider $dbProvider;
 
-	public function __construct( IConnectionProvider $dbProvider ) {
-		$this->dbProvider = $dbProvider;
+	public function __construct( private readonly IConnectionProvider $dbProvider ) {
 	}
 
 	public function preloadGroups( array $groups, string $caller ): void {
-		$dbGroupIds = array_map( [ $this, 'getGroupIdForDatabase' ], $groups );
+		$dbGroupIds = array_map( $this->getGroupIdForDatabase( ... ), $groups );
 		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), $this->cache ) );
 		if ( !$missing ) {
 			return;
@@ -46,7 +44,7 @@ class MessageGroupMetadata {
 			$res = $dbr->newSelectQueryBuilder()
 				->select( [ 'tmd_group', 'tmd_key', 'tmd_value' ] )
 				->from( 'translate_metadata' )
-				->where( [ 'tmd_group' => array_map( 'strval', $chunk ) ] )
+				->where( [ 'tmd_group' => array_map( strval( ... ), $chunk ) ] )
 				->caller( $functionName )
 				->fetchResultSet();
 			foreach ( $res as $row ) {
@@ -59,9 +57,8 @@ class MessageGroupMetadata {
 	 * Get a metadata value for the given group and key.
 	 * @param string $group The group name
 	 * @param string $key Metadata key
-	 * @return string|bool
 	 */
-	public function get( string $group, string $key ) {
+	public function get( string $group, string $key ): string|false {
 		$this->preloadGroups( [ $group ], __METHOD__ );
 		return $this->cache[$this->getGroupIdForDatabase( $group )][$key] ?? false;
 	}
@@ -80,9 +77,9 @@ class MessageGroupMetadata {
 	 * value if already existing.
 	 * @param string $groupId The group id
 	 * @param string $key Metadata key
-	 * @param string|false $value Metadata value, false deletes from cache
+	 * @param string|false $value Metadata value, false to delete
 	 */
-	public function set( string $groupId, string $key, $value ): void {
+	public function set( string $groupId, string $key, string|false $value ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
@@ -175,11 +172,9 @@ class MessageGroupMetadata {
 
 			$this->priorityCache = [];
 			foreach ( $res as $row ) {
-				if ( isset( $row->langs ) ) {
-					$this->priorityCache[ $row->group ] = array_flip( explode( ',', $row->langs ) );
-				} else {
-					$this->priorityCache[ $row->group ] = [];
-				}
+				$this->priorityCache[$row->group] = isset( $row->langs )
+					? array_flip( explode( ',', $row->langs ) )
+					: [];
 			}
 		}
 
