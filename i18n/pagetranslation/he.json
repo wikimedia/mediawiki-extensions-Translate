@@ -96,6 +96,8 @@
 	"tpt-translation-settings-ignored-notice": "עורכים ציינו <em>שאין</em> לסמן את הדף הזה לתרגום.",
 	"tpt-translation-settings-proposed-editor-notice": "יומלץ למנהלי תרגום לסמן את הדף הזה לתרגום. באפשרותך לתרום תרגומים ברגע שהם מסמנים את הדף לתרגום.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "עורכים ציינו שיש לסמן את הדף הזה לתרגום. באפשרותך [$1 להכין את הדף לתרגום] על־ידי [$2 עריכתו] או על־ידי שימוש ב־[$3 {{#Special:PagePreparation}}].",
+	"translate-ca-marktranslation": "סימון לתרגום",
+	"tooltip-ca-marktranslation": "סימון דף זה לתרגום",
 	"translate-tag-translate-link-desc": "תרגום דף זה",
 	"translate-tag-markthis": "סימון דף זה לתרגום",
 	"translate-tag-markthisagain": "בדף הזה יש <span class=\"plainlinks\">[$1 שינויים]</span> שנעשו מאז שהוא <span class=\"plainlinks\">[$2 סומן לתרגום]</span> בפעם האחרונה.",
