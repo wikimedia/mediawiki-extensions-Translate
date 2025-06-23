@@ -321,7 +321,7 @@
 	"translate-documentation-language": "メッセージについての説明文",
 	"translate-searchprofile": "翻訳",
 	"translate-searchprofile-tooltip": "すべての翻訳から検索",
-	"translate-searchprofile-note": "より多くの検索設定は、[$1 翻訳検索]を通して利用することができます。",
+	"translate-searchprofile-note": "より多くの検索オプションは、[$1 翻訳検索]で利用できます。",
 	"translate-search-languagefilter": "言語で絞り込み:",
 	"translate-search-nofilter": "すべて表示",
 	"log-name-translationreview": "翻訳査読記録",

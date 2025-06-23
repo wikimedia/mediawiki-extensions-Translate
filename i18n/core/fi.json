@@ -231,7 +231,7 @@
 	"abusefilter-edit-builder-vars-translate-target-language": "Kohdekieli käännöstä varten",
 	"translate-jssti-add": "Lisää listaan",
 	"managemessagegroups": "Viestiryhmien hallinta",
-	"translate-smg-notallowed": "Sinulla ei ole oikeuksia suorittaa tätä toimintoa.",
+	"translate-smg-notallowed": "Sinulla ei ole oikeutta suorittaa tätä toimintoa.",
 	"translate-smg-nochanges": "Ei muutoksia käsiteltäväksi.",
 	"translate-smg-submit": "Lähetä muutokset käsiteltäviksi",
 	"translate-smg-submitted": "Viestien määritelmät on päivitetty. Muutoksia käsitellään taustalla.",
