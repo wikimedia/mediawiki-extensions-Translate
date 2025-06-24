@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Daud I.F. Argana"
+			"Daud I.F. Argana",
+			"Rachmat04"
 		]
 	},
 	"managetranslatorsandbox": "Kelola kotak pasir penerjemah",
@@ -44,7 +45,7 @@
 	"tsb-limit-reached-body": "Anda telah mencapai batas penerjemahan untuk penerjemah baru.\nTim kami akan memeriksa dan memperbarui akun Anda segera.\nLalu Anda akan bisa menerjemahkan tanpa batas.",
 	"tsb-no-requests-from-new-users": "Tidak ada permohonan dari pengguna baru",
 	"tsb-create-user-page": "Membuat halaman pengguna dasar",
-	"log-name-translatorsandbox": "Catatan kotak pasir terjemahan",
+	"log-name-translatorsandbox": "Log kotak pasir terjemahan",
 	"log-description-translatorsandbox": "Catatan tindakan kepada pengguna kotak pasir terjemahan",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|mengangkat}} $3 menjadi {{GENDER:$4|penerjemah}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|menolak}} permohonan dari \"$3\" untuk menjadi seorang penerjemah",

@@ -516,7 +516,7 @@
 	"echo-category-title-translate-message-group-subscription": "可翻译消息组订阅",
 	"echo-pref-tooltip-translate-message-group-subscription": "当我订阅的可翻译消息组更改时通知我",
 	"notification-header-message-group-subscription": "$1有翻译更新",
-	"notification-body-translate-mgs-message-added": "已加入$1条{{PLURAL:$1|消息}}",
+	"notification-body-translate-mgs-message-added": "$1则新增或更新{{PLURAL:$1|消息}}",
 	"notification-link-mgs-group-translate": "翻译$1",
 	"tpt-cleanchanges-language": "语言：",
 	"tpt-cleanchanges-language-na": "所有"
