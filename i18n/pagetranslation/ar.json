@@ -64,6 +64,7 @@
 	"tpt-rev-unmark-tooltip": "أزل هذه الصفحة من الترجمة.",
 	"tpt-rev-discourage-tooltip": "ثبط الترجمات الأخرى على هذه الصفحة.",
 	"tpt-rev-encourage-tooltip": "استعد هذه الصفحة للترجمة العادية.",
+	"translate-ca-marktranslation": "علم للترجمة",
 	"translate-tag-translate-link-desc": "ترجم هذه الصفحة",
 	"translate-tag-markthis": "علّم هذه الصفحة للترجمة",
 	"translate-tag-markthisagain": "هذه الصفحة بها <span class=\"plainlinks\">[$1 تغيير]</span> منذ تم <span class=\"plainlinks\">[$2 تعليمها للترجمة]</span> لآخر مرة.",
