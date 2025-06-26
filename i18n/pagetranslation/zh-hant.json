@@ -110,6 +110,8 @@
 	"tpt-translation-settings-ignored-notice": "編輯者指出此頁面<em>不應</em>標記為翻譯。",
 	"tpt-translation-settings-proposed-editor-notice": "會建議翻譯管理員將此頁面標記為翻譯。一旦他們將頁面標記好，您就可以貢獻翻譯。",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "編輯者指出此頁面應標記為翻譯。您可以透過[$2 編輯該頁面]或使用[$3 {{#Special:PagePreparation}}]來[$1 標記該頁面]。",
+	"translate-ca-marktranslation": "標記為可翻譯頁面/版本",
+	"tooltip-ca-marktranslation": "標記此頁面需要翻譯",
 	"translate-tag-translate-link-desc": "翻譯此頁面",
 	"translate-tag-markthis": "標記此頁面需要翻譯",
 	"translate-tag-markthisagain": "此頁面在<span class=\"plainlinks\">[$2 標記需要翻譯]</span>之後，已有<span class=\"plainlinks\">[$1 變更]</span>。",
