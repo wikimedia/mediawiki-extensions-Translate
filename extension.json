@@ -356,7 +356,6 @@
 		"SupportedLanguages": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\ActiveLanguagesSpecialPage",
 			"services": [
-				"MainConfig",
 				"Translate:TranslatorActivity",
 				"LanguageNameUtils",
 				"DBLoadBalancer",
@@ -365,6 +364,7 @@
 				"Translate:ProgressStatsTableFactory",
 				"LinkBatchFactory",
 				"LanguageFactory",
+				"MainConfig",
 				"ObjectCacheFactory"
 			]
 		},
