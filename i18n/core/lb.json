@@ -75,7 +75,7 @@
 	"translate-checks-format": "Dës Iwwersetzung translation entsprecht net der Definitioun oder huet eng Syntax déi net gëlteg ass: $1",
 	"translate-checks-escape": "{{PLURAL:$2|Dëst Escape-Zeeche kann|Dës Escape-Zeeche kënnen}} ongewollt sinn: <strong>$1</strong>\n{{PLURAL:$4|E valabelt Escape-Zeechen ass |Vvalabelt Escape-Zeechen sinn (ënneraneren):}} $3.",
 	"translate-checks-parametersnotequal": "D'Zuel vun de Parameteren ass {{PLURAL:$1|$1}} et {{PLURAL:$2|dierft awer nëmmen ee sinn|missten der awer $2 sinn}}.",
-	"translate-checks-malformed": "<nowiki>$1</nowiki> ass formal net valabel.",
+	"translate-checks-malformed": "<nowiki>$1</nowiki> ass ongülteg opgebaut.",
 	"translate-checks-fudforum-syntax": "<nowiki>$1</nowiki>  aplaz vu(n) <nowiki>$2</nowiki>  an dësem Projet benotzen.",
 	"translate-checks-newline-extra-end": "Et gëtt {{PLURAL:$1|een zousätlechen Zeilenëmbroch|$1 zousätzlech Zeilenëmbrëch}} um Ënn vun der Iwwersetzung.",
 	"translate-checks-replacement": "Benotzt $2 amplaz vu(n) $1",
