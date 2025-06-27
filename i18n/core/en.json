@@ -10,6 +10,7 @@
 		]
 	},
 	"translate": "Translate",
+	"translate-group": "Translate $1",
 	"translate-extensionname": "Translate",
 	"translate-desc": "[[Special:Translate|Special page]] for translating MediaWiki and beyond",
 	"translate-fuzzybot-desc": "This is a special system account used by the MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate extension] used to maintain translations.\nThis account is part of the MediaWiki software and it is not owned by any user.",

@@ -51,6 +51,7 @@
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
+	"translate-group": "Replaces {{msg-mw|Translate}} in the page title (shown on the browser tab) after a message group has been selected.\n\nParameters:\n* $1 – Name of the selected message group",
 	"translate-extensionname": "{{name}}",
 	"translate-desc": "{{desc|name=Translate|url=https://www.mediawiki.org/wiki/Extension:Translate}}",
 	"translate-fuzzybot-desc": "Text to display on [[User:FuzzyBot]].",

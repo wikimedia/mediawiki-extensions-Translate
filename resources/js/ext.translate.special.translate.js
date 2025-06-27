@@ -241,6 +241,7 @@
 			updateDescription( group );
 			updateGroupPriorityWarnings( group, stateInfo.language );
 			updateGroupSubscription( group );
+			document.title = mw.msg( 'pagetitle', mw.msg( 'translate-group', group.label ) );
 		} );
 	}
 

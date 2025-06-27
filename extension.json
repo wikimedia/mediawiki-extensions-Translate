@@ -958,6 +958,7 @@
 				"mediawiki.storage"
 			],
 			"messages": [
+				"pagetitle",
 				"parentheses",
 				"tpt-discouraged-language-content",
 				"tpt-discouraged-language-force-content",
@@ -968,6 +969,7 @@
 				"tpt-discouraged-translation-content",
 				"tux-editor-proofreading-hide-own-translations",
 				"tux-editor-proofreading-show-own-translations",
+				"translate-group",
 				"translate-workflow-set-doing",
 				"translate-workflow-state-",
 				"translate-workflowstatus",
