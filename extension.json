@@ -1528,7 +1528,18 @@
 		}
 	},
 	"ParsoidModules": [
-		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateExt"
+		{
+			"name": "Translate",
+			"annotations": {
+				"tagNames": [ "translate", "tvar" ],
+				"annotationStripper": {
+					"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\TranslateAnnotationStripper",
+					"services": [
+						"Translate:TranslatablePageParser"
+					]
+				}
+			}
+		}
 	],
 	"DatabaseVirtualDomains": [
 		"virtual-translate"
