@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use HtmlArmor;
 use InvalidArgumentException;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\Config;
@@ -19,6 +18,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use ObjectCacheFactory;
+use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -31,11 +31,11 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class ActiveLanguagesSpecialPage extends SpecialPage {
-	private ServiceOptions $options;
+	private readonly ServiceOptions $options;
+	private readonly BagOStuff $cache;
 	private StatsTable $progressStatsTable;
-	private BagOStuff $cache;
-	/** Cutoff time for inactivity in days */
-	private int $period = 180;
+	/** @var int Cutoff time for inactivity in days */
+	private const PERIOD = 180;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateMessageNamespaces',
@@ -202,7 +202,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		}
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * $this->period );
+		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * self::PERIOD );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [ 'lang' => 'substring_index(rc_title, \'/\', -1)', 'count' => 'COUNT(*)' ] )
@@ -275,7 +275,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 		// Scale of the activity colors, anything
 		// longer than this is just inactive
-		$period = $this->period;
+		$period = self::PERIOD;
 
 		$links = [];
 		// List users in descending order by number of translations in this language
@@ -365,7 +365,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 
 	private function getColorLegend(): string {
 		$legend = '';
-		$period = $this->period;
+		$period = self::PERIOD;
 
 		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
