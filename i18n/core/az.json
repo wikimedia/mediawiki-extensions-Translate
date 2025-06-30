@@ -14,6 +14,7 @@
 		]
 	},
 	"translate": "Tərcümə et",
+	"translate-group": "$1 tərcümə et",
 	"translate-extensionname": "Tərcümə",
 	"translate-desc": "MediaViki və əlavələrini tərcümə etmək üçün [[Special:Translate|xüsusi səhifə]]",
 	"translate-fuzzybot-desc": "Bu, tərcümələri idarə etmək üçün istifadə edilən MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate uzantısı] tərəfindən istifadə edilən xüsusi sistem hesabıdır.\nBu hesab MediaWiki proqramının bir hissəsidir və heç bir istifadəçiyə məxsus deyil.",

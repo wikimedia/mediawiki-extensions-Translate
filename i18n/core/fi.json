@@ -29,6 +29,7 @@
 		]
 	},
 	"translate": "Käännä",
+	"translate-group": "Käännä $1",
 	"translate-extensionname": "Käännä",
 	"translate-desc": "[[Special:Translate|Toimintosivu]] MediaWikin kääntämiseen ja muutakin.",
 	"translate-fuzzybot-desc": "Tämä on erityinen järjestelmätili jota MediaWikin [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate-laajennus] käyttää käännösten ylläpitoon.\nTämä tili on osa MediaWiki-ohjelmistoa ja sitä ei omista mikään käyttäjä.",
