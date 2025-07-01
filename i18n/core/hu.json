@@ -17,6 +17,7 @@
 		]
 	},
 	"translate": "Fordítás",
+	"translate-group": "$1 fordítása",
 	"translate-desc": "[[Special:Translate|Speciális lap]] a MediaWiki és más projektek fordítására",
 	"translate-fuzzybot-desc": "Ez egy speciális rendszerfiók, amit a MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate/hu Translate kiterjesztése] használ a fordítások karbantartásához.\nEz a fiók a MediaWiki szoftver része, és nem tulajdonosa egyetlen felhasználó sem.",
 	"translate-taskui-export-to-file": "Exportálás natív formátumban",

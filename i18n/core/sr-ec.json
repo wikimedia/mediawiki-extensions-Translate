@@ -20,6 +20,7 @@
 		]
 	},
 	"translate": "Превођење",
+	"translate-group": "Преведи $1",
 	"translate-extensionname": "Превођење",
 	"translate-desc": "[[Special:Translate|Посебна страница]] за превођење Медијавикија и других програма",
 	"translate-fuzzybot-desc": "Ово је посебан системски налог који користи [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate додатак „Превођење”] Медијавикија. Користи се за одржавање превода.\nНалог је део софтвера Медијавики и није у власништву ниједног корисника.",

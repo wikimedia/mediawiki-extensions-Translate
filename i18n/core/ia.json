@@ -5,6 +5,7 @@
 		]
 	},
 	"translate": "Traducer",
+	"translate-group": "Traducer $1",
 	"translate-desc": "[[Special:Translate|Pagina special]] pro traducer MediaWiki e ultra",
 	"translate-fuzzybot-desc": "Isto es un conto special de systema usate per le [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate extension Translate] de MediaWiki que es usate pro mantener traductiones.\nIste conto face parte del software MediaWiki e non pertine a un usator.",
 	"translate-taskui-export-to-file": "Exportar in formato native",

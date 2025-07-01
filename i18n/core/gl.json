@@ -13,6 +13,7 @@
 		]
 	},
 	"translate": "Traducir",
+	"translate-group": "Traducir «$1»",
 	"translate-desc": "[[Special:Translate|Páxina especial]] para traducir MediaWiki e outras extensións",
 	"translate-fuzzybot-desc": "Esta é unha conta especial do sistema usada pola [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate extensión Translate] de MediaWiki para manter as traducións.\nEsta conta é parte do software MediaWiki e non pertence a ningunha persoa.",
 	"translate-taskui-export-to-file": "Exportar en formato nativo",

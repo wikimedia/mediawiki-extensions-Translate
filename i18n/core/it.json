@@ -25,6 +25,7 @@
 		]
 	},
 	"translate": "Traduzione",
+	"translate-group": "Traduci $1",
 	"translate-extensionname": "Traduci",
 	"translate-desc": "[[Special:Translate|Pagina speciale]] per tradurre MediaWiki e non solo",
 	"translate-taskui-export-to-file": "Esporta nel formato nativo",
