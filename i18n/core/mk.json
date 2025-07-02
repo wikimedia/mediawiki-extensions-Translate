@@ -10,6 +10,7 @@
 		]
 	},
 	"translate": "Преведување",
+	"translate-group": "Преведување на $1",
 	"translate-extensionname": "Преведување",
 	"translate-desc": "[[Special:Translate|Службена страница]] за преведување на МедијаВики и други пораки",
 	"translate-fuzzybot-desc": "Ова е службена системска сметка што се користи од додатокот [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Преведување] на МедијаВики намете за одржување на преводи.\nОваа сметка е дел од основниот програм и не е во сопственост на ниеден корисник.",

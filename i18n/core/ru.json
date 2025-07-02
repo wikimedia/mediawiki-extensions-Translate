@@ -59,6 +59,7 @@
 		]
 	},
 	"translate": "Перевести",
+	"translate-group": "Перевести $1",
 	"translate-extensionname": "Перевести",
 	"translate-desc": "[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ",
 	"translate-fuzzybot-desc": "Это специальная системная учётная запись, используемая [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate/ru расширением перевода] MediaWiki для задач поддержки переводов.\nЭта учётная запись является частью программного обеспечения MediaWiki и не принадлежит никакому участнику.",

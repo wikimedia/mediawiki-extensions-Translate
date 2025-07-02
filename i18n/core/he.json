@@ -21,6 +21,7 @@
 		]
 	},
 	"translate": "תרגום",
+	"translate-group": "תרגום $1",
 	"translate-desc": "[[Special:Translate|דף מיוחד]] לתרגום מדיה־ויקי ומעבר לכך",
 	"translate-fuzzybot-desc": "זה חשבון מערכת מיוחד שמשמש את [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate ההרחבה Translate] של מדיה־ויקי כדי לטפל בתרגומים.\nהחשבון הזה הוא חלק מתוכנת מדיה־ויקי ואינו בבעלות של שום משתמש.",
 	"translate-taskui-export-to-file": "לייצא בתסדיר ילידי",
