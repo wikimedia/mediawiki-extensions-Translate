@@ -61,6 +61,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 	public function execute( $params ) {
 		$this->setHeaders();
 		$this->checkPermissions();
+		$this->outputHeader();
 		$out = $this->getOutput();
 		$out->addModuleStyles(
 			[
