@@ -7,6 +7,7 @@
 		]
 	},
 	"translate": "Гоч",
+	"translate-group": "Гочйан $1",
 	"translate-extensionname": "Гочйан",
 	"translate-desc": "[[Special:Translate|Белхан агӀо]] MediaWiki гочйан а, кхин программийн а",
 	"translate-fuzzybot-desc": "ХӀара леррина системин аккаунт йу, лелош йолу MediaWiki тӀехь, [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate гочдаран  тӀетоьхна] гочдаршна таронаш хилийта.\nХӀара аккаунт йу MediaWiki тӀехь программа латторан дакъа, цхьаа декъашхочун долахь йац.",
