@@ -20,7 +20,7 @@
 	"tpt-rev-encourage": "بيازېرمل",
 	"translate-tag-translate-link-desc": "همدا مخ ژباړل",
 	"translate-tag-markthis": "همدا مخ د ژباړې لپاره په نښه کول",
-	"tpt-translation-intro": "دا پاڼه د  [[$2]] مخ <span class=\"plainlinks\">[$1 ژباړل شوي بڼه] ده </span> او ددي ژباړه تر ٪$3 پوري بشپړه شوي ده.",
+	"tpt-translation-intro": "دا پاڼه د  [[$2]] مخ <span class=\"plainlinks\">[$1 ژباړل شوې بڼه] ده </span> او د دې ژباړه تر ٪$3 پورې بشپړه شوې ده.",
 	"tpt-translation-intro-fuzzy": "تر تاریخ وتلې ژباړي په دي ډول مارک شوي دي.",
 	"tpt-languages-legend": "نورې ژبې:",
 	"tpt-languages-nonzero": "$1 ($2% وژباړل شو)",
