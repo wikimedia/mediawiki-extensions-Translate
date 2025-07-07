@@ -17,6 +17,7 @@
 		]
 	},
 	"translate": "Bıçarne",
+	"translate-group": "Bıçarne $1",
 	"translate-desc": "MediaWiki u vêşi açarnayışan rê [[Special:Translate|Pela xısusi]]",
 	"translate-taskui-export-to-file": "Lokal format dı ateberd",
 	"translate-taskui-export-as-po": "Çerxteber açarnayışi ateberd",
