@@ -10,6 +10,7 @@ use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Tests for UpdateMessageJob (propagation of fuzzy flag on changes to source text)
@@ -127,12 +128,13 @@ class UpdateMessageJobTest extends MediaWikiIntegrationTestCase {
 
 		// If it is fuzzied, then the transver should be set to the version of the source page
 		// before the fuzzying change
-		$expectedTransver = Title::newFromText( "MediaWiki:Ugakey/en" )->getLatestRevId();
+		// Need to explicitly read from the primary to avoid a potentially cached last revid
+		// from the previous job
+		$expectedTransver = $srcTitle->getLatestRevId( IDBAccessObject::READ_LATEST );
 		$this->assertNull( $revTagStore->getTransver( $targetTitle ) );
 		$job = UpdateMessageJob::newJob( $srcTitle, "$1 of $2 newer", true );
 		$job->run();
-		// FIXME: Fails in CI as of 2025-07-07, see T398904
-		// $this->assertEquals( $expectedTransver, $revTagStore->getTransver( $targetTitle ) );
+		$this->assertEquals( $expectedTransver, $revTagStore->getTransver( $targetTitle ) );
 
 		// Delete the transver tag and add a fuzzy tag
 		$revTagStore->removeTags( $targetTitle, RevTagStore::TRANSVER_PROP );
