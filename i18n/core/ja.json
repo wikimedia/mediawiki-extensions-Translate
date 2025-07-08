@@ -35,6 +35,7 @@
 		]
 	},
 	"translate": "翻訳",
+	"translate-group": "$1 の翻訳",
 	"translate-extensionname": "翻訳",
 	"translate-desc": "MediaWiki やその他のものを翻訳するための[[Special:Translate|特別ページ]]",
 	"translate-fuzzybot-desc": "これは、MediaWikiの[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate拡張機能]が、翻訳のメンテナンスに使用する特別なシステム・アカウントです。\nこのアカウントはMediaWikiソフトウェアの一部であり、利用者によって所有されていません。",
