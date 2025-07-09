@@ -313,7 +313,7 @@
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|mensaxe|mensaxes}} más",
 	"tux-messagetable-loading-messages": "Cargando $1 {{PLURAL:$1|mensaxe|mensaxes}}...",
 	"tux-message-filter-placeholder": "Peñerar llista",
-	"tux-message-filter-result": "{{PLURAL:$1|Alcontrose un resultáu|Alcontraronse $1 resultaos}} pa \"$2\"",
+	"tux-message-filter-result": "{{PLURAL:$1|Alcontróse un resultáu|Alcontráronse $1 resultaos}} pa \"$2\"",
 	"tux-message-filter-advanced-button": "Gueta avanzada",
 	"tux-message-filter-optional-messages-label": "Mensaxes opcionales",
 	"tux-proofread-translated-by-self": "Traducío por ti",
