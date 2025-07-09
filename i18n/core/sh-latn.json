@@ -44,6 +44,7 @@
 	"translate-tes-optgroup-group": "Grupe",
 	"translate-tes-optgroup-message": "Poruke",
 	"translate-documentation-language": "Dokumentacija poruke",
+	"tux-editor-editsummary-placeholder": "Sažetak izmjene (neobavezno)",
 	"tux-editor-cancel-button-label": "Otkaži",
 	"tux-editor-in-other-languages": "Na drugim jezicima",
 	"tux-editor-doc-editor-cancel": "Otkaži",
