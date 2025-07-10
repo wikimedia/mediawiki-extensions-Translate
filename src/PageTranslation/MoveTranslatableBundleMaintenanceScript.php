@@ -27,7 +27,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 
 		$this->addArg(
 			'current-page',
-			' Current name of the page representing a translatable bundle',
+			'Current name of the page representing a translatable bundle',
 			self::REQUIRED
 		);
 
