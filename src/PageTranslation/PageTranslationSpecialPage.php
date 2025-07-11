@@ -1184,7 +1184,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			Html::rawElement(
 				'p',
 				[ 'class' => 'mw-tpt-vm' ],
-				Html::element( 'strong', [], $this->msg( 'tpt-translation-settings-subtitle' ) )
+				Html::element( 'strong', [], $this->msg( 'tpt-translation-settings-subtitle' )->text() )
 			)
 		);
 
