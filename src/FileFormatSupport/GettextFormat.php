@@ -558,7 +558,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 				foreach ( $forms as $index => $form ) {
 					$content .= "msgstr[$index] " . $this->escape( $form ) . "\n";
 				}
-			} catch ( GettextPluralException $e ) {
+			} catch ( GettextPluralException ) {
 				$flags[] = 'invalid-plural';
 				for ( $i = 0; $i < $pluralCount; $i++ ) {
 					$content .= "msgstr[$i] \"\"\n";
@@ -670,7 +670,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 				return false;
 			}
 
-		} catch ( GettextPluralException $e ) {
+		} catch ( GettextPluralException ) {
 			// Something failed, invalid syntax?
 			return false;
 		}

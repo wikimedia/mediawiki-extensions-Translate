@@ -75,7 +75,7 @@ class TranslationAidDataProvider {
 		try {
 			$this->getDefinition();
 			return true;
-		} catch ( TranslationHelperException $e ) {
+		} catch ( TranslationHelperException ) {
 			return false;
 		}
 	}

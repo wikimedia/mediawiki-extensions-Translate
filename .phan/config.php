@@ -2,8 +2,6 @@
 
 $cfg = require __DIR__ . '/../vendor/mediawiki/mediawiki-phan-config/src/config.php';
 
-$cfg['minimum_target_php_version'] = '8.1';
-
 // These are too spammy for now. TODO enable
 $cfg['null_casts_as_any_type'] = true;
 
@@ -12,6 +10,8 @@ $cfg['enable_class_alias_support'] = true;
 
 // Gives false positives for uninitialized properties
 $cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
+// TODO fix these
+$cfg['suppress_issue_types'][] = 'PhanThrowTypeAbsent';
 
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],

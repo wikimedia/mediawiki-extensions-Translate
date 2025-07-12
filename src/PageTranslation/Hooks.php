@@ -173,7 +173,7 @@ class Hooks {
 				$text = $parserOutput->sourcePageTextForRendering(
 					$wikitextParser->getTargetLanguage()
 				);
-			} catch ( ParsingFailure $e ) {
+			} catch ( ParsingFailure ) {
 				wfDebug( 'ParsingFailure caught; expected' );
 			}
 		} else {

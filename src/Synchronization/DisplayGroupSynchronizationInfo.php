@@ -197,12 +197,12 @@ class DisplayGroupSynchronizationInfo {
 				->rawParams( $language->pipeList( $actions ) )->escaped()
 		);
 
-		$output .= $this->getMessageInfoHtml( $message, $language );
+		$output .= $this->getMessageInfoHtml( $message );
 
 		return $output;
 	}
 
-	private function getMessageInfoHtml( MessageUpdateParameter $message, Language $language ): string {
+	private function getMessageInfoHtml( MessageUpdateParameter $message ): string {
 		$output = Html::openElement( 'dl' );
 
 		$tags = [];

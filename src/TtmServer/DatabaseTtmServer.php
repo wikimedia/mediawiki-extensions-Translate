@@ -169,7 +169,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		$table = $dbw->tableName( 'translate_tmf' );
 		try {
 			$dbw->query( "DROP INDEX tmf_text ON $table", __METHOD__ );
-		} catch ( DBQueryError $e ) {
+		} catch ( DBQueryError ) {
 			// Perhaps the script was aborted before it got
 			// chance to add the index back.
 		}

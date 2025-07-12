@@ -225,7 +225,7 @@ class TranslatablePage extends TranslatableBundle {
 
 		try {
 			$group = $this->getMessageGroup();
-		} catch ( RuntimeException $e ) {
+		} catch ( RuntimeException ) {
 			return null;
 		}
 
@@ -350,7 +350,7 @@ class TranslatablePage extends TranslatableBundle {
 		// Calculate percentages for the available translations
 		try {
 			$group = $this->getMessageGroup();
-		} catch ( RuntimeException $e ) {
+		} catch ( RuntimeException ) {
 			return [];
 		}
 

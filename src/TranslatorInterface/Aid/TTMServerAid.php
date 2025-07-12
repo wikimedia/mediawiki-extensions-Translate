@@ -69,7 +69,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 				$queryData = $service->query( $from, $to, $text );
 			} catch ( TranslationHelperException $e ) {
 				throw $e;
-			} catch ( Exception $e ) {
+			} catch ( Exception ) {
 				// Not ideal to catch all exceptions
 				continue;
 			}

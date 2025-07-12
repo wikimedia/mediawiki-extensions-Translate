@@ -230,13 +230,13 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	): string {
 		try {
 			$sourceTemplate = $this->loadDefinitions( $group, $source, $language );
-		} catch ( RuntimeException $e ) {
+		} catch ( RuntimeException ) {
 			return 'no definitions';
 		}
 
 		try {
 			$targetTemplate = $this->loadDefinitions( $group, $targetPath, $language );
-		} catch ( RuntimeException $e ) {
+		} catch ( RuntimeException ) {
 			$targetTemplate = [
 				'MESSAGES' => [],
 				'AUTHORS' => [],

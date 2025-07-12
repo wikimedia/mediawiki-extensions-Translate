@@ -223,7 +223,7 @@ class RecentChangesTranslationFilterHookHandler implements
 								[ 'translatetags.ct_rc_id=rc_id', 'translatetags.ct_tag_id' => $renderedPage ]
 							];
 							$conds['translatetags.ct_tag_id'] = null;
-						} catch ( NameTableAccessException $exception ) {
+						} catch ( NameTableAccessException ) {
 							// Tag name does not yet exist in DB.
 						}
 					}

@@ -36,7 +36,7 @@ class MessageBundleContent extends JsonContent {
 			$this->getMessages();
 			$this->getMetadata();
 			return parent::isValid();
-		} catch ( MalformedBundle $e ) {
+		} catch ( MalformedBundle ) {
 			return false;
 		}
 	}

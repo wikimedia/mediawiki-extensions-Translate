@@ -80,7 +80,7 @@ class TranslationStatsGraphOptions {
 				// If we weren’t able to parse the timestamp, try if we got an ISO 8601 date without time
 				try {
 					$timestamp = new ConvertibleTimestamp( $this->formOptions['start'] . 'T00:00:00' );
-				} catch ( TimestampException $e2 ) {
+				} catch ( TimestampException ) {
 					$timestamp = null;
 					// If still fails, log the original exception
 					wfDebug(

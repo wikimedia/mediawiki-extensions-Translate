@@ -187,7 +187,7 @@ class EntitySearch {
 			try {
 				$title = $this->titleParser->parseTitle( $value[0] );
 				$label = $this->titleFormatter->getPrefixedText( $title );
-			} catch ( MalformedTitleException $e ) {
+			} catch ( MalformedTitleException ) {
 				$label = $value[0];
 			}
 			$value = [
