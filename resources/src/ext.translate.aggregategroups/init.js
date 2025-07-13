@@ -52,7 +52,7 @@ function addDeleteAction() {
 	} );
 
 	const div = document.createElement( 'div' );
-	document.querySelector( '#ext-translate-aggregategroups-refresh' )
+	document.querySelector( '#ext-translate-aggregategroups' )
 		.insertAdjacentElement( 'afterend', div );
 	vmDeleteDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
 	vmDeleteDialogApp.mount( div );
@@ -103,7 +103,7 @@ function addEditAction() {
 	} );
 
 	const div = document.createElement( 'div' );
-	document.querySelector( '#ext-translate-aggregategroups-refresh' )
+	document.querySelector( '#ext-translate-aggregategroups' )
 		.insertAdjacentElement( 'afterend', div );
 	vmEditDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
 	vmEditDialogApp.mount( div );
@@ -267,7 +267,7 @@ function getParentGroupId( element ) {
 	return element.closest( 'details.cdx-accordion' ).dataset.groupId;
 }
 
-const appContainer = document.querySelector( '#ext-translate-aggregategroups-refresh' );
+const appContainer = document.querySelector( '#ext-translate-aggregategroups' );
 const hasPermissionToManage = appContainer.dataset.haspermission;
 if ( hasPermissionToManage ) {
 	const aggregateGroupsManageApp = Vue.createMwApp( App );
