@@ -39,7 +39,6 @@
 			</template>
 			<cdx-text-area v-model="formData.description"></cdx-text-area>
 		</cdx-field>
-		<!-- FIXME: Remove the double (optional) suffix that appears by updating the English string -->
 		<cdx-field :optional="true">
 			<template #label>
 				{{ $i18n( "tpt-aggregategroup-select-source-language" ) }}

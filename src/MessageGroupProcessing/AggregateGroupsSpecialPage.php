@@ -55,7 +55,9 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 			$this->hasPermission = true;
 		}
 
-		if ( $this->getRequest()->getBool( 'refresh' ) ) {
+		// Load the Codex version by default
+		// If "refresh" query param is set to 0, then load the non-Codex version
+		if ( $this->getRequest()->getBool( 'refresh', true ) ) {
 			$this->loadRefreshVersion();
 			return;
 		}
