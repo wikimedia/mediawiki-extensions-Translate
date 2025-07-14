@@ -51,7 +51,7 @@
 	"tpt-showpage-intro": "Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.\nControleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.",
 	"tpt-mark-summary": "Deze versie gemarkeerd voor vertaling",
 	"tpt-mark-nochanges": "Er zijn geen wijzigingen om te beoordelen. Als u deze pagina markeert voor vertaling, worden de pagina en de bestaande vertaaleenheden niet bewerkt.",
-	"tpt-edit-failed": "De pagina \"$1\" kon niet bijgewerkt worden.",
+	"tpt-edit-failed": "De pagina $1 kan niet bijgewerkt worden.",
 	"tpt-duplicate": "De vertaaleenheid \"$1\" wordt meer dan eens gebruikt.",
 	"tpt-invalid": "De vertaaleenheidnaam $1 mag geen laag streepje (_) of schuine streep (/) bevatten.",
 	"tpt-unmarked": "De pagina [[:$1]] is niet langer gemarkeerd voor vertaling.",
