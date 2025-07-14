@@ -88,6 +88,8 @@
 	"tpt-translation-settings-ignored-notice": "Редакторша билгалдаьккхина, хӀара агӀо гочйан билгалйаккха <em>ца</em> йеза аьлла.",
 	"tpt-translation-settings-proposed-editor-notice": "Гочдаран администраторшна тӀедуьллур ду хӀара агӀо гочйан билгалйаккхар. Цара гочдан агӀо билгалйаьккхича, гочдарш дан йиш йу хьан.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Редакторша билгалдаьккхина хӀара агӀо гочйан билгалйаккха йеза аьлла. Хьан йиш йу [$1 агӀо билгалйаккха] [$2 хийцарца] йа [$3 {{#Special:PagePreparation}}] лелина.",
+	"translate-ca-marktranslation": "Гочйан билгалйе",
+	"tooltip-ca-marktranslation": "ХӀара агӀо гочйан билгалйаккха",
 	"translate-tag-translate-link-desc": "Гочйе хӀара агӀо",
 	"translate-tag-markthis": "ХӀара агӀо гочйан билгалйаккха",
 	"translate-tag-markthisagain": "ХӀара агӀо <span class=\"plainlinks\">[$1 хийцина]</span> тӀаьххьара <span class=\"plainlinks\">[$2 гочйан билгалйаьккхинчул]</span> тӀаьхьа.",

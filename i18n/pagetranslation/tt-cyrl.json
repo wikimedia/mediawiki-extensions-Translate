@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ерней",
+			"Ильгиз",
 			"Ильнар",
 			"Рашат Якупов"
 		]
@@ -31,7 +32,7 @@
 	"pt-movepage-reason": "Сәбәп:",
 	"pt-deletepage-reason": "Сәбәп:",
 	"pt-deletepage-subpages": "Барлык асбитләрне бетерү",
-	"pm-import-button-label": "Кертү",
+	"pm-import-button-label": "Импортла",
 	"pm-savepages-button-label": "Саклау",
 	"pm-cancel-button-label": "Кире алу",
 	"pm-page-does-not-exist": "$1 барлыкта юк.",
