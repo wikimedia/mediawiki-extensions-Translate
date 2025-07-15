@@ -209,7 +209,7 @@
 	"translate-tes-server-error": "Излеу теджеулени алыуу джетишимсиз болду",
 	"translate-tes-entity-not-found": "Келишген эсебле джокъдула",
 	"translate-tes-type-to-search": "Излеу башлар ючюн джаз",
-	"supportedlanguages": "Атив тилле",
+	"supportedlanguages": "Актив тилле",
 	"supportedlanguages-summary": "Бу бет, {{SITENAME}} тилде актив тиллени тизмесини эмда ол тилни юсюнде ишлеген кёчюрюучюлени атлары бла бирге кёргюзюлюр.\nКёчюрюучюню аты не къадар кёб къошум этсе, ол къадар уллу джазылады.\nЧертген сызны бети, кёчюрюучюню къаллай бирни актив болгъанын кёргюзюр.",
 	"supportedlanguages-colorlegend": "Боялыу легенда: Ахыр кёчюрюу $1 кюн алгъа этилди.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",

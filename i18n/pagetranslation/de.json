@@ -137,7 +137,7 @@
 	"tpt-aggregategroup-close": "Schließen",
 	"tpt-aggregategroup-no-groups": "Derzeit gibt es in diesem Wiki keine aggregierten Gruppen.",
 	"tpt-aggregategroup-add-new": "Eine neue Hauptnachrichtengruppe hinzufügen",
-	"tpt-aggregategroup-select-source-language": "Benutzerdefinierte Ausgangssprache (optional):",
+	"tpt-aggregategroup-select-source-language": "Benutzerdefinierte Ausgangssprache",
 	"tpt-aggregategroup-language-none": "(Keine)",
 	"tpt-aggregategroup-new-name": "Name:",
 	"tpt-aggregategroup-new-description": "Beschreibung (optional):",

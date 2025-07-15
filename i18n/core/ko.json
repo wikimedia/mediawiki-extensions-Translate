@@ -26,6 +26,7 @@
 		]
 	},
 	"translate": "번역하기",
+	"translate-group": "$1 번역",
 	"translate-desc": "미디어위키와 다른 것들을 번역하기 위한 [[Special:Translate|특수 문서]]",
 	"translate-fuzzybot-desc": "이 계정은 미디어위키 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 번역 확장 기능]이 번역 문서를 관리하기 위해 사용되는 시스템 계정입니다.\n이 계정은 미디어위키 소프트웨어의 일부이며 특정 사용자에 의해 통제되지 않습니다.",
 	"translate-taskui-export-to-file": "네이티브 형식으로 내보내기",
