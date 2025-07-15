@@ -120,7 +120,7 @@
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|төзәтмә}} — соңгы төзәтмә $3 {{PLURAL:$3|көн}} элек",
 	"translate-jssti-add": "Исемлеккә өстәү",
 	"translate-smg-rename-cancel": "Кире алу",
-	"translate-manage-action-import": "Кертү",
+	"translate-manage-action-import": "Импортла",
 	"translate-manage-action-ignore": "Игнор",
 	"translate-manage-submit": "Башкару",
 	"translate-import-load": "Файлны төяү",
