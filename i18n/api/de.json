@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"*surak*",
 			"Brettchenweber",
 			"Colfin 96",
 			"Justman10000",
@@ -18,8 +19,10 @@
 	"apihelp-aggregategroups-param-do": "Was mit der zusammengefassten Nachrichtengruppe getan werden soll.",
 	"apihelp-aggregategroups-param-aggregategroup": "Kennung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung. Siehe <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-aggregategroups-param-groups": "Liste der zusammengefassten Nachrichtengruppen, s. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Name der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-groupdescription": "Beschreibung der zusammengefassten Nachrichtengruppe.",
+	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Zusammengefasste Nachrichtengruppe zur Quellsprache oder <kbd>-</kbd>, um keine Quellsprache festzulegen oder die bestehende zu entfernen.",
 	"apihelp-aggregategroups-example-1": "Verknüpft eine Gruppe",
 	"apihelp-groupreview-summary": "Nachrichtengruppen-Workflow-Status festlegen.",
 	"apihelp-groupreview-param-group": "Nachrichtengruppe. Siehe <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
