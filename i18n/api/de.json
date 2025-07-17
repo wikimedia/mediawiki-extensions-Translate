@@ -11,6 +11,7 @@
 			"Predatorix",
 			"Seewolf",
 			"SorkDE",
+			"Tacsipacsi",
 			"TomatoCake"
 		]
 	},
@@ -22,7 +23,7 @@
 	"apihelp-aggregategroups-param-groups": "Liste der zusammengefassten Nachrichtengruppen, s. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Name der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-groupdescription": "Beschreibung der zusammengefassten Nachrichtengruppe.",
-	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Zusammengefasste Nachrichtengruppe zur Quellsprache oder <kbd>-</kbd>, um keine Quellsprache festzulegen oder die bestehende zu entfernen.",
+	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Quellsprache der zusammengefassten Nachrichtengruppe oder <kbd>-</kbd>, um keine Quellsprache festzulegen bzw. die bestehende zu entfernen.",
 	"apihelp-aggregategroups-example-1": "Verknüpft eine Gruppe",
 	"apihelp-groupreview-summary": "Nachrichtengruppen-Workflow-Status festlegen.",
 	"apihelp-groupreview-param-group": "Nachrichtengruppe. Siehe <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
