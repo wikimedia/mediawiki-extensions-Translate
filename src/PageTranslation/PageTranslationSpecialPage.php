@@ -999,6 +999,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs' )->text(),
 						'align' => 'top',
+						'help' => new HtmlSnippet( Html::element(
+							'span',
+							[ 'class' => 'tux-nojs' ],
+							$this->msg( 'tpt-select-prioritylangs-help' )->text()
+						) ),
+						'helpInline' => true,
 					]
 				),
 				new FieldLayout(
@@ -1009,7 +1015,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs-force' )->text(),
 						'align' => 'inline',
-						'help' => new HtmlSnippet( $this->msg( 'tpt-select-no-prioritylangs-force' )->parse() ),
+						'help' => $this->msg( 'tpt-select-no-prioritylangs-force' )->text(),
+						'helpInline' => true,
 					]
 				),
 				new FieldLayout(

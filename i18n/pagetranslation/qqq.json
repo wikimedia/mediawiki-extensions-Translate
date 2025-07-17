@@ -86,6 +86,7 @@
 	"tpt-tag-oldsyntax": "Description that can be used as tag for translatable pages using old syntax version.",
 	"tpt-tag-no-transclusion-support": "Description that can be used as tag for translatable pages that do not support translation aware template transclusion.",
 	"tpt-select-prioritylangs": "Label for the input box to enter preferred languages",
+	"tpt-select-prioritylangs-help": "Help text for the input box to enter preferred languages, displayed when JavaScript is disabled",
 	"tpt-select-prioritylangs-force": "Label for the checkbox to make the translation restriction",
 	"tpt-select-no-prioritylangs-force": "Information text that shows what happens if force priority languages is checked without selecting any priority languages .",
 	"tpt-select-prioritylangs-reason": "Label for the textbox to enter reason for restriction.\n{{Identical|Reason}}",
