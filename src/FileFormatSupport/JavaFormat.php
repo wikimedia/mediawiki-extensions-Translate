@@ -79,8 +79,8 @@ class JavaFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			}
 
 			// @todo This doesn't handle the pathological case of even number of trailing \
-			if ( strlen( $value ) && $value[strlen( $value ) - 1] === "\\" ) {
-				$value = substr( $value, 0, strlen( $value ) - 1 );
+			if ( str_ends_with( $value, "\\" ) ) {
+				$value = substr( $value, 0, -1 );
 				$lineContinuation = true;
 			} else {
 				$messages[$key] = ltrim( $value );
