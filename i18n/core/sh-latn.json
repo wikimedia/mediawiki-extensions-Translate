@@ -7,6 +7,7 @@
 		]
 	},
 	"translate": "Prevođenje",
+	"translate-group": "$1 – prevođenje",
 	"translate-desc": "[[Special:Translate|Posebna stranica]] za prevođenje Medijavikija i drugih poruka",
 	"translate-taskui-export-to-file": "Izvezi u izvornom obliku",
 	"translate-taskui-export-as-po": "Izvezi za vanmrežno prevođenje",

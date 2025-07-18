@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
+	"translate-ca-marktranslation": "Označi za prevođenje",
 	"tpt-languages-legend": "Drugi jezici:",
 	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
 	"tpt-aggregategroup-update-cancel": "Otkaži",
