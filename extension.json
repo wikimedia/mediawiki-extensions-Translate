@@ -171,6 +171,7 @@
 			"cleanChanges"
 		],
 		"ChangesListSpecialPageStructuredFilters": "recentChangesTranslationFilter",
+		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onDelete",
 		"TranslateEventMessageMembershipChange": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onGroupChange",
 		"ArticleContentOnDiff": "legacyInterface",
@@ -266,11 +267,6 @@
 			"factory": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\TranslatableBundleImporter::getInstance"
 		}
 	},
-	"NotificationMiddleware": [
-		{
-			"class": "MediaWiki\\Extension\\Translate\\Notifications\\FilterTranslationReviewNotificationsMiddleware"
-		}
-	],
 	"SpecialPages": {
 		"Translate": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage",
