@@ -15,7 +15,8 @@
 			"Toniher",
 			"Vriullop",
 			"පසිඳු කාවින්ද",
-			"Robertgarrigos"
+			"Robertgarrigos",
+			"It's moon"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -58,7 +59,7 @@
 	"translate-tag-translate-link-desc": "Traduïu aquesta pàgina",
 	"translate-tag-markthis": "Marca la pàgina per traduir",
 	"translate-tag-hasnew": "Aquesta pàgina conté <span class=\"plainlinks\">[$1 modificacions]</span> que no estan marcades per a la traducció.",
-	"tpt-translation-intro": "Aquesta pàgina és una <span class=\"plainlinks\">[$1 versió traduïda]</span> de la pàgina [[$2]] i la traducció és completada al $3&nbsp;%.",
+	"tpt-translation-intro": "Aquesta pàgina és una <span class=\"plainlinks\">[$1 versió traduïda]</span> de la pàgina [[$2]] i la traducció està completa al $3%.",
 	"tpt-translation-intro-fuzzy": "Les traduccions obsoletes es marquen així.",
 	"tpt-languages-legend": "Altres idiomes:",
 	"tpt-languages-zero": "Inicia la traducció per a aquesta llengua",

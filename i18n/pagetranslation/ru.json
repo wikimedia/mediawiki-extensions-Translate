@@ -97,7 +97,7 @@
 	"tpt-rev-discourage-tooltip": "Предотвратить дальнейшие переводы на этой странице.",
 	"tpt-rev-encourage-tooltip": "Восстановить эту страницу для обычного перевода.",
 	"translate-tag-translate-link-desc": "Перевести эту страницу",
-	"translate-tag-markthis": "Отметить эту страницу для перевода",
+	"translate-tag-markthis": "Пометить эту страницу для перевода",
 	"translate-tag-markthisagain": "Эта страница была <span class=\"plainlinks\">[$1 изменена]</span> с момента последней <span class=\"plainlinks\">[$2 отметки о переводе]</span>.",
 	"translate-tag-hasnew": "на этой странице были произведены <span class=\"plainlinks\">[$1 изменения]</span>, не отмеченные для перевода.",
 	"tpt-translation-intro": "Это <span class=\"plainlinks\">[$1 перевод]</span> страницы [[$2]], он готов на $3%.",
