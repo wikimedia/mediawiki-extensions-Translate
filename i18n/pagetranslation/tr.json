@@ -117,7 +117,7 @@
 	"tpt-aggregategroup-new-description": "Açıklama (isteğe bağlı):",
 	"tpt-aggregategroup-remove-confirm": "Bu toplu grubu silmek istediğinizden emin misiniz?",
 	"tpt-aggregategroup-invalid-group": "Grup mevcut değil",
-	"tpt-aggregategroup-edit-name": "İsim:",
+	"tpt-aggregategroup-edit-name": "Ad",
 	"tpt-aggregategroup-edit-description": "Açıklama:",
 	"tpt-aggregategroup-update": "Kaydet",
 	"tpt-aggregategroup-update-cancel": "İptal",
