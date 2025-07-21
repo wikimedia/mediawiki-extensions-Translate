@@ -15,7 +15,7 @@
 	"namemsg": "translate-extensionname",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
-		"MediaWiki": ">= 1.44.0",
+		"MediaWiki": ">= 1.45.0",
 		"extensions": {
 			"UniversalLanguageSelector": "*"
 		}
@@ -171,7 +171,6 @@
 			"cleanChanges"
 		],
 		"ChangesListSpecialPageStructuredFilters": "recentChangesTranslationFilter",
-		"AbortEmailNotification": "MediaWiki\\Extension\\Translate\\HookHandler::onAbortEmailNotificationReview",
 		"ArticleDeleteComplete": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onDelete",
 		"TranslateEventMessageMembershipChange": "MediaWiki\\Extension\\Translate\\TtmServer\\TtmServer::onGroupChange",
 		"ArticleContentOnDiff": "legacyInterface",
@@ -267,6 +266,11 @@
 			"factory": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\TranslatableBundleImporter::getInstance"
 		}
 	},
+	"NotificationMiddleware": [
+		{
+			"class": "MediaWiki\\Extension\\Translate\\Notifications\\FilterTranslationReviewNotificationsMiddleware"
+		}
+	],
 	"SpecialPages": {
 		"Translate": {
 			"class": "\\MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage",

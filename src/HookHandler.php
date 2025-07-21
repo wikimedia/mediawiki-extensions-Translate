@@ -67,7 +67,6 @@ use MediaWiki\Title\TitleValue;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
 use MediaWiki\Xml\XmlSelect;
-use RecentChange;
 use SearchEngine;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -808,15 +807,6 @@ class HookHandler implements
 					->execute();
 			}
 		}
-	}
-
-	/** Hook: AbortEmailNotification */
-	public static function onAbortEmailNotificationReview(
-		User $editor,
-		Title $title,
-		RecentChange $rc
-	): bool {
-		return $rc->getAttribute( 'rc_log_type' ) !== 'translationreview';
 	}
 
 	/**
