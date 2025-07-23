@@ -115,7 +115,7 @@
 	"tpt-translation-settings-proposed-editor-notice": "Администраторам перевода будет рекомендовано пометить эту страницу как доступную для перевода. Вы сможете вносить переводы, как только они сделают такую пометку.",
 	"tpt-translation-settings-proposed-pagetranslation-notice": "Редакторы указали, что эта страница должна быть помечена как доступная для перевода. Вы можете [$1 разметить страницу] путём [$2 её отредактирования] или с помощью страницы [$3 {{#Special:PagePreparation}}].",
 	"translate-tag-translate-link-desc": "Перевести эту страницу",
-	"translate-tag-markthis": "Отметить эту страницу для перевода",
+	"translate-tag-markthis": "Пометить эту страницу для перевода",
 	"translate-tag-markthisagain": "Эта страница была <span class=\"plainlinks\">[$1 изменена]</span> с момента последней <span class=\"plainlinks\">[$2 отметки о переводе]</span>.",
 	"translate-tag-hasnew": "на этой странице были произведены <span class=\"plainlinks\">[$1 изменения]</span>, не отмеченные для перевода.",
 	"translate-tag-translate-mb-link-desc": "Переведите этот пакет сообщений",

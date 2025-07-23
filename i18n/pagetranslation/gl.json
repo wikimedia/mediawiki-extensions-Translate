@@ -317,7 +317,7 @@
 	"tag-translate-translation-pages-description": "Edicións automáticas nas páxinas de tradución feitas pola extensión Translate",
 	"tpt-cant-edit-source-language": "Non se poden editar manualmente as unidades de tradución na lingua de orixe. Fai o cambio á páxina base ([[:$1]]) e despois márcao para traducilo.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Inicia sesión para ver ou editar os elementos das subscricións dos teus grupos de mensaxes.",
-	"tpt-manage-message-group-subscriptions-normal-legend": "Cancelar a subscrición dos grupos de mensaxes",
+	"tpt-manage-message-group-subscriptions-normal-legend": "Cancelar a subscrición aos grupos de mensaxes",
 	"tpt-manage-message-group-subscriptions-normal-explain": "A continuación amósanse os grupos de mensaxes aos que tes unha subscrición. Para eliminar un grupo de mensaxes, marca a caixa situada ao seu carón e fai clic en \"Eliminar as subscricións\". Tamén podes editar a [[Special:ManageMessageGroupSubscriptions/raw|lista en bruto]].",
 	"tpt-manage-message-group-subscriptions-normal-submit": "Eliminar as subscricións",
 	"tpt-manage-message-group-subscriptions-raw-explain": "A continuación amósanse os grupos de mensaxes aos que tes unha subscrición. A lista pódese editar engadindo e eliminando elementos; un grupo de mensaxes por liña. Ao rematares, preme en \"Actualizar as subscricións\"",
