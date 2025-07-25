@@ -59,6 +59,7 @@
 		]
 	},
 	"translate": "翻译",
+	"translate-group": "翻译$1",
 	"translate-extensionname": "翻译",
 	"translate-desc": "翻译MediaWiki及其他内容的[[Special:Translate|特殊页面]]",
 	"translate-fuzzybot-desc": "这是MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻译扩展]用于维护翻译的特殊系统账号。此账号是MediaWiki软件的组成部分，不属于任何用户。",

@@ -65,8 +65,6 @@
 	"tpt-aggregategroup-add": "Zuefiege",
 	"tpt-aggregategroup-save": "Spychere",
 	"tpt-aggregategroup-add-new": "E neji Hauptnochrichtegruppe zuefiege",
-	"tpt-aggregategroup-new-name": "Name:",
-	"tpt-aggregategroup-new-description": "Bschrybig (optional):",
 	"tpt-aggregategroup-remove-confirm": "Bisch sicher, ass Du die Gruppe witt lesche?",
 	"tpt-aggregategroup-invalid-group": "Gruppe git s nit",
 	"pt-parse-open": "Uasymmetrischi &lt;translate&gt;-Markierig.\nIbersetzigsvorlag: <pre>$1</pre>",

@@ -34,8 +34,6 @@
 	"tpt-discouraged-language-force-header": "ఈ పేజీని $1 లోకి అనువదించలేరు.",
 	"tpt-aggregategroup-add": "చేర్చు",
 	"tpt-aggregategroup-save": "భద్రపరచు",
-	"tpt-aggregategroup-new-name": "పేరు:",
-	"tpt-aggregategroup-new-description": "వివరణ (ఐచ్చికం):",
 	"log-name-pagetranslation": "పేజీ అనువాదాల చిట్టా",
 	"pt-movepage-list-pages": "తరలించాల్సిన పుటల యొక్క జాబితా",
 	"pt-movepage-list-translation": "అనువాద పుటలు",

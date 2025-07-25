@@ -11,7 +11,6 @@
 	"tpt-aggregategroup-add": "Lissää",
 	"tpt-aggregategroup-save": "Säästä",
 	"tpt-aggregategroup-edit-description": "Kuvvaus:",
-	"tpt-aggregategroup-update": "Säästä",
 	"tpt-aggregategroup-update-cancel": "Lopeta",
 	"pt-movepage-subpages": "Siirä kaikki alasivut",
 	"pt-movepage-intro": "Tällä spesiaalisivula voit siirtää käänettäväksi merkittyjä sivuja.\nSiirto ei tapahdu heti, koska useita sivuja häätyy siirthää.\nSivut ovat lukittuna siirron ajan.\nEpäonnistuneet siirrot säästetään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne häätyy korjata käsin.",

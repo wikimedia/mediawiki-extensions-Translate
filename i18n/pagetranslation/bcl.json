@@ -63,8 +63,6 @@
 	"tpt-aggregategroup-add": "Dugangan",
 	"tpt-aggregategroup-save": "Ipagtagama",
 	"tpt-aggregategroup-add-new": "Dugangan nin sarong baguhon na sinurumpay na grupo",
-	"tpt-aggregategroup-new-name": "An pangaran:",
-	"tpt-aggregategroup-new-description": "Paglaladawan (puwedeng mayo kaini):",
 	"tpt-aggregategroup-remove-confirm": "Segurado kan na gusto mong puraon ining sinurumpay na grupo?",
 	"tpt-aggregategroup-invalid-group": "An grupo bakong eksistido",
 	"pt-parse-open": "Bakong balansiyadong &lt;translate> marka.\nPanguyog sa pagdakit-taramon: <pre>$1</pre>",

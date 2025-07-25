@@ -64,8 +64,6 @@
 	"tpt-aggregategroup-add": "Gionta",
 	"tpt-aggregategroup-save": "Salva",
 	"tpt-aggregategroup-add-new": "Gionta na neuva partìa agregà",
-	"tpt-aggregategroup-new-name": "Nòm:",
-	"tpt-aggregategroup-new-description": "Descrission (opsional):",
 	"tpt-aggregategroup-remove-confirm": "É-lo sicur ëd vorèj scancelé sta partìa d'agregà?",
 	"tpt-aggregategroup-invalid-group": "La partìa a esist pa",
 	"pt-parse-open": "Tichëtta &lt;translate> pa bilansà.\nStamp ëd viragi: <pre>$1</pre>",

@@ -69,8 +69,6 @@
 	"tpt-aggregategroup-add": "Əlavə et",
 	"tpt-aggregategroup-save": "Saxla",
 	"tpt-aggregategroup-add-new": "Yeni aqreqat qrupu əlavə et",
-	"tpt-aggregategroup-new-name": "Ad:",
-	"tpt-aggregategroup-new-description": "İzah (məcburi deyil):",
 	"tpt-aggregategroup-remove-confirm": "Bu aqreqat qrupunu silmək istədiyinizdən əminsiniz?",
 	"tpt-aggregategroup-invalid-group": "Qrup mövcud deyil",
 	"log-name-messagebundle": "Mesaj paketi jurnalı",

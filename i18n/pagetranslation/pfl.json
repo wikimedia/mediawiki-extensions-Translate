@@ -62,8 +62,6 @@
 	"tpt-aggregategroup-add": "Dzufiesche",
 	"tpt-aggregategroup-save": "Schbaischare",
 	"tpt-aggregategroup-add-new": "Ä naiji zsommegfasdi Grubb dzufiesche",
-	"tpt-aggregategroup-new-name": "Noame:",
-	"tpt-aggregategroup-new-description": "Bschraiwung (fraiwillisch)",
 	"tpt-aggregategroup-remove-confirm": "Bischda sischa, dass die zsommegfasdi Grubb lesche wilschd?",
 	"tpt-aggregategroup-invalid-group": "Die Grubb hods ned",
 	"pt-parse-open": "Ä &lt;translate&gt;-Uffschrifd hodkä Gescheschdigg.\nIwasedzungsvorlaach: <pre>$1</pre>",

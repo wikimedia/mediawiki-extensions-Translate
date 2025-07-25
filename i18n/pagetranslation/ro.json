@@ -59,8 +59,6 @@
 	"tpt-aggregategroup-add": "Adaugă",
 	"tpt-aggregategroup-save": "Salvează",
 	"tpt-aggregategroup-add-new": "Adaugă un grup de agregare nou",
-	"tpt-aggregategroup-new-name": "Nume:",
-	"tpt-aggregategroup-new-description": "Descriere (opțională):",
 	"tpt-aggregategroup-remove-confirm": "Sigur doriți să ștergeți acest grup de agregare?",
 	"tpt-aggregategroup-invalid-group": "Grupul nu există",
 	"tpt-aggregategroup-remove-item": "Eliminați acest grup de mesaje din grupul agregat",

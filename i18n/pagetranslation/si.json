@@ -62,8 +62,6 @@
 	"tpt-aggregategroup-add": "එක් කරන්න",
 	"tpt-aggregategroup-save": "සුරකින්න",
 	"tpt-aggregategroup-add-new": "නව ඓක්‍යය කාණ්ඩයක් එක් කරන්න",
-	"tpt-aggregategroup-new-name": "නම:",
-	"tpt-aggregategroup-new-description": "විස්තරය (අමතර):",
 	"tpt-aggregategroup-invalid-group": "කාණ්ඩය නොපවතියි",
 	"pt-shake-empty": "$1 ලකුණුකරණය සඳහා හිස් කාණ්ඩය.",
 	"log-name-pagetranslation": "පිටු පරිවර්තන ලඝු සටහන",

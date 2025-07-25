@@ -39,16 +39,10 @@
 	"tpt-aggregategroup-save": "सहेजी",
 	"tpt-aggregategroup-close": "बन्द करी",
 	"tpt-aggregategroup-add-new": "एगो नया स्थायी समूह जोड़ी",
-	"tpt-aggregategroup-new-name": "नाम:",
-	"tpt-aggregategroup-new-description": "विवरण (बैकल्पिक):",
 	"tpt-aggregategroup-invalid-group": "समूह उपलब्ध न हे",
 	"tpt-aggregategroup-edit-name": "नाम:",
 	"tpt-aggregategroup-edit-description": "बिवरण:",
-	"tpt-aggregategroup-update": "सहेजी",
 	"tpt-aggregategroup-update-cancel": "निरस्त करी",
 	"tpt-aggregategroup-expand-all-groups": "सब समूह फैलावी",
-	"tpt-aggregategroup-collapse-all-groups": "सब समूह सिकोड़ी",
-	"tpt-aggregategroup-expand-group": "समूह फैलावी",
-	"tpt-aggregategroup-collapse-group": "समूह सिकोड़ी",
-	"tpt-invalid-group": "अमान्य समूह"
+	"tpt-aggregategroup-collapse-all-groups": "सब समूह सिकोड़ी"
 }

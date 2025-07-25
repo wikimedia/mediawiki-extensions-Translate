@@ -71,8 +71,6 @@
 	"tpt-aggregategroup-add": "Lisa",
 	"tpt-aggregategroup-save": "Salvesta",
 	"tpt-aggregategroup-add-new": "Lisa uus ühendrühm",
-	"tpt-aggregategroup-new-name": "Nimi:",
-	"tpt-aggregategroup-new-description": "Kirjeldus (valikuline):",
 	"tpt-aggregategroup-remove-confirm": "Kas oled kindel, et soovid selle ühendrühma kustutada?",
 	"tpt-aggregategroup-invalid-group": "Rühma pole",
 	"tpt-aggregategroup-edit-name": "Nimi:",

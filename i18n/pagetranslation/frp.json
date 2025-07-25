@@ -50,8 +50,6 @@
 	"tpt-render-summary": "Misa a jorn por étre en acôrd avouéc la novèla vèrsion de la pâge sôrsa",
 	"tpt-aggregategroup-add": "Apondre",
 	"tpt-aggregategroup-save": "Encartar",
-	"tpt-aggregategroup-new-name": "Nom :",
-	"tpt-aggregategroup-new-description": "Dèscripcion (u chouèx) :",
 	"tpt-aggregategroup-invalid-group": "Lo groupo ègziste pas",
 	"pt-parse-open": "Balisa &lt;translate> asimètrica.\nModèlo de traduccion : <pre>$1</pre>",
 	"pt-parse-close": "Balisa &lt;/translate> asimètrica.\nModèlo de traduccion : <pre>$1</pre>",

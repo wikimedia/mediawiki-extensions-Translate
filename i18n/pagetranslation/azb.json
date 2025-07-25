@@ -66,8 +66,6 @@
 	"tpt-aggregategroup-add": "آرتیر",
 	"tpt-aggregategroup-save": "ذخیره ائت",
 	"tpt-aggregategroup-add-new": "بیر یئنی بیرلشمه قروپو آرتیر",
-	"tpt-aggregategroup-new-name": "آد:",
-	"tpt-aggregategroup-new-description": "توضیح (ایستگه باغلی):",
 	"tpt-aggregategroup-remove-confirm": "بو بیرلشمه قروپونو سیلمکدن آرخایینسینیز؟",
 	"tpt-aggregategroup-invalid-group": "قروپ یوخدور",
 	"pt-parse-open": "بالانس اولمامیش &lt;translate> اِتیکِتی.\nچئویرمک شابلونو: <pre>$1</pre>",

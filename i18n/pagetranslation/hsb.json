@@ -66,8 +66,6 @@
 	"tpt-aggregategroup-add": "Přidać",
 	"tpt-aggregategroup-save": "Składować",
 	"tpt-aggregategroup-add-new": "Nowu zjimansku skupinu přidać",
-	"tpt-aggregategroup-new-name": "Mjeno:",
-	"tpt-aggregategroup-new-description": "Wopisanje (opcionalne):",
 	"tpt-aggregategroup-remove-confirm": "Chceš tutu skupinu woprawdźe zhašeć?",
 	"tpt-aggregategroup-invalid-group": "Skupina njeeksistuje",
 	"pt-parse-open": "Asymetriska taflička &lt;translate>.\nPřełožowanska předłoha: <pre>$1</pre>",
