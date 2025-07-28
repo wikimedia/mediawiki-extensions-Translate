@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"JeffreyKim",
 			"Winston Sung"
 		]
 	},
+	"searchtranslations": "搵翻譯",
+	"tux-sst-edit": "編輯翻譯",
 	"tux-sst-ellipsis-outdated": "過咗時嘅翻譯"
 }

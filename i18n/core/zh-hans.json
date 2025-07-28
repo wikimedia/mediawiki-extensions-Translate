@@ -347,6 +347,7 @@
 	"translate-import-err-no-such-file": "文件<nowiki>$1</nowiki>不存在或未被本地上传。",
 	"translate-import-err-stale-group": "该文件属于的消息组不存在。",
 	"translate-import-err-no-headers": "文件不是翻译扩展程序所需格式的Gettext文件：无法从文件头确定消息组和语言。",
+	"translate-import-err-gettext-parse-failed": "文件不是符合格式的Gettext文件：\n$1",
 	"translate-js-support-unsaved-warning": "您有未发布的翻译。",
 	"translate-documentation-language": "消息文档",
 	"translate-searchprofile": "翻译",
@@ -385,6 +386,7 @@
 	"translate-msggroupselector-search-recent": "最近",
 	"translate-msggroupselector-search-watched": "已监视",
 	"translate-msggroupselector-view-subprojects": "$1{{PLURAL:$1|个子消息组}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "管理您的订阅",
 	"tux-languageselector": "翻译为",
 	"tux-select-target-language": "翻译目标语言",
 	"tux-watch-group": "监视",
@@ -507,6 +509,10 @@
 	"translate-messagebundle-group-description": "于页面[[$2|$1]]定义的消息包的消息。",
 	"translate-messagebundle-change-sourcelanguage": "依据元数据设置消息包的源语言。",
 	"translate-messagebundle-sourcelanguage-changed": "消息包的源语言一旦创建就无法更改。",
+	"translate-error-association-failure": "以下消息{{PLURAL:$2|组}}无法与聚合组关联：$1",
+	"translate-error-invalid-aggregategroup": "无效的聚合消息组$1",
+	"translate-error-aggregategroup-source-language-mismatch": "{{PLURAL:$3|组$1}}与聚合组的源语言（$2）不同。",
+	"translate-error-duplicate-aggregategroup": "已存在名称为$1的聚合消息组。",
 	"log-action-filter-translationreview": "操作类型：",
 	"log-action-filter-translationreview-message": "复核单独翻译消息",
 	"log-action-filter-translationreview-group": "翻译进度的状态更改",
@@ -520,5 +526,7 @@
 	"notification-body-translate-mgs-message-added": "$1则新增或更新{{PLURAL:$1|消息}}",
 	"notification-link-mgs-group-translate": "翻译$1",
 	"tpt-cleanchanges-language": "语言：",
-	"tpt-cleanchanges-language-na": "所有"
+	"tpt-cleanchanges-language-na": "所有",
+	"namespaceinfo-description-ns1198": "包含译文单元的命名空间，即[[Special:PageTranslation|可翻译页面]]和[[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|消息包]]中的各个可翻译和已翻译片段",
+	"namespaceinfo-description-ns1199": "译文单元的讨论页面"
 }
