@@ -66,10 +66,9 @@ class TestMT extends Maintenance {
 		}
 
 		$logger = new class( fn ( $msg ) => $this->output( $msg ) ) extends AbstractLogger {
-			private $logger;
+			private Closure $logger;
 
-			/** @inheritDoc */
-			public function __construct( $logger ) {
+			public function __construct( Closure $logger ) {
 				$this->logger = $logger;
 			}
 
