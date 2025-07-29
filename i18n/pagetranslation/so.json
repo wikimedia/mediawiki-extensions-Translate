@@ -5,5 +5,7 @@
 			"Abshirdheere"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% la turjumay)"
+	"tpt-translation-settings-subtitle": "Xogta boggani ma tahay mid deggan oo diyaar u ah tarjumaada bulshada?",
+	"tpt-languages-nonzero": "$1 ($2% la turjumay)",
+	"pt-cta-mark-translation": "Boggaan waxaa lagu calaamadayn karaa  turjumaadda bulshada. Hagaajinta [$1 dooqyada turjumaadda bogga] si aad u ogaysiiso tifaftirayaasha in ay bilaabi karaan turjumaadda waxa ku jira."
 }

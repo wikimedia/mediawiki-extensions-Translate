@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kizito"
+			"Kizito",
+			"Kateregga1"
 		]
 	},
 	"translate": "Vvuunula",
@@ -22,5 +23,6 @@
 	"translate-statsf-scale-hours": "Ssaawa",
 	"translate-statsf-submit": "Kulagako",
 	"languagestats": "Ebivvuunulidwa mu lulimi",
-	"translate-language": "Lulimi"
+	"translate-language": "Lulimi",
+	"translate-documentation-language": "Ebiwandiiko by'obubaka"
 }
