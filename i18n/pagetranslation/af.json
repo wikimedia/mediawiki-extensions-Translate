@@ -4,7 +4,8 @@
 			"Ansumang",
 			"Naudefj",
 			"පසිඳු කාවින්ද",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"McDutchie"
 		]
 	},
 	"pagetranslation": "Bladsyvertaling",
@@ -25,7 +26,7 @@
 	"tpt-saveok": "Die bladsy [[:$1]] is gemerk vir vertaling met $2 uitstaande {{PLURAL:$2|vertaaleenheid|vertaaleenhede}}.\nDie bladsy kan nou <span class=\"plainlinks\">[$3 vertaal]</span> word.",
 	"tpt-showpage-intro": "Hieronder word nuwe, bestaande en verwyderde afdelings gelys.\nAlvorens u die weergawe vir vertaling merk, maak seker dat die veranderinge geminimeer word om onnodig werk vir vertalers te voorkom.",
 	"tpt-mark-summary": "Merk die weergawe vir vertaling",
-	"tpt-edit-failed": "Die bladsy \"$1\" kon nie bygewerk word nie.",
+	"tpt-edit-failed": "Die bladsy kon nie bygewerk word nie: $1",
 	"tpt-unmarked": "Bladsy $1 is nie meer vir vertaling gemerk nie.",
 	"tpt-list-nopages": "Geen bladsye is vir vertaling gemerk of is reg om vir vertaling gemerk te word nie.",
 	"tpt-old-pages-title": "Bladsye in vertaling",

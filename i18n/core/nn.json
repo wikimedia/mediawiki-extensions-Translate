@@ -307,6 +307,7 @@
 	"translate-statsbar-tooltip": "$1% omsett, $2% vurdert",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% omsett, $2% vurdert, $3% utdatert",
 	"translate-search-more-groups-info": "{{PLURAL:$1|éi gruppe|$1 grupper}} til",
+	"translate-hidetranslations": "Gøym omsetjingssider",
 	"tpt-cleanchanges-language": "Språk:",
 	"tpt-cleanchanges-language-na": "Alle"
 }
