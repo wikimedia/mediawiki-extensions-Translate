@@ -13,7 +13,8 @@
 			"Máté",
 			"Tacsipacsi",
 			"Tgr",
-			"Wilander"
+			"Wilander",
+			"Boro"
 		]
 	},
 	"translate": "Fordítás",
@@ -320,7 +321,7 @@
 	"tux-tab-translated": "Lefordítva",
 	"tux-tab-unproofread": "Nincs átnézve",
 	"tux-edit": "Szerkesztés",
-	"tux-status-optional": "Opcionális",
+	"tux-status-optional": "Nem kötelező",
 	"tux-status-fuzzy": "Elavult",
 	"tux-status-proofread": "Ellenőrizve",
 	"tux-status-translated": "Lefordítva",

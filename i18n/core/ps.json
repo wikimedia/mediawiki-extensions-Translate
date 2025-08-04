@@ -49,7 +49,7 @@
 	"translate-edit-title": "\"$1\" سمول",
 	"translate-edit-definition": "د پيغام پېژند",
 	"translate-edit-contribute": "ونډه اخيستل",
-	"translate-edit-no-information": "<em>دا بيِام لاسوند نه لري.\nکه تاسو په دې پوهېږئ چې چېرته او څنگه دا پيغام کارېږي، نو تاسو دې پيغام ته د لاسوند ورگډولو سره له نورو ژباړونکو سره مرسته کولی شئ.</em>",
+	"translate-edit-no-information": "<em>دا پيغام لاسوند نه لري.\nکه تاسو په دې پوهېږئ چې چېرته او څنگه دا پيغام کارېږي؛ نو تاسو دې پيغام ته د لاسوند ورگډولو سره له نورو ژباړونکو سره مرسته کولی شئ.</em>",
 	"translate-edit-information": "د پيغام په اړه مالومات ($1)",
 	"translate-edit-warnings": "د نابشپړه ژباړو په اړه گواښنې",
 	"translate-edit-tmmatch-source": "د ژباړې د سرچينې ليک: $1",

@@ -10,6 +10,7 @@
 	"pagetranslation": "Lehekülje tõlkimine",
 	"right-pagetranslation": "Märkida lehekülje versioone tõlkimiseks",
 	"action-pagetranslation": "tõlgitavaid lehekülgi hallata",
+	"tps-edit-sourcepage-text": "Redigeerid tõlkimise lähtelehekülge. Veendu, et oled tuttav järgmise dokumentatsiooniga:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Lähteteksti muutmine]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Märgistuse kasutamise näide]",
 	"tpt-section": "Tõlkeüksus $1",
 	"tpt-section-new": "Uus tõlkeüksus.\nNimi: $1",
 	"tpt-section-deleted": "Tõlkeüksus $1",
