@@ -87,6 +87,7 @@
 	"tpt-rev-encourage-tooltip": "このページを通常の翻訳に復元します。",
 	"tpt-translation-settings-page-title": "翻訳設定",
 	"tpt-translation-settings-save": "設定を保存",
+	"translate-ca-marktranslation": "翻訳対象に指定",
 	"translate-tag-translate-link-desc": "このページを翻訳",
 	"translate-tag-markthis": "このページを翻訳対象に指定",
 	"translate-tag-markthisagain": "このページには、最後に<span class=\"plainlinks\">[$2 翻訳対象に指定]</span>された時点以降の<span class=\"plainlinks\">[$1 変更]</span>があります。",

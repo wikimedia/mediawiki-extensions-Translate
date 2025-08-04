@@ -343,5 +343,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppen:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Alle Häkchen setzen",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnements aktualisieren",
-	"translate-category-summary": "Automatische Erstellung der Übersetzung der Kategorie, die auf [[$1]] verwendet wird"
+	"translate-category-summary": "Automatische Erstellung der Übersetzung der Kategorie, die auf [[$1]] verwendet wird",
+	"right-translate-empty-category": "Erstellen von Übersetzungseinheiten für leere Kategorien",
+	"action-translate-empty-category": "Übersetzungseinheiten für leere Kategorien zu erstellen",
+	"tpt-create-empty-category": "Für die leere Kategorie [[:$1]] kann keine Übersetzungseinheit erstellt werden."
 }

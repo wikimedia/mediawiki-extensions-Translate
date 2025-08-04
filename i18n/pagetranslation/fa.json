@@ -266,5 +266,8 @@
 	"visualeditor-annotations-translate-description": "این بازه به‌عنوان بازهٔ قابل‌ترجمه علامت‌گذاری شده است. لطفاً مطمئن باشید که شما رهنمودهای تعیین شدهٔ [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text تغییر متن مبدأ] را دنبال می‌کنید.",
 	"visualeditor-annotations-tvar-start": "ابتدای محتوای غیرقابل‌ترجمه",
 	"visualeditor-annotations-tvar-end": "انتهای محتوای غیرقابل‌ترجمه",
-	"visualeditor-annotations-tvar-description": "این محدوده به صورت بازهٔ غیرقابل‌ترجمه علامت‌گذاری شده است. لطفاً برای اطلاعات بیشتر به [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation قطعه‌بندی متن مبدأ] مراجعه کنید."
+	"visualeditor-annotations-tvar-description": "این محدوده به صورت بازهٔ غیرقابل‌ترجمه علامت‌گذاری شده است. لطفاً برای اطلاعات بیشتر به [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation قطعه‌بندی متن مبدأ] مراجعه کنید.",
+	"right-translate-empty-category": "ایجاد واحدهای ترجمه برای رده‌های خالی",
+	"action-translate-empty-category": "ایجاد واحدهای ترجمه برای رده‌های خالی",
+	"tpt-create-empty-category": "ناتوان در ایجاد واحد ترجمه برای ردهٔ [[:$1]] که خالی است."
 }

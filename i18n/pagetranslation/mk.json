@@ -329,5 +329,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Групи:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Штиклирај сè",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Поднови претплати",
-	"translate-category-summary": "Автоматско создавање на превод на категоријата користена на [[$1]]"
+	"translate-category-summary": "Автоматско создавање на превод на категоријата користена на [[$1]]",
+	"right-translate-empty-category": "Создавање на преводни единици за празни категории",
+	"action-translate-empty-category": "создавање на преводни единици за празни категории",
+	"tpt-create-empty-category": "Не можам да создадам преводна единица за категоријата [[:$1]], која е празна."
 }
