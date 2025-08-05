@@ -3,19 +3,20 @@
 		"authors": [
 			"Minh Nguyen",
 			"NguoiDungKhongDinhDanh",
+			"Nvdtn19",
 			"Vinhtantran"
 		]
 	},
 	"managetranslatorsandbox": "Quản lý chỗ thử biên dịch",
 	"tsb-filter-pending": "Yêu cầu đang chờ",
 	"tsb-reminder-title-generic": "Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên",
-	"tsb-reminder-content-generic": "Xin chào $1,\n\nCảm ơn bạn đã tham gia {{SITENAME}}.\n\nSau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.\n\nXin vui lòng ghé vào biên dịch thêm thông điệp:\n\n$2\n\n$3,\nBan quản lý {{SITENAME}}",
+	"tsb-reminder-content-generic": "Xin chào $1,\n\nCảm ơn bạn đã tham gia {{SITENAME}}.\n\nSau khi bạn dịch các bản dịch thử nghiệm, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.\n\nXin vui lòng ghé vào biên dịch thêm thông điệp:\n\n$2\n\n$3,\nBan quản lý {{SITENAME}}",
 	"tsb-reminder-sending": "Đang gửi lời nhắc nhở…",
 	"tsb-reminder-sent": "Đã gửi $1 lời nhắc nhở{{PLURAL:$1||, lần cuối cùng}} vào $2.",
 	"tsb-reminder-sent-new": "Đã gửi lời nhắc nhở",
 	"tsb-reminder-failed": "Thất bại khi gửi lời nhắc nhở",
 	"tsb-email-promoted-subject": "Bạn mới trở thành biên dịch viên tại {{SITENAME}}",
-	"tsb-email-promoted-body": "Xin chào {{GENDER:$1|$1}},\n\nChào mừng bạn đã trở thành biên dịch viên tại {{SITENAME}}! Tôi đã kiểm tra các bản dịch thử nghiệm của bạn và cấp quyền biên dịch cho bạn.\n\nHãy ghé vào {{SITENAME}} mỗi ngày để tiếp tục biên dịch:\n$2\n\nCảm ơn bạn vì những đóng góp của bạn!\n\n{{GENDER:$3}}$3,\nNhóm {{SITENAME}}",
+	"tsb-email-promoted-body": "Xin chào {{GENDER:$1|$1}},\n\nChào mừng bạn đã trở thành biên dịch viên tại {{SITENAME}}! Tôi đã kiểm tra các bản dịch thử nghiệm của bạn và cấp quyền biên dịch cho bạn.\n\nHãy ghé vào {{SITENAME}} mỗi ngày để tiếp tục biên dịch:\n$2\n\nCảm ơn bạn vì những đóng góp của bạn! \n\n{{GENDER:$3}}$3,\nNhóm {{SITENAME}}",
 	"tsb-email-rejected-subject": "Đơn xin trở thành biên dịch viên tại {{SITENAME}} đã bị từ chối",
 	"tsb-email-rejected-body": "Xin chào {{GENDER:$1|$1}},\n\nCảm ơn bạn đã nộp đơn xin trở thành biên dịch viên tại {{SITENAME}}. Tôi rất tiếc phải thông báo cho bạn rằng tôi đã từ chối đơn xin của bạn vì các bản dịch của bạn không đáp ứng tiêu chuẩn chất lượng.\n\nNếu bạn nghĩ rằng bạn đã bị từ chối do nhầm lẫn, xin hãy lần nữa xin trở thành biên dịch viên tại {{SITENAME}}. Chỉ việc đi vào đây:\n$2\n\n{{GENDER:$3}}$3,\nNhóm {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}",
@@ -38,7 +39,7 @@
 	"tsb-accept-confirmation": "Đã chấp nhận {{PLURAL:$1|người dùng|những người dùng}}",
 	"translationstash": "Hoan nghênh",
 	"translate-translationstash-welcome": "Chào mừng {{GENDER:$1}}$1 đã trở thành biên dịch viên mới",
-	"translate-translationstash-welcome-note": "Hãy quen thuộc với các công cụ biên dịch. Hãy dịch một số thông điệp và giành được quyền biên dịch viên đầy đủ để tham gia các dự án ưa thích của bạn.",
+	"translate-translationstash-welcome-note": "Hãy làm quen với các công cụ biên dịch. Hãy dịch một số thông điệp và giành được quyền biên dịch viên đầy đủ để tham gia các dự án ưa thích của bạn.",
 	"translate-translationstash-initialtranslation": "Bản dịch đầu tiên của bạn",
 	"translate-translationstash-translations": "$1 bản dịch hoàn thành",
 	"translate-translationstash-skip-button-label": "Thử cái khác",
@@ -50,5 +51,6 @@
 	"log-description-translatorsandbox": "Các tác vụ có liên quan đến người dùng chỗ thử biên dịch",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2}}đã cấp quyền {{GENDER:$4}}biên dịch viên cho $3",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2}}đã từ chối yêu cầu cấp quyền biên dịch viên của “$3”",
-	"logentry-newusers-tsbpromoted": "Tài khoản người dùng $3 đã được {{GENDER:$2}}tạo ra cho người dùng chỗ thử biên dịch"
+	"logentry-newusers-tsbpromoted": "Tài khoản người dùng $3 đã được {{GENDER:$2}}tạo ra cho người dùng chỗ thử biên dịch",
+	"tsb-other-actions": "Bạn cần [[Special:TranslationStash|gửi một số bản dịch thử nghiệm]] và được chấp thuận trước khi sửa đổi."
 }
