@@ -13,7 +13,7 @@
 	"apihelp-aggregategroups-extended-description": "Pode adicionar e remover grupos de mensagens agregadas e associar-lhes ou desassociar-lhes grupos de mensagens (um de cada vez).",
 	"apihelp-aggregategroups-param-do": "O que fazer com o grupo de mensagens agregadas.",
 	"apihelp-aggregategroups-param-aggregategroup": "Identificador do grupo de mensagens agregadas.",
-	"apihelp-aggregategroups-param-group": "Identificador do grupo de mensagens.",
+	"apihelp-aggregategroups-param-group": "Identificador do grupo de mensagens. Consulte <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Nome do grupo agregador de mensagens.",
 	"apihelp-aggregategroups-param-groupdescription": "Descrição do grupo agregador de mensagens.",
 	"apihelp-aggregategroups-example-1": "Associar um grupo",
