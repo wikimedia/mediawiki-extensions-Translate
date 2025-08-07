@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"NLBLMV",
 			"RebecaRwanda",
 			"RebeccaRwanda"
 		]
 	},
-	"nstab-translations": "Ihuriro ry'ibyahinduwe"
+	"nstab-translations": "Ihuriro ry'ibyahinduwe",
+	"action-translate-empty-category": "koresha indimi z'ubuhinduzi mu byiciro bidafite amakuru."
 }

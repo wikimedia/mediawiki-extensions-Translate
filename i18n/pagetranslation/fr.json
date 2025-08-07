@@ -369,5 +369,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Groupes :",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Tout cocher",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Mettre à jour les abonnements",
-	"translate-category-summary": "Création automatique de la traduction de la catégorie utilisée sur [[$1]]"
+	"translate-category-summary": "Création automatique de la traduction de la catégorie utilisée sur [[$1]]",
+	"right-translate-empty-category": "Créer des unités de traduction pour les catégories vides",
+	"action-translate-empty-category": "créer des unités de traduction pour les catégories vides",
+	"tpt-create-empty-category": "Impossible de créer une unité de traduction pour la catégorie [[:$1]] qui est vide."
 }

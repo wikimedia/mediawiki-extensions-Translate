@@ -346,5 +346,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Групи:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Вибрати всі",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Оновити підписки",
-	"translate-category-summary": "Автоматичне створення перекладу категорії, що використовується на [[$1]]"
+	"translate-category-summary": "Автоматичне створення перекладу категорії, що використовується на [[$1]]",
+	"right-translate-empty-category": "Створення блоків перекладу для порожніх категорій",
+	"action-translate-empty-category": "створення блоків перекладу для порожніх категорій",
+	"tpt-create-empty-category": "Неможливо створити блок перекладу для категорії [[:$1]], яка є порожньою."
 }
