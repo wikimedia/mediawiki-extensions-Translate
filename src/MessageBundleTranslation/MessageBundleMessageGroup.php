@@ -80,7 +80,7 @@ class MessageBundleMessageGroup implements MessageGroup {
 		}
 
 		$data = json_decode( $content->getText(), true );
-		if ( !$data ) {
+		if ( $data === null ) {
 			throw new LogicException(
 				"Content with revision id $this->revisionId is not valid JSON"
 			);
