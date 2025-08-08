@@ -375,7 +375,7 @@
 	"tux-editor-need-more-help": "需要多啲幫助？",
 	"tux-editor-ask-help": "問多啲資料",
 	"tux-editor-tm-match": "$1% 配對",
-	"tux-notices-more": "{{PLURAL:$1|$1 多啲}}",
+	"tux-notices-more": "{{PLURAL:$1|$1多啲}}",
 	"tux-notices-hide": "收埋",
 	"tux-editor-save-failed": "發佈翻譯失敗咗：$1",
 	"tux-editor-n-uses": "用咗 $1 {{PLURAL:$1|time|次}}",
