@@ -440,6 +440,9 @@
 
 			// Enable the save button again
 			this.$editor.find( '.tux-editor-save-button' ).prop( 'disabled', false );
+
+			// Make sure the user sees the error
+			this.show();
 		},
 
 		/**
