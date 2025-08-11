@@ -328,5 +328,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppos:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Marcar totes",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Actualisar abonamentos",
-	"translate-category-summary": "Traduction create automaticamente de un categoria usate sur [[$1]]"
+	"translate-category-summary": "Traduction create automaticamente de un categoria usate sur [[$1]]",
+	"right-translate-empty-category": "Crear unitates de traduction pro categorias vacue",
+	"action-translate-empty-category": "crear unitates de traduction pro categorias vacue",
+	"tpt-create-empty-category": "Non pote crear un unitate de traduction pro le categoria [[:$1]] que es vacue."
 }

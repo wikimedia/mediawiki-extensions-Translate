@@ -5,7 +5,8 @@
 			"H78c67c",
 			"JeffreyKim",
 			"Ktchankt",
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -220,8 +221,8 @@
 	"pt-movepage-intro": "呢個特別頁面畀你移動標記咗要翻譯嘅頁面。\n移動動作唔會即時，因為好多頁面都需要移動。\n喺移動緊啲頁面嗰陣，係唔可能同有問題嘅頁面互動。\n故障會記錄喺[[$1|日誌]]，並且需要手動噉修復返。",
 	"pt-movepage-logreason": "可翻譯頁面\"[[$1]]\"嘅一部分",
 	"pt-movepage-started": "請遲啲檢查[[$1|日誌]]有冇錯誤同埋完成訊息。",
-	"pt-leave-redirect": "留低可翻譯頁面、子頁面同相關討論頁面嘅重新導向",
-	"pt-leave-redirect-label": "$1(可以留低重新導向)",
+	"pt-leave-redirect": "留低可翻譯頁面、子頁面同相關討論頁面嘅跳轉",
+	"pt-leave-redirect-label": "$1（可以留低跳轉）",
 	"pt-locked-page": "呢個頁面已經鎖定，因為而家移動緊可翻譯嘅頁面。",
 	"pt-deletepage-lang-title": "刪除翻譯頁面\"$1\"",
 	"pt-deletepage-tp-title": "刪除緊可翻譯嘅頁面\"$1\"",
