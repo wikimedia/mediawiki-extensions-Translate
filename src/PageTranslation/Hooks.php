@@ -428,7 +428,11 @@ class Hooks {
 		// Update the target page
 		$unitTitleText = $unitTitle ? $unitTitle->getPrefixedText() : null;
 		$job = RenderTranslationPageJob::newJob( $target, $triggerAction, $unitTitleText );
-		$job->setUser( $user );
+		$session = null;
+		if ( !$user->equals( FuzzyBot::getUser() ) ) {
+			$session = RequestContext::getMain()->exportSession();
+		}
+		$job->setUser( $user, $session );
 		$job->setSummary( $summary );
 		$job->setFlags( $flags );
 		$mwInstance->getJobQueueGroup()->push( $job );
