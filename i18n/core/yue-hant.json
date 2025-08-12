@@ -315,7 +315,7 @@
 	"group-translate-sandboxed-member": "{{GENDER:$1|未經批准嘅翻譯員}}",
 	"right-translate-sandboxmanage": "管理沙盒用戶",
 	"action-translate-sandboxmanage": "管理沙盒用戶",
-	"right-translate-sandboxaction": "執行沙箱使用者允許嘅操作",
+	"right-translate-sandboxaction": "執行沙箱用戶允許嘅操作",
 	"action-translate-sandboxaction": "執行沙盒用戶允許嘅操作",
 	"translate-workflow-state-": "（未設定）",
 	"translate-workflowstatus": "陳述: $1",
