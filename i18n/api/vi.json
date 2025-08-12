@@ -2,9 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"KhangND",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nvdtn19"
 		]
 	},
 	"apihelp-query+messagegroups-param-depth": "Khi sử dụng định dạng cây, giới hạn chiều cao đến các cấp độ. Giá trị 0 nghĩa là không nhóm con nào được hiển thị. Nếu đạt tới giới hạn, kết quả xuất sẽ bao gồm giá trị “groupcount” (số nhóm), tức số lượng con trực tiếp.",
-	"apihelp-ttmserver-param-sourcelanguage": "Mã ngôn ngữ của văn bản nguồn."
+	"apihelp-ttmserver-param-sourcelanguage": "Mã ngôn ngữ của văn bản gốc.",
+	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Không hỗ trợ theo dõi nhóm thông điệp động",
+	"apiwarn-translate-language-disabled-source": "Ngôn ngữ gốc của nhóm thông điệp này là $1. Vui lòng chọn ngôn ngữ khác để dịch sang.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Bạn đang dịch sang<bdi>$1</strong>. Đây là một biến thể của<bdi> $2</bdi>, vốn đã là ngôn ngữ gốc của các thông điệp này. Hãy đảm bảo ngôn ngữ đã chọn là chính xác và xem xét sự khác biệt giữa các biến thể ngôn ngữ để cung cấp bản dịch tốt."
 }
