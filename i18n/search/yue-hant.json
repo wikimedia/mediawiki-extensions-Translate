@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"JeffreyKim",
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"searchtranslations": "搵翻譯",
@@ -11,7 +12,7 @@
 	"tux-sst-search": "搵",
 	"tux-sst-search-ph": "搵翻譯",
 	"tux-sst-search-info": "使用運算符<code>語言：</code>或者<code>群組：</code>嚟進一步限定搜尋準則",
-	"tux-sst-count": "{{PLURAL:$1|One result found|$1 搵到結果}}",
+	"tux-sst-count": "{{PLURAL:$1|搵到$1個結果}}",
 	"tux-sst-facet-language": "語言",
 	"tux-sst-facet-group": "訊息谷",
 	"tux-sst-nosolr-title": "搵唔到",

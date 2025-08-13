@@ -344,5 +344,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Groepen:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Alles markeren",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Abonnementen bijwerken",
-	"translate-category-summary": "Automatisch aangemaakte vertaling van een op [[$1]] gebruikte categorie"
+	"translate-category-summary": "Automatisch aangemaakte vertaling van een op [[$1]] gebruikte categorie",
+	"right-translate-empty-category": "Vertaaleenheden aanmaken voor lege categorieën",
+	"action-translate-empty-category": "vertaaleenheden aan te maken voor lege categorieën",
+	"tpt-create-empty-category": "Kan geen vertaaleenheid aanmaken voor de categorie [[:$1]] omdat die leeg is."
 }
