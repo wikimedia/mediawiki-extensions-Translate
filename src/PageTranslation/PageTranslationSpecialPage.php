@@ -828,9 +828,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 			if ( $s->type === 'new' ) {
 				$hasChanges = true;
-				$name = $this->msg( 'tpt-section-new', $s->id )->escaped();
+				$name = $this->msg( 'tpt-section-new', $s->id )->parse();
 			} else {
-				$name = $this->msg( 'tpt-section', $s->id )->escaped();
+				$name = $this->msg( 'tpt-section', $s->id, $this->getTranslationsLink( $page, $s ) )->parse();
 			}
 
 			if ( $s->type === 'changed' ) {
@@ -904,7 +904,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
 			foreach ( $operation->getDeletedUnits() as $s ) {
-				$name = $this->msg( 'tpt-section-deleted', $s->id )->escaped();
+				$name = $this->msg( 'tpt-section-deleted', $s->id, $this->getTranslationsLink( $page, $s ) )->parse();
 				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
 				$out->addHTML( MessageWebImporter::makeSectionElement(
 					$name,
@@ -981,6 +981,15 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$out->addHTML( $submitButton->toString() );
 		$out->addHTML( '</form>' );
+	}
+
+	private function getTranslationsLink( TranslatablePage $page, TranslationUnit $section ): string {
+		$unitTitle = Title::makeTitle(
+			NS_TRANSLATIONS,
+			$page->getTitle()->getPrefixedDBkey() . '/' . $section->id
+		);
+		return SpecialPage::getTitleFor( 'Translations', $unitTitle->getPrefixedText() )
+			->getPrefixedText();
 	}
 
 	private function priorityLanguagesForm( TranslatablePage $page ): void {
