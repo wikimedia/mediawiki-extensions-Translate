@@ -339,5 +339,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "קבוצות:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "לסמן הכול",
 	"tpt-manage-message-group-subscriptions-raw-submit": "עדכון מינויים",
-	"translate-category-summary": "יצירת אוטומטית של תרגום הקטגוריה שמשמשת בדף [[$1]]"
+	"translate-category-summary": "יצירת אוטומטית של תרגום הקטגוריה שמשמשת בדף [[$1]]",
+	"right-translate-empty-category": "יצירת יחידות תרגום עבור קטגוריות ריקות",
+	"action-translate-empty-category": "ליצור יחידות תרגום עבור קטגוריות ריקות",
+	"tpt-create-empty-category": "לא ניתן ליצור יחידת תרגום עבור הקטגוריה [[:$1]] שהיא ריקה."
 }
