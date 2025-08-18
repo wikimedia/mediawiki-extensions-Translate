@@ -342,6 +342,7 @@
 	"translate-msggroupselector-search-all": "همه",
 	"translate-msggroupselector-search-recent": "اخیر",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|زیرگروه|زیرگروه}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "مدیریت اشتراک‌ها",
 	"tux-languageselector": "ترجمه به",
 	"tux-select-target-language": "زبان هدف برای ترجمه",
 	"tux-watch-group": "پیگیری",

@@ -306,7 +306,7 @@
 	"log-name-translationreview": "審查啲翻譯嘅記錄",
 	"log-description-translationreview": "將所有審查記錄返晒喺翻譯同訊息群組。",
 	"logentry-translationreview-message": "$1 {{GENDER：$2|審查過}} 翻譯 $3",
-	"logentry-translationreview-group": "$1 {{GENDER:$2|改變咗}} $4 嘅狀態由 $6 轉換成 $7 嘅 $3",
+	"logentry-translationreview-group": "$1將$3嘅$4翻譯嘅狀態由$6{{GENDER:$2|改咗做}}$7",
 	"logentry-translationreview-unfuzzy": "$1 {{GENDER:$2|標記}} 翻譯 $3，因為已經唔過時",
 	"right-unfuzzy": "將翻譯單位標記為唔再過時",
 	"action-unfuzzy": "將翻譯單位標記為唔再過時",
