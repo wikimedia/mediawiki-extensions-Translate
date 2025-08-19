@@ -305,6 +305,7 @@
 	"log-description-translationreview": "Nhật trình các tác vụ duyệt bản dịch và nhóm thông điệp.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2}}đã duyệt bản dịch $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2}}đã đổi trạng thái bản dịch $4 của $3 từ $6 thành $7",
+	"logentry-translationreview-unfuzzy": "$1 {{GENDER:$2|đã đánh dấu}} $3 là không còn lỗi thời",
 	"group-translate-sandboxed": "Biên dịch viên chưa chấp nhận",
 	"group-translate-sandboxed-member": "{{GENDER:$1}}biên dịch viên chưa chấp nhận",
 	"right-translate-sandboxmanage": "Quản lý người dùng cách ly",
