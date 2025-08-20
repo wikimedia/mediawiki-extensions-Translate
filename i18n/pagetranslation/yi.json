@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Imre",
+			"Shvermer",
 			"פוילישער",
 			"පසිඳු කාවින්ද"
 		]
@@ -34,7 +35,7 @@
 	"tpt-other-pages-title": "צעבראכענע בלעטער",
 	"tpt-old-pages": "א ווערסיע פון {{PLURAL:$1|דעם בלאט איז|די בלעטער זענען}} געווארן מארקירט פאר איבערזעצונג.",
 	"tpt-select-prioritylangs-force": "פֿארמיידן איבערזעצונגען צו שפראכן אחוץ די פריאריטעט־שפראכן",
-	"tpt-select-prioritylangs-reason": "אורזאַך:",
+	"tpt-select-prioritylangs-reason": "אורזאַך",
 	"tpt-sections-prioritylangs": "פריאריזירטע שפראכן",
 	"tpt-rev-mark": "מארקירן פאר איבערזעצונג",
 	"tpt-rev-unmark": "אוועקנעמען פון איבערזעצונג",
