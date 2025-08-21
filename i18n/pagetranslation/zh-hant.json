@@ -75,10 +75,11 @@
 	"tpt-tag-discouraged": "不建議",
 	"tpt-tag-oldsyntax": "舊語法",
 	"tpt-tag-no-transclusion-support": "不支援內嵌",
-	"tpt-select-prioritylangs": "優先語言代碼（以逗號分隔）：",
+	"tpt-select-prioritylangs": "優先語言",
+	"tpt-select-prioritylangs-help": "以換行或逗號分隔的語言代碼",
 	"tpt-select-prioritylangs-force": "禁止翻譯成優先語言以外的語言",
 	"tpt-select-no-prioritylangs-force": "在未選擇任何優先語言的情況下，使用禁止翻譯成非優先語言功能會禁止翻譯成任何語言。",
-	"tpt-select-prioritylangs-reason": "原因：",
+	"tpt-select-prioritylangs-reason": "原因",
 	"tpt-sections-prioritylangs": "優先語言",
 	"tpt-sections-syntaxversion": "語法版本",
 	"tpt-syntaxversion-text": "此頁面目前使用可翻譯頁面原始碼語法的舊版本。新版本會包住帶有 HTML 標籤的未翻譯段落，來指示出文字上的正確語言。例如：$1。您可以使用新標記語法$2來防止在不恰當地方做出這樣的動作，例如像是在翻譯帶有 <code>title</code> 屬性的元素。但請留意這樣做會無法返回到舊語法版本。",
@@ -352,5 +353,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "群組：",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "選取所有",
 	"tpt-manage-message-group-subscriptions-raw-submit": "更新訊息群組訂閱",
-	"translate-category-summary": "自動建立使用於[[$1]]的分類的譯文頁面"
+	"translate-category-summary": "自動建立使用於[[$1]]的分類的譯文頁面",
+	"right-translate-empty-category": "為空分類建立翻譯單元",
+	"action-translate-empty-category": "為空分類建立翻譯單元",
+	"tpt-create-empty-category": "無法為空的分類[[:$1]]建立翻譯單元。"
 }

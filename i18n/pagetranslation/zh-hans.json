@@ -94,7 +94,7 @@
 	"tpt-tag-discouraged": "不建议",
 	"tpt-tag-oldsyntax": "旧的语法",
 	"tpt-tag-no-transclusion-support": "未支持嵌入",
-	"tpt-select-prioritylangs": "优先语言列表",
+	"tpt-select-prioritylangs": "优先语言",
 	"tpt-select-prioritylangs-help": "以换行或逗号分隔的语言代码",
 	"tpt-select-prioritylangs-force": "不允许向优先语言以外的语言翻译",
 	"tpt-select-prioritylangs-reason": "原因",

@@ -55,7 +55,7 @@
 	"tpt-tag-discouraged": "desaconsellada",
 	"tpt-tag-oldsyntax": "sintaxe antiga",
 	"tpt-tag-no-transclusion-support": "sen soporte para transclusións",
-	"tpt-select-prioritylangs": "Lista de linguas prioritarias",
+	"tpt-select-prioritylangs": "Linguas prioritarias",
 	"tpt-select-prioritylangs-help": "Códigos de lingua separados por saltos de liña ou comas",
 	"tpt-select-prioritylangs-force": "Impedir as traducións noutras linguas que non sexan as prioritarias",
 	"tpt-select-no-prioritylangs-force": "Impedir as traducións a linguas non prioritarias sen seleccionar ningunha prioritaria impedirá as traducións a todas as linguas.",

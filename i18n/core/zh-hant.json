@@ -323,6 +323,7 @@
 	"translate-import-err-no-such-file": "檔案 <nowiki>$1</nowiki> 不存在或尚未上傳。",
 	"translate-import-err-stale-group": "此檔案所屬的訊息群組不存在。",
 	"translate-import-err-no-headers": "此 Gettext 檔案不符合完整的翻譯擴充功能格式，無法從檔頭偵測訊息群組及語言。",
+	"translate-import-err-gettext-parse-failed": "檔案不是格式正確的 Gettext 檔案：\n$1",
 	"translate-js-support-unsaved-warning": "您有尚未發布的譯文。",
 	"translate-documentation-language": "訊息說明文件",
 	"translate-searchprofile": "譯文",

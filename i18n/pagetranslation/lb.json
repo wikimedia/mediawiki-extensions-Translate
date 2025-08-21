@@ -45,7 +45,7 @@
 	"tpt-outdated-pages": "Dës {{PLURAL:$1|Säit huet|Säiten hunn}} Ännerungen, déi net fir d'Iwwersetzung markéiert sinn.",
 	"tpt-proposed-state-pages": "{{PLURAL:$1|Dës Säit gouf|Dës Säite goufe}} vu Benotzer fir z'iwwersetze virgeschloen.",
 	"tpt-tag-oldsyntax": "al Syntax",
-	"tpt-select-prioritylangs": "Lëscht vu prioritäre Sproochen",
+	"tpt-select-prioritylangs": "Prioritär Sproochen",
 	"tpt-select-prioritylangs-force": "Iwwersetzungen an aner Sprooche wéi déi prioritär Sprooche verhënneren",
 	"tpt-select-prioritylangs-reason": "Grond",
 	"tpt-sections-prioritylangs": "Prioritär Sproochen",
