@@ -177,6 +177,7 @@ class TranslationStatsDataProvider {
 			[
 				'allowClassName' => true,
 				'extraArgs' => [ $opts ],
+				'assertClass' => TranslationStatsInterface::class,
 			]
 		);
 	}
