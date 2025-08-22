@@ -51,6 +51,7 @@
 	"tpt-outdated-pages": "{{PLURAL:$1|Ова страница има|Ове странице имају}} измене које нису означене за превођење.",
 	"tpt-tag-discouraged": "непрепоручено",
 	"tpt-tag-oldsyntax": "стара синтакса",
+	"tpt-select-prioritylangs": "Приоритетни језици",
 	"tpt-select-prioritylangs-force": "Спречи превођење на језике који нису приоритетни",
 	"tpt-select-no-prioritylangs-force": "Онемогућавање превођења на неприоритетне језике без избора приоритетних језика ће онемогућити превођење у потпуности.",
 	"tpt-select-prioritylangs-reason": "Разлог",

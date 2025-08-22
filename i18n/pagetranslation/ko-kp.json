@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Delim",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"YeBoy371"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -26,7 +27,7 @@
 	"tpt-showpage-intro": "아래에 기존, 추가 및 삭제된 번역 단위가 라렬되여있습니다.\n\n이 판을 번역하도록 표시하기 전에, 번역자가 불필요한 작업을 하지 않도록 번역 단위에 대한 바뀜이 최소화되여있는지 확인하세요.",
 	"tpt-mark-summary": "번역에 대해 이 버전 표시함",
 	"tpt-edit-failed": "문서를 갱신할수 없습니다: $1",
-	"tpt-duplicate": "<strong><bdi>$1</bdi></strong> 번역 단위 이름은 한 번 이상 사용되고있습니다.",
+	"tpt-duplicate": "번역 단위 이름인 <strong><bdi>$1</bdi></strong>은(는) 여러 번 사용됩니다.",
 	"tpt-unmarked": "$1 문서는 번역에 대해 더 이상 표시하지 않습니다.",
 	"tpt-list-nopages": "문서가 번역에 대해 표시하거나 번역에 대해 표시할 준비가 없습니다.",
 	"tpt-new-pages-title": "문서 번역에 대한 제안",
@@ -35,9 +36,9 @@
 	"tpt-new-pages": "{{PLURAL:$1|이 문서는}} 번역을 위해 꼬리표달린 문자를 포함하지만,\n번역하도록 표시된 {{PLURAL:$1|이 문서}}의 판이 없습니다.",
 	"tpt-old-pages": "{{PLURAL:$1|이 문서}}의 일부 판은 번역하도록 표시되였습니다.",
 	"tpt-other-pages": "{{PLURAL:$1|이 문서의 오래된 판}}은 번역에서 표시했습니다,\n하지만 최신 {{PLURAL:$1|판}}은 번역에서 표시할수 없었습니다.",
-	"tpt-select-prioritylangs": "우선언어부호의 반점으로 구분한 목록:",
+	"tpt-select-prioritylangs": "우선언어",
 	"tpt-select-prioritylangs-force": "우선언어 이외의 언어로 번역 방지",
-	"tpt-select-prioritylangs-reason": "리유:",
+	"tpt-select-prioritylangs-reason": "리유",
 	"tpt-sections-prioritylangs": "우선언어",
 	"tpt-rev-mark": "번역한것으로 표시",
 	"tpt-rev-unmark": "번역에서 제거",
@@ -70,8 +71,8 @@
 	"tpt-aggregategroup-add-new": "새 집계 집단 추가",
 	"tpt-aggregategroup-remove-confirm": "이 집계 집단을 정말 지우겠습니까?",
 	"tpt-aggregategroup-invalid-group": "집단이 존재하지 않습니다",
-	"tpt-aggregategroup-edit-name": "이름:",
-	"tpt-aggregategroup-edit-description": "설명:",
+	"tpt-aggregategroup-edit-name": "이름",
+	"tpt-aggregategroup-edit-description": "설명",
 	"tpt-aggregategroup-update-cancel": "취소",
 	"pt-parse-open": "불균형한 &lt;translate> 꼬리표입니다.\n번역 틀: <pre>$1</pre>",
 	"pt-parse-close": "불균형한 &lt;/translate> 꼬리표입니다.\n번역 틀: <pre>$1</pre>",
