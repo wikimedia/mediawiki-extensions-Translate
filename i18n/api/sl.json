@@ -22,6 +22,7 @@
 	"apihelp-translationreview-example-1": "Pregled redakcije 1",
 	"apihelp-translationstash-description": "Doda prevode v shrambo.",
 	"apihelp-translationstash-summary": "Doda prevode v shrambo.",
+	"apihelp-translationstash-param-subaction": "Dejanje.",
 	"apihelp-translationstash-param-title": "Naslov strani prevodne enote.",
 	"apihelp-ttmserver-param-service": "Katera od razpoložljivih prevajalskih storitev naj se uporabi.",
 	"apihelp-ttmserver-param-targetlanguage": "Oznaka jezika predloga.",

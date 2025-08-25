@@ -6,7 +6,8 @@
 			"Emrrans",
 			"Kurniasan",
 			"Pizza1016",
-			"Tofeiku"
+			"Tofeiku",
+			"Hakimi97"
 		]
 	},
 	"translate": "Terjemah",
@@ -91,7 +92,7 @@
 	"translate-stats-users": "Penterjemah",
 	"translate-stats-registrations": "Pendaftaran",
 	"translate-stats-reviews": "Kajian semula",
-	"translate-stats-reviewers": "Pengkaji semula",
+	"translate-stats-reviewers": "Penilai semula",
 	"translate-statsf-intro": "Anda boleh menjana statistik ringkas dengan borang ini.\nSemua nilai ada had maksimum dan minimun.",
 	"translate-statsf-options": "Pilihan graf",
 	"translate-statsf-width": "Lebar (piksel):",
@@ -108,7 +109,7 @@
 	"translate-statsf-count-users": "Penterjemah aktif",
 	"translate-statsf-count-registrations": "Pengguna baru",
 	"translate-statsf-count-reviews": "Semakan terjemahan",
-	"translate-statsf-count-reviewers": "Pengkaji semula",
+	"translate-statsf-count-reviewers": "Penilai semula",
 	"translate-statsf-language": "Senarai kod bahasa yang diasingkan dengan tanda koma:",
 	"translate-statsf-group": "Senarai kod kumpulan yang diasingkan dengan tanda koma:",
 	"translate-statsf-submit": "Pralihat",
