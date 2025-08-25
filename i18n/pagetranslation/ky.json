@@ -22,7 +22,7 @@
 	"tpt-translation-settings-save": "Параметрлерди сактоо",
 	"translate-tag-translate-link-desc": "Бул баракты которуу",
 	"translate-tag-markthis": "Бул баракты которуу үчүн белгилөө",
-	"tpt-translation-intro": "Бул барак — «[[$2]]» барагынын <span class=\"plainlinks\">[$1 котормосу]</span>. Котормо $3 %га даяр.",
+	"tpt-translation-intro": "Бул барак — \"[[$2]]\" барагынын <span class=\"plainlinks\">[$1 котормосу]</span>. Котормо $3 %га даяр.",
 	"tpt-translation-intro-fuzzy": "Эскирген котормолор ушундай белгиленген.",
 	"tpt-languages-legend": "Башка тилдер:",
 	"tpt-languages-zero": "Ушул тилге которууну баштоо",
