@@ -67,7 +67,7 @@
 	"translate-export-format-notsupported": "Định dạng xuất được chỉ định không được nhóm thông điệp này hỗ trợ.",
 	"translate-export-format-file-empty": "Không có thông điệp nào để xuất.",
 	"translate-export-group-too-large": "Nhóm thông điệp được chọn quá lớn. Hãy chọn một nhóm thông điệp có ít hơn $1 {{PLURAL:$1}}thông điệp hoặc liên hệ một quản lý biên dịch để được trợ giúp.",
-	"translate-checks-parameters": "{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:\n<strong>$1</strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|Tham số|Những tham số}} sau chưa được sử dụng:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Tham số|Các tham số}} sau không rõ:\n<strong>$1</strong>",
 	"translate-checks-balance": "Số {{PLURAL:$2}}dấu ngoặc bị lẻ:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:\n<strong><nowiki>$1</nowiki></strong>",
