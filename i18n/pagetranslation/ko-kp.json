@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Delim",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"YeBoy371"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -26,7 +27,7 @@
 	"tpt-showpage-intro": "아래에 기존, 추가 및 삭제된 번역 단위가 라렬되여있습니다.\n\n이 판을 번역하도록 표시하기 전에, 번역자가 불필요한 작업을 하지 않도록 번역 단위에 대한 바뀜이 최소화되여있는지 확인하세요.",
 	"tpt-mark-summary": "번역에 대해 이 버전 표시함",
 	"tpt-edit-failed": "문서를 갱신할수 없습니다: $1",
-	"tpt-duplicate": "<strong><bdi>$1</bdi></strong> 번역 단위 이름은 한 번 이상 사용되고있습니다.",
+	"tpt-duplicate": "번역 단위 이름인 <strong><bdi>$1</bdi></strong>은(는) 여러 번 사용됩니다.",
 	"tpt-unmarked": "$1 문서는 번역에 대해 더 이상 표시하지 않습니다.",
 	"tpt-list-nopages": "문서가 번역에 대해 표시하거나 번역에 대해 표시할 준비가 없습니다.",
 	"tpt-new-pages-title": "문서 번역에 대한 제안",

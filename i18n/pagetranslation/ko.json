@@ -47,7 +47,7 @@
 	"tpt-showpage-intro": "아래에 기존, 추가 및 삭제된 번역 단위가 나열되어 있습니다.\n\n이 판을 번역하도록 표시하기 전에, 번역자가 불필요한 작업을 하지 않도록 번역 단위에 대한 바뀜이 최소화되어 있는지 확인하세요.",
 	"tpt-mark-summary": "이 판을 번역하도록 표시",
 	"tpt-edit-failed": "문서를 업데이트를 할 수 없습니다: $1",
-	"tpt-duplicate": "<strong><bdi>$1</bdi></strong> 번역 단위 이름은 한 번 이상 사용합니다.",
+	"tpt-duplicate": "번역 단위 이름인 <strong><bdi>$1</bdi></strong>은(는) 여러 번 사용됩니다.",
 	"tpt-unmarked": "[[:$1]] 문서는 더 이상 번역하도록 표시되지 않습니다.",
 	"tpt-list-nopages": "번역하도록 표시할 준비가 된 문서나 번역하도록 표시된 문서가 없습니다.",
 	"tpt-new-pages-title": "번역하도록 제안된 문서",
