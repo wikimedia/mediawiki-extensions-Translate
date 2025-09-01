@@ -649,7 +649,6 @@
 						'tux-empty-list-other-action',
 						function () {
 							$( '.tux-tab-unproofread' ).trigger( 'click' );
-							// @todo untranslated
 						} )
 					);
 					// @todo View all
@@ -662,7 +661,7 @@
 							messageTable.switchMode( 'translate' );
 						} )
 					);
-				} else if ( selectedTab === 'unproofread' ) {
+				} else if ( [ 'untranslated', 'unproofread' ].includes( selectedTab ) ) {
 					$emptyListHeader.text( mw.msg( 'tux-empty-nothing-new-to-proofread' ) );
 					$guide.text( mw.msg( 'tux-empty-you-can-help-providing' ) );
 					$actions.append( messageTable.otherActionButton(
