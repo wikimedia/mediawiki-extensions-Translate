@@ -4,7 +4,8 @@
 			"Bikarhêner",
 			"Cûndûllah el-Kurdî",
 			"George Animal",
-			"Gomada"
+			"Gomada",
+			"Guherto"
 		]
 	},
 	"pagetranslation": "Wergera rûpelê",
@@ -14,7 +15,7 @@
 	"tpt-diff-new": "Nivîsa nû",
 	"tpt-submit": "Vê versiyonê ji bo wergerê îşaret bike",
 	"tpt-nosuchpage": "Rûpela $1 tune.",
-	"tpt-select-prioritylangs-reason": "Sedem:",
+	"tpt-select-prioritylangs-reason": "Sebeb",
 	"tpt-rev-unmark": "ji nav wergeran derxe",
 	"translate-tag-translate-link-desc": "Vê rûpelê werrgerîne",
 	"translate-tag-markthis": "Vê rûpelê ji bo wergerê îşaret bike",
@@ -25,7 +26,7 @@
 	"tpt-aggregategroup-add": "Lê zêde bike",
 	"tpt-aggregategroup-save": "Tomar bike",
 	"tpt-aggregategroup-invalid-group": "Kom tune ye",
-	"tpt-aggregategroup-edit-name": "Nav:",
+	"tpt-aggregategroup-edit-name": "Nav",
 	"tpt-aggregategroup-edit-description": "Danasîn:",
 	"tpt-aggregategroup-update-cancel": "Betal bike",
 	"log-name-pagetranslation": "Têketina wergerandina rûpelan",
@@ -46,8 +47,8 @@
 	"pt-deletepage-list-other": "Binrûpelên din",
 	"pm-savepages-button-label": "Tomar bike",
 	"pm-cancel-button-label": "Betal bike",
-	"pm-page-does-not-exist": "$1 tune ye.",
-	"pm-old-translations-missing": "$1 wergerên kevn nahewîne.",
+	"pm-page-does-not-exist": "Rûpel \"$1\" tine ye.",
+	"pm-old-translations-missing": "Di $1 de wergerên kevn nînin.",
 	"pm-pagetitle-placeholder": "Sernavê rûpelê binivîse",
 	"pm-pagetitle-missing": "Ji kerema xwe sernavê rûpelê binivîse",
 	"pp-save-button-label": "Biweşîne",
