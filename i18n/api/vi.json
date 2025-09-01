@@ -3,10 +3,14 @@
 		"authors": [
 			"KhangND",
 			"Minh Nguyen",
-			"Nvdtn19"
+			"Nvdtn19",
+			"Bapham123"
 		]
 	},
+	"apihelp-query+messagecollection-param-language": "Mã ngôn ngữ.",
 	"apihelp-query+messagegroups-param-depth": "Khi sử dụng định dạng cây, giới hạn chiều cao đến các cấp độ. Giá trị 0 nghĩa là không nhóm con nào được hiển thị. Nếu đạt tới giới hạn, kết quả xuất sẽ bao gồm giá trị “groupcount” (số nhóm), tức số lượng con trực tiếp.",
+	"apihelp-query+messagegroups-example-1": "Hiển thị nhóm thông điệp",
+	"apihelp-translationstash-param-subaction": "Hành động.",
 	"apihelp-ttmserver-param-sourcelanguage": "Mã ngôn ngữ của văn bản gốc.",
 	"apiwarn-translate-language-disabled-source": "Ngôn ngữ gốc của nhóm thông điệp này là $1. Vui lòng chọn ngôn ngữ khác để dịch sang."
 }

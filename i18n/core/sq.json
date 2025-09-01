@@ -189,7 +189,7 @@
 	"tux-save-unknown-error": "Ndodhi një gabim i panjohur.",
 	"tux-editor-placeholder-documentation": "Shto dokumentacionin e mesazhit",
 	"tux-editor-placeholder-language": "Përkthimi yt në $1",
-	"tux-editor-editsummary-placeholder": "Shpjego ndryshimet e tua (jo e domosdoshme)",
+	"tux-editor-editsummary-placeholder": "Shpjego ndryshimet e tua (me dëshirë)",
 	"tux-editor-paste-original-button-label": "Ngjit tekstin burimor",
 	"tux-editor-discard-changes-button-label": "Hidh poshtë ndryshimet",
 	"tux-editor-save-button-label": "Publiko përkthimin",
