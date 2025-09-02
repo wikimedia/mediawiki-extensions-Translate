@@ -16,6 +16,7 @@
 			"Ssola",
 			"Toniher",
 			"Vriullop",
+			"Yupik",
 			"පසිඳු කාවින්ද"
 		]
 	},
@@ -45,7 +46,7 @@
 	"tpt-old-pages": "L'última versió d'{{PLURAL:$1|aquesta pàgina s'ha|aquestes pàgines s'han}} marcat per a traduir.",
 	"tpt-select-prioritylangs": "Llista separada per comes dels codis de les llengües prioritàries:",
 	"tpt-select-prioritylangs-force": "Evita traduccions a llengües que no siguin les llengües prioritàries",
-	"tpt-select-prioritylangs-reason": "Motiu:",
+	"tpt-select-prioritylangs-reason": "Motiu",
 	"tpt-sections-prioritylangs": "Llengües prioritàries",
 	"tpt-rev-mark": "marca per traduir",
 	"tpt-rev-unmark": "suprimeix de la traducció",
@@ -73,7 +74,7 @@
 	"tpt-aggregategroup-add-new": "Afegeix un grup d'agregació nou",
 	"tpt-aggregategroup-select-source-language": "Idioma font personalitzat (opcional):",
 	"tpt-aggregategroup-invalid-group": "El grup no existeix",
-	"tpt-aggregategroup-edit-name": "Nom:",
+	"tpt-aggregategroup-edit-name": "Nom",
 	"tpt-aggregategroup-edit-description": "Descripció:",
 	"tpt-aggregategroup-update-cancel": "Cancel·la",
 	"log-action-filter-pagetranslation": "Tipus d'acció:",

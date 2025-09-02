@@ -6,6 +6,7 @@
 		]
 	},
 	"pagetranslation": "Siidduid jorgaleapmi",
+	"tpt-select-prioritylangs-reason": "Sivva",
 	"tpt-translation-settings-save": "Vurke ásahusaid",
 	"translate-tag-translate-link-desc": "Jorgal dán siiddu",
 	"tpt-languages-legend": "Eará gielat:",
@@ -13,6 +14,7 @@
 	"tpt-tab-translate": "Jorgal",
 	"tpt-aggregategroup-save": "Vurke",
 	"tpt-aggregategroup-close": "Gidde",
+	"tpt-aggregategroup-edit-name": "Namma",
 	"tpt-aggregategroup-edit-description": "Govvádus:",
 	"tpt-aggregategroup-update-cancel": "Gaskkalduhte",
 	"pt-movepage-list-other": "Eará {{PLURAL:$1|oalgesiidu|oalgesiiddut}}",

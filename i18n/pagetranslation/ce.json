@@ -54,6 +54,7 @@
 	"tpt-tag-oldsyntax": "шира синтаксис",
 	"tpt-tag-no-transclusion-support": "кепаш йовзийтаран (трансклюзи) гӀо доцуш",
 	"tpt-select-prioritylangs": "Приоритетан меттанаш",
+	"tpt-select-prioritylangs-help": "МогӀанаш дӀасакъастарца йа кӀайдаргашца къастийна йолу меттан кодаш",
 	"tpt-select-prioritylangs-force": "Приоритетехь боцучу меттанашка гочдар дехкар",
 	"tpt-select-no-prioritylangs-force": "Приоритетехь болу меттанаш ца къастош, приоритетехь боцучу меттанашка гочдар дихкина хиларо новкъарло йийр йу массо а меттанашка гочдарна.",
 	"tpt-select-prioritylangs-reason": "Бахьана",
@@ -330,5 +331,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Тобанаш:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Дерриге а талла",
 	"tpt-manage-message-group-subscriptions-raw-submit": "ДӀайаздаларш карладаха",
-	"translate-category-summary": "«[[$1]]» агӀонан тӀехь лелочу категорин гочдар авто кхоллар"
+	"translate-category-summary": "«[[$1]]» агӀонан тӀехь лелочу категорин гочдар авто кхоллар",
+	"right-translate-empty-category": "Йаьссачу категорешна гочдаран дакъош кхолла",
+	"action-translate-empty-category": "йаьссачу категорешна гочдаран дакъош кхолла",
+	"tpt-create-empty-category": "Йаьсса йолчу категорин [[:$1]] гочдаран дакъош кхолла йиш йац."
 }

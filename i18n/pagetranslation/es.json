@@ -38,6 +38,7 @@
 			"Stjn",
 			"Translationista",
 			"Vivaelcelta",
+			"Yupik",
 			"ZebaX2010"
 		]
 	},
@@ -147,7 +148,7 @@
 	"tpt-aggregategroup-remove-confirm": "¿Estás {{GENDER:|seguro|segura}} de que quieres eliminar este grupo consolidado?",
 	"tpt-aggregategroup-invalid-group": "El grupo no existe",
 	"tpt-aggregategroup-remove-item": "Eliminar este grupo de mensajes del grupo consolidado",
-	"tpt-aggregategroup-edit-name": "Nombre:",
+	"tpt-aggregategroup-edit-name": "Nombre",
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
 	"tpt-aggregategroup-expand-all-groups": "Expandir todos los grupos",

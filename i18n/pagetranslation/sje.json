@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Bidumsábme",
-			"Olve Utne"
+			"Olve Utne",
+			"Yupik"
 		]
 	},
 	"tpt-languages-nonzero": "$1 ($2% jårrgåluvvum)",
+	"tpt-aggregategroup-edit-name": "Namma",
 	"tpt-aggregategroup-edit-description": "Gåvådibme:"
 }

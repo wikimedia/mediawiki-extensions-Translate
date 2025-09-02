@@ -16,7 +16,8 @@
 			"Skärminspelning",
 			"Tacsipacsi",
 			"Tobulos1",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Yupik"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -64,7 +65,7 @@
 	"tpt-tag-no-transclusion-support": "inget stöd för transkludering",
 	"tpt-select-prioritylangs": "Kommaseparerad lista över prioriterade språkkoder:",
 	"tpt-select-prioritylangs-force": "Förhindra översättningar på andra språk än de prioriterade språken",
-	"tpt-select-prioritylangs-reason": "Anledning:",
+	"tpt-select-prioritylangs-reason": "Anledning",
 	"tpt-sections-prioritylangs": "Prioriterade språk",
 	"tpt-sections-syntaxversion": "Syntaxversion",
 	"tpt-syntaxversion-text": "Denna sida använder för tillfället en gammal version av syntaxen för översättbara sidor. Den nya versionen kommer kapsla in oöversättbara avsnitt med en HTML-tagg för att indikera textens korrekta språk. Exempel: $1. Du kan använda den nya formateringssyntaxen $2 för att förhindra inkapsling där det inte behövs, som när man översätter attributet <code>title</code> för ett element. Det är inte möjligt att gå tillbaka till en gammal syntaxversion.",
@@ -110,7 +111,7 @@
 	"tpt-aggregategroup-select-source-language": "Anpassat källspråk (valfritt):",
 	"tpt-aggregategroup-remove-confirm": "Är du säker på att du vill radera denna samlingsgrupp?",
 	"tpt-aggregategroup-invalid-group": "Gruppen finns inte",
-	"tpt-aggregategroup-edit-name": "Namn:",
+	"tpt-aggregategroup-edit-name": "Namn",
 	"tpt-aggregategroup-edit-description": "Beskrivning:",
 	"tpt-aggregategroup-update-cancel": "Avbryt",
 	"tpt-aggregategroup-expand-all-groups": "expandera alla grupper",
