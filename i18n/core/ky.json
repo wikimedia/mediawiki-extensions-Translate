@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bosogo",
-			"Growingup"
+			"Growingup",
+			"Incall"
 		]
 	},
 	"translate": "Которуу",
@@ -113,6 +114,7 @@
 	"translate-import-from-local": "Жергиликтүү файлды жүктөө:",
 	"translate-import-load": "Файлды жүктөө",
 	"translate-import-err-ul-failed": "Файл жүктөлбөй калды",
+	"translate-documentation-language": "Билдирүүнүн документациясы",
 	"translate-searchprofile": "Котормолор",
 	"translate-searchprofile-tooltip": "Бардык котормолордон издөө",
 	"translate-search-languagefilter": "Тил боюнча чыпкалоо:",

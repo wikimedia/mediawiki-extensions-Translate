@@ -60,7 +60,8 @@
 	"tpt-tag-discouraged": "frarådet",
 	"tpt-tag-oldsyntax": "gammel syntaks",
 	"tpt-tag-no-transclusion-support": "ingen transklusjonsstøtte",
-	"tpt-select-prioritylangs": "Kommaseparert liste over prioriterte språkkoder:",
+	"tpt-select-prioritylangs": "Prioriterte språk",
+	"tpt-select-prioritylangs-help": "Språkkoder atskilt av linjeskift eller komma",
 	"tpt-select-prioritylangs-force": "Forhindre oversettelser til andre språk enn de prioriterte språkene",
 	"tpt-select-no-prioritylangs-force": "Å forhindre oversettelser til ikke-prioriterte språk uten å velge noen prioriterte språk vil føre til at oversetting forhindres for alle språk.",
 	"tpt-select-prioritylangs-reason": "Årsak",
@@ -337,5 +338,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Grupper:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Marker alle",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Oppdater abonnementer",
-	"translate-category-summary": "Oppretter automatisk oversettelse av kategori brukt på [[$1]]"
+	"translate-category-summary": "Oppretter automatisk oversettelse av kategori brukt på [[$1]]",
+	"right-translate-empty-category": "Opprette oversettelsesenheter for tomme kategorier",
+	"action-translate-empty-category": "opprette oversettelsesenheter for tomme kategorier",
+	"tpt-create-empty-category": "Kan ikke opprette oversettelsesenhet for kategorien [[:$1]], som er tom."
 }

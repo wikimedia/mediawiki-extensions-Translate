@@ -49,5 +49,6 @@
 	"log-description-translatorsandbox": "En logg over handlinger på brukere av oversettelsessandkassa",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|forfremmet}} $3 til {{GENDER:$4|oversetter}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|avslo}} forespørselen fra «$3» om å bli oversetter",
-	"logentry-newusers-tsbpromoted": "Brukerkontoen $3 ble {{GENDER:$2|opprettet}} ved forfremmelse fra sandkassa"
+	"logentry-newusers-tsbpromoted": "Brukerkontoen $3 ble {{GENDER:$2|opprettet}} ved forfremmelse fra sandkassa",
+	"tsb-other-actions": "Du må [[Special:TranslationStash|sende inn noen testoversettelser]] og få dem godkjent før du kan redigere."
 }
