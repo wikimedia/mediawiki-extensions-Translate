@@ -4,7 +4,8 @@
 			"Bikarhêner",
 			"Cûndûllah el-Kurdî",
 			"George Animal",
-			"Gomada"
+			"Gomada",
+			"Guherto"
 		]
 	},
 	"pagetranslation": "Wergera rûpelê",
@@ -50,8 +51,8 @@
 	"pt-deletepage-list-other": "Binrûpelên din",
 	"pm-savepages-button-label": "Tomar bike",
 	"pm-cancel-button-label": "Betal bike",
-	"pm-page-does-not-exist": "$1 tune ye.",
-	"pm-old-translations-missing": "$1 wergerên kevn nahewîne.",
+	"pm-page-does-not-exist": "Rûpel \"$1\" tine ye.",
+	"pm-old-translations-missing": "Di $1 de wergerên kevn nînin.",
 	"pm-pagetitle-placeholder": "Sernavê rûpelê binivîse",
 	"pm-pagetitle-missing": "Ji kerema xwe sernavê rûpelê binivîse",
 	"pp-save-button-label": "Biweşîne",

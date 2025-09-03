@@ -30,7 +30,7 @@
 	"tsb-didnt-make-any-translations": "Dëse Benotzer huet nach keng Iwwersetzunge gemaach.",
 	"tsb-translations-source": "Quell",
 	"tsb-translations-user": "{{GENDER:$1|Benotzer}} Iwwersetzungen",
-	"tsb-translations-current": "Iwwersetzungen, déi et gëtt",
+	"tsb-translations-current": "Besteeënd Iwwersetzungen",
 	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Benotzer}} refuséiert",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Benotzer}} akzeptéiert",
