@@ -1,13 +1,11 @@
-@import 'mediawiki.mixins.rotation.less';
-
 /* Loading indicator: */
 .tux-loading-indicator {
-	.rotation( 1.5s );
 	float: left;
 	background-image: url( ../images/loading.svg );
 	background-size: 100%;
 	height: 34px;
 	width: 34px;
+	animation: rotate 1500ms infinite linear;
 	backface-visibility: hidden;
 
 	&--centered {
@@ -18,5 +16,15 @@
 
 	&--stopped {
 		animation: none;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate( 0deg );
+	}
+
+	to {
+		transform: rotate( 360deg );
 	}
 }
