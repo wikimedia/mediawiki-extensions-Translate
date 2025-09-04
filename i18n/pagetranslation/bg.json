@@ -15,7 +15,7 @@
 	"tpt-nosuchpage": "Страница „$1“ не съществува",
 	"tpt-new-pages-title": "Страници предложени за превод",
 	"tpt-other-pages-title": "Счупени страници",
-	"tpt-select-prioritylangs-reason": "Причина:",
+	"tpt-select-prioritylangs-reason": "Причина",
 	"tpt-sections-prioritylangs": "Приоритетни езици",
 	"translate-tag-translate-link-desc": "Превеждане на тази страница",
 	"tpt-translation-intro": "Тази страница е <span class=\"plainlinks\">[$1 преведена версия]</span> на страницата [[$2]] и преводът е завършен на $3%.",
