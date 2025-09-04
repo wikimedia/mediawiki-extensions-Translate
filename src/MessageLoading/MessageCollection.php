@@ -15,7 +15,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\TitleValue;
 use RuntimeException;
@@ -522,17 +521,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			'content' => true
 		] )->getValue();
 		foreach ( $infileRows as $row ) {
-			/** @var RevisionRecord|null $rev */
-			$rev = $revisions[$row->rev_id];
-			if ( $rev ) {
-				/** @var TextContent $content */
-				$content = $rev->getContent( SlotRecord::MAIN );
-				if ( $content ) {
-					$mkey = $this->rowToKey( $row );
-					if ( $this->infile[$mkey] === $content->getText() ) {
-						// Remove unchanged messages from the list
-						unset( $keys[$mkey] );
-					}
+			$content = $revisions[$row->rev_id]?->getContent( SlotRecord::MAIN );
+			if ( $content instanceof TextContent ) {
+				$mkey = $this->rowToKey( $row );
+				if ( $this->infile[$mkey] === $content->getText() ) {
+					// Remove unchanged messages from the list
+					unset( $keys[$mkey] );
 				}
 			}
 		}

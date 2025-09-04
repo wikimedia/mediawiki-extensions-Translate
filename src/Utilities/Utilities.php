@@ -14,7 +14,6 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Language\LanguageCode;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\Xml\Xml;
@@ -107,17 +106,12 @@ class Utilities {
 		] )->getValue();
 
 		foreach ( $rows as $row ) {
-			/** @var RevisionRecord|null $rev */
-			$rev = $revisions[$row->rev_id];
-			if ( $rev ) {
-				/** @var TextContent $content */
-				$content = $rev->getContent( SlotRecord::MAIN );
-				if ( $content ) {
-					$titleContents[$row->page_title] = [
-						$content->getText(),
-						$row->rev_user_text
-					];
-				}
+			$content = $revisions[$row->rev_id]?->getContent( SlotRecord::MAIN );
+			if ( $content instanceof TextContent ) {
+				$titleContents[$row->page_title] = [
+					$content->getText(),
+					$row->rev_user_text
+				];
 			}
 		}
 

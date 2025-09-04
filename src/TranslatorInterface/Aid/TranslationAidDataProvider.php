@@ -11,7 +11,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
 use Wikimedia\Rdbms\IDatabase;
@@ -148,10 +147,9 @@ class TranslationAidDataProvider {
 		$revisions = $revisionStore->newRevisionsFromBatch( $rows, [ 'slots' => [ SlotRecord::MAIN ] ] )
 			->getValue();
 		foreach ( $rows as $row ) {
-			/** @var RevisionRecord|null $rev */
-			$rev = $revisions[$row->rev_id];
-			if ( $rev && $rev->getContent( SlotRecord::MAIN ) instanceof TextContent ) {
-				$pages[$row->page_title] = $rev->getContent( SlotRecord::MAIN )->getText();
+			$content = $revisions[$row->rev_id]?->getContent( SlotRecord::MAIN );
+			if ( $content instanceof TextContent ) {
+				$pages[$row->page_title] = $content->getText();
 			}
 		}
 
