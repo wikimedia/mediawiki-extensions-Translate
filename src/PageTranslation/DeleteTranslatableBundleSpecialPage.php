@@ -290,7 +290,8 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 			$this->getUser(),
 			$this->bundleDeleter->getPagesForDeletion( $this->title, $this->code, $this->isTranslation() ),
 			$this->doSubpages,
-			$this->reason
+			$this->reason,
+			$this->getContext()->exportSession()
 		);
 
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-started', self::LOG_PAGE[ $this->entityType ] );

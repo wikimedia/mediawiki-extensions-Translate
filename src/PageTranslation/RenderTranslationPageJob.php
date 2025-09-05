@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use JobQueueGroup;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\DeleteTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -17,6 +18,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
 use RecentChange;
+use Wikimedia\ScopedCallback;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -77,6 +79,13 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		$user = $this->getUser();
 		$summary = $this->getSummary();
 		$flags = $this->getFlags();
+
+		if ( isset( $this->params['session'] ) ) {
+			$scope = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( static function () use ( &$scope ) {
+				ScopedCallback::consume( $scope );
+			} );
+		}
 
 		// We should not re-create the translation page if a translation unit is being deleted
 		// because it is possible that the translation page may also be queued for deletion.
@@ -165,12 +174,19 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		return $this->params['summary'];
 	}
 
-	/** @param UserIdentity|string $user */
-	public function setUser( $user ): void {
+	/**
+	 * @param UserIdentity|string $user
+	 * @param ?array $session
+	 */
+	public function setUser( $user, ?array $session = null ): void {
 		if ( $user instanceof UserIdentity ) {
 			$this->params['user'] = $user->getName();
 		} else {
 			$this->params['user'] = $user;
+		}
+
+		if ( $session ) {
+			$this->params['session'] = $session;
 		}
 	}
 
@@ -213,7 +229,8 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 			TranslatablePage::class,
 			$isTranslationPage,
 			$performer,
-			wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text()
+			wfMessage( 'pt-deletepage-lang-outdated-logreason' )->inContentLanguage()->text(),
+			$this->params['session'] ?? null
 		);
 
 		$jobQueueGroup->push( $job );

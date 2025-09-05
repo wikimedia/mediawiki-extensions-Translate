@@ -68,7 +68,8 @@ class TranslatableBundleDeleter {
 		UserIdentity $user,
 		array $subpageList,
 		bool $deleteSubpages,
-		string $reason
+		string $reason,
+		array $userSessionInfo,
 	): void {
 		$jobs = [];
 		$base = $title->getPrefixedText();
@@ -77,27 +78,27 @@ class TranslatableBundleDeleter {
 
 		foreach ( $subpageList[ 'translationPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$old, $base, $bundleType, $isTranslation, $user, $reason
+				$old, $base, $bundleType, $isTranslation, $user, $reason, $userSessionInfo
 			);
 		}
 
 		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$old, $base, $bundleType, $isTranslation, $user, $reason
+				$old, $base, $bundleType, $isTranslation, $user, $reason, $userSessionInfo
 			);
 		}
 
 		if ( $deleteSubpages ) {
 			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
 				$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-					$old, $base, $bundleType, $isTranslation, $user, $reason
+					$old, $base, $bundleType, $isTranslation, $user, $reason, $userSessionInfo
 				);
 			}
 		}
 
 		if ( !$isTranslation ) {
 			$jobs[$title->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$title, $base, $bundleType, false, $user, $reason
+				$title, $base, $bundleType, false, $user, $reason, $userSessionInfo
 			);
 		}
 
