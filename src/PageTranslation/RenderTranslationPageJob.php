@@ -11,8 +11,10 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserRigorOptions;
 use RecentChange;
+use RequestContext;
 use Title;
 use User;
+use Wikimedia\ScopedCallback;
 
 /**
  * Job for updating translation pages when translation or template changes.
@@ -63,6 +65,13 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		$user = $this->getUser();
 		$summary = $this->getSummary();
 		$flags = $this->getFlags();
+
+		if ( isset( $this->params['session'] ) ) {
+			$scope = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( static function () use ( &$scope ) {
+				ScopedCallback::consume( $scope );
+			} );
+		}
 
 		// We should not re-create the translation page if a translation unit is being deleted
 		// because it is possible that the translation page may also be queued for deletion.
@@ -134,11 +143,15 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 	}
 
 	/** @param UserIdentity|string $user */
-	public function setUser( $user ): void {
+	public function setUser( $user, $session = null ): void {
 		if ( $user instanceof UserIdentity ) {
 			$this->params['user'] = $user->getName();
 		} else {
 			$this->params['user'] = $user;
+		}
+
+		if ( $session ) {
+			$this->params['session'] = $session;
 		}
 	}
 
