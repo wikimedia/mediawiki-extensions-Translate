@@ -9,8 +9,10 @@ use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use RequestContext;
 use Title;
 use User;
+use Wikimedia\ScopedCallback;
 
 /**
  * Job for deleting translatable bundles and translation pages.
@@ -25,14 +27,16 @@ class DeleteTranslatableBundleJob extends Job {
 		string $bundleType,
 		bool $isTranslatableBundle,
 		User $performer,
-		string $reason
+		string $reason,
+		?array $userSessionInfo
 	): self {
 		$params = [
 			'translation' => $isTranslatableBundle,
 			'base' => $base,
 			'bundleType' => $bundleType,
 			'performer' => $performer->getName(),
-			'reason' => $reason
+			'reason' => $reason,
+			'session' => $userSessionInfo
 		];
 
 		return new self( $target, $params );
@@ -50,6 +54,14 @@ class DeleteTranslatableBundleJob extends Job {
 		$performer = $this->getPerformer();
 		$reason = $this->getReason();
 		$mwInstance = MediaWikiServices::getInstance();
+
+		// Restore the session information if present
+		if ( isset( $this->params[ 'session' ] ) ) {
+			$scope = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( static function () use ( &$scope ) {
+				ScopedCallback::consume( $scope );
+			} );
+		}
 
 		Hooks::$allowTargetEdit = true;
 		Hooks::$jobQueueRunning = true;

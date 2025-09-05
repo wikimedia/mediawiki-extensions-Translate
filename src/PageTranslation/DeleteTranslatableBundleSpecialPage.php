@@ -310,31 +310,32 @@ class DeleteTranslatableBundleSpecialPage extends SpecialPage {
 		$subpageList = $this->getPagesForDeletion();
 		$bundle = $this->getValidBundleFromTitle();
 		$bundleType = get_class( $bundle );
+		$sessionInfo = $this->getContext()->exportSession();
 
 		$user = $this->getUser();
 		foreach ( $subpageList[ 'translationPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$old, $base, $bundleType, $isTranslation, $user, $this->reason
+				$old, $base, $bundleType, $isTranslation, $user, $this->reason, $sessionInfo
 			);
 		}
 
 		foreach ( $subpageList[ 'translationUnitPages' ] as $old ) {
 			$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$old, $base, $bundleType, $isTranslation, $user, $this->reason
+				$old, $base, $bundleType, $isTranslation, $user, $this->reason, $sessionInfo
 			);
 		}
 
 		if ( $this->doSubpages ) {
 			foreach ( $subpageList[ 'normalSubpages' ] as $old ) {
 				$jobs[$old->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-					$old, $base, $bundleType, $isTranslation, $user, $this->reason
+					$old, $base, $bundleType, $isTranslation, $user, $this->reason, $sessionInfo
 				);
 			}
 		}
 
 		if ( !$isTranslation ) {
 			$jobs[$this->title->getPrefixedText()] = DeleteTranslatableBundleJob::newJob(
-				$this->title, $base, $bundleType, $isTranslation, $user, $this->reason
+				$this->title, $base, $bundleType, $isTranslation, $user, $this->reason, $sessionInfo
 			);
 		}
 
