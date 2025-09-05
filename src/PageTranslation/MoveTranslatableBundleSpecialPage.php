@@ -145,7 +145,8 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 					$this->getUser(),
 					$this->reason,
 					$this->moveTalkpages,
-					$this->leaveRedirect
+					$this->leaveRedirect,
+					$this->getContext()->exportSession()
 				);
 				$this->getOutput()->addWikiMsg(
 					'pt-movepage-started',

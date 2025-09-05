@@ -190,7 +190,8 @@ class TranslatableBundleMover {
 		User $user,
 		string $moveReason,
 		bool $moveTalkPages,
-		bool $leaveRedirect
+		bool $leaveRedirect,
+		array $userSessionInfo
 	): void {
 		$pageCollection = $this->getPagesToMove(
 			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages, $leaveRedirect
@@ -205,6 +206,7 @@ class TranslatableBundleMover {
 			$pagesToLeaveRedirect,
 			$moveReason,
 			$user,
+			$userSessionInfo
 		);
 
 		$this->lock( array_keys( $pagesToMove ) );
