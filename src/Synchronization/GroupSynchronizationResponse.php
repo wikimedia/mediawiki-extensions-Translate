@@ -4,10 +4,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use JsonSerializable;
-use MediaWiki\Json\JsonDeserializable;
-use MediaWiki\Json\JsonDeserializableTrait;
-use MediaWiki\Json\JsonDeserializer;
+use Wikimedia\JsonCodec\JsonCodecable;
+use Wikimedia\JsonCodec\JsonCodecableTrait;
 
 /**
  * Class encapsulating the response returned by the GroupSynchronizationCache
@@ -16,8 +14,8 @@ use MediaWiki\Json\JsonDeserializer;
  * @license GPL-2.0-or-later
  * @since 2020.06
  */
-class GroupSynchronizationResponse implements JsonSerializable, JsonDeserializable {
-	use JsonDeserializableTrait;
+class GroupSynchronizationResponse implements JsonCodecable {
+	use JsonCodecableTrait;
 
 	/** @var MessageUpdateParameter[] */
 	private array $remainingMessages;
@@ -50,12 +48,16 @@ class GroupSynchronizationResponse implements JsonSerializable, JsonDeserializab
 	}
 
 	/** @return mixed[] */
-	protected function toJsonArray(): array {
-		return get_object_vars( $this );
+	public function toJsonArray(): array {
+		return [
+			'groupId' => $this->groupId,
+			'remainingMessages' => $this->remainingMessages,
+			'timeout' => $this->timeout,
+		];
 	}
 
-	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ): self {
-		return new self(
+	public static function newFromJsonArray( array $params ): self {
+		return new static(
 			$params['groupId'],
 			$params['remainingMessages'],
 			$params['timeout']

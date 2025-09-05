@@ -3,10 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use JsonSerializable;
-use MediaWiki\Json\JsonDeserializable;
-use MediaWiki\Json\JsonDeserializableTrait;
-use MediaWiki\Json\JsonDeserializer;
+use Wikimedia\JsonCodec\JsonCodecable;
+use Wikimedia\JsonCodec\JsonCodecableTrait;
 
 /**
  * Store params for UpdateMessageJob.
@@ -14,8 +12,8 @@ use MediaWiki\Json\JsonDeserializer;
  * @license GPL-2.0-or-later
  * @since 2020.06
  */
-class MessageUpdateParameter implements JsonSerializable, JsonDeserializable {
-	use JsonDeserializableTrait;
+class MessageUpdateParameter implements JsonCodecable {
+	use JsonCodecableTrait;
 
 	/** @var string */
 	private $pageName;
@@ -64,13 +62,23 @@ class MessageUpdateParameter implements JsonSerializable, JsonDeserializable {
 		return $this->otherLangs;
 	}
 
-	public static function newFromJsonArray( JsonDeserializer $deserializer, array $params ): self {
-		return new self( $params );
+	public static function newFromJsonArray( array $params ): self {
+		return new static( $params );
 	}
 
 	/** @return mixed[] */
-	protected function toJsonArray(): array {
-		return get_object_vars( $this );
+	public function toJsonArray(): array {
+		// Keep this in sync with `assignPropsFromArray` which is used
+		// in the constructor.
+		return [
+			'pageName' => $this->pageName,
+			'rename' => $this->rename,
+			'fuzzy' => $this->fuzzy,
+			'content' => $this->content,
+			'target' => $this->target,
+			'replacement' => $this->replacement,
+			'otherLangs' => $this->otherLangs,
+		];
 	}
 
 	private function assignPropsFromArray( array $params ) {
