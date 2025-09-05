@@ -7,8 +7,10 @@ use Job;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatableBundleMover;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
+use RequestContext;
 use Title;
 use User;
+use Wikimedia\ScopedCallback;
 
 /**
  * Contains class with job for moving translation pages.
@@ -26,7 +28,8 @@ class MoveTranslatableBundleJob extends Job {
 		Title $target,
 		array $moves,
 		string $summary,
-		User $performer
+		User $performer,
+		array $session
 	): self {
 		$params = [
 			'source' => $source->getPrefixedText(),
@@ -34,6 +37,7 @@ class MoveTranslatableBundleJob extends Job {
 			'moves' => $moves,
 			'summary' => $summary,
 			'performer' => $performer->getName(),
+			'session' => $session
 		];
 
 		$self = new self( $target, $params );
@@ -52,6 +56,14 @@ class MoveTranslatableBundleJob extends Job {
 
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		$performer = $userFactory->newFromName( $this->params['performer'] );
+
+		// Restore the session information if present
+		if ( isset( $this->params[ 'session' ] ) ) {
+			$scope = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( static function () use ( &$scope ) {
+				ScopedCallback::consume( $scope );
+			} );
+		}
 
 		$this->bundleMover->moveSynchronously(
 			$sourceTitle,

@@ -178,14 +178,15 @@ class TranslatableBundleMover {
 		bool $moveSubPages,
 		User $user,
 		string $summary,
-		bool $moveTalkPages
+		bool $moveTalkPages,
+		array $userSessionInfo
 	): void {
 		$pageCollection = $this->getPagesToMove(
 			$source, $target, $moveSubPages, !self::FETCH_TRANSLATABLE_SUBPAGES, $moveTalkPages
 		);
 		$pagesToMove = $pageCollection->getListOfPages();
 
-		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $summary, $user );
+		$job = MoveTranslatableBundleJob::newJob( $source, $target, $pagesToMove, $summary, $user, $userSessionInfo );
 		$this->lock( array_keys( $pagesToMove ) );
 		$this->lock( array_values( $pagesToMove ) );
 
