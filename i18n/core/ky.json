@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Growingup",
-			"Bosogo"
+			"Bosogo",
+			"Incall"
 		]
 	},
 	"translate": "Которуу",
@@ -112,6 +113,7 @@
 	"translate-gs-continent": "Континент",
 	"translate-gs-speakers": "Сүйлөөчүлөр",
 	"translate-gs-total": "Бардыгы",
+	"translate-documentation-language": "Билдирүүнүн документациясы",
 	"translate-searchprofile": "Котормолор",
 	"translate-searchprofile-tooltip": "Бардык котормолордон издөө",
 	"translate-search-languagefilter": "Тил боюнча чыпкалоо:",
