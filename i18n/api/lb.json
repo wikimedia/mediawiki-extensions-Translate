@@ -45,5 +45,6 @@
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-sandboxdisabled": "Sandkëscht-Funktioun gëtt net benotzt",
 	"apierror-translate-unknownmessage": "Onbekannte Message",
-	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass"
+	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass",
+	"apihelp-translationentitysearch-param-limit": "Maximal Zuel vu Sichresultater"
 }

@@ -4,7 +4,8 @@
 			"Les Meloures",
 			"Robby",
 			"Soued031",
-			"Volvox"
+			"Volvox",
+			"GilPe"
 		]
 	},
 	"translate": "Iwwersetzen",
@@ -330,12 +331,12 @@
 	"tux-editor-cancel-button-label": "Ofbriechen",
 	"tux-editor-confirm-button-label": "Iwwersetzung confirméieren",
 	"tux-editor-proofread-button-label": "Als nogekuckt markéieren",
-	"tux-editor-shortcut-info": "Dréckt \"$1\" fir ze confirméieren an op den nächsten Text-Message ze goen, \"$2\" fir op den nächste Message ze goen, \"$4\" fir e Resumé unzeginn, oder dréckt op \"$3\" fir aner Tasturkierzel ze gesinn.",
+	"tux-editor-shortcut-info": "Dréckt \"$1\" fir ze confirméieren an op den nächsten Text-Message ze goen, \"$2\" fir op den nächste Message ze goen, \"$4\" fir e Resümmee unzeginn, oder dréckt op \"$3\" fir aner Tastaturkierzel ze gesinn.",
 	"tux-editor-edit-desc": "Dokumentatioun änneren",
 	"tux-editor-add-desc": "Dokumentatioun dobäisetzen",
 	"tux-editor-suggestions-title": "Virschléi",
 	"tux-editor-latest-updates-title": "Lescht Aktualiséierung",
-	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1|Aktualiséierung|Aktualiséierungen}} ouni Resumé",
+	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1|Aktualiséierung|Aktualiséierungen}} ouni Resümmee",
 	"tux-editor-all-changes": "All Ännerungen",
 	"tux-editor-in-other-languages": "An anere Sproochen",
 	"tux-editor-need-more-help": "Braucht Dir méi Hëllef?",

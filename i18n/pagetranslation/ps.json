@@ -106,5 +106,6 @@
 	"pp-save-button-label": "خپرول",
 	"pp-cancel-button-label": "ناگارل",
 	"pp-pagename-missing": "لطفاً د مخ نوم مو ورکړئ.",
-	"pp-diff-old-header": "د سرچينې ليک"
+	"pp-diff-old-header": "د سرچينې ليک",
+	"tpt-generic-confirm": "مهرباني وکړئ چاره تاييد کړئ."
 }
