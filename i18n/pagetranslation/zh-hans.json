@@ -47,7 +47,8 @@
 			"神樂坂秀吉",
 			"铁桶",
 			"阿pp",
-			"SaoMikoto"
+			"SaoMikoto",
+			"范"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -113,11 +114,17 @@
 	"tpt-rev-encourage-tooltip": "将此页面恢复正常翻译模式。",
 	"tpt-prepare-page": "准备翻译",
 	"tpt-translation-settings-page-title": "翻译设置",
+	"tpt-translation-settings-subtitle": "此页面的内容是否稳定并可供社区翻译？",
 	"tpt-translation-settings-save": "保存设置",
 	"tpt-translation-settings-ignore": "内容不需翻译",
+	"tpt-translation-settings-ignore-hint": "将不会列出此页面以供社区翻译。",
+	"tpt-translation-settings-unstable": "内容还不稳定",
+	"tpt-translation-settings-unstable-hint": "将暂缓列出此页面以供社区翻译。",
 	"tpt-translation-settings-propose": "内容已稳定且就绪",
+	"tpt-translation-settings-propose-hint": "将列出此页面以供社区翻译。",
 	"tpt-translation-settings-restricted": "您不被允许查看此页面",
 	"tpt-translation-settings-unstable-notice": "页面内容还不够稳定，无法标记为翻译。",
+	"tpt-translation-settings-ignored-notice": "编者已表明此页<em>不应该</em>被标记为翻译。",
 	"translate-tag-translate-link-desc": "翻译本页",
 	"translate-tag-markthis": "标记此页面以备翻译",
 	"translate-tag-markthisagain": "此页面自从最近被<span class=\"plainlinks\">[$2 标记翻译]</span>以来已有<span class=\"plainlinks\">[$1 更改]</span>。",
