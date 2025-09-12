@@ -2,6 +2,10 @@
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.OneObjectStructurePerFile.MultipleFound" />
+		<exclude name="MediaWiki.Commenting.ClassAnnotations.UnrecognizedAnnotation" />
+		<exclude name="MediaWiki.Commenting.CommentBeforeClass.FileSpacingAfter" />
+		<exclude name="MediaWiki.Commenting.CommentBeforeClass.SpacingAfter" />
+		<exclude name="MediaWiki.Commenting.CommentBeforeClass.StrayStyle" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 	</rule>
 	<rule ref="Generic.Files.LineLength">

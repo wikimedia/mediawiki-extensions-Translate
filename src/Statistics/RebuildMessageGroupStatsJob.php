@@ -21,7 +21,7 @@ class RebuildMessageGroupStatsJob extends GenericTranslateJob implements Generic
 	public const LANGUAGE_CODE = 'languagecode';
 	public const CLEAR_GROUPS = 'cleargroups';
 	public const REFRESH = 'purge';
-	/** @inheritdoc */
+	/** @inheritDoc */
 	protected $removeDuplicates = true;
 
 	public static function newJob( array $params ): self {
