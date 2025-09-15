@@ -84,6 +84,7 @@ class CrossLanguageTranslationSearchQuery {
 	 * Filter the message collection to get filtered messages.
 	 * Slice messages according to limit and offset given.
 	 * @param Document[] $documents
+	 * return array[]
 	 */
 	private function extractMessages( array $documents ): array {
 		$messages = $ret = [];
