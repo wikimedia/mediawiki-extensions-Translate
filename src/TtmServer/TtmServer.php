@@ -13,7 +13,7 @@ use WikiPage;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @defgroup TtmServer The Translate extension translation memory interface
- * @ingroup TTMServerp
+ * @ingroup TTMServer
  */
 abstract class TtmServer {
 	protected array $config;
