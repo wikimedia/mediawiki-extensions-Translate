@@ -13,6 +13,8 @@
 	"translate-ls-column-group": "مجموعة د لميصاجات",
 	"translate-mgs-group": "مجموعة د لميصاجات:",
 	"supportedlanguages": "تّوتيق",
+	"supportedlanguages-colorlegend": "ساروت اللوان: الطرجامة اللخرة هادي $1 يوم.",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|تبديل|تبديلات}} - التبديل اللخر هادي $3 {{PLURAL:$3|نهار|يوماين|يام}}",
 	"translate-manage-import-new": "Méṣaj jdid $1",
 	"translate-manage-import-deleted": "Méṣaj memḫi $1",
 	"translate-documentation-language": "توثيق الرسالة",
