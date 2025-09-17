@@ -9,16 +9,5 @@
 			"Umherirrender"
 		]
 	},
-	"translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in Ihrer Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1",
-	"translate-edit-no-information": "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''\nSofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen.",
-	"translate-edit-nopermission": "Sie benötigen Übersetzerrechte, um Nachrichten übersetzen zu können.",
-	"translate-checks-fudforum-syntax": "Bitte benutzen Sie <nowiki>$1</nowiki> anstatt <nowiki>$2</nowiki> in diesem Projekt.",
-	"translate-statsf-intro": "Sie können einfache Statistiken mit diesem Formular erstellen. Alle Werte haben untere und oberere Limits.",
-	"translations-summary": "Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.",
-	"translate-translations-including-no-param": "Bitte geben Sie einen gültigen Nachrichtennamen als Unterseitenparameter an",
-	"translate-langstats-incomplete": "Einige der Statistiken auf dieser Seite sind unvollständig. Laden Sie sie erneut, um weitere Statistiken zu erhalten.",
-	"translate-manage-nochanges-other": "Es gibt keine Änderungen für diese Sprache.\nVerwenden Sie den Verweis unten, um zur Gruppendetailübersicht zurück zu gehen.",
-	"translate-manage-inconsistent": "Es wurden Inkonsistenzen in der Anfrage festgestellt.\nBitte überprüfen Sie Ihre Änderungen und versuchen Sie es erneut.\nDetails: $1",
-	"translate-manage-toolong": "Die maximale Verarbeitungszeit von $1 {{PLURAL:$1|Sekunde|Sekunden}} ist abgelaufen.\nBitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen.",
-	"translate-manage-intro-other": "Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.\nBitte kontrollieren Sie die Änderungen und wählen Sie je eine Aktion, die Sie auf die Übersetzungen anwenden möchten.\nWenn Sie sich entscheiden, Änderungen zu ignorieren, werden sie mit dem nächsten Export überschrieben."
+	"translate-edit-no-information": "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''\nSofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen."
 }
