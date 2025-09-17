@@ -10,7 +10,6 @@ namespace MediaWiki\Extension\Translate\Utilities;
  * @copyright Copyright © 2010 Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
 class PHPVariableLoader {
 	/**
 	 * Returns a global variable from PHP file by executing the file.

@@ -12,6 +12,9 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
  * @license GPL-2.0-or-later
  */
 
+/**
+ * Message group for testing
+ */
 class MockWikiMessageGroup extends WikiMessageGroup {
 	public function __construct( string $id, array $messages ) {
 		parent::__construct( $id, 'unused' );

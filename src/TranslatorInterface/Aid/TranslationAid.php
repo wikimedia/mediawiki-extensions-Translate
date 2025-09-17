@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
+/** @defgroup TranslationAids Translation Aids */
+
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
@@ -13,7 +15,6 @@ use MessageGroup;
  *  - interface for translation aid classes
  *  - listing of available translation aids
  *
- * @defgroup TranslationAids Translation Aids
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2013-01-01

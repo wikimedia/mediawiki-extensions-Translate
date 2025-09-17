@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TtmServer;
 
+/** @defgroup TtmServer The Translate extension translation memory interface */
+
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\MediaWikiServices;
 use WikiPage;
@@ -12,7 +14,6 @@ use WikiPage;
  * Some general static methods for instantiating TtmServer and helpers.
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
- * @defgroup TtmServer The Translate extension translation memory interface
  * @ingroup TTMServer
  */
 abstract class TtmServer {

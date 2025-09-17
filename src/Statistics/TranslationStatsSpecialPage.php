@@ -18,7 +18,6 @@ use function wfEscapeWikiText;
 /**
  * Includable special page for generating graphs for statistics.
  *
- * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @license GPL-2.0-or-later

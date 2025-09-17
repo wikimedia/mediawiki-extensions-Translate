@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
+/** @defgroup FileFormatSupport File format support */
+
 use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
@@ -11,7 +13,6 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
  * various different file formats where translation messages are stored.
  *
  * @ingroup FileFormatSupport
- * @defgroup FileFormatSupport File format support
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0-or-later

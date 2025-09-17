@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\WebService;
 
+/** @defgroup TranslationWebService Translation Web Services */
+
 use Exception;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Logger\LoggerFactory;
@@ -20,7 +22,6 @@ use Wikimedia\ObjectCache\BagOStuff;
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2013-01-01
- * @defgroup TranslationWebService Translation Web Services
  */
 abstract class TranslationWebService implements LoggerAwareInterface {
 	private ?BagOStuff $cache;

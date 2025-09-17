@@ -22,7 +22,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-/// Script for comparing different plural implementations.
+/**
+ * Script for comparing different plural implementations.
+ */
 class PluralCompare extends Maintenance {
 	public function __construct() {
 		parent::__construct();

@@ -8,6 +8,9 @@
  * @license GPL-2.0-or-later
  */
 
+/**
+ * Message group for testing
+ */
 class MockFileBasedMessageGroup extends FileBasedMessageGroup {
 	/** @inheritDoc */
 	public function load( $code ): array {
