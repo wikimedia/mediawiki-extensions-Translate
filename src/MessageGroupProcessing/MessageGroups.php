@@ -467,11 +467,9 @@ class MessageGroups {
 
 	/**
 	 * Get only groups of specific type (class).
-	 * @phan-template T
-	 * @param string $type Class name of wanted type
-	 * @phan-param class-string<T> $type
-	 * @return MessageGroup[] Map of (group ID => MessageGroupBase)
-	 * @phan-return array<T&MessageGroup>
+	 * @template T of MessageGroup
+	 * @param class-string<T> $type Class name of wanted type
+	 * @return array<T> Map of (group ID => MessageGroupBase)
 	 * @since 2012-04-30
 	 */
 	public static function getGroupsByType( string $type ): array {
