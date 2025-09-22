@@ -79,10 +79,11 @@
 	"tpt-tag-discouraged": "исключено",
 	"tpt-tag-oldsyntax": "старый синтаксис",
 	"tpt-tag-no-transclusion-support": "без поддержки раскрытия (трансклюзии) шаблонов",
-	"tpt-select-prioritylangs": "Предпочитаемые языки (коды языков, разделенные запятой):",
+	"tpt-select-prioritylangs": "Предпочитаемые языки",
+	"tpt-select-prioritylangs-help": "Коды языков, разделённые запятой или переносом строки:",
 	"tpt-select-prioritylangs-force": "Предотвратить переводы на другие языки, помимо приоритетных",
 	"tpt-select-no-prioritylangs-force": "Запрет перевода на неприоритетные языки без выбора приоритетных языков предотвратит переводы на все языки.",
-	"tpt-select-prioritylangs-reason": "Причина:",
+	"tpt-select-prioritylangs-reason": "Причина",
 	"tpt-sections-prioritylangs": "Приоритетные языки",
 	"tpt-sections-syntaxversion": "Версия синтаксиса",
 	"tpt-syntaxversion-text": "В настоящее время на этой странице используется старая версия синтаксиса исходного кода переводимой страницы. В новой версии непереведённые разделы будут обернуты HTML-тегом для указания правильного языка текста. Пример: $1. Вы можете использовать новый синтаксис разметки $2, чтобы предотвратить любой вид переноса в местах, где это неуместно, например, при переводе атрибута элемента <code>title</code>. Вернуться к старой версии синтаксиса будет уже невозможно.",
@@ -356,5 +357,8 @@
 	"tpt-manage-message-group-subscriptions-raw-titles": "Группы:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "Проверить все",
 	"tpt-manage-message-group-subscriptions-raw-submit": "Обновить подписки",
-	"translate-category-summary": "Автоматическое создание перевода категории, используемой на странице «[[$1]]»"
+	"translate-category-summary": "Автоматическое создание перевода категории, используемой на странице «[[$1]]»",
+	"right-translate-empty-category": "Создание единиц перевода для пустых категорий",
+	"action-translate-empty-category": "создание единиц перевода для пустых категорий",
+	"tpt-create-empty-category": "Невозможно создать единицу перевода для пустой категории [[:$1]]."
 }
