@@ -11,6 +11,7 @@
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\RecentChanges\RecentChange;
 
 /**
  * @since 2012-11-01
@@ -44,7 +45,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		return [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/en' ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_type != ' . RC_LOG,
+			$db->expr( 'rc_source', '!=', RecentChange::SRC_LOG ),
 			'rc_id > ' . $this->getRCCutoff(),
 			'rc_actor' => FuzzyBot::getUser()->getActorId()
 		];

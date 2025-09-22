@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -84,7 +85,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_type != ' . RC_LOG,
+			$db->expr( 'rc_source', '!=', RecentChange::SRC_LOG ),
 			'rc_id > ' . $this->getRCCutoff(),
 		];
 
