@@ -3,7 +3,8 @@
 		"authors": [
 			"Meno25",
 			"ديفيد",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Hubaishan"
 		]
 	},
 	"apihelp-aggregategroups-summary": "إدارة مجموعات الرسائل المجمعة.",
@@ -51,7 +52,7 @@
 	"apihelp-query+messagegroupstats-param-group": "معرف مجموعة الرسائل. راجع <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> .",
 	"apihelp-query+messagegroupstats-example-1": "قائمة بإحصاءات إكمال الترجمة للمجموعة \"page-Example\"",
 	"apihelp-query+messagetranslations-summary": "الاستعلام عن كل الترجمات لرسالة واحدة.",
-	"apihelp-query+messagetranslations-param-title": "عنوان الصفحة للرسالة المعروفة، مع مساحة الاسم ورمز اللغة.",
+	"apihelp-query+messagetranslations-param-title": "عنوان الصفحة للرسالة المعروفة، مع النطاق ورمز اللغة.",
 	"apihelp-query+messagetranslations-example-1": "قائمة بالترجمات في الويكي عن \"MediaWiki:January\"",
 	"apihelp-managemessagegroups-summary": "أضف رسالة إعادة تسمية لرسالة موجودة أو رسالة جديدة في المجموعة أثناء الاستيراد",
 	"apihelp-managemessagegroups-param-groupId": "معرف المجموعة. راجع <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> .",
@@ -67,7 +68,7 @@
 	"apihelp-translatesandbox-param-password": "كلمة السر عند إنشاء المستخدم.",
 	"apihelp-translatesandbox-param-email": "البريد الإلكتروني عند إنشاء المستخدم.",
 	"apihelp-translationaids-summary": "الاستعلام عن كل الترجمات.",
-	"apihelp-translationaids-param-title": "عنوان الصفحة للرسالة المعروفة، مع مساحة الاسم ورمز اللغة.",
+	"apihelp-translationaids-param-title": "عنوان الصفحة للرسالة المعروفة، مع النطاق ورمز اللغة.",
 	"apihelp-translationaids-param-group": "مجموعة الرسائل التي تنتمي الرسالة إليها. لو فارغة إذا سيتم استخدام المجموعة الأساسية.",
 	"apihelp-translationaids-param-prop": "ما هي مساعدات الترجمة للتضمين.",
 	"apihelp-translationaids-example-1": "اعرض المساعدات ل[[MediaWiki:January/fi]]",

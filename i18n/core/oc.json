@@ -177,7 +177,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traductor|Traductritz}}|Traductors}} : $1",
 	"supportedlanguages-recenttranslations": "traduccions recentas",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lenga|lengas}} al total.",
-	"supportedlanguages-activity": "$1 : $2 modificacion{{PLURAL:$2||s}} - Darrièra modificacion i a $3 jorn{{PLURAL:$3||s}}",
+	"supportedlanguages-activity": "$1: $2 modificacion{{PLURAL:$2||s}} - Darrièra modificacion fa $3 jorn{{PLURAL:$3||s}}",
 	"abusefilter-edit-builder-vars-translate-source-text": "Tèxte font de l'unitat de traduccion",
 	"translate-jssti-add": "Apondre a la lista",
 	"managemessagegroups": "Gestion del grop de messatges",
