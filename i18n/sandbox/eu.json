@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sator",
-			"Subi"
+			"Subi",
+			"Xabier Armendaritz"
 		]
 	},
 	"tsb-reminder-sent": "{{PLURAL:$1|Sent $1 reminder. Time: $2.|Sent $1 reminders. Time of the last one: $2.}}",
@@ -11,7 +12,7 @@
 	"tsb-all-languages-button-label": "Hizkuntza guztiak",
 	"tsb-accept-button-label": "Onartu",
 	"tsb-reject-button-label": "Ukatu",
-	"tsb-selected-count": "{{PLURAL:$1|$1 user selected|$1 lankide aukeratuak}}",
+	"tsb-selected-count": "{{PLURAL:$1|Lankide bat aukeratu da|$1 lankide aukeratu dira}}",
 	"tsb-accept-all-button-label": "Dena onartu",
 	"tsb-reject-all-button-label": "Dena ukatu",
 	"tsb-reminder-link-text": "Gogorarazpen posta bidali",
