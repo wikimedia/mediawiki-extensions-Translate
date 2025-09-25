@@ -88,7 +88,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		);
 
 		$this->opts = $opts = new FormOptions();
-		$opts->add( 'query', '' );
+		$opts->add( 'query', $subPage ?? '' );
 		$opts->add( 'sourcelanguage', $this->getConfig()->get( MainConfigNames::LanguageCode ) );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
