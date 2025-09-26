@@ -50,11 +50,11 @@
 				beforeSave: function ( translation ) {
 					that.$message.find( '.tux-pagemode-translation' )
 						.html( mw.translate.formatMessageGently( translation || '', that.message.key ) )
-						.addClass( 'highlight' );
+						.addClass( 'tux-highlight' );
 				},
 				onSave: function ( translation ) {
 					that.$message.find( '.tux-pagemode-translation' )
-						.removeClass( 'highlight' );
+						.removeClass( 'tux-highlight' );
 					that.message.translation = translation;
 
 					// `status` class is documented elsewhere
