@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Brahim-essaidi"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "ⴰⵎⵙⵎⴰⴳⵉ ⵏ ⵜⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ. ⵥⵕ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-groupreview-param-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ. ⵥⵕ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+messagecollection-param-group": "ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ. ⵥⵕ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+messagegroupstats-param-group": "ⴰⵎⵙⵎⴰⴳⵉ ⵏ ⵜⵔⴰⴱⴱⵓⵜ ⵏ ⵜⵓⵣⵉⵏⵉⵏ. ⵥⵕ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>."
+}
