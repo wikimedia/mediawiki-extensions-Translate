@@ -154,7 +154,7 @@
 	"translate-msggroupselector-search-placeholder": "Bilatu taldeak",
 	"translate-msggroupselector-search-all": "Denak",
 	"translate-msggroupselector-search-recent": "Berriak",
-	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|azpitalde $1|$1 azpitalde}}",
+	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|azpitalde bat|$1 azpitalde}}",
 	"tux-languageselector": "Itzuli hizkuntza honetara",
 	"tux-tab-all": "Guztiak",
 	"tux-tab-untranslated": "Itzuli gabe",
