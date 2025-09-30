@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use JobQueueGroup;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
@@ -51,7 +52,8 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			$getServiceOrMock( WikiPageFactory::class ),
 			$getServiceOrMock( TranslatablePageView::class ),
 			$getServiceOrMock( MessageGroupSubscription::class ),
-			$getServiceOrMock( FormatterFactory::class )
+			$getServiceOrMock( FormatterFactory::class ),
+			$getServiceOrMock( HookRunner::class )
 		);
 	}
 
@@ -88,6 +90,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
 				TitleParser::class => $services->getTitleParser(),
 				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
+				HookRunner::class => $services->get( 'Translate:HookRunner' )
 			]
 		);
 
@@ -133,6 +136,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
 				MessageGroupSubscription::class => $services->get( 'Translate:MessageGroupSubscription' ),
 				FormatterFactory::class => $services->getFormatterFactory(),
+				HookRunner::class => $services->get( 'Translate:HookRunner' )
 			]
 		);
 

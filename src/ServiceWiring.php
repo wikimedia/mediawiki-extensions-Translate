@@ -407,7 +407,8 @@ return [
 			$services->getWikiPageFactory(),
 			$services->get( 'Translate:TranslatablePageView' ),
 			$services->get( 'Translate:MessageGroupSubscription' ),
-			$services->getFormatterFactory()
+			$services->getFormatterFactory(),
+			$services->get( 'Translate:HookRunner' ),
 		);
 	},
 

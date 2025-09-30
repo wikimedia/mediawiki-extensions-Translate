@@ -46,7 +46,7 @@ class MarkForTranslationActionApi extends ApiBase {
 			$operation = $this->translatablePageMarker->getMarkOperation(
 				$title->toPageRecord( IDBAccessObject::READ_LATEST ),
 				$revision,
-				$translateTitle ?? true
+				$translateTitle
 			);
 		} catch ( TranslatablePageMarkException $e ) {
 			$this->addError( $e->getMessageObject() );
@@ -59,15 +59,7 @@ class MarkForTranslationActionApi extends ApiBase {
 			return;
 		}
 
-		if ( $translateTitle === null ) {
-			// Check whether page title was previously marked for translation.
-			// If the page is marked for translation the first time, default to
-			// allowing title translation, unless the page is a template. T305240
-			$translateTitle = (
-					$operation->isFirstMark() &&
-					!$title->inNamespace( NS_TEMPLATE )
-				) || $operation->getPage()->hasPageDisplayTitle();
-		}
+		$translateTitle = $operation->titleTranslationState === TranslateTitleEnum::DEFAULT_CHECKED;
 
 		// By default, units are marked nofuzzy if only their tvars have changed
 		$noFuzzyUnits = [];

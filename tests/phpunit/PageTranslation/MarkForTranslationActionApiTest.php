@@ -300,13 +300,15 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			);
 		}
 
+		$expectedTranslateTitle = $expectedSettings['translateTitle'] ?? true;
 		$operation = new TranslatablePageMarkOperation(
 			$page,
 			new ParserOutput( '', [], [] ),
 			$unitObjects,
 			[],
 			$firstMark,
-			$unitValidationStatus
+			$unitValidationStatus,
+			$expectedTranslateTitle ? TranslateTitleEnum::DEFAULT_CHECKED : TranslateTitleEnum::DEFAULT_UNCHECKED
 		);
 
 		$settings = new TranslatablePageSettings(
@@ -314,7 +316,7 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			$expectedSettings['forcePriority'] ?? false,
 			$expectedSettings['priorityReason'] ?? '',
 			$expectedSettings['noFuzzyUnits'] ?? [],
-			$expectedSettings['translateTitle'] ?? true,
+			$expectedTranslateTitle,
 			$expectedSettings['forceLatestSyntaxVersion'] ?? false,
 			$expectedSettings['enableTransclusion'] ?? true
 		);

@@ -808,7 +808,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$checkBox = new FieldLayout(
 					new CheckboxInputWidget( [
 						'name' => 'translatetitle',
-						'selected' => $defaultChecked,
+						'selected' => $operation->titleTranslationState === TranslateTitleEnum::DEFAULT_CHECKED,
+						'disabled' => $operation->titleTranslationState === TranslateTitleEnum::DISABLED,
 					] ),
 					[
 						'label' => $this->msg( 'tpt-translate-title' )->text(),

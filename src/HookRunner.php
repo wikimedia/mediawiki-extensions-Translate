@@ -13,6 +13,8 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupState
 use MediaWiki\Extension\Translate\MessageGroupProcessing\PostInitGroupsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ProcessAPIMessageGroupsPropertiesHook;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\PageTranslation\TranslateTitleEnum;
+use MediaWiki\Extension\Translate\PageTranslation\TranslateTitlePageTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\PrefillTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\BeforeAddModulesHook;
 use MediaWiki\Extension\Translate\TranslatorInterface\EventTranslationReviewHook;
@@ -21,6 +23,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\NewTranslationHook;
 use MediaWiki\Extension\Translate\TranslatorSandbox\UserPromotedHook;
 use MediaWiki\Extension\Translate\Utilities\SupportedLanguagesHook;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MessageGroup;
@@ -48,7 +51,8 @@ class HookRunner implements
 	ProcessAPIMessageGroupsPropertiesHook,
 	SupportedLanguagesHook,
 	EventMessageMembershipChangeHook,
-	GettextFormatHeaderFieldsHook
+	GettextFormatHeaderFieldsHook,
+	TranslateTitlePageTranslationHook
 {
 	private HookContainer $hookContainer;
 
@@ -141,6 +145,13 @@ class HookRunner implements
 		return $this->hookContainer->run(
 			'Translate:GettextFormat:headerFields',
 			[ &$headers, $group, $languageCode ]
+		);
+	}
+
+	/** @inheritDoc */
+	public function onTranslateTitlePageTranslation( TranslateTitleEnum &$state, PageIdentity $page ): void {
+		$this->hookContainer->run(
+			'TranslateTitlePageTranslation', [ &$state, $page ], [ 'abortable' => false ]
 		);
 	}
 }

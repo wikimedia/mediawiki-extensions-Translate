@@ -9,6 +9,7 @@ use LogicException;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
+use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
@@ -58,6 +59,7 @@ class TranslatablePageMarker {
 	private TranslatablePageView $translatablePageView;
 	private MessageGroupSubscription $messageGroupSubscription;
 	private FormatterFactory $formatterFactory;
+	private HookRunner $hookRunner;
 
 	public function __construct(
 		IConnectionProvider $dbProvider,
@@ -75,7 +77,8 @@ class TranslatablePageMarker {
 		WikiPageFactory $wikiPageFactory,
 		TranslatablePageView $translatablePageView,
 		MessageGroupSubscription $messageGroupSubscription,
-		FormatterFactory $formatterFactory
+		FormatterFactory $formatterFactory,
+		HookRunner $hookRunner,
 	) {
 		$this->dbProvider = $dbProvider;
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -93,6 +96,7 @@ class TranslatablePageMarker {
 		$this->translatablePageView = $translatablePageView;
 		$this->messageGroupSubscription = $messageGroupSubscription;
 		$this->formatterFactory = $formatterFactory;
+		$this->hookRunner = $hookRunner;
 	}
 
 	/**
@@ -142,6 +146,7 @@ class TranslatablePageMarker {
 	 * @param PageRecord $page
 	 * @param ?int $revision Revision to use, or null to use the latest
 	 *  revision of the given page (i.e. not do the latest revision check)
+	 * @param ?bool $validateUnitTitle
 	 * @throws TranslatablePageMarkException If the revision was provided and was
 	 *  non-latest, or if the latest revision of the page is not ready to be marked
 	 * @throws ParsingFailure If the parse fails
@@ -149,7 +154,7 @@ class TranslatablePageMarker {
 	public function getMarkOperation(
 		PageRecord $page,
 		?int $revision,
-		bool $validateUnitTitle
+		?bool $validateUnitTitle
 	): TranslatablePageMarkOperation {
 		$latestRevID = $page->getLatest();
 		if ( $revision === null ) {
@@ -184,13 +189,28 @@ class TranslatablePageMarker {
 			] );
 		}
 
+		// Check whether page title was previously marked for translation.
+		// If the page is marked for translation the first time, default to
+		// allowing title translation, unless the page is a template. T305240
+		$isFirstMark = $translatablePage->getMarkedTag() === null;
+		if ( $validateUnitTitle === null ) {
+			$isTemplateNamespace = $translatablePage->getTitle()->inNamespace( NS_TEMPLATE );
+			$validateUnitTitle = ( $isFirstMark && !$isTemplateNamespace ) || $translatablePage->hasPageDisplayTitle();
+		}
+
 		$parserOutput = $this->translatablePageParser->parse( $translatablePage->getText() );
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $translatablePage, $parserOutput );
+
+		// Give extensions a chance to disable title translation.
+		$defaultState = $validateUnitTitle ?
+			TranslateTitleEnum::DEFAULT_CHECKED :
+			TranslateTitleEnum::DEFAULT_UNCHECKED;
+		$this->hookRunner->onTranslateTitlePageTranslation( $defaultState, $translatablePage->getPageIdentity() );
 
 		$unitValidationStatus = $this->validateUnitNames(
 			$translatablePage,
 			$units,
-			$validateUnitTitle
+			$defaultState !== TranslateTitleEnum::DISABLED && $validateUnitTitle
 		);
 
 		return new TranslatablePageMarkOperation(
@@ -198,8 +218,9 @@ class TranslatablePageMarker {
 			$parserOutput,
 			$units,
 			$deletedUnits,
-			$translatablePage->getMarkedTag() === null,
-			$unitValidationStatus
+			$isFirstMark,
+			$unitValidationStatus,
+			$defaultState
 		);
 	}
 
