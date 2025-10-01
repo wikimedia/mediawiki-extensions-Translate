@@ -18,7 +18,8 @@
 			"Sp5uhe",
 			"ToSter",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Rzuwig"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -256,6 +257,7 @@
 	"pm-pagetitle-not-translatable": "$1 nie jest częścią strony do tłumaczenia.",
 	"pm-translation-unit-fetch-failed": "Wystąpił błąd podczas pobierania jednostek tłumaczenia dla strony.",
 	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony",
+	"tpt-translate-hide-unchanged-units": "Ukryj niezmienione jednostki tłumaczenia",
 	"pp-save-summary": "Przygotowano stronę do tłumaczenia",
 	"pagepreparation": "Przygotowanie strony do tłumaczenia",
 	"pagepreparation-summary": "Podaj tytuł strony do przygotowania do tłumaczenia.",

@@ -48,7 +48,8 @@
 			"铁桶",
 			"阿pp",
 			"SaoMikoto",
-			"范"
+			"范",
+			"Libamidi"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -155,6 +156,7 @@
 	"tpt-aggregategroup-close": "关闭",
 	"tpt-aggregategroup-add-new": "添加新的聚合组",
 	"tpt-aggregategroup-select-source-language": "自定义源语言（可选）：",
+	"tpt-aggregategroup-language-none": "（无）",
 	"tpt-aggregategroup-new-name": "名称：",
 	"tpt-aggregategroup-new-description": "说明（可选）：",
 	"tpt-aggregategroup-remove-confirm": "确实要删除此聚合组吗？",
@@ -324,5 +326,6 @@
 	"visualeditor-annotations-tvar-description": "此范围内的内容被标记为不可翻译。请参考[https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation 源文本的分割]这一文档以获取更多信息。",
 	"tag-translate-translation-pages-description": "通过翻译扩展的自动翻译页面编辑",
 	"special-tab-managemessagegroupsubscriptions-short": "查看和编辑",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "编辑原始列表",
 	"tpt-manage-message-group-subscriptions-edit-too-many'": "您的订阅已更新。"
 }

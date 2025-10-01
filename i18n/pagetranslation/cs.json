@@ -14,7 +14,8 @@
 			"Patriccck",
 			"Patrik L.",
 			"Vks",
-			"Want"
+			"Want",
+			"Draceane"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -91,6 +92,8 @@
 	"log-name-pagetranslation": "Kniha překladů stránek",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|označil|označila}} stránku $3 k překladu",
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|vyjmul|vyjmula}} stránku $3 ze systému překládání",
+	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|doporučil|doporučila}} $3 k překladu",
+	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|nedoporučil|nedoporučila}} $3 k překladu",
 	"pt-movepage-list-pages": "Seznam stránek k přesunutí",
 	"pt-movepage-list-translation": "Překlad {{PLURAL:$1|stránky|stránek}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Stránka s částí překladu|Stránky s částmi překladu}}",
