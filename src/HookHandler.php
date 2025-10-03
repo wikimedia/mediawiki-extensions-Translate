@@ -55,6 +55,8 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Context;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
@@ -85,7 +87,8 @@ class HookHandler implements
 	ListDefinedTagsHook,
 	ParserFirstCallInitHook,
 	RevisionRecordInsertedHook,
-	UserGetReservedNamesHook
+	UserGetReservedNamesHook,
+	ResourceLoaderRegisterModulesHook
 {
 	/**
 	 * Any user of this list should make sure that the tables
@@ -981,4 +984,39 @@ class HookHandler implements
 			'undeterminedLanguageCode' => AggregateMessageGroup::UNDETERMINED_LANGUAGE_CODE
 		];
 	}
+
+	/* @inheritDoc */
+	public function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ): void {
+		$dir = dirname( __DIR__ );
+
+		$modules = [];
+
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' ) ) {
+			$modules[ 'ext.translate.ve' ] = [
+				'localBasePath' => $dir,
+				'remoteExtPath' => 'Translate',
+				'scripts' => [
+					'resources/src/ve-translate/ve.ce.MWTranslateAnnotationNode.js',
+					'resources/src/ve-translate/ve.dm.MWTranslateAnnotationNode.js',
+					'resources/src/ve-translate/ve.ui.MWTranslateAnnotationContextItem.js',
+				],
+				'dependencies' => [
+					'ext.visualEditor.mwcore',
+				],
+				'messages' => [
+					'visualeditor-annotations-translate-start',
+					'visualeditor-annotations-translate-end',
+					'visualeditor-annotations-translate-description',
+					'visualeditor-annotations-tvar-start',
+					'visualeditor-annotations-tvar-end',
+					'visualeditor-annotations-tvar-description',
+				],
+			];
+		}
+
+		if ( $modules ) {
+			$resourceLoader->register( $modules );
+		}
+	}
+
 }
