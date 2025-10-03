@@ -27,6 +27,8 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashActionApi;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Revision\Hook\RevisionRecordInsertedHook;
 use MediaWiki\Revision\RevisionLookup;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -39,7 +41,7 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * Most of the hooks on this class are still old style static functions, but new new hooks should
  * use the new style hook handlers with interfaces.
  */
-class TranslateHooks implements RevisionRecordInsertedHook {
+class TranslateHooks implements RevisionRecordInsertedHook, ResourceLoaderRegisterModulesHook {
 	/**
 	 * Any user of this list should make sure that the tables
 	 * actually exist, since they may be optional
@@ -1019,4 +1021,41 @@ class TranslateHooks implements RevisionRecordInsertedHook {
 			__METHOD__
 		);
 	}
+
+	/* @inheritDoc */
+	public function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ): void {
+		$modules = [];
+
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' ) ) {
+			$modules[ 'ext.translate.ve' ] = [
+				'localBasePath' => __DIR__,
+				'remoteExtPath' => 'Translate',
+				'scripts' => [
+					'resources/src/ve-translate/ve.ce.MWTranslateAnnotationNode.js',
+					'resources/src/ve-translate/ve.dm.MWTranslateAnnotationNode.js',
+					'resources/src/ve-translate/ve.ui.MWTranslateAnnotationContextItem.js',
+				],
+				'dependencies' => [
+					'ext.visualEditor.mwcore',
+				],
+				'messages' => [
+					'visualeditor-annotations-translate-start',
+					'visualeditor-annotations-translate-end',
+					'visualeditor-annotations-translate-description',
+					'visualeditor-annotations-tvar-start',
+					'visualeditor-annotations-tvar-end',
+					'visualeditor-annotations-tvar-description',
+				],
+				'targets' => [
+					'desktop',
+					'mobile',
+				],
+			];
+		}
+
+		if ( $modules ) {
+			$resourceLoader->register( $modules );
+		}
+	}
+
 }
