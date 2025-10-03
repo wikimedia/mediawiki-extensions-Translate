@@ -273,8 +273,6 @@ class HookHandler implements
 			$hooks['ParserBeforeInternalParse'][] = [ Hooks::class, 'renderTagPage' ];
 			// Strip \<translate> tags etc. from source pages when preprocessing
 			$hooks['ParserBeforePreprocess'][] = [ Hooks::class, 'preprocessTagPage' ];
-			$hooks['ParserOutputPostCacheTransform'][] =
-				[ Hooks::class, 'onParserOutputPostCacheTransform' ];
 
 			$hooks['BeforeParserFetchTemplateRevisionRecord'][] =
 				[ Hooks::class, 'fetchTranslatableTemplateAndTitle' ];

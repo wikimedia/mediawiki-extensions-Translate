@@ -37,6 +37,7 @@ use MediaWiki\Page\PageIdentity;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Parser\ParserOutputFlags;
 use MediaWiki\Parser\PPFrame;
 use MediaWiki\ResourceLoader\Context;
 use MediaWiki\Revision\MutableRevisionRecord;
@@ -154,7 +155,7 @@ class Hooks {
 
 		$wikitextParser->getOutput()->setExtensionData( 'translate-translation-page', $extensionData );
 		// Disable edit section links
-		$wikitextParser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
+		$wikitextParser->getOutput()->setOutputFlag( ParserOutputFlags::NO_SECTION_EDIT_LINKS );
 	}
 
 	/**
@@ -182,22 +183,6 @@ class Hooks {
 			// context of a Parsoid template expansion sub-pipeline. We strip these as well.
 			$unit = new TranslationUnit( $text );
 			$text = $unit->getTextForTrans();
-		}
-	}
-
-	/**
-	 * Hook: ParserOutputPostCacheTransform
-	 * @param ParserOutput $out
-	 * @param string &$text
-	 * @param array &$options
-	 */
-	public static function onParserOutputPostCacheTransform(
-		ParserOutput $out,
-		&$text,
-		array &$options
-	) {
-		if ( $out->getExtensionData( 'Translate-noeditsection' ) ) {
-			$options['enableSectionEditLinks'] = false;
 		}
 	}
 
