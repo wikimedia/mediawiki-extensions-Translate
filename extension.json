@@ -206,7 +206,9 @@
 		"AfterImportPage": "translatableBundleImporter",
 		"LonelyPagesQuery": "pageTranslation",
 		"ArticleViewHeader": "messageBundle",
-		"TitleQuickPermissions": "translateSandbox"
+		"TitleQuickPermissions": "translateSandbox",
+		"ResourceLoaderRegisterModules": "main"
+
 	},
 	"HookHandlers": {
 		"cleanChanges": {
@@ -1234,24 +1236,6 @@
 			],
 			"scripts": [
 				"resources/js/ext.translate.special.managegroups.js"
-			]
-		},
-		"ext.translate.ve": {
-			"messages": [
-				"visualeditor-annotations-translate-start",
-				"visualeditor-annotations-translate-end",
-				"visualeditor-annotations-translate-description",
-				"visualeditor-annotations-tvar-start",
-				"visualeditor-annotations-tvar-end",
-				"visualeditor-annotations-tvar-description"
-			],
-			"scripts": [
-				"resources/src/ve-translate/ve.ce.MWTranslateAnnotationNode.js",
-				"resources/src/ve-translate/ve.dm.MWTranslateAnnotationNode.js",
-				"resources/src/ve-translate/ve.ui.MWTranslateAnnotationContextItem.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore"
 			]
 		},
 		"ext.translate.codemirror": {
