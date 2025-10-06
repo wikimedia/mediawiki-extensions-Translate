@@ -13,7 +13,8 @@
 			"Yfdyh000",
 			"LittlePaw365",
 			"LowensteinYang",
-			"沈澄心"
+			"沈澄心",
+			"Libamidi"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
@@ -72,6 +73,8 @@
 	"apihelp-query+messagetranslations-param-title": "已知消息的完整标题。",
 	"apihelp-query+messagetranslations-example-1": "Wiki中用于“MediaWiki:January”的翻译列表",
 	"apihelp-managemessagegroups-param-groupId": "群组ID",
+	"apihelp-managemessagegroups-param-operation": "要执行的操作。可能的值：rename / new",
+	"apihelp-managemessagegroups-param-changesetModified": "变更集最后修改时间的Unix时间戳。如果变更集在此时间之后被修改，API将抛出错误。",
 	"apihelp-translatesandbox-description": "注册和管理沙盒化用户。",
 	"apihelp-translatesandbox-summary": "注册和管理沙盒化用户。",
 	"apihelp-translatesandbox-param-do": "要干什么。",
