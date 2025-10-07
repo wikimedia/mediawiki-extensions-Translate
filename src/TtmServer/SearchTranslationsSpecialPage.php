@@ -88,7 +88,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		);
 
 		$this->opts = $opts = new FormOptions();
-		$opts->add( 'query', $subPage ?? '' );
+		$opts->add( 'query', '' );
 		$opts->add( 'sourcelanguage', $this->getConfig()->get( MainConfigNames::LanguageCode ) );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
@@ -102,6 +102,12 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
 		$queryString = $opts->getValue( 'query' );
+		if ( $queryString === '' && $subPage !== null ) {
+			// When searching with subpage, its more likely that the user is searching with spaces
+			// rather than underscores
+			$queryString = str_replace( '_', ' ', $subPage );
+			$opts->setValue( 'query', $queryString );
+		}
 
 		if ( $queryString === '' ) {
 			$this->showEmptySearch();
