@@ -112,7 +112,6 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 		$gettextFormat = $this->getGettextInstance();
 		$object = new ReflectionObject( $gettextFormat );
 		$method = $object->getMethod( 'formatMessageBlock' );
-		$method->setAccessible( true );
 
 		$key = 'key';
 		$m = new FatMessage( 'key', 'definition' );
