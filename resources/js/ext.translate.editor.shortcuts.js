@@ -35,15 +35,27 @@
 				.css( 'transform', 'translate( -50%, 0 )' );
 
 			this.$editor.find( '.shortcut-activated:visible' ).each( function ( index ) {
-				var offset = getStartCornerOffsetOf( $( this ), rtl );
+				// Make indexing human-friendly
+				index += 1;
+
+				// Index 10 actually gets the shortcut 0
+				if ( index === 10 ) {
+					index = 0;
+				}
+
+				// Don't display two-digit indexes
+				if ( index > 10 ) {
+					return;
+				}
 
 				// Let's not have numbers appear outside the editor over other content
+				var offset = getStartCornerOffsetOf( $( this ), rtl );
 				if ( offset.top > maxTop || offset.top < minTop ) {
 					return;
 				}
 
 				$( '<div>' )
-					.text( index + 1 )
+					.text( index )
 					.addClass( 'shortcut-popup' )
 					.appendTo( document.body )
 					.offset( offset )
