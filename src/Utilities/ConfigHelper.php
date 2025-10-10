@@ -45,28 +45,34 @@ class ConfigHelper {
 		string $languageCode,
 		?string &$reason = null
 	): bool {
-		$languages = $group->getTranslatableLanguages();
-		if ( $languages === MessageGroup::DEFAULT_LANGUAGES ) {
-			$groupId = $group->getId();
+		$globalDisabledReason = null;
+		$groupId = $group->getId();
+		$checks = [
+			$groupId,
+			strtok( $groupId, '-' ),
+			'*'
+		];
 
-			$checks = [
-				$groupId,
-				strtok( $groupId, '-' ),
-				'*'
-			];
-
-			$disabledLanguages = $this->getDisabledTargetLanguages();
-			foreach ( $checks as $check ) {
-				if ( isset( $disabledLanguages[$check][$languageCode] ) ) {
-					$reason = $disabledLanguages[$check][$languageCode];
-					return true;
-				}
+		$disabledLanguages = $this->getDisabledTargetLanguages();
+		foreach ( $checks as $check ) {
+			if ( isset( $disabledLanguages[$check][$languageCode] ) ) {
+				$globalDisabledReason = $disabledLanguages[$check][$languageCode];
+				break;
 			}
-
-			return false;
 		}
 
-		return !array_key_exists( $languageCode, $languages );
+		$groupLanguages = $group->getTranslatableLanguages();
+
+		$isLanguageDisabled = $groupLanguages === MessageGroup::DEFAULT_LANGUAGES
+			? $globalDisabledReason !== null
+			: !array_key_exists( $languageCode, $groupLanguages );
+
+		// Only set the reason if the language is actually disabled
+		if ( $isLanguageDisabled ) {
+			$reason = $globalDisabledReason;
+		}
+
+		return $isLanguageDisabled;
 	}
 
 	public function isAuthorExcluded( string $groupId, string $languageCode, string $username ): bool {
