@@ -10,12 +10,13 @@
 			"Wertuose",
 			"Nemoralis",
 			"Əkrəm Cəfər",
-			"Əkrəm"
+			"Əkrəm",
+			"Gadir"
 		]
 	},
 	"translate": "Tərcümə et",
 	"translate-extensionname": "Tərcümə",
-	"translate-desc": "MediaViki və əlavələrini tərcümə etmək üçün [[Special:Translate|xüsusi səhifə]]",
+	"translate-desc": "MediaWiki və əlavələrini tərcümə etmək üçün [[Special:Translate|xüsusi səhifə]]",
 	"translate-fuzzybot-desc": "Bu, tərcümələri idarə etmək üçün istifadə edilən MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate uzantısı] tərəfindən istifadə edilən xüsusi sistem hesabıdır.\nBu hesab MediaWiki proqramının bir hissəsidir və heç bir istifadəçiyə məxsus deyil.",
 	"translate-taskui-export-to-file": "Yerli formatda ixrac et",
 	"translate-taskui-export-as-po": "Oflayn tərcümə üçün ixrac",
