@@ -4,7 +4,8 @@
 			"Bapham123",
 			"KhangND",
 			"Minh Nguyen",
-			"Nvdtn19"
+			"Nvdtn19",
+			"SaldırganSincap"
 		]
 	},
 	"apihelp-query+messagecollection-param-language": "Mã ngôn ngữ.",
@@ -15,5 +16,5 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Mã ngôn ngữ của văn bản gốc.",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Không hỗ trợ theo dõi nhóm thông điệp động",
 	"apiwarn-translate-language-disabled-source": "Ngôn ngữ gốc của nhóm thông điệp này là $1. Vui lòng chọn ngôn ngữ khác để dịch sang.",
-	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Bạn đang dịch sang<bdi>$1</strong>. Đây là một biến thể của<bdi> $2</bdi>, vốn đã là ngôn ngữ gốc của các thông điệp này. Hãy đảm bảo ngôn ngữ đã chọn là chính xác và xem xét sự khác biệt giữa các biến thể ngôn ngữ để cung cấp bản dịch tốt."
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Bạn đang dịch sang<bdi>$1</bdi></strong>. Đây là một biến thể của <bdi>$2</bdi>, vốn đã là ngôn ngữ gốc của các thông điệp này. Hãy đảm bảo ngôn ngữ đã chọn là chính xác và xem xét sự khác biệt giữa các biến thể ngôn ngữ để cung cấp bản dịch tốt."
 }
