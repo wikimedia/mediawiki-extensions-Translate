@@ -19,7 +19,8 @@
 			"ToSter",
 			"WTM",
 			"Woytecr",
-			"Rzuwig"
+			"Rzuwig",
+			"SaldırganSincap"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -52,7 +53,7 @@
 	"tpt-edit-failed": "Nie udało się zaktualizować strony $1",
 	"tpt-duplicate": "Nazwa jednostki tłumaczenia <strong><bdi>$1</bdi></strong>  jest używana więcej niż jeden raz.",
 	"tpt-invalid": "Nazwa jednostki tłumaczenia <strong><bdi>$1</bdi></strong> nie może zawierać znaku podkreślenia lub ukośnika.",
-	"tpt-unit-title-too-long": "Nazwa jednostki tłumaczeniowej <strong><bdi>$1</strong> jest za długa. Łączna długość tytułu strony do przetłumaczenia z prefiksem przestrzeni nazw, nazwą jednostki tłumaczeniowej i kodem języka wynosi $2 {{PLURAL:$2|bajt|bajty|bajtów}}, czyli więcej niż maksymalna obsługiwana długość $3 {{PLURAL:$3|bajtu|bajtów}}. Skróć nazwę jednostki tłumaczeniowej (jeśli została dostosowana) lub [[Special:MovePage/$4|zmień nazwę strony do przetłumaczenia]] na krótszą, aby umożliwić tłumaczenie.",
+	"tpt-unit-title-too-long": "Nazwa jednostki tłumaczeniowej <strong><bdi>$1</bdi></strong> jest za długa. Łączna długość tytułu strony do przetłumaczenia z prefiksem przestrzeni nazw, nazwą jednostki tłumaczeniowej i kodem języka wynosi $2 {{PLURAL:$2|bajt|bajty|bajtów}}, czyli więcej niż maksymalna obsługiwana długość $3 {{PLURAL:$3|bajtu|bajtów}}. Skróć nazwę jednostki tłumaczeniowej (jeśli została dostosowana) lub [[Special:MovePage/$4|zmień nazwę strony do przetłumaczenia]] na krótszą, aby umożliwić tłumaczenie.",
 	"tpt-unit-title-invalid": "Nazwa jednostki tłumaczenia <strong><bdi>$1</bdi></strong> jest niepoprawna: $2",
 	"tpt-unmarked": "Strona [[:$1]] nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.",
 	"tpt-list-nopages": "Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.",
