@@ -232,7 +232,10 @@ return [
 
 	'Translate:MessageGroupSubscriptionHookHandler' => static function (
 		MediaWikiServices $services
-	): MessageGroupSubscriptionHookHandler {
+	): ?MessageGroupSubscriptionHookHandler {
+		if ( !$services->getExtensionRegistry()->isLoaded( 'Echo' ) ) {
+			return null;
+		}
 		return new MessageGroupSubscriptionHookHandler(
 			$services->get( 'Translate:MessageGroupSubscription' ),
 			$services->getUserFactory()
