@@ -104,6 +104,7 @@
 	"tpt-languages-nonzero": "$1 ($2% translated)",
 	"tpt-tab-translate": "Translate",
 	"tpt-target-page": "This page cannot be updated manually.\nThis page is a translation of the page [[$1]] and the translation can be updated using [$2 the translation tool].",
+	"tpt-source-mirror": "This page is an automatically generated mirror of the page [[$1]] and cannot be updated manually. To update it, make your changes to that page and get someone to mark it for translation.",
 	"tpt-unknown-page": "This namespace is reserved for content page translations.\nThe page you are trying to edit does not seem to correspond to any page marked for translation.",
 	"tpt-translation-restricted-no-reason": "Translation of this page to this language has been prevented by a translation administrator.",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "This message group is set to prevent translations to languages other than the priority languages, but it has no priority languages.",

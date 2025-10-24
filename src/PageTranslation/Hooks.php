@@ -1181,6 +1181,14 @@ class Hooks {
 
 			[ , $code ] = Utilities::figureMessage( $title->getText() );
 
+			if ( $code === $page->getMessageGroup()->getSourceLanguage() ) {
+				$result = [
+					'tpt-source-mirror',
+					':' . $page->getTitle()->getPrefixedText()
+				];
+				return false;
+			}
+
 			$translationUrl = $mwService->getUrlUtils()->expand(
 				$page->getTranslationUrl( $code ), PROTO_RELATIVE
 			);
