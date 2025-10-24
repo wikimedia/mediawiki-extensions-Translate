@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"IJzeren Jan"
+			"IJzeren Jan",
+			"SaldırganSincap"
 		]
 	},
 	"translate": "Prěvodženje",
@@ -42,7 +43,7 @@
 	"translate-edit-title": "Praviti «$1»",
 	"translate-edit-definition": "Oprěděljenje soobčenja",
 	"translate-edit-contribute": "praviti",
-	"translate-edit-no-information": "<em>Tuto soobčenje ne imaje dokumentaciju.\nAko vy znajete, kde ili kako ono upotrěbjaje se, možete pomogti drugym prěvoditeljam i dodati dokumentaciju k tutomu soobčenju.",
+	"translate-edit-no-information": "<em>Tuto soobčenje ne imaje dokumentaciju.\nAko vy znajete, kde ili kako ono upotrěbjaje se, možete pomogti drugym prěvoditeljam i dodati dokumentaciju k tutomu soobčenju.</em>",
 	"translate-edit-information": "Informacije o soobčenju ($1)",
 	"translate-edit-warnings": "Uprědženja o nezavršenyh prěvodah",
 	"translate-edit-tmmatch-source": "Izvorny tekst prěvoda: $1",
@@ -56,11 +57,11 @@
 	"translate-export-format-notsupported": "Eksport prěvodov ne poddrživaje se grupoju soobčenij.",
 	"translate-export-format-file-empty": "Nemaje soobčenij za eksportovanje.",
 	"translate-export-group-too-large": "Izbrana grupa soobčenij jest prěvelika. Izberite grupu soobčenij, ktora sodrživaje menje neželi $1 {{PLURAL:$1|soobčenje|soobčenja|soobčenij}} ili kontaktujte administratora prěvodov za sovět.",
-	"translate-checks-parameters": "{{PLURAL:$2|Slědujuči parametr ne upotrěbjaje se|Slědujuče parametry ne upotrěbjajut se}}: </strong>$1</strong>",
-	"translate-checks-parameters-unknown": "{{PLURAL:$2|Slědujuči parametr jest neznajemy|Slědujuče parametry sut neznajeme}}: </strong>$1</strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|Slědujuči parametr ne upotrěbjaje se|Slědujuče parametry ne upotrěbjajut se}}:\n<strong>$1</strong>",
+	"translate-checks-parameters-unknown": "{{PLURAL:$2|Slědujuči parametr jest neznajemy|Slědujuče parametry sut neznajeme}}: <strong>$1</strong>",
 	"translate-checks-balance": "Kolikost {{PLURAL:$2|zatvorok}} jest neparna: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links": "{{PLURAL:$2|Slědujuči link jest problematičny|Slědujuče $2 linky sut problematične|Slědujučyh $2 linkov jest problematičnyh}}: </strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links-missing": "{{PLURAL:$2|Slědujuči link jest odsutny|Slědujuče $2 linky sut odsutne|Slědujučih $2 linkov jest odsutnyh}}: </strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links": "{{PLURAL:$2|Slědujuči link jest problematičny|Slědujuče $2 linky sut problematične|Slědujučyh $2 linkov jest problematičnyh}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links-missing": "{{PLURAL:$2|Slědujuči link jest odsutny|Slědujuče $2 linky sut odsutne|Slědujučih $2 linkov jest odsutnyh}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Original upotrěbjaje <nowiki>{{PLURAL:}}</nowiki>, ale v prěvodu nemaje.",
 	"translate-checks-plural-forms": "Tutčas <nowiki>{{PLURAL:}}</nowiki> imaje {{PLURAL:$1|jednu formu|$1 formy|$1 form}}, ale samo {{PLURAL:$2|jedna forma jest poddrživana|$2 formy sut poddrživane|$2 form jest poddrživanyh}} (s izključenjem form 0= i 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> sodrživaje identične formy na koncu. Zaměsto <nowiki>{{PLURAL:$1|taksi|taksi}} trěba pisati <nowiki>{{PLURAL:$1|taksi}}</nowiki>.",

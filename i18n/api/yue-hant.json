@@ -4,6 +4,7 @@
 			"H78c67c",
 			"JeffreyKim",
 			"Ktchankt",
+			"SaldırganSincap",
 			"Winston Sung",
 			"Yueman"
 		]
@@ -157,7 +158,7 @@
 	"apihelp-markfortranslation-param-priorityreason": "除非有<var>優先語言</var>參數，否則呢個參數會被忽略。一個提供優先翻譯嘅原因嘅字串。",
 	"apihelp-markfortranslation-param-nofuzzyunits": "一個唔應該模糊嘅翻譯單元 ID 清單。 呢個會同預設清單合併，喺呢個清單入面任何淨係有tvar變更嘅單位都唔會模糊。",
 	"apihelp-markfortranslation-param-fuzzyunits": "應該模糊化嘅翻譯單位 ID 清單呢個只係用嚟覆寫預設值，同埋允許用只有 tvar 變更嘅單位去模糊化。",
-	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "如果係kbd>false</kbd>嘅，就唔好用呢個頁面嘅最新語法版本。如果冇，就會用最新嘅語法版本。",
+	"apihelp-markfortranslation-param-forcelatestsyntaxversion": "如果係<kbd>false</kbd>嘅，就唔好用呢個頁面嘅最新語法版本。如果冇，就會用最新嘅語法版本。",
 	"apihelp-markfortranslation-param-transclusion": "如果<kbd>係</kbd>或者唔存在，請為呢個頁面啟用翻譯感知轉錄。如果<kbd>唔係</kbd>，停用轉錄。",
 	"apierror-translate-changeset-modified": "呢個變更集已經由另一個用戶或者進程修改咗。你嘅變更唔可以發佈，因為噉樣可能會覆寫佢哋嘅變更。請重新載入呢個頁面嚟睇吓最新嘅變動。",
 	"apierror-translate-fuzzymessage": "睇唔到模糊嘅翻譯",
