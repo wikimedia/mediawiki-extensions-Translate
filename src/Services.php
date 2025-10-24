@@ -174,7 +174,7 @@ class Services implements ContainerInterface {
 	}
 
 	/** @since 2024.04 */
-	public function getMessageGroupSubscriptionHookHandler(): MessageGroupSubscriptionHookHandler {
+	public function getMessageGroupSubscriptionHookHandler(): ?MessageGroupSubscriptionHookHandler {
 		return $this->get( 'Translate:MessageGroupSubscriptionHookHandler' );
 	}
 
