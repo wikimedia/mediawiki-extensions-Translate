@@ -298,7 +298,7 @@
 	"translate-manage-import-ok": "درون‌ریزی‌شد: $1",
 	"translate-manage-import-done": "درون‌ریزی تکمیل شد!",
 	"translate-manage-empty-content": "محتوا خالی است",
-	"translate-manage-key-reused": "این پیام از قبل در ویکی وجود دارد. برای استفاده مجدد ناگهانی از کلید قدیمی بررسی کنید.",
+	"translate-manage-key-reused": "این پیام از پیش در ویکی وجود دارد. بررسی کنید که آیا کلید قدیمی دوباره به طور تصادفی استفاده شده است یا خیر.",
 	"translate-manage-source-message-not-found": "تعریف پیام پیدا نشد",
 	"importtranslations": "درون‌ریزی ترجمه‌ها",
 	"translate-import-from-local": "بارگذاری پرونده محلی:",

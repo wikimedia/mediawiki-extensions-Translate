@@ -5,6 +5,7 @@
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|demando|demandi}}",
+	"tsb-all-languages-button-label": "Omna idiomi",
 	"tsb-accept-button-label": "Aceptez",
 	"tsb-didnt-make-any-translations": "Ca uzero tradukis nulo.",
 	"translationstash": "Bonveno"

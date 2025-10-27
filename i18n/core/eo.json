@@ -18,7 +18,8 @@
 			"Yekrats",
 			"YvesNevelsteen",
 			"Ziko",
-			"Voltinus"
+			"Voltinus",
+			"Tymewalk"
 		]
 	},
 	"translate": "Tradukado",
@@ -200,7 +201,7 @@
 	"translate-mgs-pagename": "Statistikoj por mesaĝgrupo",
 	"translate-mgs-fieldset": "Montru preferojn",
 	"translate-mgs-group": "Mesaĝgrupo:",
-	"translate-mgs-nocomplete": "Ne montrez idiomi kun tradukuri kompletigita",
+	"translate-mgs-nocomplete": "Ne montru lingvojn kiuj havas kompletan tradukon",
 	"translate-mgs-noempty": "Ne montru lingvojn kiuj havas neniun tradukon",
 	"translate-mgs-submit": "Montru statistikojn",
 	"translate-mgs-column-language": "Lingvo",

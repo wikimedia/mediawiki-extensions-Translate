@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"IJzeren Jan"
+			"IJzeren Jan",
+			"SaldırganSincap"
 		]
 	},
 	"translate": "Prěvodženje",
@@ -42,7 +43,7 @@
 	"translate-edit-title": "Praviti «$1»",
 	"translate-edit-definition": "Oprěděljenje soobčenja",
 	"translate-edit-contribute": "praviti",
-	"translate-edit-no-information": "<em>Tuto soobčenje ne imaje dokumentaciju.\nAko vy znajete, kde ili kako ono upotrěbjaje se, možete pomogti drugym prěvoditeljam i dodati dokumentaciju k tutomu soobčenju.",
+	"translate-edit-no-information": "<em>Tuto soobčenje ne imaje dokumentaciju.\nAko vy znajete, kde ili kako ono upotrěbjaje se, možete pomogti drugym prěvoditeljam i dodati dokumentaciju k tutomu soobčenju.</em>",
 	"translate-edit-information": "Informacije o soobčenju ($1)",
 	"translate-edit-warnings": "Uprědženja o nezavršenyh prěvodah",
 	"translate-edit-tmmatch-source": "Izvorny tekst prěvoda: $1",
