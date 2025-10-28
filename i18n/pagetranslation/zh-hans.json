@@ -49,7 +49,8 @@
 			"Maitian MaiLin",
 			"SaoMikoto",
 			"范",
-			"Libamidi"
+			"Libamidi",
+			"SaldırganSincap"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -82,7 +83,7 @@
 	"tpt-edit-failed": "无法更新该页面：$1",
 	"tpt-duplicate": "翻译单元名称<strong><bdi>$1</bdi></strong>已被使用超过一次。",
 	"tpt-invalid": "翻译单元名称<strong><bdi>$1</bdi></strong>不得包含下划线或斜线。",
-	"tpt-unit-title-too-long": "翻译单元名称<strong><bdi>$1</strong>太长。可翻译页面标题与命名空间前缀、翻译单元名称和语言代码的总长度为$2个{{PLURAL:$2|字节}}，超过了支持的最大长度$3个{{PLURAL:$3| 字节}}。若是自定义名称，请缩短翻译单元名称，或是[[Special:MovePage/$4|重命名可翻译页面]]为更短的名称，以便启用翻译。",
+	"tpt-unit-title-too-long": "翻译单元名称<strong><bdi>$1</bdi></strong>太长。可翻译页面标题与命名空间前缀、翻译单元名称和语言代码的总长度为$2个{{PLURAL:$2|字节}}，超过了支持的最大长度$3个{{PLURAL:$3| 字节}}。若是自定义名称，请缩短翻译单元名称，或是[[Special:MovePage/$4|重命名可翻译页面]]为更短的名称，以便启用翻译。",
 	"tpt-unit-title-invalid": "翻译单元名称<strong><bdi>$1</bdi></strong>无效：$2",
 	"tpt-unmarked": "页面[[:$1]]不再被标记进行翻译。",
 	"tpt-list-nopages": "没有被标记进行翻译或者准备被标记进行翻译的页面。",
