@@ -281,6 +281,7 @@
 	"pm-pagetitle-not-translatable": "$1 is not part of a translatable page.",
 	"pm-translation-unit-fetch-failed": "There was an error while fetching the translation units for the page.",
 	"tpt-translate-title": "Allow translation of page title",
+	"tpt-translate-title-disabled": "The title of this page cannot be made translatable",
 	"tpt-translate-hide-unchanged-units": "Hide unchanged translation units",
 	"pp-save-summary": "Prepared the page for translation",
 	"pagepreparation": "Prepare page for translation",

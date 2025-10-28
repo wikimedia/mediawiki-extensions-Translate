@@ -803,6 +803,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
 				// Set section type as new if title previously unchecked
 				$s->type = $defaultChecked ? $s->type : 'new';
+				$translationTitleStateReason = null;
+				if ( $operation->titleTranslationState === TranslateTitleEnum::DISABLED ) {
+					$translationTitleStateReason = $operation->titleTranslationStateReason ??
+						$this->msg( 'tpt-translate-title-disabled-reason' )->text();
+				}
 
 				// Checkbox for page title optional translation
 				$checkBox = new FieldLayout(
@@ -814,7 +819,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 					[
 						'label' => $this->msg( 'tpt-translate-title' )->text(),
 						'align' => 'inline',
-						'classes' => [ 'mw-tpt-m-vertical' ]
+						'classes' => [ 'mw-tpt-m-vertical' ],
+						'help' => $translationTitleStateReason,
+						'helpInline' => true,
 					]
 				);
 				$out->addHTML( $checkBox->toString() );

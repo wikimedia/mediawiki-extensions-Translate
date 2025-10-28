@@ -21,6 +21,12 @@ interface TranslateTitlePageTranslationHook {
 	 *
 	 * @param TranslateTitleEnum &$state Enum value that controls the state of the 'translatetitle' option.
 	 * @param PageIdentity $page The page being marked for translation.
+	 * @param ?string &$reason Reason why the enum status is set to a particular value. Displayed on
+	 * Special:PageTranslation only when the page title cannot be marked as translatable.
 	 */
-	public function onTranslateTitlePageTranslation( TranslateTitleEnum &$state, PageIdentity $page ): void;
+	public function onTranslateTitlePageTranslation(
+		TranslateTitleEnum &$state,
+		PageIdentity $page,
+		?string &$reason
+	): void;
 }

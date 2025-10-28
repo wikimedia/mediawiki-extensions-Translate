@@ -26,7 +26,8 @@ class TranslatablePageMarkOperation {
 		array $deletedUnits,
 		bool $firstMark,
 		Status $unitValidationStatus,
-		public readonly TranslateTitleEnum $titleTranslationState
+		public readonly TranslateTitleEnum $titleTranslationState,
+		public readonly ?string $titleTranslationStateReason
 	) {
 		$this->page = $page;
 		$this->parserOutput = $parserOutput;

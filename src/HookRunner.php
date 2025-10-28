@@ -149,9 +149,13 @@ class HookRunner implements
 	}
 
 	/** @inheritDoc */
-	public function onTranslateTitlePageTranslation( TranslateTitleEnum &$state, PageIdentity $page ): void {
+	public function onTranslateTitlePageTranslation(
+		TranslateTitleEnum &$state,
+		PageIdentity $page,
+		?string &$reason
+	): void {
 		$this->hookContainer->run(
-			'TranslateTitlePageTranslation', [ &$state, $page ], [ 'abortable' => false ]
+			'TranslateTitlePageTranslation', [ &$state, $page, &$reason ], [ 'abortable' => false ]
 		);
 	}
 }

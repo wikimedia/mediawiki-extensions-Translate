@@ -202,10 +202,15 @@ class TranslatablePageMarker {
 		[ $units, $deletedUnits ] = $this->prepareTranslationUnits( $translatablePage, $parserOutput );
 
 		// Give extensions a chance to disable title translation.
+		$reason = null;
 		$defaultState = $validateUnitTitle ?
 			TranslateTitleEnum::DEFAULT_CHECKED :
 			TranslateTitleEnum::DEFAULT_UNCHECKED;
-		$this->hookRunner->onTranslateTitlePageTranslation( $defaultState, $translatablePage->getPageIdentity() );
+		$this->hookRunner->onTranslateTitlePageTranslation(
+			$defaultState,
+			$translatablePage->getPageIdentity(),
+			$reason
+		);
 
 		$unitValidationStatus = $this->validateUnitNames(
 			$translatablePage,
@@ -220,7 +225,8 @@ class TranslatablePageMarker {
 			$deletedUnits,
 			$isFirstMark,
 			$unitValidationStatus,
-			$defaultState
+			$defaultState,
+			$reason
 		);
 	}
 
