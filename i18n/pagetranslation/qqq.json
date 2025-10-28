@@ -315,6 +315,7 @@
 	"pm-pagetitle-not-translatable": "Error message shown when a non-translatable page title is entered\n\nParameters:\n* $1 - page title",
 	"pm-translation-unit-fetch-failed": "Error message shown at Special:PageMigration when fetching the translation unit fails",
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
+	"tpt-translate-title-disabled": "Help text displayed when the checkbox on Special:PageTranslation to mark title for translation is disabled",
 	"tpt-translate-hide-unchanged-units": "Checkbox for hidding the unchanged translation units",
 	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
 	"pagepreparation": "{{doc-special|PageMigration}}",

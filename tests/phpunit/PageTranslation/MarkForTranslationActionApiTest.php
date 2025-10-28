@@ -308,7 +308,8 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			[],
 			$firstMark,
 			$unitValidationStatus,
-			$expectedTranslateTitle ? TranslateTitleEnum::DEFAULT_CHECKED : TranslateTitleEnum::DEFAULT_UNCHECKED
+			$expectedTranslateTitle ? TranslateTitleEnum::DEFAULT_CHECKED : TranslateTitleEnum::DEFAULT_UNCHECKED,
+			null
 		);
 
 		$settings = new TranslatablePageSettings(
