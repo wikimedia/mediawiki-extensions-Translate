@@ -156,7 +156,7 @@ class RecentChangesTranslationFilterHookHandler implements
 							$namespaces = $this->getTranslateNamespaces();
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
-								!str_contains( $rc->getAttribute( 'rc_title' ), '/' );
+								str_contains( $rc->getAttribute( 'rc_title' ), '/' );
 						}
 					],
 					[
