@@ -7,6 +7,7 @@
 		]
 	},
 	"translate": "Которуу",
+	"translate-group": "$1 которулууда",
 	"translate-extensionname": "Которуу",
 	"translate-desc": "МедиаВикини жана андан башкасын которуу үчүн арналган [[Special:Translate|атайын барак]]",
 	"translate-taskui-export-to-file": "Өз форматында экспорттоо",
@@ -45,6 +46,7 @@
 	"translate-rcfilters-translations-filter-translation-pages-label": "Котормо барактары эмес",
 	"translate-rcfilters-translations-site-label": "Сайт билдирүүлөрү",
 	"translate-rc-translation-filter": "Котормолорду чыпкалоо:",
+	"translate-rc-translation-filter-only": "Котормолорду гана көрсөтүү",
 	"translationstats": "Котормо статистикасы",
 	"translate-stats-edits": "Түзөтүүлөр",
 	"translate-stats-users": "Котормочулар",
@@ -191,5 +193,7 @@
 	"translate-syntax-error": "Котормодо синтаксистик каталар бар",
 	"specialpages-group-translation": "Котормолор",
 	"translate-hidetranslations": "Которулган барактарды жашыруу",
+	"notification-header-message-group-subscription": "$1 үчүн котормо жаңыртуулары",
+	"notification-body-translate-mgs-message-added": "$1 жаңы же жаңыртылган {{PLURAL:$1|билдирүү}}",
 	"tpt-cleanchanges-language": "Тил:"
 }
