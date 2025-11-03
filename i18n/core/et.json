@@ -328,6 +328,7 @@
 	"log-action-filter-translationreview": "Toimingu tüüp:",
 	"log-action-filter-translationreview-message": "Üksiku tõlgitud sõnumi ülevaatus",
 	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused",
+	"log-action-filter-translationreview-unfuzzy": "Üksiku tõlgitud sõnumi ülevaatus selle märkimisega ajakohaseks",
 	"translate-hidetranslations": "Peida tõlgitavad leheküljed",
 	"echo-category-title-translate-message-group-subscription": "Tõlgitava sõnumirühma tellimus",
 	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
@@ -335,5 +336,7 @@
 	"notification-body-translate-mgs-message-added": "Lisatud või uuendatud $1 {{PLURAL:$1|sõnum|sõnumit}}",
 	"notification-link-mgs-group-translate": "Tõlgi rühm $1",
 	"tpt-cleanchanges-language": "Keel:",
-	"tpt-cleanchanges-language-na": "Kõik"
+	"tpt-cleanchanges-language-na": "Kõik",
+	"namespaceinfo-description-ns1198": "Nimeruum, mis sisaldab tõlkeüksusi ehk [[Special:PageTranslation|tõlgitavate lehekülgede]] ja [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|tõlkekomplektide]] üksikuid tõlgitavaid ja tõlgitud osi",
+	"namespaceinfo-description-ns1199": "Tõlkeüksuste aruteluleheküljed"
 }
