@@ -327,6 +327,7 @@
 	"log-action-filter-translationreview": "Toimingu tüüp:",
 	"log-action-filter-translationreview-message": "Üksiku tõlgitud sõnumi ülevaatus",
 	"log-action-filter-translationreview-group": "Tõlke edenemist väljendava oleku muudatused",
+	"log-action-filter-translationreview-unfuzzy": "Üksiku tõlgitud sõnumi ülevaatus selle märkimisega ajakohaseks",
 	"translate-hidetranslations": "Peida tõlgitavad leheküljed",
 	"echo-category-title-translate-message-group-subscription": "Tõlgitava sõnumirühma tellimus",
 	"echo-pref-tooltip-translate-message-group-subscription": "Teavita mind muudatustest tõlgitavas sõnumirühmas, mida tellin.",
