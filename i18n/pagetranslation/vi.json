@@ -74,6 +74,8 @@
 	"tpt-discouraged-language-content": "Một bảo quản viên bản dịch đã quyết định chú trọng vào việc biên dịch sang $1.",
 	"tpt-discouraged-language-force": "<strong>Không thể biên dịch trang này sang $2.</strong>\n\nMột người quản lý biên dịch chỉ cho phép dịch trang sang $3.",
 	"tpt-priority-languages": "Một người quản lý biên dịch đã đặt các ngôn ngữ quan trọng của nhóm này là $1.",
+	"tpt-discouraged-translation-header": "Việc dịch trang này không được khuyến khích.",
+	"tpt-discouraged-translation-content": "Một bảo quản viên bản dịch đã đánh dấu trang này là không phù hợp để dịch. Bạn vẫn có quyền tạo bản dịch, nhưng bản dịch đó có thể sẽ không được chấp nhận, không hiển thị hoặc không có giá trị sử dụng.",
 	"tpt-render-summary": "Cập nhật đến phiên bản mới của trang nguồn",
 	"aggregategroups": "Nhóm tập hợp",
 	"tpt-aggregategroup-add": "Thêm",
