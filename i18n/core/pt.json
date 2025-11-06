@@ -342,10 +342,12 @@
 	"translate-msggroupselector-search-recent": "Recentes",
 	"translate-msggroupselector-search-watched": "Vigiados",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgrupo|subgrupos}}",
+	"translate-msggroupselector-special-msgsubscriptions-label": "Gerir as suas subscrições",
 	"tux-languageselector": "Traduzir para",
 	"tux-select-target-language": "Língua alvo da tradução",
 	"tux-watch-group": "Vigiar",
 	"tux-unwatch-group": "Deixar de vigiar",
+	"tux-subscription-error": "Não foi possível atualizar a lista de vigias do grupo de mensagens",
 	"tux-tab-all": "Todas",
 	"tux-tab-untranslated": "Não traduzidas",
 	"tux-tab-outdated": "Desatualizadas",
@@ -469,8 +471,11 @@
 	"logentry-import-translatable-bundle": "$1 importou um pacote traduzível $3{{GENDER:$2|}}",
 	"log-action-filter-import-translatable-bundle": "Importação de pacote traduzível",
 	"translate-hidetranslations": "Ocultar páginas de tradução",
+	"echo-category-title-translate-message-group-subscription": "Subscrições de grupo de mensagens traduzíveis",
+	"echo-pref-tooltip-translate-message-group-subscription": "Notificar-me sobre as alterações nos grupos de mensagens traduzíveis em que eu estou inscrito",
 	"notification-header-message-group-subscription": "Atualizações de tradução para $1",
 	"notification-link-mgs-group-translate": "Traduzir $1",
 	"tpt-cleanchanges-language": "Língua:",
-	"tpt-cleanchanges-language-na": "Todas"
+	"tpt-cleanchanges-language-na": "Todas",
+	"namespaceinfo-description-ns1199": "Páginas de discussão para as unidades de tradução"
 }
