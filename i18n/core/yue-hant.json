@@ -4,7 +4,8 @@
 			"JeffreyKim",
 			"Ktchankt",
 			"Winston Sung",
-			"Yueman"
+			"Yueman",
+			"SaldırganSincap"
 		]
 	},
 	"translate": "翻譯",
@@ -24,7 +25,7 @@
 	"translate-taction-disabled": "呢個wiki唔畀做呢個動作。",
 	"translate-page-no-such-language": "所指定嘅語言唔正確。",
 	"translate-page-no-such-group": "所指定嘅組唔正確。",
-	"translate-page-disabled": "呢個群組入面嘅呢種語言嘅翻譯已經停用。\n原因：\n\n<em> $1 </ em>",
+	"translate-page-disabled": "呢個群組入面嘅呢種語言嘅翻譯已經停用。\n原因：\n\n<em>$1</em>",
 	"translate-language-disabled": "呢種語言嘅翻譯已經停用。",
 	"translate-page-settings-legend": "自定喜好",
 	"translate-page-group": "組",
@@ -154,7 +155,7 @@
 	"translate-statsf-alt-text": "呢個係翻譯統計資料嘅文字替代方案。",
 	"translate-statsf-embed": "將翻譯統計圖表嵌入其他頁面嘅代碼。",
 	"translate-tag-page-desc": "維基頁面嘅翻譯[[$2|$1]]由$3 ($4)起。",
-	"translate-tag-page-wikipage-desc": "將維基頁面[[$2]]由 <bdi>$3</ bdi>（$4）[[$1|翻譯]]成<bdi>$5</bdi> ($6)",
+	"translate-tag-page-wikipage-desc": "將維基頁面[[$2]]由 <bdi>$3</bdi>（$4）[[$1|翻譯]]成<bdi>$5</bdi> ($6)",
 	"translate-sidebar-alltrans": "第啲語言",
 	"translations": "所有翻譯",
 	"translations-summary": "喺下面輸入個訊息名嚟顯示所有可用嘅翻譯。",
