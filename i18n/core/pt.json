@@ -309,7 +309,7 @@
 	"translate-import-err-stale-group": "O grupo de mensagens a que este ficheiro pertence não existe.",
 	"translate-import-err-no-headers": "O ficheiro não é um ficheiro Gettext válido, com o formato da extensão Translate:\nNão foi possível determinar o grupo e a língua a partir dos cabeçalhos.",
 	"translate-js-support-unsaved-warning": "Tem traduções por publicar.",
-	"translate-documentation-language": "ajuda de tradução",
+	"translate-documentation-language": "Documentação de mensagem",
 	"translate-searchprofile": "Traduções",
 	"translate-searchprofile-tooltip": "Pesquisar todas as traduções",
 	"translate-searchprofile-note": "Mais opções de procura estão disponíveis através da [$1 pesquisa de traduções].",
