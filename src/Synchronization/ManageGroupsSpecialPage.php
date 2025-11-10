@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use Cdb\Reader;
 use DifferenceEngine;
-use Exception;
 use FileBasedMessageGroup;
 use JobQueueGroup;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -37,6 +36,7 @@ use OOUI\ButtonInputWidget;
 use PermissionsError;
 use RuntimeException;
 use Skin;
+use Throwable;
 use UserBlockedError;
 
 /**
@@ -538,10 +538,11 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 				$modificationJobs[$groupId] = $groupModificationJobs;
 				$renameJobData[$groupId] = $groupRenameJobData;
-			} catch ( Exception $e ) {
+			} catch ( Throwable $e ) {
 				error_log(
-					"ManageGroupsSpecialPage: Error in processSubmit. Group: $groupId\n" .
-					"Exception: $e"
+					"ManageGroupsSpecialPage: Error in processSubmit. " .
+					"Group: $groupId; Language: " . ( $language ?? 'N/A' ) .
+					"\nError: $e"
 				);
 
 				$errorGroups[] = $group->getLabel();

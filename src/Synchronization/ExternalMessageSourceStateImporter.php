@@ -23,6 +23,7 @@ use MediaWiki\Title\TitleFactory;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use Throwable;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
@@ -96,30 +97,43 @@ class ExternalMessageSourceStateImporter {
 			$languages = $changesForGroup->getLanguages();
 			$groupJobs = [];
 
-			$groupSafeLanguages = $this->identifySafeLanguages( $group, $changesForGroup, $importStrategy );
+			try {
+				$groupSafeLanguages = $this->identifySafeLanguages( $group, $changesForGroup, $importStrategy );
 
-			foreach ( $languages as $language ) {
-				if ( !$groupSafeLanguages[ $language ] ) {
-					$skipped[$groupId] = true;
-					continue;
+				foreach ( $languages as $language ) {
+					if ( !$groupSafeLanguages[ $language ] ) {
+						$skipped[$groupId] = true;
+						continue;
+					}
+
+					$additions = $changesForGroup->getAdditions( $language );
+					if ( $additions === [] ) {
+						continue;
+					}
+
+					[ $groupLanguageJobs, $groupProcessed ] = $this->createUpdateMessageJobs(
+						$group, $additions, $language
+					);
+
+					$groupJobs = array_merge( $groupJobs, $groupLanguageJobs );
+					$processed[$groupId][$language] = $groupProcessed;
+
+					// We only remove additions since if less-safe-import option is used, then
+					// changes to existing messages might still need to be processed manually.
+					$changesForGroup->removeAdditions( $language, null );
+					$group->getMessageGroupCache( $language )->create();
 				}
-
-				$additions = $changesForGroup->getAdditions( $language );
-				if ( $additions === [] ) {
-					continue;
-				}
-
-				[ $groupLanguageJobs, $groupProcessed ] = $this->createUpdateMessageJobs(
-					$group, $additions, $language
+			} catch ( Throwable $e ) {
+				$this->logger->warning(
+					'[ExternalMessageSourceStateImporter] Error during import. Group: {group}, language: {language}',
+					[
+						'group' => $groupId,
+						'language' => $language ?? 'N/A',
+						'exception' => $e,
+					]
 				);
-
-				$groupJobs = array_merge( $groupJobs, $groupLanguageJobs );
-				$processed[$groupId][$language] = $groupProcessed;
-
-				// We only remove additions since if less-safe-import option is used, then
-				// changes to existing messages might still need to be processed manually.
-				$changesForGroup->removeAdditions( $language, null );
-				$group->getMessageGroupCache( $language )->create();
+				$skipped[ $groupId ] = true;
+				continue;
 			}
 
 			// Mark the skipped group as in review
