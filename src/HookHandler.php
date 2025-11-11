@@ -700,10 +700,6 @@ class HookHandler implements
 			return;
 		}
 		$pageReference = $parser->getPage();
-		// @phan-suppress-next-line PhanRedundantCondition; redundant in MW 1.46+ only
-		if ( !$pageReference ) {
-			return;
-		}
 
 		$linkTarget = TitleValue::newFromPage( $pageReference );
 		$handle = new MessageHandle( $linkTarget );
@@ -844,10 +840,6 @@ class HookHandler implements
 			return '';
 		}
 		$pageReference = $parser->getPage();
-		// @phan-suppress-next-line PhanRedundantCondition; redundant in MW 1.46+ only
-		if ( !$pageReference ) {
-			return '';
-		}
 		$linkTarget = TitleValue::newFromPage( $pageReference );
 		$handle = new MessageHandle( $linkTarget );
 		$code = $handle->getCode();
