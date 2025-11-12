@@ -34,7 +34,9 @@
 			"Wangombe",
 			"McDutchie",
 			"Pppery",
-			"Matma Rex"
+			"Matma Rex",
+			"Abshirdheere",
+			"Kaganer"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -112,7 +114,7 @@
 	"tpt-languages-zero": "Tooltip for a link in <code>&lt;languages /></code> when language is included because it is a priority language, but translation does not yet exist.\n\nThe link directly points to the translation view ([[Special:Translate]]).\n\nTranslate this as \"Start translating (the page) into this language\".",
 	"tpt-languages-nonzero": "Tooltip for a link to go to a translated version of a translatable page.\n\nParameters:\n* $1 - page title (translated if present)\n* $2 - translation percentage, without decimals (supports PLURAL)",
 	"tpt-tab-translate": "Used as label for the tab.\n\nReplaces the edit tab with translation tab for translation pages.\n{{Identical|Translate}}",
-	"tpt-target-page": "Message displayed when trying to edit a translatable page directly. Parameters:\n* $1 is the translatable page\n* $2 is a link to the translation tool for the translatable page.",
+	"tpt-target-page": "Message displayed when trying to edit a translation page directly. Parameters:\n* $1 is the translatable page\n* $2 is a link to the translation tool for the translatable page.",
 	"tpt-unknown-page": "See [[mw:Special:MyLanguage/Help:Extension:Translate/Translation example]] for context on page translation feature.",
 	"tpt-translation-restricted": "Error message shown to user when translating to a language which is restricted by translation admin, along with the reason for the restriction.\n\nParameters:\n* $1 - reason\nSee also:\n* {{msg-mw|Tpt-translation-restricted-no-reason}}",
 	"tpt-translation-restricted-no-reason": "Error message shown to user when translating to a language which is restricted. Followed by {{msg-mw|Tpt-translation-restricted-reason}} if a reason has been provided.",
