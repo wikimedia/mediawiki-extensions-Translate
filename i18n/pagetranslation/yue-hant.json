@@ -105,6 +105,7 @@
 	"tpt-languages-nonzero": "$1（$2% 翻譯咗）",
 	"tpt-tab-translate": "翻譯",
 	"tpt-target-page": "呢個頁面唔可以手動更新。\n呢個頁面係[[$1]]頁面嘅翻譯，而翻譯可以用[$2翻譯工具]更新。",
+	"tpt-source-mirror": "呢個頁面係[[$1]]嘅自動生成鏡像頁，唔可以手動更新。要更新佢，請喺嗰個頁面度改內容，之後搵人標記佢等翻譯。",
 	"tpt-unknown-page": "呢個命名空間係為咗內容頁面翻譯而保留。\n你嘗試編輯嘅頁面似乎同任何標記為唔對應嘅翻譯頁面。",
 	"tpt-translation-restricted-no-reason": "翻譯管理員阻止將呢個頁面翻譯成呢種語言。",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "呢個訊息群組設定咗嚟防止翻譯去優先語言以外嘅語言，但係佢冇優先語言。",

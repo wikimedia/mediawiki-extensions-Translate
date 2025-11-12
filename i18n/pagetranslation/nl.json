@@ -117,6 +117,7 @@
 	"tpt-languages-nonzero": "$1 ($2% vertaald)",
 	"tpt-tab-translate": "Vertalen",
 	"tpt-target-page": "Deze pagina kan niet handmatig worden bijgewerkt.\nDeze pagina is een vertaling van de pagina [[$1]].\nDe vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].",
+	"tpt-source-mirror": "Deze pagina is een automatisch gegenereerde kopie van pagina [[$1]] en kan niet handmatig worden bijgewerkt. Om deze bij te werken, brengt u uw wijzigingen aan op die pagina en laat u iemand deze markeren voor vertaling.",
 	"tpt-unknown-page": "Deze naamruimte is gereserveerd voor vertalingen van inhoudspagina’s.\nDe pagina die u probeert te bewerken lijkt niet bij een voor vertaling gemarkeerde pagina te horen.",
 	"tpt-translation-restricted-no-reason": "Het vertalen van deze pagina in deze taal is onmogelijk gemaakt door een vertalingenbeheerder.",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "Deze berichtengroep is ingesteld om vertalingen in andere dan de prioriteitstalen te verhinderen, maar bevat geen prioriteitstalen.",

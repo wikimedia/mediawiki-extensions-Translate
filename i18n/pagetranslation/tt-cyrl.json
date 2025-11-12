@@ -16,7 +16,7 @@
 	"tpt-sections-prioritylangs": "Төп телләр",
 	"translate-tag-translate-link-desc": "Бу битне тәрҗемә итү",
 	"translate-tag-hasnew": "Әлеге биттә тәрҗемәләр өчен күрсәтелмәгән <span class=\"plainlinks\">[$1 үзгәртүләр]</span> бар.",
-	"tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.",
+	"tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемәнең $3%ы башкарылган.",
 	"tpt-languages-legend": "Башка телләр:",
 	"tpt-languages-nonzero": "$1 ($2% тәрҗемә ителгән)",
 	"tpt-tab-translate": "Тәрҗемә итү",
