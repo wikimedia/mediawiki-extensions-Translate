@@ -124,7 +124,7 @@
 	"apihelp-searchtranslations-param-group": "The group ID to search string in. See <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "Message translation status filter.",
 	"apihelp-searchtranslations-param-match": "Match any/all search words.",
-	"apihelp-searchtranslations-param-case": "Case (in)sensitive search.",
+	"apihelp-searchtranslations-param-case": "Case-sensitive search.",
 	"apihelp-searchtranslations-param-offset": "Offset for the translations.",
 	"apihelp-searchtranslations-param-limit": "Size of the result.",
 	"apihelp-searchtranslations-example-1": "Show translations for the language.",
