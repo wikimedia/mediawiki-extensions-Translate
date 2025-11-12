@@ -7,7 +7,8 @@
 			"Macofe",
 			"Mbs262",
 			"McDutchie",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Mansil alfalb"
 		]
 	},
 	"searchtranslations": "Pesquisar nas traduções",
@@ -35,5 +36,6 @@
 	"tux-sst-match-message": "A mostrar as traduções que contêm qualquer das palavras pesquisadas. $1",
 	"tux-sst-case-sensitive": "Maiúsculas e minúsculas",
 	"tux-sst-error-offset": "Não é possível mostrar mais resultados de pesquisa. Torne a pesquisa mais restrita, por favor.",
-	"tux-sst-error-language": "Esta língua não pode ser usada com este tipo de pesquisa."
+	"tux-sst-error-language": "Esta língua não pode ser usada com este tipo de pesquisa.",
+	"tux-sst-error-unsupported-language": "Não é suportada a procura no idioma <code>$1</code>."
 }
