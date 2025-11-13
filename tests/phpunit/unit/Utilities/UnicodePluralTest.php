@@ -126,6 +126,28 @@ class UnicodePluralTest extends MediaWikiUnitTestCase {
 			"{{PLURAL| a = A |\nb\n=\nB\n}}",
 			[ 'a' ]
 		];
+
+		yield [
+			[
+				'one' => 'Read more in our <a href="https://example.com">blog post</a>.',
+				'other' => 'Read more in our <a href="https://example.com">blog posts</a>.'
+			],
+			'{{PLURAL|one=Read more in our <a href="https://example.com">blog post</a>.|' .
+				'Read more in our <a href="https://example.com">blog posts</a>.}}',
+			[ 'one', 'other' ]
+		];
+
+		yield [
+			[ 'one' => '', 'other' => 'items' ],
+			'{{PLURAL|one=|items}}',
+			[ 'one', 'other' ]
+		];
+
+		yield [
+			[ 'zero' => '', 'one' => '1 item', 'other' => 'items' ],
+			'{{PLURAL|zero=|one=1 item|items}}',
+			[ 'zero', 'one', 'other' ]
+		];
 	}
 
 	/**

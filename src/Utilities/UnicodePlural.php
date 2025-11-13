@@ -122,7 +122,7 @@ class UnicodePlural {
 			$instanceForms = [];
 			foreach ( explode( '|', $m[ 1 ][ $instanceIndex ] ) as $form ) {
 				$m2 = [];
-				$ok = preg_match( '~\s*([a-z]+)\s*=(.+)~s', $form, $m2 );
+				$ok = preg_match( '~^\s*([a-z]+)\s*=(.*)$~s', $form, $m2 );
 				$keyword = $ok ? $m2[ 1 ] : 'other';
 				$value = $ok ? trim( $m2[ 2 ] ) : $form;
 				$instanceForms[] = [ $keyword, $value ];
