@@ -10,6 +10,20 @@
 			"राम प्रसाद जोशी"
 		]
 	},
+	"pagetranslation": "पृष्ठ अनुवाद",
+	"nstab-translations": "अनुवाद एकाइ",
+	"right-pagetranslation": "अनुवादको लागि पृष्ठहरूको संस्करणहरू चिह्न लगाउनुहोस्",
+	"action-pagetranslation": "अनुवादयोग्य पृष्ठहरू प्रबन्ध गर्नुहोस्",
+	"tps-edit-sourcepage-ve-warning-limited-text": "यस सम्पादकमा केही अनुवादयोग्य क्षेत्रहरू सम्पादन योग्य नहुन सक्छन्। कृपया यी सम्पादन गर्न स्रोत सम्पादक प्रयोग गर्नुहोस्।",
+	"tpt-section": "अनुवाद एकाइ $1",
+	"tpt-section-new": "नयाँ अनुवाद एकाइ\nनाम: $1",
+	"tpt-section-deleted": "अनुवाद एकाइ $1",
+	"tpt-diff-old": "अघिल्लो पाठ",
+	"tpt-diff-new": "नयाँ पाठ",
+	"tpt-submit": "अनुवादका लागि यो संस्करण चिह्न लगाउनुहोस्",
+	"tpt-sections-oldnew": "नयाँ र अवस्थित अनुवाद एकाइहरू",
+	"tpt-sections-deleted": "मेटाइएका अनुवाद एकाइहरू",
+	"tpt-nosuchpage": "$1 पृष्ठ अस्तित्वमा रहेको छैन",
 	"tpt-select-prioritylangs": "प्राथमिकता भाषाहरू",
 	"tpt-select-prioritylangs-reason": "कारण",
 	"tpt-rev-encourage": "पूर्वावस्थामा ल्याउनुहोस्",
@@ -24,6 +38,7 @@
 	"tpt-aggregategroup-edit-description": "वर्णन",
 	"tpt-aggregategroup-update-cancel": "रद्द गर्नुहोस्",
 	"tpt-aggregategroup-expand-all-groups": "सबै समूहहरू खुलाउनुहोस्",
+	"pt-cta-mark-translation": "यो पृष्ठलाई सामुदायिक अनुवादको लागि चिह्न लगाउन सकिन्छ। सम्पादकहरूलाई सामग्री अनुवाद गर्न सुरु गर्न सकिन्छ भनेर थाहा दिन [$1 पृष्ठ अनुवाद अभिरुचिहरू] समायोजन गर्नुहोस्।",
 	"pt-movepage-reason": "कारण:",
 	"pt-deletepage-reason": "कारण:",
 	"pt-deletepage-reason-details": "अरू/थप कारण:",
@@ -32,5 +47,8 @@
 	"pm-savepages-button-label": "सङ्ग्रह गर्नुहोस्",
 	"pm-cancel-button-label": "रद्द गर्नुहोस्",
 	"pp-save-button-label": "प्रकाशन",
-	"pp-cancel-button-label": "रद्द गर्नुहोस्"
+	"pp-cancel-button-label": "रद्द गर्नुहोस्",
+	"tpt-manage-message-group-subscriptions-raw-titles": "समूहहरूः",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "सबै जाँच गर्नुहोस्",
+	"tpt-manage-message-group-subscriptions-raw-submit": "सदस्यता अद्यावधिक गर्नुहोस्"
 }
