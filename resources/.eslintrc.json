@@ -20,6 +20,7 @@
 		"compat/compat": "warn",
 		"no-jquery/no-extend": "warn",
 		"es-x/no-resizable-and-growable-arraybuffers": "warn",
-		"no-jquery/no-done-fail": "warn"
+		"no-jquery/no-done-fail": "warn",
+		"mediawiki/no-unlabeled-buttonwidget": "warn"
 	}
 }

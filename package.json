@@ -9,12 +9,12 @@
 	},
 	"devDependencies": {
 		"@wikimedia/codex-design-tokens": "2.3.2",
-		"eslint-config-wikimedia": "0.31.0",
+		"eslint-config-wikimedia": "0.32.1",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.13.0",
 		"grunt-eslint": "24.3.0",
 		"grunt-stylelint": "0.20.1",
-		"jsdoc": "4.0.4",
+		"jsdoc": "4.0.5",
 		"jsdoc-wmf-theme": "1.1.0",
 		"stylelint-config-wikimedia": "0.18.0",
 		"svgo": "3.2.0"
