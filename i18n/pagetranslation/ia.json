@@ -101,6 +101,7 @@
 	"tpt-languages-nonzero": "$1 ($2% traducite)",
 	"tpt-tab-translate": "Traducer",
 	"tpt-target-page": "Iste pagina non pote esser actualisate manualmente.\nIste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].",
+	"tpt-source-mirror": "Iste pagina es un replica generate automaticamente del pagina [[$1]] e non pote esser actualisate manualmente. Pro actualisar lo, apporta tu modificationes a ille pagina e demanda a qualcuno de marcar lo pro traduction.",
 	"tpt-unknown-page": "Iste spatio de nomines es reservate pro traductiones de paginas de contento.\nLe pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.",
 	"tpt-translation-restricted-no-reason": "Le traduction de iste pagina in iste lingua ha essite impedite per un administrator de traductiones.",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "Iste gruppo de messages ha essite configurate pro impedir le traductiones in linguas altere que le linguas de prioritate, ma illo non ha linguas de prioritate.",
