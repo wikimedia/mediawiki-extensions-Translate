@@ -286,11 +286,6 @@ class ConfigNames {
 	 *
 	 * For Apertium, you should get an API key. See http://wiki.apertium.org/wiki/Apertium_web_service
 	 *
-	 * Yandex translation helper also provides langlimit option to limit total number of suggestions (set to 0 to get
-	 * all possible translations) and langorder array to sort languages. Yandex translate engine is based on wordnet,
-	 * generated from search index, so number of indexed websites should be a good heuristic to define the default
-	 * language order.
-	 *
 	 * The machine translation services are provided with the following information: server ip address; versions of
 	 * MediaWiki and Translate extension; source text to translate; private API key if provided
 	 */

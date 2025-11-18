@@ -37,7 +37,6 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 				}
 
 				// Search for translations which we can use as a source for MT
-				// @todo: Support setting priority of languages like Yandex used to have
 				foreach ( $translations as $alternateSourceLanguage => $text ) {
 					if ( !$service->isSupportedLanguagePair( $alternateSourceLanguage, $targetLanguage ) ) {
 						continue;

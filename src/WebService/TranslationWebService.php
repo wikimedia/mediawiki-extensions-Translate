@@ -43,10 +43,6 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 				'class' => ApertiumWebService::class,
 				'deps' => [ 'HttpRequestFactory' ]
 			],
-			'yandex' => [
-				'class' => YandexWebService::class,
-				'deps' => [ 'HttpRequestFactory' ]
-			],
 			'google' => [
 				'class' => GoogleTranslateWebService::class,
 				'deps' => [ 'HttpRequestFactory' ]
