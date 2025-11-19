@@ -30,5 +30,6 @@
 	"tux-sst-case-sensitive": "Case-sensitive",
 	"tux-sst-error-offset": "No more search results can be shown. Please narrow your search.",
 	"tux-sst-error-language": "This language cannot be used with this type of search.",
-	"tux-sst-error-unsupported-language": "Search in language <code>$1</code> is not supported."
+	"tux-sst-error-unsupported-language": "Search in language <code>$1</code> is not supported.",
+	"tux-sst-search-backend-error": "Unexpected search backend failure, please try again later"
 }

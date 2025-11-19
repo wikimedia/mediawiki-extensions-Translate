@@ -4,10 +4,13 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use Elastica\Document;
+use Elastica\Exception\ExceptionInterface;
 use Elastica\ResultSet;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 
 /**
@@ -28,6 +31,7 @@ class CrossLanguageTranslationSearchQuery {
 		$this->server = $server;
 	}
 
+	/** @throws TtmServerException if the search backend failed. */
 	public function getDocuments(): array {
 		$documents = [];
 		$offset = $this->params['offset'];
@@ -51,29 +55,44 @@ class CrossLanguageTranslationSearchQuery {
 		// Used for aggregations. Only the first scroll response has them.
 		$this->resultSet = null;
 
-		foreach ( $scroll as $resultSet ) {
+		try {
+			foreach ( $scroll as $resultSet ) {
+				if ( !$this->resultSet ) {
+					$this->resultSet = $resultSet;
+					$this->total = $resultSet->getTotalHits();
+				}
+
+				$results = $this->extractMessages( $resultSet->getDocuments() );
+				$documents = array_merge( $documents, $results );
+
+				$count = count( $documents );
+
+				if ( $count >= $offset + $limit ) {
+					break;
+				}
+			}
 			if ( !$this->resultSet ) {
-				$this->resultSet = $resultSet;
-				$this->total = $resultSet->getTotalHits();
+				// No hits for documents, just set the result set.
+				$this->resultSet = $scroll->current();
+				$this->total = $scroll->current()->getTotalHits();
 			}
-
-			$results = $this->extractMessages( $resultSet->getDocuments() );
-			$documents = array_merge( $documents, $results );
-
-			$count = count( $documents );
-
-			if ( $count >= $offset + $limit ) {
-				break;
+		} catch ( ExceptionInterface $e ) {
+			// TODO: might need more fine-grained exception handling
+			throw new TtmServerException(
+				"Search backend issue: " . $e->getMessage(),
+				TtmServerException::TRANSIENT_SEARCH_BACKEND_FAILURE,
+				$e
+			);
+		} finally {
+			try {
+				$scroll->clear();
+			} catch ( ExceptionInterface $e ) {
+				LoggerFactory::getInstance( LogNames::ELASTIC_SEARCH_TTMSERVER )->warning(
+					'Failed to clear search backend scroll: {exception}',
+					[ 'exception' => $e ]
+				);
 			}
 		}
-
-		if ( !$this->resultSet ) {
-			// No hits for documents, just set the result set.
-			$this->resultSet = $scroll->current();
-			$this->total = $scroll->current()->getTotalHits();
-		}
-
-		$scroll->clear();
 
 		return array_slice( $documents, $offset, $limit );
 	}

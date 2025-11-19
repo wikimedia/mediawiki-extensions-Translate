@@ -155,6 +155,14 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				$this->showSearchError( $search, $this->msg( 'tux-sst-error-offset' ) );
 				return;
 			}
+			if ( $e->getCode() === TtmServerException::TRANSIENT_SEARCH_BACKEND_FAILURE ) {
+				$this->showSearchError( $search, $this->msg( 'tux-sst-search-backend-error' ) );
+				$this->logger->warning(
+					'Translation search server failed: {exception}',
+					[ 'exception' => $e ]
+				);
+				return;
+			}
 
 			// Other exceptions
 			$this->logger->error(

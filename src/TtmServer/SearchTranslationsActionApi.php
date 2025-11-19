@@ -7,6 +7,8 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\LogNames;
+use MediaWiki\Logger\LoggerFactory;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
@@ -51,18 +53,30 @@ class SearchTranslationsActionApi extends ApiBase {
 
 		$result = $this->getResult();
 
-		if ( $params['filter'] !== '' ) {
-			$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
-			$documents = $translationSearch->getDocuments();
-			$total = $translationSearch->getTotalHits();
-		} else {
-			$searchResults = $server->search(
-				$params['query'],
-				$params,
-				[ '', '' ]
-			);
-			$documents = $server->getDocuments( $searchResults );
-			$total = $server->getTotalHits( $searchResults );
+		try {
+			if ( $params['filter'] !== '' ) {
+				$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
+				$documents = $translationSearch->getDocuments();
+				$total = $translationSearch->getTotalHits();
+			} else {
+				$searchResults = $server->search(
+					$params['query'],
+					$params,
+					[ '', '' ]
+				);
+				$documents = $server->getDocuments( $searchResults );
+				$total = $server->getTotalHits( $searchResults );
+			}
+		} catch ( TtmServerException $e ) {
+			if ( $e->getCode() === TtmServerException::TRANSIENT_SEARCH_BACKEND_FAILURE ) {
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
+					'Translation search server failed: {exception}',
+					[ 'exception' => $e ]
+				);
+				$this->dieWithError( 'tux-sst-search-backend-error' );
+			}
+			// unexpected issue, let it bubble up
+			throw $e;
 		}
 		$result->addValue( [ 'search', 'metadata' ], 'total', $total );
 		$result->addValue( 'search', 'translations', $documents );
