@@ -374,7 +374,7 @@
 	"translate-workflowgroup-label": "Name of the message group that contains translations for translation workflow states defined for the wiki.",
 	"translate-workflowgroup-desc": "{{doc-important|Do not translate the variable name <code>$wgTranslateWorkflowStates</code>.}}",
 	"translate-dynagroup-recent-label": "Label of a message group",
-	"translate-dynagroup-recent-desc": "यो सन्देश समूहले यस भाषामा गरिएका सबै हालसालैका अनुवादहरू देखाउँछ। समीक्षा कार्यहरूको लागि सबैभन्दा उपयोगी।",
+	"translate-dynagroup-recent-desc": "Description of a message group.",
 	"translate-dynagroup-additions-label": "Label of a message group",
 	"translate-dynagroup-additions-desc": "Description of a message group.",
 	"translate-msggroupselector-projects": "Title text for the message group breadcrumb.\n{{Identical|Message group}}",

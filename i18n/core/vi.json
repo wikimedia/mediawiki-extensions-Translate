@@ -367,7 +367,7 @@
 	"tux-editor-add-desc": "Thêm tài liệu",
 	"tux-editor-suggestions-title": "Gợi ý",
 	"tux-editor-latest-updates-title": "Cập nhật mới nhất",
-	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1}}cập nhật không có tóm tắt",
+	"tux-editor-changes-without-summary": "$1 {{PLURAL:$1}}cập nhật không có tóm lược",
 	"tux-editor-all-changes": "Tất cả thay đổi",
 	"tux-editor-in-other-languages": "Theo ngôn ngữ khác",
 	"tux-editor-need-more-help": "Còn thắc mắc?",
