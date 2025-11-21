@@ -127,7 +127,7 @@
 	"apihelp-searchtranslations-param-group": "מזהה הקבוצה שבה צריך לחפש מחרוזת. ר' <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "מסנן מצב תרגום הודעה.",
 	"apihelp-searchtranslations-param-match": "להתאים מילים כלשהם או את כל המילים.",
-	"apihelp-searchtranslations-param-case": "חיפוש תלוי־רישיות או לאו.",
+	"apihelp-searchtranslations-param-case": "חיפוש תלוי־רישיות.",
 	"apihelp-searchtranslations-param-offset": "היסט לתרגומים.",
 	"apihelp-searchtranslations-param-limit": "גודל התוצאה.",
 	"apihelp-searchtranslations-example-1": "הצגת תרגומים בשפה.",

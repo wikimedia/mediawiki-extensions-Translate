@@ -19,8 +19,8 @@
 	"tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
 	"tux-sst-solr-offline-title": "A procura non está dispoñible",
 	"tux-sst-solr-offline-body": "O servizo de procura non está dispoñible temporalmente.",
-	"tux-sst-next": "Seguintes →",
-	"tux-sst-prev": "← Anteriores",
+	"tux-sst-next": "Seguintes ›",
+	"tux-sst-prev": "‹ Anteriores",
 	"tux-sst-default": "Traducións",
 	"tux-sst-translated": "Traducións do $1",
 	"tux-sst-untranslated": "Sen tradución do $1",
@@ -32,5 +32,6 @@
 	"tux-sst-case-sensitive": "Distinguir entre maiúsculas e minúsculas",
 	"tux-sst-error-offset": "Non se poden amosar máis resultados. Limita a túa busca.",
 	"tux-sst-error-language": "Esta lingua non se pode utilizar con este tipo de busca.",
-	"tux-sst-error-unsupported-language": "Non se admite a busca na lingua <code>$1</code>."
+	"tux-sst-error-unsupported-language": "Non se admite a busca na lingua <code>$1</code>.",
+	"tux-sst-search-backend-error": "Produciuse un erro inesperado no servidor de busca. Inténtao de novo máis tarde."
 }

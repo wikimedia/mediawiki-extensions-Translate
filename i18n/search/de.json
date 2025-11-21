@@ -30,5 +30,6 @@
 	"tux-sst-case-sensitive": "Groß-/Kleinschreibung",
 	"tux-sst-error-offset": "Es können keine weiteren Suchergebnisse angezeigt werden. Bitte schränke deine Suche ein.",
 	"tux-sst-error-language": "Diese Sprache kann nicht mit diesem Suchtyp verwendet werden.",
-	"tux-sst-error-unsupported-language": "Die Suche in Sprache <code>$1</code> wird nicht unterstützt."
+	"tux-sst-error-unsupported-language": "Die Suche in Sprache <code>$1</code> wird nicht unterstützt.",
+	"tux-sst-search-backend-error": "Unerwarteter Fehler im Such-Backend. Bitte versuche es später erneut."
 }

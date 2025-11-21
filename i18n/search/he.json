@@ -30,5 +30,6 @@
 	"tux-sst-case-sensitive": "תלוי־רישיות",
 	"tux-sst-error-offset": "לא היה אפשר להראות עוד תוצאות. נא לצמצם את החיפוש שלך.",
 	"tux-sst-error-language": "לא ניתן להשתמש בשפה הזאת עם סוג כזה של חיפוש.",
-	"tux-sst-error-unsupported-language": "חיפוש בשפה <code>$1</code> אינו נתמך."
+	"tux-sst-error-unsupported-language": "חיפוש בשפה <code>$1</code> אינו נתמך.",
+	"tux-sst-search-backend-error": "כשל בלתי־צפוי בשרת החיפוש, נא לנסות שוב מאוחר יותר"
 }

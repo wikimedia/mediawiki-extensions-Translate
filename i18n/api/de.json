@@ -120,7 +120,7 @@
 	"apihelp-searchtranslations-param-group": "Die Gruppenkennung, in der die Zeichenfolge gesucht werden soll. Siehe <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
 	"apihelp-searchtranslations-param-match": "Ein beliebiges Wort oder alle Wörter suchen.",
-	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
+	"apihelp-searchtranslations-param-case": "Suche mit Berücksichtigung der Groß- und Kleinschreibung.",
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen.",
