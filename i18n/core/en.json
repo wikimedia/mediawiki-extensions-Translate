@@ -441,7 +441,7 @@
 	"translate-statsbar-tooltip": "$1% translated, $2% reviewed",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% translated, $2% reviewed, $3% outdated",
 	"translate-search-more-groups-info": "$1 more {{PLURAL:$1|group|groups}}",
-	"translate-syntax-error": "The translation contains syntax errors",
+	"translate-syntax-errors": "The translation contains the following syntax errors: \n$1",
 	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in, return to this page and enter your translations again.",
 	"tux-nojs": "This tool does not work without JavaScript. JavaScript is disabled, failed to work, or this browser is unsupported.",
 	"specialpages-group-translation": "Translation",

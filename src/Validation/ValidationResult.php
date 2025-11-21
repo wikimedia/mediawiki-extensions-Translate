@@ -52,10 +52,16 @@ class ValidationResult {
 		return $this->errors;
 	}
 
+	/**
+	 * Returns a representation of the warnings stored in this validation status as an array of HTML strings.
+	 */
 	public function getDescriptiveWarnings( IContextSource $context ): array {
 		return $this->expandMessages( $context, $this->warnings );
 	}
 
+	/**
+	 * Returns a representation of the errors stored in this validation status as an array of HTML strings.
+	 */
 	public function getDescriptiveErrors( IContextSource $context ): array {
 		return $this->expandMessages( $context, $this->errors );
 	}
