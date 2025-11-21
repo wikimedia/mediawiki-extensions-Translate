@@ -914,12 +914,18 @@ class HookHandler implements
 
 			$validationResponse = $messageValidator->validateMessage( $message, $handle->getCode() );
 			if ( $validationResponse->hasErrors() ) {
+				$errors = $validationResponse->getDescriptiveErrors( $context );
+				$formattedErrors = '';
+				foreach ( $errors as $error ) {
+					$formattedErrors .= Html::rawElement( 'li', [], $error );
+				}
+				$formattedErrors = Html::rawElement( 'ul', [], $formattedErrors );
 				$status->fatal( new ApiRawMessage(
-					$context->msg( 'translate-syntax-error' )->parse(),
+					$context->msg( 'translate-syntax-errors' )->rawParams( $formattedErrors )->parse(),
 					'translate-validation-failed',
 					[
 						'validation' => [
-							'errors' => $validationResponse->getDescriptiveErrors( $context ),
+							'errors' => $errors,
 							'warnings' => $validationResponse->getDescriptiveWarnings( $context )
 						]
 					]

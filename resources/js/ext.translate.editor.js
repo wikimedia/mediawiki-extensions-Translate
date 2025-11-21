@@ -317,12 +317,14 @@
 					return;
 				}
 
+				var filteredSomeErrors = false;
 				var errors = [];
 				for ( var i = 0; i < response.errors.length; i++ ) {
 					var error = response.errors[ i ];
 					if ( error.code === 'assertuserfailed' ) {
 						// eslint-disable-next-line no-alert
 						alert( mw.msg( 'tux-session-expired' ) );
+						filteredSomeErrors = true;
 						break;
 					} else if ( error.code === 'translate-validation-failed' ) {
 						// Cancel the translation check API call to avoid extra
@@ -347,6 +349,11 @@
 								noticeTypes.error
 							);
 						}
+						// We don't need to say "publishing the translation failed: the translation contains
+						// the following syntax errors <blah>; the syntax error annotations can stand on their own
+						// this also means that if you fix the syntax errors it will hide the error message entirely
+						filteredSomeErrors = true;
+						continue;
 					}
 
 					errors.push( error.html );
@@ -365,7 +372,7 @@
 				// This is placed at the bottom to ensure that the save error appears at the
 				// top of the notices
 				translateEditor.onSaveFail(
-					errors.length ? errors : [ mw.msg( 'tux-save-unknown-error' ) ]
+					( filteredSomeErrors || errors.length ) ? errors : [ mw.msg( 'tux-save-unknown-error' ) ]
 				);
 
 				// Display all the notices whenever an error occurs.
@@ -431,10 +438,13 @@
 				$error = $errorList;
 			}
 
-			this.addNotice(
-				mw.message( 'tux-editor-save-failed', $error, errors.length ).parse(),
-				noticeTypes.translateFail
-			);
+			// If errors.length == 0 then the caller took displaying the error into its own hands
+			if ( errors.length > 0 ) {
+				this.addNotice(
+					mw.message( 'tux-editor-save-failed', $error, errors.length ).parse(),
+					noticeTypes.translateFail
+				);
+			}
 			this.saving = false;
 			this.markUnsavedFailure();
 
