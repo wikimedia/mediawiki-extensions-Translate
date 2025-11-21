@@ -289,6 +289,8 @@ class HookHandler implements
 			// Prevent editing of translation pages directly
 			$hooks['getUserPermissionsErrorsExpensive'][] =
 				[ Hooks::class, 'preventDirectEditing' ];
+			// Prevent moving of translatable pages directly
+			$hooks['MovePageIsValidMove'][] = [ Hooks::class, 'preventMoves' ];
 
 			// Our custom header for translation pages
 			$hooks['ArticleViewHeader'][] = [ Hooks::class, 'translatablePageHeader' ];

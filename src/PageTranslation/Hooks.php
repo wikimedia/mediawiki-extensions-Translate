@@ -52,6 +52,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Skin;
+use StatusValue;
 use UserBlockedError;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
@@ -1204,6 +1205,25 @@ class Hooks {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Prevent moving translatable or translation pages by any means other than our own move tools.
+	 * Hook: MovePageIsValidMove
+	 */
+	public static function preventMoves( Title $oldTitle, Title $newTitle, StatusValue $status ) {
+		if ( self::$allowTargetEdit ) {
+			return;
+		}
+		// Don’t use TranslatablePage::isSourcePage() as it uses a cache that might be stale
+		if ( TranslatablePage::newFromTitle( $oldTitle )->getMarkedTag() !== null ) {
+			$status->fatal( 'tpt-manual-move-source', $oldTitle->getPrefixedText() );
+		}
+		$tp = TranslatablePage::isTranslationPage( $oldTitle );
+		if ( $tp ) {
+			// Somewhat confusingly $tp->getTitle actually returns the source page here
+			$status->fatal( 'tpt-manual-move-translation', $tp->getTitle() );
+		}
 	}
 
 	/**

@@ -90,9 +90,12 @@ class TranslatableBundleMover {
 			throw new ImpossiblePageMove( $blockers );
 		}
 
+		// Set allowTargetEdit = true so Hooks knows you're going through the right system
+		Hooks::$allowTargetEdit = true;
 		$movePage = $this->movePageFactory->newMovePage( $source, $target );
 		$status = $movePage->isValidMove();
 		$status->merge( $movePage->probablyCanMove( $user, $reason ) );
+		Hooks::$allowTargetEdit = false;
 		if ( !$status->isOK() ) {
 			$blockers[$source] = $status;
 		}
@@ -159,8 +162,11 @@ class TranslatableBundleMover {
 				 * - 2 queries by core
 				 * - 3 queries by lqt
 				 * - and no obvious way to preload the data! */
+				Hooks::$allowTargetEdit = true;
 				$movePage = $this->movePageFactory->newMovePage( $old, $new );
 				$status = $movePage->isValidMove();
+				Hooks::$allowTargetEdit = false;
+
 				// Do not check for permissions here, as these pages are not editable/movable
 				// in regular use
 				if ( !$status->isOK() ) {
