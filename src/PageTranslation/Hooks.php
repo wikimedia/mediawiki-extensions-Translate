@@ -1599,7 +1599,7 @@ class Hooks {
 		$code = $handle->getCode();
 		$user = $skin->getUser();
 
-		if ( TranslatablePage::isSourcePage( $title ) ) {
+		if ( TranslatablePage::isSourcePage( $title ) && !TranslatablePage::newFromTitle( $title )->isBroken() ) {
 			if ( $user->isAllowed( 'pagetranslation' ) ) {
 				$tabs['actions']['marktranslation'] = [
 					'text' => $skin->msg( 'translate-ca-marktranslation' )->text(),

@@ -69,7 +69,7 @@ class MessageBundle extends TranslatableBundle {
 				$dbr = $mwServices->getConnectionProvider()->getReplicaDatabase();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				$ids = RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );
+				$ids = RevTagStore::getTranslatableBundleIds( [ RevTagStore::MB_VALID_TAG ] );
 				// Adding a comma at the end and beginning so that we can check for page Id
 				// existence with the "," delimiters
 				return ',' . implode( ',', $ids ) . ',';

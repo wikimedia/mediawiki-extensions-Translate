@@ -492,6 +492,13 @@ class TranslatablePage extends TranslatableBundle {
 		return str_contains( $translatablePageIds, ( ',' . $page->getId() . ',' ) );
 	}
 
+	public function isBroken(): bool {
+		$marked = $this->getMarkedTag();
+		$ready = $this->getReadyTag();
+		$latest = $this->getTitle()->getLatestRevID();
+		return $marked !== null && $marked !== $latest && $ready !== $latest;
+	}
+
 	/** Clears the source page cache */
 	public static function clearSourcePageCache(): void {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -540,8 +547,10 @@ class TranslatablePage extends TranslatableBundle {
 		$setOpts += Database::getCacheSetOptions( $dbr );
 
 		$ids = RevTagStore::getTranslatableBundleIds(
-			RevTagStore::TP_MARK_TAG,
-			RevTagStore::TP_READY_TAG
+			// Find pages where the latest revision can be marked for translation ...
+			[ RevTagStore::TP_READY_TAG ],
+			// ... or any revision has been marked for translation
+			[ RevTagStore::TP_MARK_TAG ]
 		);
 
 		// Adding a comma at the end and beginning so that we can check for page ID

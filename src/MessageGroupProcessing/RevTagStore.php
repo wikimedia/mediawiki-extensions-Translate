@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\RawSQLExpression;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
@@ -219,16 +220,28 @@ class RevTagStore {
 			->execute();
 	}
 
-	/** Get a list of page ids where the latest revision is either tagged or marked */
-	public static function getTranslatableBundleIds( string ...$revTags ): array {
+	/** Get a list of page ids where the latest revision has one of the tags in revTagsLatest,
+	 * or any revision has one of the given revtags in revTagsAny
+	 */
+	public static function getTranslatableBundleIds( array $revTagsLatest, array $revTagsAny = [] ): array {
 		$dbr = Utilities::getSafeReadDB();
+		$expr = $dbr->andExpr( [
+			new RawSQLExpression( 'rt_revision = page_latest' ),
+			'rt_type' => $revTagsLatest
+		] );
+		if ( $revTagsAny ) {
+			$expr = $dbr->orExpr( [ $expr, 'rt_type' => $revTagsAny ] );
+		}
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rt_page' )
 			->from( 'revtag' )
 			->join(
 				'page',
 				null,
-				[ 'rt_page = page_id', 'rt_revision = page_latest', 'rt_type' => $revTags ]
+				[
+					'rt_page = page_id',
+					$expr
+				]
 			)
 			->groupBy( 'rt_page' )
 			->caller( __METHOD__ )
