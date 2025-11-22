@@ -340,9 +340,13 @@
 						$message.data( 'pagemode' ) ||
 						$message.data( 'proofread' ) ).message;
 
+				// If a message is not translated, the value of message.translation is null.
+				// The RegExp test() method changes the null value to string, which is
+				// not desirable here (see T410757).
+				// Message definition and key are never supposed to be null.
 				if (
 					matcher.test( message.definition ) ||
-					matcher.test( message.translation ) ||
+					( message.translation !== null && matcher.test( message.translation ) ) ||
 					matcher.test( message.key )
 				) {
 					$message.removeClass( 'hide' );
