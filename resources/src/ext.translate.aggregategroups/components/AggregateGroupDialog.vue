@@ -43,9 +43,8 @@
 			<template #label>
 				{{ $i18n( "tpt-aggregategroup-select-source-language" ) }}
 			</template>
-			<!-- TODO: Maybe better to use a Codex Lookup here? -->
-			<cdx-select v-model:selected="formData.languageCode" :menu-items="languageMenuItems">
-			</cdx-select>
+			<lookup-language-selector v-model:selected="formData.languageCode" :selectable-languages="allLanguages">
+			</lookup-language-selector>
 		</cdx-field>
 	</cdx-dialog>
 </template>
@@ -56,9 +55,9 @@ const {
 	CdxField,
 	CdxTextArea,
 	CdxTextInput,
-	CdxSelect,
 	CdxMessage
 } = require( '../../../../codex.js' );
+const { LookupLanguageSelector } = require( 'mediawiki.languageselector' );
 const { supportedLanguages, undeterminedLanguageCode } = require( '../../language-map.json' );
 
 // @vue/component
@@ -69,8 +68,8 @@ module.exports = {
 		CdxField,
 		CdxTextArea,
 		CdxTextInput,
-		CdxSelect,
-		CdxMessage
+		CdxMessage,
+		LookupLanguageSelector
 	},
 	inject: [ 'aggregateGroupApi' ],
 	props: {
@@ -88,21 +87,13 @@ module.exports = {
 		const defaultAction = {
 			label: this.$i18n( 'tpt-aggregategroup-close' )
 		};
-
-		const languageMenuItems = [ {
-			label: this.$i18n( 'tpt-aggregategroup-language-none' ).text(),
-			value: undeterminedLanguageCode
-		} ];
-		Object.keys( supportedLanguages ).forEach( ( languageCode ) => {
-			languageMenuItems.push( {
-				label: supportedLanguages[ languageCode ],
-				value: languageCode
-			} );
-		} );
+		const allLanguages = Object.assign(
+			{ [ undeterminedLanguageCode ]: this.$i18n( 'tpt-aggregategroup-language-none' ).text() },
+			supportedLanguages
+		);
 
 		return {
 			defaultAction,
-			languageMenuItems,
 			formData: {
 				name: '',
 				description: '',
@@ -111,7 +102,8 @@ module.exports = {
 			inputNameMessages: null,
 			inputNameStatus: 'default',
 			apiLoadError: null,
-			apiSaveError: null
+			apiSaveError: null,
+			allLanguages
 		};
 	},
 	computed: {

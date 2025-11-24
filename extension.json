@@ -1079,7 +1079,8 @@
 		"ext.translate.special.aggregategroups": {
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"dependencies": [
-				"vue"
+				"vue",
+				"mediawiki.languageselector"
 			],
 			"messages": [
 				"tpt-aggregategroup-save",
@@ -1135,7 +1136,6 @@
 				"CdxField",
 				"CdxTextArea",
 				"CdxTextInput",
-				"CdxSelect",
 				"CdxMessage",
 				"CdxLookup"
 			]
