@@ -30,5 +30,6 @@
 	"tux-sst-case-sensitive": "Разликувај големи/мали букви",
 	"tux-sst-error-offset": "Не можам да прикажам повеќе исходни ставки. Уточнете го пребарувањето.",
 	"tux-sst-error-language": "Овој јазик не може да се користи за ваков вид пребарување.",
-	"tux-sst-error-unsupported-language": "Пребарувањето на јазикот <code>$1</code> не е поддржано."
+	"tux-sst-error-unsupported-language": "Пребарувањето на јазикот <code>$1</code> не е поддржано.",
+	"tux-sst-search-backend-error": "Неочекуван неуспех во заднината на пребарувањето. Обидете се подоцна"
 }

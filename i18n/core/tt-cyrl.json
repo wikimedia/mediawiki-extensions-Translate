@@ -11,7 +11,7 @@
 			"Рашат Якупов"
 		]
 	},
-	"translate": "Тәрҗемә итү",
+	"translate": "Тәрҗемә ит",
 	"translate-group": "Тәрҗемә итү: $1",
 	"translate-extensionname": "Тәрҗемә",
 	"translate-desc": "MediaWiki һәм башка программалар тәрҗемә итү өчен [[Special:Translate|Махсус бит]]",
@@ -169,6 +169,7 @@
 	"tux-editor-edit-desc": "Документацияне үзгәртү",
 	"tux-editor-add-desc": "Документация өстәү",
 	"tux-editor-suggestions-title": "Ярдәм",
+	"tux-editor-latest-updates-title": "Соңгы яңартулар",
 	"tux-editor-in-other-languages": "Башка телләрдә",
 	"tux-editor-need-more-help": "Ярдәм кирәкме?",
 	"tux-editor-ask-help": "Тулырак мәгълүмат сорау",

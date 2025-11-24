@@ -30,5 +30,6 @@
 	"tux-sst-case-sensitive": "Distinguer majusculas de minusculas",
 	"tux-sst-error-offset": "Non es possibile monstrar plus resultatos del recerca. Per favor restringe tu recerca.",
 	"tux-sst-error-language": "Iste lingua non pote esser usate con iste typo de recerca.",
-	"tux-sst-error-unsupported-language": "Le recerca in lingua <code>$1</code> non es supportate."
+	"tux-sst-error-unsupported-language": "Le recerca in lingua <code>$1</code> non es supportate.",
+	"tux-sst-search-backend-error": "Fallimento inexpectate del motor de recerca. Per favor tenta lo de novo plus tarde."
 }

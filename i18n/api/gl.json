@@ -131,7 +131,7 @@
 	"apihelp-searchtranslations-param-group": "O identificador do grupo no que procurar a cadea de texto. Consulta <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "Filtro do estado de tradución das mensaxes.",
 	"apihelp-searchtranslations-param-match": "Coincide con calquera/todas as palabras de procura.",
-	"apihelp-searchtranslations-param-case": "Procura sensible/non sensible a maiúsculas.",
+	"apihelp-searchtranslations-param-case": "Procura sensible a maiúsculas e minúsculas.",
 	"apihelp-searchtranslations-param-offset": "Desprazamento para as traducións.",
 	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
 	"apihelp-searchtranslations-example-1": "Amosar as traducións para a lingua.",
