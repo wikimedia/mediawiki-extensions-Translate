@@ -31,5 +31,6 @@
 	"tux-sst-case-sensitive": "Skill mellom store og små bokstaver",
 	"tux-sst-error-offset": "Ingen flere søkeresultater kan vises. Begrens søket ditt.",
 	"tux-sst-error-language": "Dette språket kan ikke brukes for denne typen søk.",
-	"tux-sst-error-unsupported-language": "Søk innen språket <code>$1</code> støttes ikke."
+	"tux-sst-error-unsupported-language": "Søk innen språket <code>$1</code> støttes ikke.",
+	"tux-sst-search-backend-error": "Uventet feil i søkemotoren. Prøv igjen senere"
 }
