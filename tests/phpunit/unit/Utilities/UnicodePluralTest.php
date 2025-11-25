@@ -144,8 +144,8 @@ class UnicodePluralTest extends MediaWikiUnitTestCase {
 		];
 
 		yield [
-			[ 'zero' => '', 'one' => '1 item', 'other' => 'items' ],
-			'{{PLURAL|zero=|one=1 item|items}}',
+			[ 'zero' => '', 'one' => '1 item', 'other' => '' ],
+			'{{PLURAL|zero=|one=1 item|}}',
 			[ 'zero', 'one', 'other' ]
 		];
 	}
