@@ -72,15 +72,9 @@ class JsonFormat extends SimpleFormat {
 		/** @var Message $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
-			if ( $value === null ) {
-				continue;
+			if ( $value !== null ) {
+				$messages[$key] = str_replace( TRANSLATE_FUZZY, '', $value );
 			}
-
-			if ( $m->hasTag( 'fuzzy' ) ) {
-				$value = str_replace( TRANSLATE_FUZZY, '', $value );
-			}
-
-			$messages[$key] = $value;
 		}
 
 		// Do not create files without translations

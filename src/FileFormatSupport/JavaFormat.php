@@ -110,14 +110,13 @@ class JavaFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 				continue;
 			}
 
-			$value = str_replace( TRANSLATE_FUZZY, '', $value );
-
 			// Just to give an overview of translation quality.
 			if ( $message->hasTag( 'fuzzy' ) ) {
 				$output .= "# Fuzzy\n";
 			}
 
 			$key = $mangler->unmangle( $key );
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$output .= $this->writeRow( $key, $value );
 		}
 

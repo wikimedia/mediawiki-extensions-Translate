@@ -542,7 +542,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 		$msgid = $message->definition();
 		$msgstr = $message->translation() ?? '';
-		if ( strpos( $msgstr, TRANSLATE_FUZZY ) !== false ) {
+		if ( str_contains( $msgstr, TRANSLATE_FUZZY ) ) {
 			$msgstr = str_replace( TRANSLATE_FUZZY, '', $msgstr );
 			// Might be fuzzy infile
 			$flags[] = 'fuzzy';

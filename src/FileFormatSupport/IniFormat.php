@@ -60,12 +60,8 @@ class IniFormat extends SimpleFormat {
 				continue;
 			}
 
-			$comment = '';
-
-			if ( $m->hasTag( 'fuzzy' ) ) {
-				$value = str_replace( TRANSLATE_FUZZY, '', $value );
-				$comment = "; Fuzzy\n";
-			}
+			$comment = $m->hasTag( 'fuzzy' ) ? "; Fuzzy\n" : '';
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			$key = $mangler->unmangle( $key );
 			$output .= "$comment$key = $value\n";

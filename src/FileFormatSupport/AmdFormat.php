@@ -86,9 +86,7 @@ class AmdFormat extends SimpleFormat {
 				continue;
 			}
 
-			if ( $m->hasTag( 'fuzzy' ) ) {
-				$value = str_replace( TRANSLATE_FUZZY, '', $value );
-			}
+			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
 			$key = $mangler->unmangle( $key );
 			$messages[$key] = $value;
