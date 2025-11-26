@@ -1,4 +1,6 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * A script to populate fuzzy tags to revtag table.
  *
@@ -8,17 +10,16 @@
  * @file
  */
 
-// Standard boilerplate to define $IP
-
 use MediaWiki\Extension\Translate\ConfigNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\Title\Title;
 
+// Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -43,14 +44,18 @@ class PopulateFuzzy extends Maintenance {
 			'dry-run',
 			"Don't write anything to the database; just report what would be done",
 		);
+		$this->setBatchSize( 500 );
 		$this->requireExtension( 'Translate' );
 	}
 
-	public function execute() {
+	/** @inheritDoc */
+	public function execute(): void {
 		$services = MediaWikiServices::getInstance();
 		$connectionProvider = $services->getConnectionProvider();
 		$revStore = $services->getRevisionStore();
+		$pageStore = $services->getPageStore();
 		$revTagStore = Services::getInstance()->getRevTagStore();
+		$titleFormatter = $services->getTitleFormatter();
 		$config = $services->getMainConfig();
 
 		$namespaces = $config->get( ConfigNames::MessageNamespaces );
@@ -61,60 +66,72 @@ class PopulateFuzzy extends Maintenance {
 		$dbw = $connectionProvider->getPrimaryDatabase();
 
 		$this->output( "\nPages to update:", 'loop' );
-		foreach ( (array)$namespaces as $ns ) {
-			$offset = [ 'page_namespace' => 0, 'page_title' => '' ];
-			while ( true ) {
-				$qb = $revStore->newSelectQueryBuilder( $dbr )
-					->joinPage()
-					->joinComment()
-					->where( [
-						'page_latest = rev_id',
-						'page_namespace' => (int)$ns,
-						$dbr->buildComparison( '>', $offset ),
-					] )
-					->orderBy( [ 'page_namespace', 'page_title' ], 'ASC' )
-					->limit( $limit )
-					->caller( __METHOD__ );
-				$res = $qb->fetchResultSet();
-				if ( !$res->numRows() ) {
-					break;
+		$offset = [ 'page_namespace' => 0, 'page_title' => '' ];
+		while ( true ) {
+			$pages = $pageStore->newSelectQueryBuilder()
+				->select( [ 'page_latest', 'page_namespace', 'page_title' ] )
+				->where( [
+					'page_namespace' => $namespaces,
+					$dbr->buildComparison( '>', $offset ),
+				] )
+				->orderByTitle()
+				->limit( $limit )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+			$pages = iterator_to_array( $pages );
+			if ( !$pages ) {
+				break;
+			}
+
+			$revIds = array_column( $pages, 'page_latest' );
+			// Update cursor to current row. TODO array_last in PHP 8.5
+			$offset = (array)end( $pages );
+			unset( $offset['page_latest'] );
+
+			$res = $revStore->newSelectQueryBuilder( $dbr )
+				->joinPage()
+				->where( [ 'rev_id' => $revIds ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
+			$inserts = [];
+			$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
+			foreach ( $res as $r ) {
+				if ( isset( $slots[$r->rev_id] ) ) {
+					$text = $slots[$r->rev_id][SlotRecord::MAIN]->blob_data;
+				} else {
+					$content = $revStore->newRevisionFromRow( $r )->getContent( SlotRecord::MAIN );
+					$text = Utilities::getTextFromTextContent( $content );
 				}
 
-				$inserts = [];
-				$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
-				foreach ( $res as $r ) {
-					if ( isset( $slots[$r->rev_id] ) ) {
-						$text = $slots[$r->rev_id][SlotRecord::MAIN]->blob_data;
-					} else {
-						$content = $revStore->newRevisionFromRow( $r )->getContent( SlotRecord::MAIN );
-						$text = Utilities::getTextFromTextContent( $content );
-					}
-					if ( str_contains( $text, TRANSLATE_FUZZY ) ) {
-						if ( !$revTagStore->isRevIdFuzzy( $r->rev_page, $r->rev_id ) ) {
-							$inserts[] = [
-								'rt_page' => $r->page_id,
-								'rt_revision' => $r->rev_id,
-								'rt_type' => RevTagStore::FUZZY_TAG,
-							];
+				$needsUpdate = str_contains( $text, TRANSLATE_FUZZY ) &&
+					!$revTagStore->isRevIdFuzzy( (int)$r->rev_page, (int)$r->rev_id );
 
-							$title = Title::makeTitle( $r->page_namespace, $r->page_title );
-							$this->output( "\n - {$title->getPrefixedText()}", 'loop' );
-						}
+				if ( $needsUpdate ) {
+					$handle = new MessageHandle( new TitleValue( (int)$r->page_namespace, $r->page_title ) );
+					// Skip orphaned messages to avoid unnecessary database pollution
+					if ( $handle->getGroupIds() ) {
+						$inserts[] = [
+							'rt_page' => (int)$r->page_id,
+							'rt_revision' => (int)$r->rev_id,
+							'rt_type' => RevTagStore::FUZZY_TAG,
+						];
+
+						$prefixedText = $titleFormatter->formatTitle( (int)$r->page_namespace, $r->page_title );
+						$this->output( "\n - $prefixedText", 'loop' );
 					}
-					// Update cursor to current row
-					$offset = [ 'page_namespace' => $r->page_namespace, 'page_title' => $r->page_title ];
 				}
+			}
 
-				if ( $inserts ) {
-					if ( $dryRun ) {
-						$totalWouldInsert += count( $inserts );
-					} else {
-						$dbw->newInsertQueryBuilder()
-							->insertInto( 'revtag' )
-							->rows( $inserts )
-							->caller( __METHOD__ )
-							->execute();
-					}
+			if ( $inserts ) {
+				if ( $dryRun ) {
+					$totalWouldInsert += count( $inserts );
+				} else {
+					$dbw->newInsertQueryBuilder()
+						->insertInto( 'revtag' )
+						->rows( $inserts )
+						->caller( __METHOD__ )
+						->execute();
 				}
 			}
 		}
