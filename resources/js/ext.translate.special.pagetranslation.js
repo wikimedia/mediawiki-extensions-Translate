@@ -6,25 +6,30 @@
  * @license GPL-2.0-or-later
  */
 
-var LanguagesMultiselectWidget = require( './LanguagesMultiselectWidget.js' );
-
-// Needed for OOUI :(
-window.LanguagesMultiselectWidget = LanguagesMultiselectWidget;
+const { getMultiselectLookupLanguageSelector } = require( 'mediawiki.languageselector' );
 
 function configureLanguageInput( $form, $widget ) {
-	/** @type {LanguagesMultiselectWidget} */
-	var widget = OO.ui.infuse( $widget, { api: new mw.Api() } );
+	const priorityLanguageData = $widget.data( 'ooui' );
 
-	var $input = $( '<input>' ).prop( {
+	const $input = $( '<input>' ).prop( {
 		type: 'hidden',
-		name: 'prioritylangs',
-		value: widget.getValue()
+		name: 'prioritylangs'
+	} );
+
+	const languageSelectorApp = getMultiselectLookupLanguageSelector( {
+		selectableLanguages: priorityLanguageData.languages,
+		selectedLanguage: priorityLanguageData.selected,
+		onLanguageChange: ( languages ) => {
+			$input.val( languages.join( ',' ) );
+		}
 	} );
 
 	$form.prepend( $input );
-	widget.on( 'change', function () {
-		$input.val( widget.getValue() );
-	} );
+
+	const container = document.createElement( 'div' );
+	$widget.after( container );
+	languageSelectorApp.mount( container );
+	$widget.remove();
 }
 
 function configurePostLinks( $container ) {

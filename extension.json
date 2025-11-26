@@ -15,7 +15,7 @@
 	"namemsg": "translate-extensionname",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
-		"MediaWiki": ">= 1.45.0",
+		"MediaWiki": ">= 1.46.0",
 		"extensions": {
 			"UniversalLanguageSelector": "*"
 		}
@@ -1178,15 +1178,15 @@
 		},
 		"ext.translate.special.pagetranslation": {
 			"packageFiles": [
-				"resources/js/ext.translate.special.pagetranslation.js",
-				"resources/js/LanguagesMultiselectWidget.js"
+				"resources/js/ext.translate.special.pagetranslation.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
 				"mediawiki.ui.button",
 				"mediawiki.widgets",
 				"oojs-ui-widgets",
-				"user.options"
+				"user.options",
+				"mediawiki.languageselector"
 			]
 		},
 		"ext.translate.special.managegroups": {
