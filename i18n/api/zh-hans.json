@@ -14,7 +14,8 @@
 			"Xiplus",
 			"Yfdyh000",
 			"沈澄心",
-			"Libamidi"
+			"Libamidi",
+			"Peterxy12"
 		]
 	},
 	"apihelp-aggregategroups-summary": "管理聚合消息组。",
@@ -22,6 +23,7 @@
 	"apihelp-aggregategroups-param-do": "想要操作哪个聚合消息组。",
 	"apihelp-aggregategroups-param-aggregategroup": "聚合消息组ID。",
 	"apihelp-aggregategroups-param-group": "消息组ID。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
+	"apihelp-aggregategroups-param-groups": "消息组ID的列表。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-aggregategroups-param-groupname": "聚合消息组的名称。",
 	"apihelp-aggregategroups-param-groupdescription": "聚合消息组的描述。",
 	"apihelp-aggregategroups-example-1": "关联一个群组",

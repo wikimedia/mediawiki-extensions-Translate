@@ -12,7 +12,8 @@
 			"Nikosgranturismogt",
 			"Norhorn",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Jimkats"
 		]
 	},
 	"pagetranslation": "Μετάφραση σελίδων",
@@ -178,8 +179,8 @@
 	"pm-import-button-label": "Εισαγωγή",
 	"pm-savepages-button-label": "Αποθήκευση",
 	"pm-cancel-button-label": "Άκυρο",
-	"pm-page-does-not-exist": "Το $1 δεν υπάρχει.",
-	"pm-old-translations-missing": "Το $1 δεν περιέχει παλιές μεταφράσεις.",
+	"pm-page-does-not-exist": "Η σελίδα $1 δεν υπάρχει.",
+	"pm-old-translations-missing": "Η σελίδα $1 δεν περιέχει παλιές μεταφράσεις.",
 	"pm-extra-units-warning": "Μάλλον υπάρχουν παραπάνω μεταφραστικές μονάδες. Παρακαλούμε αντιστοιχίστε σωστά τις μεταφραστικές μονάδες του πηγαίου κειμένου με αυτές της μετάφρασης.",
 	"pm-pagename-missing": "Παρακαλούμε εισαγάγετε το όνομα της σελίδας.",
 	"pm-add-icon-hover-text": "Προσθήκη μιας μεταφραστικής μονάδας παρακάτω",
@@ -196,7 +197,7 @@
 	"pagepreparation": "Προετοιμασία σελίδας για μετάφραση",
 	"pp-pagename-placeholder": "Εισαγάγετε το όνομα της σελίδας",
 	"pp-prepare-button-label": "Προετοιμασία",
-	"pp-save-button-label": "Αποθήκευση",
+	"pp-save-button-label": "Δημοσίευση",
 	"pp-cancel-button-label": "Άκυρο",
 	"pp-save-message": "Η σελίδα έχει δημοσιευτεί. Μπορείτε να την [$1 επεξεργαστείτε].",
 	"pp-prepare-message": "Η σελίδα προετοιμάστηκε για μετάφραση. Δείτε τις διαφορές παρακάτω. Κάντε κλικ στο κουμπί «{{int:pp-save-button-label}}» αν είναι εντάξει!",

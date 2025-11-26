@@ -357,7 +357,7 @@
 	"logentry-translationreview-unfuzzy": "{{Logentry|[[Special:Log/translationreview]]}}",
 	"right-unfuzzy": "{{doc-right|unfuzzy}}",
 	"action-unfuzzy": "{{doc-action|unfuzzy}}",
-	"translate-unfuzzy-comment": "Used as the edit summary in the page history for a null revision made when a translation is marked no longer outdated.",
+	"translate-unfuzzy-comment": "Used as the edit summary in the page history for a dummy revision made when a translation is marked as no longer outdated.",
 	"group-translate-sandboxed": "{{doc-group|translate-sandboxed}}",
 	"group-translate-sandboxed-member": "{{doc-group|translate-sandboxed|member}}",
 	"right-translate-sandboxmanage": "{{doc-right|translate-sandboxmanage}}",

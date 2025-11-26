@@ -215,7 +215,7 @@
 	"translate-import-err-dl-failed": "Heb allu nôl y ffeil:\n$1",
 	"translate-import-err-ul-failed": "Methwyd uwchlwytho ffeil",
 	"translate-js-support-unsaved-warning": "Mae gennych gyfieithiadau heb eu cadw.",
-	"translate-documentation-language": "Dogfennaeth testun",
+	"translate-documentation-language": "Dogfennaeth destun",
 	"translate-searchprofile": "Cyfieithiadau",
 	"translate-searchprofile-tooltip": "Chwilio ymhlith yr holl gyfieithiadau",
 	"translate-search-languagefilter": "Hidlo yn ôl iaith:",
