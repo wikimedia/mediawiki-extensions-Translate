@@ -107,6 +107,8 @@
 	"tpt-target-page": "Esta páxina non se pode actualizar manualmente.\nEsta páxina é unha tradución da páxina «[[$1]]» e a tradución pódese actualizar usando [$2 a ferramenta de tradución].",
 	"tpt-source-mirror": "Esta páxina é unha copia espello xerada automaticamente a partir da páxina «[[$1]]» e non se pode actualizar manualmente. Para actualizala, fai os cambios nesa páxina e pídelle a alguén que a marque para a súa tradución.",
 	"tpt-unknown-page": "Este espazo de nomes está reservado para a tradución de páxinas de contido.\nA páxina que intentas editar parece non corresponder con ningunha páxina marcada para ser traducida.",
+	"tpt-manual-move-source": "As páxinas traducibles só se poden mover mediante o formulario específico proporcionado pola extensión de tradución. Vai a «[[{{#special:MovePage/$1}}]]» para trasladar a páxina.",
+	"tpt-manual-move-translation": "As páxinas de tradución non se poden mover manualmente. Se queres mover a páxina traducible «[[:$1]]» xunto con todas as súas traducións, vai a «[[{{#special:MovePage/$1}}]]».",
 	"tpt-translation-restricted-no-reason": "Un administrador de traducións impediu a tradución da páxina nesta lingua.",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "Este grupo de mensaxes está configurado para evitar as traducións a linguas distintas das prioritarias, pero non ten ningunha lingua prioritaria.",
 	"tpt-translation-restricted-reason": "Motivo: $1",

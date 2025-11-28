@@ -124,7 +124,7 @@
 	"apihelp-searchtranslations-param-group": "要搜尋字串的群組ID。參見<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-searchtranslations-param-filter": "訊息譯文狀態篩選器。",
 	"apihelp-searchtranslations-param-match": "符合任何/所有搜尋文字。",
-	"apihelp-searchtranslations-param-case": "（不）區分大小寫搜尋。",
+	"apihelp-searchtranslations-param-case": "區分大小寫搜尋。",
 	"apihelp-searchtranslations-param-offset": "譯文起始值",
 	"apihelp-searchtranslations-param-limit": "結果的大小。",
 	"apihelp-searchtranslations-example-1": "顯示該語言的譯文。",
