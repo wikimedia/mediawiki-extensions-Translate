@@ -259,6 +259,8 @@
 	"tpt-unlink-summary": "ページを翻訳対象から除去",
 	"tpt-general-area-header": "全般領域",
 	"tpt-fuzzy-select-label": "編集された翻訳単位の翻訳の更新を必須にする対象",
+	"tpt-fuzzy-select-all": "編集した翻訳単位をすべて選択",
+	"tpt-fuzzy-select-none": "翻訳単位をすべて選択解除",
 	"tpt-fuzzy-select-custom": "カスタム選択",
 	"tpt-generic-confirm": "操作を確認してください。",
 	"tpt-generic-button": "確認",

@@ -50,7 +50,9 @@
 			"SaoMikoto",
 			"范",
 			"Libamidi",
-			"SaldırganSincap"
+			"SaldırganSincap",
+			"ExoHyper2026",
+			"Peterxy12"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -71,8 +73,8 @@
 	"tpt-action-fuzzy": "需要新的翻译",
 	"tpt-badtitle": "页面名称（$1）不是一个有效的标题",
 	"tpt-nosuchpage": "页面$1不存在。",
-	"tpt-oldrevision": "$2 不是页面 [[:$1]] 的最新版本。只有最新版本可以标记进行翻译。",
-	"tpt-notsuitable": "页面 $1 不适合翻译。\n请确保它包含 $2 标签且语法有效。",
+	"tpt-oldrevision": "$2不是页面[[:$1]]的最新版本。只有最新版本可以标记进行翻译。",
+	"tpt-notsuitable": "页面$1不适合翻译。\n请确保它包含$2标签且语法有效。",
 	"tpt-saveok": "页面[[:$1]]已被标记将进行翻译，共有$2个{{PLURAL:$2|翻译单位}}。\n现在可以<span class=\"plainlinks\">[$3 翻译]</span>页面。",
 	"tpt-saveok-first": "您可以[[Special:PageMigration|导入这个页面的已有翻译]]（如果有的话）。",
 	"tpt-offer-notify": "您可以<span class=\"plainlinks\">[$1 通告关于此页面的翻译]</span>。",
