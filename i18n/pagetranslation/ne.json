@@ -25,6 +25,7 @@
 	"tpt-sections-deleted": "मेटाइएका अनुवाद एकाइहरू",
 	"tpt-nosuchpage": "$1 पृष्ठ अस्तित्वमा रहेको छैन",
 	"tpt-rev-encourage": "पूर्वावस्थामा ल्याउनुहोस्",
+	"translate-tag-translate-link-desc": "यो पृष्ठ अनुवाद गर्नुहोस्",
 	"tpt-translation-intro": "यो पृष्ठ पृष्ठ [[$2]]को <span class=\"plainlinks\">[$1 अनुवादित संस्करण]</span> हो र अनुवाद $3% पूरा भयो।",
 	"tpt-languages-legend": "अन्य भाषाहरू:",
 	"tpt-languages-nonzero": "$1 ($2% अनुवादित)",
