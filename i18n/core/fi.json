@@ -444,7 +444,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % käännetty, $2 % tarkastettu, $3 % vanhentunut",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|muu ryhmä|muuta ryhmää}}",
 	"translate-syntax-error": "Käännös sisältää syntaksivirheitä",
-	"tux-session-expired": "Et ole enää kirjautunut sisään. Kirjaudu sisään toisessä välilehdessä. Vaihtoehtoisesti voit kopioida tallentamattomat käännökset, kirjautua sisään ja palata tälle sivulle tallentamaan käännökset uudestaan.",
+	"tux-session-expired": "Et ole enää kirjautunut sisään. Kirjaudu sisään toisessä välilehdessä. Vaihtoehtoisesti voit kopioida tallentamattomat käännökset, kirjautua sisään ja palata tälle sivulle tallentamaan käännökset uudelleen.",
 	"tux-nojs": "Tämä työkalu ei toimi ilman JavaScriptiä. JavaScript on poistettu käytöstä, se ei toimi, tai tätä selainta ei tueta.",
 	"specialpages-group-translation": "Käännös",
 	"content-model-translate-messagebundle": "Käännettävä viestinippu",
