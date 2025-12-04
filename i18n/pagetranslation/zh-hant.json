@@ -127,6 +127,8 @@
 	"tpt-target-page": "此頁面無法手動更新。此頁面是頁面[[$1]]的譯文版本，譯文可使用[$2 翻譯工具]更新。",
 	"tpt-source-mirror": "此頁面是頁面[[$1]]的自動產生鏡像內容，無法手動更新。如要更新，請直接更改該頁面，並請他人標記為用於翻譯。",
 	"tpt-unknown-page": "此命名空間已保留給內容頁面的譯文使用。您嘗試編輯的頁面似乎不對應被標記需要翻譯的頁面。",
+	"tpt-manual-move-source": "可翻譯頁面只能透過翻譯擴充功能提供的特定表單進行移動。請前往[[{{#special:MovePage/$1}}]]來移動頁面。",
+	"tpt-manual-move-translation": "翻譯頁面無法手動移動。如果您想要移動整個可翻譯頁面[[:$1]]及其所有翻譯，請前往[[{{#special:MovePage/$1}}]]",
 	"tpt-translation-restricted-no-reason": "翻譯管理員已禁止將這個頁面翻譯至此語言。",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "此訊息群組已設定為禁止翻譯成優先語言以外的語言（但是還沒有優先語言）。",
 	"tpt-translation-restricted-reason": "原因：$1",
