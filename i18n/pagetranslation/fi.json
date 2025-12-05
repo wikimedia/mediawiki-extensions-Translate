@@ -168,6 +168,7 @@
 	"log-action-filter-messagebundle": "Toiminnon tyyppi:",
 	"log-action-filter-messagebundle-move": "Viestinippujen siirrot",
 	"log-action-filter-messagebundle-delete": "Viestinippujen poistot",
+	"pt-cta-mark-translation": "Tämän sivun voi merkitä yhteisön käännettäväksi. Muuta [$1 sivun käännösasetuksia] ilmoittaaksesi muokkaajille, että he voivat aloittaa sisällön kääntämisen.",
 	"pt-movepage-title": "Käännettävän sivun $1 siirtäminen",
 	"pt-movepage-messagebundle-title": "Siirrä viestinippu \"$1\"",
 	"pt-movepage-blockers": "Käännettävää sivua ei voi siirtää uudelle nimelle {{PLURAL:$1|seuraavasta syystä|seuraavista syistä}}:",
