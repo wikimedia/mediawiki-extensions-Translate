@@ -107,6 +107,7 @@
 	"tpt-source-mirror": "This page is an automatically generated mirror of the page [[$1]] and cannot be updated manually. To update it, make your changes to that page and get someone to mark it for translation.",
 	"tpt-unknown-page": "This namespace is reserved for content page translations.\nThe page you are trying to edit does not seem to correspond to any page marked for translation.",
 	"tpt-manual-move-source": "Translatable pages can only be moved via the specific form provided by the Translate extension. Please go to [[{{#special:MovePage/$1}}]] to move the page.",
+	"mb-manual-move": "Message bundles can only be moved via the specific form provided by the Translate extension. Please go to [[{{#special:MovePage/$1}}]] to move the page.",
 	"tpt-manual-move-translation": "Translation pages cannot be moved manually. If you want to move the entire translatable page [[:$1]] and all its translations, then go to [[{{#special:MovePage/$1}}]]",
 	"tpt-translation-restricted-no-reason": "Translation of this page to this language has been prevented by a translation administrator.",
 	"tpt-translation-restricted-no-priority-languages-no-reason": "This message group is set to prevent translations to languages other than the priority languages, but it has no priority languages.",

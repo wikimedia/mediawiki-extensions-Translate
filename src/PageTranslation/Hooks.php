@@ -17,6 +17,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Deferred\LinksUpdate\LinksUpdate;
 use MediaWiki\Extension\Translate\LogNames;
+use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleContent;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
@@ -1208,7 +1209,8 @@ class Hooks {
 	}
 
 	/**
-	 * Prevent moving translatable or translation pages by any means other than our own move tools.
+	 * Prevent moving translatable pages, translation pages, or message bundles by any means other than
+	 * our own move tools.
 	 * Hook: MovePageIsValidMove
 	 */
 	public static function preventMoves( Title $oldTitle, Title $newTitle, StatusValue $status ) {
@@ -1219,6 +1221,12 @@ class Hooks {
 		if ( TranslatablePage::newFromTitle( $oldTitle )->getMarkedTag() !== null ) {
 			$status->fatal( 'tpt-manual-move-source', $oldTitle->getPrefixedText() );
 		}
+
+		// Don't use MessageBundle::isSourcePage for the same reason
+		if ( $oldTitle->getContentModel() === MessageBundleContent::CONTENT_MODEL_ID ) {
+			$status->fatal( 'mb-manual-move', $oldTitle );
+		}
+
 		$tp = TranslatablePage::isTranslationPage( $oldTitle );
 		if ( $tp ) {
 			// Somewhat confusingly $tp->getTitle actually returns the source page here
