@@ -3,6 +3,7 @@
 		"authors": [
 			"Hubaishan",
 			"Meno25",
+			"SaldırganSincap",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
 		]
@@ -187,7 +188,7 @@
 	"apierror-markfortranslation-invalid-prioritylangs": "لغة غير صالحة {{PLURAL:$1|كود}} المحددة للغات ذات الأولوية: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "تم تعليمها كمراجعة من قبلك",
 	"apiwarn-translate-language-disabled-source": "لغة المصدر لهذه المجموعة هي $1; يُرجَى تحديد لغة أخرى للترجمة إليها.",
-	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>أنت تترجم إلى<bdi> $1</strong> إنه أحد أشكال<bdi> $2</bdi> ، وهي لغة المصدر لهذه الرسائل. تأكد من صحة اللغة المختارة، وراعِ الاختلافات بين اللغات المختلفة للحصول على ترجمة جيدة.",
+	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>أنت تقوم بالترجمة إلى لغة <bdi>$1</bdi>.</strong> إنه أحد أشكال <bdi>$2</bdi> ، وهي لغة المصدر لهذه الرسائل. تأكد من صحة اللغة المختارة، وراعِ الاختلافات بين اللغات المختلفة للحصول على ترجمة جيدة.",
 	"apierror-translate-operation-error": "حدث خطأ أثناء معالجة الطلب. الخطأ: $1",
 	"apihelp-translationentitysearch-summary": "البحث عن مجموعات الرسائل والرسائل",
 	"apihelp-translationentitysearch-param-entitytype": "نوع الكيان الذي يتم الاستعلام عنه",
