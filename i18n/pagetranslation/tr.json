@@ -252,7 +252,7 @@
 	"pp-cancel-button-label": "İptal",
 	"pp-save-message": "Sayfa yayımlandı. Artık [$1 düzenleme] yapabilirsiniz.",
 	"pp-prepare-message": "Sayfa çeviri için hazırlanmıştır. Aşağıdaki farkı inceleyin. Tamamsa {{int:pp-save-button-label}}\" düğmesini tıklayın!",
-	"pp-already-prepared-message": "Sayfanın çeviri için önceden hazırlanmış olduğu anlaşılıyor. Önceki sürüme kıyasla değişiklik yok.",
+	"pp-already-prepared-message": "Sayfanın çeviri için önceden hazırlandığı veya otomatik olarak hazırlanamadığı anlaşılıyor. Önceki sürüme kıyasla herhangi bir değişiklik yok.",
 	"pp-diff-error": "Fark sunucudan getirilirken bir hata oluştu.",
 	"pp-pagename-missing": "Lütfen sayfa adı girin.",
 	"pp-diff-old-header": "Kaynak metin",

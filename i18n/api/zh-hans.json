@@ -14,7 +14,8 @@
 			"LittlePaw365",
 			"LowensteinYang",
 			"沈澄心",
-			"Libamidi"
+			"Libamidi",
+			"Peterxy12"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",

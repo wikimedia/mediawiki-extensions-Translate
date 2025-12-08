@@ -12,7 +12,8 @@
 			"Nikosgranturismogt",
 			"Norhorn",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Jimkats"
 		]
 	},
 	"pagetranslation": "Μετάφραση σελίδων",
@@ -198,7 +199,7 @@
 	"pagepreparation": "Προετοιμασία σελίδας για μετάφραση",
 	"pp-pagename-placeholder": "Εισαγάγετε το όνομα της σελίδας",
 	"pp-prepare-button-label": "Προετοιμασία",
-	"pp-save-button-label": "Αποθήκευση",
+	"pp-save-button-label": "Δημοσίευση",
 	"pp-cancel-button-label": "Άκυρο",
 	"pp-save-message": "Η σελίδα έχει δημοσιευτεί. Μπορείτε να την [$1 επεξεργαστείτε].",
 	"pp-prepare-message": "Η σελίδα προετοιμάστηκε για μετάφραση. Δείτε τις διαφορές παρακάτω. Κάντε κλικ στο κουμπί «{{int:pp-save-button-label}}» αν είναι εντάξει!",
