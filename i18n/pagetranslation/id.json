@@ -26,7 +26,7 @@
 	"right-pagetranslation": "Menandai revisi-revisi halaman untuk diterjemahkan",
 	"action-pagetranslation": "mengelola halaman-halaman yang bisa diterjemahkan",
 	"tps-edit-sourcepage-text": "Anda sedang menyunting sebuah halaman sumber terjemahan. Tolong pastikan bahwa Anda memahami dokumentasi berikut:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Mengubah teks sumber]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Contoh markah yang digunakan]",
-	"tps-edit-sourcepage-ve-warning-limited-text": "Beberapa area yang bisa diterjemahkan mungkin tidak bisa disunting dalam editor ini. Tolong gunakan editor sumber untuk menyuntingnya.",
+	"tps-edit-sourcepage-ve-warning-limited-text": "Beberapa area yang bisa diterjemahkan mungkin tidak bisa disunting dalam penyunting ini. Tolong gunakan penyunting sumber untuk menyuntingnya.",
 	"tpt-section": "Unit penerjemahan $1",
 	"tpt-section-new": "Unit penerjemahan baru. Nama: $1",
 	"tpt-section-deleted": "Unit penerjemahan $1",
