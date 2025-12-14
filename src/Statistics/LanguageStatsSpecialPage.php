@@ -36,7 +36,6 @@ use WikiPageMessageGroup;
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class LanguageStatsSpecialPage extends SpecialPage {
-	private LanguageNameUtils $languageNameUtils;
 	private StatsTable $table;
 	private array $targetValueName = [ 'code', 'language' ];
 	/** Most of the displayed numbers added together at the bottom of the table. */
@@ -60,27 +59,18 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	 */
 	private array $statsCounted = [];
 	private array $states = [];
-	private LinkBatchFactory $linkBatchFactory;
-	private ProgressStatsTableFactory $progressStatsTableFactory;
-	private JobQueueGroup $jobQueueGroup;
-	private MessageGroupReviewStore $groupReviewStore;
-	private BagOStuff $cache;
+	private readonly BagOStuff $cache;
 
 	public function __construct(
-		LinkBatchFactory $linkBatchFactory,
-		ProgressStatsTableFactory $progressStatsTableFactory,
-		LanguageNameUtils $languageNameUtils,
-		JobQueueGroup $jobQueueGroup,
-		MessageGroupReviewStore $groupReviewStore,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly ProgressStatsTableFactory $progressStatsTableFactory,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly MessageGroupReviewStore $groupReviewStore,
 		ObjectCacheFactory $objectCacheFactory
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
-		$this->linkBatchFactory = $linkBatchFactory;
-		$this->progressStatsTableFactory = $progressStatsTableFactory;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->groupReviewStore = $groupReviewStore;
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
