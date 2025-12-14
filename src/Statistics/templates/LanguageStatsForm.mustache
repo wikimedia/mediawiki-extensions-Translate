@@ -1,0 +1,38 @@
+<form method="get" action="{{action}}">
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="language">
+
+				<span class="cdx-label__label__text">{{languageLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<div class="cdx-text-input">
+				<input class="cdx-text-input__input" type="text" name="language" id="language" value="{{languageValue}}">
+			</div>
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-field__control">
+			<div class="cdx-checkbox">
+				<input class="cdx-checkbox__input" type="checkbox" name="suppresscomplete" id="suppresscomplete" {{#suppressCompleteChecked}}checked{{/suppressCompleteChecked}}>
+				<span class="cdx-checkbox__icon"></span>
+				<label class="cdx-checkbox__label" for="suppresscomplete">{{suppressCompleteLabel}}</label>
+			</div>
+			<div class="cdx-checkbox">
+				<input class="cdx-checkbox__input" type="checkbox" name="suppressempty" id="suppressempty" {{#suppressEmptyChecked}}checked{{/suppressEmptyChecked}}>
+				<span class="cdx-checkbox__icon"></span>
+				<label class="cdx-checkbox__label" for="suppressempty">{{suppressEmptyLabel}}
+				</label>
+			</div>
+		</div>
+	</div>
+	{{#hiddenFields}}
+	<input type="hidden" name="{{name}}" value="{{value}}">
+	{{/hiddenFields}}
+	<div class="cdx-field">
+		<button class="cdx-button cdx-button--action-progressive cdx-button--weight-primary" type="submit">
+			{{submitLabel}}
+		</button>
+	</div>
+</form>

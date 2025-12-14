@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
+use MediaWiki\Html\TemplateParser;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -60,6 +61,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 	private array $statsCounted = [];
 	private array $states = [];
 	private readonly BagOStuff $cache;
+	private readonly TemplateParser $templateParser;
 
 	public function __construct(
 		private readonly LinkBatchFactory $linkBatchFactory,
@@ -72,6 +74,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
+		$this->templateParser = new TemplateParser( __DIR__ . '/templates/' );
 	}
 
 	/** @inheritDoc */
@@ -102,8 +105,13 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules( 'ext.translate.special.languagestats' );
-		$out->addModuleStyles( 'ext.translate.statstable' );
-		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.special.languagestats.styles',
+			'ext.translate.special.languagestats',
+			'ext.translate.statstable',
+			'mediawiki.codex.messagebox.styles',
+			'codex-styles'
+		] );
 
 		$params = $par ? explode( '/', $par ) : [];
 
@@ -231,51 +239,36 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 	/** HTMLForm for the top form rendering. */
 	private function addForm(): void {
-		$formDescriptor = [
-			'language' => [
-				'type' => 'text',
-				'name' => 'language',
-				'id' => 'language',
-				'label' => $this->msg( 'translate-language-code-field-name' )->text(),
-				'size' => 10,
-				'default' => $this->target,
-			],
-			'suppresscomplete' => [
-				'type' => 'check',
-				'label' => $this->msg( 'translate-suppress-complete' )->text(),
-				'name' => 'suppresscomplete',
-				'id' => 'suppresscomplete',
-				'default' => $this->noComplete,
-			],
-			'suppressempty' => [
-				'type' => 'check',
-				'label' => $this->msg( 'translate-ls-noempty' )->text(),
-				'name' => 'suppressempty',
-				'id' => 'suppressempty',
-				'default' => $this->noEmpty,
-			],
-		];
-
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
-
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$hiddenFields = [
+			[ 'name' => 'x', 'value' => 'D' ]
+		];
 
 		/* Since these pages are in the tabgroup with Special:Translate,
 		* it makes sense to retain the selected group/language parameter
 		* on post requests even when not relevant to the current page. */
 		$val = $this->getRequest()->getVal( 'group' );
 		if ( $val !== null ) {
-			$htmlForm->addHiddenField( 'group', $val );
+			$hiddenFields['group'] = $val;
 		}
 
-		$htmlForm
-			->addHiddenField( 'x', 'D' ) // To detect submission
-			->setMethod( 'get' )
-			->setSubmitTextMsg( 'translate-ls-submit' )
-			->setWrapperLegendMsg( 'translate-mgs-fieldset' )
-			->prepareForm()
-			->displayForm( false );
+		$data = [
+			'action' => $this->getPageTitle()->getLocalURL(),
+			'legend' => $this->msg( 'translate-mgs-fieldset' )->text(),
+			'languageLabel' => $this->msg( 'translate-language-code-field-name' )->text(),
+			'languageValue' => $this->target,
+			'suppressCompleteLabel' => $this->msg( 'translate-suppress-complete' )->text(),
+			'suppressCompleteChecked' => $this->noComplete,
+			'suppressEmptyLabel' => $this->msg( 'translate-ls-noempty' )->text(),
+			'suppressEmptyChecked' => $this->noEmpty,
+			'submitLabel' => $this->msg( 'translate-ls-submit' )->text(),
+			'hiddenFields' => $hiddenFields,
+		];
+
+		$this->getOutput()->addHTML(
+			$this->templateParser->processTemplate( 'LanguageStatsForm', $data )
+		);
 	}
 
 	/** Output something helpful to guide the confused user. */

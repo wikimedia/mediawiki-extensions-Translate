@@ -697,6 +697,9 @@
 				"ext.translate.entity.selector"
 			]
 		},
+		"ext.translate.special.languagestats.styles": {
+			"styles": "resources/src/ext.translate.special.languagestats/index.less"
+		},
 		"ext.translate.special.exporttranslations": {
 			"packageFiles": [
 				"resources/src/ext.translate.special.exporttranslations/index.js"
