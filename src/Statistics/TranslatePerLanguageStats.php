@@ -111,7 +111,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		if ( $this->groups ) {
 			// Get list of keys that the message belongs to, and filter
 			// out those which are not requested.
-			$groups = $this->messageIndex->getGroupIdsForDatabaseTitle( (int)$row->rc_namespace, $key );
+			$groups = $this->messageIndex->getGroupIdsForBaseDatabaseTitle( (int)$row->rc_namespace, $key );
 			$groups = array_intersect( $this->groups, $groups );
 		}
 

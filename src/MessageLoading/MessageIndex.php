@@ -106,7 +106,7 @@ class MessageIndex {
 	 * Do not include the language code subpage!
 	 * @return string[]
 	 */
-	public function getGroupIdsForDatabaseTitle( int $namespace, string $title ): array {
+	public function getGroupIdsForBaseDatabaseTitle( int $namespace, string $title ): array {
 		$normalisedKey = $this->normaliseKey( $namespace, $title );
 
 		// Optimization 1: skip LRU cache assuming that hit rate is very low for this use case
