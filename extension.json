@@ -693,6 +693,7 @@
 			"dependencies": [
 				"jquery.tablesorter",
 				"mediawiki.api",
+				"mediawiki.languageselector",
 				"oojs-ui-widgets",
 				"ext.translate.entity.selector"
 			]

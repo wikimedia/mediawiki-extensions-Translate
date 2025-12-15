@@ -265,10 +265,37 @@
 		} );
 	}
 
+	function activateLanguageSelector( languageInput ) {
+		if ( !languageInput ) {
+			return;
+		}
+
+		const wrapper = languageInput.closest( '.cdx-text-input' );
+		if ( !wrapper ) {
+			return;
+		}
+
+		const languageSelectorFactory = require( 'mediawiki.languageselector' );
+		const container = document.createElement( 'div' );
+
+		wrapper.classList.add( 'mw-translate-hide' );
+		wrapper.after( container );
+
+		const app = languageSelectorFactory.getLookupLanguageSelector( {
+			selectedLanguage: languageInput.value,
+			onLanguageChange: function ( languageCode ) {
+				languageInput.value = languageCode;
+			}
+		} );
+
+		app.mount( container );
+	}
+
 	$( function () {
 		var $table = $( '.statstable' );
 
 		activateEntitySelector( $( '#group' ), $( 'input[name="messages"]' ) );
+		activateLanguageSelector( document.getElementById( 'language' ) );
 
 		// Sometimes the table is not present on the page
 		if ( !$table.length ) {

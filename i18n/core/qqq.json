@@ -223,7 +223,7 @@
 	"translate-langstats-expandall": "{{doc-actionlink}}\nUsed in [[Special:LanguageStats]] to expand all subgroups.\n\nSee also:\n* {{msg-mw|Translate-langstats-collapseall}}",
 	"translate-langstats-collapseall": "{{doc-actionlink}}\nUsed in [[Special:LanguageStats]] to collapse all subgroups.\n\nSee also:\n* {{msg-mw|Translate-langstats-expandall}}",
 	"translate-language-code": "Name of fieldset in [[Special:LanguageStats]].\n\n{{Identical|Language code}}",
-	"translate-language-code-field-name": "Used in [[Special:LanguageStats]].\n\n{{Identical|Language code}}",
+	"translate-language-field-name": "Used in [[Special:LanguageStats]].\n\n{{Identical|Language}}",
 	"translate-suppress-complete": "Used in [[Special:LanguageStats]].",
 	"translate-ls-noempty": "A filter option on [[Special:LanguageStats]].",
 	"translate-language": "Table header at [[Special:LanguageStats]].\n\n{{Identical|Language}}",

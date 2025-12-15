@@ -181,7 +181,7 @@
 	"translate-langstats-expandall": "expand all",
 	"translate-langstats-collapseall": "collapse all",
 	"translate-language-code": "Language code",
-	"translate-language-code-field-name": "Language code:",
+	"translate-language-field-name": "Language:",
 	"translate-suppress-complete": "Suppress completely translated message groups",
 	"translate-ls-noempty": "Suppress completely untranslated message groups",
 	"translate-language": "Language",

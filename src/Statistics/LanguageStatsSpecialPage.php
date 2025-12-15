@@ -256,7 +256,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$data = [
 			'action' => $this->getPageTitle()->getLocalURL(),
 			'legend' => $this->msg( 'translate-mgs-fieldset' )->text(),
-			'languageLabel' => $this->msg( 'translate-language-code-field-name' )->text(),
+			'languageLabel' => $this->msg( 'translate-language-field-name' )->text(),
 			'languageValue' => $this->target,
 			'suppressCompleteLabel' => $this->msg( 'translate-suppress-complete' )->text(),
 			'suppressCompleteChecked' => $this->noComplete,
