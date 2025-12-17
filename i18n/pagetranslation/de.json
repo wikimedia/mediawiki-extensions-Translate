@@ -105,7 +105,7 @@
 	"translate-tag-markthis": "Diese Seite zur Übersetzung freigeben",
 	"translate-tag-markthisagain": "Diese Seite wurde <span class=\"plainlinks\">[$1 bearbeitet]</span>, nachdem sie zuletzt <span class=\"plainlinks\">[$2 zur Übersetzung freigegeben]</span> wurde.",
 	"translate-tag-hasnew": "Diese Seite enthält <span class=\"plainlinks\">[$1 Bearbeitungen]</span>, die nicht zum Übersetzen freigegeben sind.",
-	"translate-tag-translate-mb-link-desc": "Dieses Nachrichtenpaket übersetzen",
+	"translate-tag-translate-mb-link-desc": "Dieses Nachrichtenbündel übersetzen",
 	"tpt-translation-intro": "Diese Seite ist eine <span class=\"plainlinks\">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen sowie aktuell.",
 	"tpt-translation-intro-fuzzy": "Veraltete Übersetzungen werden wie dieser Text markiert.",
 	"tpt-languages-legend": "Sprachen:",
