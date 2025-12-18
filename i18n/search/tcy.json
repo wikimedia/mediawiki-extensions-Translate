@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Kiranpoojary",
-			"Ravi Mundkur"
+			"Ravi Mundkur",
+			"ChiK"
 		]
 	},
 	"searchtranslations": "ತರ್ಜುಮೆಲೆನ್ ನಾಡ್‌ಲೆ",
+	"tux-sst-default": "ಅನುವಾದೊಲು",
 	"tux-sst-error-offset": "ನನಾತ್ ನಾಡಿನ ಪಲತಾಂಶೊಲೆನ್ ತೋಜಾವರೆ ಆಪುಜಿ.ದಯಮಲ್ತ್ ಇರೆನ ನಾಡುನೆನ್ ಸಪೂರ ಮಲ್ಪುಲೆ.",
 	"tux-sst-error-language": "ಇಂಚಿನ ಬಗೆತ ನಾಡುನೆಕ್ಕ್ ಈ ಭಾಷೆನ್ ಉಪಯೋಗಿಸಾವರೆ ಆಪುಜಿ."
 }
