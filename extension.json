@@ -632,10 +632,25 @@
 			]
 		},
 		"ext.translate.entity.selector": {
-			"packageFiles": "resources/src/ext.translate.entity.selector/index.js",
-			"styles": "resources/src/ext.translate.entity.selector/index.less",
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"packageFiles": [
+				"resources/src/ext.translate.entity.selector/index.js",
+				"resources/src/ext.translate.entity.selector/EntitySelector.vue",
+				"resources/src/services/translationentitysearch.api.js",
+				{
+					"name": "resources/src/ext.translate.entity.selector/icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconError"
+					]
+				}
+			],
 			"dependencies": [
-				"oojs-ui-widgets"
+				"vue",
+				"mediawiki.util"
+			],
+			"codexComponents": [
+				"CdxLookup"
 			],
 			"messages": [
 				"translate-tes-type-to-search",

@@ -20,17 +20,29 @@
 
 		// Determine what value was set, and set it on the entity selector
 		const selectedGroup = $group.find( 'select option:selected' ).text();
+		const selectedGroupId = $group.find( 'select' ).val();
 
 		// load the entity selector and set the value
-		const entitySelector = getEntitySelector( onEntitySelect );
-		entitySelector.setValue( selectedGroup );
+		const { getEntitySelector } = require( 'ext.translate.entity.selector' );
+		const entitySelector = getEntitySelector( {
+			onSelect: onEntitySelect,
+			entityType: [ 'groups' ],
+			inputId: 'mw-entity-selector-input',
+			value: {
+				label: selectedGroup,
+				value: selectedGroupId,
+				type: 'group'
+			}
+		} );
 
 		$group.addClass( 'hidden' );
-		$group.after( entitySelector.$element );
+		const container = document.createElement( 'div' );
+		$group.after( container );
+		entitySelector.mount( container );
 	}
 
-	function onEntitySelect( selectedItem ) {
-		$( 'select[name="group"]' ).val( selectedItem.data );
+	function onEntitySelect( selectedId ) {
+		$( 'select[name="group"]' ).val( selectedId );
 	}
 
 	function onSubmit() {
@@ -73,15 +85,6 @@
 		} );
 
 		app.mount( container );
-	}
-
-	function getEntitySelector( onSelect ) {
-		const EntitySelector = require( 'ext.translate.entity.selector' );
-		return new EntitySelector( {
-			onSelect: onSelect,
-			entityType: [ 'groups' ],
-			inputId: 'mw-entity-selector-input'
-		} );
 	}
 
 	$( () => {

@@ -212,28 +212,47 @@
 
 		// Determine what value was set, and set it on the entity selector
 		var selectedGroup = $group.find( 'select option:selected' ).text();
+		const selectedGroupId = $group.find( 'select' ).val();
 
 		// load the entity selector and set the value
-		var entitySelector = getEntitySelector( onEntitySelect );
-		if ( selectedGroup ) {
-			entitySelector.setValue( selectedGroup );
+		let initialValue = null;
+		if ( selectedGroupId ) {
+			initialValue = {
+				label: selectedGroup,
+				value: selectedGroupId,
+				type: 'group'
+			};
 		} else {
 			var selectedMessage = $messagePrefix.val();
 			if ( selectedMessage ) {
-				entitySelector.setValue( selectedMessage );
+				initialValue = {
+					label: selectedMessage,
+					value: selectedMessage,
+					type: 'message'
+				};
 			}
 		}
 
+		const { getEntitySelector } = require( 'ext.translate.entity.selector' );
+		const entitySelector = getEntitySelector( {
+			onSelect: onEntitySelect,
+			entityType: [ 'groups', 'messages' ],
+			inputId: 'mw-entity-selector-input',
+			value: initialValue
+		} );
+
 		$group.addClass( 'hidden' );
-		$group.after( entitySelector.$element );
+		const container = document.createElement( 'div' );
+		$group.after( container );
+		entitySelector.mount( container );
 	}
 
-	function onEntitySelect( selectedItem ) {
-		if ( selectedItem.type === 'group' ) {
-			$( 'select[name="group"]' ).val( selectedItem.data );
+	function onEntitySelect( selectedId, type ) {
+		if ( type === 'group' ) {
+			$( 'select[name="group"]' ).val( selectedId );
 			$( 'input[name="messages"]' ).val( '' );
 		} else {
-			$( 'input[name="messages"]' ).val( selectedItem.data );
+			$( 'input[name="messages"]' ).val( selectedId );
 			$( 'select[name="group"]' ).val( '' );
 		}
 	}
@@ -254,15 +273,6 @@
 			);
 			return false;
 		}
-	}
-
-	function getEntitySelector( onSelect ) {
-		var EntitySelector = require( 'ext.translate.entity.selector' );
-		return new EntitySelector( {
-			onSelect: onSelect,
-			entityType: [ 'groups', 'messages' ],
-			inputId: 'mw-entity-selector-input'
-		} );
 	}
 
 	function activateLanguageSelector( languageInput ) {
