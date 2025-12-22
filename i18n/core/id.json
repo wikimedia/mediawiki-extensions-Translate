@@ -73,7 +73,7 @@
 	"translate-export-invalid-format": "Silakan tentukan format yang sah.",
 	"translate-export-not-supported": "Ekspor terjemahan tidak didukung.",
 	"translate-export-format-notsupported": "Format ekspor yang diinginkan tidak didukung oleh kelompok pesan ini.",
-	"translate-export-group-too-large": "Kelompok pesan yang dipilih terlalu besar. Tolong pilih kelompok pesan yang memiliki lebih sedikir dari $1 {{PLURAL:$1|pesan}} atau hubungi admin terjemahan untuk nasihat.",
+	"translate-export-group-too-large": "Kelompok pesan yang dipilih terlalu besar. Tolong pilih kelompok pesan yang memiliki lebih sedikir dari $1 {{PLURAL:$1|pesan}} atau hubungi pengurus terjemahan untuk nasihat.",
 	"translate-checks-parameters": "{{PLURAL:$2|Parameter|Parameter}} berikut ini tidak digunakan:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Parameter|Parameter}} berikut ini tidak dikenali:\n<strong>$1</strong>",
 	"translate-checks-balance": "Terdapat {{PLURAL:$2|tanda kurung|tanda kurung}} dengan jumlah yang tidak sama:\n<strong><nowiki>$1</nowiki></strong>",
@@ -436,5 +436,6 @@
 	"translate-messagebundle-error-key-too-long": "Kunci \"$1\" terlalu panjang",
 	"translate-messagebundle-error-key-invalid-characters": "Kunci \"$1\" mengandung karakter yang tidak diperbolehkan",
 	"translate-messagebundle-error-invalid-value": "Kunci \"$1\" tidak memiliki nilai teks",
-	"translate-messagebundle-error-empty-value": "Kunci \"$1\" tidak memiliki nilai"
+	"translate-messagebundle-error-empty-value": "Kunci \"$1\" tidak memiliki nilai",
+	"log-action-filter-translationreview": "Jenis tindakan:"
 }

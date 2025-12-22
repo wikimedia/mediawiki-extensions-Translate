@@ -72,7 +72,7 @@
 	"tpt-submit": "标记此版本进行翻译",
 	"tpt-sections-oldnew": "新的和现存的翻译单元",
 	"tpt-sections-deleted": "已删除的翻译模块",
-	"tpt-sections-template": "翻译页面模版",
+	"tpt-sections-template": "翻译页面模板",
 	"tpt-action-nofuzzy": "不要使翻译作废",
 	"tpt-badtitle": "页面名称（$1）不是一个有效的标题",
 	"tpt-nosuchpage": "页面$1不存在。",

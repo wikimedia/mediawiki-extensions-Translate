@@ -44,7 +44,7 @@
 	"languagestats-summary": "Ova stranica prikazuje statistiku prijevoda za sve grupe poruka na određenom jeziku.",
 	"messagegroupstats-summary": "Ova stranica prikazuje statistiku grupe poruka.",
 	"languagestats-stats-for": "Statistika prijevoda za $1 ($2).",
-	"translate-language-code-field-name": "Jezički kod:",
+	"translate-language-code-field-name": "Jezički kod",
 	"translate-suppress-complete": "Sakrij potpuno prevedene grupe poruka",
 	"translate-ls-noempty": "Sakrij potpuno neprevedene grupe poruka",
 	"translate-percentage-proofread": "Provjereno",

@@ -15,7 +15,8 @@
 			"LowensteinYang",
 			"沈澄心",
 			"Libamidi",
-			"Peterxy12"
+			"Peterxy12",
+			"Anterdc99"
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
@@ -38,11 +39,13 @@
 	"apihelp-query+languagestats-param-language": "语言代码。",
 	"apihelp-query+languagestats-param-group": "消息组 ID。",
 	"apihelp-query+languagestats-example-1": "芬兰语的翻译完成统计列表",
+	"apihelp-query+languagestats-example-2": "组A的芬兰语翻译完成度统计列表",
 	"apihelp-query+messagecollection-description": "查询有关翻译的MessageCollection。",
 	"apihelp-query+managemessagegroups-summary": "在导入期间为组中的消息获取可能的重命名",
 	"apihelp-query+managemessagegroups-description": "在导入期间为组中的消息获取可能的重命名",
 	"apihelp-query+managemessagegroups-param-groupId": "群组ID",
 	"apihelp-query+managemessagegroups-param-messageKey": "消息键",
+	"apihelp-query+managemessagegroups-example-1": "获取给定组中给定键的可能重命名结果。",
 	"apihelp-query+messagecollection-summary": "查询有关翻译的MessageCollection。",
 	"apihelp-query+messagecollection-param-group": "信息组。",
 	"apihelp-query+messagecollection-param-language": "语言代码。",
@@ -68,6 +71,8 @@
 	"apihelp-query+messagegroupstats-description": "查询信息组状态。",
 	"apihelp-query+messagegroupstats-summary": "查询信息组状态。",
 	"apihelp-query+messagegroupstats-param-group": "信息组ID。",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "不显示全部已翻译的语言",
+	"apihelp-query+messagegroupstats-param-suppressempty": "不显示全部未翻译的语言",
 	"apihelp-query+messagegroupstats-example-1": "用于“page-Example”组的翻译完成统计列表",
 	"apihelp-query+messagetranslations-description": "查询单个信息的所有翻译。",
 	"apihelp-query+messagetranslations-summary": "查询单个信息的所有翻译。",
