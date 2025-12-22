@@ -211,7 +211,6 @@
 	"translate-statsbar-tooltip": "$1% тәрҗемә ителгән, $2% тикшерелгән",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% тәрҗемә ителгән, $2% тикшерелгән, $3% искергән",
 	"translate-search-more-groups-info": "тагын $1 {{PLURAL:$1|туплам}}",
-	"translate-syntax-error": "Тәрҗемәдә синтаксик хаталар бар",
 	"specialpages-group-translation": "Тәрҗемә",
 	"tpt-cleanchanges-language": "Тел:",
 	"tpt-cleanchanges-language-na": "Барысы"

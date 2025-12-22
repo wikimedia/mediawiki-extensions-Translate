@@ -369,7 +369,6 @@
 	"translate-statsbar-tooltip": "$1 % přeloženo, $2 % zkontrolováno",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % přeloženo, $2 % zkontrolováno, $3 % zastaralých",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|další skupina|další skupiny|dalších skupin}}",
-	"translate-syntax-error": "Překlad obsahuje syntaktické chyby",
 	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu.",
 	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je buď vypnut, nebo zkolaboval anebo není podporován tento prohlížeč.",
 	"specialpages-group-translation": "Překlad",

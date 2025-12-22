@@ -202,7 +202,6 @@
 	"translate-statsbar-tooltip": "$1 % которулду, $2 % текшерилди",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % которулду, $2 % текшерилди, $3 % эскирди",
 	"translate-search-more-groups-info": "дагы $1 {{PLURAL:$1|топ}}",
-	"translate-syntax-error": "Котормодо синтаксистик каталар бар",
 	"specialpages-group-translation": "Котормолор",
 	"translate-messagebundle-error-key-too-long": "\"$1\" ачкычы өтө узун",
 	"translate-hidetranslations": "Которулган барактарды жашыруу",

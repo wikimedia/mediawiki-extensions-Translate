@@ -424,7 +424,6 @@
 	"translate-statsbar-tooltip": "$1% lefordítva, $2% átnézve",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% lefordítva, $2% átnézve, $3% elavult",
 	"translate-search-more-groups-info": "$1 további csoport",
-	"translate-syntax-error": "a fordítás szintaxisa hibás",
 	"tux-session-expired": "Már nem vagy bejelentkezve. Jelentkezz be egy másik fülön, vagy másold ki a mentetlen fordításaidat, jelentkezz be, gyere vissza erre a lapra és másold vissza a fordításaidat.",
 	"tux-nojs": "Ez az eszköz nem működik JavaScript nélkül. A JavaScript le van tiltva, nem működik, vagy ez a böngésző nem támogatott.",
 	"specialpages-group-translation": "Fordítás",

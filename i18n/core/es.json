@@ -446,7 +446,6 @@
 	"translate-statsbar-tooltip": "$1 % traducido, $2 % revisado",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % traducido, $2 % revisado, $3 % desactualizado",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} más",
-	"translate-syntax-error": "La traducción contiene errores sintácticos",
 	"tux-session-expired": "Tu sesión se ha cerrado. Inicia sesión en una pestaña aparte. Alternativamente, haz una copia de las traducciones sin guardar, inicia sesión, regresa a esta página y vuelve a escribir tus traducciones.",
 	"tux-nojs": "Esta página necesita JavaScript. JavaScript está desactivado, no funciona o no admitimos este navegador.",
 	"specialpages-group-translation": "Traducción",

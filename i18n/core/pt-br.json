@@ -453,7 +453,6 @@
 	"translate-statsbar-tooltip": "$1% traduzido, $2% revisado",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzido, $2% revisado, $3% desatualizado",
 	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
-	"translate-syntax-error": "Tradução contém erros de sintaxe",
 	"tux-session-expired": "Você não está logado. Por favor entre em uma aba separada. Alternativamente, faça uma cópia das traduções não salvos, faça o login, retorne a esta página e inserir as traduções novamente.",
 	"tux-nojs": "Esta ferramenta não funciona sem o JavaScript. Ou o JavaScript está desativado, ou não funcionou, ou este browser não é suportado.",
 	"specialpages-group-translation": "Tradução",

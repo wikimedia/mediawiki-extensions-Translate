@@ -456,7 +456,7 @@
 	"translate-statsbar-tooltip": "$1 % übersetzt, $2 % überprüft",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % übersetzt, $2 % überprüft, $3 % veraltet",
 	"translate-search-more-groups-info": "{{PLURAL:$1|Eine weitere Gruppe|$1 weitere Gruppen}}",
-	"translate-syntax-error": "Die Übersetzung enthält Syntaxfehler",
+	"translate-syntax-errors": "Die Übersetzung enthält folgende Syntaxfehler:\n$1",
 	"tux-session-expired": "Du bist nicht mehr angemeldet. Bitte melde dich auf einer getrennten Registerkarte an. Alternativ kannst du eine Kopie deiner ungespeicherten Übersetzungen machen, dich anmelden, zu dieser Seite zurückkehren und deine Übersetzungen erneut eingeben.",
 	"tux-nojs": "Dieses Werkzeug funktioniert ohne JavaScript nicht. Es ist deaktiviert, funktioniert nicht oder dieser Browser wird nicht unterstützt.",
 	"specialpages-group-translation": "Übersetzung",

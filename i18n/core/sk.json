@@ -301,7 +301,6 @@
 	"translate-statsbar-tooltip": "$1 % preložených, $2 % skontrolovaných",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % preložených, $2 % skontrolovaných, $3 % zastaraných",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|ďalšia skupina|ďalšie skupiny|dalších skupín}}",
-	"translate-syntax-error": "Preklad obsahuje chybu v syntaxi",
 	"tux-session-expired": "Už nie ste prihlásení. Prihláste sa, prosím, na inej karte, alebo skopírujte neuložený preklad, prihláste sa, vráťte sa k tejto stránke a zadajte znovu váš preklad.",
 	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je vypnutý alebo zlyhal alebo prehliadač nie je podporovaný.",
 	"specialpages-group-translation": "Preklad",

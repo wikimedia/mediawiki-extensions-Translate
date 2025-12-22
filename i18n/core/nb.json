@@ -443,7 +443,6 @@
 	"translate-statsbar-tooltip": "$1 % oversatt, $2 % korrekturlest",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % oversatt, $2 % korrekturlest, $3 % utdatert",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|gruppe|grupper}} til",
-	"translate-syntax-error": "Oversettelsen har syntaksfeil",
 	"tux-session-expired": "Du er ikke lenger logget inn. Logg inn i en annen fane, eller kopier ulagrede oversettelser, logg inn og kom tilbake til denne siden og lim inn oversettelsen(e).",
 	"tux-nojs": "Dette verktøyet virker ikke uten JavaScript. JavaScript er slått av eller virket ikke, eller nettleseren din støttes ikke.",
 	"specialpages-group-translation": "Oversettelse",

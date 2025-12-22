@@ -456,7 +456,6 @@
 	"translate-statsbar-tooltip": "$1 % översatt, $2 % granskat",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % översatt, $2 % granskat, $3 % föråldrat",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|till grupp|grupper till}}",
-	"translate-syntax-error": "Översättningen innehåller syntaxfel",
 	"tux-session-expired": "Du är inte längre inloggad. Vänligen logga in i en separat flik. Alternativt kan du göra en kopia av osparade översättningar, logga in, gå tillbaka till denna sida och klistra in din översättningar igen.",
 	"tux-nojs": "Detta verktyg fungerar inte utan JavaScript. JavaScript är inaktiverat, fungerar inte eller stöds inte denna webbläsare.",
 	"specialpages-group-translation": "Översättning",

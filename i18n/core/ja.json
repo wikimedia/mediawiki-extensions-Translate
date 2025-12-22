@@ -457,7 +457,6 @@
 	"translate-statsbar-tooltip": "$1% 翻訳済、$2% 査読済",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済、$2% 査読済、$3% 要更新",
 	"translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}",
-	"translate-syntax-error": "翻訳に構文エラーが含まれています",
 	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。",
 	"tux-nojs": "このツールの動作には JavaScript が必要です。JavaScript が無効、作動していないもしくはブラウザーがサポートされていません。",
 	"specialpages-group-translation": "翻訳",

@@ -439,7 +439,7 @@
 	"translate-statsbar-tooltip": "$1% traducidas, $2% revisadas",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traducidas, $2% revisadas, $3% desfasadas",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} máis",
-	"translate-syntax-error": "A tradución contén erros de sintaxe",
+	"translate-syntax-errors": "A tradución contén os seguintes erros de sintaxe:\n$1",
 	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema, regrese a esta páxina e insira as súas traducións de novo.",
 	"tux-nojs": "Esta ferramenta non funciona sen JavaScript. Ou JavaScript está desactivado, ou non funcionou, ou este navegador non está soportado.",
 	"specialpages-group-translation": "Tradución",

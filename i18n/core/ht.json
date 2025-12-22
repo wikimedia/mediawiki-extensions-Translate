@@ -303,7 +303,6 @@
 	"translate-statsbar-tooltip": "$1 % tradui, $2 % revize",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % tradui, $2 % revize, $3 % demode",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|gwoup}} ankò",
-	"translate-syntax-error": "Tradiksyon gen erè sentaks",
 	"tux-session-expired": "Ou pa konekte ankò. Tanpri konekte nan yon onglet separe. Altènativman, fè yon kopi tradiksyon ki pa anrejistre yo, konekte ou, retounen nan paj sa a epi antre tradiksyon ou yo ankò.",
 	"specialpages-group-translation": "Tradiksyon"
 }

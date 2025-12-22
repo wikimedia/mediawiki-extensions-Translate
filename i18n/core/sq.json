@@ -279,7 +279,6 @@
 	"translate-statsbar-tooltip": "$1% të përkthyer, $2% të shqyrtuar",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% të përkthyer, $2% të shqyrtuar, $3% të vjetëruar",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grupe}} më shumë",
-	"translate-syntax-error": "Përkthimi përmban gabime sintakse",
 	"tux-session-expired": "Nuk je më i futur në llogari. Të lutem, hyr në llogari në një skedë tjetër. Përndryshe, bëj një kopje të përkthimeve të paruajtura, hyr në llogari, kthehu te kjo faqe dhe fut përkthimet e tua përsëri.",
 	"log-action-filter-translationreview-message": "Shqyrtimi i mesazheve individuale të përkthimeve",
 	"log-action-filter-translationreview-unfuzzy": "Shqyrtimi i përkthimeve individuale të mesazheve për t'i shënuar ato si të përditësuara",

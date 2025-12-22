@@ -291,7 +291,6 @@
 	"translate-statsbar-tooltip": "$1% tərcümə edilib, $2% yoxlanılıb",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tərcümə edilib, $2% yoxlanılıb, $3% köhnəlib",
 	"translate-search-more-groups-info": "$1 daha çox {{PLURAL:$1|qrup}}",
-	"translate-syntax-error": "Tərcümə sintaksis xətaları ehtiva edir",
 	"notification-link-mgs-group-translate": "Tərcümə et: $1",
 	"tpt-cleanchanges-language": "Dil:",
 	"tpt-cleanchanges-language-na": "Hamısı"

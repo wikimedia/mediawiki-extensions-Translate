@@ -362,7 +362,6 @@
 	"translate-statsbar-tooltip": "$1% traduït,  $2% revisat",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduït,  $2 % revisat,  $3% desfasat",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grups}} més",
-	"translate-syntax-error": "La traducció conté errors de sintaxi",
 	"tux-session-expired": "Jo no teniu la sessió iniciada. Inicieu la sessió en una altra pestanya. Alternativament, feu una còpia de les traduccions no desades, inicieu la sessió, torneu a la pàgina i torneu a introduir les traduccions.",
 	"tux-nojs": "Aquesta eina no funciona sense JavaScript. El JavaScript està inhabilitat, no funciona o el navegador no el permet.",
 	"specialpages-group-translation": "Traducció",

@@ -412,7 +412,6 @@
 	"translate-statsbar-tooltip": "$1% oerset, $2% hifke",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% oerset, $2% hifke, $3% ferâldere",
 	"translate-search-more-groups-info": "Noch $1 {{PLURAL:$1|groep|groepen}}",
-	"translate-syntax-error": "De oersetting befettet syntaksflaters",
 	"tux-session-expired": "Jo binne net mear ynlogd. Meld jo oan yn in oar tabblêd. Of meitsje oars in kopy fan 'e net-bewarre oersettings, meld jo oan, gean werom nei dizze side en fier jo oersettings wer yn.",
 	"tux-nojs": "Dit ark wurket net sûnder JavaScript. JavaScript is útskeakele, makket flaters, of dizze webblêder wurdt net stipe.",
 	"specialpages-group-translation": "Oersetten",

@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bennylin",
 			"Daud I.F. Argana",
+			"Penyuwangi",
 			"Rachmat04"
 		]
 	},
-	"managetranslatorsandbox": "Kelola kotak pasir penerjemah",
+	"managetranslatorsandbox": "Kelola bak pasir penerjemah",
 	"tsb-filter-pending": "Permohonan tertunda",
 	"tsb-reminder-title-generic": "Lengkapi perkenalan Anda untuk menjadi seorang penerjemah",
 	"tsb-reminder-content-generic": "Hai $1,\n\nTerima kasih telah mendaftar dengan {{SITENAME}}.\n\nJika Anda melengkapi tes penerjemahan ini, pengurus akan memberikan Anda akses terjemahan penuh.\n\nSilahkan datang dan buat lebih banyak terjemahan di sini:\n$2\n\n$3,\nStaf {{SITENAME}}",
@@ -32,7 +34,7 @@
 	"tsb-translations-source": "Sumber",
 	"tsb-translations-user": "Terjemahan {{GENDER:$1|pengguna}}",
 	"tsb-translations-current": "Terjemahan yang ada",
-	"tsb-delete-userpage-summary": "Menghapus halaman pengguna dari seorang pengguna kotak pasir",
+	"tsb-delete-userpage-summary": "Menghapus halaman pengguna dari seorang pengguna bak pasir",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Pengguna|Pengguna}} ditolak",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Pengguna|Pengguna}} diterima",
 	"translationstash": "Selamat datang",
@@ -45,9 +47,9 @@
 	"tsb-limit-reached-body": "Anda telah mencapai batas penerjemahan untuk penerjemah baru.\nTim kami akan memeriksa dan memperbarui akun Anda segera.\nLalu Anda akan bisa menerjemahkan tanpa batas.",
 	"tsb-no-requests-from-new-users": "Tidak ada permohonan dari pengguna baru",
 	"tsb-create-user-page": "Membuat halaman pengguna dasar",
-	"log-name-translatorsandbox": "Log kotak pasir terjemahan",
-	"log-description-translatorsandbox": "Catatan tindakan kepada pengguna kotak pasir terjemahan",
+	"log-name-translatorsandbox": "Log bak pasir terjemahan",
+	"log-description-translatorsandbox": "Log tindakan pada pengguna bak pasir terjemahan",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|mengangkat}} $3 menjadi {{GENDER:$4|penerjemah}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|menolak}} permohonan dari \"$3\" untuk menjadi seorang penerjemah",
-	"logentry-newusers-tsbpromoted": "Akun pengguna $3 {{GENDER:$2|dibuat}} melalui promosi dari kotak pasir"
+	"logentry-newusers-tsbpromoted": "Akun pengguna $3 {{GENDER:$2|dibuat}} melalui promosi dari bak pasir"
 }

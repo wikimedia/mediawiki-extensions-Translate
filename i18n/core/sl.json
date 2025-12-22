@@ -441,7 +441,6 @@
 	"translate-statsbar-tooltip": "$1&nbsp;% prevedenih, $2&nbsp;% pregledanih",
 	"translate-statsbar-tooltip-with-fuzzy": "$1&nbsp;% prevedenih, $2&nbsp;% pregledanih, $3&nbsp;% zastarelih",
 	"translate-search-more-groups-info": "Še $1 {{PLURAL:$1|skupina|skupini|skupine|skupin}}",
-	"translate-syntax-error": "Prevod vsebuje skladenjske napake.",
 	"tux-session-expired": "Niste več prijavljeni. Prosimo, prijavite se na ločenem zavihku. Druga možnost je, da ustvarite kopijo neshranjenega prevoda, se prijavite, se vrnete na to stran in znova vnesete svoj prevod.",
 	"tux-nojs": "Orodje ne deluje brez JavaScripta. JavaScript je onemogočen, ne deluje ali pa brskalnik ni podprt.",
 	"specialpages-group-translation": "Prevajanje",

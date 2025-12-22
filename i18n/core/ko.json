@@ -428,7 +428,6 @@
 	"translate-statsbar-tooltip": "$1% 번역됨, $2% 검토됨",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 번역됨, $2% 검토됨, $3% 오래됨",
 	"translate-search-more-groups-info": "{{PLURAL:$1|그룹}} $1개 더 보기",
-	"translate-syntax-error": "번역에 문법 오류가 있습니다",
 	"tux-session-expired": "로그인하고 있지 않습니다. 별도의 탭에서 로그인하세요. 대안으로, 저장하지 않은 번역을 복사하고, 로그인한 다음, 이 문서로 돌아와 다시 번역을 입력하세요.",
 	"tux-nojs": "이 도구는 자바스크립트 없이 동작하지 않습니다. 자바스크립트가 비활성화되어 있거나, 작동하지 않았거나, 이 브라우저는 지원하지 않습니다.",
 	"specialpages-group-translation": "번역",

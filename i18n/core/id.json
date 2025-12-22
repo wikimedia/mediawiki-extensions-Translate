@@ -420,7 +420,6 @@
 	"translate-statsbar-tooltip": "$1% telah diterjemahkan, $2% telah ditinjau",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% telah diterjemahkan, $2% telah ditinjau, $3% usang",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|kelompok|kelompok}} lagi",
-	"translate-syntax-error": "Terjemahan mengandung kesalahan sintaksis",
 	"tux-session-expired": "Anda sudah tidak lagi masuk log. Silakan masuk log di tab yang terpisah. Atau, buatlah salinan dari terjemahan yang belum disimpan, masuk log, kembali ke halaman ini, lalu masukkan kembali terjemahan Anda.",
 	"tux-nojs": "Perkakas ini tidak dapat bekerja tanpa JavaScript. JavaScript dinonaktifkan, gagal berfungsi, atau peramban ini tidak mendukungnya.",
 	"specialpages-group-translation": "Terjemahan",

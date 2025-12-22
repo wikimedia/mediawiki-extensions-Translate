@@ -227,7 +227,6 @@
 	"translate-statsbar-tooltip": "$1 % käänetty, $2 % tarkastettu",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % käänetty, $2 % tarkastettu, $3 % vanhentunut",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|muu joukko|muuta joukkoa}}",
-	"translate-syntax-error": "Käänös sisältää syntaksivirheitä",
 	"tux-session-expired": "Et ole enää lokannu sisäle. Lokkaa sisäle toisessä välilehdessä. Vaihtoehtoisesti voit kopioida säästämättömät käänökset, lokata sisäle ja palata täle sivule säästämään käänökset uuestaan.",
 	"tux-nojs": "Tämä työneuvo ei toimi ilman JavaScriptiä. JavaScript oon poistettu käytöstä, se ei toimi, tai tätä selainta ei tueta.",
 	"specialpages-group-translation": "Käänös"

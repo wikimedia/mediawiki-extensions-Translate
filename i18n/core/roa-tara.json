@@ -396,7 +396,6 @@
 	"translate-statsbar-tooltip": "$1% tradotte, $2% reviste",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradotte, $2% reviste, $3% da aggiornà",
 	"translate-search-more-groups-info": "$1 cchiù {{PLURAL:$1|gruppe}}",
-	"translate-syntax-error": "'A traduzione tène errore de sindasse",
 	"tux-session-expired": "Non g'è trasute. Tràse jndr'à 'na schede a parte; oppure copie 'a traduzione ca non g'è reggistrate, tràse, e tuèrne jndr'à sta pàgene e sckaffe 'a traduziona toje.",
 	"tux-nojs": "Stu strumende non ge funzione senze JavaScript. JavaScript jè disabilitate, non ge ste funzione, o 'u browser tune non g'u supporte.",
 	"specialpages-group-translation": "Traduzione",

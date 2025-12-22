@@ -435,7 +435,7 @@
 	"translate-statsbar-tooltip": "$1% 翻譯咗， $2% 審查咗",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻譯咗， $2% 審查咗，$3% 過時咗",
 	"translate-search-more-groups-info": "仲有$1個{{PLURAL:$1|群組}}",
-	"translate-syntax-error": "翻譯入面有語法錯誤",
+	"translate-syntax-errors": "翻譯入面有以下語法錯誤：$1",
 	"tux-session-expired": "你已經唔再簽到。請喺另一個標籤簽到。或者將未儲存嘅翻譯製作一份副本，再簽到同返去呢個頁面，然後再次輸入你嘅翻譯。",
 	"tux-nojs": "呢個工具如果冇 JavaScript 就唔會運作。JavaScript 停用咗，運作失敗，或者呢個瀏覽器唔支援。",
 	"specialpages-group-translation": "翻譯",

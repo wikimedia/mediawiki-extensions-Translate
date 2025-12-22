@@ -373,7 +373,6 @@
 	"translate-statsbar-tooltip": "แปลแล้ว $1%, ตรวจทานแล้ว $2%",
 	"translate-statsbar-tooltip-with-fuzzy": "แปลแล้ว $1%, ตรวจทานแล้ว $2%, ล้าสมัย $3%",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|กลุ่ม}}เพิ่มเติม",
-	"translate-syntax-error": "การแปลมีข้อผิดพลาดไวยากรณ์",
 	"tux-nojs": "เครื่องมือนี้ไม่สามารถทำงานได้โดยไม่มี JavaScript JavaScript อาจถูกปิดใช้งาน ไม่สามารถทำงานได้ หรือเบราว์เซอร์นี้ไม่รองรับ",
 	"specialpages-group-translation": "การแปล",
 	"log-action-filter-translationreview": "ประเภทของการกระทำ:",

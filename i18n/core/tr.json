@@ -433,7 +433,6 @@
 	"translate-statsbar-tooltip": "%$1 çevrildi, %$2 incelendi",
 	"translate-statsbar-tooltip-with-fuzzy": "%$1 çevrildi, %$2 incelendi, %$3 eski",
 	"translate-search-more-groups-info": "$1 tane daha grup",
-	"translate-syntax-error": "Çeviri, sözdizim hataları içeriyor",
 	"tux-session-expired": "Artık oturum açmadınız. Lütfen ayrı bir sekmede giriş yapın. Alternatif olarak, kaydedilmemiş çevirilerin bir kopyasını oluşturun, oturum açın, bu sayfaya geri dönün ve çevirilerinizi tekrar girin.",
 	"tux-nojs": "Bu araç JavaScript olmadan çalışmaz. JavaScript devre dışı, çalışmıyor veya bu tarayıcı desteklenmiyor.",
 	"specialpages-group-translation": "Çeviri",
