@@ -420,7 +420,7 @@
 	"tux-editor-doc-editor-placeholder": "訊息說明文件",
 	"tux-editor-doc-editor-save": "發布說明",
 	"tux-editor-doc-editor-cancel": "取消",
-	"tux-messagetable-more-messages": "還有 $1 則訊息",
+	"tux-messagetable-more-messages": "還有 $1 則{{PLURAL:$1|訊息}}",
 	"tux-messagetable-loading-messages": "正在載入{{PLURAL:$1|訊息}}…",
 	"tux-message-filter-placeholder": "篩選清單",
 	"tux-message-filter-result": "找到$1筆包含「$2」的結果",

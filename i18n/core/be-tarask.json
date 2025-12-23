@@ -11,7 +11,7 @@
 			"Ucukor"
 		]
 	},
-	"translate": "Статыстыка перакладаў",
+	"translate": "Пераклад",
 	"translate-extensionname": "Перакласьці",
 	"translate-desc": "[[Special:Translate|Спэцыяльная старонка]] для перакладу MediaWiki і іншых праграмаў",
 	"translate-fuzzybot-desc": "Гэта адмысловы сыстэмны ўліковы запіс, які выкарыстоўваецца [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate пашырэньнем перакладу] MediaWiki для падтрымкі перакладаў.\nЁн ёсьць часткай праграмнага забесьпячэньня MediaWiki і не належыць нікому з удзельнікаў.",
@@ -133,7 +133,7 @@
 	"translate-translations-project": "Праект:",
 	"translate-translations-including-no-param": "Калі ласка, пазначце слушны ключ паведамленьня ў парамэтры падстаронкі",
 	"translate-translations-history-short": "г",
-	"languagestats": "Статыстыка перакладаў",
+	"languagestats": "Моўная статыстыка",
 	"languagestats-summary": "Гэта старонка паказвае статыстыку перакладаў для ўсіх групаў паведамленьняў для мовы.",
 	"languagestats-stats-for": "Статыстыка перакладаў для $1 ($2).",
 	"languagestats-recenttranslations": "апошнія пераклады",
