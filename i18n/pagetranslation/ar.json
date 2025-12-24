@@ -275,6 +275,7 @@
 	"pm-pagetitle-not-translatable": "$1 ليس جزءًا من صفحة قابلة للترجمة.",
 	"pm-translation-unit-fetch-failed": "حدث خطأ أثناء جلب وحدات الترجمة للصفحة.",
 	"tpt-translate-title": "اسمح بترجمة عنوان الصفحة",
+	"tpt-translate-title-disabled": "لا يمكن ترجمة عنوان هذه الصفحة",
 	"tpt-translate-hide-unchanged-units": "إخفاء وحدات الترجمة غير المتغيرة",
 	"pp-save-summary": "جهز الصفحة للترجمة",
 	"pagepreparation": "تحضير الصفحة للترجمة",
