@@ -15,7 +15,8 @@
 			"Xiplus",
 			"Yfdyh000",
 			"沈澄心",
-			"Peterxy12"
+			"Peterxy12",
+			"Anterdc99"
 		]
 	},
 	"apihelp-aggregategroups-summary": "管理聚合消息组。",
@@ -36,9 +37,12 @@
 	"apihelp-query+languagestats-param-language": "语言代码。",
 	"apihelp-query+languagestats-param-group": "消息组ID。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-query+languagestats-example-1": "芬兰语的翻译完成统计列表",
+	"apihelp-query+languagestats-example-2": "组A的芬兰语翻译完成度统计列表",
 	"apihelp-query+managemessagegroups-summary": "在导入期间为组中的消息获取可能的重命名",
 	"apihelp-query+managemessagegroups-param-groupId": "组ID。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-query+managemessagegroups-param-messageKey": "消息键",
+	"apihelp-query+managemessagegroups-param-changesetName": "变更集名称 - 默认/无人值守/MediaWiki等。",
+	"apihelp-query+managemessagegroups-example-1": "获取给定组中给定键的可能重命名结果。",
 	"apihelp-query+messagecollection-summary": "查询有关翻译的MessageCollection。",
 	"apihelp-query+messagecollection-param-group": "信息组。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-query+messagecollection-param-language": "语言代码。",
@@ -77,7 +81,10 @@
 	"apihelp-query+messagegroups-example-1": "显示信息组",
 	"apihelp-query+messagegroupstats-summary": "查询信息组状态。",
 	"apihelp-query+messagegroupstats-param-group": "信息组ID。参见<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
+	"apihelp-query+messagegroupstats-param-suppresscomplete": "不显示全部已翻译的语言",
+	"apihelp-query+messagegroupstats-param-suppressempty": "不显示全部未翻译的语言",
 	"apihelp-query+messagegroupstats-example-1": "用于“page-Example”组的翻译完成统计列表",
+	"apihelp-query+messagegroupsubscription-summary": "列出当前用户订阅的消息组。",
 	"apihelp-query+messagetranslations-summary": "查询单个信息的所有翻译。",
 	"apihelp-query+messagetranslations-param-title": "已知消息的页面标题，带有命名空间和语言代码。",
 	"apihelp-query+messagetranslations-example-1": "Wiki中用于“MediaWiki:January”的翻译列表",
