@@ -11,12 +11,12 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\Html\Html;
 use MediaWiki\Language\LanguageCode;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MediaWiki\Xml\Xml;
 use MessageGroup;
 use UnexpectedValueException;
 use Wikimedia\Rdbms\IDatabase;
@@ -193,9 +193,11 @@ class Utilities {
 	 * @return string Html.
 	 */
 	public static function fieldset( string $legend, string $contents, array $attributes = [] ): string {
-		return Xml::openElement( 'fieldset', $attributes ) .
-			Xml::tags( 'legend', null, $legend ) . $contents .
-			Xml::closeElement( 'fieldset' );
+		return Html::rawElement(
+			'fieldset',
+			$attributes,
+			Html::rawElement( 'legend', [], $legend ) . $contents
+		);
 	}
 
 	/**

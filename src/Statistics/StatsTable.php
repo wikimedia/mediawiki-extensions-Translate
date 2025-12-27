@@ -12,7 +12,6 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\TitleValue;
-use MediaWiki\Xml\Xml;
 use MessageGroup;
 use MessageLocalizer;
 
@@ -157,7 +156,7 @@ class StatsTable {
 		$out = "\t" . Html::openElement( 'tr' );
 		$out .= "\n\t\t" . Html::element( 'td', [], $message->text() );
 		$out .= $this->makeNumberColumns( $stats );
-		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
+		$out .= "\n\t" . Html::closeElement( 'tr' ) . "\n";
 
 		return $out;
 	}

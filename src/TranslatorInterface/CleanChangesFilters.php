@@ -11,7 +11,6 @@ use MediaWiki\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
-use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
@@ -102,14 +101,14 @@ class CleanChangesFilters implements
 			$options .= Html::element( 'option', $optionAttributes, "$code - $name" ) . "\n";
 		}
 		$str =
-		Xml::openElement( 'select',
+		Html::openElement( 'select',
 			[
 				'name' => 'trailer',
 				'class' => 'mw-language-selector',
 				'id' => 'tpt-rc-language',
 			] ) .
 		$options .
-		Xml::closeElement( 'select' );
+		Html::closeElement( 'select' );
 
 		$extraOpts['tailer'] = [ wfMessage( 'tpt-cleanchanges-language' )->escaped(), $str ];
 	}

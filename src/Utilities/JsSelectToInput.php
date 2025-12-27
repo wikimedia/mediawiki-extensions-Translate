@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Xml\Xml;
+use MediaWiki\Html\Html;
 use MediaWiki\Xml\XmlSelect;
 use RuntimeException;
 
@@ -39,7 +39,7 @@ final class JsSelectToInput {
 
 		RequestContext::getMain()->getOutput()->addModules( 'ext.translate.selecttoinput' );
 		$html = $this->select->getHTML();
-		$html .= Xml::element( 'input', [
+		$html .= Html::element( 'input', [
 			'type' => 'button',
 			'value' => wfMessage( 'translate-jssti-add' )->text(),
 			'class' => 'mw-translate-jssti',

@@ -32,7 +32,6 @@ use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\Widget\ToggleSwitchWidget;
-use MediaWiki\Xml\Xml;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
 use OOUI\DropdownInputWidget;
@@ -950,7 +949,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$diff->showDiffStyle();
 				$diff->setReducedLineNumbers();
 
-				$out->addHTML( Xml::tags( 'div', [], $text ) );
+				$out->addHTML( Html::rawElement( 'div', [], $text ) );
 			}
 		}
 
@@ -1301,7 +1300,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		];
 
 		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', $formParams ) .
+			Html::openElement( 'form', $formParams ) .
 			Html::hidden( 'do', $action ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			( $revision ? Html::hidden( 'revision', $revision ) : '' ) .

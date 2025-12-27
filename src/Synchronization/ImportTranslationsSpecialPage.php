@@ -10,7 +10,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Xml\Xml;
 use MessageGroupBase;
 use Wikimedia\ObjectCache\BagOStuff;
 
@@ -151,7 +150,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		$this->getOutput()->addHelpLink( 'Help:Extension:Translate/Off-line_translation' );
 		/** Ugly but necessary form building ahead, ohoy */
 		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', [
+			Html::openElement( 'form', [
 				'action' => $this->getPageTitle()->getLocalURL(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
@@ -172,7 +171,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 					)
 				) .
 				Html::submitButton( $this->msg( 'translate-import-load' )->text() ) .
-				Xml::closeElement( 'form' )
+				Html::closeElement( 'form' )
 		);
 	}
 

@@ -20,7 +20,6 @@ use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use MediaWiki\Xml\Xml;
 use MessageGroup;
 use MessageLocalizer;
 use RecentChange;
@@ -119,7 +118,7 @@ class MessageWebImporter {
 		];
 
 		$csrfTokenSet = RequestContext::getMain()->getCsrfTokenSet();
-		return Xml::openElement( 'form', $formParams ) .
+		return Html::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'token', $csrfTokenSet->getToken() ) .
 			Html::hidden( 'process', 1 );

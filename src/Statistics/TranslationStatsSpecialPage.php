@@ -11,7 +11,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
 use function wfEscapeWikiText;
 
@@ -169,7 +168,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		// translate-statsf-language, translate-statsf-group
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
-		return Xml::tags( 'label', [ 'for' => $name ], $label );
+		return Html::rawElement( 'label', [ 'for' => $name ], $label );
 	}
 
 	/// Construct HTML for a table row with label and radio input in two columns.
