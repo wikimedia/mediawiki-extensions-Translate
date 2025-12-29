@@ -71,7 +71,7 @@
 	"translate-tag-translate-link-desc": "Traducer iste pagina",
 	"translate-tag-markthis": "Marcar iste pagina pro traduction",
 	"translate-tag-markthisagain": "Iste pagina ha <span class=\"plainlinks\">[$1 modificationes]</span> depost le ultime vice que illo esseva <span class=\"plainlinks\">[$2 marcate pro traduction]</span>.",
-	"translate-tag-hasnew": "Iste pagina contine <span class=\"plainlinks\">[$1 modificationes]</span> le quales non ha essite marcate pro traduction.",
+	"translate-tag-hasnew": "Iste pagina contine <span class=\"plainlinks\">[$1 modificationes]</span> que non ha essite marcate pro traduction.",
 	"tpt-translation-intro": "Iste pagina es un <span class=\"plainlinks\">[$1 version traducite]</span> del pagina [[$2]] e le traduction es complete a $3%.",
 	"tpt-translation-intro-fuzzy": "Le traductiones obsolete es marcate assi.",
 	"tpt-languages-legend": "Altere linguas:",

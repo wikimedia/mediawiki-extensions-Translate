@@ -3,7 +3,8 @@
 		"authors": [
 			"Daud I.F. Argana",
 			"Gombang",
-			"Penyuwangi"
+			"Penyuwangi",
+			"Bennylin"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Kelola kelompok pesan agregat.",
@@ -54,13 +55,13 @@
 	"apihelp-translationreview-param-revision": "Nomor revisi untuk ditinjau.",
 	"apihelp-translationreview-example-1": "Tinjau revisi 1",
 	"apihelp-translationstash-description": "Tambahkan terjemahan ke kotak pasir.",
-	"apihelp-translationstash-summary": "Tambahkan terjemahan ke kotak pasir.",
+	"apihelp-translationstash-summary": "Tambahkan terjemahan ke penyimpanan (''stash'').",
 	"apihelp-translationstash-param-subaction": "Tindakan.",
 	"apihelp-translationstash-param-title": "Judul halaman satuan terjemahan.",
 	"apihelp-translationstash-param-translation": "Terjemahan yang dibuat oleh pengguna.",
 	"apihelp-translationstash-param-metadata": "Objek JSON.",
-	"apihelp-translationstash-example-1": "Tambahakan terjemahan ke kotak pasir untuk [[MediaWiki:Jan/fi]]",
-	"apihelp-translationstash-example-2": "Kueri kotak pasir",
+	"apihelp-translationstash-example-1": "Tambahkan terjemahan ke bak pasir untuk [[MediaWiki:Jan/fi]]",
+	"apihelp-translationstash-example-2": "Kueri penyimpanan (''stash'')",
 	"apihelp-ttmserver-description": "Kueri saran dari memori terjemahan.",
 	"apihelp-ttmserver-summary": "Kueri saran dari memori terjemahan.",
 	"apihelp-ttmserver-param-service": "Layanan terjemahan tersedia mana yang digunakan.",
@@ -104,7 +105,7 @@
 	"apierror-translate-nodynamicgroups": "Kelompok pesan dinamis tidak didukung di sini",
 	"apierror-translate-notranslationservices": "Tiada layanan penerjemahan publik yang dikonfigurasi. Pengurus wiki perlu mengatur <var>$wgTranslateTranslationServices</var> dengan benar sebelum fitur ini bisa digunakan.",
 	"apierror-translate-owntranslation": "Tidak bisa meninjau terjemahan sendiri",
-	"apierror-translate-sandboxdisabled": "Fitur kotak pasir tidak sedang digunakan",
+	"apierror-translate-sandboxdisabled": "Fitur bak pasir tidak sedang digunakan",
 	"apierror-translate-sandbox-invalidppassword": "Kata sandi tidak valid",
 	"apierror-translate-smg-nochanges": "Tidak ada perubahan yang dapat diproses.",
 	"apierror-translate-unknownmessage": "Pesan tidak dikenal",
