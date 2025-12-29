@@ -255,7 +255,7 @@
 	"translate-smg-group-sync-error-warn": "Kelompok ini mengalami galat ketika sinkronisasi. Tolong perbaiki galatnya sebelum memproses kelompok ini.",
 	"translate-smg-group-message-tag-outdated": "Usang",
 	"translate-smg-group-message-tag-rename": "Ubah nama",
-	"translate-smg-group-message-tag-label": "{{PLURAL:$1|''Tag''}}:",
+	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Tanda}}:",
 	"translate-smg-group-message-message-content": "Konten:",
 	"translate-smg-group-message-message-target": "Target:",
 	"translate-smg-group-message-message-replacement": "Pengganti:",
