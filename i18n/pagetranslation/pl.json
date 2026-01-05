@@ -160,6 +160,8 @@
 	"log-action-filter-pagetranslation-discourage": "Zniechęcanie do tłumaczenia",
 	"log-action-filter-pagetranslation-prioritylanguages": "Zmiana języków priorytetowych",
 	"log-action-filter-pagetranslation-aggregategroups": "Zmiany w grupach zbiorczych",
+	"log-description-messagebundle": "Rejestr działań związanych z systemem pakietów komunikatów",
+	"log-name-messagebundle": "Rejestr pakietów komunikatów",
 	"log-action-filter-messagebundle": "Rodzaj działania:",
 	"log-action-filter-messagebundle-move": "Przenoszenie pakietu wiadomości",
 	"log-action-filter-messagebundle-delete": "Usunięcia pakietów wiadomości",
