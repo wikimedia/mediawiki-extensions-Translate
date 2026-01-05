@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"YeBoy371"
 		]
 	},
 	"searchtranslations": "Pśełožki pytaś",
@@ -15,6 +16,6 @@
 	"tux-sst-nosolr-body": "Toś ten wiki njama słužbu za pytanje pśełožkow.",
 	"tux-sst-solr-offline-title": "Pytanje njestoj k dispoziciji",
 	"tux-sst-solr-offline-body": "Pytańska słužba njestoj tuchylu k dispoziciji.",
-	"tux-sst-next": "Pśiduce wuslědki",
-	"tux-sst-prev": "Pjerwjejšne wuslědki"
+	"tux-sst-next": "Pśiduce ›",
+	"tux-sst-prev": "‹ Pjerwjejšne"
 }

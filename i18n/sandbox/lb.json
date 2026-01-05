@@ -6,8 +6,8 @@
 			"Volvox"
 		]
 	},
-	"managetranslatorsandbox": "Iwwersetzer-Sandkëscht geréieren",
-	"tsb-filter-pending": "Ufroen am Suspens",
+	"managetranslatorsandbox": "Iwwersetzer-Sandkaul geréieren",
+	"tsb-filter-pending": "Oppen Ufroen",
 	"tsb-reminder-title-generic": "Kompletéiert Är Virstellung fir Iwwersetzer ze ginn",
 	"tsb-reminder-sending": "Erënnerung gëtt geschéckt...",
 	"tsb-reminder-sent": "{{PLURAL:$1|Eng Erënnerung geschéckt. Zäit: $2.|$1 Erënnerunge geschéckt. Zäit vun der leschter: $2.}}",
@@ -18,7 +18,7 @@
 	"tsb-email-rejected-body": "Bonjour $1,\n\nMerci fir Är Ufro als Iwwersetzer op {{SITENAME}}. Ech bedaueren Iech informéieren ze missen, datt ech Är Demande refuséiert hunn well d'Qualitéit vun Ären Iwwersetzungen net den Ufuerderungen entsprécht.\n\nWann Dir mengt Är Ufro gouf iertemlecherweis refuséiert da stellt wgl. Är Ufro als Iwwersetzer op {{SITENAME}} nach eng Kéier. Dir kënnt Iech hei registréieren:\n$2\n\n$3,\n{{GENDER:$3|Mataarbechter|Mataarbechterin|Mataarbechter}} vu(n) {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Eng Ufro|$1 Ufroen}}",
 	"tsb-all-languages-button-label": "All Sproochen",
-	"tsb-search-requests": "An Ufroe sichen",
+	"tsb-search-requests": "Oppen Ufroen duerchsichen",
 	"tsb-accept-button-label": "Akzeptéieren",
 	"tsb-reject-button-label": "Refuséieren",
 	"tsb-selected-count": "{{PLURAL:$1|Ee|$1}}Benotzer erausgesicht",
@@ -31,7 +31,7 @@
 	"tsb-translations-source": "Quell",
 	"tsb-translations-user": "{{GENDER:$1|Benotzer}} Iwwersetzungen",
 	"tsb-translations-current": "Besteeënd Iwwersetzungen",
-	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
+	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandkaul-Benotzer geläscht",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Benotzer}} refuséiert",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Benotzer}} akzeptéiert",
 	"translationstash": "Wëllkomm",
@@ -42,8 +42,8 @@
 	"tsb-limit-reached-title": "Merci fir Är Iwwersetzungen",
 	"tsb-limit-reached-body": "Dir hutt d'Iwwersetzungslimitt fir nei Iwwersetzer erreecht.\nEis Ekipp kuckt Äre Benotzerkont geschwënn no a setzt en erop.\nDa kënnt Dir ouni Limitatiounen iwwersetzen.",
 	"tsb-no-requests-from-new-users": "Keng Ufroe vun neie Benotzer",
-	"tsb-create-user-page": "Eng einfach Benotzersäit uleeën",
-	"log-name-translatorsandbox": "Logbuch vun der Iwwersetzungs-Sandkëscht",
+	"tsb-create-user-page": "Basis-Benotzersäit ugeluecht",
+	"log-name-translatorsandbox": "Logbuch vun der Iwwersetzungs-Sandkaul",
 	"logentry-translatorsandbox-rejected": "$1 huet d'Ufro vum \"$3\" fir {{GENDER:$2|Iwwersetzesch|Iwwersetzer}} ze gi refuséiert",
-	"logentry-newusers-tsbpromoted": "De Benotzerkont $3 gouf {{GENDER:$2|ugeluecht}} duerch d'Promotioun aus der Sandkëscht"
+	"logentry-newusers-tsbpromoted": "De Benotzerkont $3 gouf {{GENDER:$2|ugeluecht}} duerch d'Promotioun aus der Sandkaul"
 }
