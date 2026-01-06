@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use EditWatchlistCheckboxSeriesField;
-use EditWatchlistNormalHTMLForm;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Html\Html;
@@ -291,7 +290,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 			}
 		}
 
-		$form = new EditWatchlistNormalHTMLForm( $fields, $this->getContext() );
+		$form = new MessageGroupSubscriptionHtmlForm( $fields, $this->getContext() );
 		$form->setTitle( $this->getPageTitle() ); // Remove subpage
 		$form->setSubmitTextMsg( 'tpt-manage-message-group-subscriptions-normal-submit' );
 		$form->setSubmitDestructive();
