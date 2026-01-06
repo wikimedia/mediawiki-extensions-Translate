@@ -2,16 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Rzuwig"
+			"Rzuwig",
+			"Woytecr"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Zarządzaj grupami zbiorczymi komunikatów.",
 	"apihelp-aggregategroups-param-groupname": "Nazwa zbiorczej grupy komunikatów.",
 	"apihelp-aggregategroups-param-groupdescription": "Opis zbiorczej grupy komunikatów.",
-	"apihelp-groupreview-param-group": "Grupa komunikatów.",
+	"apihelp-groupreview-param-group": "Grupa komunikatów. Sprawdź <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Kod języka.",
 	"apihelp-query+languagestats-param-language": "Kod języka.",
-	"apihelp-query+messagecollection-param-group": "Grupa komunikatów.",
+	"apihelp-query+messagecollection-param-group": "Grupa komunikatów. Sprawdź <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+messagecollection-param-language": "Kod języka.",
 	"apihelp-query+messagecollection-param-limit": "Liczba komunikatów do pokazania (po filtrowaniu).",
 	"apihelp-query+messagecollection-example-1": "Lista obsługiwanych języków",

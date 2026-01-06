@@ -17,7 +17,8 @@
 			"Tobulos1",
 			"WikiPhoenix",
 			"Tacsipacsi",
-			"Yupik"
+			"Yupik",
+			"Stefan2255"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -46,7 +47,7 @@
 	"tpt-showpage-intro": "Nedanför finns nya, existerande och raderade översättningsenheter uppradade.\nInnan den här versionen märks för översättning, kontrollera att ändringarna i översättningsenheterna är minimala för att undvika extra arbete för översättarna.",
 	"tpt-mark-summary": "Den här versionen är märkt för översättning",
 	"tpt-mark-nochanges": "Inga ändringar att granska. Varken sidan eller befintliga översättningsenheter kommer att redigeras om denna sida märks för översättning.",
-	"tpt-edit-failed": "Sidan \"$1\" kunde inte uppdateras.",
+	"tpt-edit-failed": "Kunde inte uppdatera sedan: $1",
 	"tpt-duplicate": "Översättningsenhetsnamnet <strong><bdi>$1</bdi></strong> används mer än en gång.",
 	"tpt-invalid": "Översättningsenhetsnamnet <strong><bdi>$1</bdi></strong> får inte innehålla understreck eller snedstreck.",
 	"tpt-unit-title-invalid": "Översättningsenhetsnamnet <strong><bdi>$1</bdi></strong> är ogiltigt: $2",

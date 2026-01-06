@@ -14,6 +14,7 @@
 	"tux-sst-view-foreign": "Zobacz w $1",
 	"tux-sst-search": "Szukaj",
 	"tux-sst-search-ph": "Szukaj tłumaczenia",
+	"tux-sst-search-info": "Użyj operatorów <code>language:</code> lub <code>group:</code> aby dokładniej określić kryteria wyszukiwania",
 	"tux-sst-count": "Znaleziono {{PLURAL:$1|jeden wynik|$1 wyników}}",
 	"tux-sst-facet-language": "Języki",
 	"tux-sst-facet-group": "Grupa komunikatów",
