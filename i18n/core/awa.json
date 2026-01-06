@@ -36,7 +36,6 @@
 	"languagestats-stats-for": "$1 ($2) कय खत्तीर अनुवाद आकँडा।",
 	"languagestats-recenttranslations": "नँवा अनुवाद",
 	"translate-language-code": "भाषा कय कोड",
-	"translate-language-code-field-name": "भाषा कय कोड:",
 	"translate-percentage-fuzzy": "पुरान होइ चुका",
 	"supportedlanguages": "सक्रिय भासा",
 	"supportedlanguages-sqlite-error": "SQLite सपोर्ट नाइ हय",

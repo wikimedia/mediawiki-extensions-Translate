@@ -195,7 +195,6 @@
 	"translate-langstats-expandall": "tümünü genişlet",
 	"translate-langstats-collapseall": "tümünü daralt",
 	"translate-language-code": "Dil kodu",
-	"translate-language-code-field-name": "Dil kodu:",
 	"translate-suppress-complete": "Tamamen çevrilmiş ileti gruplarını gizle",
 	"translate-ls-noempty": "Hiç çevrilmemiş ileti gruplarını gizle",
 	"translate-language": "Dil",

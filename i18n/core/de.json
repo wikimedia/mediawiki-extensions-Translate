@@ -199,7 +199,7 @@
 	"translate-langstats-expandall": "alle ausklappen",
 	"translate-langstats-collapseall": "alle einklappen",
 	"translate-language-code": "Sprachcode",
-	"translate-language-code-field-name": "Sprachcode:",
+	"translate-language-field-name": "Sprache:",
 	"translate-suppress-complete": "Vollständig übersetzte Nachrichtengruppen unterdrücken",
 	"translate-ls-noempty": "Vollständig unübersetzte Nachrichtengruppen unterdrücken",
 	"translate-language": "Sprache",

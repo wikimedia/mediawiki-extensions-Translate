@@ -138,7 +138,6 @@
 	"translate-langstats-expandall": "näita kõiki",
 	"translate-langstats-collapseall": "peida kõik",
 	"translate-language-code": "Keelekood",
-	"translate-language-code-field-name": "Keelekood:",
 	"translate-suppress-complete": "Peida täielikult tõlgitud sõnumirühmad",
 	"translate-ls-noempty": "Peida täielikult tõlkimata sõnumirühmad",
 	"translate-language": "Keel",

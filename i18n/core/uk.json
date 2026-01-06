@@ -202,7 +202,6 @@
 	"translate-langstats-expandall": "розгорнути всі",
 	"translate-langstats-collapseall": "згорнути всі",
 	"translate-language-code": "Код мови",
-	"translate-language-code-field-name": "Код мови:",
 	"translate-suppress-complete": "Приховати повністю перекладені групи повідомлень",
 	"translate-ls-noempty": "Приховати зовсім неперекладені групи повідомлень",
 	"translate-language": "Мова",

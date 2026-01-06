@@ -198,7 +198,6 @@
 	"translate-langstats-expandall": "گسترش همه",
 	"translate-langstats-collapseall": "نهفتن همه",
 	"translate-language-code": "کد زبان",
-	"translate-language-code-field-name": "کد زبان:",
 	"translate-suppress-complete": "فرونشانی گروه‌های پیامی که تماماً ترجمه شده‌اند",
 	"translate-ls-noempty": "فرونشانی گروه‌های پیامی که هیچ ترجمه‌ای نشده‌اند",
 	"translate-language": "زبان",

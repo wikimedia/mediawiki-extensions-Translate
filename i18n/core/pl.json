@@ -207,7 +207,6 @@
 	"translate-langstats-expandall": "rozwiń wszystkie",
 	"translate-langstats-collapseall": "zwiń wszystkie",
 	"translate-language-code": "Kod języka",
-	"translate-language-code-field-name": "Kod języka",
 	"translate-suppress-complete": "Pomiń grupy komunikatów całkowicie przetłumaczone",
 	"translate-ls-noempty": "Pomiń grupy komunikatów całkowicie nieprzetłumaczone",
 	"translate-language": "Język",

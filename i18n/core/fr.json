@@ -224,7 +224,6 @@
 	"translate-langstats-expandall": "tout développer",
 	"translate-langstats-collapseall": "tout replier",
 	"translate-language-code": "Code de langue",
-	"translate-language-code-field-name": "Code de langue :",
 	"translate-suppress-complete": "Masquer les groupes de messages entièrement traduits",
 	"translate-ls-noempty": "Masquer les groupes de messages sans traduction",
 	"translate-language": "Langue",

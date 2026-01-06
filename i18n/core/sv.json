@@ -199,7 +199,6 @@
 	"translate-langstats-expandall": "visa alla",
 	"translate-langstats-collapseall": "göm alla",
 	"translate-language-code": "Språkkod",
-	"translate-language-code-field-name": "Språkkod:",
 	"translate-suppress-complete": "Visa inte meddelandegrupper som är helt översatta",
 	"translate-ls-noempty": "Visa inte meddelandegrupper som är helt oöversatta",
 	"translate-language": "Språk",

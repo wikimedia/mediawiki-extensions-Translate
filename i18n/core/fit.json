@@ -104,7 +104,6 @@
 	"languagestats-recenttranslations": "verekset käänökset",
 	"translate-langstats-incomplete": "Jotkut tämän sivun statistiikit ovat vaillinaisia. Saat lissää statistiikkejä lattaamalla sivun uuesti.",
 	"translate-language-code": "Kielikooti",
-	"translate-language-code-field-name": "Kielikooti:",
 	"translate-suppress-complete": "Piilota kokonaan käänetyt viestijoukot",
 	"translate-ls-noempty": "Piilota kokonaan kääntämättömät viestijoukot",
 	"translate-percentage-complete": "Käänösten kattavuus",

@@ -181,7 +181,6 @@
 	"translate-langstats-expandall": "모두 펼치기",
 	"translate-langstats-collapseall": "모두 숨기기",
 	"translate-language-code": "언어 코드",
-	"translate-language-code-field-name": "언어 코드:",
 	"translate-suppress-complete": "완전히 번역된 메시지 그룹을 숨기기",
 	"translate-ls-noempty": "전혀 번역되지 않은 메시지 그룹을 숨기기",
 	"translate-language": "언어",

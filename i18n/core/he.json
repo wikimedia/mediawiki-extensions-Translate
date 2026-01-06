@@ -190,7 +190,6 @@
 	"translate-langstats-expandall": "להציג הכול",
 	"translate-langstats-collapseall": "להסתיר הכול",
 	"translate-language-code": "קוד השפה",
-	"translate-language-code-field-name": "קוד השפה:",
 	"translate-suppress-complete": "להשמיט קבוצות הודעות שתורגמו במלואן",
 	"translate-ls-noempty": "להשמיט קבוצות הודעות שאינן מתורגמות כלל",
 	"translate-language": "שפה",

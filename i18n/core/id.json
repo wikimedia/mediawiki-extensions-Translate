@@ -185,7 +185,6 @@
 	"translate-langstats-expandall": "luaskan semua",
 	"translate-langstats-collapseall": "ciutkan semua",
 	"translate-language-code": "Kode bahasa",
-	"translate-language-code-field-name": "Kode bahasa:",
 	"translate-suppress-complete": "Sembunyikan kelompok pesan yang telah diterjemahkan sepenuhnya",
 	"translate-ls-noempty": "Sembunyikan kelompok pesan yang belum diterjemahkan sepenuhnya",
 	"translate-language": "Bahasa",

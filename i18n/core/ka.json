@@ -91,7 +91,6 @@
 	"translate-langstats-expandall": "ყველას გაშლა",
 	"translate-langstats-collapseall": "ყველას ჩაკეცვა",
 	"translate-language-code": "ენის კოდი",
-	"translate-language-code-field-name": "ენის კოდი:",
 	"translate-suppress-complete": "გამოტოვე მთლიანად თარგმნილი შეტყობინებათა ჯგუფები",
 	"translate-ls-noempty": "არ აჩვენო მთლიანად თარგმნილი შეტყობინებათა ჯგუფები",
 	"translate-language": "ენა",

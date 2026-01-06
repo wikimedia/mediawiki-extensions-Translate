@@ -174,7 +174,6 @@
 	"translate-langstats-expandall": "expander totes",
 	"translate-langstats-collapseall": "contraher totes",
 	"translate-language-code": "Codice de lingua",
-	"translate-language-code-field-name": "Codice de lingua:",
 	"translate-suppress-complete": "Celar le gruppos de messages completemente traducite",
 	"translate-ls-noempty": "Celar le gruppos de messages completemente sin traduction",
 	"translate-language": "Lingua",

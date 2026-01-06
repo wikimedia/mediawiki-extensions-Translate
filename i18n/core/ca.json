@@ -164,7 +164,6 @@
 	"translate-langstats-expandall": "amplia'ls tots",
 	"translate-langstats-collapseall": "amaga'ls tots",
 	"translate-language-code": "Codi de l'idioma",
-	"translate-language-code-field-name": "Codi d'idioma:",
 	"translate-suppress-complete": "Oculta els missatges de grups completament traduïts",
 	"translate-ls-noempty": "Oculta els missatges de grups totalment sense traduir",
 	"translate-language": "Idioma",

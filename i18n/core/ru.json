@@ -230,7 +230,6 @@
 	"translate-langstats-expandall": "раскрыть все",
 	"translate-langstats-collapseall": "свернуть все",
 	"translate-language-code": "Код языка",
-	"translate-language-code-field-name": "Код языка:",
 	"translate-suppress-complete": "Не показывать полностью переведённые группы сообщений",
 	"translate-ls-noempty": "Не показывать полностью непереведённые группы сообщений",
 	"translate-language": "Язык",

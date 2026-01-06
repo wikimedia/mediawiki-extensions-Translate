@@ -197,7 +197,6 @@
 	"translate-langstats-expandall": "وسّع الكل",
 	"translate-langstats-collapseall": "اطوِ الكل",
 	"translate-language-code": "رمز اللغة",
-	"translate-language-code-field-name": "رمز اللغة:",
 	"translate-suppress-complete": "تخطَ مجموعات الرسائل المترجمة كليا",
 	"translate-ls-noempty": "تخطَ مجموعات الرسائل غير المترجمة كليا",
 	"translate-language": "اللغة",

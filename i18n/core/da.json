@@ -148,7 +148,6 @@
 	"translate-langstats-expandall": "fold alle ud",
 	"translate-langstats-collapseall": "fold alle sammen",
 	"translate-language-code": "Sprogkode",
-	"translate-language-code-field-name": "Sprogkode:",
 	"translate-suppress-complete": "Vis ikke beskedgrupper som er fuldt oversatte",
 	"translate-ls-noempty": "Vis ikke beskedgrupper, som er helt uoversatte",
 	"translate-language": "Sprog",

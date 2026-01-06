@@ -159,7 +159,6 @@
 	"translate-langstats-expandall": "ขยายทั้งหมด",
 	"translate-langstats-collapseall": "ยุบทั้งหมด",
 	"translate-language-code": "รหัสภาษา",
-	"translate-language-code-field-name": "รหัสภาษา:",
 	"translate-suppress-complete": "ไม่แสดงกลุ่มของข้อความที่แปลเสร็จสมบูรณ์แล้ว",
 	"translate-ls-noempty": "ไม่แสดงกลุ่มของข้อความที่ยังไม่ได้แปล",
 	"translate-language": "ภาษา",

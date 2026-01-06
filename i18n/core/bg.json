@@ -146,7 +146,6 @@
 	"translate-langstats-expandall": "разгръщане на всички",
 	"translate-langstats-collapseall": "свиване на всички",
 	"translate-language-code": "Езиков код",
-	"translate-language-code-field-name": "Езиков код:",
 	"translate-suppress-complete": "Скриване на изцяло преведените групи съобщения",
 	"translate-ls-noempty": "Скриване на изцяло непреведените групи съобщения",
 	"translate-language": "Език",

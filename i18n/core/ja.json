@@ -206,7 +206,6 @@
 	"translate-langstats-expandall": "すべて展開",
 	"translate-langstats-collapseall": "すべて折り畳む",
 	"translate-language-code": "言語コード",
-	"translate-language-code-field-name": "言語コード:",
 	"translate-suppress-complete": "翻訳が完了したメッセージ群を表示しない",
 	"translate-ls-noempty": "全く翻訳されていないメッセージ群を表示しない",
 	"translate-language": "言語",

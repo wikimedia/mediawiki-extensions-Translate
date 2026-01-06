@@ -178,7 +178,6 @@
 	"translate-langstats-expandall": "全部攤開",
 	"translate-langstats-collapseall": "全部摺埋",
 	"translate-language-code": "語言代碼",
-	"translate-language-code-field-name": "語言代碼:",
 	"translate-suppress-complete": "壓制完全翻譯嘅訊息組",
 	"translate-ls-noempty": "壓制完全未翻譯嘅訊息組",
 	"translate-language": "語言",

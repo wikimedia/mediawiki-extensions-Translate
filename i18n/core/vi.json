@@ -181,7 +181,6 @@
 	"translate-langstats-expandall": "mở tất cả",
 	"translate-langstats-collapseall": "đóng tất cả",
 	"translate-language-code": "Mã ngôn ngữ",
-	"translate-language-code-field-name": "Mã ngôn ngữ:",
 	"translate-suppress-complete": "Ẩn các nhóm thông điệp đã được dịch hoàn toàn",
 	"translate-ls-noempty": "Ẩn các nhóm thông điệp hoàn toàn chưa được dịch",
 	"translate-language": "Ngôn ngữ",

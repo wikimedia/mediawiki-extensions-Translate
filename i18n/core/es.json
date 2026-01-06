@@ -205,7 +205,6 @@
 	"translate-langstats-expandall": "expandir todo",
 	"translate-langstats-collapseall": "contraer todo",
 	"translate-language-code": "Código de idioma",
-	"translate-language-code-field-name": "Código de idioma:",
 	"translate-suppress-complete": "Eliminar los grupos de mensajes completamente traducidos",
 	"translate-ls-noempty": "Eliminar los grupos de mensajes sin traducción iniciada",
 	"translate-language": "Idioma",
