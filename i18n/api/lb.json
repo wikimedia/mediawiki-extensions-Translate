@@ -41,7 +41,7 @@
 	"apierror-translate-language-disabled": "Iwwersetzung op $1 ass ausgeschalt.",
 	"apierror-translate-language-disabled-reason": "Iwwersetzung op $1 ass desaktivéiert: $2",
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
-	"apierror-translate-sandboxdisabled": "Sandkëscht-Funktioun gëtt net benotzt",
+	"apierror-translate-sandboxdisabled": "Sandkaul-Funktioun gëtt net benotzt",
 	"apierror-translate-unknownmessage": "Onbekannte Message",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass",
 	"apihelp-translationentitysearch-param-limit": "Maximal Zuel vu Sichresultater"

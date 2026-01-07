@@ -133,7 +133,7 @@
 	"action-translate-messagereview": "翻訳の査読",
 	"right-translate-groupreview": "メッセージ群のワークフローの状態を変更",
 	"action-translate-groupreview": "メッセージ群のワークフローの状態の変更",
-	"action-translate-watch-message-group": "メッセージ群をウォッチする",
+	"action-translate-watch-message-group": "ウォッチリストへのメッセージ群の登録",
 	"translate-rcfilters-translations": "翻訳",
 	"translate-rcfilters-translations-only-label": "翻訳名前空間",
 	"translate-rcfilters-translations-only-desc": "メッセージ群に投稿された翻訳。",

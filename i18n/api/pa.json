@@ -5,8 +5,17 @@
 		]
 	},
 	"apihelp-translatesandbox-param-password": "ਵਰਤੋਂਕਾਰ ਬਣਾਉਣ ਵੇਲੇ ਪਾਰਸ਼ਬਦ",
+	"apihelp-translationaids-param-prop": "ਕਿਹੜੇ ਉਲਥਾ ਸਹਾਇਕਾਂ ਨੂੰ ਸ਼ਾਮਲ ਕਰਨਾ ਏ",
 	"apihelp-translationreview-summary": "ਤਰਜਮੇ ਦੀ ਪਰਖ ਕੀਤੀ ਗਈ ਦੀ ਨਿਸ਼ਾਨਦੇਹੀ ਕਰੋ।",
+	"apihelp-translationstash-param-title": "ਉਲਥਾ ਇਕਾਈ ਵਾਲੇ ਵਰਕੇ ਦਾ ਸਿਰਲੇਖ",
+	"apihelp-translationstash-param-translation": "ਵਰਤੋਂਕਾਰ ਵੱਲੋਂ ਕੀਤਾ ਗਿਆ ਉਲਥਾ",
+	"apihelp-ttmserver-summary": "ਉਲਥਾ ਯਾਦਾਂ ਵਿੱਚੋਂ ਸੁਝਾਵਾਂ ਦੀ ਪੁੱਛਗਿੱਛ ਕਰੋ",
 	"apihelp-searchtranslations-summary": "ਤਰਜਮੇ ਖੋਜੋ",
+	"apihelp-searchtranslations-param-filter": "ਸੁਨੇਹਾ ਉਲਥਾ ਹਾਲਤ ਛਾਣਨੀ",
 	"apihelp-translationcheck-summary": "ਤਰਜਮੇ ਤਸਦੀਕ ਕਰੋ।",
-	"apihelp-translationcheck-param-translation": "ਤਸਦੀਕ ਕਰਨ ਲਈ ਤਰਜਮਾ।"
+	"apihelp-translationcheck-param-translation": "ਤਸਦੀਕ ਕਰਨ ਲਈ ਤਰਜਮਾ।",
+	"apihelp-translationstats-summary": "ਉਲਥਾ ਅੰਕੜੇ ਲਿਆਓ",
+	"apihelp-translationstats-param-scale": "ਉਲਥਾ ਅੰਕੜਿਆਂ ਦਾ ਮਾਪਕ",
+	"apierror-translate-language-disabled": "$1 ਵਿੱਚ ਉਲਥਾ ਕਰਨਾ ਬੰਦ ਕੀਤਾ ਹੋਇਆ ਏ",
+	"apierror-translate-language-disabled-reason": "$1 ਲਈ ਉਲਥਾ ਬੰਦ ਕੀਤਾ ਗਿਆ ਏ: $2"
 }
