@@ -181,6 +181,7 @@
 	"translate-langstats-expandall": "прикажи сè",
 	"translate-langstats-collapseall": "скриј сè",
 	"translate-language-code": "Јазичен код",
+	"translate-language-field-name": "Јазик:",
 	"translate-suppress-complete": "Не прикажувај наполно преведени групи на пораки",
 	"translate-ls-noempty": "Скриј наполно непреведени групи на пораки",
 	"translate-language": "Јазик",

@@ -166,6 +166,7 @@
 	"translate-langstats-expandall": "alles opklappen",
 	"translate-langstats-collapseall": "alles zouklappen",
 	"translate-language-code": "Sproochcode",
+	"translate-language-field-name": "Sprooch:",
 	"translate-suppress-complete": "Gruppe vu Messagen, déi komplett iwwersat sinn, net weisen",
 	"translate-ls-noempty": "Gruppe vu Message, vun deenen nach guer näischt iwwersat ass, net weisen",
 	"translate-language": "Sprooch",

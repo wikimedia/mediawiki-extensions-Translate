@@ -198,6 +198,7 @@
 	"translate-langstats-expandall": "laajenna kaikki",
 	"translate-langstats-collapseall": "tiivistä kaikki",
 	"translate-language-code": "Kielikoodi",
+	"translate-language-field-name": "Kieli:",
 	"translate-suppress-complete": "Piilota kokonaan käännetyt viestiryhmät",
 	"translate-ls-noempty": "Piilota kokonaan kääntämättömät viestiryhmät",
 	"translate-language": "Kieli",
