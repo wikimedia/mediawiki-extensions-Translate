@@ -24,7 +24,8 @@
 			"Skalman",
 			"Stryn",
 			"Tobulos1",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"translate": "Översätt",
@@ -243,8 +244,8 @@
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|redigering|redigeringar}} - senaste redigering $3 {{PLURAL:$3|dag|dagar}} sedan",
 	"translate-supportedlanguages-cached": "Denna information cachelagrades $1 sedan.",
 	"translate-activelanguages-invalid-code": "Språkkoden \"$1\" är okänd eller inte aktiverad för översättning.",
-	"abusefilter-edit-builder-vars-translate-source-text": "Översättningsenhetens källtext",
-	"abusefilter-edit-builder-vars-translate-target-language": "Målspråk för översättning",
+	"abusefilter-edit-builder-vars-translate-source-text": "Källtexten till översättningsenheten ($1)",
+	"abusefilter-edit-builder-vars-translate-target-language": "Målspråk för översättning ($1)",
 	"translate-jssti-add": "Lägg till i listan",
 	"managemessagegroups": "Meddelandegruppshantering",
 	"translate-smg-notallowed": "Du har inte tillåtelse att utföra denna åtgärd",

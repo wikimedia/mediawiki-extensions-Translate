@@ -21,7 +21,8 @@
 			"Pietrodn",
 			"Shirayuki",
 			"VittGam",
-			"Vituzzu"
+			"Vituzzu",
+			"Dream Indigo"
 		]
 	},
 	"translate": "Traduzione",
@@ -218,7 +219,7 @@
 	"abusefilter-edit-builder-vars-translate-target-language": "Lingua di destinazione per la traduzione ($1)",
 	"translate-jssti-add": "Aggiungi all'elenco",
 	"managemessagegroups": "Gestione del gruppo di messaggi",
-	"translate-smg-notallowed": "Non sei autorizzato a eseguire questa azione.",
+	"translate-smg-notallowed": "Non hai l'autorizzazione per eseguire questa azione.",
 	"translate-smg-nochanges": "Non ci sono modifiche da elaborare.",
 	"translate-smg-submit": "Invia le modifiche per l'elaborazione",
 	"translate-smg-submitted": "Le definizioni dei messaggi sono state aggiornate. Le modifiche saranno elaborate in background.",
