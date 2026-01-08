@@ -12,7 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
-use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Html\TemplateParser;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\ParserFactory;
@@ -43,6 +43,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	private StatusFormatter $statusFormatter;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
+	private readonly TemplateParser $templateParser;
 
 	public function __construct(
 		TitleFormatter $titleFormatter,
@@ -53,6 +54,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$this->titleFormatter = $titleFormatter;
 		$this->parserFactory = $parserFactory;
 		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this );
+		$this->templateParser = new TemplateParser( __DIR__ . '/templates/' );
 	}
 
 	/** @param null|string $par */
@@ -69,7 +71,12 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 		$this->outputForm();
 		$out->addModules( 'ext.translate.special.exporttranslations' );
-		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.special.exporttranslations.styles',
+			'ext.translate.special.exporttranslations',
+			'mediawiki.codex.messagebox.styles',
+			'codex-styles'
+		] );
 
 		if ( $this->groupId ) {
 			$status = $this->checkInput();
@@ -90,41 +97,54 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	}
 
 	private function outputForm(): void {
-		$fields = [
-			'group' => [
-				'type' => 'select',
-				'name' => 'group',
-				'id' => 'group',
-				'label-message' => 'translate-page-group',
-				'options' => $this->getGroupOptions(),
-				'default' => $this->groupId,
-			],
-			'language' => [
-				// @todo Apply ULS to this field
-				'type' => 'select',
-				'name' => 'language',
-				'id' => 'language',
-				'label-message' => 'translate-page-language',
-				'options' => $this->getLanguageOptions(),
-				'default' => $this->language,
-			],
-			'format' => [
-				'type' => 'radio',
-				'name' => 'format',
-				'id' => 'format',
-				'label-message' => 'translate-export-form-format',
-				'flatlist' => true,
-				'options' => $this->getFormatOptions(),
-				'default' => $this->format,
-			],
+		$hiddenFields = [
+			[ 'name' => 'x', 'value' => 'D' ]
 		];
-		HTMLForm::factory( 'ooui', $fields, $this->getContext() )
-			->setMethod( 'get' )
-			->setId( 'mw-export-message-group-form' )
-			->setWrapperLegendMsg( 'translate-page-settings-legend' )
-			->setSubmitTextMsg( 'translate-submit' )
-			->prepareForm()
-			->displayForm( false );
+
+		$formatOptions = [];
+		foreach ( $this->getFormatOptions() as $label => $value ) {
+			$formatOptions[] = [
+				'label' => $label,
+				'value' => $value,
+				'checked' => $value === $this->format
+			];
+		}
+
+		$languageOptions = [];
+		foreach ( $this->getLanguageOptions() as $label => $value ) {
+			$languageOptions[] = [
+				'label' => $label,
+				'value' => $value,
+				'selected' => $value === $this->language
+			];
+		}
+
+		$groupOptions = [];
+		foreach ( $this->getGroupOptions() as $label => $value ) {
+			$groupOptions[] = [
+				'label' => $label,
+				'value' => $value,
+				'selected' => $value === $this->groupId
+			];
+		}
+		$data = [
+			'action' => $this->getPageTitle()->getLocalURL(),
+			'languageLabel' => $this->msg( 'translate-language-field-name' )->text(),
+			'languageOptions' => $languageOptions,
+			'groupLabel' => $this->msg( 'translate-page-group' )->text(),
+			'groupOptions' => $groupOptions,
+			'formatLabel' => $this->msg( 'translate-export-form-format' )->text(),
+			'formatOptions' => $formatOptions,
+			'hiddenFields' => $hiddenFields,
+			'submitLabel' => $this->msg( 'translate-submit' )->text(),
+			'selectedLanguage' => $this->language,
+			'selectedGroup' => $this->groupId,
+			'selectedFormat' => $this->format,
+		];
+
+		$this->getOutput()->addHTML(
+			$this->templateParser->processTemplate( 'ExportTranslationsForm', $data )
+		);
 	}
 
 	private function getGroupOptions(): array {

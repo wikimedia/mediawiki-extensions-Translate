@@ -30,7 +30,7 @@
 	"translate-page-disabled": "Translations to this language in this group have been disabled.\nReason:\n\n<em>$1</em>",
 	"translate-language-disabled": "Translation to this language is disabled.",
 	"translate-page-settings-legend": "Settings",
-	"translate-page-group": "Group",
+	"translate-page-group": "Group:",
 	"translate-page-language": "Language",
 	"translate-page-limit": "Limit",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|message|messages}} per page",

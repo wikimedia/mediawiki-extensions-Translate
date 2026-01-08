@@ -1,0 +1,60 @@
+<form method="get" action="{{action}}" id="mw-export-message-group-form">
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label message-group-selector" for="group-select">
+				<span class="cdx-label__label__text">{{groupLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<div id="group">
+				<div class="cdx-select">
+					<select class="cdx-select__select" name="group" id="group-select">
+						{{#groupOptions}}
+						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+						{{/groupOptions}}
+					</select>
+					<span class="cdx-select__indicator"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="language">
+				<span class="cdx-label__label__text">{{languageLabel}}</span>
+			</label>
+				<select class="cdx-select" name="language" id="language">
+					{{#languageOptions}}
+					<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+					{{/languageOptions}}
+				</select>
+				<span class="cdx-select__indicator"></span>
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label">
+				<span class="cdx-label__label__text">{{formatLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			{{#formatOptions}}
+			<div class="cdx-radio cdx-radio--inline">
+				<div class="cdx-radio__wrapper">
+					<input class="cdx-radio__input" type="radio" name="format" id="{{value}}" value="{{value}}" {{#selectedFormat}}checked{{/selectedFormat}}>
+					<span class="cdx-radio__icon"></span>
+					<label class="cdx-radio__label" for="{{value}}">{{{label}}}</label>
+				</div>
+			</div>
+			{{/formatOptions}}
+		</div>
+	</div>
+	{{#hiddenFields}}
+	<input type="hidden" name="{{name}}" value="{{value}}">
+	{{/hiddenFields}}
+	<div class="cdx-field">
+		<button class="cdx-button cdx-button--action-progressive cdx-button--weight-primary" type="submit">
+			{{submitLabel}}
+		</button>
+	</div>
+</form>

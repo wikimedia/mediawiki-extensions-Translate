@@ -1,3 +1,17 @@
-.mw-special-ExportTranslations .hidden {
-	display: none;
+@import 'mediawiki.skin.variables.less';
+
+.mw-special-ExportTranslations .mw-body-content {
+	form {
+		padding-bottom: @spacing-100;
+	}
+
+	.cdx-text-input,
+	.cdx-select {
+		/** Matching OOUI's text input widget */
+		max-width: 50em;
+	}
+
+	#group.hidden {
+		display: none;
+	}
 }
