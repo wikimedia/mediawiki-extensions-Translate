@@ -179,6 +179,7 @@
 	"translate-langstats-expandall": "espandi tutto",
 	"translate-langstats-collapseall": "comprimi tutto",
 	"translate-language-code": "Codice lingua",
+	"translate-language-field-name": "Lingua:",
 	"translate-suppress-complete": "Nascondi i gruppi di messaggi completamente tradotti",
 	"translate-ls-noempty": "Nascondi i gruppi di messaggi non tradotti affatto",
 	"translate-language": "Lingua",
