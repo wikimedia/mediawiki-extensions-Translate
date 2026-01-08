@@ -601,8 +601,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		[ $alias, ] = $specialPageFactory->resolveAlias( $title->getText() );
 
 		$pagesInGroup = [
-			'ManageMessageGroups' => 'namespaces',
-			'AggregateGroups' => 'namespaces',
+			'ManageMessageGroups' => 'associated-pages',
+			'AggregateGroups' => 'associated-pages',
 			'SupportedLanguages' => 'views',
 			'TranslationStats' => 'views',
 		];
@@ -610,7 +610,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			return;
 		}
 
-		$tabs['namespaces'] = [];
+		$tabs['associated-pages'] = [];
 		foreach ( $pagesInGroup as $spName => $section ) {
 			$spClass = $specialPageFactory->getPage( $spName );
 
