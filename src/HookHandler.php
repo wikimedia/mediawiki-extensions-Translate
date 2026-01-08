@@ -708,6 +708,7 @@ class HookHandler implements
 			return;
 		}
 		$pageReference = $parser->getPage();
+		// @phan-suppress-next-line PhanRedundantCondition For CI to pass with MW 1.46+
 		if ( !$pageReference ) {
 			return;
 		}
@@ -850,7 +851,9 @@ class HookHandler implements
 		if ( $parser->getOptions()->getInterfaceMessage() ) {
 			return '';
 		}
+
 		$pageReference = $parser->getPage();
+		// @phan-suppress-next-line PhanRedundantCondition For CI to pass with MW 1.46+
 		if ( !$pageReference ) {
 			return '';
 		}

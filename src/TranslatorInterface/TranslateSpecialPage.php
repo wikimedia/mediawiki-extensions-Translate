@@ -417,16 +417,16 @@ class TranslateSpecialPage extends SpecialPage {
 		$messageGroupStatistics = SpecialPage::getTitleFor( 'MessageGroupStats' );
 
 		// Clear the special page tab that might be there already
-		$tabs['namespaces'] = [];
+		$tabs['associated-pages'] = [];
 
-		$tabs['namespaces']['translate'] = [
+		$tabs['associated-pages']['translate'] = [
 			'text' => wfMessage( 'translate-taction-translate' )->text(),
 			'href' => $translate->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		];
 
 		if ( $alias === 'Translate' ) {
-			$tabs['namespaces']['translate']['class'] .= ' selected';
+			$tabs['associated-pages']['translate']['class'] .= ' selected';
 		}
 
 		$tabs['views']['lstats'] = [
