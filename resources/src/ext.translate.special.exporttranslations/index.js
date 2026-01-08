@@ -50,6 +50,31 @@
 		}
 	}
 
+	function activateLanguageSelector( languageInput ) {
+		if ( !languageInput ) {
+			return;
+		}
+		const wrapper = languageInput.closest( '.cdx-select' );
+		if ( !wrapper ) {
+			return;
+		}
+
+		const languageSelectorFactory = require( 'mediawiki.languageselector' );
+		const container = document.createElement( 'div' );
+
+		wrapper.classList.add( 'mw-translate-hide' );
+		wrapper.after( container );
+
+		const app = languageSelectorFactory.getLookupLanguageSelector( {
+			selectedLanguage: languageInput.value,
+			onLanguageChange: function ( languageCode ) {
+				languageInput.value = languageCode;
+			}
+		} );
+
+		app.mount( container );
+	}
+
 	function getEntitySelector( onSelect ) {
 		const EntitySelector = require( 'ext.translate.entity.selector' );
 		return new EntitySelector( {
@@ -61,6 +86,7 @@
 
 	$( () => {
 		activateEntitySelector( $( '#group' ) );
+		activateLanguageSelector( document.querySelector( '#language' ) );
 
 		$( '#mw-export-message-group-form' ).on( 'submit', onSubmit );
 	} );

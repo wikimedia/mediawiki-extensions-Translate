@@ -7,14 +7,11 @@
 		</div>
 		<div class="cdx-field__control">
 			<div id="group">
-				<div class="cdx-select">
-					<select class="cdx-select__select" name="group" id="group-select">
-						{{#groupOptions}}
-						<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
-						{{/groupOptions}}
-					</select>
-					<span class="cdx-select__indicator"></span>
-				</div>
+				<select class="cdx-select" name="group" id="group-select">
+					{{#groupOptions}}
+					<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+					{{/groupOptions}}
+				</select>
 			</div>
 		</div>
 	</div>
@@ -23,12 +20,13 @@
 			<label class="cdx-label__label" for="language">
 				<span class="cdx-label__label__text">{{languageLabel}}</span>
 			</label>
-				<select class="cdx-select" name="language" id="language">
-					{{#languageOptions}}
-					<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
-					{{/languageOptions}}
-				</select>
-				<span class="cdx-select__indicator"></span>
+		</div>
+		<div class="cdx-field__control">
+			<select class="cdx-select" name="language" id="language">
+				{{#languageOptions}}
+				<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+				{{/languageOptions}}
+			</select>
 		</div>
 	</div>
 	<div class="cdx-field">
