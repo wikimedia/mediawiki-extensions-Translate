@@ -11,6 +11,7 @@ use MediaWikiIntegrationTestCase;
 use MessageGroupTestConfig;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
+use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\FakeResultWrapper;
 
 /**
@@ -21,7 +22,9 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
 
 	private MessageGroupSubscription $subscription;
+	/** @var MockEventCreator&MockObject */
 	private MockEventCreator $mockEventCreator;
+	/** @var MessageGroupSubscriptionStore&MockObject */
 	private MessageGroupSubscriptionStore $subscriptionStoreMock;
 
 	protected function setUp(): void {
