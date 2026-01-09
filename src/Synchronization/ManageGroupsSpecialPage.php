@@ -271,10 +271,11 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 			foreach ( $languages as $language ) {
 				// Handle and generate UI for additions, deletions, change
-				$changes = [];
-				$changes[ MessageSourceChange::ADDITION ] = $sourceChanges->getAdditions( $language );
-				$changes[ MessageSourceChange::DELETION ] = $sourceChanges->getDeletions( $language );
-				$changes[ MessageSourceChange::CHANGE ] = $sourceChanges->getChanges( $language );
+				$changes = [
+					MessageSourceChange::ADDITION => $sourceChanges->getAdditions( $language ),
+					MessageSourceChange::DELETION => $sourceChanges->getDeletions( $language ),
+					MessageSourceChange::CHANGE => $sourceChanges->getChanges( $language ),
+				];
 
 				foreach ( $changes as $type => $messages ) {
 					foreach ( $messages as $params ) {

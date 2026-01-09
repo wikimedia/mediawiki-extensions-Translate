@@ -186,11 +186,12 @@ class MessageSourceChange {
 	 * @return array|null
 	 */
 	public function findMessage( $language, $key, $possibleStates = [], &$modificationType = null ) {
-		$allChanges = [];
-		$allChanges[self::ADDITION] = $this->getAdditions( $language );
-		$allChanges[self::DELETION] = $this->getDeletions( $language );
-		$allChanges[self::CHANGE] = $this->getChanges( $language );
-		$allChanges[self::RENAME] = $this->getRenames( $language );
+		$allChanges = [
+			self::ADDITION => $this->getAdditions( $language ),
+			self::DELETION => $this->getDeletions( $language ),
+			self::CHANGE => $this->getChanges( $language ),
+			self::RENAME => $this->getRenames( $language ),
+		];
 
 		if ( $possibleStates === [] ) {
 			$possibleStates = [ self::ADDITION, self::CHANGE, self::DELETION, self::RENAME ];

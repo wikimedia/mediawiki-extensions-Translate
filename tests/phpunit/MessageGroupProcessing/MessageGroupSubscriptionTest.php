@@ -11,7 +11,6 @@ use MediaWikiIntegrationTestCase;
 use MessageGroupTestConfig;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
-use stdClass;
 use Wikimedia\Rdbms\FakeResultWrapper;
 
 /**
@@ -321,10 +320,10 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 	private function getFakeSubscribers( array $groupIds ): FakeResultWrapper {
 		$subscribers = [];
 		foreach ( $groupIds as $groupId ) {
-			$subscriber = new stdClass();
-			$subscriber->tmgs_group = $groupId;
-			$subscriber->tmgs_user_id = 1;
-			$subscribers[] = $subscriber;
+			$subscribers[] = (object)[
+				'tmgs_group' => $groupId,
+				'tmgs_user_id' => 1,
+			];
 		}
 
 		return new FakeResultWrapper( $subscribers );
