@@ -80,9 +80,7 @@ class ConfigHelper {
 		$authorExclusionList = $this->getTranslateAuthorExclusionList();
 		$excluded = false;
 
-		foreach ( $authorExclusionList as $rule ) {
-			[ $type, $regex ] = $rule;
-
+		foreach ( $authorExclusionList as [ $type, $regex ] ) {
 			if ( preg_match( $regex, $hash ) ) {
 				if ( $type === 'include' ) {
 					return false;

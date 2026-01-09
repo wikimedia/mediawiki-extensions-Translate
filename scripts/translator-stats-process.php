@@ -77,8 +77,7 @@ class TSP extends Maintenance {
 			$avg = 'N/A';
 			$sbar = [];
 
-			foreach ( $period as $p ) {
-				[ , $reg, $edits, $translator, $promtime, $method ] = $p;
+			foreach ( $period as [ , $reg, $edits, $translator, $promtime, $method ] ) {
 				$total++;
 				if ( $translator === 'translator' ) {
 					$promoted++;

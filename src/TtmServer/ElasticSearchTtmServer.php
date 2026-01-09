@@ -411,8 +411,7 @@ class ElasticSearchTtmServer
 
 	public function batchInsertTranslations( array $batch ): void {
 		$docs = [];
-		foreach ( $batch as $data ) {
-			[ $handle, $sourceLanguage, $text ] = $data;
+		foreach ( $batch as [ $handle, $sourceLanguage, $text ] ) {
 			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
 			$docs[] = $this->createDocument( $handle, $text, $revId );
 		}

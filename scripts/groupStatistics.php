@@ -563,8 +563,7 @@ class GroupStatistics extends Maintenance {
 				// Start with 0 points
 				$score = 0;
 
-				foreach ( $columns as $fields ) {
-					[ , $upper, $total ] = $fields;
+				foreach ( $columns as [ , $upper, $total ] ) {
 					// Weigh the score and add it to the current score
 					$score += ( $weights[$i] * $upper ) / $total;
 					$i++;
@@ -608,8 +607,7 @@ class GroupStatistics extends Maintenance {
 
 			// Fill fields for groups
 			if ( !$wmfscore ) {
-				foreach ( $columns as $fields ) {
-					[ $invert, $upper, $total ] = $fields;
+				foreach ( $columns as [ $invert, $upper, $total ] ) {
 					$c = $out->formatPercent( $upper, $total, $invert );
 					$out->element( $c );
 				}
