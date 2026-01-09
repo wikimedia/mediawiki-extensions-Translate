@@ -170,7 +170,7 @@ class Utilities {
 	 * translation in the current wiki. Message groups can have further
 	 * exclusions.
 	 * @param null|string $code
-	 * @return array ( language code => language name )
+	 * @return array<string,string> ( language code => language name )
 	 */
 	public static function getLanguageNames( ?string $code ): array {
 		$mwServices = MediaWikiServices::getInstance();

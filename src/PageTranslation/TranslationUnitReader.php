@@ -9,7 +9,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
  * @since 2021.05
  */
 interface TranslationUnitReader {
-	/** @return TranslationUnit[] */
+	/** @return array<string,TranslationUnit> */
 	public function getUnits(): array;
 
 	/** @return string[] */

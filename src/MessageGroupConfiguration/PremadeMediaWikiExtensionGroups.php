@@ -22,9 +22,7 @@ use UnexpectedValueException;
 class PremadeMediaWikiExtensionGroups {
 	protected string $idPrefix = 'ext-';
 	protected ?int $namespace = null;
-	/** @see __construct */
 	protected string $path;
-	/** @see __construct */
 	protected string $definitionFile;
 
 	/**

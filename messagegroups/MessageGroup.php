@@ -160,7 +160,7 @@ interface MessageGroup {
 	/**
 	 * Get all the translatable languages for a group, considering the inclusion
 	 * and exclusion list.
-	 * @return array|null The language codes as array keys or self::DEFAULT_LANGUAGES.
+	 * @return array<string,mixed>|null The language codes as array keys or self::DEFAULT_LANGUAGES.
 	 */
 	public function getTranslatableLanguages();
 

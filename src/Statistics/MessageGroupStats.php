@@ -226,8 +226,8 @@ class MessageGroupStats {
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
-		$allLanguages = self::getLanguages();
-		$languagesCodes = array_flip( $allLanguages );
+		/** @var array<string,int> $languagesCodes */
+		$languagesCodes = array_flip( self::getLanguages() );
 
 		$allStats = [];
 		foreach ( $res as $row ) {

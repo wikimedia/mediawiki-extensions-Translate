@@ -119,6 +119,7 @@ class TTMServerBootstrap extends Maintenance {
 
 		$hasErrors = false;
 		$threads = $this->getOption( 'threads', 1 );
+		/** @var array<int,true> $pids */
 		$pids = [];
 
 		if ( $this->hasOption( 'clean' ) ) {
@@ -175,7 +176,7 @@ class TTMServerBootstrap extends Maintenance {
 	 * @param bool $isDryRun
 	 * @param bool $shouldReindex
 	 * @param string|null $ttmServerId
-	 * @return WritableTtmServer[]
+	 * @return array<string,WritableTtmServer>
 	 */
 	private function getServers(
 		bool $isDryRun,

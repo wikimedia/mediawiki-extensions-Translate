@@ -36,7 +36,7 @@ class SmartFormatPlural {
 	 *   ]
 	 *
 	 * @param string $text
-	 * @return array
+	 * @return array<string,array{forms: string[], original: string}[]>
 	 */
 	public static function getPluralInstances( string $text ): array {
 		// ldns = Large Deeply-Nested Structure

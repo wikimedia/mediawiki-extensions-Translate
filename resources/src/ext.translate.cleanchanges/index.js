@@ -1,4 +1,4 @@
-/*
+/**
  * @author Niklas Laxström
  * @author Eugene Wang'ombe
  * @license GPL-2.0-or-later

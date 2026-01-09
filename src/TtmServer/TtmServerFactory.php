@@ -113,7 +113,7 @@ class TtmServerFactory {
 
 	/**
 	 * Returns writable servers if configured, else returns the default TtmServer else returns null.
-	 * @return array [ serverId => WritableTtmServer ]
+	 * @return array<string,WritableTtmServer> [ serverId => WritableTtmServer ]
 	 */
 	public function getWritable(): array {
 		$writableServers = $readOnlyServers = [];
