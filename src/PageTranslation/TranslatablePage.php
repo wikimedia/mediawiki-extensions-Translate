@@ -318,9 +318,8 @@ class TranslatablePage extends TranslatableBundle {
 	public function getTranslationPages(): array {
 		$mwServices = MediaWikiServices::getInstance();
 
-		$messageGroup = $this->getMessageGroup();
-		$knownLanguageCodes = $messageGroup ? $messageGroup->getTranslatableLanguages() : null;
-		$knownLanguageCodes ??= Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
+		$knownLanguageCodes = $this->getMessageGroup()?->getTranslatableLanguages() ??
+			Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 
 		$prefixedDbTitleKey = $this->getPageIdentity()->getDBkey() . '/';
 		$baseNamespace = $this->getPageIdentity()->getNamespace();

@@ -18,10 +18,7 @@ class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 	 * @return string
 	 */
 	public function getDescription( ?IContextSource $context = null ) {
-		$language = $this->getSourceLanguage();
-		if ( $context ) {
-			$language = $context->getLanguage()->getCode();
-		}
+		$language = $context?->getLanguage()->getCode() ?? $this->getSourceLanguage();
 
 		$msgkey = $this->conf['BASIC']['descriptionmsg'] ?? null;
 		$desc = '';

@@ -146,13 +146,7 @@ class MessageGroupStats {
 	public static function forGroup( string $groupId, int $flags = 0 ): array {
 		$group = MessageGroups::getGroup( $groupId );
 		if ( !self::isValidMessageGroup( $group ) ) {
-			$languages = self::getLanguages();
-			$stats = [];
-			foreach ( $languages as $code ) {
-				$stats[$code] = self::getUnknownStats();
-			}
-
-			return $stats;
+			return array_fill_keys( self::getLanguages(), self::getUnknownStats() );
 		}
 
 		$stats = self::forGroupInternal( $group, [], $flags );

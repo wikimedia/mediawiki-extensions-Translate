@@ -58,7 +58,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 			->method( 'getSubscriptions' )
 			->with( $this->callback( static function ( $actualGroupIds ) use ( $expectedGroupIds ) {
 				return count( $actualGroupIds ) === count( $expectedGroupIds ) &&
-					empty( array_diff( $actualGroupIds, $expectedGroupIds ) );
+					!array_diff( $actualGroupIds, $expectedGroupIds );
 			} ) )
 			->willReturn( $this->getFakeSubscribers( $expectedGroupIds ) );
 		$this->subscription->sendNotifications( $info );

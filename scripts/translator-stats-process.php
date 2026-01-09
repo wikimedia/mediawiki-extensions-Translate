@@ -93,13 +93,8 @@ class TSP extends Maintenance {
 				}
 
 				if ( $method === 'sandbox' ) {
-					if ( $promtime ) {
-						$sbar[] = true;
-					} else {
-						$sbar[] = false;
-					}
+					$sbar[] = (bool)$promtime;
 				}
-
 			}
 
 			$median = round( $this->median( $delay ) / 3600 );

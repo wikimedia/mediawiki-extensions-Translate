@@ -177,16 +177,12 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private function csv2array( string $input ): array {
 		return array_filter(
 			array_map( 'trim', explode( ',', $input ) ),
-			static function ( $v ) {
-				return $v !== '';
-			}
+			'strlen'
 		);
 	}
 
 	private function matchPath( string $prefix, string $full ): bool {
-		$prefix = "./$prefix";
-		$length = strlen( $prefix );
-		return substr( $full, 0, $length ) === $prefix;
+		return str_starts_with( $full, "./$prefix" );
 	}
 
 	private function loadDefinitions(

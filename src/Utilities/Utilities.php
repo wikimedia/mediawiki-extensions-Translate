@@ -174,12 +174,10 @@ class Utilities {
 	 */
 	public static function getLanguageNames( ?string $code ): array {
 		$mwServices = MediaWikiServices::getInstance();
-		$languageNames = $mwServices->getLanguageNameUtils()->getLanguageNames( $code );
-
-		$deprecatedCodes = LanguageCode::getDeprecatedCodeMapping();
-		foreach ( array_keys( $deprecatedCodes ) as $deprecatedCode ) {
-			unset( $languageNames[ $deprecatedCode ] );
-		}
+		$languageNames = array_diff_key(
+			$mwServices->getLanguageNameUtils()->getLanguageNames( $code ),
+			LanguageCode::getDeprecatedCodeMapping()
+		);
 		Services::getInstance()->getHookRunner()->onTranslateSupportedLanguages( $languageNames, $code );
 
 		return $languageNames;

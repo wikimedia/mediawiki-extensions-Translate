@@ -217,10 +217,7 @@ class SyncTranslatableBundleStatusMaintenanceScript extends LoggedUpdateMaintena
 			return;
 		}
 		$this->output( "Removing \"extra\" bundle statuses\n" );
-		$pageIds = [];
-		foreach ( $extraBundleInfo as $bundleInfo ) {
-			$pageIds[] = $bundleInfo['page_id'];
-		}
+		$pageIds = array_column( $extraBundleInfo, 'page_id' );
 
 		$tbStatusStore = Services::getInstance()->getTranslatableBundleStatusStore();
 		$tbStatusStore->removeStatus( ...$pageIds );
