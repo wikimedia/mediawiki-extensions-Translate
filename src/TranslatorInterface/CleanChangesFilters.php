@@ -48,7 +48,7 @@ class CleanChangesFilters implements
 
 		$opts->add( 'trailer', '' );
 		$trailer = $wgRequest->getVal( 'trailer', '' );
-		if ( $trailer === null ) {
+		if ( $trailer === '' ) {
 			return;
 		}
 
@@ -81,36 +81,39 @@ class CleanChangesFilters implements
 			$languages = $this->languageNameUtils->getLanguageNames();
 		}
 		ksort( $languages );
-		$optionAttributes = [ 'value' => '' ];
-		if ( $default === '' ) {
-			$optionAttributes[ 'selected' ] = 'selected';
-		}
 
 		$options = Html::element(
 			'option',
-			$optionAttributes,
+			[
+				'value' => '',
+				'selected' => $default === '',
+			],
 			wfMessage( 'tpt-cleanchanges-language-na' )->text()
 		);
 
 		foreach ( $languages as $code => $name ) {
-			$selected = ( "/$code" === $default );
-			$optionAttributes = [ 'value' => "/$code" ];
-			if ( $selected ) {
-				$optionAttributes[ 'selected' ] = 'selected';
-			}
-			$options .= Html::element( 'option', $optionAttributes, "$code - $name" ) . "\n";
+			$options .= Html::element(
+				'option',
+				[
+					'value' => "/$code",
+					'selected' => $default === "/$code",
+				],
+				"$code - $name"
+			) . "\n";
 		}
-		$str =
-		Html::openElement( 'select',
-			[
-				'name' => 'trailer',
-				'class' => 'mw-language-selector',
-				'id' => 'tpt-rc-language',
-			] ) .
-		$options .
-		Html::closeElement( 'select' );
 
-		$extraOpts['tailer'] = [ wfMessage( 'tpt-cleanchanges-language' )->escaped(), $str ];
+		$extraOpts['tailer'] = [
+			wfMessage( 'tpt-cleanchanges-language' )->escaped(),
+			Html::rawElement(
+				'select',
+				[
+					'name' => 'trailer',
+					'class' => 'mw-language-selector',
+					'id' => 'tpt-rc-language',
+				],
+				$options
+			),
+		];
 	}
 
 	/**

@@ -305,11 +305,11 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 				'dir' => $language->getDir(),
 			];
 
-			$resultsHtml .= Html::openElement( 'div', $resultAttribs )
-				. Html::rawElement( 'div', $textAttribs, $text )
+			$resultsHtml .= Html::rawElement( 'div', $resultAttribs,
+				Html::rawElement( 'div', $textAttribs, $text )
 				. Html::element( 'div', $titleAttribs, $titleText )
 				. $access
-				. Html::closeElement( 'div' );
+			);
 		}
 
 		$resultsHtml .= Html::rawElement( 'hr', [ 'class' => 'tux-pagination-line' ] );

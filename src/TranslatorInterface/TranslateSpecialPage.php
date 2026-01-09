@@ -237,10 +237,10 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 
 		$container .= Html::closeElement( 'ul' );
-		$output .= Html::openElement( 'li', [ 'class' => 'column more' ] ) .
+		$output .= Html::rawElement( 'li', [ 'class' => 'column more' ],
 			$this->msg( 'ellipsis' )->escaped() .
-			$container .
-			Html::closeElement( 'li' );
+			$container
+		);
 
 		$output .= Html::closeElement( 'ul' );
 		$output .= Html::closeElement( 'div' ); // close nine columns
