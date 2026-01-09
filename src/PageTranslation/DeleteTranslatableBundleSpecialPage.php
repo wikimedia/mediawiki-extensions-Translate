@@ -34,9 +34,6 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private bool $doSubpages = false;
 	/** Contains the language code if we are working with translation page */
 	private ?string $code;
-	private PermissionManager $permissionManager;
-	private TranslatableBundleDeleter $bundleDeleter;
-	private TranslatableBundleFactory $bundleFactory;
 	private string $entityType;
 	private const PAGE_TITLE_MSG = [
 		'messagebundle' => 'pt-deletepage-mb-title',
@@ -55,14 +52,11 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	];
 
 	public function __construct(
-		PermissionManager $permissionManager,
-		TranslatableBundleDeleter $bundleDeleter,
-		TranslatableBundleFactory $bundleFactory
+		private readonly PermissionManager $permissionManager,
+		private readonly TranslatableBundleDeleter $bundleDeleter,
+		private readonly TranslatableBundleFactory $bundleFactory,
 	) {
 		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
-		$this->permissionManager = $permissionManager;
-		$this->bundleFactory = $bundleFactory;
-		$this->bundleDeleter = $bundleDeleter;
 	}
 
 	/** @inheritDoc */

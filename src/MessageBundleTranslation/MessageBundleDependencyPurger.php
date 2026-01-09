@@ -13,10 +13,10 @@ use MediaWiki\Title\Title;
  * @since 2024.10
  */
 class MessageBundleDependencyPurger {
-	private TranslatableBundleFactory $bundleFactory;
 
-	public function __construct( TranslatableBundleFactory $bundleFactory ) {
-		$this->bundleFactory = $bundleFactory;
+	public function __construct(
+		private readonly TranslatableBundleFactory $bundleFactory,
+	) {
 	}
 
 	public function purge( Title $messageBundleTitle ): void {

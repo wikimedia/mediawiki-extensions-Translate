@@ -32,10 +32,10 @@ class FileFormatFactory {
 		'Json' => JsonFormat::class,
 		'Yaml' => YamlFormat::class
 	];
-	private ObjectFactory $objectFactory;
 
-	public function __construct( ObjectFactory $objectFactory ) {
-		$this->objectFactory = $objectFactory;
+	public function __construct(
+		private readonly ObjectFactory $objectFactory,
+	) {
 	}
 
 	/**

@@ -23,28 +23,18 @@ use MessageLocalizer;
  */
 class StatsTable {
 	protected TitleValue $translate;
-	private LinkRenderer $linkRenderer;
-	private ConfigHelper $configHelper;
-	private MessageLocalizer $messageLocalizer;
-	protected Language $language;
 	protected string $mainColumnHeader;
 	/** @var Message[] */
 	protected array $extraColumns = [];
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
-		LinkRenderer $linkRenderer,
-		ConfigHelper $configHelper,
-		MessageLocalizer $messageLocalizer,
-		Language $language,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly LinkRenderer $linkRenderer,
+		private readonly ConfigHelper $configHelper,
+		private readonly MessageLocalizer $messageLocalizer,
+		private readonly Language $language,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
 		$this->translate = SpecialPage::getTitleValueFor( 'Translate' );
-		$this->linkRenderer = $linkRenderer;
-		$this->configHelper = $configHelper;
-		$this->messageLocalizer = $messageLocalizer;
-		$this->language = $language;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	/**

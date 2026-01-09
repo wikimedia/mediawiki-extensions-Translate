@@ -23,11 +23,11 @@ use Wikimedia\ObjectCache\BagOStuff;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ImportTranslationsSpecialPage extends SpecialPage {
-	private BagOStuff $cache;
 
-	public function __construct( BagOStuff $cache ) {
+	public function __construct(
+		private readonly BagOStuff $cache,
+	) {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
-		$this->cache = $cache;
 	}
 
 	/** @inheritDoc */

@@ -20,16 +20,14 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @since 2012-11-30
  */
 abstract class QueryStatsActionApi extends ApiQueryBase {
-	private JobQueueGroup $jobQueueGroup;
 
 	public function __construct(
 		ApiQuery $queryModule,
 		string $moduleName,
 		string $paramPrefix,
-		JobQueueGroup $jobQueueGroup
+		private readonly JobQueueGroup $jobQueueGroup,
 	) {
 		parent::__construct( $queryModule, $moduleName, $paramPrefix );
-		$this->jobQueueGroup = $jobQueueGroup;
 	}
 
 	/** @inheritDoc */

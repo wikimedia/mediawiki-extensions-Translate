@@ -24,15 +24,16 @@ use RuntimeException;
  * @license GPL-2.0-or-later
  */
 class MessageHandle {
-	private LinkTarget $title;
+
 	private ?string $key = null;
 	private ?string $languageCode = null;
 	/** @var string[]|null */
 	private ?array $groupIds = null;
 	private MessageIndex $messageIndex;
 
-	public function __construct( LinkTarget $title ) {
-		$this->title = $title;
+	public function __construct(
+		private readonly LinkTarget $title,
+	) {
 		$this->messageIndex = Services::getInstance()->getMessageIndex();
 	}
 

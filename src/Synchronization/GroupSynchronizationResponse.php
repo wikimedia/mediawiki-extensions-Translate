@@ -17,17 +17,16 @@ use Wikimedia\JsonCodec\JsonCodecableTrait;
 class GroupSynchronizationResponse implements JsonCodecable {
 	use JsonCodecableTrait;
 
-	/** @var MessageUpdateParameter[] */
-	private array $remainingMessages;
-	private string $groupId;
-	private bool $timeout;
-
+	/**
+	 * @param string $groupId
+	 * @param MessageUpdateParameter[] $remainingMessages
+	 * @param bool $timeout
+	 */
 	public function __construct(
-		string $groupId, array $remainingMessages, bool $hasTimedOut
+		private readonly string $groupId,
+		private readonly array $remainingMessages,
+		private readonly bool $timeout,
 	) {
-		$this->groupId = $groupId;
-		$this->remainingMessages = $remainingMessages;
-		$this->timeout = $hasTimedOut;
 	}
 
 	public function isDone(): bool {

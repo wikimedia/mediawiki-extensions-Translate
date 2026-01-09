@@ -22,34 +22,19 @@ use MediaWiki\User\Options\UserOptionsLookup;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslationStashSpecialPage extends SpecialPage {
-	/** @var TranslationStashReader */
-	private $stash;
-	/** @var ServiceOptions */
-	private $options;
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-	/** @var LanguageFactory */
-	private $languageFactory;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateSandboxLimit',
 	];
 
 	public function __construct(
-		LanguageNameUtils $languageNameUtils,
-		TranslationStashReader $stash,
-		UserOptionsLookup $userOptionsLookup,
-		LanguageFactory $languageFactory,
-		ServiceOptions $options
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly TranslationStashReader $stash,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly LanguageFactory $languageFactory,
+		private readonly ServiceOptions $options,
 	) {
 		parent::__construct( 'TranslationStash' );
-		$this->languageNameUtils = $languageNameUtils;
-		$this->stash = $stash;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->languageFactory = $languageFactory;
-		$this->options = $options;
 	}
 
 	/** @inheritDoc */

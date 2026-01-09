@@ -36,27 +36,15 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 	];
 
 	private static self $instance;
-	private LoggerInterface $logger;
-	private MessageBundleStore $messageBundleStore;
-	private LinkRenderer $linkRenderer;
-	private bool $enableIntegration;
-	private TitleFactory $titleFactory;
-	private JobQueueGroup $jobQueueGroup;
 
 	public function __construct(
-		LoggerInterface $logger,
-		MessageBundleStore $messageBundleStore,
-		LinkRenderer $linkRenderer,
-		TitleFactory $titleFactory,
-		JobQueueGroup $jobQueueGroup,
-		bool $enableIntegration
+		private readonly LoggerInterface $logger,
+		private readonly MessageBundleStore $messageBundleStore,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly TitleFactory $titleFactory,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly bool $enableIntegration,
 	) {
-		$this->logger = $logger;
-		$this->messageBundleStore = $messageBundleStore;
-		$this->linkRenderer = $linkRenderer;
-		$this->titleFactory = $titleFactory;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->enableIntegration = $enableIntegration;
 	}
 
 	public static function getInstance(): self {

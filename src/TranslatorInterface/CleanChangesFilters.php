@@ -24,14 +24,12 @@ class CleanChangesFilters implements
 	ChangesListSpecialPageQueryHook,
 	SpecialRecentChangesPanelHook
 {
-	private Config $config;
-	private LanguageNameUtils $languageNameUtils;
-	private ILoadBalancer $loadBalancer;
 
-	public function __construct( LanguageNameUtils $languageNameUtils, ILoadBalancer $loadBalancer, Config $config ) {
-		$this->languageNameUtils = $languageNameUtils;
-		$this->loadBalancer = $loadBalancer;
-		$this->config = $config;
+	public function __construct(
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly ILoadBalancer $loadBalancer,
+		private readonly Config $config,
+	) {
 	}
 
 	/**

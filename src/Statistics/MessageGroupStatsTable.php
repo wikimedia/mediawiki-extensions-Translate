@@ -21,37 +21,24 @@ use MessageLocalizer;
  * @license GPL-2.0-or-later
  */
 class MessageGroupStatsTable {
-	private LinkRenderer $linkRenderer;
-	private MessageLocalizer $localizer;
-	private Language $interfaceLanguage;
-	private StatsTable $table;
-	private MessageGroupReviewStore $groupReviewStore;
-	private MessageGroupMetadata $messageGroupMetadata;
+
 	/** Flag to set if not all numbers are available. */
 	private bool $incompleteStats;
 	private array $languageNames;
 	private Title $translateTitle;
 	/** Keys are state names and values are numbers */
 	private array $states;
-	private bool $haveTranslateWorkflowStates;
 
 	public function __construct(
-		StatsTable $table,
-		LinkRenderer $linkRenderer,
-		MessageLocalizer $localizer,
-		Language $interfaceLanguage,
-		MessageGroupReviewStore $groupReviewStore,
-		MessageGroupMetadata $messageGroupMetadata,
-		bool $haveTranslateWorkflowStates
+		private readonly StatsTable $table,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly MessageLocalizer $localizer,
+		private readonly Language $interfaceLanguage,
+		private readonly MessageGroupReviewStore $groupReviewStore,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly bool $haveTranslateWorkflowStates,
 	) {
-		$this->table = $table;
-		$this->linkRenderer = $linkRenderer;
 		$this->incompleteStats = false;
-		$this->localizer = $localizer;
-		$this->interfaceLanguage = $interfaceLanguage;
-		$this->groupReviewStore = $groupReviewStore;
-		$this->messageGroupMetadata = $messageGroupMetadata;
-		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 		$this->languageNames = Utilities::getLanguageNames( $this->interfaceLanguage->getCode() );
 		$this->translateTitle = SpecialPage::getTitleFor( 'Translate' );
 	}

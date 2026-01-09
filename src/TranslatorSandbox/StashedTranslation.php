@@ -14,20 +14,13 @@ use MediaWiki\User\User;
  * @since 2013.06 (namespaced in 2020.11)
  */
 class StashedTranslation {
-	/** @var User */
-	protected $user;
-	/** @var Title */
-	protected $title;
-	/** @var string */
-	protected $value;
-	/** @var array|null */
-	protected $metadata;
 
-	public function __construct( User $user, Title $title, string $value, ?array $metadata = null ) {
-		$this->user = $user;
-		$this->title = $title;
-		$this->value = $value;
-		$this->metadata = $metadata;
+	public function __construct(
+		private readonly User $user,
+		private readonly Title $title,
+		private readonly string $value,
+		private readonly ?array $metadata = null,
+	) {
 	}
 
 	public function getUser(): User {

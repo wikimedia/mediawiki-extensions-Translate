@@ -41,7 +41,7 @@ class MessageWebImporter {
 	private string $code;
 	/** @var int|null */
 	private $time;
-	private MessageLocalizer $messageLocalizer;
+
 	/** Maximum processing time in seconds. */
 	private const MAX_PROCESSING_TIME = 43;
 
@@ -55,7 +55,7 @@ class MessageWebImporter {
 	public function __construct(
 		Title $title,
 		User $user,
-		MessageLocalizer $messageLocalizer,
+		private readonly MessageLocalizer $messageLocalizer,
 		$group = null,
 		string $code = 'en'
 	) {
@@ -63,7 +63,6 @@ class MessageWebImporter {
 		$this->setUser( $user );
 		$this->setGroup( $group );
 		$this->setCode( $code );
-		$this->messageLocalizer = $messageLocalizer;
 	}
 
 	/** Wrapper for consistency with SpecialPage */

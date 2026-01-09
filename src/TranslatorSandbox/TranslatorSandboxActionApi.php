@@ -28,12 +28,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class TranslatorSandboxActionApi extends ApiBase {
-	private UserFactory $userFactory;
-	private UserNameUtils $userNameUtils;
-	private UserOptionsManager $userOptionsManager;
-	private WikiPageFactory $wikiPageFactory;
-	private UserOptionsLookup $userOptionsLookup;
-	private TranslateSandbox $translateSandbox;
+
 	private bool $isSandboxEnabled;
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
@@ -42,21 +37,15 @@ class TranslatorSandboxActionApi extends ApiBase {
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		UserFactory $userFactory,
-		UserNameUtils $userNameUtils,
-		UserOptionsManager $userOptionsManager,
-		WikiPageFactory $wikiPageFactory,
-		UserOptionsLookup $userOptionsLookup,
-		TranslateSandbox $translateSandbox,
+		private readonly UserFactory $userFactory,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly UserOptionsManager $userOptionsManager,
+		private readonly WikiPageFactory $wikiPageFactory,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly TranslateSandbox $translateSandbox,
 		ServiceOptions $options
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->userFactory = $userFactory;
-		$this->userNameUtils = $userNameUtils;
-		$this->userOptionsManager = $userOptionsManager;
-		$this->wikiPageFactory = $wikiPageFactory;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->translateSandbox = $translateSandbox;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isSandboxEnabled = $options->get( 'TranslateUseSandbox' );
 	}

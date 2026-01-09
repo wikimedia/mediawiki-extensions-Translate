@@ -18,15 +18,15 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @license GPL-2.0-or-later
  */
 class MessageGroupReviewStore {
-	private HookRunner $hookRunner;
-	private IConnectionProvider $dbProvider;
+
 	private const TABLE_NAME = 'translate_groupreviews';
 	/** Cache for message group priorities: (database group id => value) */
 	private ?array $priorityCache = null;
 
-	public function __construct( IConnectionProvider $dbProvider, HookRunner $hookRunner ) {
-		$this->dbProvider = $dbProvider;
-		$this->hookRunner = $hookRunner;
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+		private readonly HookRunner $hookRunner,
+	) {
 	}
 
 	/** @return mixed|false — The value from the field, or false if nothing was found */

@@ -370,17 +370,14 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			$messageGroupMetadata,
 			$title
 		) extends MarkForTranslationActionApi {
-			private Title $title;
-
 			public function __construct(
 				ApiMain $mainModule,
 				string $moduleName,
 				TranslatablePageMarker $translatablePageMarker,
 				MessageGroupMetadata $messageGroupMetadata,
-				Title $title
+				private readonly Title $title,
 			) {
 				parent::__construct( $mainModule, $moduleName, $translatablePageMarker, $messageGroupMetadata );
-				$this->title = $title;
 			}
 
 			public function getTitleFromTitleOrPageId( $params ) {

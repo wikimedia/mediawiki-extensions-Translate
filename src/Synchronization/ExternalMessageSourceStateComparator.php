@@ -24,18 +24,12 @@ use RuntimeException;
  * @license GPL-2.0-or-later
  */
 class ExternalMessageSourceStateComparator {
-	private StringComparator $stringComparator;
-	private RevisionLookup $revisionLookup;
-	private PageStore $pageStore;
 
 	public function __construct(
-		StringComparator $stringComparator,
-		RevisionLookup $revisionLookup,
-		PageStore $pageStore
+		private readonly StringComparator $stringComparator,
+		private readonly RevisionLookup $revisionLookup,
+		private readonly PageStore $pageStore,
 	) {
-		$this->stringComparator = $stringComparator;
-		$this->revisionLookup = $revisionLookup;
-		$this->pageStore = $pageStore;
 	}
 
 	/**

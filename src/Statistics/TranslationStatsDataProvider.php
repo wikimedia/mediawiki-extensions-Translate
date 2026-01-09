@@ -23,18 +23,11 @@ class TranslationStatsDataProvider {
 		'TranslateStatsProviders'
 	];
 
-	private ObjectFactory $objectFactory;
-	private ServiceOptions $options;
-	private IConnectionProvider $dbProvider;
-
 	public function __construct(
-		ServiceOptions $options,
-		ObjectFactory $objectFactory,
-		IConnectionProvider $dbProvider
+		private readonly ServiceOptions $options,
+		private readonly ObjectFactory $objectFactory,
+		private readonly IConnectionProvider $dbProvider,
 	) {
-		$this->options = $options;
-		$this->objectFactory = $objectFactory;
-		$this->dbProvider = $dbProvider;
 	}
 
 	private function getGraphSpecifications(): array {

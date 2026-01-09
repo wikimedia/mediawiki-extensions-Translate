@@ -16,15 +16,13 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  * @license GPL-2.0-or-later
  */
 class QueryTranslationStatsActionApi extends ApiBase {
-	private TranslationStatsDataProvider $dataProvider;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		TranslationStatsDataProvider $dataProvider
+		private readonly TranslationStatsDataProvider $dataProvider,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->dataProvider = $dataProvider;
 	}
 
 	public function execute() {

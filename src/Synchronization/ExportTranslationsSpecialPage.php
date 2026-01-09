@@ -38,21 +38,17 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 	protected string $language;
 	protected string $format;
 	protected string $groupId;
-	private TitleFormatter $titleFormatter;
-	private ParserFactory $parserFactory;
 	private StatusFormatter $statusFormatter;
 	/** @var string[] */
 	private const VALID_FORMATS = [ 'export-as-po', 'export-to-file', 'export-as-csv' ];
 	private readonly TemplateParser $templateParser;
 
 	public function __construct(
-		TitleFormatter $titleFormatter,
-		ParserFactory $parserFactory,
+		private readonly TitleFormatter $titleFormatter,
+		private readonly ParserFactory $parserFactory,
 		FormatterFactory $formatterFactory
 	) {
 		parent::__construct( 'ExportTranslations' );
-		$this->titleFormatter = $titleFormatter;
-		$this->parserFactory = $parserFactory;
 		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this );
 		$this->templateParser = new TemplateParser( __DIR__ . '/templates/' );
 	}

@@ -15,15 +15,13 @@ use MediaWiki\Http\HttpRequestFactory;
  * @ingroup TranslationWebService
  */
 class MicrosoftWebService extends TranslationWebService {
-	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
-		HttpRequestFactory $httpRequestFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
 		string $serviceName,
 		array $config
 	) {
 		parent::__construct( $serviceName, $config );
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/** @inheritDoc */

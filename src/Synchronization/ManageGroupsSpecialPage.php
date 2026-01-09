@@ -60,37 +60,21 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	protected string $cdb;
 	/** Has the necessary right specified by the RIGHT constant */
 	protected bool $hasRight = false;
-	private Language $contLang;
-	private NamespaceInfo $nsInfo;
-	private RevisionLookup $revLookup;
-	private GroupSynchronizationCache $synchronizationCache;
 	private DisplayGroupSynchronizationInfo $displayGroupSyncInfo;
-	private JobQueueGroup $jobQueueGroup;
-	private MessageIndex $messageIndex;
-	private LinkBatchFactory $linkBatchFactory;
-	private MessageGroupSubscription $messageGroupSubscription;
 
 	public function __construct(
-		Language $contLang,
-		NamespaceInfo $nsInfo,
-		RevisionLookup $revLookup,
-		GroupSynchronizationCache $synchronizationCache,
-		JobQueueGroup $jobQueueGroup,
-		MessageIndex $messageIndex,
-		LinkBatchFactory $linkBatchFactory,
-		MessageGroupSubscription $messageGroupSubscription
+		private readonly Language $contLang,
+		private readonly NamespaceInfo $nsInfo,
+		private readonly RevisionLookup $revLookup,
+		private readonly GroupSynchronizationCache $synchronizationCache,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly MessageIndex $messageIndex,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly MessageGroupSubscription $messageGroupSubscription
 	) {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
-		$this->contLang = $contLang;
-		$this->nsInfo = $nsInfo;
-		$this->revLookup = $revLookup;
-		$this->synchronizationCache = $synchronizationCache;
 		$this->displayGroupSyncInfo = new DisplayGroupSynchronizationInfo( $this, $this->getLinkRenderer() );
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->messageIndex = $messageIndex;
-		$this->linkBatchFactory = $linkBatchFactory;
-		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
 	/** @inheritDoc */

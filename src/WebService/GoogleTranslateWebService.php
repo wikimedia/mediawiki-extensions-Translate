@@ -17,15 +17,13 @@ use MediaWiki\Parser\Sanitizer;
  */
 class GoogleTranslateWebService extends TranslationWebService {
 	private const PUBLIC_API = 'https://translation.googleapis.com/language/translate/v2';
-	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
-		HttpRequestFactory $httpRequestFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
 		string $serviceName,
 		array $config
 	) {
 		parent::__construct( $serviceName, $config );
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/** @inheritDoc */

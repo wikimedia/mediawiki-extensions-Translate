@@ -393,7 +393,6 @@
 			"services": [
 				"Translate:ConfigHelper",
 				"LanguageNameUtils",
-				"DBLoadBalancer",
 				"Translate:MessageGroupReviewStore"
 			]
 		},

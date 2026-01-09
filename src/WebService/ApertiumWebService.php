@@ -20,15 +20,13 @@ use MediaWiki\Parser\Sanitizer;
 class ApertiumWebService extends TranslationWebService {
 	// Exclusions per https://phabricator.wikimedia.org/T177434
 	private const EXCLUDED_TARGET_LANGUAGES = [ 'fr', 'es', 'nl' ];
-	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
-		HttpRequestFactory $httpRequestFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
 		string $serviceName,
 		array $config
 	) {
 		parent::__construct( $serviceName, $config );
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/** @inheritDoc */

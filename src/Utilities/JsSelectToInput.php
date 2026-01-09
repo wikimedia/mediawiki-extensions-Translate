@@ -16,10 +16,10 @@ use RuntimeException;
 final class JsSelectToInput {
 	/** Id of the text field where stuff is appended */
 	private string $targetId;
-	private XmlSelect $select;
 
-	public function __construct( XmlSelect $select ) {
-		$this->select = $select;
+	public function __construct(
+		private readonly XmlSelect $select,
+	) {
 	}
 
 	public function setTargetId( string $id ) {

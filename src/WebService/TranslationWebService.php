@@ -93,7 +93,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * @since 2014.02
 	 */
 	public function getName(): string {
-		return $this->service;
+		return $this->serviceName;
 	}
 
 	/**
@@ -190,16 +190,13 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/* Default implementation */
 
-	/** @var string Name of this webservice. */
-	protected $service;
-	/** @var array */
-	protected $config;
 	/** @var LoggerInterface */
 	protected $logger;
 
-	public function __construct( string $service, array $config ) {
-		$this->service = $service;
-		$this->config = $config;
+	public function __construct(
+		private readonly string $serviceName,
+		protected array $config,
+	) {
 	}
 
 	/**
@@ -223,7 +220,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		$cache = $this->getObjectCache();
 
 		$this->supportedLanguagePairs ??= $cache->getWithSetCallback(
-			$cache->makeKey( 'translate-tmsug-pairs-' . $this->service ),
+			$cache->makeKey( 'translate-tmsug-pairs-' . $this->serviceName ),
 			$cache::TTL_DAY,
 			function ( &$ttl ) use ( $cache ) {
 				try {
@@ -279,7 +276,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/** Checks whether the service has exceeded failure count */
 	public function checkTranslationServiceFailure(): bool {
-		$service = $this->service;
+		$service = $this->serviceName;
 		$cache = $this->getObjectCache();
 
 		$key = $cache->makeKey( "translate-service-$service" );
@@ -314,7 +311,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 
 	/** Increases the failure count for this service */
 	protected function reportTranslationServiceFailure( string $msg ): void {
-		$service = $this->service;
+		$service = $this->serviceName;
 		$this->logger->warning( "Translation service $service problem: $msg" );
 
 		$cache = $this->getObjectCache();

@@ -17,11 +17,10 @@ use MediaWiki\MediaWikiServices;
 class ParallelExecutor {
 	/** @var true[] */
 	private $pids = [];
-	/** @var int */
-	private $threads;
 
-	public function __construct( int $threads = 1 ) {
-		$this->threads = $threads;
+	public function __construct(
+		private readonly int $threads = 1,
+	) {
 	}
 
 	public function runInParallel( callable $mainThread, callable $forkThread ): void {

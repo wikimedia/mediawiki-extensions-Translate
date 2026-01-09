@@ -21,8 +21,7 @@ use Wikimedia\Rdbms\IDatabase;
  * @since 2018.01
  */
 class TranslationAidDataProvider {
-	/** @var MessageHandle */
-	private $handle;
+
 	/** @var MessageGroup */
 	private $group;
 	/** @var string|null */
@@ -30,8 +29,9 @@ class TranslationAidDataProvider {
 	/** @var array */
 	private $translations;
 
-	public function __construct( MessageHandle $handle ) {
-		$this->handle = $handle;
+	public function __construct(
+		private readonly MessageHandle $handle,
+	) {
 		$group = $handle->getGroup();
 		if ( !$group ) {
 			throw new InvalidArgumentException(

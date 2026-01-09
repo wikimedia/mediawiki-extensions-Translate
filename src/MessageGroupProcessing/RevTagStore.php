@@ -27,11 +27,11 @@ class RevTagStore {
 	/** Indicates a revision of a page that is a valid message bundle. */
 	public const MB_VALID_TAG = 'mb:valid';
 
-	private IConnectionProvider $dbProvider;
 	private array $tagCache = [];
 
-	public function __construct( IConnectionProvider $dbProvider ) {
-		$this->dbProvider = $dbProvider;
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+	) {
 	}
 
 	/** Add tag for the given revisionId, while deleting it from others */

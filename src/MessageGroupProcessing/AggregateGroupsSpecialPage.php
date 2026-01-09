@@ -19,20 +19,15 @@ use MediaWiki\SpecialPage\SpecialPage;
  * @license GPL-2.0-or-later
  */
 class AggregateGroupsSpecialPage extends SpecialPage {
-	private LinkBatchFactory $linkBatchFactory;
-	private MessageGroupMetadata $messageGroupMetadata;
-	private AggregateGroupManager $aggregateGroupManager;
+
 	private TemplateParser $templateParser;
 
 	public function __construct(
-		LinkBatchFactory $linkBatchFactory,
-		MessageGroupMetadata $messageGroupMetadata,
-		AggregateGroupManager $aggregateGroupManager
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly AggregateGroupManager $aggregateGroupManager,
 	) {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
-		$this->linkBatchFactory = $linkBatchFactory;
-		$this->messageGroupMetadata = $messageGroupMetadata;
-		$this->aggregateGroupManager = $aggregateGroupManager;
 		$this->templateParser = new TemplateParser( __DIR__ . '/templates' );
 	}
 

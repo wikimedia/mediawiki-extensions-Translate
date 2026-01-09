@@ -17,7 +17,6 @@ use MediaWiki\Title\Title;
 use RecentMessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
-use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Api module for querying MessageCollection.
@@ -26,24 +25,15 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup API TranslateAPI
  */
 class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
-	private ConfigHelper $configHelper;
-	private LanguageNameUtils $languageNameUtils;
-	private ILoadBalancer $loadBalancer;
-	private MessageGroupReviewStore $groupReviewStore;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		ConfigHelper $configHelper,
-		LanguageNameUtils $languageNameUtils,
-		ILoadBalancer $loadBalancer,
-		MessageGroupReviewStore $groupReviewStore
+		private readonly ConfigHelper $configHelper,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly MessageGroupReviewStore $groupReviewStore,
 	) {
 		parent::__construct( $query, $moduleName, 'mc' );
-		$this->configHelper = $configHelper;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->loadBalancer = $loadBalancer;
-		$this->groupReviewStore = $groupReviewStore;
 	}
 
 	public function execute(): void {

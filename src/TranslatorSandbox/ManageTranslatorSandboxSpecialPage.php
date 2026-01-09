@@ -21,26 +21,17 @@ use MediaWiki\Utils\MWTimestamp;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class ManageTranslatorSandboxSpecialPage extends SpecialPage {
-	/** @var TranslationStashReader */
-	private $stash;
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-	private TranslateSandbox $translateSandbox;
 
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
 	];
 
 	public function __construct(
-		TranslationStashReader $stash,
-		UserOptionsLookup $userOptionsLookup,
-		TranslateSandbox $translateSandbox,
+		private readonly TranslationStashReader $stash,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly TranslateSandbox $translateSandbox,
 		ServiceOptions $options
 	) {
-		$this->stash = $stash;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->translateSandbox = $translateSandbox;
-
 		parent::__construct(
 			'ManageTranslatorSandbox',
 			'translate-sandboxmanage',

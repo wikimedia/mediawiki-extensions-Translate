@@ -29,30 +29,16 @@ use Wikimedia\Rdbms\IDBAccessObject;
  * @license GPL-2.0-or-later
  */
 class TranslatablePageStore implements TranslatableBundleStore {
-	private MessageIndex $messageIndex;
-	private JobQueueGroup $jobQueue;
-	private RevTagStore $revTagStore;
-	private IConnectionProvider $dbProvider;
-	private TranslatableBundleStatusStore $translatableBundleStatusStore;
-	private TranslatablePageParser $translatablePageParser;
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
-		MessageIndex $messageIndex,
-		JobQueueGroup $jobQueue,
-		RevTagStore $revTagStore,
-		IConnectionProvider $dbProvider,
-		TranslatableBundleStatusStore $translatableBundleStatusStore,
-		TranslatablePageParser $translatablePageParser,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly MessageIndex $messageIndex,
+		private readonly JobQueueGroup $jobQueue,
+		private readonly RevTagStore $revTagStore,
+		private readonly IConnectionProvider $dbProvider,
+		private readonly TranslatableBundleStatusStore $translatableBundleStatusStore,
+		private readonly TranslatablePageParser $translatablePageParser,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
-		$this->messageIndex = $messageIndex;
-		$this->jobQueue = $jobQueue;
-		$this->revTagStore = $revTagStore;
-		$this->dbProvider = $dbProvider;
-		$this->translatableBundleStatusStore = $translatableBundleStatusStore;
-		$this->translatablePageParser = $translatablePageParser;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function move( Title $oldName, Title $newName ): void {

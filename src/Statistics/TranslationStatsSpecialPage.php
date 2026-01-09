@@ -22,13 +22,14 @@ use function wfEscapeWikiText;
  * @license GPL-2.0-or-later
  */
 class TranslationStatsSpecialPage extends SpecialPage {
-	private TranslationStatsDataProvider $dataProvider;
+
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
 	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
 
-	public function __construct( TranslationStatsDataProvider $dataProvider ) {
+	public function __construct(
+		private readonly TranslationStatsDataProvider $dataProvider,
+	) {
 		parent::__construct( 'TranslationStats' );
-		$this->dataProvider = $dataProvider;
 	}
 
 	/** @inheritDoc */

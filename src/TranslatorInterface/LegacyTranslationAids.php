@@ -21,18 +21,14 @@ use MessageGroup;
  * @license GPL-2.0-or-later
  */
 class LegacyTranslationAids {
-	private MessageHandle $handle;
+
 	private MessageGroup $group;
-	private IContextSource $context;
-	private LanguageFactory $languageFactory;
 
 	public function __construct(
-		MessageHandle $handle,
-		IContextSource $context,
-		LanguageFactory $languageFactory
+		private readonly MessageHandle $handle,
+		private readonly IContextSource $context,
+		private readonly LanguageFactory $languageFactory,
 	) {
-		$this->handle = $handle;
-		$this->context = $context;
 		$group = $handle->getGroup();
 		if ( !$group ) {
 			throw new InvalidArgumentException(
@@ -40,7 +36,6 @@ class LegacyTranslationAids {
 			);
 		}
 		$this->group = $group;
-		$this->languageFactory = $languageFactory;
 	}
 
 	private function getDefinition(): ?string {

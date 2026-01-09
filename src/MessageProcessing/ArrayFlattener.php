@@ -26,12 +26,11 @@ class ArrayFlattener {
 		'other' => 1,
 		'two' => 1
 	];
-	private string $sep;
-	private bool $parseCLDRPlurals;
 
-	public function __construct( string $sep = '.', bool $parseCLDRPlurals = false ) {
-		$this->sep = $sep;
-		$this->parseCLDRPlurals = $parseCLDRPlurals;
+	public function __construct(
+		private readonly string $sep = '.',
+		private readonly bool $parseCLDRPlurals = false,
+	) {
 	}
 
 	/**

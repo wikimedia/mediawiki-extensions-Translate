@@ -58,10 +58,10 @@ use Psr\Container\ContainerInterface;
  * @since 2020.04
  */
 class Services implements ContainerInterface {
-	private ContainerInterface $container;
 
-	private function __construct( ContainerInterface $container ) {
-		$this->container = $container;
+	private function __construct(
+		private readonly ContainerInterface $container,
+	) {
 	}
 
 	public static function getInstance(): self {

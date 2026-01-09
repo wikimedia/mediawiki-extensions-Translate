@@ -32,12 +32,11 @@ class RecentChangesTranslationFilterHookHandler implements
 	ChangesListSpecialPageStructuredFiltersHook,
 	ChangesListSpecialPageQueryHook
 {
-	private ILoadBalancer $loadBalancer;
-	private Config $config;
 
-	public function __construct( ILoadBalancer $loadBalancer, Config $config ) {
-		$this->loadBalancer = $loadBalancer;
-		$this->config = $config;
+	public function __construct(
+		private readonly ILoadBalancer $loadBalancer,
+		private readonly Config $config,
+	) {
 	}
 
 	/** @inheritDoc */

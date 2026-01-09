@@ -23,12 +23,9 @@ use StatusValue;
  * @author Abijeet Patro
  */
 class MessageGroupSubscription {
-	private MessageGroupSubscriptionStore $groupSubscriptionStore;
-	private JobQueueGroup $jobQueueGroup;
+
 	private bool $isMessageGroupSubscriptionEnabled;
-	private UserIdentityLookup $userIdentityLookup;
 	private array $queuedMessages = [];
-	private LoggerInterface $logger;
 	private ?MockEventCreator $mockEventCreator = null;
 
 	public const STATE_ADDED = 'added';
@@ -40,16 +37,12 @@ class MessageGroupSubscription {
 	public const DYNAMIC_GROUP_UNSUPPORTED = 'mgs-dynamic-group-unsupported';
 
 	public function __construct(
-		MessageGroupSubscriptionStore $groupSubscriptionStore,
-		JobQueueGroup $jobQueueGroup,
-		UserIdentityLookup $userIdentityLookup,
-		LoggerInterface $logger,
+		private readonly MessageGroupSubscriptionStore $groupSubscriptionStore,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly LoggerInterface $logger,
 		ServiceOptions $options
 	) {
-		$this->groupSubscriptionStore = $groupSubscriptionStore;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->logger = $logger;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isMessageGroupSubscriptionEnabled = $options->get( 'TranslateEnableMessageGroupSubscription' );
 	}

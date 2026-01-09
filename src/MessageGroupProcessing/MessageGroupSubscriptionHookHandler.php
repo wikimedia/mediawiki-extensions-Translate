@@ -17,16 +17,13 @@ use MediaWiki\User\UserFactory;
  * @author Abijeet Patro
  */
 class MessageGroupSubscriptionHookHandler implements BeforeCreateEchoEventHook, EchoGetBundleRulesHook {
-	private MessageGroupSubscription $messageGroupSubscription;
-	private UserFactory $userFactory;
+
 	private const SUPPORTED_NOTIFICATION_TYPES = [ 'translate-mgs-message-added' ];
 
 	public function __construct(
-		MessageGroupSubscription $messageGroupSubscription,
-		UserFactory $userFactory
+		private readonly MessageGroupSubscription $messageGroupSubscription,
+		private readonly UserFactory $userFactory,
 	) {
-		$this->messageGroupSubscription = $messageGroupSubscription;
-		$this->userFactory = $userFactory;
 	}
 
 	public static function registerHooks( array &$hooks ): void {

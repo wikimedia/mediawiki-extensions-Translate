@@ -13,10 +13,10 @@ use stdClass;
  * @since 2010.07
  */
 abstract class TranslationStatsBase implements TranslationStatsInterface {
-	protected TranslationStatsGraphOptions $opts;
 
-	public function __construct( TranslationStatsGraphOptions $opts ) {
-		$this->opts = $opts;
+	public function __construct(
+		protected readonly TranslationStatsGraphOptions $opts,
+	) {
 	}
 
 	public function indexOf( stdClass $row ): ?array {

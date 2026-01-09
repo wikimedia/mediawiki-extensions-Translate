@@ -9,10 +9,10 @@ use MediaWiki\Languages\LanguageFallback;
 use RuntimeException;
 
 class MessageBundleTranslationLoader {
-	private LanguageFallback $languageFallback;
 
-	public function __construct( LanguageFallback $languageFallback ) {
-		$this->languageFallback = $languageFallback;
+	public function __construct(
+		private readonly LanguageFallback $languageFallback,
+	) {
 	}
 
 	/**

@@ -26,22 +26,14 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class TranslationsSpecialPage extends IncludableSpecialPage {
-	private Language $contentLanguage;
-	private LanguageNameUtils $languageNameUtils;
-	private ILoadBalancer $loadBalancer;
-	private SearchEngineFactory $searchEngineFactory;
 
 	public function __construct(
-		Language $contentLanguage,
-		LanguageNameUtils $languageNameUtils,
-		ILoadBalancer $loadBalancer,
-		SearchEngineFactory $searchEngineFactory
+		private readonly Language $contentLanguage,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly ILoadBalancer $loadBalancer,
+		private readonly SearchEngineFactory $searchEngineFactory,
 	) {
 		parent::__construct( 'Translations' );
-		$this->contentLanguage = $contentLanguage;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->loadBalancer = $loadBalancer;
-		$this->searchEngineFactory = $searchEngineFactory;
 	}
 
 	protected function getGroupName(): string {

@@ -17,10 +17,10 @@ class MessageGroupSubscriptionStore {
 	private const TABLE_NAME = 'translate_message_group_subscriptions';
 	/** @var int Match field tmgs_group byte length */
 	private const MAX_GROUP_LENGTH = 200;
-	private IConnectionProvider $dbProvider;
 
-	public function __construct( IConnectionProvider $dbProvider ) {
-		$this->dbProvider = $dbProvider;
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+	) {
 	}
 
 	public function addSubscription( string $groupId, int $userId ): void {

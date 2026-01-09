@@ -17,18 +17,14 @@ use Wikimedia\ParamValidator\ParamValidator;
 class GroupReviewActionApi extends ApiBase {
 	/** @var string */
 	protected static $right = 'translate-groupreview';
-	private LanguageNameUtils $languageNameUtils;
-	private MessageGroupReviewStore $messageGroupReviewStore;
 
 	public function __construct(
 		ApiMain $main,
 		string $action,
-		LanguageNameUtils $languageNameUtils,
-		MessageGroupReviewStore $messageGroupReviewStore
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly MessageGroupReviewStore $messageGroupReviewStore,
 	) {
 		parent::__construct( $main, $action );
-		$this->languageNameUtils = $languageNameUtils;
-		$this->messageGroupReviewStore = $messageGroupReviewStore;
 	}
 
 	public function execute() {

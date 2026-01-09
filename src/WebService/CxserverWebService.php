@@ -14,10 +14,9 @@ use MediaWiki\Json\FormatJson;
  * @since 2023.06
  */
 abstract class CxserverWebService extends TranslationWebService {
-	private HttpRequestFactory $httpRequestFactory;
 
 	public function __construct(
-		HttpRequestFactory $httpRequestFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
 		string $service,
 		array $config
 	) {
@@ -25,7 +24,6 @@ abstract class CxserverWebService extends TranslationWebService {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	public function getType(): string {

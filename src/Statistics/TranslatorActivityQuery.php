@@ -17,12 +17,11 @@ class TranslatorActivityQuery {
 	public const USER_NAME = 0;
 	public const USER_TRANSLATIONS = 1;
 	public const USER_LAST_ACTIVITY = 2;
-	private Config $options;
-	private ILoadBalancer $loadBalancer;
 
-	public function __construct( Config $options, ILoadBalancer $loadBalancer ) {
-		$this->options = $options;
-		$this->loadBalancer = $loadBalancer;
+	public function __construct(
+		private readonly Config $options,
+		private readonly ILoadBalancer $loadBalancer,
+	) {
 	}
 
 	/**

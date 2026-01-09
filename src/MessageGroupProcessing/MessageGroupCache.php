@@ -25,20 +25,15 @@ class MessageGroupCache {
 	public const NO_CACHE = 2;
 	public const CHANGED = 3;
 	private const VERSION = '4';
-	private FileBasedMessageGroup $group;
+
 	private ?Reader $cache = null;
-	private string $languageCode;
-	private string $cacheFilePath;
 
 	/** Contructs a new cache object for given group and language code. */
 	public function __construct(
-		FileBasedMessageGroup $group,
-		string $languageCode,
-		string $cacheFilePath
+		private readonly FileBasedMessageGroup $group,
+		private readonly string $languageCode,
+		private readonly string $cacheFilePath,
 	) {
-		$this->group = $group;
-		$this->languageCode = $languageCode;
-		$this->cacheFilePath = $cacheFilePath;
 	}
 
 	/** Returns whether cache exists for this language and group. */

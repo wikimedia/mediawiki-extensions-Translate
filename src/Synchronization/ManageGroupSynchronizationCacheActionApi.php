@@ -23,16 +23,15 @@ use Wikimedia\ParamValidator\ParamValidator;
 class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 	private const RIGHT = 'translate-manage';
 	private const VALID_OPS = [ 'resolveMessage', 'resolveGroup' ];
-	private GroupSynchronizationCache $groupSyncCache;
+
 	private LoggerInterface $groupSyncLog;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		GroupSynchronizationCache $groupSyncCache
+		private readonly GroupSynchronizationCache $groupSyncCache,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->groupSyncCache = $groupSyncCache;
 		$this->groupSyncLog = LoggerFactory::getInstance( LogNames::GROUP_SYNCHRONIZATION );
 	}
 

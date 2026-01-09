@@ -16,12 +16,11 @@ use MediaWiki\User\User;
  * @license GPL-2.0-or-later
  */
 class PageMoveLogger {
-	private string $logType;
-	private Title $baseSourceTitle;
 
-	public function __construct( Title $baseSourceTitle, string $logType ) {
-		$this->baseSourceTitle = $baseSourceTitle;
-		$this->logType = $logType;
+	public function __construct(
+		private readonly Title $baseSourceTitle,
+		private readonly string $logType,
+	) {
 	}
 
 	public function logSuccess( User $performer, Title $target, string $reason ): void {

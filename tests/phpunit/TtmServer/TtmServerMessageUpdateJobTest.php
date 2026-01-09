@@ -215,11 +215,13 @@ class TtmServerMessageUpdateJobTest extends MediaWikiIntegrationTestCase {
  */
 class TestableTtmServerMessageUpdateJob extends TtmServerMessageUpdateJob {
 	private array $resentJobs = [];
-	private MessageHandle $handleMock;
 
-	public function __construct( Title $title, $params, MessageHandle $handleMock ) {
+	public function __construct(
+		Title $title,
+		$params,
+		private readonly MessageHandle $handleMock,
+	) {
 		parent::__construct( $title, $params );
-		$this->handleMock = $handleMock;
 	}
 
 	protected function resend( TtmServerMessageUpdateJob $job ): void {

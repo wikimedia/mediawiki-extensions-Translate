@@ -14,17 +14,16 @@ use Wikimedia\ParamValidator\TypeDef\NumericDef;
  * @license GPL-2.0-or-later
  */
 class TranslationEntitySearchActionApi extends ApiBase {
-	private EntitySearch $entitySearch;
+
 	private const GROUPS = 'groups';
 	private const MESSAGES = 'messages';
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		EntitySearch $entitySearch
+		private readonly EntitySearch $entitySearch,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->entitySearch = $entitySearch;
 	}
 
 	public function execute() {

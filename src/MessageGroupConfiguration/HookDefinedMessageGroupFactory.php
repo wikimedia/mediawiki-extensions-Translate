@@ -15,12 +15,13 @@ use Wikimedia\Rdbms\IReadableDatabase;
  * @license GPL-2.0-or-later
  */
 final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory {
-	private HookRunner $hookRunner;
+
 	/** @var CacheDependency[] */
 	private array $deps;
 
-	public function __construct( HookRunner $hookRunner ) {
-		$this->hookRunner = $hookRunner;
+	public function __construct(
+		private readonly HookRunner $hookRunner,
+	) {
 	}
 
 	public function getCacheKey(): string {

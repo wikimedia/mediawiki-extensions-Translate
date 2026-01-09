@@ -16,12 +16,11 @@ use Wikimedia\Rdbms\IConnectionProvider;
 class PersistentDatabaseCache implements PersistentCache {
 	private const VIRTUAL_DOMAIN = 'virtual-translate';
 	private const TABLE_NAME = 'translate_cache';
-	private IConnectionProvider $dbProvider;
-	private JsonCodec $jsonCodec;
 
-	public function __construct( IConnectionProvider $dbProvider, JsonCodec $jsonCodec ) {
-		$this->dbProvider = $dbProvider;
-		$this->jsonCodec = $jsonCodec;
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+		private readonly JsonCodec $jsonCodec,
+	) {
 	}
 
 	/** @return PersistentCacheEntry[] */

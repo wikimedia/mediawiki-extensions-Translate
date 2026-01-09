@@ -39,18 +39,16 @@ use RuntimeException;
 class ValidationRunner {
 	/** @var array List of validator data */
 	protected $validators = [];
-	/** @var string Message group id */
-	protected $groupId;
 	/** @var string[][]|null */
 	private static $ignorePatterns;
 
-	public function __construct( string $groupId ) {
+	public function __construct(
+		private readonly string $groupId,
+	) {
 		if ( self::$ignorePatterns === null ) {
 			// TODO: Review if this logic belongs in this class.
 			self::reloadIgnorePatterns();
 		}
-
-		$this->groupId = $groupId;
 	}
 
 	/** Normalise validator keys. */

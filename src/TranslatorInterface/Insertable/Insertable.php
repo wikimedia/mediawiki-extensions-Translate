@@ -11,15 +11,6 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
  * @since 2020.12
  */
 class Insertable {
-	/** @var string What to show to the user */
-	protected $display;
-	/**
-	 * @var string What to insert before selection, or what to replace
-	 * the selection with, if $post remains empty.
-	 */
-	protected $pre;
-	/** @var string What to insert after selection */
-	protected $post;
 
 	/**
 	 * @param string $display What to show to the user
@@ -28,10 +19,11 @@ class Insertable {
 	 * @param string $post What to insert after selection. If it is not
 	 * given, $pre will replace selection.
 	 */
-	public function __construct( string $display, string $pre = '', string $post = '' ) {
-		$this->display = $display;
-		$this->pre = $pre;
-		$this->post = $post;
+	public function __construct(
+		private readonly string $display,
+		private readonly string $pre = '',
+		private readonly string $post = '',
+	) {
 	}
 
 	public function getPreText(): string {

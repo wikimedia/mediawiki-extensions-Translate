@@ -27,12 +27,7 @@ use Throwable;
 use function wfWarn;
 
 class ExternalMessageSourceStateImporter {
-	private GroupSynchronizationCache $groupSynchronizationCache;
-	private JobQueueGroup $jobQueueGroup;
-	private LoggerInterface $logger;
-	private MessageIndex $messageIndex;
-	private TitleFactory $titleFactory;
-	private MessageGroupSubscription $messageGroupSubscription;
+
 	private bool $isGroupSyncCacheEnabled;
 	// Do not perform any import
 	public const IMPORT_NONE = 1;
@@ -44,20 +39,14 @@ class ExternalMessageSourceStateImporter {
 	public const CONSTRUCTOR_OPTIONS = [ 'TranslateGroupSynchronizationCache' ];
 
 	public function __construct(
-		GroupSynchronizationCache $groupSynchronizationCache,
-		JobQueueGroup $jobQueueGroup,
-		LoggerInterface $logger,
-		MessageIndex $messageIndex,
-		TitleFactory $titleFactory,
-		MessageGroupSubscription $messageGroupSubscription,
+		private readonly GroupSynchronizationCache $groupSynchronizationCache,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly LoggerInterface $logger,
+		private readonly MessageIndex $messageIndex,
+		private readonly TitleFactory $titleFactory,
+		private readonly MessageGroupSubscription $messageGroupSubscription,
 		ServiceOptions $options
 	) {
-		$this->groupSynchronizationCache = $groupSynchronizationCache;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->logger = $logger;
-		$this->messageIndex = $messageIndex;
-		$this->titleFactory = $titleFactory;
-		$this->messageGroupSubscription = $messageGroupSubscription;
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isGroupSyncCacheEnabled = $options->get( 'TranslateGroupSynchronizationCache' );
 	}

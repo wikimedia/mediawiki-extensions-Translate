@@ -32,25 +32,17 @@ use Skin;
 class TranslateSpecialPage extends SpecialPage {
 	private ?MessageGroup $group = null;
 	private array $options = [];
-	private Language $contentLanguage;
-	private LanguageFactory $languageFactory;
-	private LanguageNameUtils $languageNameUtils;
-	private HookRunner $hookRunner;
 	private LoggerInterface $logger;
 	private bool $isMessageGroupSubscriptionEnabled;
 
 	public function __construct(
-		Language $contentLanguage,
-		LanguageFactory $languageFactory,
-		LanguageNameUtils $languageNameUtils,
-		HookRunner $hookRunner,
+		private readonly Language $contentLanguage,
+		private readonly LanguageFactory $languageFactory,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly HookRunner $hookRunner,
 		Config $config
 	) {
 		parent::__construct( 'Translate' );
-		$this->contentLanguage = $contentLanguage;
-		$this->languageFactory = $languageFactory;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->hookRunner = $hookRunner;
 		$this->logger = LoggerFactory::getInstance( LogNames::MAIN );
 		$this->isMessageGroupSubscriptionEnabled = $config->get( 'TranslateEnableMessageGroupSubscription' );
 	}

@@ -31,11 +31,10 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		'Special:ManageMessageGroupSubscriptions/raw',
 	];
 
-	private MessageGroupSubscription $messageGroupSubscription;
-
-	public function __construct( MessageGroupSubscription $messageGroupSubscription ) {
+	public function __construct(
+		private readonly MessageGroupSubscription $messageGroupSubscription,
+	) {
 		parent::__construct( 'ManageMessageGroupSubscriptions' );
-		$this->messageGroupSubscription = $messageGroupSubscription;
 	}
 
 	/** @inheritDoc */

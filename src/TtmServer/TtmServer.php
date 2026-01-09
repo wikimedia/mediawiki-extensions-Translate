@@ -17,10 +17,10 @@ use WikiPage;
  * @ingroup TTMServer
  */
 abstract class TtmServer {
-	protected array $config;
 
-	public function __construct( array $config ) {
-		$this->config = $config;
+	public function __construct(
+		protected array $config,
+	) {
 	}
 
 	/**

@@ -42,15 +42,12 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private array $hl;
 	/** How many search results to display per page */
 	protected int $limit = 25;
-	private TtmServerFactory $ttmServerFactory;
-	private LanguageFactory $languageFactory;
-	private UrlUtils $urlUtils;
 	private LoggerInterface $logger;
 
 	public function __construct(
-		TtmServerFactory $ttmServerFactory,
-		LanguageFactory $languageFactory,
-		UrlUtils $urlUtils
+		private readonly TtmServerFactory $ttmServerFactory,
+		private readonly LanguageFactory $languageFactory,
+		private readonly UrlUtils $urlUtils,
 	) {
 		parent::__construct( 'SearchTranslations' );
 		$this->hl = [
@@ -58,9 +55,6 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			Utilities::getPlaceholder(),
 		];
 
-		$this->ttmServerFactory = $ttmServerFactory;
-		$this->languageFactory = $languageFactory;
-		$this->urlUtils = $urlUtils;
 		$this->logger = LoggerFactory::getInstance( LogNames::MAIN );
 	}
 

@@ -11,8 +11,7 @@ use InvalidArgumentException;
  * @author Niklas Laxström
  */
 class TtmServerFactory {
-	private array $configs;
-	private ?string $default;
+
 	private const TTMSERVER_CLASSES = [
 		ReadableTtmServer::class,
 		WritableTtmServer::class,
@@ -20,9 +19,10 @@ class TtmServerFactory {
 	];
 
 	/** @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories#Configuration */
-	public function __construct( array $configs, ?string $default = null ) {
-		$this->configs = $configs;
-		$this->default = $default;
+	public function __construct(
+		private readonly array $configs,
+		private readonly ?string $default = null,
+	) {
 	}
 
 	/** @return string[] */

@@ -16,10 +16,10 @@ use Wikimedia\Rdbms\Database;
  * @license GPL-2.0-or-later
  */
 class MessageBundle extends TranslatableBundle {
-	private Title $title;
 
-	public function __construct( Title $title ) {
-		$this->title = $title;
+	public function __construct(
+		private readonly Title $title,
+	) {
 	}
 
 	/** @inheritDoc */

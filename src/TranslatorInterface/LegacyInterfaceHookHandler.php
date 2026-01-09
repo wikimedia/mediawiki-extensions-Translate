@@ -29,10 +29,10 @@ class LegacyInterfaceHookHandler
 	TitleGetEditNoticesHook,
 	SidebarBeforeOutputHook
 {
-	private LanguageFactory $languageFactory;
 
-	public function __construct( LanguageFactory $languageFactory ) {
-		$this->languageFactory = $languageFactory;
+	public function __construct(
+		private readonly LanguageFactory $languageFactory,
+	) {
 	}
 
 	/**

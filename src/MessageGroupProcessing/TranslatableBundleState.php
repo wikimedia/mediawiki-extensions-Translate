@@ -22,13 +22,13 @@ final class TranslatableBundleState implements JsonSerializable {
 		'proposed' => self::PROPOSE,
 		'ignored' => self::IGNORE,
 	];
-	private int $state;
 
-	public function __construct( int $state ) {
+	public function __construct(
+		private readonly int $state,
+	) {
 		if ( !in_array( $state, self::STATE_MAP ) ) {
 			throw new InvalidArgumentException( "Invalid translatable bundle state: $state" );
 		}
-		$this->state = $state;
 	}
 
 	public static function newFromText( string $stateName ): self {

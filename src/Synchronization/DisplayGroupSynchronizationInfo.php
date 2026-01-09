@@ -16,12 +16,11 @@ use MessageLocalizer;
  * @since 2021.02
  */
 class DisplayGroupSynchronizationInfo {
-	private MessageLocalizer $localizer;
-	private LinkRenderer $linkRenderer;
 
-	public function __construct( MessageLocalizer $localizer, LinkRenderer $linkRenderer ) {
-		$this->localizer = $localizer;
-		$this->linkRenderer = $linkRenderer;
+	public function __construct(
+		private readonly MessageLocalizer $localizer,
+		private readonly LinkRenderer $linkRenderer,
+	) {
 	}
 
 	/** @param string[] $groupsInSync */

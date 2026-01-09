@@ -20,15 +20,15 @@ use MediaWiki\Title\Title;
  * @ingroup TTMServer
  */
 class CrossLanguageTranslationSearchQuery {
-	private SearchableTtmServer $server;
-	private array $params;
+
 	private ?ResultSet $resultSet = null;
 	private int $total = 0;
 	private array $hl = [ '', '' ];
 
-	public function __construct( array $params, SearchableTtmServer $server ) {
-		$this->params = $params;
-		$this->server = $server;
+	public function __construct(
+		private readonly array $params,
+		private readonly SearchableTtmServer $server,
+	) {
 	}
 
 	/** @throws TtmServerException if the search backend failed. */

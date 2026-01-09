@@ -14,18 +14,12 @@ use MediaWiki\Linker\LinkRenderer;
  * @since 2021.10
  */
 class ProgressStatsTableFactory {
-	private LinkRenderer $linkRenderer;
-	private ConfigHelper $configHelper;
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
-		LinkRenderer $linkRenderer,
-		ConfigHelper $configHelper,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly LinkRenderer $linkRenderer,
+		private readonly ConfigHelper $configHelper,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
-		$this->linkRenderer = $linkRenderer;
-		$this->configHelper = $configHelper;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function newFromContext( IContextSource $contextSource ): StatsTable {

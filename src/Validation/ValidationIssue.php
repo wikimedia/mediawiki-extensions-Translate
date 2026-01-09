@@ -14,26 +14,14 @@ namespace MediaWiki\Extension\Translate\Validation;
  * @since 2020.06
  */
 class ValidationIssue {
-	/** @var string */
-	private $type;
-	/** @var string */
-	private $subType;
-	/** @var string */
-	private $messageKey;
-	/** @var array */
-	private $messageParams;
 
 	/** @stable for calling */
 	public function __construct(
-		string $type,
-		string $subType,
-		string $messageKey,
-		array $messageParams = []
+		private readonly string $type,
+		private readonly string $subType,
+		private readonly string $messageKey,
+		private readonly array $messageParams = [],
 	) {
-		$this->type = $type;
-		$this->subType = $subType;
-		$this->messageKey = $messageKey;
-		$this->messageParams = $messageParams;
 	}
 
 	public function type(): string {

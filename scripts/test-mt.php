@@ -65,11 +65,8 @@ class TestMT extends Maintenance {
 			$this->fatalError( "Unknown service. Available services: $available\n" );
 		}
 
-		$logger = new class( fn ( $msg ) => $this->output( $msg ) ) extends AbstractLogger {
-			private Closure $logger;
-
-			public function __construct( Closure $logger ) {
-				$this->logger = $logger;
+		$logger = new class( $this->output( ... ) ) extends AbstractLogger {
+			public function __construct( private readonly Closure $logger ) {
 			}
 
 			/** @inheritDoc */

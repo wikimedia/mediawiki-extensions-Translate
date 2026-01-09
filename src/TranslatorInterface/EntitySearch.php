@@ -27,13 +27,6 @@ class EntitySearch {
 	private const FIELD_DELIMITER = "\x7F";
 	private const ROW_DELIMITER = "\n";
 
-	private WANObjectCache $cache;
-	private Collation $collation;
-	private MessageGroups $messageGroupFactory;
-	private NamespaceInfo $namespaceInfo;
-	private MessageIndex $messageIndex;
-	private TitleParser $titleParser;
-	private TitleFormatter $titleFormatter;
 	private const TYPE_AGGREGATE = AggregateMessageGroup::class;
 	private const TYPE_MESSAGE_BUNDLE = MessageBundleMessageGroup::class;
 	private const TYPE_WIKIPAGE = WikiPageMessageGroup::class;
@@ -47,21 +40,14 @@ class EntitySearch {
 	private array $mappedTypes;
 
 	public function __construct(
-		WANObjectCache $cache,
-		Collation $collation,
-		MessageGroups $messageGroupFactory,
-		NamespaceInfo $namespaceInfo,
-		MessageIndex $messageIndex,
-		TitleParser $titleParser,
-		TitleFormatter $titleFormatter
+		private readonly WANObjectCache $cache,
+		private readonly Collation $collation,
+		private readonly MessageGroups $messageGroupFactory,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly MessageIndex $messageIndex,
+		private readonly TitleParser $titleParser,
+		private readonly TitleFormatter $titleFormatter,
 	) {
-		$this->cache = $cache;
-		$this->collation = $collation;
-		$this->messageGroupFactory = $messageGroupFactory;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->messageIndex = $messageIndex;
-		$this->titleParser = $titleParser;
-		$this->titleFormatter = $titleFormatter;
 		$this->mappedTypes = $this->getGroupTypes();
 	}
 

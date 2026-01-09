@@ -16,15 +16,13 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class MessageGroupSubscriptionActionApi extends ApiBase {
-	private MessageGroupSubscription $groupSubscription;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		MessageGroupSubscription $groupSubscription
+		private readonly MessageGroupSubscription $groupSubscription,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->groupSubscription = $groupSubscription;
 	}
 
 	public function execute(): void {

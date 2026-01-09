@@ -19,18 +19,14 @@ use Wikimedia\Rdbms\IDBAccessObject;
  * @license GPL-2.0-or-later
  */
 class MarkForTranslationActionApi extends ApiBase {
-	private TranslatablePageMarker $translatablePageMarker;
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		TranslatablePageMarker $translatablePageMarker,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly TranslatablePageMarker $translatablePageMarker,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->translatablePageMarker = $translatablePageMarker;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function execute() {

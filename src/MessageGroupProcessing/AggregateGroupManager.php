@@ -19,17 +19,13 @@ use WikiPageMessageGroup;
  * @since 2024.06
  */
 class AggregateGroupManager {
-	private TitleFactory $titleFactory;
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	private const MESSAGE_GROUP_PREFIX = 'agg-';
 
 	public function __construct(
-		TitleFactory $titleFactory,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly TitleFactory $titleFactory,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
-		$this->titleFactory = $titleFactory;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	public function supportsAggregation( MessageGroup $group ): bool {

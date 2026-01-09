@@ -1482,7 +1482,6 @@ class Hooks {
 			'class' => MoveTranslatableBundleSpecialPage::class,
 			'services' => [
 				'ObjectFactory',
-				'PermissionManager',
 				'Translate:TranslatableBundleMover',
 				'Translate:TranslatableBundleFactory',
 				'FormatterFactory'

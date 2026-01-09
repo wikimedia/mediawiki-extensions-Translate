@@ -11,12 +11,10 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Insertable;
  */
 class CombinedInsertablesSuggester implements InsertablesSuggester {
 
-	/** @var InsertablesSuggester[] */
-	protected $suggesters = [];
-
 	/** @param InsertablesSuggester[] $suggesters Array of InsertablesSuggester objects to combine. */
-	public function __construct( array $suggesters = [] ) {
-		$this->suggesters = $suggesters;
+	public function __construct(
+		private readonly array $suggesters = [],
+	) {
 	}
 
 	public function getInsertables( string $text ): array {

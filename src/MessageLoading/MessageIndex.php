@@ -33,37 +33,24 @@ class MessageIndex {
 	// TODO: Use dependency injection
 	private const CACHE_KEY = 'Translate-MessageIndex-interim';
 	private const READ_LATEST = true;
-	private MessageIndexStore $messageIndexStore;
+
 	private MapCacheLRU $keysCache;
-	protected BagOStuff $interimCache;
-	private WANObjectCache $statusCache;
-	private JobQueueGroup $jobQueueGroup;
-	private HookRunner $hookRunner;
-	private LoggerInterface $logger;
-	private IConnectionProvider $dbProvider;
 	private array $translateMessageNamespaces;
 	public const SERVICE_OPTIONS = [
 		'TranslateMessageNamespaces'
 	];
 
 	public function __construct(
-		MessageIndexStore $store,
-		WANObjectCache $statusCache,
-		JobQueueGroup $jobQueueGroup,
-		HookRunner $hookRunner,
-		LoggerInterface $logger,
-		BagOStuff $interimCache,
-		IConnectionProvider $dbProvider,
+		private readonly MessageIndexStore $messageIndexStore,
+		private readonly WANObjectCache $statusCache,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly HookRunner $hookRunner,
+		private readonly LoggerInterface $logger,
+		private readonly BagOStuff $interimCache,
+		private readonly IConnectionProvider $dbProvider,
 		ServiceOptions $options
 	) {
-		$this->messageIndexStore = $store;
 		$this->keysCache = new MapCacheLRU( 30 );
-		$this->statusCache = $statusCache;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->hookRunner = $hookRunner;
-		$this->logger = $logger;
-		$this->interimCache = $interimCache;
-		$this->dbProvider = $dbProvider;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->translateMessageNamespaces = $options->get( 'TranslateMessageNamespaces' );
 	}

@@ -19,18 +19,14 @@ use Wikimedia\Rdbms\IReadableDatabase;
 final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 	public const SERVICE_OPTIONS = [ 'TranslateGroupFiles' ];
 
-	private MessageGroupConfigurationParser $messageGroupConfigurationParser;
 	/** @var string[] */
 	private array $groupFiles;
-	private string $contentLanguageCode;
 
 	public function __construct(
-		MessageGroupConfigurationParser $messageGroupConfigurationParser,
-		string $contentLanguageCode,
+		private readonly MessageGroupConfigurationParser $messageGroupConfigurationParser,
+		private readonly string $contentLanguageCode,
 		ServiceOptions $serviceOptions
 	) {
-		$this->messageGroupConfigurationParser = $messageGroupConfigurationParser;
-		$this->contentLanguageCode = $contentLanguageCode;
 		$serviceOptions->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->groupFiles = $serviceOptions->get( 'TranslateGroupFiles' );
 	}

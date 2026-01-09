@@ -23,21 +23,15 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class QueryMessageGroupsActionApi extends ApiQueryBase {
-	private HookRunner $hookRunner;
-	private MessageGroupMetadata $messageGroupMetadata;
-	private MessageGroupSubscription $groupSubscription;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		HookRunner $hookRunner,
-		MessageGroupMetadata $messageGroupMetadata,
-		MessageGroupSubscription $groupSubscription
+		private readonly HookRunner $hookRunner,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly MessageGroupSubscription $groupSubscription,
 	) {
 		parent::__construct( $query, $moduleName, 'mg' );
-		$this->hookRunner = $hookRunner;
-		$this->messageGroupMetadata = $messageGroupMetadata;
-		$this->groupSubscription = $groupSubscription;
 	}
 
 	public function execute(): void {

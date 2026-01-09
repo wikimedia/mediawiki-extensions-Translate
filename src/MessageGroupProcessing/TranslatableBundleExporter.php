@@ -18,15 +18,13 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class TranslatableBundleExporter {
 	private WikiExporter $wikiExporter;
-	private SubpageListBuilder $subpageListBuilder;
 	private ?Closure $exportPageCallback;
 
 	public function __construct(
-		SubpageListBuilder $subpageListBuilder,
+		private readonly SubpageListBuilder $subpageListBuilder,
 		WikiExporterFactory $wikiExporterFactory,
 		IConnectionProvider $dbProvider
 	) {
-		$this->subpageListBuilder = $subpageListBuilder;
 		$this->wikiExporter = $wikiExporterFactory->getWikiExporter(
 			$dbProvider->getReplicaDatabase(),
 			WikiExporter::FULL

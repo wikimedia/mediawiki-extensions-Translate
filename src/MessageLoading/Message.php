@@ -11,10 +11,7 @@ namespace MediaWiki\Extension\Translate\MessageLoading;
  * @license GPL-2.0-or-later
  */
 abstract class Message {
-	/** Message display key. */
-	protected string $key;
-	/** Message definition. */
-	protected ?string $definition;
+
 	/** Committed in-file translation. */
 	protected ?string $infile = null;
 	/** @var string[] Message tags. */
@@ -30,9 +27,10 @@ abstract class Message {
 	 * @param string $key Unique key identifying this message.
 	 * @param string|null $definition The authoritave definition of this message.
 	 */
-	public function __construct( string $key, ?string $definition ) {
-		$this->key = $key;
-		$this->definition = $definition;
+	public function __construct(
+		private readonly string $key,
+		private readonly ?string $definition,
+	) {
 	}
 
 	/** Get the message key. */

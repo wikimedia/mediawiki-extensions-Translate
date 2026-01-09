@@ -35,12 +35,6 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 	/** The target type of stats requested: */
 	private ?string $targetType = null;
 	private ServiceOptions $options;
-	private JobQueueGroup $jobQueueGroup;
-	private MessageGroupStatsTableFactory $messageGroupStatsTableFactory;
-	private EntitySearch $entitySearch;
-	private MessagePrefixStats $messagePrefixStats;
-	private LanguageNameUtils $languageNameUtils;
-	private MessageGroupMetadata $messageGroupMetadata;
 
 	private const GROUPS = 'group';
 	private const MESSAGES = 'messages';
@@ -51,21 +45,15 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 
 	public function __construct(
 		Config $config,
-		JobQueueGroup $jobQueueGroup,
-		MessageGroupStatsTableFactory $messageGroupStatsTableFactory,
-		EntitySearch $entitySearch,
-		MessagePrefixStats $messagePrefixStats,
-		LanguageNameUtils $languageNameUtils,
-		MessageGroupMetadata $messageGroupMetadata
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly MessageGroupStatsTableFactory $messageGroupStatsTableFactory,
+		private readonly EntitySearch $entitySearch,
+		private readonly MessagePrefixStats $messagePrefixStats,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 	) {
 		parent::__construct( 'MessageGroupStats' );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->messageGroupStatsTableFactory = $messageGroupStatsTableFactory;
-		$this->entitySearch = $entitySearch;
-		$this->messagePrefixStats = $messagePrefixStats;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->messageGroupMetadata = $messageGroupMetadata;
 	}
 
 	/** @inheritDoc */

@@ -98,21 +98,13 @@ class HookHandler implements
 		'translate_stash' => 'ts_user',
 		'translate_reviews' => 'trr_user',
 	];
-	private RevisionLookup $revisionLookup;
-	private ILoadBalancer $loadBalancer;
-	private Config $config;
-	private LanguageNameUtils $languageNameUtils;
 
 	public function __construct(
-		RevisionLookup $revisionLookup,
-		ILoadBalancer $loadBalancer,
-		Config $config,
-		LanguageNameUtils $languageNameUtils
+		private readonly RevisionLookup $revisionLookup,
+		private readonly ILoadBalancer $loadBalancer,
+		private readonly Config $config,
+		private readonly LanguageNameUtils $languageNameUtils,
 	) {
-		$this->revisionLookup = $revisionLookup;
-		$this->loadBalancer = $loadBalancer;
-		$this->config = $config;
-		$this->languageNameUtils = $languageNameUtils;
 	}
 
 	/** Do late setup that depends on configuration. */

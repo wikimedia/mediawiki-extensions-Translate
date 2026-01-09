@@ -15,14 +15,11 @@ use MediaWiki\Context\IContextSource;
  * @since 2020.06 (originally 2019.06)
  */
 class ValidationResult {
-	/** @var ValidationIssues */
-	protected $errors;
-	/** @var ValidationIssues */
-	protected $warnings;
 
-	public function __construct( ValidationIssues $errors, ValidationIssues $warnings ) {
-		$this->errors = $errors;
-		$this->warnings = $warnings;
+	public function __construct(
+		private readonly ValidationIssues $errors,
+		private readonly ValidationIssues $warnings,
+	) {
 	}
 
 	public function hasIssues(): bool {

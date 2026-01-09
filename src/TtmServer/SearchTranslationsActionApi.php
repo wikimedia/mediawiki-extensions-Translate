@@ -17,8 +17,7 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  * @license GPL-2.0-or-later
  */
 class SearchTranslationsActionApi extends ApiBase {
-	/** @var TtmServerFactory */
-	private $ttmServerFactory;
+
 	/** @var ServiceOptions */
 	private $options;
 
@@ -32,11 +31,10 @@ class SearchTranslationsActionApi extends ApiBase {
 		ApiMain $main,
 		string $moduleName,
 		Config $config,
-		TtmServerFactory $ttmServerFactory
+		private readonly TtmServerFactory $ttmServerFactory,
 	) {
 		parent::__construct( $main, $moduleName );
 		$this->options = new ServiceOptions( self::CONSTRUCTOR_OPTIONS, $config );
-		$this->ttmServerFactory = $ttmServerFactory;
 	}
 
 	public function execute(): void {

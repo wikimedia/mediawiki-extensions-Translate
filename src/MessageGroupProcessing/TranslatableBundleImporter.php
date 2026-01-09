@@ -30,30 +30,19 @@ use WikiImporterFactory;
  * @author Abijeet Patro
  */
 class TranslatableBundleImporter implements AfterImportPageHook {
-	private WikiImporterFactory $wikiImporterFactory;
-	private TranslatablePageParser $translatablePageParser;
-	private RevisionLookup $revisionLookup;
+
 	private ?Title $bundleTitle;
 	private ?Closure $pageImportCompleteCallback = null;
-	private NamespaceInfo $namespaceInfo;
-	private TitleFactory $titleFactory;
-	private FormatterFactory $formatterFactory;
 	private bool $importInProgress = false;
 
 	public function __construct(
-		WikiImporterFactory $wikiImporterFactory,
-		TranslatablePageParser $translatablePageParser,
-		RevisionLookup $revisionLookup,
-		NamespaceInfo $namespaceInfo,
-		TitleFactory $titleFactory,
-		FormatterFactory $formatterFactory
+		private readonly WikiImporterFactory $wikiImporterFactory,
+		private readonly TranslatablePageParser $translatablePageParser,
+		private readonly RevisionLookup $revisionLookup,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly TitleFactory $titleFactory,
+		private readonly FormatterFactory $formatterFactory,
 	) {
-		$this->wikiImporterFactory = $wikiImporterFactory;
-		$this->translatablePageParser = $translatablePageParser;
-		$this->revisionLookup = $revisionLookup;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->titleFactory = $titleFactory;
-		$this->formatterFactory = $formatterFactory;
 	}
 
 	/** Factory method used to initialize this HookHandler */

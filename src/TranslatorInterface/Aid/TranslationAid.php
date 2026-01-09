@@ -20,25 +20,13 @@ use MessageGroup;
  * @since 2013-01-01
  */
 abstract class TranslationAid {
-	/** @var MessageGroup */
-	protected $group;
-	/** @var MessageHandle */
-	protected $handle;
-	/** @var IContextSource */
-	protected $context;
-	/** @var TranslationAidDataProvider */
-	protected $dataProvider;
 
 	public function __construct(
-		MessageGroup $group,
-		MessageHandle $handle,
-		IContextSource $context,
-		TranslationAidDataProvider $dataProvider
+		protected readonly MessageGroup $group,
+		protected readonly MessageHandle $handle,
+		protected readonly IContextSource $context,
+		protected readonly TranslationAidDataProvider $dataProvider,
 	) {
-		$this->group = $group;
-		$this->handle = $handle;
-		$this->context = $context;
-		$this->dataProvider = $dataProvider;
 	}
 
 	/**

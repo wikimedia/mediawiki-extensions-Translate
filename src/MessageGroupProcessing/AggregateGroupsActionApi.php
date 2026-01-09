@@ -25,22 +25,17 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API TranslateAPI
  */
 class AggregateGroupsActionApi extends ApiBase {
-	private JobQueueGroup $jobQueueGroup;
+
 	protected static string $right = 'translate-manage';
-	private MessageGroupMetadata $messageGroupMetadata;
-	private AggregateGroupManager $aggregateGroupManager;
 
 	public function __construct(
 		ApiMain $main,
 		string $action,
-		JobQueueGroup $jobQueueGroup,
-		MessageGroupMetadata $messageGroupMetadata,
-		AggregateGroupManager $aggregateGroupManager
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly AggregateGroupManager $aggregateGroupManager,
 	) {
 		parent::__construct( $main, $action );
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->messageGroupMetadata = $messageGroupMetadata;
-		$this->aggregateGroupManager = $aggregateGroupManager;
 	}
 
 	public function execute(): void {

@@ -13,7 +13,6 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
-use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
@@ -37,39 +36,16 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 	private bool $moveTalkpages = true;
 	private bool $moveSubpages = true;
 	private bool $leaveRedirect = true;
-	private ObjectFactory $objectFactory;
-	private TranslatableBundleMover $bundleMover;
-	private PermissionManager $permissionManager;
-	private TranslatableBundleFactory $bundleFactory;
-	private FormatterFactory $formatterFactory;
-	/** @var array */
-	private $movePageSpec;
-	// Other
 	private ?Title $oldTitle;
 
-	/**
-	 * @param ObjectFactory $objectFactory
-	 * @param PermissionManager $permissionManager
-	 * @param TranslatableBundleMover $bundleMover
-	 * @param TranslatableBundleFactory $bundleFactory
-	 * @param FormatterFactory $formatterFactory
-	 * @param array $movePageSpec
-	 */
 	public function __construct(
-		ObjectFactory $objectFactory,
-		PermissionManager $permissionManager,
-		TranslatableBundleMover $bundleMover,
-		TranslatableBundleFactory $bundleFactory,
-		FormatterFactory $formatterFactory,
-		$movePageSpec
+		private readonly ObjectFactory $objectFactory,
+		private readonly TranslatableBundleMover $bundleMover,
+		private readonly TranslatableBundleFactory $bundleFactory,
+		private readonly FormatterFactory $formatterFactory,
+		private readonly mixed $movePageSpec,
 	) {
 		parent::__construct( 'Movepage' );
-		$this->objectFactory = $objectFactory;
-		$this->permissionManager = $permissionManager;
-		$this->bundleMover = $bundleMover;
-		$this->bundleFactory = $bundleFactory;
-		$this->formatterFactory = $formatterFactory;
-		$this->movePageSpec = $movePageSpec;
 	}
 
 	/** @inheritDoc */

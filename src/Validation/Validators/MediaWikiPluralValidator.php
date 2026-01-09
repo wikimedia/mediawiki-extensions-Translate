@@ -21,21 +21,12 @@ use MediaWiki\User\UserFactory;
  * @since 2019.06
  */
 class MediaWikiPluralValidator implements MessageValidator {
-	/** @var LanguageFactory */
-	private $languageFactory;
-	/** @var ParserFactory */
-	private $parserFactory;
-	/** @var UserFactory */
-	private $userFactory;
 
 	public function __construct(
-		LanguageFactory $languageFactory,
-		ParserFactory $parserFactory,
-		UserFactory $userFactory
+		private readonly LanguageFactory $languageFactory,
+		private readonly ParserFactory $parserFactory,
+		private readonly UserFactory $userFactory,
 	) {
-		$this->languageFactory = $languageFactory;
-		$this->parserFactory = $parserFactory;
-		$this->userFactory = $userFactory;
 	}
 
 	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {

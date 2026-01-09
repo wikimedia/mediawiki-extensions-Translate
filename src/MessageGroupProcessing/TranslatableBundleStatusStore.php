@@ -19,19 +19,14 @@ use Wikimedia\Rdbms\IMaintainableDatabase;
  */
 class TranslatableBundleStatusStore {
 	private const TABLE_NAME = 'translate_translatable_bundles';
-	private IDatabase $database;
-	private Collation $collation;
-	private IMaintainableDatabase $dbMaintenance;
+
 	private ?bool $tableExists = null;
 
 	public function __construct(
-		IDatabase $database,
-		Collation $collation,
-		IMaintainableDatabase $dbMaintenance
+		private readonly IDatabase $database,
+		private readonly Collation $collation,
+		private readonly IMaintainableDatabase $dbMaintenance,
 	) {
-		$this->database = $database;
-		$this->collation = $collation;
-		$this->dbMaintenance = $dbMaintenance;
 	}
 
 	public function setStatus( Title $title, TranslatableBundleStatus $status, string $bundleType ): void {

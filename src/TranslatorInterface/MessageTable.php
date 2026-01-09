@@ -16,12 +16,15 @@ use MessageGroup;
  * @license GPL-2.0-or-later
  */
 class MessageTable extends ContextSource {
-	protected MessageGroup $group;
+
 	protected string $language;
 
-	public function __construct( IContextSource $context, MessageGroup $group, string $language ) {
+	public function __construct(
+		IContextSource $context,
+		private readonly MessageGroup $group,
+		string $language,
+	) {
 		$this->setContext( $context );
-		$this->group = $group;
 		if ( MediaWikiServices::getInstance()->getLanguageNameUtils()->isKnownLanguageTag( $language ) ) {
 			$this->language = $language;
 		} else {

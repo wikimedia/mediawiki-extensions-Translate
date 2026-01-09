@@ -15,11 +15,12 @@ use MediaWiki\Title\TitleParser;
  * @license GPL-2.0-or-later
  */
 class MessagePrefixStats {
-	private TitleParser $titleParser;
+
 	private ?array $allStats;
 
-	public function __construct( TitleParser $titleParser ) {
-		$this->titleParser = $titleParser;
+	public function __construct(
+		private readonly TitleParser $titleParser,
+	) {
 	}
 
 	/**

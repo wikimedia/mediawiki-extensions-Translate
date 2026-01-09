@@ -14,10 +14,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 class MessageGroupStates {
 	private const CONDKEY = 'state conditions';
 
-	private ?array $config;
-
-	public function __construct( ?array $config = null ) {
-		$this->config = $config;
+	public function __construct(
+		private readonly ?array $config = null,
+	) {
 	}
 
 	public function getStates(): ?array {

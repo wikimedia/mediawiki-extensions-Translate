@@ -15,24 +15,14 @@ use MediaWiki\Linker\LinkRenderer;
  * @since 2023.02
  */
 class MessageGroupStatsTableFactory {
-	private ProgressStatsTableFactory $progressStatsTableFactory;
-	private LinkRenderer $linkRenderer;
-	private MessageGroupReviewStore $groupReviewStore;
-	private MessageGroupMetadata $messageGroupMetadata;
-	private bool $haveTranslateWorkflowStates;
 
 	public function __construct(
-		ProgressStatsTableFactory $progressStatsTableFactory,
-		LinkRenderer $linkRenderer,
-		MessageGroupReviewStore $groupReviewStore,
-		MessageGroupMetadata $messageGroupMetadata,
-		bool $haveTranslateWorkflowStates
+		private readonly ProgressStatsTableFactory $progressStatsTableFactory,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly MessageGroupReviewStore $groupReviewStore,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly bool $haveTranslateWorkflowStates,
 	) {
-		$this->progressStatsTableFactory = $progressStatsTableFactory;
-		$this->linkRenderer = $linkRenderer;
-		$this->groupReviewStore = $groupReviewStore;
-		$this->messageGroupMetadata = $messageGroupMetadata;
-		$this->haveTranslateWorkflowStates = $haveTranslateWorkflowStates;
 	}
 
 	public function newFromContext( IContextSource $contextSource ): MessageGroupStatsTable {

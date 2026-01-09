@@ -21,10 +21,10 @@ use SplFileObject;
  * @author Abijeet Patro
  */
 class CsvTranslationImporter {
-	private WikiPageFactory $wikiPageFactory;
 
-	public function __construct( WikiPageFactory $wikiPageFactory ) {
-		$this->wikiPageFactory = $wikiPageFactory;
+	public function __construct(
+		private readonly WikiPageFactory $wikiPageFactory,
+	) {
 	}
 
 	/** Parse and validate the CSV file */

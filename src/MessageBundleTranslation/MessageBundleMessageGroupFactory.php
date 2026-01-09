@@ -20,14 +20,13 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 	public const SERVICE_OPTIONS = [
 		'TranslateEnableMessageBundleIntegration'
 	];
-	private MessageGroupMetadata $messageGroupMetadata;
+
 	private bool $enableIntegration;
 
 	public function __construct(
-		MessageGroupMetadata $messageGroupMetadata,
+		private readonly MessageGroupMetadata $messageGroupMetadata,
 		ServiceOptions $options
 	) {
-		$this->messageGroupMetadata = $messageGroupMetadata;
 		$options->assertRequiredOptions( self::SERVICE_OPTIONS );
 		$this->enableIntegration = $options->get( 'TranslateEnableMessageBundleIntegration' );
 	}

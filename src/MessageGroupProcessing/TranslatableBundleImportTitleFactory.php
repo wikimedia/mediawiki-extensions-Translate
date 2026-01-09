@@ -19,16 +19,15 @@ use MediaWiki\Title\TitleFactory;
  * @author Abijeet Patro
  */
 class TranslatableBundleImportTitleFactory implements ImportTitleFactory {
-	private NamespaceInfo $namespaceInfo;
+
 	private PageTitleRenamer $pageTitleRenamer;
-	private Title $targetPage;
-	private TitleFactory $titleFactory;
 	private ForeignTitle $sourcePage;
 
-	public function __construct( NamespaceInfo $namespaceInfo, TitleFactory $titleFactory, Title $targetPage ) {
-		$this->namespaceInfo = $namespaceInfo;
-		$this->targetPage = $targetPage;
-		$this->titleFactory = $titleFactory;
+	public function __construct(
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly TitleFactory $titleFactory,
+		private readonly Title $targetPage,
+	) {
 	}
 
 	public function createTitleFromForeignTitle( ForeignTitle $foreignTitle ): Title {

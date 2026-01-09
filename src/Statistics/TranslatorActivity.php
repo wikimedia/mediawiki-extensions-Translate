@@ -22,18 +22,12 @@ class TranslatorActivity {
 	public const CACHE_TIME = 3 * 24 * 3600;
 	// 25 hours so that it's easy to configure the maintenance script run daily
 	public const CACHE_STALE = 25 * 3600;
-	private BagOStuff $cache;
-	private TranslatorActivityQuery $query;
-	private JobQueueGroup $jobQueue;
 
 	public function __construct(
-		BagOStuff $cache,
-		TranslatorActivityQuery $query,
-		JobQueueGroup $jobQueue
+		private readonly BagOStuff $cache,
+		private readonly TranslatorActivityQuery $query,
+		private readonly JobQueueGroup $jobQueue,
 	) {
-		$this->cache = $cache;
-		$this->query = $query;
-		$this->jobQueue = $jobQueue;
 	}
 
 	/**

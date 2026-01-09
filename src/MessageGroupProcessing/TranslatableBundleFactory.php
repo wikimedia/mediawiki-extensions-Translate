@@ -17,15 +17,11 @@ use MediaWiki\Title\Title;
  * @license GPL-2.0-or-later
  */
 class TranslatableBundleFactory {
-	private TranslatablePageStore $translatablePageStore;
-	private MessageBundleStore $messageBundleStore;
 
 	public function __construct(
-		TranslatablePageStore $translatablePageStore,
-		MessageBundleStore $messageBundleStore
+		private readonly TranslatablePageStore $translatablePageStore,
+		private readonly MessageBundleStore $messageBundleStore,
 	) {
-		$this->translatablePageStore = $translatablePageStore;
-		$this->messageBundleStore = $messageBundleStore;
 	}
 
 	/** Returns a TranslatableBundle if Title is a valid translatable bundle else returns null */

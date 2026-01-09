@@ -15,14 +15,11 @@ use Wikimedia\Rdbms\IDatabase;
  * @since 2013.06 (namespaced in 2020.11)
  */
 class TranslationStashStorage implements TranslationStashReader, TranslationStashWriter {
-	/** @var IDatabase */
-	protected $db;
-	/** @var string */
-	protected $dbTable;
 
-	public function __construct( IDatabase $db, string $table = 'translate_stash' ) {
-		$this->db = $db;
-		$this->dbTable = $table;
+	public function __construct(
+		private readonly IDatabase $db,
+		private readonly string $dbTable = 'translate_stash',
+	) {
 	}
 
 	public function getTranslations( User $user ): array {
