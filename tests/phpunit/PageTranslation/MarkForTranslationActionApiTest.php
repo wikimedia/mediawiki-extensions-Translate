@@ -279,7 +279,7 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 		$title->method( 'toPageRecord' )
 			->willReturn( $pageRecord );
 
-		$page = $this->getMockBuilder( 'TranslatablePage' )
+		$page = $this->getMockBuilder( TranslatablePage::class )
 			->disableOriginalConstructor()
 			->onlyMethods( [ 'hasPageDisplayTitle', 'getMessageGroupId', 'supportsTransclusion' ] )
 			->getMock();

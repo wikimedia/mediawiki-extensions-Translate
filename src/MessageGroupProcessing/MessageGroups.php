@@ -14,7 +14,10 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use MessageGroupLoader;
+use RecentAdditionsMessageGroup;
+use RecentMessageGroup;
 use RuntimeException;
+use SandboxMessageGroup;
 use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
@@ -456,12 +459,16 @@ class MessageGroups {
 		return $all;
 	}
 
-	/** Contents on these groups changes on a whim. */
+	/**
+	 * Contents on these groups changes on a whim.
+	 *
+	 * @return array<string,class-string>
+	 */
 	public static function getDynamicGroups(): array {
 		return [
-			'!recent' => 'RecentMessageGroup',
-			'!additions' => 'RecentAdditionsMessageGroup',
-			'!sandbox' => 'SandboxMessageGroup',
+			'!recent' => RecentMessageGroup::class,
+			'!additions' => RecentAdditionsMessageGroup::class,
+			'!sandbox' => SandboxMessageGroup::class,
 		];
 	}
 

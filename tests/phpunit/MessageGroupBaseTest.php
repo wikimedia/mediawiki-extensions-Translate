@@ -2,6 +2,7 @@
 declare( strict_types = 1 );
 
 use MediaWiki\Extension\Translate\MessageLoading\Message;
+use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
@@ -198,7 +199,7 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 	public function testGetManglers() {
 		$conf = $this->groupConfiguration;
 		$conf['MANGLER'] = [
-			'class' => 'StringMatcher',
+			'class' => StringMatcher::class,
 			'prefix' => 'msg-prefix-',
 			'patterns' => [ '*' ]
 		];
