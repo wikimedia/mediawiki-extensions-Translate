@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Title\Title;
 
 /**

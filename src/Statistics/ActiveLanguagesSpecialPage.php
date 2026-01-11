@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use InvalidArgumentException;
-use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\LogNames;
@@ -15,6 +14,7 @@ use MediaWiki\Language\LanguageCode;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use ObjectCacheFactory;

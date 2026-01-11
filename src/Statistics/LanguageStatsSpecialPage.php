@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use AggregateMessageGroup;
 use JobQueueGroup;
-use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Deferred\DeferredUpdates;
@@ -16,6 +15,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MessageGroup;
 use ObjectCacheFactory;

@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 
 /**
