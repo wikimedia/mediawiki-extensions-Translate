@@ -23,6 +23,7 @@ function configureLanguageInput( $form, $widget ) {
 			$input.val( languages.join( ',' ) );
 		}
 	} );
+	$input.val( priorityLanguageData.selected.join( ',' ) );
 
 	$form.prepend( $input );
 
