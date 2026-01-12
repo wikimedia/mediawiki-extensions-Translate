@@ -49,22 +49,16 @@ class JavaFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		foreach ( $lines as $line ) {
 			if ( $lineContinuation ) {
 				$lineContinuation = false;
-				$valuecont = $line;
-				$valuecont = str_replace( '\n', "\n", $valuecont );
-				$value .= $valuecont;
+				$value .= str_replace( '\n', "\n", $line );
 			} else {
 				if ( $line === '' ) {
 					continue;
 				}
 
-				if ( $line[0] === '#' || $line[0] === '!' ) {
-					$match = [];
-					$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
-
-					if ( $ok ) {
+				if ( str_starts_with( $line, '#' ) || str_starts_with( $line, '!' ) ) {
+					if ( preg_match( '/#\s*Author:\s*(.*)/', $line, $match ) ) {
 						$authors[] = $match[1];
 					}
-
 					continue;
 				}
 

@@ -38,7 +38,7 @@ class GettextNewlineValidator extends NewlineValidator {
 	}
 
 	private function removeTrailingSlash( string $str ): string {
-		if ( substr( $str, -strlen( '\\' ) ) === '\\' ) {
+		if ( str_ends_with( $str, '\\' ) ) {
 			return substr( $str, 0, -1 );
 		}
 

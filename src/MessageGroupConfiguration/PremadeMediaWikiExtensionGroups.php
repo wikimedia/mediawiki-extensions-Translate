@@ -182,7 +182,7 @@ class PremadeMediaWikiExtensionGroups {
 			$newGroup = [];
 
 			foreach ( $lines as $line ) {
-				if ( $line === '' || $line[0] === '#' ) {
+				if ( $line === '' || str_starts_with( $line, '#' ) ) {
 					continue;
 				}
 

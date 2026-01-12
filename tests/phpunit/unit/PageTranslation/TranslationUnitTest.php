@@ -144,13 +144,7 @@ class TranslationUnitTest extends MediaWikiUnitTestCase {
 
 		$parser = $this->createStub( Parser::class );
 		$parser->method( 'guessSectionNameFromWikiText' )->willReturnCallback(
-			static function ( string $headingText ) {
-				if ( $headingText && $headingText[0] === '#' ) {
-					return '##headingId';
-				}
-
-				return '#headingId';
-			}
+			static fn ( string $text ) => str_starts_with( $text, '#' ) ? '##headingId' : '#headingId'
 		);
 
 		$wrapUntranslated = true;

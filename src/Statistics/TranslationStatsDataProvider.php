@@ -89,9 +89,7 @@ class TranslationStatsDataProvider {
 		$increment = self::getIncrement( $opts->getValue( 'scale' ) );
 
 		$labels = $so->labels();
-		$keys = array_keys( $labels );
-		$values = array_pad( [], count( $labels ), 0 );
-		$defaults = array_combine( $keys, $values );
+		$defaults = array_fill_keys( array_keys( $labels ), 0 );
 
 		$data = [];
 		// Allow 10 seconds in the future for processing time
@@ -128,7 +126,7 @@ class TranslationStatsDataProvider {
 		}
 
 		// Don't display dummy label
-		if ( count( $labels ) === 1 && $labels[0] === 'all' ) {
+		if ( $labels === [ 'all' ] ) {
 			$labels = [];
 		}
 

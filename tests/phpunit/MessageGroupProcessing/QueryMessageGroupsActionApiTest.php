@@ -59,7 +59,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 
 		// Ignore dynamic groups
 		foreach ( $items as $index => $group ) {
-			if ( $group['id'][0] === '!' ) {
+			if ( str_starts_with( $group['id'], '!' ) ) {
 				unset( $items[$index] );
 			}
 		}

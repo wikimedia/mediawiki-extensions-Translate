@@ -185,7 +185,7 @@ class MessageGroups {
 			return $groups[$id];
 		}
 
-		if ( $id !== '' && $id[0] === '!' ) {
+		if ( str_starts_with( $id, '!' ) ) {
 			$dynamic = self::getDynamicGroups();
 			if ( isset( $dynamic[$id] ) ) {
 				return new $dynamic[$id];
