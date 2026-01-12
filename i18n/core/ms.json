@@ -135,6 +135,7 @@
 	"translate-langstats-expandall": "tunjukkan semua",
 	"translate-langstats-collapseall": "sorokkan semua",
 	"translate-language-code": "Kod bahasa",
+	"translate-language-field-name": "Bahasa:",
 	"translate-suppress-complete": "Sorokkan kumpulan mesej yang diterjemah sepenuhnya",
 	"translate-ls-noempty": "Sorokkan kumpulan mesej yang langsung tidak diterjemah",
 	"translate-language": "Bahasa",

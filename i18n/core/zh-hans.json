@@ -230,6 +230,7 @@
 	"translate-langstats-expandall": "全部展开",
 	"translate-langstats-collapseall": "全部折叠",
 	"translate-language-code": "语言代码",
+	"translate-language-field-name": "语言：",
 	"translate-suppress-complete": "隐藏完全翻译的消息组",
 	"translate-ls-noempty": "隐藏完全未翻译的消息组",
 	"translate-language": "语言",
