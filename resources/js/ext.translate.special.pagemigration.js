@@ -403,8 +403,7 @@
 	 * Handler for 'Cancel' button click event.
 	 */
 	function cancelHandler() {
-		$( '.mw-tpm-sp-error__message' ).addClass( 'hide' );
-		$( '.mw-tpm-sp-instructions' ).addClass( 'hide' );
+		$( '.mw-tpm-sp-error__message, .mw-tpm-sp-instructions' ).addClass( 'hide' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );

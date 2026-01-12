@@ -726,15 +726,11 @@
 				userId = mw.config.get( 'wgUserId' );
 
 			messageTable.$actionBar.find( '.tux-view-switcher .down' ).removeClass( 'down' );
-			if ( mode === 'translate' ) {
-				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
-			}
-			if ( mode === 'proofread' ) {
-				messageTable.$actionBar.find( '.proofread-mode-button' ).addClass( 'down' );
-			}
-			if ( mode === 'page' ) {
-				messageTable.$actionBar.find( '.page-mode-button' ).addClass( 'down' );
-			}
+			// The following classes are used here:
+			// * translate-mode-button
+			// * proofread-mode-button
+			// * page-mode-button
+			messageTable.$actionBar.find( '.' + mode + '-mode-button' ).addClass( 'down' );
 
 			messageTable.firstProofreadTipShown = false;
 

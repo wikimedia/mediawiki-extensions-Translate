@@ -1471,9 +1471,8 @@
 				this.$editor.addClass( 'hide' );
 
 				// Remove access keys to avoid duplicates in DOM (T306141)
-				this.$editor.find( '.tux-editor-save-button' ).removeAttr( 'accesskey' );
-				this.$editor.find( '.tux-editor-skip-button' ).removeAttr( 'accesskey' );
-				this.$editor.find( '.tux-input-editsummary' ).removeAttr( 'accesskey' );
+				this.$editor.find( '.tux-editor-save-button, .tux-editor-skip-button, .tux-input-editsummary' )
+					.removeAttr( 'accesskey' );
 			}
 
 			this.hideShortcuts();

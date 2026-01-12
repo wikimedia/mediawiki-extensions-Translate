@@ -621,9 +621,8 @@
 							)
 						);
 						// Remove the timestamp link if there is more than one empty summary.
-						$lastSummaryItem.find( '.edit-summary-time' ).remove();
 						// Remove the spacer since we no longer have a timestamp
-						$lastSummaryItem.find( '.edit-summary-spacer' ).remove();
+						$lastSummaryItem.find( '.edit-summary-time, .edit-summary-spacer' ).remove();
 					} else {
 						// Add a new empty summary list item
 						$summaryItem.append(

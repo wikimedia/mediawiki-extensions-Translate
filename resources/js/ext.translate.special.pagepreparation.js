@@ -334,8 +334,7 @@
 				$( '.divDiff' ).addClass( 'hide' );
 				$( '#action-prepare' ).removeClass( 'hide' );
 				$input.val( '' );
-				$( '#action-save' ).addClass( 'hide' );
-				$( '#action-cancel' ).addClass( 'hide' );
+				$( '#action-save, #action-cancel' ).addClass( 'hide' );
 			} ).fail( function ( _code, data ) {
 				displayError( data.error.info );
 			} );
@@ -385,8 +384,7 @@
 						$( '.divDiff' ).removeClass( 'hide' );
 						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
 						$prepare.addClass( 'hide' );
-						$( '#action-save' ).removeClass( 'hide' );
-						$( '#action-cancel' ).removeClass( 'hide' );
+						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					} else {
 						displayError( mw.msg( 'pp-already-prepared-message' ) );
 					}
