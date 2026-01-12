@@ -38,7 +38,7 @@ class MessageGroupCache {
 
 	/** Returns whether cache exists for this language and group. */
 	public function exists(): bool {
-		return file_exists( $this->getCacheFilePath() );
+		return file_exists( $this->cacheFilePath );
 	}
 
 	/**
@@ -110,15 +110,15 @@ class MessageGroupCache {
 		if ( $messages === [] ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
-				unlink( $this->getCacheFilePath() );
+				unlink( $this->cacheFilePath );
 			}
 
 			return; // Don't create empty caches
 		}
 		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->languageCode ) ) );
 
-		wfMkdirParents( dirname( $this->getCacheFilePath() ) );
-		$cache = Writer::open( $this->getCacheFilePath() );
+		wfMkdirParents( dirname( $this->cacheFilePath ) );
+		$cache = Writer::open( $this->cacheFilePath );
 
 		foreach ( $messages as $key => $value ) {
 			$cache->set( $key, $value );
@@ -218,7 +218,7 @@ class MessageGroupCache {
 
 	public function invalidate(): void {
 		$this->close();
-		unlink( $this->getCacheFilePath() );
+		unlink( $this->cacheFilePath );
 	}
 
 	private function serialize( array $data ): string {
@@ -238,7 +238,7 @@ class MessageGroupCache {
 
 	/** Open the cache for reading. */
 	protected function open(): Reader {
-		$this->cache ??= Reader::open( $this->getCacheFilePath() );
+		$this->cache ??= Reader::open( $this->cacheFilePath );
 
 		return $this->cache;
 	}
@@ -251,8 +251,4 @@ class MessageGroupCache {
 		}
 	}
 
-	/** Returns full path to the cache file. */
-	protected function getCacheFilePath(): string {
-		return $this->cacheFilePath;
-	}
 }

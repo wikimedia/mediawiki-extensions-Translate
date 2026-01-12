@@ -110,7 +110,7 @@ class MessageIndex {
 
 	/** @return string|array|null */
 	private function getWithCache( string $key ) {
-		$interimCacheValue = $this->getInterimCache()->get( self::CACHE_KEY );
+		$interimCacheValue = $this->interimCache->get( self::CACHE_KEY );
 		if ( $interimCacheValue && isset( $interimCacheValue['newKeys'][$key] ) ) {
 			$this->logger->debug(
 				'[MessageIndex] interim cache hit: {messageKey} with value {groupId}',
@@ -219,7 +219,7 @@ class MessageIndex {
 		$diff = self::getArrayDiff( $old, $new );
 		$this->messageIndexStore->store( $new, $diff['keys'] );
 
-		$cache = $this->getInterimCache();
+		$cache = $this->interimCache;
 		$interimCacheValue = $cache->get( self::CACHE_KEY );
 		if ( $interimCacheValue ) {
 			$timestamp ??= microtime( true );
@@ -268,10 +268,6 @@ class MessageIndex {
 		return $this->statusCache->makeKey( 'Translate', 'MessageIndex', 'status' );
 	}
 
-	private function getInterimCache(): BagOStuff {
-		return $this->interimCache;
-	}
-
 	public function storeInterim( MessageGroup $group, array $newKeys ): void {
 		$namespace = $group->getNamespace();
 		$id = $group->getId();
@@ -281,7 +277,7 @@ class MessageIndex {
 			$normalizedNewKeys[$this->normaliseKey( $namespace, $key )] = $id;
 		}
 
-		$cache = $this->getInterimCache();
+		$cache = $this->interimCache;
 		// Merge with existing keys (if present)
 		$interimCacheValue = $cache->get( self::CACHE_KEY, $cache::READ_LATEST );
 		if ( $interimCacheValue ) {
