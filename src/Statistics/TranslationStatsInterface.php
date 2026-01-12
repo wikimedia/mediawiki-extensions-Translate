@@ -19,7 +19,6 @@ interface TranslationStatsInterface {
 	/**
 	 * Constructor. The implementation can access the graph options, but not
 	 * define new ones.
-	 * @param TranslationStatsGraphOptions $opts
 	 */
 	public function __construct( TranslationStatsGraphOptions $opts );
 

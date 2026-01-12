@@ -918,7 +918,6 @@ class Hooks {
 	 * re-mark the translations of the page title as outdated (if enabled
 	 * for translation).
 	 * Hook: RevisionRecordInserted
-	 * @param RevisionRecord $rev
 	 */
 	public static function updateTranstagOnNullRevisions( RevisionRecord $rev ) {
 		$parentId = $rev->getParentId();

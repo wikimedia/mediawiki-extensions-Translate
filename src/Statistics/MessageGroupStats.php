@@ -160,7 +160,6 @@ class MessageGroupStats {
 	 * Recalculate stats for all groups associated with the message.
 	 *
 	 * Hook: TranslateEventTranslationReview
-	 * @param MessageHandle $handle
 	 */
 	public static function clear( MessageHandle $handle ): void {
 		$code = $handle->getCode();

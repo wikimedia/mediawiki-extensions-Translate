@@ -73,7 +73,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/** @var array<string, TitleValue> Key is message display key */
 	protected array $keys = [];
-	/** array( %Message String => Message, ... ) */
+	/** @var array<string,Message>|null */
 	protected ?array $messages = [];
 	private ?array $reverseMap = null;
 	// Database resources
@@ -90,7 +90,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @var array[]
 	 */
 	protected array $tags = [];
-	/** @var string[] Authors. */
+	/** @var string[] */
 	private array $authors = [];
 
 	/**
@@ -184,7 +184,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		foreach ( $this->messages as $m ) {
 			// Check if there are authors
-			/** @var Message $m */
 			$author = $m->getProperty( 'last-translator-text' );
 
 			if ( $author === null ) {

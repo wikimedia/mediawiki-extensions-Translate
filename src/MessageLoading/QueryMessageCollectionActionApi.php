@@ -161,7 +161,6 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 
 		$props = array_flip( $params['prop'] );
 
-		/** @var Title $title */
 		foreach ( $messages->keys() as $mkey => $titleValue ) {
 			$title = Title::newFromLinkTarget( $titleValue );
 

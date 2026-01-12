@@ -51,7 +51,6 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		$groups = MessageGroups::getAllGroups();
 		$keys = [];
 
-		/** @var $g MessageGroup */
 		foreach ( $groups as $g ) {
 			$states = $g->getMessageGroupStates()->getStates();
 			if ( $states !== null ) {

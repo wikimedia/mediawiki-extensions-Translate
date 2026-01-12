@@ -47,8 +47,6 @@ abstract class TranslationAid {
 	/**
 	 * List of available message types mapped to the classes
 	 * implementing them.
-	 *
-	 * @return array
 	 */
 	public static function getTypes(): array {
 		return [
