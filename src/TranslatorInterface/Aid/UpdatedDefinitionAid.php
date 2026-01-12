@@ -7,7 +7,6 @@ use DifferenceEngine;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
@@ -23,8 +22,6 @@ use MediaWiki\Title\Title;
  */
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData(): array {
-		$db = Utilities::getSafeReadDB();
-
 		$revTagStore = Services::getInstance()->getRevTagStore();
 
 		$translationRevision = $revTagStore->getTransver( $this->handle->getTitle() );

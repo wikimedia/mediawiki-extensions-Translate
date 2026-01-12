@@ -19,7 +19,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use UnexpectedValueException;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
@@ -280,10 +280,10 @@ class Utilities {
 	/**
 	 * Get a DB handle suitable for read and read-for-write cases
 	 *
-	 * @return IDatabase Primary for HTTP POST, CLI, DB already changed;
+	 * @return IReadableDatabase Primary for HTTP POST, CLI, DB already changed;
 	 * replica otherwise
 	 */
-	public static function getSafeReadDB(): IDatabase {
+	public static function getSafeReadDB(): IReadableDatabase {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$index = self::shouldReadFromPrimary() ? DB_PRIMARY : DB_REPLICA;
 
