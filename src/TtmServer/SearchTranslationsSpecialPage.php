@@ -638,9 +638,8 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		);
 
 		$nonDefaults = $this->opts->getChangedValues();
-		$checkLabel = Html::element( 'input', [
-			'type' => 'checkbox', 'name' => 'case', 'value' => '1',
-			'checked' => isset( $nonDefaults['case'] ),
+		$checkLabel = Html::check( 'case', isset( $nonDefaults['case'] ), [
+			'value' => '1',
 			'id' => 'tux-case-sensitive',
 		] ) . "\u{00A0}" . Html::label(
 			$this->msg( 'tux-sst-case-sensitive' )->text(),

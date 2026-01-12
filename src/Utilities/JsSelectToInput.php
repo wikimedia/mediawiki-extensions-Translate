@@ -39,13 +39,16 @@ final class JsSelectToInput {
 
 		RequestContext::getMain()->getOutput()->addModules( 'ext.translate.selecttoinput' );
 		$html = $this->select->getHTML();
-		$html .= Html::element( 'input', [
-			'type' => 'button',
-			'value' => wfMessage( 'translate-jssti-add' )->text(),
-			'class' => 'mw-translate-jssti',
-			'data-translate-jssti-sourceid' => $sourceId,
-			'data-translate-jssti-targetid' => $this->targetId
-		] );
+		$html .= Html::input(
+			'',
+			wfMessage( 'translate-jssti-add' )->text(),
+			'button',
+			[
+				'class' => 'mw-translate-jssti',
+				'data-translate-jssti-sourceid' => $sourceId,
+				'data-translate-jssti-targetid' => $this->targetId,
+			]
+		);
 
 		return $html;
 	}

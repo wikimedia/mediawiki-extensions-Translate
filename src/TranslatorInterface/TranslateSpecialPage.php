@@ -217,9 +217,8 @@ class TranslateSpecialPage extends SpecialPage {
 		$container = Html::openElement( 'ul', [ 'class' => 'column tux-message-selector' ] );
 		$container .= Html::rawElement( 'li',
 			[ 'class' => 'column' ],
-			Html::element( 'input', [
-				'type' => 'checkbox', 'name' => 'optional', 'value' => '1',
-				'checked' => false,
+			Html::check( 'optional', false, [
+				'value' => '1',
 				'id' => 'tux-option-optional',
 				'data-filter' => 'optional'
 			] ) . "\u{00A0}" . Html::label(
@@ -240,11 +239,15 @@ class TranslateSpecialPage extends SpecialPage {
 		$output .= Html::rawElement(
 			'div',
 			[ 'class' => 'tux-message-filter-wrapper' ],
-			Html::element( 'input', [
-				'class' => 'tux-message-filter-box',
-				'type' => 'search',
-				'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->text()
-			] )
+			Html::input(
+				'',
+				'',
+				'search',
+				[
+					'class' => 'tux-message-filter-box',
+					'placeholder' => $this->msg( 'tux-message-filter-placeholder' )->text(),
+				]
+			)
 		);
 
 		// close three columns and the row

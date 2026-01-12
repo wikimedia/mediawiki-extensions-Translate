@@ -303,13 +303,10 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 					$text = "{{DISPLAYTITLE:$displayTitle}}$text";
 				}
 
-				$box = Html::element(
-					'textarea',
-					[ 'id' => 'wpTextbox', 'rows' => 40, ],
-					$text
-				);
-				$out->addHTML( $box );
-
+				$out->addHTML( Html::textarea( '', $text, [
+					'id' => 'wpTextbox',
+					'rows' => 40,
+				] ) );
 		}
 
 		return Status::newGood();

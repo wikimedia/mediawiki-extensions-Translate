@@ -167,9 +167,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		// translate-statsf-width, translate-statsf-height, translate-statsf-start,
 		// translate-statsf-days, translate-statsf-scale, translate-statsf-count,
 		// translate-statsf-language, translate-statsf-group
-		$label = 'translate-statsf-' . $name;
-		$label = $this->msg( $label )->escaped();
-		return Html::rawElement( 'label', [ 'for' => $name ], $label );
+		return Html::label( $this->msg( "translate-statsf-$name" )->text(), $name );
 	}
 
 	/// Construct HTML for a table row with label and radio input in two columns.
