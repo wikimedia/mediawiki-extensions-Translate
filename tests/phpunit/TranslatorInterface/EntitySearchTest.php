@@ -232,5 +232,20 @@ class EntitySearchTest extends MediaWikiIntegrationTestCase {
 			10,
 			[]
 		];
+
+		yield 'trailing wildcard is ignored' => [
+			'prefix*',
+			2,
+			[
+				[
+					'pattern' => 'MediaWiki talk:Prefix*',
+					'count' => 3,
+				],
+				[
+					'pattern' => 'MediaWiki:Prefix',
+					'count' => 1,
+				],
+			]
+		];
 	}
 }

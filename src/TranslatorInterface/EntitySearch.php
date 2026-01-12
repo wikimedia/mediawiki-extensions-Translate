@@ -135,6 +135,9 @@ class EntitySearch {
 		$haystack = $this->getMessagesHaystack();
 		$rowDelimiter = self::ROW_DELIMITER;
 		$anything = "[^$rowDelimiter]";
+		// If the query ends with a wildcard, remove it. The search handles
+		// wildcards implicitly by being a prefix search.
+		$query = rtrim( $query, '*' );
 		$query = preg_quote( $query, '/' );
 
 		// Word match
