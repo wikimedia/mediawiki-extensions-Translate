@@ -191,7 +191,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			'Sanity: must tag revision 1 ready for translate'
 		);
 
-		$wikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromID( $title->getArticleID() );
+		$wikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromID( $title->getID() );
 
 		if ( method_exists( MediaWikiServices::class, 'getProtectPageFactory' ) ) {
 			// Planned future change (T292683)

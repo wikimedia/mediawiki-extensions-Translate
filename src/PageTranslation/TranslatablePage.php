@@ -48,7 +48,6 @@ class TranslatablePage extends TranslatableBundle {
 	/** @var string Name of the section which contains the translated page title. */
 	public const DISPLAY_TITLE_UNIT_ID = 'Page display title';
 
-	protected PageIdentity $title;
 	protected RevTagStore $revTagStore;
 	/** @var ?string Text contents of the page. */
 	protected $text;
@@ -61,8 +60,9 @@ class TranslatablePage extends TranslatableBundle {
 	/** @var ?string */
 	private $targetLanguage;
 
-	protected function __construct( PageIdentity $title ) {
-		$this->title = $title;
+	protected function __construct(
+		private readonly PageIdentity $page,
+	) {
 		$this->revTagStore = Services::getInstance()->getRevTagStore();
 	}
 
@@ -71,8 +71,8 @@ class TranslatablePage extends TranslatableBundle {
 	 * Some functions will fail unless you set revision
 	 * parameter manually.
 	 */
-	public static function newFromText( Title $title, string $text ): self {
-		$obj = new self( $title );
+	public static function newFromText( PageIdentity $page, string $text ): self {
+		$obj = new self( $page );
 		$obj->text = $text;
 		$obj->source = 'text';
 
@@ -84,15 +84,15 @@ class TranslatablePage extends TranslatableBundle {
 	 * The revision must belong to the title given or unspecified
 	 * behavior will happen.
 	 */
-	public static function newFromRevision( PageIdentity $title, int $revision ): self {
+	public static function newFromRevision( PageIdentity $page, int $revision ): self {
 		$rev = MediaWikiServices::getInstance()
 			->getRevisionLookup()
-			->getRevisionByTitle( $title, $revision );
+			->getRevisionByTitle( $page, $revision );
 		if ( $rev === null ) {
 			throw new RuntimeException( 'Revision is null' );
 		}
 
-		$obj = new self( $title );
+		$obj = new self( $page );
 		$obj->source = 'revision';
 		$obj->revision = $revision;
 
@@ -103,8 +103,8 @@ class TranslatablePage extends TranslatableBundle {
 	 * Constructs a translatable page from title.
 	 * The text of last marked revision is loaded when needed.
 	 */
-	public static function newFromTitle( PageIdentity $title ): self {
-		$obj = new self( $title );
+	public static function newFromTitle( PageIdentity $page ): self {
+		$obj = new self( $page );
 		$obj->source = 'title';
 
 		return $obj;
@@ -112,11 +112,11 @@ class TranslatablePage extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTitle(): Title {
-		return Title::newFromPageIdentity( $this->title );
+		return Title::newFromPageIdentity( $this->page );
 	}
 
 	public function getPageIdentity(): PageIdentity {
-		return $this->title;
+		return $this->page;
 	}
 
 	/** Returns the text for this translatable page. */
@@ -342,7 +342,7 @@ class TranslatablePage extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTranslationUnitPages( ?string $code = null ): array {
-		return $this->getTranslationUnitPagesByTitle( $this->title, $code );
+		return $this->getTranslationUnitPagesByTitle( $this->page, $code );
 	}
 
 	public function getTranslationPercentages(): array {

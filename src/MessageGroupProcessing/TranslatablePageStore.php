@@ -78,7 +78,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		// Check if the revision still has the <translate> tag
 		$pageText = $pageContent->getText();
 		if ( $this->translatablePageParser->containsMarkup( $pageText ) ) {
-			$this->revTagStore->replaceTag( $bundle->getTitle(), RevTagStore::TP_READY_TAG, $revision->getId() );
+			$this->revTagStore->replaceTag( $bundle->getPageIdentity(), RevTagStore::TP_READY_TAG, $revision->getId() );
 			TranslatablePage::clearSourcePageCache();
 		}
 	}
@@ -88,7 +88,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'translate_sections' )
-			->where( [ 'trs_page' => $title->getArticleID() ] )
+			->where( [ 'trs_page' => $title->getId() ] )
 			->caller( __METHOD__ )
 			->execute();
 

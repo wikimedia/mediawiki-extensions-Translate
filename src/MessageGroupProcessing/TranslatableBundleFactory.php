@@ -7,7 +7,7 @@ use InvalidArgumentException;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
-use MediaWiki\Title\Title;
+use MediaWiki\Page\PageIdentity;
 
 /**
  * Create instances of various classes based on the type of TranslatableBundle
@@ -25,31 +25,31 @@ class TranslatableBundleFactory {
 	}
 
 	/** Returns a TranslatableBundle if Title is a valid translatable bundle else returns null */
-	public function getBundle( Title $title ): ?TranslatableBundle {
-		if ( TranslatablePage::isSourcePage( $title ) ) {
-			return TranslatablePage::newFromTitle( $title );
-		} elseif ( MessageBundle::isSourcePage( $title ) ) {
-			return new MessageBundle( $title );
+	public function getBundle( PageIdentity $page ): ?TranslatableBundle {
+		if ( TranslatablePage::isSourcePage( $page ) ) {
+			return TranslatablePage::newFromTitle( $page );
+		} elseif ( MessageBundle::isSourcePage( $page ) ) {
+			return new MessageBundle( $page );
 		}
 
 		return null;
 	}
 
 	/** Return a TranslatableBundle from the Title, throwing an error if it is not a TranslatableBundle */
-	public function getValidBundle( Title $title ): TranslatableBundle {
-		$bundle = $this->getBundle( $title );
+	public function getValidBundle( PageIdentity $page ): TranslatableBundle {
+		$bundle = $this->getBundle( $page );
 		if ( $bundle ) {
 			return $bundle;
 		}
 
-		throw new InvalidArgumentException( "{$title->getPrefixedText()} is not a TranslatableBundle" );
+		throw new InvalidArgumentException( "$page is not a TranslatableBundle" );
 	}
 
-	public function getBundleFromClass( Title $title, string $bundleType ): TranslatableBundle {
+	public function getBundleFromClass( PageIdentity $page, string $bundleType ): TranslatableBundle {
 		if ( $bundleType === MessageBundle::class ) {
-			return new MessageBundle( $title );
+			return new MessageBundle( $page );
 		} else {
-			return TranslatablePage::newFromTitle( $title );
+			return TranslatablePage::newFromTitle( $page );
 		}
 	}
 

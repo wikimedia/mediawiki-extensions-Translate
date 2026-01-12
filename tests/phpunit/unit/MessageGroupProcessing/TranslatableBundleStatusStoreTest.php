@@ -49,7 +49,7 @@ class TranslatableBundleStatusStoreTest extends MediaWikiUnitTestCase {
 			->method( 'getPrefixedDBkey' )
 			->willReturn( $prefixedDbKey );
 
-		$mock->method( 'getArticleID' )
+		$mock->method( 'getId' )
 			->willReturn( 1 );
 
 		return $mock;

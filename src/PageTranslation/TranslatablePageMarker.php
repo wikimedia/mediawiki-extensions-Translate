@@ -332,7 +332,7 @@ class TranslatablePageMarker {
 		$groupId = $page->getMessageGroupId();
 		$maxId = (int)$this->messageGroupMetadata->get( $groupId, 'maxid' );
 
-		$pageId = $title->getArticleID();
+		$pageId = $title->getId();
 		$sections = $pageSettings->shouldTranslateTitle()
 			? $operation->getUnits()
 			: array_filter(
@@ -360,7 +360,7 @@ class TranslatablePageMarker {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'translate_sections' )
-			->where( [ 'trs_page' => $title->getArticleID() ] )
+			->where( [ 'trs_page' => $pageId ] )
 			->caller( __METHOD__ )
 			->execute();
 
@@ -543,7 +543,7 @@ class TranslatablePageMarker {
 		MessageLocalizer $localizer,
 		TranslatablePageMarkOperation $operation
 	): ?int {
-		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getTitle() )->newPageUpdater( $authority );
+		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getPageIdentity() )->newPageUpdater( $authority );
 		$content = ContentHandler::makeContent(
 			$operation->getParserOutput()->sourcePageTextForSaving(),
 			$page->getTitle()

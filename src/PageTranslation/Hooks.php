@@ -936,9 +936,8 @@ class Hooks {
 			return;
 		}
 
-		$title = Title::newFromLinkTarget( $rev->getPageAsLinkTarget() );
 		$bundleFactory = Services::getInstance()->getTranslatableBundleFactory();
-		$bundle = $bundleFactory->getBundle( $title );
+		$bundle = $bundleFactory->getBundle( $rev->getPage() );
 
 		if ( $bundle ) {
 			$bundleStore = $bundleFactory->getStore( $bundle );
@@ -1087,7 +1086,7 @@ class Hooks {
 		}
 
 		$factory = Services::getInstance()->getTranslationUnitStoreFactory();
-		$store = $factory->getReader( $translatablePage->getTitle() );
+		$store = $factory->getReader( $translatablePage->getPageIdentity() );
 		$units = $store->getNames();
 
 		if ( !in_array( $parts[ 'section' ], $units ) ) {
@@ -1245,8 +1244,9 @@ class Hooks {
 	 * @return bool
 	 */
 	public static function disableDelete( $article, $out, &$reason ) {
-		$title = $article->getTitle();
-		$bundle = Services::getInstance()->getTranslatableBundleFactory()->getBundle( $title );
+		$page = $article->getPage();
+		$title = $page->getTitle();
+		$bundle = Services::getInstance()->getTranslatableBundleFactory()->getBundle( $page );
 		$isDeletableBundle = $bundle && $bundle->isDeletable();
 		if ( $isDeletableBundle || TranslatablePage::isTranslationPage( $title ) ) {
 			$new = SpecialPage::getTitleFor(

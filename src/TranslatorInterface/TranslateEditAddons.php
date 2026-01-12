@@ -15,6 +15,7 @@ use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\TtmServer\TtmServer;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
@@ -108,8 +109,7 @@ class TranslateEditAddons {
 		}
 
 		$text = $content->getText();
-		$title = $wikiPage->getTitle();
-		$handle = new MessageHandle( $title );
+		$handle = new MessageHandle( $wikiPage->getTitle() );
 
 		if ( !$handle->isValid() ) {
 			return;
@@ -151,13 +151,12 @@ class TranslateEditAddons {
 			// In this case the page_latest will (probably) have changed. The above might work by chance
 			// since it reads from a replica database which might not have gotten the update yet, but
 			// don't trust it and read the fuzzy status of the parent ID from the database instead
-			$wasFuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $parentId );
+			$wasFuzzy = $revTagStore->isRevIdFuzzy( $wikiPage->getId(), $parentId );
 		}
 		if ( !$fuzzy && $wasFuzzy ) {
-			$title = $mwServices->getTitleFactory()->newFromPageIdentity( $wikiPage );
 			$user = $mwServices->getUserFactory()->newFromUserIdentity( $userIdentity );
 
-			if ( !$mwServices->getPermissionManager()->userCan( 'unfuzzy', $user, $title ) ) {
+			if ( !$mwServices->getPermissionManager()->userCan( 'unfuzzy', $user, $wikiPage->getTitle() ) ) {
 				// No permission to unfuzzy this unit so leave it fuzzy
 				$fuzzy = true;
 			} elseif ( $isNullEdit ) {
@@ -180,7 +179,7 @@ class TranslateEditAddons {
 				$revId = $nullRevision->getId();
 				$entry->setAssociatedRevId( $revId );
 				$entry->setPerformer( $userIdentity );
-				$entry->setTarget( $title );
+				$entry->setTarget( $wikiPage );
 				$logId = $entry->insert();
 				$entry->publish( $logId );
 			}
@@ -197,12 +196,12 @@ class TranslateEditAddons {
 				// This is a paranoia check - if somehow getOriginalRevisionId returns null despite isExactRevert
 				// being true just handle it like it wasn't a revert rather than crashing
 				if ( $revertedTo !== null ) {
-					$fuzzy = $revTagStore->isRevIdFuzzy( $title->getArticleID(), $revertedTo );
+					$fuzzy = $revTagStore->isRevIdFuzzy( $wikiPage->getId(), $revertedTo );
 				}
 			}
 		}
 
-		self::updateFuzzyTag( $title, $revId, $fuzzy );
+		self::updateFuzzyTag( $wikiPage, $revId, $fuzzy );
 
 		$group = $handle->getGroup();
 		// Update translation stats - source language should always be up to date
@@ -231,9 +230,9 @@ class TranslateEditAddons {
 		} elseif ( $revertedTo !== null ) {
 			// If a revert sets fuzzy status then also set tp:transver
 			// to the tp:transver of the version being reverted to
-			$oldTransver = $revTagStore->getTransver( $title, $revertedTo );
+			$oldTransver = $revTagStore->getTransver( $wikiPage, $revertedTo );
 			if ( $oldTransver !== null ) {
-				$revTagStore->setTransver( $title, $revId, $oldTransver );
+				$revTagStore->setTransver( $wikiPage, $revId, $oldTransver );
 			}
 		}
 
@@ -248,15 +247,15 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * @param Title $title
+	 * @param PageIdentity $page
 	 * @param int $revision
 	 * @param bool $fuzzy Whether to fuzzy or not
 	 */
-	private static function updateFuzzyTag( Title $title, int $revision, bool $fuzzy ): void {
+	private static function updateFuzzyTag( PageIdentity $page, int $revision, bool $fuzzy ): void {
 		$dbw = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
 
 		$conds = [
-			'rt_page' => $title->getArticleID(),
+			'rt_page' => $page->getId(),
 			'rt_type' => RevTagStore::FUZZY_TAG,
 			'rt_revision' => $revision
 		];

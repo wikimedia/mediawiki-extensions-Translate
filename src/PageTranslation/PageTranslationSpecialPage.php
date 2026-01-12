@@ -393,7 +393,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
 		) {
 			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullURL(
-				[ 'tpage' => $page->getTitle()->getArticleID() ]
+				[ 'tpage' => $page->getPageIdentity()->getId() ]
 			);
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}

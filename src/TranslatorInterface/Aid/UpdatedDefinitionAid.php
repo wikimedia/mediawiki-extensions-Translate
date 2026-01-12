@@ -48,7 +48,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		// Escaping legacy issue (T330453)
-		if ( $oldRevRecord->getPageId() !== $definitionTitle->getArticleID() ) {
+		if ( $oldRevRecord->getPageId() !== $definitionTitle->getId() ) {
 			throw new TranslationHelperException(
 				'Translation unit definition id does not match old revision definition id'
 			);

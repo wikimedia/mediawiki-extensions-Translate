@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\PageIdentity;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Database;
 
@@ -18,18 +19,18 @@ use Wikimedia\Rdbms\Database;
 class MessageBundle extends TranslatableBundle {
 
 	public function __construct(
-		private readonly Title $title,
+		private readonly PageIdentity $page,
 	) {
 	}
 
 	/** @inheritDoc */
 	public function getTitle(): Title {
-		return $this->title;
+		return Title::newFromPageIdentity( $this->page );
 	}
 
 	/** @inheritDoc */
 	public function getMessageGroupId(): string {
-		return MessageBundleMessageGroup::getGroupId( $this->title->getPrefixedText() );
+		return MessageBundleMessageGroup::getGroupId( $this->getTitle()->getPrefixedText() );
 	}
 
 	/** @inheritDoc */
@@ -40,7 +41,7 @@ class MessageBundle extends TranslatableBundle {
 
 	/** @inheritDoc */
 	public function getTranslationUnitPages( ?string $code = null ): array {
-		return $this->getTranslationUnitPagesByTitle( $this->title, $code );
+		return $this->getTranslationUnitPagesByTitle( $this->page, $code );
 	}
 
 	/** @inheritDoc */
@@ -53,8 +54,8 @@ class MessageBundle extends TranslatableBundle {
 		return true;
 	}
 
-	public static function isSourcePage( Title $title ): bool {
-		if ( !$title->exists() ) {
+	public static function isSourcePage( PageIdentity $page ): bool {
+		if ( !$page->exists() ) {
 			return false;
 		}
 
@@ -82,7 +83,7 @@ class MessageBundle extends TranslatableBundle {
 			]
 		);
 
-		return str_contains( $messageBundleIds, ( ',' . $title->getArticleID() . ',' ) );
+		return str_contains( $messageBundleIds, ( ',' . $page->getId() . ',' ) );
 	}
 
 	public static function clearSourcePageCache(): void {

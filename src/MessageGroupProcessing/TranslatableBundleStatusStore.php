@@ -40,7 +40,7 @@ class TranslatableBundleStatusStore {
 			->replaceInto( self::TABLE_NAME )
 			->uniqueIndexFields( [ 'ttb_page_id' ] )
 			->row( [
-				'ttb_page_id' => $title->getArticleID(),
+				'ttb_page_id' => $title->getId(),
 				'ttb_type' => $bundleTypeId,
 				'ttb_status' => $status->getId(),
 				'ttb_sortkey' => $sortKey
