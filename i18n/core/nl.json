@@ -43,7 +43,7 @@
 	"translate-page-disabled": "Het vertalen in deze taal is voor deze groep uitgeschakeld.\nReden:\n\n<em>$1</em>",
 	"translate-language-disabled": "Het vertalen in deze taal is uitgeschakeld.",
 	"translate-page-settings-legend": "Instellingen",
-	"translate-page-group": "Groep",
+	"translate-page-group": "Groep:",
 	"translate-page-language": "Taal",
 	"translate-page-limit": "Limiet",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|bericht|berichten}} per pagina",

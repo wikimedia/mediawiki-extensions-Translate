@@ -3,6 +3,7 @@
 		"authors": [
 			"Jopparn",
 			"Sabelöga",
+			"Stefan2255",
 			"WikiPhoenix"
 		]
 	},
@@ -11,6 +12,7 @@
 	"tux-sst-view-foreign": "Visa på $1",
 	"tux-sst-search": "Sök",
 	"tux-sst-search-ph": "Sök översättningar",
+	"tux-sst-search-info": "Använd operatorerna <code>language:</code> eller <code>group:</code> för att ytterligare kvalificera sökkriterierna",
 	"tux-sst-count": "{{PLURAL:$1|Ett|$1}} resultat hittades",
 	"tux-sst-facet-language": "Språk",
 	"tux-sst-facet-group": "Meddelandegrupper",
@@ -30,5 +32,7 @@
 	"tux-sst-match-message": "Visar översättningar som överensstämmer något sökord. $1",
 	"tux-sst-case-sensitive": "Skiftlägeskänsligt",
 	"tux-sst-error-offset": "Kan inte visa fler resultat. Begränsa din sökning.",
-	"tux-sst-error-language": "Detta språk kan inte användas med denna sökningstyp."
+	"tux-sst-error-language": "Detta språk kan inte användas med denna sökningstyp.",
+	"tux-sst-error-unsupported-language": "Sökning på språk <code>$1</code> stöds inte.",
+	"tux-sst-search-backend-error": "Oväntat fel i sökbakändan, försök igen senare"
 }

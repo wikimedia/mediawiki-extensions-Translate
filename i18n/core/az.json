@@ -35,7 +35,7 @@
 	"translate-page-disabled": "Qrupdakı bu dilə tərcümələr etibarsızdır.\nSəbəb:\n\n<em>$1</em></em>",
 	"translate-language-disabled": "Bu dilə tərcümə etibarsızdır.",
 	"translate-page-settings-legend": "Tənzimləmələr",
-	"translate-page-group": "Qrup",
+	"translate-page-group": "Qrup:",
 	"translate-page-language": "Dil",
 	"translate-page-limit": "Limit",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|xəbər|xəbəri}} səhifədə göstər",
