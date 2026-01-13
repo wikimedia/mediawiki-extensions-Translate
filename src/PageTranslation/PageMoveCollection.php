@@ -96,34 +96,28 @@ class PageMoveCollection {
 		return $this->getOldPagesFromList( $this->subpagesPairs );
 	}
 
-	/** @return string[] */
+	/** @return array<string,?string> */
 	public function getListOfPages(): array {
-		$pageList = [
+		return [
 			$this->translatablePage->getOldTitle()->getPrefixedText() =>
-				$this->translatablePage->getNewTitle() ?
-					$this->translatablePage->getNewTitle()->getPrefixedText() : null
+				$this->translatablePage->getNewTitle()?->getPrefixedText(),
+			...$this->getPagePairFromList( $this->translationPagePairs ),
+			...$this->getPagePairFromList( $this->unitPagesPairs ),
+			...$this->getPagePairFromList( $this->subpagesPairs ),
+			...$this->getPagePairFromList( $this->talkpagesPairs ),
 		];
-		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->translationPagePairs ) );
-		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->unitPagesPairs ) );
-		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->subpagesPairs ) );
-		$pageList = array_merge( $pageList, $this->getPagePairFromList( $this->talkpagesPairs ) );
-
-		return $pageList;
 	}
 
 	/** @return array<string,bool> */
 	public function getListOfPagesToRedirect(): array {
-		$redirects = [
+		return [
 			$this->translatablePage->getOldTitle()->getPrefixedText() =>
-					$this->translatablePage->shouldLeaveRedirect()
+				$this->translatablePage->shouldLeaveRedirect(),
+			...$this->getLeaveRedirectPairFromList( $this->translationPagePairs ),
+			...$this->getLeaveRedirectPairFromList( $this->unitPagesPairs ),
+			...$this->getLeaveRedirectPairFromList( $this->subpagesPairs ),
+			...$this->getLeaveRedirectPairFromList( $this->talkpagesPairs ),
 		];
-
-		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->translationPagePairs ) );
-		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->unitPagesPairs ) );
-		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->subpagesPairs ) );
-		$redirects = array_merge( $redirects, $this->getLeaveRedirectPairFromList( $this->talkpagesPairs ) );
-
-		return $redirects;
 	}
 
 	/**
@@ -148,18 +142,24 @@ class PageMoveCollection {
 		return $oldTitles;
 	}
 
-	/** @return string[] */
+	/**
+	 * @param PageMoveOperation[] $pagePairs
+	 * @return array<string,?string>
+	 */
 	private function getPagePairFromList( array $pagePairs ): array {
 		$pairs = [];
 		foreach ( $pagePairs as $pair ) {
 			$pairs[ $pair->getOldTitle()->getPrefixedText() ] =
-				$pair->getNewTitle() ? $pair->getNewTitle()->getPrefixedText() : null;
+				$pair->getNewTitle()?->getPrefixedText();
 		}
 
 		return $pairs;
 	}
 
-	/** @return array<string,bool> */
+	/**
+	 * @param PageMoveOperation[] $pagePairs
+	 * @return array<string,true>
+	 */
 	private function getLeaveRedirectPairFromList( array $pagePairs ): array {
 		$pairs = [];
 		foreach ( $pagePairs as $pair ) {
