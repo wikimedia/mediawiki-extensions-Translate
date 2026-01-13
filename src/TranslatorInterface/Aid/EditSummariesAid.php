@@ -27,7 +27,7 @@ class EditSummariesAid extends TranslationAid {
 		$revisionFactory = $mwService->getRevisionFactory();
 
 		// Build the query to fetch the last x revisions
-		$dbr = $mwService->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $mwService->getConnectionProvider()->getReplicaDatabase();
 		$aid = $pageTitle->getArticleID();
 		$result = $revisionFactory
 			->newSelectQueryBuilder( $dbr )

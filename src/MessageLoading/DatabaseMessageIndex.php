@@ -4,7 +4,7 @@ declare ( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use MediaWiki\MediaWikiServices;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Storage on the database itself.
@@ -17,10 +17,10 @@ use Wikimedia\Rdbms\ILoadBalancer;
  */
 class DatabaseMessageIndex extends MessageIndexStore {
 	private ?array $index = null;
-	private ILoadBalancer $loadBalancer;
+	private IConnectionProvider $dbProvider;
 
 	public function __construct() {
-		$this->loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$this->dbProvider = MediaWikiServices::getInstance()->getConnectionProvider();
 	}
 
 	public function retrieve( bool $readLatest = false ): array {
@@ -28,7 +28,8 @@ class DatabaseMessageIndex extends MessageIndexStore {
 			return $this->index;
 		}
 
-		$dbr = $this->loadBalancer->getConnection( $readLatest ? DB_PRIMARY : DB_REPLICA );
+		$dbr = $readLatest ? $this->dbProvider->getPrimaryDatabase() :
+			$this->dbProvider->getReplicaDatabase();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( '*' )
 			->from( 'translate_messageindex' )
@@ -44,7 +45,7 @@ class DatabaseMessageIndex extends MessageIndexStore {
 
 	/** @inheritDoc */
 	public function get( string $key ) {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$value = $dbr->newSelectQueryBuilder()
 			->select( 'tmi_value' )
 			->from( 'translate_messageindex' )
@@ -70,7 +71,7 @@ class DatabaseMessageIndex extends MessageIndexStore {
 
 		$deletions = array_keys( $diff['del'] );
 
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->startAtomic( __METHOD__ );
 
 		if ( $updates !== [] ) {

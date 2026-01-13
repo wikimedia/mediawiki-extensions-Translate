@@ -592,8 +592,7 @@ class MessageGroupStats {
 			return;
 		}
 
-		$lb = $mwInstance->getDBLoadBalancer();
-		$dbw = $lb->getConnection( DB_PRIMARY ); // avoid connecting yet
+		$dbw = $mwInstance->getConnectionProvider()->getPrimaryDatabase(); // avoid connecting yet
 		$callers = wfGetAllCallers( 50 );
 		$functionName = __METHOD__;
 		$callback = static function ( IDatabase $dbw, $method ) use ( $callers, $mwInstance ) {

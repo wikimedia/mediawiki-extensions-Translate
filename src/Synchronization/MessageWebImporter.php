@@ -491,7 +491,7 @@ class MessageWebImporter {
 		$titleText = $handle->getKey();
 
 		$revStore = $services->getRevisionStore();
-		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $services->getConnectionProvider()->getPrimaryDatabase();
 		$rows = $revStore->newSelectQueryBuilder( $dbw )
 			->joinPage()
 			->where( [

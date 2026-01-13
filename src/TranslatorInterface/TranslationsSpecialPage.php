@@ -14,7 +14,7 @@ use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
 use SearchEngineFactory;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Implements a special page which shows all translations for a message.
@@ -30,7 +30,7 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 	public function __construct(
 		private readonly Language $contentLanguage,
 		private readonly LanguageNameUtils $languageNameUtils,
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly SearchEngineFactory $searchEngineFactory,
 	) {
 		parent::__construct( 'Translations' );
@@ -159,7 +159,7 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			return;
 		}
 
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		/** @var string[] */
 		$titles = $dbr->newSelectQueryBuilder()
 			->select( 'page_title' )

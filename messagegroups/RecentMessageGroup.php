@@ -65,7 +65,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	protected function getRCCutoff(): int {
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$max = $db->newSelectQueryBuilder()
 			->select( 'MAX(rc_id)' )
 			->from( 'recentchanges' )
@@ -81,7 +81,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 */
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
@@ -109,7 +109,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 				throw new BadMethodCallException( 'Language not set' );
 		}
 
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		$rcQuery = RecentChange::getQueryInfo();
 		$res = $db->newSelectQueryBuilder()

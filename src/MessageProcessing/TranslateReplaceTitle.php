@@ -49,7 +49,7 @@ class TranslateReplaceTitle {
 	}
 
 	private static function getMatchingTitles( MessageHandle $handle ): TitleArrayFromResult {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'page_namespace', 'page_id' ] )
 			->from( 'page' )

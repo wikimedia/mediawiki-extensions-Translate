@@ -14,7 +14,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\User\User;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * API module for marking translations as reviewed
@@ -31,7 +31,7 @@ class ReviewTranslationActionApi extends ApiBase {
 		string $moduleName,
 		private readonly RevisionLookup $revisionLookup,
 		private readonly TitleFormatter $titleFormatter,
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly HookRunner $hookRunner,
 	) {
 		parent::__construct( $main, $moduleName );
@@ -76,7 +76,7 @@ class ReviewTranslationActionApi extends ApiBase {
 	 * @return bool whether the action was recorded.
 	 */
 	private function doReview( User $user, RevisionRecord $revRecord ): bool {
-		$dbw = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'translate_reviews' )
 			->ignore()

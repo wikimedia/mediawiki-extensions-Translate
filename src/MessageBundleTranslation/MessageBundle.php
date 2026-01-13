@@ -66,7 +66,7 @@ class MessageBundle extends TranslatableBundle {
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
 			static function ( $oldValue, &$ttl, array &$setOpts ) use ( $mwServices ) {
-				$dbr = $mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA );
+				$dbr = $mwServices->getConnectionProvider()->getReplicaDatabase();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$ids = RevTagStore::getTranslatableBundleIds( RevTagStore::MB_VALID_TAG );

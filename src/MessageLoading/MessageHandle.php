@@ -220,7 +220,7 @@ class MessageHandle {
 
 	/** Check if a title is marked as fuzzy. */
 	public function isFuzzy(): bool {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rt_type' )

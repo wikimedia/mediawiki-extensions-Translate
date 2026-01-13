@@ -16,7 +16,7 @@ use MediaWiki\Specials\SpecialRecentChanges;
 use MediaWiki\Storage\NameTableAccessException;
 use MediaWiki\Xml\XmlSelect;
 use RecentChange;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
@@ -34,7 +34,7 @@ class RecentChangesTranslationFilterHookHandler implements
 {
 
 	public function __construct(
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly Config $config,
 	) {
 	}
@@ -60,7 +60,7 @@ class RecentChangesTranslationFilterHookHandler implements
 		$opts->add( 'translations', $translateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
 
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 
 		$namespaces = $this->getTranslateNamespaces();
 

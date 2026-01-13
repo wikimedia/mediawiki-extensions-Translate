@@ -214,7 +214,7 @@
 			"class": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\CleanChangesFilters",
 			"services": [
 				"LanguageNameUtils",
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"MainConfig"
 			]
 		},
@@ -222,7 +222,7 @@
 			"class": "MediaWiki\\Extension\\Translate\\HookHandler",
 			"services": [
 				"RevisionLookup",
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"MainConfig",
 				"LanguageNameUtils"
 			]
@@ -251,7 +251,7 @@
 		"recentChangesTranslationFilter": {
 			"class": "MediaWiki\\Extension\\Translate\\RecentChangesTranslationFilterHookHandler",
 			"services": [
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"MainConfig"
 			]
 		},
@@ -289,7 +289,7 @@
 			"services": [
 				"ContentLanguage",
 				"LanguageNameUtils",
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"SearchEngineFactory"
 			]
 		},
@@ -360,7 +360,7 @@
 			"services": [
 				"Translate:TranslatorActivity",
 				"LanguageNameUtils",
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"Translate:ConfigHelper",
 				"ContentLanguage",
 				"Translate:ProgressStatsTableFactory",
@@ -462,7 +462,7 @@
 			"services": [
 				"RevisionLookup",
 				"TitleFormatter",
-				"DBLoadBalancer",
+				"ConnectionProvider",
 				"Translate:HookRunner"
 			]
 		},

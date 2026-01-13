@@ -66,7 +66,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 		// Ugly
 		$store = new TranslationStashStorage(
-			MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY )
+			MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase()
 		);
 		$user = RequestContext::getMain()->getUser();
 		$translations = $store->getTranslations( $user );

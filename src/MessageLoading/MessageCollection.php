@@ -20,8 +20,8 @@ use MediaWiki\Title\TitleValue;
 use RuntimeException;
 use stdClass;
 use Traversable;
-use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * This file contains the class for core message collections implementation.
@@ -731,7 +731,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Of the current set of keys, construct database query conditions.
 	 * @return string[]
 	 */
-	private function getTitleConds( IDatabase $db ): array {
+	private function getTitleConds( IReadableDatabase $db ): array {
 		$titles = $this->getTitles();
 		$chunks = array_chunk( $titles, self::MAX_ITEMS_PER_QUERY );
 		$results = [];

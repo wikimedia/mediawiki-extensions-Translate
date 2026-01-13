@@ -8,7 +8,6 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
-use const DB_PRIMARY;
 
 /**
  * @since 2021.03
@@ -24,7 +23,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 
 	public function execute() {
 		$services = MediaWikiServices::getInstance();
-		$db = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$db = $services->getConnectionProvider()->getPrimaryDatabase();
 
 		$dbGroupIds = $db->newSelectQueryBuilder()
 			->select( 'tgs_group' )

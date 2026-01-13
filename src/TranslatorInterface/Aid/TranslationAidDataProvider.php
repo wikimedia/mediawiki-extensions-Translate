@@ -13,7 +13,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MessageGroup;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * @author Niklas Laxström
@@ -95,7 +95,7 @@ class TranslationAidDataProvider {
 
 		$mwServices = MediaWikiServices::getInstance();
 		$data = self::loadTranslationData(
-			$mwServices->getDBLoadBalancer()->getConnection( DB_REPLICA ),
+			$mwServices->getConnectionProvider()->getReplicaDatabase(),
 			$this->handle
 		);
 		$translations = [];
@@ -118,7 +118,7 @@ class TranslationAidDataProvider {
 		return $translations;
 	}
 
-	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ): array {
+	private static function loadTranslationData( IReadableDatabase $db, MessageHandle $handle ): array {
 		$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$conditions = [];
 

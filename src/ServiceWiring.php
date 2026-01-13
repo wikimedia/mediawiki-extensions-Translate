@@ -509,7 +509,7 @@ return [
 	'Translate:TranslatorActivity' => static function ( MediaWikiServices $services ): TranslatorActivity {
 		$query = new TranslatorActivityQuery(
 			$services->getMainConfig(),
-			$services->getDBLoadBalancer()
+			$services->getConnectionProvider()
 		);
 
 		return new TranslatorActivity(

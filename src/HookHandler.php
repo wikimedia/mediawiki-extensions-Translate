@@ -70,7 +70,7 @@ use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
 use MediaWiki\Xml\XmlSelect;
 use SearchEngine;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Hooks for Translate extension.
@@ -101,7 +101,7 @@ class HookHandler implements
 
 	public function __construct(
 		private readonly RevisionLookup $revisionLookup,
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly Config $config,
 		private readonly LanguageNameUtils $languageNameUtils,
 	) {
@@ -947,7 +947,7 @@ class HookHandler implements
 		// tp:tag and tp:mark handling is in Hooks::updateTranstagOnNullRevisions.
 		$tagsToCopy = [ RevTagStore::FUZZY_TAG, RevTagStore::TRANSVER_PROP ];
 
-		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
+		$db = $this->dbProvider->getPrimaryDatabase();
 		$db->insertSelect(
 			'revtag',
 			'revtag',

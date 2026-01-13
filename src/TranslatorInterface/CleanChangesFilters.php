@@ -11,7 +11,7 @@ use MediaWiki\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * This class adds a language filter to Special:RecentChanges
@@ -27,7 +27,7 @@ class CleanChangesFilters implements
 
 	public function __construct(
 		private readonly LanguageNameUtils $languageNameUtils,
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly Config $config,
 	) {
 	}
@@ -50,7 +50,7 @@ class CleanChangesFilters implements
 			return;
 		}
 
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$conds[] = 'rc_title ' . $dbr->buildLike( $dbr->anyString(), $trailer );
 		$opts->setValue( 'trailer', $trailer );
 	}

@@ -20,7 +20,7 @@ use MediaWiki\Title\Title;
 use ObjectCacheFactory;
 use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\ObjectCache\BagOStuff;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * This special page shows active languages and active translators per language.
@@ -44,7 +44,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 	public function __construct(
 		private readonly TranslatorActivity $translatorActivity,
 		private readonly LanguageNameUtils $langNameUtils,
-		private readonly ILoadBalancer $loadBalancer,
+		private readonly IConnectionProvider $dbProvider,
 		private readonly ConfigHelper $configHelper,
 		private readonly Language $contentLanguage,
 		private readonly ProgressStatsTableFactory $progressStatsTableFactory,
@@ -85,7 +85,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		);
 
 		$this->outputHeader( 'supportedlanguages-summary' );
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$dbType = $dbr->getType();
 		if ( $dbType === 'sqlite' || $dbType === 'postgres' ) {
 			$out->addHTML(
@@ -201,7 +201,7 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			return $data;
 		}
 
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$timestamp = $dbr->timestamp( (int)wfTimestamp() - 60 * 60 * 24 * self::PERIOD );
 
 		$res = $dbr->newSelectQueryBuilder()
