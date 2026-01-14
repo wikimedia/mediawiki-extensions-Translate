@@ -7,7 +7,7 @@
 	},
 	"managetranslatorsandbox": "ਤਰਜਮੇਕਾਰ ਕੱਚੇ-ਖ਼ਾਕੇ ਦਾ ਪ੍ਰਬੰਧ ਕਰੋ",
 	"tsb-filter-pending": "ਬਕਾਇਆ ਬੇਨਤੀਆਂ",
-	"tsb-reminder-title-generic": "ਅਨੁਵਾਦਕ ਬਣਨ ਲਈ ਆਪਣੀ ਜਾਣ-ਪਛਾਣ ਪੂਰੀ ਕਰੋ",
+	"tsb-reminder-title-generic": "ਉਲਥੇਕਾਰ ਬਣਨ ਲਈ ਆਪਣੀ ਜਾਣ-ਪਛਾਣ ਪੂਰੀ ਕਰੋ",
 	"tsb-reminder-content-generic": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ $1,\n\n{{SITENAME}} ਨਾਲ ਇੰਦਰਾਜ ਕਰਨ ਲਈ ਧੰਨਵਾਦ।\n\nਇੱਥੇ ਆਓ ਅਤੇ ਇੱਥੇ ਕੁਝ ਹੋਰ ਤਰਜਮਾ ਕਰੋ:\n$2\n\n$3,\n{{SITENAME}} ਕਰਮਚਾਰੀ",
 	"tsb-reminder-sending": "ਯਾਦ-ਦਿਵਾਉਣੀ ਭੇਜੀ ਜਾ ਰਹੀ ਏ...",
 	"tsb-reminder-sent": "{{PLURAL:$1| $1 ਯਾਦ-ਦਿਵਾਉਣੀ ਭੇਜੀ। ਵਕਤ: $2।| $1 ਯਾਦ-ਦਿਵਾਉਣੀ ਭੇਜੀ ਗਇਆਂ। ਪਿਛਲੇ ਇੱਕ ਦਾ ਵਕਤ: $2।}}",
@@ -42,11 +42,13 @@
 	"translate-translationstash-translations": "$1 ਪੂਰਾ ਹੋਇਆ {{PLURAL:$1|ਤਰਜਮਾ|ਤਰਜਮੇ}}",
 	"translate-translationstash-skip-button-label": "ਕੋਈ ਹੋਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
 	"tsb-limit-reached-title": "ਤੁਹਾਡੇ ਅਨੁਵਾਦਾਂ ਲਈ ਧੰਨਵਾਦ",
+	"tsb-limit-reached-body": "ਨਵੇਂ ਉਲੱਥੇਕਾਰਾਂ ਲਈ ਤੁਹਾਡੇ ਉਲੱਥੇ ਕਰਨ ਦੀ ਹੱਦ ਮੁੱਕ ਗਈ ਏ। ਸਾਡੀ ਜੁੱਟ ਛੇਤੀ ਹੀ ਤੁਹਾਡੇ ਖਾਤੇ ਦੀ ਪੜਚੋਲ ਕਰਕੇ ਇਸ ਨੂੰ ਅੱਗੇ ਵਧਾ ਦੇਵੇਗੀ। ਉਸ ਤੋਂ ਬਾਅਦ ਤੁਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਰੋਕ-ਟੋਕ ਦੇ ਉਲੱਥਾ ਕਰ ਸਕੋਗੇ।",
 	"tsb-no-requests-from-new-users": "ਨਵੇਂ ਵਰਤੋਂਕਾਰਾਂ ਤੋਂ ਕੋਈ ਬੇਨਤੀ ਨਹੀਂ",
 	"tsb-create-user-page": "ਬੁਨਿਆਦੀ ਵਰਤੋਂਕਾਰ ਸਫ਼ਾ ਬਣਾਇਆ",
 	"log-name-translatorsandbox": "ਤਰਜਮਾ ਕੱਚਾ-ਖ਼ਾਕਾ ਇੰਦਰਾਜ",
 	"log-description-translatorsandbox": "ਕੱਚਾ-ਖ਼ਾਕਾ ਤਰਜਮਾ ਵਰਤੋਂਕਾਰਾਂ ਉੱਤੇ ਕਾਰਵਾਈਆਂ ਦਾ ਇੱਕ ਚਿੱਠਾ",
 	"logentry-translatorsandbox-promoted": "$1 ਨੇ  $3 ਨੂੰ {{GENDER:$4|ਅਨੁਵਾਦਕ}} ਦੀ {{GENDER:$2|ਤਰੱਕੀ}} ਦਿੱਤੀ",
 	"logentry-translatorsandbox-rejected": "$1 ਨੇ \"$3\" ਦੀ ਇੱਕ ਤਰਜਮੇਕਾਰ ਬਣਨ ਦੀ ਬੇਨਤੀ ਨੂੰ {{GENDER:$2|ਰੱਦ}} ਕਰ ਦਿੱਤਾ ਗਿਆ",
+	"logentry-newusers-tsbpromoted": "ਕੱਚੇ-ਖ਼ਾਕੇ ਤੋਂ ਤਰੱਕੀ ਦੇ ਕੇ ਵਰਤੋਂਕਾਰ ਖਾਤਾ $3 {{GENDER:$2|ਬਣਾਇਆ ਗਿਆ}} ਏ।",
 	"tsb-other-actions": "ਤੁਹਾਨੂੰ [[Special:TranslationStash|ਕੁਝ ਪ੍ਰੀਖਿਆ ਤਰਜਮਾ ਜਮ੍ਹਾਂ ਕਰਾਉਣ]] ਅਤੇ ਸੋਧ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਲੈਣ ਦੀ ਲੋੜ ਹੈ।"
 }

@@ -498,5 +498,6 @@
 	"notification-link-mgs-group-translate": "Översätt $1",
 	"tpt-cleanchanges-language": "Språk:",
 	"tpt-cleanchanges-language-na": "Alla",
+	"namespaceinfo-description-ns1198": "Namnrymd som innehåller översättningsenheter, dvs. individuella översättningsbara och översatta delar av [[Special:PageTranslation|översättningsbara sidor]] och [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|meddelandepaket]]",
 	"namespaceinfo-description-ns1199": "Diskussionssidor för översättningsenheter"
 }

@@ -5,7 +5,8 @@
 			"JeffreyKim",
 			"Ktchankt",
 			"Yueman",
-			"SaldırganSincap"
+			"SaldırganSincap",
+			"Al12si"
 		]
 	},
 	"translate": "翻譯",
@@ -468,7 +469,7 @@
 	"translate-hidetranslations": "收埋啲翻譯頁面",
 	"echo-category-title-translate-message-group-subscription": "可翻譯嘅訊息谷嘅訂閱",
 	"echo-pref-tooltip-translate-message-group-subscription": "通知我訂閱咗嘅可翻譯訊息啲谷嘅變動",
-	"notification-header-message-group-subscription": "翻譯更新淨係需 $1",
+	"notification-header-message-group-subscription": "$1 嘅翻譯更新",
 	"notification-body-translate-mgs-message-added": "$1個全新或者更新咗嘅{{PLURAL:$1|訊息}}",
 	"notification-link-mgs-group-translate": "翻譯 $1",
 	"tpt-cleanchanges-language": "語言:",
