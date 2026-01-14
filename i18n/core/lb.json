@@ -28,7 +28,7 @@
 	"translate-page-disabled": "Iwwersetzungen an dës Sprooch goufen an dëser Grupp ausgeschalt. Grond:\n\n<em>$1</em>",
 	"translate-language-disabled": "D'Iwwersetzung an dës Sprooch ass desaktivéiert.",
 	"translate-page-settings-legend": "Astellungen",
-	"translate-page-group": "Grupp",
+	"translate-page-group": "Grupp:",
 	"translate-page-language": "Sprooch",
 	"translate-page-limit": "Maximum",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|Message|Messagë}} pro Säit",

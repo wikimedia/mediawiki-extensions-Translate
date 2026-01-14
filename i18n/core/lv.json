@@ -5,6 +5,7 @@
 			"Kikos",
 			"Marozols",
 			"Papuass",
+			"Rusjanis",
 			"Yyy"
 		]
 	},
@@ -21,7 +22,7 @@
 	"translate-page-no-such-group": "Norādītā grupa bija nederīga.",
 	"translate-language-disabled": "Tulkošana uz šo valodu ir atspējota.",
 	"translate-page-settings-legend": "Iestatījumi",
-	"translate-page-group": "Grupa",
+	"translate-page-group": "Grupa:",
 	"translate-page-language": "Valoda",
 	"translate-page-limit": "Ierobežojums",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|ziņojumi|ziņojums|ziņojumi}} lapā",

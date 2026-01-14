@@ -32,7 +32,7 @@
 	"translate-page-disabled": "As traducións a esta lingua neste grupo están desactivadas.\nMotivo:\n\n<em>$1</em>",
 	"translate-language-disabled": "As traducións nesta lingua están desactivadas.",
 	"translate-page-settings-legend": "Configuracións",
-	"translate-page-group": "Grupo",
+	"translate-page-group": "Grupo:",
 	"translate-page-language": "Lingua",
 	"translate-page-limit": "Límite",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|mensaxe|mensaxes}} por páxina",
