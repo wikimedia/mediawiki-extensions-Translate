@@ -29,6 +29,7 @@
 		]
 	},
 	"translate": "Översätt",
+	"translate-group": "Översätt: $1",
 	"translate-extensionname": "Översätt",
 	"translate-desc": "[[Special:Translate|Specialsida]] för översättning av MediaWiki och annat",
 	"translate-fuzzybot-desc": "Detta är ett speciellt systemkonto som används av MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] för att underhålla översättningar.\nDetta konto är en del av MediaWiki-programvaran och ägs inte av någon användare.",
@@ -319,6 +320,7 @@
 	"translate-import-err-no-such-file": "Fil <nowiki>$1</nowiki> finns inte, eller har inte laddats upp lokalt.",
 	"translate-import-err-stale-group": "Meddelandegruppen som den här filen tillhör finns inte.",
 	"translate-import-err-no-headers": "Filen är inte en välformerad Gettext-fil i översättnings-förlängningsformat:\nDet gick inte att bestämma grupp och språk från filhuvuden.",
+	"translate-import-err-gettext-parse-failed": "Filen är inte en korrekt formaterad Gettext-fil:\n$1",
 	"translate-js-support-unsaved-warning": "Du har opublicerade översättningar.",
 	"translate-documentation-language": "Meddelandedokumentation",
 	"translate-searchprofile": "Översättningar",
@@ -498,5 +500,6 @@
 	"notification-link-mgs-group-translate": "Översätt $1",
 	"tpt-cleanchanges-language": "Språk:",
 	"tpt-cleanchanges-language-na": "Alla",
+	"namespaceinfo-description-ns1198": "Namnrymd som innehåller översättningsenheter, dvs. individuella översättningsbara och översatta delar av [[Special:PageTranslation|översättningsbara sidor]] och [[mw:Special:MyLanguage/Help:Extension:Translate/Message Bundles|meddelandepaket]]",
 	"namespaceinfo-description-ns1199": "Diskussionssidor för översättningsenheter"
 }
