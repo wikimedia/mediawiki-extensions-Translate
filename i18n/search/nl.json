@@ -36,5 +36,6 @@
 	"tux-sst-case-sensitive": "Hoofdlettergevoelig",
 	"tux-sst-error-offset": "Er kunnen niet meer zoekresultaten worden getoond. Verfijn uw zoekopdracht.",
 	"tux-sst-error-language": "Deze taal kan niet worden gebruikt met dit type zoekopdracht.",
-	"tux-sst-error-unsupported-language": "Het zoeken in de taal <code>$1</code> wordt niet ondersteund."
+	"tux-sst-error-unsupported-language": "Het zoeken in de taal <code>$1</code> wordt niet ondersteund.",
+	"tux-sst-search-backend-error": "Onverwachte fout in de zoek-backend, probeer het later opnieuw"
 }

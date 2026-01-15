@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Renessaince",
+			"Ucukor",
 			"Wizardist"
 		]
 	},
@@ -11,7 +12,7 @@
 	"tux-sst-search-ph": "Пошук перакладаў",
 	"tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
 	"tux-sst-facet-language": "Мовы",
-	"tux-sst-facet-group": "Групы паведамленьняў",
+	"tux-sst-facet-group": "Групы радкоў",
 	"tux-sst-nosolr-title": "Пошук недаступны",
 	"tux-sst-nosolr-body": "Гэтая вікі ня мае службы пошуку перакладаў.",
 	"tux-sst-solr-offline-title": "Пошук недаступны",

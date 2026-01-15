@@ -40,7 +40,7 @@
 	"translate-page-disabled": "Превођење на овај језик у овој групи је онемогућено.\nРазлог:\n\n<em>$1</em>",
 	"translate-language-disabled": "Превођење на овај језик је онемогућено.",
 	"translate-page-settings-legend": "Подешавања",
-	"translate-page-group": "Група",
+	"translate-page-group": "Група:",
 	"translate-page-language": "Језик",
 	"translate-page-limit": "Ограничење",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|порука|поруке|порука}} по страници",

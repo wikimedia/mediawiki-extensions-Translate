@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Freeyak",
+			"Pecha-Tsewang",
 			"Phurbutsering"
 		]
 	},
@@ -30,5 +31,6 @@
 	"translate-statsf-scale-days": "ཉི་མ།",
 	"translate-statsf-scale-hours": "དུས་ཚོད།",
 	"translate-translations-fieldset-title": "བརྡ་འཕྲིན།",
-	"translate-translations-messagename": "མིང་།"
+	"translate-translations-messagename": "མིང་།",
+	"translate-documentation-language": "བརྡ་འཕྲིན་ཡིག་ཆ།"
 }
