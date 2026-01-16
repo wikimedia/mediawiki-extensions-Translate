@@ -35,7 +35,7 @@
 			}
 		} );
 
-		$group.addClass( 'hidden' );
+		$group.addClass( 'mw-translate-hide' );
 		const container = document.createElement( 'div' );
 		$group.after( container );
 		entitySelector.mount( container );
