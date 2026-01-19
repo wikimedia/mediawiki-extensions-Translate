@@ -24,7 +24,7 @@
 	"translate-page-disabled": "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:\n\n<em>$1</em>",
 	"translate-language-disabled": "Le traduction in iste lingua es disactivate.",
 	"translate-page-settings-legend": "Optiones",
-	"translate-page-group": "Gruppo",
+	"translate-page-group": "Gruppo:",
 	"translate-page-language": "Lingua",
 	"translate-page-limit": "Limite",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|message|messages}} per pagina",
