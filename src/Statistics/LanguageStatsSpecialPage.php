@@ -17,6 +17,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Widget\LanguageSelectWidget;
 use MessageGroup;
 use ObjectCacheFactory;
 use Wikimedia\ObjectCache\BagOStuff;
@@ -253,11 +254,19 @@ class LanguageStatsSpecialPage extends SpecialPage {
 			$hiddenFields['group'] = $val;
 		}
 
+		$languages = Utilities::getLanguageNames( 'en' );
+		$languageSelectWidget = new LanguageSelectWidget( [
+			'name' => 'language',
+			'value' => $this->target,
+			'languages' => $languages,
+			'cssclass' => 'cdx-text-input cdx-text-input__input'
+		] );
+
 		$data = [
 			'action' => $this->getPageTitle()->getLocalURL(),
 			'legend' => $this->msg( 'translate-mgs-fieldset' )->text(),
 			'languageLabel' => $this->msg( 'translate-language-field-name' )->text(),
-			'languageValue' => $this->target,
+			'languageSelectHtml' => $languageSelectWidget->toString(),
 			'suppressCompleteLabel' => $this->msg( 'translate-suppress-complete' )->text(),
 			'suppressCompleteChecked' => $this->noComplete,
 			'suppressEmptyLabel' => $this->msg( 'translate-ls-noempty' )->text(),
