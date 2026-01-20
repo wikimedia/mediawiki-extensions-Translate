@@ -21,6 +21,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
+use MediaWiki\Widget\LanguageSelectWidget;
 use MessageGroup;
 use WikiPageMessageGroup;
 
@@ -106,14 +107,13 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			];
 		}
 
-		$languageOptions = [];
-		foreach ( $this->getLanguageOptions() as $label => $value ) {
-			$languageOptions[] = [
-				'label' => $label,
-				'value' => $value,
-				'selected' => $value === $this->language
-			];
-		}
+		$languages = Utilities::getLanguageNames( 'en' );
+		$languageSelectWidget = new LanguageSelectWidget( [
+			'name' => 'language',
+			'value' => $this->language,
+			'languages' => $languages,
+			'cssclass' => 'cdx-select'
+		] );
 
 		$groupOptions = [];
 		foreach ( $this->getGroupOptions() as $label => $value ) {
@@ -126,8 +126,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$data = [
 			'action' => $this->getPageTitle()->getLocalURL(),
 			'languageLabel' => $this->msg( 'translate-language-field-name' )->text(),
-			'languageOptions' => $languageOptions,
-			'languageValue' => $this->language,
+			'languageSelectHtml' => $languageSelectWidget->toString(),
 			'groupLabel' => $this->msg( 'translate-page-group' )->text(),
 			'groupOptions' => $groupOptions,
 			'formatLabel' => $this->msg( 'translate-export-form-format' )->text(),
@@ -154,17 +153,6 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 			}
 
 			$options[$group->getLabel()] = $id;
-		}
-
-		return $options;
-	}
-
-	/** @return string[] */
-	private function getLanguageOptions(): array {
-		$languages = Utilities::getLanguageNames( 'en' );
-		$options = [];
-		foreach ( $languages as $code => $name ) {
-			$options["$code - $name"] = $code;
 		}
 
 		return $options;

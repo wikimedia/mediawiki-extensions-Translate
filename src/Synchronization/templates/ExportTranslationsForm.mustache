@@ -21,13 +21,7 @@
 				<span class="cdx-label__label__text">{{languageLabel}}</span>
 			</label>
 		</div>
-		<div class="cdx-field__control">
-			<select class="cdx-select" name="language" id="language">
-				{{#languageOptions}}
-				<option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
-				{{/languageOptions}}
-			</select>
-		</div>
+		{{{languageSelectHtml}}}
 	</div>
 	<div class="cdx-field">
 		<div class="cdx-label">

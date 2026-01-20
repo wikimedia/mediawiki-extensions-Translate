@@ -724,7 +724,7 @@
 			],
 			"dependencies": [
 				"mediawiki.api",
-				"mediawiki.languageselector",
+				"mediawiki.widgets.LanguageSelectWidget",
 				"oojs-ui-widgets",
 				"ext.translate.entity.selector"
 			],
