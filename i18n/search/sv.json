@@ -3,7 +3,8 @@
 		"authors": [
 			"Jopparn",
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"searchtranslations": "Sök översättningar",
@@ -11,6 +12,7 @@
 	"tux-sst-view-foreign": "Visa på $1",
 	"tux-sst-search": "Sök",
 	"tux-sst-search-ph": "Sök översättningar",
+	"tux-sst-search-info": "Använd operatorerna <code>language:</code> eller <code>group:</code> för att ytterligare kvalificera sökkriterierna",
 	"tux-sst-count": "{{PLURAL:$1|Ett|$1}} resultat hittades",
 	"tux-sst-facet-language": "Språk",
 	"tux-sst-facet-group": "Meddelandegrupper",

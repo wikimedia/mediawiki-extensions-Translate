@@ -5,7 +5,8 @@
 			"Jopparn",
 			"Lokal Profil",
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"managetranslatorsandbox": "Hantera översättarsandlåda",
@@ -52,5 +53,6 @@
 	"log-description-translatorsandbox": "En logg över åtgärder på översättningssandlådeanvändare",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|befordrade}} $3 till {{GENDER:$4|översättare}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|avvisade}} begäran från \"$3\" att bli en översättare",
-	"logentry-newusers-tsbpromoted": "Användarkontot $3 {{GENDER:$2|skapades}} genom befordran från sandlådan"
+	"logentry-newusers-tsbpromoted": "Användarkontot $3 {{GENDER:$2|skapades}} genom befordran från sandlådan",
+	"tsb-other-actions": "Du måste [[Special:TranslationStash|skicka in några testöversättningar]] och få dem godkända innan du redigerar."
 }
