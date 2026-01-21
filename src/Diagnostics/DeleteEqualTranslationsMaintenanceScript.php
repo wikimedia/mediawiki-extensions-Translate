@@ -88,7 +88,7 @@ class DeleteEqualTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			$message = $collection[$key];
 
 			if ( $message->definition() === $message->translation() ) {
-				$messages->attach( $titleValue, $message );
+				$messages[$titleValue] = $message;
 			}
 		}
 
