@@ -175,21 +175,19 @@ class MessageGroupReviewStore {
 	 * @param string[]|null $languageCodes
 	 */
 	private function getWorkflowStates( ?array $groupIds, ?array $languageCodes ): IResultWrapper {
-		$dbr = $this->dbProvider->getReplicaDatabase();
-		$conditions = array_filter(
-			[ 'tgr_group' => $groupIds, 'tgr_lang' => $languageCodes ],
-			static fn ( $x ) => $x !== null && $x !== ''
-		);
-
-		if ( $conditions === [] ) {
+		if ( $groupIds === null && $languageCodes === null ) {
 			throw new InvalidArgumentException( 'Either the $groupId or the $languageCode should be provided' );
 		}
 
-		if ( isset( $conditions['tgr_group'] ) ) {
-			$conditions['tgr_group'] = array_map( [ self::class, 'getGroupIdForDatabase' ], $groupIds );
+		$conditions = [];
+		if ( $groupIds ) {
+			$conditions['tgr_group'] = array_map( self::getGroupIdForDatabase( ... ), $groupIds );
+		}
+		if ( $languageCodes ) {
+			$conditions['tgr_lang'] = $languageCodes;
 		}
 
-		return $dbr->newSelectQueryBuilder()
+		return $this->dbProvider->getReplicaDatabase()->newSelectQueryBuilder()
 			->select( [ 'tgr_state', 'tgr_group', 'tgr_lang' ] )
 			->from( self::TABLE_NAME )
 			->where( $conditions )
