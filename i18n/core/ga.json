@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aindriu80",
 			"Alison",
 			"BaRaN6161 TURK",
 			"Halle",
@@ -21,6 +22,7 @@
 	"translate-translations-fieldset-title": "Teachtaireacht",
 	"translate-translations-messagename": "Ainm:",
 	"translate-language": "Teanga",
+	"translate-documentation-language": "Doiciméadú teachtaireachta",
 	"tpt-cleanchanges-language": "Teanga:",
 	"tpt-cleanchanges-language-na": "An t-iomlán"
 }

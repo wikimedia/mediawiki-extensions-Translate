@@ -49,7 +49,7 @@
 	"translate-page-disabled": "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:\n\n<em>$1</em>",
 	"translate-language-disabled": "الترجمات إلى هذه اللغة غير مفعلة.",
 	"translate-page-settings-legend": "الإعدادات",
-	"translate-page-group": "المجموعة",
+	"translate-page-group": "مجموعة:",
 	"translate-page-language": "اللغة",
 	"translate-page-limit": "الحد",
 	"translate-page-limit-option": "{{PLURAL:$1||رسالة واحدة|رسالتان|$1 رسالات|$1 رسالة}} للصفحة",

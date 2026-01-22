@@ -45,7 +45,7 @@
 	"translate-page-disabled": "이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다.\n이유:\n\n<em>$1</em>",
 	"translate-language-disabled": "이 언어로의 번역이 비활성화되어 있습니다.",
 	"translate-page-settings-legend": "설정",
-	"translate-page-group": "그룹",
+	"translate-page-group": "그룹:",
 	"translate-page-language": "언어",
 	"translate-page-limit": "제한",
 	"translate-page-limit-option": "페이지당 {{PLURAL:$1|메시지}} $1개",
