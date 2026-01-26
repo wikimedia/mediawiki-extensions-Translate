@@ -58,6 +58,7 @@
 	"tpt-old-pages": "{{PLURAL:$1|이 문서}}의 최신 판은 번역하도록 표시되었습니다.",
 	"tpt-other-pages": "{{PLURAL:$1|이 문서의 오래된 판}}은 번역하도록 표시했습니다,\n하지만 최신 {{PLURAL:$1|판}}은 번역하도록 표시할 수 없었습니다.",
 	"tpt-outdated-pages": "{{PLURAL:$1|이 문서는|이 문서들은}} 번역 대상으로 표시되지 않은 변화를 가지고 있습니다.",
+	"tpt-tag-discouraged": "번역 중단",
 	"tpt-tag-oldsyntax": "오래된 문법",
 	"tpt-tag-no-transclusion-support": "끼워넣기 지원 없음",
 	"tpt-select-prioritylangs": "우선 언어",
