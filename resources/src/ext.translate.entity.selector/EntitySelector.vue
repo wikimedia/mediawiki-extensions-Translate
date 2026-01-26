@@ -20,27 +20,27 @@
 <script>
 const { defineComponent, ref, computed } = require( 'vue' );
 const { CdxLookup } = require( '../../../codex.js' );
-const { cdxIconError } = require( './icons.json' );
-const performEntitySearch = require( '../services/translationentitysearch.api.js' );
-const messageEntityType = 'message';
-const groupEntityType = 'group';
+const useEntitySearch = require( './useEntitySearch.js' );
 
 module.exports = defineComponent( {
 	name: 'EntitySelector',
 	components: { CdxLookup },
 	props: {
 		inputId: { type: String, default: '' },
+		limit: { type: Number, default: 10 },
+		// eslint-disable-next-line vue/no-unused-properties
 		entityType: {
 			type: Array,
 			default: () => [ 'messages', 'groups' ],
 			validator: ( v ) => v.every( ( t ) => [ 'messages', 'groups' ].includes( t ) )
 		},
+		// eslint-disable-next-line vue/no-unused-properties
 		groupTypes: {
 			type: Array,
 			default: () => [],
 			validator: ( v ) => v.every( ( t ) => [ 'translatable-pages', 'message-bundles' ].includes( t ) )
 		},
-		limit: { type: Number, default: 10 },
+		// eslint-disable-next-line vue/no-unused-properties
 		allowSuggestionsWhenEmpty: { type: Boolean, default: false },
 		selected: { type: Object, default: null },
 		menuConfig: { type: Object, default: () => ( {} ) }
@@ -50,126 +50,25 @@ module.exports = defineComponent( {
 		const selectedValue = ref( null );
 		const inputValue = ref( '' );
 
-		const menuItems = ref( [] );
-
-		const defaultOptionsCache = ref( [] );
+		const {
+			menuItems,
+			performSearch,
+			debouncedSearch,
+			handleSearchInput,
+			initializeDefaultSearch,
+			flattenMenuItems
+		} = useEntitySearch( props, emit );
 
 		const computedMenuConfig = computed( () => Object.assign(
 			{ visibleItemLimit: props.limit },
 			props.menuConfig
 		) );
 
-		const getMessagePrefixMsg = ( count ) => mw.msg( 'translate-tes-message-prefix', count );
-
-		const handleApiResponse = ( response ) => {
-			if ( !response || response.error ) {
-				return null;
-			}
-
-			const items = [];
-			const groups = response.groups || [];
-			const messages = response.messages || [];
-
-			if ( groups.length ) {
-				const groupItems = groups.map( ( group ) => ( {
-					label: group.label,
-					value: group.group,
-					type: groupEntityType
-				} ) );
-
-				if ( props.entityType.length !== 1 ) {
-					items.push( {
-						label: mw.msg( 'translate-tes-optgroup-group' ),
-						items: groupItems
-					} );
-				} else {
-					items.push( ...groupItems );
-				}
-			}
-
-			if ( messages.length ) {
-				const messageItems = messages.map( ( message ) => ( {
-					label: message.pattern,
-					value: message.pattern,
-					supportingText: message.count > 1 ? getMessagePrefixMsg( message.count ) : undefined,
-					type: messageEntityType
-				} ) );
-
-				if ( props.entityType.length !== 1 ) {
-					items.push( {
-						label: mw.msg( 'translate-tes-optgroup-message' ),
-						items: messageItems
-					} );
-				} else {
-					items.push( ...messageItems );
-				}
-			}
-
-			return items;
-		};
-
-		const performSearch = ( term, isDefault = false ) => {
-			performEntitySearch( {
-				searchTerm: term,
-				entityTypes: props.entityType,
-				groupTypes: props.groupTypes,
-				limit: props.limit
-			} )
-				.then( ( response ) => {
-					const items = handleApiResponse( response );
-
-					if ( items === null ) {
-						// API Error
-						const errorMsg = response && response.error ? response.error : mw.msg( 'translate-tes-server-error' );
-						const errorItem = [ {
-							label: mw.msg( 'translate-tes-server-error' ),
-							value: 'error',
-							disabled: true,
-							icon: cdxIconError
-						} ];
-
-						menuItems.value = errorItem;
-						emit( 'fail', errorMsg, mw.msg( 'translate-tes-server-error' ) );
-					} else {
-						if ( isDefault ) {
-							defaultOptionsCache.value = items;
-						}
-
-						menuItems.value = items;
-					}
-				} )
-				.catch( ( code, result ) => {
-					if ( code === 'abort' ) {
-						return;
-					}
-					menuItems.value = [ {
-						label: mw.msg( 'translate-tes-server-error' ),
-						value: 'error',
-						disabled: true,
-						icon: cdxIconError
-					} ];
-					emit( 'fail', result, mw.msg( 'translate-tes-server-error' ) );
-				} );
-		};
-
-		const debouncedSearch = mw.util.debounce( ( value ) => {
-			if ( value ) {
-				performSearch( value, false );
-			}
-		}, 300 );
-
 		const onInput = ( value ) => {
-			if ( !value ) {
-				if ( props.allowSuggestionsWhenEmpty ) {
-					menuItems.value = defaultOptionsCache.value;
-				} else {
-					menuItems.value = [];
-				}
-				debouncedSearch( '' );
-				return;
+			const shouldSearch = handleSearchInput( value );
+			if ( shouldSearch ) {
+				debouncedSearch( value );
 			}
-
-			debouncedSearch( value );
 		};
 
 		const onSelect = ( selectedItemValue ) => {
@@ -177,8 +76,7 @@ module.exports = defineComponent( {
 				return;
 			}
 
-			const flatItems = menuItems.value.reduce( ( acc, item ) => item.items ? acc.concat( item.items ) : acc.concat( item ), [] );
-
+			const flatItems = flattenMenuItems( menuItems.value );
 			const itemObj = flatItems.find( ( i ) => i.value === selectedItemValue );
 
 			if ( itemObj && itemObj.value !== 'error' ) {
@@ -190,9 +88,8 @@ module.exports = defineComponent( {
 			}
 		};
 
-		if ( props.allowSuggestionsWhenEmpty ) {
-			performSearch( '', true );
-		}
+		// Initialize
+		initializeDefaultSearch();
 
 		if ( props.selected ) {
 			selectedValue.value = props.selected.value;

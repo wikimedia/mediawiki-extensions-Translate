@@ -1,0 +1,109 @@
+<form method="get" action="{{action}}" id="translationStatsConfig">
+	<input type="hidden" name="title" value="{{pageTitle}}">
+	<input type="hidden" name="preview" value="1">
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="width">
+				<span class="cdx-label__label__text">{{widthLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<input class="cdx-text-input__input" type="number" name="width" id="width" value="{{width}}" min="{{widthMin}}" max="{{widthMax}}">
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="height">
+				<span class="cdx-label__label__text">{{heightLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<input class="cdx-text-input__input" type="number" name="height" id="height" value="{{height}}" min="{{heightMin}}" max="{{heightMax}}">
+		</div>
+	</div>
+	<hr class="mw-translate-stats-divider">
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="start">
+				<span class="cdx-label__label__text">{{startLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<input class="cdx-text-input__input" type="date" name="start" id="start" value="{{start}}" max="{{maxDate}}">
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label" for="days">
+				<span class="cdx-label__label__text">{{daysLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<input class="cdx-text-input__input" type="number" name="days" id="days" value="{{days}}" min="{{daysMin}}" max="{{daysMax}}">
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label">
+				<span class="cdx-label__label__text">{{scaleLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			{{#scaleOptions}}
+			<div class="cdx-radio cdx-radio--inline">
+				<div class="cdx-radio__wrapper">
+					<input class="cdx-radio__input" type="radio" name="scale" id="scale-{{value}}" value="{{value}}" {{#selected}}checked{{/selected}}>
+					<span class="cdx-radio__icon"></span>
+					<label class="cdx-radio__label" for="scale-{{value}}">{{label}}</label>
+				</div>
+			</div>
+			{{/scaleOptions}}
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label">
+				<span class="cdx-label__label__text">{{countLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			{{#countOptions}}
+			<div class="cdx-radio cdx-radio--inline">
+				<div class="cdx-radio__wrapper">
+					<input class="cdx-radio__input" type="radio" name="count" id="count-{{value}}" value="{{value}}" {{#selected}}checked{{/selected}}>
+					<span class="cdx-radio__icon"></span>
+					<label class="cdx-radio__label" for="count-{{value}}">{{label}}</label>
+				</div>
+			</div>
+			{{/countOptions}}
+		</div>
+	</div>
+	<hr class="mw-translate-stats-divider">
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label language-selector" for="mw-language-selector-input">
+				<span class="cdx-label__label__text">{{languageLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<div id="language-selector"></div>
+			<input type="hidden" name="language" id="language" value="{{language}}">
+		</div>
+	</div>
+	<div class="cdx-field">
+		<div class="cdx-label">
+			<label class="cdx-label__label message-group-selector" for="mw-entity-selector-input">
+				<span class="cdx-label__label__text">{{groupLabel}}</span>
+			</label>
+		</div>
+		<div class="cdx-field__control">
+			<div id="group"></div>
+		</div>
+	</div>
+	<hr class="mw-translate-stats-divider">
+	<div class="cdx-field">
+		<button class="cdx-button cdx-button--action-progressive cdx-button--weight-primary" type="submit">
+			{{submitLabel}}
+		</button>
+	</div>
+</form>

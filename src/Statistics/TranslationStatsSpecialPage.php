@@ -5,13 +5,10 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use DateTime;
 use DateTimeZone;
-use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Utilities\JsSelectToInput;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
+use MediaWiki\Html\TemplateParser;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Xml\XmlSelect;
 use function wfEscapeWikiText;
 
 /**
@@ -25,11 +22,13 @@ class TranslationStatsSpecialPage extends SpecialPage {
 
 	private const GRAPH_CONTAINER_ID = 'translationStatsGraphContainer';
 	private const GRAPH_CONTAINER_CLASS = 'mw-translate-translationstats-container';
+	private readonly TemplateParser $templateParser;
 
 	public function __construct(
 		private readonly TranslationStatsDataProvider $dataProvider,
 	) {
 		parent::__construct( 'TranslationStats' );
+		$this->templateParser = new TemplateParser( __DIR__ . '/templates/' );
 	}
 
 	/** @inheritDoc */
@@ -75,37 +74,79 @@ class TranslationStatsSpecialPage extends SpecialPage {
 	 * @suppress SecurityCheck-DoubleEscaped Intentionally outputting what user should type
 	 */
 	private function form( FormOptions $opts ): void {
-		$script = $this->getConfig()->get( 'Script' );
-
 		$this->setHeaders();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.translationstats' );
+		$out->addModuleStyles( [
+			'ext.translate.special.translationstats.styles',
+			'codex-styles'
+		] );
 		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
+
 		$out->addHTML(
-			Html::openElement( 'fieldset' ) .
-			Html::element( 'legend', [], $this->msg( 'translate-statsf-options' )->text() ) .
-			Html::openElement(
-				'form',
-				[ 'action' => $script, 'id' => 'translationStatsConfig' ]
-			) .
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-			Html::hidden( 'preview', 1 ) . '<table>'
+			Html::errorBox(
+				$this->msg( 'tux-nojs' )->escaped(),
+				'',
+				'tux-nojs'
+			)
 		);
+
 		$now = new DateTime( 'now', new DateTimeZone( 'UTC' ) );
-		$submit = Html::submitButton( $this->msg( 'translate-statsf-submit' )->text() );
+
+		$scaleOptions = [];
+		foreach ( [ 'years', 'months', 'weeks', 'days', 'hours' ] as $scale ) {
+			$scaleOptions[] = [
+				'label' => $this->msg( "translate-statsf-scale-$scale" )->text(),
+				'value' => $scale,
+				'selected' => $scale === $opts['scale']
+			];
+		}
+
+		$countOptions = [];
+		foreach ( $this->dataProvider->getGraphTypes() as $count ) {
+			$countOptions[] = [
+				'label' => $this->msg( "translate-statsf-count-$count" )->text(),
+				'value' => $count,
+				'selected' => $count === $opts['count']
+			];
+		}
+
+		$data = [
+			'action' => $this->getConfig()->get( 'Script' ),
+			'pageTitle' => $this->getPageTitle()->getPrefixedText(),
+			'widthLabel' => $this->msg( 'translate-statsf-width' )->text(),
+			'width' => $opts['width'],
+			'widthMin' => TranslationStatsGraphOptions::INT_BOUNDS['width']['min'],
+			'widthMax' => TranslationStatsGraphOptions::INT_BOUNDS['width']['max'],
+			'heightLabel' => $this->msg( 'translate-statsf-height' )->text(),
+			'height' => $opts['height'],
+			'heightMin' => TranslationStatsGraphOptions::INT_BOUNDS['height']['min'],
+			'heightMax' => TranslationStatsGraphOptions::INT_BOUNDS['height']['max'],
+			'startLabel' => $this->msg( 'translate-statsf-start' )->text(),
+			'start' => $opts['start'],
+			'maxDate' => $now->format( 'Y-m-d' ),
+			'daysLabel' => $this->msg( 'translate-statsf-days' )->text(),
+			'days' => $opts['days'],
+			'daysMin' => TranslationStatsGraphOptions::INT_BOUNDS['days']['min'],
+			'daysMax' => TranslationStatsGraphOptions::INT_BOUNDS['days']['max'],
+			'scaleLabel' => $this->msg( 'translate-statsf-scale' )->text(),
+			'scaleOptions' => $scaleOptions,
+			'countLabel' => $this->msg( 'translate-statsf-count' )->text(),
+			'countOptions' => $countOptions,
+			'languageLabel' => $this->msg( 'translate-statsf-language' )->text(),
+			'language' => implode( ',', $opts['language'] ),
+			'groupLabel' => $this->msg( 'translate-statsf-group' )->text(),
+			'group' => implode( ',', $opts['group'] ),
+			'submitLabel' => $this->msg( 'translate-statsf-submit' )->text(),
+		];
+
 		$out->addHTML(
-			$this->eNumber( 'width', $opts ) . $this->eNumber( 'height', $opts ) .
-			'<tr><td colspan="2"><hr /></td></tr>' .
-			$this->eInput( 'start', $opts, 'date', [ 'max' => $now->format( 'Y-m-d' ) ] ) .
-			$this->eNumber( 'days', $opts ) .
-			$this->eRadio( 'scale', $opts, [ 'years', 'months', 'weeks', 'days', 'hours' ] ) .
-			$this->eRadio( 'count', $opts, $this->dataProvider->getGraphTypes() ) .
-			'<tr><td colspan="2"><hr /></td></tr>' . $this->eLanguage( 'language', $opts ) .
-			$this->eGroup( 'group', $opts ) . '<tr><td colspan="2"><hr /></td></tr>' .
-			'<tr><td colspan="2">' . $submit . '</td></tr>'
+		Html::openElement( 'fieldset', [ 'class' => 'mw-translate-stats-form' ] ) .
+			$this->templateParser->processTemplate( 'TranslationStatsForm', $data ) .
+			Html::closeElement( 'fieldset' )
 		);
-		$out->addHTML( '</table></form></fieldset>' );
+
 		if ( !$opts['preview'] ) {
 			return;
 		}
@@ -126,122 +167,25 @@ class TranslationStatsSpecialPage extends SpecialPage {
 		$spiParams = $spiParams ? '/' . implode( ';', $spiParams ) : '';
 
 		$titleText = $this->getPageTitle()->getPrefixedText();
-		$out->addHTML( Html::element( 'hr' ) );
+		$out->addHTML(
+		Html::openElement( 'div', [ 'class' => 'mw-translate-stats-preview' ] ) .
+		Html::element( 'hr' ) .
 		// Element to render the graph
-		$out->addHTML(
-			Html::rawElement(
-				'div',
-				[
-					'id' => self::GRAPH_CONTAINER_ID,
-					'style' => 'margin: 2em auto; display: block',
-					'class' => self::GRAPH_CONTAINER_CLASS,
-				]
-			)
+		Html::rawElement(
+			'div',
+			[
+				'id' => self::GRAPH_CONTAINER_ID,
+				'style' => 'margin: 2em auto; display: block',
+				'class' => self::GRAPH_CONTAINER_CLASS,
+			]
+		) .
+		Html::element(
+			'pre',
+			[ 'aria-label' => $this->msg( 'translate-statsf-embed' )->text() ],
+			"{{{$titleText}{$spiParams}}}"
+		) .
+		Html::closeElement( 'div' )
 		);
-
-		$out->addHTML(
-			Html::element(
-				'pre',
-				[ 'aria-label' => $this->msg( 'translate-statsf-embed' )->text() ],
-				"{{{$titleText}{$spiParams}}}"
-			)
-		);
-	}
-
-	/** Construct HTML for a table row with label and number input in two columns. */
-	private function eNumber( string $name, FormOptions $opts ): string {
-		return $this->eInput( $name, $opts, 'number', TranslationStatsGraphOptions::INT_BOUNDS[$name] );
-	}
-
-	/** Construct HTML for a table row with label and a specified type of input in two columns. */
-	private function eInput( string $name, FormOptions $opts, string $type, array $attribs ): string {
-		$value = $opts[$name];
-		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			Html::input( $name, $value, $type, [ 'id' => $name ] + $attribs ) .
-			'</td></tr>' . "\n";
-	}
-
-	/// Construct HTML for a label for option.
-	private function eLabel( string $name ): string {
-		// Give grep a chance to find the usages:
-		// translate-statsf-width, translate-statsf-height, translate-statsf-start,
-		// translate-statsf-days, translate-statsf-scale, translate-statsf-count,
-		// translate-statsf-language, translate-statsf-group
-		return Html::label( $this->msg( "translate-statsf-$name" )->text(), $name );
-	}
-
-	/// Construct HTML for a table row with label and radio input in two columns.
-	private function eRadio( string $name, FormOptions $opts, array $alts ): string {
-		// Give grep a chance to find the usages:
-		// translate-statsf-scale, translate-statsf-count
-		$label = 'translate-statsf-' . $name;
-		$label = $this->msg( $label )->escaped();
-		$s = '<tr><td>' . $label . '</td><td>';
-		$options = [];
-		foreach ( $alts as $alt ) {
-			$id = "$name-$alt";
-			$radio = Html::radio(
-				$name,
-				$alt === $opts[$name],
-				[
-					'value' => $alt,
-					'id' => $id
-				]
-			) . ' ';
-			$options[] = $radio . ' ' . $this->eLabel( $id );
-		}
-		$s .= implode( ' ', $options );
-		$s .= '</td></tr>' . "\n";
-		return $s;
-	}
-
-	/// Construct HTML for a table row with label and language selector in two columns.
-	private function eLanguage( string $name, FormOptions $opts ): string {
-		$value = implode( ',', $opts[$name] );
-
-		$select = $this->languageSelector();
-		$select->setTargetId( 'language' );
-		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
-			'<br />' . Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => 20 ] ) .
-			'</td></tr>' . "\n";
-	}
-
-	/// Construct a JavaScript enhanced language selector.
-	private function languageSelector(): JsSelectToInput {
-		$languages = Utilities::getLanguageNames( $this->getLanguage()->getCode() );
-		ksort( $languages );
-		$selector = new XmlSelect( 'mw-language-selector', 'mw-language-selector' );
-		foreach ( $languages as $code => $name ) {
-			$selector->addOption( "$code - $name", $code );
-		}
-		return new JsSelectToInput( $selector );
-	}
-
-	/// Constructs HTML for a table row with label and group selector in two columns.
-	private function eGroup( string $name, FormOptions $opts ): string {
-		$value = implode( ',', $opts[$name] );
-
-		$select = $this->groupSelector();
-		$select->setTargetId( 'group' );
-		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' . $select->getHtmlAndPrepareJS() .
-			'<br />' . Html::input( $name, $value, 'text', [ 'id' => $name, 'size' => 20 ] ) .
-			'</td></tr>' . "\n";
-	}
-
-	/// Construct a JavaScript enhanced group selector.
-	private function groupSelector(): JsSelectToInput {
-		$groups = MessageGroups::singleton()->getGroups();
-		foreach ( $groups as $key => $group ) {
-			if ( !$group->exists() ) {
-				unset( $groups[$key] );
-			}
-		}
-		ksort( $groups );
-		$selector = new XmlSelect( 'mw-group-selector', 'mw-group-selector' );
-		foreach ( $groups as $code => $name ) {
-			$selector->addOption( $name->getLabel(), $code );
-		}
-		return new JsSelectToInput( $selector );
 	}
 
 	private function embed( FormOptions $opts ): string {

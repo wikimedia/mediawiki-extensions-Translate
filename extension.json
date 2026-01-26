@@ -636,6 +636,8 @@
 			"packageFiles": [
 				"resources/src/ext.translate.entity.selector/index.js",
 				"resources/src/ext.translate.entity.selector/EntitySelector.vue",
+				"resources/src/ext.translate.entity.selector/MultiselectEntitySelector.vue",
+				"resources/src/ext.translate.entity.selector/useEntitySearch.js",
 				"resources/src/services/translationentitysearch.api.js",
 				{
 					"name": "resources/src/ext.translate.entity.selector/icons.json",
@@ -650,7 +652,8 @@
 				"mediawiki.util"
 			],
 			"codexComponents": [
-				"CdxLookup"
+				"CdxLookup",
+				"CdxMultiselectLookup"
 			],
 			"messages": [
 				"translate-tes-type-to-search",
@@ -1036,10 +1039,18 @@
 		},
 		"ext.translate.special.translationstats": {
 			"packageFiles": [
-				"resources/js/ext.translate.special.translationstats.js"
+				"resources/src/ext.translate.special.translationstats/index.js"
 			],
 			"dependencies": [
-				"ext.translate.translationstats.graphbuilder.js"
+				"ext.translate.translationstats.graphbuilder.js",
+				"ext.translate.entity.selector",
+				"mediawiki.languageselector",
+				"mediawiki.Uri"
+			]
+		},
+		"ext.translate.special.translationstats.styles": {
+			"styles": [
+				"resources/src/ext.translate.special.translationstats/translation.stats.less"
 			]
 		},
 		"ext.translate.translationstats.embedded": {

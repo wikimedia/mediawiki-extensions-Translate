@@ -34,7 +34,10 @@ describe( 'EntitySelector', () => {
 			msg: jest.fn( ( key ) => key ),
 			Api: jest.fn( () => ( {
 				get: apiGetMock
-			} ) )
+			} ) ),
+			util: {
+				debounce: jest.fn( ( fn ) => fn )
+			}
 		};
 		jest.useFakeTimers();
 	} );
@@ -45,6 +48,15 @@ describe( 'EntitySelector', () => {
 	} );
 
 	it( 'debounces search input', async () => {
+		// Mock debounce to actually delay
+		global.mw.util.debounce = jest.fn( ( fn, delay ) => {
+			let timeoutId;
+			return ( ...args ) => {
+				clearTimeout( timeoutId );
+				timeoutId = setTimeout( () => fn( ...args ), delay );
+			};
+		} );
+
 		const wrapper = mount( EntitySelector, {
 			props: {
 				inputId: 'test-input'

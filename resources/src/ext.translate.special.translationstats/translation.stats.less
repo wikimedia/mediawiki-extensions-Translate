@@ -1,0 +1,41 @@
+@import 'mediawiki.skin.variables.less';
+
+.mw-special-TranslationStats .mw-body-content {
+	form {
+		padding-bottom: @spacing-100;
+	}
+
+	.cdx-text-input__input,
+	.cdx-select,
+	.cdx-multiselect-lookup,
+	.tes-entity-selector {
+		/** Matching OOUI's text input widget */
+		max-width: 50em;
+	}
+
+	.mw-translate-hide {
+		display: none;
+	}
+
+	.mw-translate-stats-divider {
+		margin: @spacing-100 0;
+		border: 0;
+		border-top: @border-width-base @border-style-base @border-color-subtle;
+	}
+
+	.mw-translate-stats-form,
+	.mw-translate-stats-preview {
+		display: none;
+	}
+}
+
+.client-js .mw-special-TranslationStats {
+	.tux-nojs {
+		display: none;
+	}
+
+	.mw-translate-stats-form,
+	.mw-translate-stats-preview {
+		display: block;
+	}
+}
