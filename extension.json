@@ -1205,7 +1205,7 @@
 				"mediawiki.widgets",
 				"oojs-ui-widgets",
 				"user.options",
-				"mediawiki.languageselector"
+				"mediawiki.widgets.LanguageSelectWidget"
 			]
 		},
 		"ext.translate.special.managegroups": {

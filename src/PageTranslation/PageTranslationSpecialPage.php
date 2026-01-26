@@ -15,7 +15,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleState
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\Extension\Translate\Synchronization\MessageWebImporter;
-use MediaWiki\Extension\Translate\Utilities\LanguagesMultiselectWidget;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\TranslationNotifications\SpecialNotifyTranslators;
 use MediaWiki\Html\Html;
@@ -31,6 +30,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\Widget\LanguageSelectWidget;
 use MediaWiki\Widget\ToggleSwitchWidget;
 use OOUI\ButtonInputWidget;
 use OOUI\CheckboxInputWidget;
@@ -124,6 +124,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
 		$out->addModuleStyles( [
+			'codex-styles',
 			'ext.translate.specialpages.styles',
 			'mediawiki.codex.messagebox.styles',
 		] );
@@ -996,12 +997,15 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$form = new FieldsetLayout( [
 			'items' => [
 				new FieldLayout(
-					new LanguagesMultiselectWidget( [
-						'infusable' => true,
-						'name' => 'prioritylangs',
-						'id' => 'mw-translate-SpecialPageTranslation-prioritylangs',
-						'languages' => Utilities::getLanguageNames( $interfaceLanguage ),
-						'default' => $default,
+					new \OOUI\Widget( [
+						'content' => new HtmlSnippet( ( new LanguageSelectWidget( [
+							'name' => 'prioritylangs[]',
+							'languages' => $this->getLanguageOptions( $interfaceLanguage ),
+							'cssclass' => 'cdx-select',
+							'value' => $default,
+							'multiple' => true,
+							'size' => 8
+						] ) )->toString() )
 					] ),
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs' )->text(),
@@ -1042,6 +1046,16 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
 		$this->getOutput()->addHTML( $form->toString() );
+	}
+
+	private function getLanguageOptions( ?string $interfaceLanguage = null ): array {
+		$languages = Utilities::getLanguageNames( $interfaceLanguage );
+		$options = [];
+		foreach ( $languages as $code => $name ) {
+			$options[$code] = "$code - $name";
+		}
+
+		return $options;
 	}
 
 	private function syntaxVersionForm( string $version, bool $firstMark ): void {
@@ -1095,12 +1109,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 	private function getPriorityLanguage( WebRequest $request ): array {
 		// Get the priority languages from the request
-		// We've to do some extra work here because if JS is disabled, we will be getting
-		// the values split by newline.
-		$priorityLanguages = rtrim( trim( $request->getVal( 'prioritylangs', '' ) ), ',' );
-		$priorityLanguages = str_replace( "\n", ',', $priorityLanguages );
-		$priorityLanguages = array_map( 'trim', explode( ',', $priorityLanguages ) );
-		$priorityLanguages = array_unique( array_filter( $priorityLanguages ) );
+		// The form field uses prioritylangs[] which returns an array
+		$priorityLanguages = $request->getArray( 'prioritylangs', [] );
+		if ( $priorityLanguages ) {
+			$priorityLanguages = array_unique( array_filter( $priorityLanguages ) );
+		}
 
 		$forcePriorityLanguage = $request->getCheck( 'forcelimit' );
 		$priorityLanguageReason = trim( $request->getText( 'priorityreason' ) );

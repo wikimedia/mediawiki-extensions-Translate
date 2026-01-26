@@ -5,34 +5,6 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-const { getMultiselectLookupLanguageSelector } = require( 'mediawiki.languageselector' );
-
-function configureLanguageInput( $form, $widget ) {
-	const priorityLanguageData = $widget.data( 'ooui' );
-
-	const $input = $( '<input>' ).prop( {
-		type: 'hidden',
-		name: 'prioritylangs'
-	} );
-
-	const languageSelectorApp = getMultiselectLookupLanguageSelector( {
-		selectableLanguages: priorityLanguageData.languages,
-		selectedLanguage: priorityLanguageData.selected,
-		onLanguageChange: ( languages ) => {
-			$input.val( languages.join( ',' ) );
-		}
-	} );
-	$input.val( priorityLanguageData.selected.join( ',' ) );
-
-	$form.prepend( $input );
-
-	const container = document.createElement( 'div' );
-	$widget.after( container );
-	languageSelectorApp.mount( container );
-	$widget.remove();
-}
-
 function configurePostLinks( $container ) {
 	$container.on( 'click', '.mw-translate-jspost', function ( e ) {
 		const url = new URL( e.target.href );
@@ -70,13 +42,8 @@ function configureHideUnchangedTranslationUnits( $container ) {
 
 // Init
 $( function () {
-	var $widgets = $( '#mw-translate-SpecialPageTranslation-prioritylangs' );
-
 	var $container = $( '#mw-content-text' );
 	configurePostLinks( $container );
 	configureDropdownForFuzzySelector( $container );
 	configureHideUnchangedTranslationUnits( $container );
-	if ( $widgets.length ) {
-		configureLanguageInput( $( '.mw-tpt-sp-markform' ), $widgets );
-	}
 } );
