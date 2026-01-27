@@ -36,7 +36,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 	}
 
 	public function getCacheVersion(): int {
-		return 1;
+		return 2;
 	}
 
 	public function getDependencies(): array {
