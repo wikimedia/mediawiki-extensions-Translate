@@ -6,7 +6,8 @@
 			"MinecraftAustralia",
 			"Moilleadóir",
 			"පසිඳු කාවින්ද",
-			"Halle"
+			"Halle",
+			"Aindriu80"
 		]
 	},
 	"translate-taction-translate": "Aistrigh",
@@ -21,6 +22,7 @@
 	"translate-translations-fieldset-title": "Teachtaireacht",
 	"translate-translations-messagename": "Ainm:",
 	"translate-language": "Teanga",
+	"translate-documentation-language": "Doiciméadú teachtaireachta",
 	"tpt-cleanchanges-language": "Teanga:",
 	"tpt-cleanchanges-language-na": "An t-iomlán"
 }

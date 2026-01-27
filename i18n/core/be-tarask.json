@@ -14,7 +14,7 @@
 	"translate": "Пераклад",
 	"translate-extensionname": "Перакласьці",
 	"translate-desc": "[[Special:Translate|Спэцыяльная старонка]] для перакладу MediaWiki і іншых праграмаў",
-	"translate-fuzzybot-desc": "Гэта адмысловы сыстэмны ўліковы запіс, які выкарыстоўваецца [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate пашырэньнем перакладу] MediaWiki для падтрымкі перакладаў.\nЁн ёсьць часткай праграмнага забесьпячэньня MediaWiki і не належыць нікому з удзельнікаў.",
+	"translate-fuzzybot-desc": "Гэта адмысловы сыстэмны рахунак, які ўжываецца [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate пашырэньнем перакладу] MediaWiki для абслужваньня перакладаў.\nЁн ёсьць часткай праґрамнага забесьпячэньня MediaWiki і не належыць нікому з удзельнікаў.",
 	"translate-taskui-export-to-file": "Экспартаваць у родным фармаце",
 	"translate-taskui-export-as-po": "Экспартаваць для оф-лайнавага перакладу",
 	"translate-taskui-export-as-csv": "Экспарт у фармаце CSV",

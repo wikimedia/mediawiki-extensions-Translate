@@ -376,6 +376,7 @@
 	"log-action-filter-translationreview-group": "د ژباړې بهير دريځ کې بدلون",
 	"log-action-filter-import-translatable-bundle": "د ژباړې‌وړ بنډل رالېږدول",
 	"translate-hidetranslations": "ژباړې مخونه پټول",
+	"echo-category-title-translate-message-group-subscription": "ژباړې وړ پيغام ډلې گډونونه",
 	"echo-pref-tooltip-translate-message-group-subscription": "د ژباړې‌وړ پيغام ډلو کې چې ما پکې گډون کړی د بدلونونو په اړه دې خبر راکړل شي",
 	"notification-header-message-group-subscription": "د $1 ژباړې هم‌مهالېدنې",
 	"notification-body-translate-mgs-message-added": "د $1 نوي يا هم‌مهاله‌ {{PLURAL:$1|پيغام|پيغامونه}}",
