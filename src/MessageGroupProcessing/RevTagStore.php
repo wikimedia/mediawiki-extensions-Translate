@@ -186,13 +186,9 @@ class RevTagStore {
 			->orderBy( 'rt_revision', SelectQueryBuilder::SORT_DESC )
 			->caller( __METHOD__ )
 			->fetchField();
-		if ( $result === false ) {
-			return null;
-		} else {
-			// The revtag database is defined to store a string in rt_value,
-			// but tp:transver is always an integer
-			return (int)$result;
-		}
+		// The revtag database is defined to store a string in rt_value,
+		// but tp:transver is always an integer
+		return $result ? (int)$result : null;
 	}
 
 	/**
@@ -219,8 +215,13 @@ class RevTagStore {
 			->execute();
 	}
 
-	/** Get a list of page ids where the latest revision has one of the tags in revTagsLatest,
+	/**
+	 * Get a list of page ids where the latest revision has one of the tags in revTagsLatest,
 	 * or any revision has one of the given revtags in revTagsAny
+	 *
+	 * @param string[] $revTagsLatest
+	 * @param string[] $revTagsAny
+	 * @return int[]
 	 */
 	public static function getTranslatableBundleIds( array $revTagsLatest, array $revTagsAny = [] ): array {
 		$dbr = Utilities::getSafeReadDB();
@@ -231,7 +232,7 @@ class RevTagStore {
 		if ( $revTagsAny ) {
 			$expr = $dbr->orExpr( [ $expr, 'rt_type' => $revTagsAny ] );
 		}
-		$res = $dbr->newSelectQueryBuilder()
+		$pageIds = $dbr->newSelectQueryBuilder()
 			->select( 'rt_page' )
 			->from( 'revtag' )
 			->join(
@@ -244,12 +245,7 @@ class RevTagStore {
 			)
 			->groupBy( 'rt_page' )
 			->caller( __METHOD__ )
-			->fetchResultSet();
-		$results = [];
-		foreach ( $res as $row ) {
-			$results[] = (int)$row->rt_page;
-		}
-
-		return $results;
+			->fetchFieldValues();
+		return array_map( intval( ... ), $pageIds );
 	}
 }

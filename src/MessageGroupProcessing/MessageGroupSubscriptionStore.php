@@ -65,17 +65,21 @@ class MessageGroupSubscriptionStore {
 		return $subscriptions;
 	}
 
+	/**
+	 * @param string[] $groupIds
+	 * @return int[]
+	 */
 	public function getSubscriptionByGroupUnion( array $groupIds ): array {
-		$queryBuilder = $this->dbProvider
+		$userIds = $this->dbProvider
 			->getReplicaDatabase( self::VIRTUAL_DOMAIN )
 			->newSelectQueryBuilder()
-			->select( [ 'tmgs_user_id' ] )
+			->select( 'tmgs_user_id' )
 			->from( self::TABLE_NAME )
 			->where( [ 'tmgs_group' => $groupIds ] )
 			->having( 'COUNT(tmgs_group) = ' . count( $groupIds ) )
-			->caller( __METHOD__ );
-
-		return $queryBuilder->fetchFieldValues();
+			->caller( __METHOD__ )
+			->fetchFieldValues();
+		return array_map( intval( ... ), $userIds );
 	}
 
 	public function removeSubscriptions( string $groupId, int $userId ): void {

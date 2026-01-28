@@ -232,17 +232,12 @@ class MessageGroupSubscription {
 
 	/**
 	 * Return a list of users ids that belong to all the given groups
+	 *
+	 * @param string[] $groupIds
 	 * @return int[]
 	 */
 	public function getGroupSubscriberUnion( array $groupIds ): array {
-		$unionGroups = $this->groupSubscriptionStore->getSubscriptionByGroupUnion( $groupIds );
-		$userList = [];
-
-		foreach ( $unionGroups as $row ) {
-			$userList[] = (int)$row;
-		}
-
-		return $userList;
+		return $this->groupSubscriptionStore->getSubscriptionByGroupUnion( $groupIds );
 	}
 
 	public function setMockEventCreator( MockEventCreator $mockEventCreator ): void {
