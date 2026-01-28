@@ -218,7 +218,6 @@ class TranslateSpecialPage extends SpecialPage {
 		$container .= Html::rawElement( 'li',
 			[ 'class' => 'column' ],
 			Html::check( 'optional', false, [
-				'value' => '1',
 				'id' => 'tux-option-optional',
 				'data-filter' => 'optional'
 			] ) . "\u{00A0}" . Html::label(
