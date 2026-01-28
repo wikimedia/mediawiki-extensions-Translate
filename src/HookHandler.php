@@ -62,7 +62,6 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\SpecialSearch;
-use MediaWiki\Status\Status;
 use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleValue;
@@ -70,6 +69,7 @@ use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
 use MediaWiki\Xml\XmlSelect;
 use SearchEngine;
+use StatusValue;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -863,7 +863,7 @@ class HookHandler implements
 	public static function validateMessage(
 		IContextSource $context,
 		Content $content,
-		Status $status,
+		StatusValue $status,
 		string $summary,
 		User $user
 	): bool {

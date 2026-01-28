@@ -10,9 +10,9 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use SplFileObject;
+use StatusValue;
 
 /**
  * Parse, validate and import translations from a CSV file
@@ -28,9 +28,9 @@ class CsvTranslationImporter {
 	}
 
 	/** Parse and validate the CSV file */
-	public function parseFile( string $csvFilePath ): Status {
+	public function parseFile( string $csvFilePath ): StatusValue {
 		if ( !file_exists( $csvFilePath ) || !is_file( $csvFilePath ) ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				"CSV file path '$csvFilePath' does not exist, is not readable or is not a file"
 			);
 		}
@@ -99,7 +99,7 @@ class CsvTranslationImporter {
 			$importData[] = $rowData;
 		}
 
-		$status = new Status();
+		$status = new StatusValue();
 		if ( $invalidRows['emptyTitleRows'] ) {
 			$status->fatal(
 				'Empty message titles found on row(s): ' . implode( ',', $invalidRows['emptyTitleRows'] )
@@ -122,7 +122,7 @@ class CsvTranslationImporter {
 			return $status;
 		}
 
-		return Status::newGood( $importData );
+		return StatusValue::newGood( $importData );
 	}
 
 	/** Import the data returned from the parseFile method */
@@ -131,11 +131,11 @@ class CsvTranslationImporter {
 		Authority $authority,
 		string $comment,
 		?callable $progressReporter = null
-	): Status {
+	): StatusValue {
 		$commentStoreComment = CommentStoreComment::newUnsavedComment( $comment );
 
 		// Loop over each translation to import
-		$importStatus = new Status();
+		$importStatus = new StatusValue();
 		$failedStatuses = [];
 		$currentTranslation = 0;
 		foreach ( $messagesWithTranslations as $messageTranslation ) {
@@ -192,16 +192,16 @@ class CsvTranslationImporter {
 		return $importStatus;
 	}
 
-	private function getLanguagesFromHeader( array $csvHeader ): Status {
+	private function getLanguagesFromHeader( array $csvHeader ): StatusValue {
 		if ( count( $csvHeader ) < 2 ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'CSV has < 2 columns. Assuming that there are no languages to import'
 			);
 		}
 
 		$languageCodesInHeader = array_slice( $csvHeader, 2 );
 		if ( $languageCodesInHeader === [] ) {
-			return Status::newFatal( 'No languages found for import' );
+			return StatusValue::newFatal( 'No languages found for import' );
 		}
 
 		$invalidLanguageCodes = [];
@@ -219,12 +219,12 @@ class CsvTranslationImporter {
 		}
 
 		if ( $invalidLanguageCodes ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'Invalid language codes detected in CSV header: ' . implode( ', ', $invalidLanguageCodes )
 			);
 		}
 
-		return Status::newGood( $indexedLanguageCodes );
+		return StatusValue::newGood( $indexedLanguageCodes );
 	}
 
 	private function getMessageHandleIfValid( string $messageTitle ): ?MessageHandle {

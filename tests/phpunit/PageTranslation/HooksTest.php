@@ -10,11 +10,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
 use MockWikiValidationMessageGroup;
+use StatusValue;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -151,7 +151,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		$title = Title::newFromText( 'MediaWiki:translated/fi' );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
-		$status = new Status();
+		$status = new StatusValue();
 
 		$requestContext = new RequestContext();
 		$requestContext->setLanguage( 'en-gb' );
@@ -164,7 +164,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 		$this->assertGreaterThan( 0, $status->getErrors(),
 			'errors are specified when translation fails validation.' );
 
-		$newStatus = new Status();
+		$newStatus = new StatusValue();
 		$superUser = $this->getTestSysop()->getUser();
 
 		HookHandler::validateMessage( $requestContext, $content, $newStatus, '', $superUser );
