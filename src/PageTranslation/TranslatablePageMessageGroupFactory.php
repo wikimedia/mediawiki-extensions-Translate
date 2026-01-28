@@ -36,7 +36,7 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	}
 
 	public function getCacheVersion(): int {
-		return 1;
+		return 2;
 	}
 
 	/** @return CacheDependency[] */

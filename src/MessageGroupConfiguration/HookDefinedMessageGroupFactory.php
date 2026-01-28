@@ -29,7 +29,7 @@ final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory 
 	}
 
 	public function getCacheVersion(): int {
-		return 1;
+		return 2;
 	}
 
 	public function getDependencies(): array {

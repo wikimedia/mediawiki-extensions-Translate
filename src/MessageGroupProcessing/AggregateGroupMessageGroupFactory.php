@@ -25,7 +25,7 @@ final class AggregateGroupMessageGroupFactory implements CachedMessageGroupFacto
 	}
 
 	public function getCacheVersion(): int {
-		return 1;
+		return 2;
 	}
 
 	public function getDependencies(): array {

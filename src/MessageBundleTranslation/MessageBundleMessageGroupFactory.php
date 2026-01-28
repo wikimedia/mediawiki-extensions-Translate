@@ -36,7 +36,7 @@ class MessageBundleMessageGroupFactory implements CachedMessageGroupFactory {
 	}
 
 	public function getCacheVersion(): int {
-		return 1;
+		return 3;
 	}
 
 	public function getDependencies(): array {
