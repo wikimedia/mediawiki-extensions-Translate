@@ -137,13 +137,6 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
-		// Information to be used inside the foreach loop.
-		$linkInfo = [];
-		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
-		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->text();
-		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
-		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
-
 		$local = $this->langNameUtils->getLanguageName( $code, $lang->getCode() );
 		$native = $this->langNameUtils->getLanguageName( $code );
 		$statLanguage = $this->languageFactory->getLanguage( $code );
@@ -152,19 +145,17 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 		$span = Html::rawElement( 'span', [ 'lang' => $bcp47Code, 'dir' => $statLanguage->getDir() ], $native );
 
 		$headerText = $local !== $native
-			? $this->msg( 'supportedlanguages-portallink' )
-				->params( $bcp47Code, $local, $span )->parse()
+			? $this->msg( 'supportedlanguages-portallink', $bcp47Code, $local, $span )->parse()
 			// No CLDR, so a less localised header and link title
-			: $this->msg( 'supportedlanguages-portallink-nocldr' )
-				->params( $bcp47Code, $span )->parse();
+			: $this->msg( 'supportedlanguages-portallink-nocldr', $bcp47Code, $span )->parse();
 
 		$out->addHTML( Html::rawElement( 'h2', [ 'id' => $code ], $headerText ) );
 
 		// Add useful links for language stats and recent changes for the language.
 		$links = [];
 		$links[] = $this->getLinkRenderer()->makeKnownLink(
-			$linkInfo['stats']['title'],
-			$linkInfo['stats']['msg'],
+			SpecialPage::getTitleValueFor( 'LanguageStats' ),
+			$this->msg( 'languagestats' )->text(),
 			[],
 			[
 				'code' => $code,
@@ -172,8 +163,8 @@ class ActiveLanguagesSpecialPage extends SpecialPage {
 			]
 		);
 		$links[] = $this->getLinkRenderer()->makeKnownLink(
-			$linkInfo['rc']['title'],
-			$linkInfo['rc']['msg'],
+			SpecialPage::getTitleValueFor( 'Recentchanges' ),
+			$this->msg( 'supportedlanguages-recenttranslations' )->text(),
 			[],
 			[
 				'translations' => 'only',
