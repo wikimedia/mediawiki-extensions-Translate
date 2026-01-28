@@ -201,9 +201,8 @@ class RevTagStore {
 	 * (presumably the version whose translation the translation is).
 	 * and is used to determine whether the translation is outdated
 	 * and to show a diff of the original message if it is.
-	 * @return int|null The revision ID, or `null` if none is found
 	 */
-	public function setTransver( PageIdentity $identity, int $translationRevision, int $transver ) {
+	public function setTransver( PageIdentity $identity, int $translationRevision, int $transver ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		$conds = [
