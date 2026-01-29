@@ -33,7 +33,8 @@
 			"WTM",
 			"Woytecr",
 			"Wpedzich",
-			"Žekřil71pl"
+			"Žekřil71pl",
+			"Rzuwig"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -375,6 +376,7 @@
 	"tux-editor-placeholder-language": "Twoje tłumaczenie na język $1",
 	"tux-editor-editsummary-placeholder": "Opis zmian (opcjonalne)",
 	"tux-editor-paste-original-button-label": "Wklej tekst źródłowy",
+	"tux-editor-copy-original-button-label": "Kopiuj tekst źródłowy",
 	"tux-editor-discard-changes-button-label": "Porzuć zmiany",
 	"tux-editor-save-button-label": "Opublikuj tłumaczenie",
 	"tux-editor-skip-button-label": "Przejdź do następnego",

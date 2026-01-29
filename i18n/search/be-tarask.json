@@ -10,6 +10,7 @@
 	"tux-sst-edit": "Зьмяніць пераклад",
 	"tux-sst-search": "Шукаць",
 	"tux-sst-search-ph": "Пошук перакладаў",
+	"tux-sst-search-info": "Ужывайце апэратары <code>language:</code> або <code>group:</code> каб удакладніць крытэр пошуку",
 	"tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
 	"tux-sst-facet-language": "Мовы",
 	"tux-sst-facet-group": "Групы радкоў",

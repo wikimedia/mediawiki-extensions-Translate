@@ -176,7 +176,7 @@
 	"supportedlanguages-count": "ڪل $1 {{PLURAL:$1|ٻولي|ٻوليون}}",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|سنوار|سنوارون}} - آخري سنوار $3 {{PLURAL:$3|ڏينھن|ڏينھَن}} اڳ",
 	"translate-supportedlanguages-cached": "هي معلومات $1 اڳ ڪيڇڊ ڪئي وئي.",
-	"abusefilter-edit-builder-vars-translate-target-language": "ترجمو ڪرڻ لاءِ مقصود ٻولي",
+	"abusefilter-edit-builder-vars-translate-target-language": "ترجمي لاءِ ھدف واري ٻولي ($1)",
 	"translate-jssti-add": "فھرست ۾ شامل ڪريو",
 	"managemessagegroups": "نياپو گروھن جي سنڀال",
 	"translate-smg-notallowed": "توھان کي ھي عمل سرانجام ڏيڻ جي اجازت نہ نہ آھي.",
