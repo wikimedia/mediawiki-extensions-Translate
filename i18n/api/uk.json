@@ -6,6 +6,7 @@
 			"Dars",
 			"Ice bulldog",
 			"Ignatgg",
+			"Movses",
 			"Piramidion",
 			"Ypryima",
 			"Ата"
@@ -123,7 +124,7 @@
 	"apihelp-searchtranslations-param-group": "Ідентифікатор групи для пошуку в рядку. Див. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-searchtranslations-param-filter": "Фільтр стану перекладу повідомлення.",
 	"apihelp-searchtranslations-param-match": "Відповідність одного із/всіх пошукових слів.",
-	"apihelp-searchtranslations-param-case": "Пошук (не)чутливий до регістру.",
+	"apihelp-searchtranslations-param-case": "Пошук з урахуванням регістру.",
 	"apihelp-searchtranslations-param-offset": "Зміщення для перекладів.",
 	"apihelp-searchtranslations-param-limit": "Розмір результату.",
 	"apihelp-searchtranslations-example-1": "Показати переклади для мови.",
