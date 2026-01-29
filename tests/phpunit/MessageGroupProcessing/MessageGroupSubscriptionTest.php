@@ -12,7 +12,6 @@ use MessageGroupTestConfig;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
 use PHPUnit\Framework\MockObject\MockObject;
-use Wikimedia\Rdbms\FakeResultWrapper;
 
 /**
  * @group Database
@@ -62,7 +61,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 				return count( $actualGroupIds ) === count( $expectedGroupIds ) &&
 					!array_diff( $actualGroupIds, $expectedGroupIds );
 			} ) )
-			->willReturn( $this->getFakeSubscribers( $expectedGroupIds ) );
+			->willReturn( array_fill_keys( $expectedGroupIds, [ 1 ] ) );
 		$this->subscription->sendNotifications( $info );
 	}
 
@@ -320,15 +319,4 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 		return $testGroups;
 	}
 
-	private function getFakeSubscribers( array $groupIds ): FakeResultWrapper {
-		$subscribers = [];
-		foreach ( $groupIds as $groupId ) {
-			$subscribers[] = (object)[
-				'tmgs_group' => $groupId,
-				'tmgs_user_id' => 1,
-			];
-		}
-
-		return new FakeResultWrapper( $subscribers );
-	}
 }

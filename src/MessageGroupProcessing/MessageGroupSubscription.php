@@ -62,7 +62,7 @@ class MessageGroupSubscription {
 	}
 
 	public function isUserSubscribedTo( MessageGroup $group, UserIdentity $user ): bool {
-		return $this->groupSubscriptionStore->getSubscriptions( [ $group->getId() ], $user->getId() )->count() !== 0;
+		return (bool)$this->groupSubscriptionStore->getSubscriptions( [ $group->getId() ], $user->getId() );
 	}
 
 	public function unsubscribeFromGroup( MessageGroup $group, UserIdentity $user ): void {
@@ -85,12 +85,8 @@ class MessageGroupSubscription {
 
 	/** @return string[] */
 	public function getUserSubscriptions( UserIdentity $user ): array {
-		$subscriptions = [];
-		$result = $this->groupSubscriptionStore->getSubscriptions( null, $user->getId() );
-		foreach ( $result as $row ) {
-			$subscriptions[] = $row->tmgs_group;
-		}
-		return $subscriptions;
+		$groups = $this->groupSubscriptionStore->getSubscriptions( null, $user->getId() );
+		return array_keys( $groups );
 	}
 
 	/**
@@ -257,17 +253,10 @@ class MessageGroupSubscription {
 	 * Get all subscribers for groups. Returns an array where the keys are the
 	 * group ids and value is a list of integer user ids
 	 * @param string[] $groupIds
-	 * @return array[] [(str) groupId => (int[]) userId, ...]
+	 * @return array<string,int[]> [(str) groupId => (int[]) userId, ...]
 	 */
 	private function getSubscriberIdsForGroups( array $groupIds ): array {
-		$dbGroupSubscriptions = $this->groupSubscriptionStore->getSubscriptions( $groupIds, null );
-		$groupSubscriptions = [];
-
-		foreach ( $dbGroupSubscriptions as $row ) {
-			$groupSubscriptions[ $row->tmgs_group ][] = (int)$row->tmgs_user_id;
-		}
-
-		return $groupSubscriptions;
+		return $this->groupSubscriptionStore->getSubscriptions( $groupIds, null );
 	}
 
 	public function canUserSubscribeToGroup( MessageGroup $group, User $user ): StatusValue {

@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MessageGroup;
 use Wikimedia\Rdbms\IConnectionProvider;
-use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * Store service for looking up and storing user subscriptions to message group
@@ -37,7 +36,12 @@ class MessageGroupSubscriptionStore {
 			->execute();
 	}
 
-	public function getSubscriptions( ?array $groupIds, ?int $userId ): IResultWrapper {
+	/**
+	 * @param string[]|null $groupIds
+	 * @param int|null $userId
+	 * @return array<string,int[]>
+	 */
+	public function getSubscriptions( ?array $groupIds, ?int $userId ): array {
 		$queryBuilder = $this->dbProvider
 			->getReplicaDatabase( self::VIRTUAL_DOMAIN )
 			->newSelectQueryBuilder()
@@ -45,19 +49,20 @@ class MessageGroupSubscriptionStore {
 			->from( self::TABLE_NAME )
 			->caller( __METHOD__ );
 
-		if ( $groupIds !== null ) {
-			$dbGroupIds = [];
-			foreach ( $groupIds as $groupId ) {
-				$dbGroupIds[] = self::getGroupIdForDatabase( $groupId );
-			}
+		if ( $groupIds ) {
+			$dbGroupIds = array_map( self::getGroupIdForDatabase( ... ), $groupIds );
 			$queryBuilder->where( [ 'tmgs_group' => $dbGroupIds ] );
 		}
 
-		if ( $userId !== null ) {
+		if ( $userId ) {
 			$queryBuilder->andWhere( [ 'tmgs_user_id' => $userId ] );
 		}
 
-		return $queryBuilder->fetchResultSet();
+		$subscriptions = [];
+		foreach ( $queryBuilder->fetchResultSet() as $row ) {
+			$subscriptions[$row->tmgs_group][] = (int)$row->tmgs_user_id;
+		}
+		return $subscriptions;
 	}
 
 	public function getSubscriptionByGroupUnion( array $groupIds ): array {
