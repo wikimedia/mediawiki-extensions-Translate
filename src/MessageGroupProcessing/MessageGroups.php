@@ -245,10 +245,10 @@ class MessageGroups {
 	 * They can still exist in the system, but should not appear in front
 	 * of translators looking to do some useful work.
 	 *
-	 * @param MessageGroup|string $group Message group ID
+	 * @param MessageGroup|string $group
 	 * @return string Message group priority
 	 */
-	public static function getPriority( $group ): string {
+	public static function getPriority( MessageGroup|string $group ): string {
 		if ( $group instanceof MessageGroup ) {
 			$id = $group->getId();
 		} else {
@@ -261,10 +261,10 @@ class MessageGroups {
 	/**
 	 * Sets the message group priority.
 	 *
-	 * @param MessageGroup|string $group Message group
+	 * @param MessageGroup|string $group
 	 * @param string $priority Priority (empty string to unset)
 	 */
-	public static function setPriority( $group, string $priority = '' ): void {
+	public static function setPriority( MessageGroup|string $group, string $priority = '' ): void {
 		if ( $group instanceof MessageGroup ) {
 			$id = $group->getId();
 		} else {

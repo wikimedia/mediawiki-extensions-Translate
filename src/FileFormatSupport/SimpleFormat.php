@@ -292,10 +292,9 @@ class SimpleFormat implements FileFormatSupport {
 
 	/** Remove excluded authors. */
 	public function filterAuthors( array $authors, string $code ): array {
-		$groupId = $this->group->getId();
 		$configHelper = Services::getInstance()->getConfigHelper();
 		foreach ( $authors as $i => $v ) {
-			if ( $configHelper->isAuthorExcluded( $groupId, $code, (string)$v ) ) {
+			if ( $configHelper->isAuthorExcluded( $this->group, $code, (string)$v ) ) {
 				unset( $authors[$i] );
 			}
 		}

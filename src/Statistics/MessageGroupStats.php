@@ -139,12 +139,15 @@ class MessageGroupStats {
 
 	/**
 	 * Returns stats for all languages in given group.
-	 * @param string $groupId
+	 * @param MessageGroup|string $group
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	public static function forGroup( string $groupId, int $flags = 0 ): array {
-		$group = MessageGroups::getGroup( $groupId );
+	public static function forGroup( MessageGroup|string $group, int $flags = 0 ): array {
+		if ( !( $group instanceof MessageGroup ) ) {
+			$group = MessageGroups::getGroup( $group );
+		}
+
 		if ( !self::isValidMessageGroup( $group ) ) {
 			return array_fill_keys( self::getLanguages(), self::getUnknownStats() );
 		}
@@ -153,7 +156,7 @@ class MessageGroupStats {
 
 		self::queueUpdates( $flags );
 
-		return $stats[$groupId];
+		return $stats[$group->getId()];
 	}
 
 	/**

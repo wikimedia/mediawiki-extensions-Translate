@@ -254,7 +254,7 @@ class TTMServerBootstrap extends Maintenance {
 		$times[ 'init' ] += microtime( true );
 
 		$times[ 'stats' ] -= microtime( true );
-		$stats = MessageGroupStats::forGroup( $group->getId() );
+		$stats = MessageGroupStats::forGroup( $group );
 		$times[ 'stats' ] += microtime( true );
 		unset( $stats[ $sourceLanguage ] );
 

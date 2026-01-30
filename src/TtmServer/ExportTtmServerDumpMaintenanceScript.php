@@ -154,7 +154,7 @@ class ExportTtmServerDumpMaintenanceScript extends BaseMaintenanceScript {
 		$groupId = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
 
-		$stats = MessageGroupStats::forGroup( $groupId );
+		$stats = MessageGroupStats::forGroup( $group );
 		$collection = $group->initCollection( $sourceLanguage );
 		foreach ( $stats as $language => $numbers ) {
 			if ( $numbers[MessageGroupStats::TRANSLATED] === 0 ) {

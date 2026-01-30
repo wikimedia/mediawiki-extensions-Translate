@@ -138,12 +138,12 @@ class MessageGroupReviewStore {
 
 	/**
 	 * Get the current workflow state for the given message group for the given language
-	 * @param string $groupId
+	 * @param MessageGroup $group
 	 * @param string $languageCode
 	 * @return string|null State id or null.
 	 */
-	public function getWorkflowState( string $groupId, string $languageCode ): ?string {
-		$result = $this->getWorkflowStates( [ $groupId ], [ $languageCode ] );
+	public function getWorkflowState( MessageGroup $group, string $languageCode ): ?string {
+		$result = $this->getWorkflowStates( [ $group ], [ $languageCode ] );
 		return $result->fetchRow()['tgr_state'] ?? null;
 	}
 
@@ -172,19 +172,19 @@ class MessageGroupReviewStore {
 	}
 
 	/**
-	 * @param string[]|null $groupIds
+	 * @param array<MessageGroup|string>|null $groups
 	 * @param string[]|null $languageCodes
 	 */
-	private function getWorkflowStates( ?array $groupIds, ?array $languageCodes ): IResultWrapper {
-		if ( $groupIds === null && $languageCodes === null ) {
+	private function getWorkflowStates( ?array $groups, ?array $languageCodes ): IResultWrapper {
+		if ( $groups === null && $languageCodes === null ) {
 			throw new InvalidArgumentException( 'Either the $groupId or the $languageCode should be provided' );
 		}
 
 		$conditions = [];
-		if ( $groupIds ) {
+		if ( $groups ) {
 			$conditions['tgr_group'] = array_map(
 				MessageGroupSubscriptionStore::getGroupIdForDatabase( ... ),
-				$groupIds
+				$groups
 			);
 		}
 		if ( $languageCodes ) {

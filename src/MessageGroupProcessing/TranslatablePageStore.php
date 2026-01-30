@@ -170,7 +170,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 				unset( $subgroups[$oldGroupId] );
 				$subgroups = array_flip( $subgroups );
 				$this->messageGroupMetadata->set(
-					$group->getId(),
+					$group,
 					'subgroups',
 					implode( ',', $subgroups )
 				);
@@ -190,7 +190,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		$aggregateGroups = MessageGroups::getGroupsByType( AggregateMessageGroup::class );
 		$this->messageGroupMetadata->preloadGroups( array_keys( $aggregateGroups ), __METHOD__ );
 		foreach ( $aggregateGroups as $group ) {
-			$subgroups = $this->messageGroupMetadata->get( $group->getId(), 'subgroups' );
+			$subgroups = $this->messageGroupMetadata->get( $group, 'subgroups' );
 			if ( $subgroups !== false ) {
 				$subgroups = explode( ',', $subgroups );
 				$subgroups = array_flip( $subgroups );
@@ -198,7 +198,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 					unset( $subgroups[$groupId] );
 					$subgroups = array_flip( $subgroups );
 					$this->messageGroupMetadata->set(
-						$group->getId(),
+						$group,
 						'subgroups',
 						implode( ',', $subgroups )
 					);

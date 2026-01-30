@@ -75,7 +75,8 @@ class ConfigHelper {
 		return $isLanguageDisabled;
 	}
 
-	public function isAuthorExcluded( string $groupId, string $languageCode, string $username ): bool {
+	public function isAuthorExcluded( MessageGroup|string $group, string $languageCode, string $username ): bool {
+		$groupId = $group instanceof MessageGroup ? $group->getId() : $group;
 		$hash = "$groupId;$languageCode;$username";
 		$authorExclusionList = $this->getTranslateAuthorExclusionList();
 		$excluded = false;

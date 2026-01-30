@@ -289,6 +289,6 @@ class StatsTable {
 	 */
 	public function isExcluded( MessageGroup $group, string $code ): bool {
 		return $this->configHelper->isTargetLanguageDisabled( $group, $code )
-			|| $this->messageGroupMetadata->isExcluded( $group->getId(), $code );
+			|| $this->messageGroupMetadata->isExcluded( $group, $code );
 	}
 }

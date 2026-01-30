@@ -141,7 +141,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 		$result->addValue(
 			[ 'query', 'metadata' ],
 			'state',
-			$this->groupReviewStore->getWorkflowState( $group->getId(), $params['language'] )
+			$this->groupReviewStore->getWorkflowState( $group, $params['language'] )
 		);
 
 		$result->addValue( [ 'query', 'metadata' ], 'resultsize', $resultSize );

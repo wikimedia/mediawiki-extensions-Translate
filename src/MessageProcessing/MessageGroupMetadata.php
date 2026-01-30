@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\MessageProcessing;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionStore;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MessageGroup;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -27,6 +28,10 @@ class MessageGroupMetadata {
 	public function __construct( private readonly IConnectionProvider $dbProvider ) {
 	}
 
+	/**
+	 * @param array<MessageGroup|string> $groups
+	 * @param string $caller
+	 */
 	public function preloadGroups( array $groups, string $caller ): void {
 		$dbGroupIds = array_map( MessageGroupSubscriptionStore::getGroupIdForDatabase( ... ), $groups );
 		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), $this->cache ) );
@@ -56,10 +61,10 @@ class MessageGroupMetadata {
 
 	/**
 	 * Get a metadata value for the given group and key.
-	 * @param string $group The group name
+	 * @param MessageGroup|string $group
 	 * @param string $key Metadata key
 	 */
-	public function get( string $group, string $key ): string|false {
+	public function get( MessageGroup|string $group, string $key ): string|false {
 		$this->preloadGroups( [ $group ], __METHOD__ );
 		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $group );
 		return $this->cache[$dbGroupId][$key] ?? false;
@@ -77,13 +82,13 @@ class MessageGroupMetadata {
 	/**
 	 * Set a metadata value for the given group and metadata key. Updates the
 	 * value if already existing.
-	 * @param string $groupId The group id
+	 * @param MessageGroup|string $group
 	 * @param string $key Metadata key
 	 * @param string|false $value Metadata value, false to delete
 	 */
-	public function set( string $groupId, string $key, string|false $value ): void {
+	public function set( MessageGroup|string $group, string $key, string|false $value ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $group );
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
@@ -151,7 +156,7 @@ class MessageGroupMetadata {
 		unset( $this->priorityCache[ $dbGroupId ] );
 	}
 
-	public function isExcluded( string $groupId, string $code ): bool {
+	public function isExcluded( MessageGroup|string $group, string $code ): bool {
 		if ( $this->priorityCache === null ) {
 			// TODO: Ideally, this should use the injected ILoadBalancer to make it mockable.
 			$db = Utilities::getSafeReadDB();
@@ -180,8 +185,8 @@ class MessageGroupMetadata {
 			}
 		}
 
-		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
-		$isDiscouraged = MessageGroups::getPriority( $groupId ) === 'discouraged';
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $group );
+		$isDiscouraged = MessageGroups::getPriority( $group ) === 'discouraged';
 		$hasLimitedLanguages = isset( $this->priorityCache[$dbGroupId] );
 		$isLanguageIncluded = isset( $this->priorityCache[$dbGroupId][$code] );
 

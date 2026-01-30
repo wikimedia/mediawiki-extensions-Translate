@@ -52,6 +52,7 @@ use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MessageGroup;
 use Skin;
 use StatusValue;
 use UserBlockedError;
@@ -1100,10 +1101,10 @@ class Hooks {
 	 * Prevent editing of restricted languages when prioritized.
 	 *
 	 * @param MessageHandle $handle
-	 * @param string $groupId
+	 * @param MessageGroup|string $group
 	 * @return array array containing error message if restricted, empty otherwise
 	 */
-	private static function getTranslationRestrictions( MessageHandle $handle, $groupId ) {
+	private static function getTranslationRestrictions( MessageHandle $handle, MessageGroup|string $group ) {
 		global $wgTranslateDocumentationLanguageCode;
 
 		// Allow adding message documentation even when translation is restricted
@@ -1113,14 +1114,14 @@ class Hooks {
 
 		$messageGroupMetadata = Services::getInstance()->getMessageGroupMetadata();
 		// Check if anything is prevented for the group in the first place
-		$force = $messageGroupMetadata->get( $groupId, 'priorityforce' );
+		$force = $messageGroupMetadata->get( $group, 'priorityforce' );
 		if ( $force !== 'on' ) {
 			return [];
 		}
 
 		// And finally check whether the language is in the inclusion list
-		$languages = $messageGroupMetadata->get( $groupId, 'prioritylangs' );
-		$reason = $messageGroupMetadata->get( $groupId, 'priorityreason' );
+		$languages = $messageGroupMetadata->get( $group, 'prioritylangs' );
+		$reason = $messageGroupMetadata->get( $group, 'priorityreason' );
 		if ( !$languages ) {
 			if ( $reason ) {
 				return [ 'tpt-translation-restricted-no-priority-languages', $reason ];

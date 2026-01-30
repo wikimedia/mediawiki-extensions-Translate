@@ -95,7 +95,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 			if (
 				$params['languageFilter'] !== '' &&
-				$this->messageGroupMetadata->isExcluded( $group->getId(), $params['languageFilter'] )
+				$this->messageGroupMetadata->isExcluded( $group, $params['languageFilter'] )
 			) {
 				unset( $groups[$index] );
 			}

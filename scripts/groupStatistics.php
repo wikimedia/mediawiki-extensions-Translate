@@ -327,6 +327,7 @@ class GroupStatistics extends Maintenance {
 		$wmfscore = $this->hasOption( 'wmfscore' );
 
 		// Get groups from input
+		/** @var array<string,MessageGroup> $groups */
 		$groups = [];
 		if ( $reportScore ) {
 			$reqGroups = array_keys( $this->localisedWeights[$most] );
@@ -416,7 +417,6 @@ class GroupStatistics extends Maintenance {
 				);
 			}
 
-			/** @var MessageGroup $g */
 			foreach ( $groups as $g ) {
 				// Add unprocessed description of group as heading
 				if ( $reportScore ) {
@@ -443,8 +443,8 @@ class GroupStatistics extends Maintenance {
 			$rows[$code] = [];
 		}
 
-		foreach ( $groups as $groupName => $g ) {
-			$stats = MessageGroupStats::forGroup( $groupName );
+		foreach ( $groups as $group ) {
+			$stats = MessageGroupStats::forGroup( $group );
 
 			// Perform the statistic calculations on every language
 			foreach ( $languages as $code => $name ) {
