@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MessageGroup;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -84,14 +85,14 @@ class MessageGroupSubscriptionStore {
 			->execute();
 	}
 
-	private static function getGroupIdForDatabase( string $groupId ): string {
-		// Check if length is more than 200 bytes
-		if ( strlen( $groupId ) <= self::MAX_GROUP_LENGTH ) {
-			return $groupId;
+	public static function getGroupIdForDatabase( MessageGroup|string $groupId ): string {
+		if ( $groupId instanceof MessageGroup ) {
+			$groupId = $groupId->getId();
 		}
 
-		$hash = hash( 'md5', $groupId );
-		// We take 160 bytes of the original string and append the md5 hash (32 bytes)
-		return mb_strcut( $groupId, 0, 160 ) . '||' . $hash;
+		return strlen( $groupId ) > self::MAX_GROUP_LENGTH ?
+			// Note: mb_strcut operates on bytes but leaves multi-byte characters intact
+			mb_strcut( $groupId, 0, 160 ) . '||' . md5( $groupId ) :
+			$groupId;
 	}
 }

@@ -36,7 +36,7 @@ class MessageGroupReviewStore {
 			->select( 'tgr_state' )
 			->from( self::TABLE_NAME )
 			->where( [
-				'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
+				'tgr_group' => MessageGroupSubscriptionStore::getGroupIdForDatabase( $group ),
 				'tgr_lang' => $code
 			] )
 			->caller( __METHOD__ )
@@ -51,7 +51,7 @@ class MessageGroupReviewStore {
 		}
 
 		$row = [
-			'tgr_group' => self::getGroupIdForDatabase( $group->getId() ),
+			'tgr_group' => MessageGroupSubscriptionStore::getGroupIdForDatabase( $group ),
 			'tgr_lang' => $code,
 			'tgr_state' => $newState,
 		];
@@ -85,12 +85,13 @@ class MessageGroupReviewStore {
 
 	public function getGroupPriority( string $group ): ?string {
 		$this->preloadGroupPriorities( __METHOD__ );
-		return $this->priorityCache[self::getGroupIdForDatabase( $group )] ?? null;
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $group );
+		return $this->priorityCache[$dbGroupId] ?? null;
 	}
 
 	/** Store priority for message group. Abusing this table that was intended to store message group states */
 	public function setGroupPriority( string $groupId, ?string $priority ): void {
-		$dbGroupId = self::getGroupIdForDatabase( $groupId );
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
 		if ( $this->priorityCache !== null ) {
 			$this->priorityCache[$dbGroupId] = $priority;
 		}
@@ -156,7 +157,7 @@ class MessageGroupReviewStore {
 
 		$finalResult = [];
 		foreach ( $groupIds as $groupId ) {
-			$dbGroupId = self::getGroupIdForDatabase( $groupId );
+			$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
 			if ( isset( $states[ $dbGroupId ] ) ) {
 				$finalResult[ $groupId ] = $states[ $dbGroupId ];
 			}
@@ -181,7 +182,10 @@ class MessageGroupReviewStore {
 
 		$conditions = [];
 		if ( $groupIds ) {
-			$conditions['tgr_group'] = array_map( self::getGroupIdForDatabase( ... ), $groupIds );
+			$conditions['tgr_group'] = array_map(
+				MessageGroupSubscriptionStore::getGroupIdForDatabase( ... ),
+				$groupIds
+			);
 		}
 		if ( $languageCodes ) {
 			$conditions['tgr_lang'] = $languageCodes;
@@ -204,13 +208,4 @@ class MessageGroupReviewStore {
 		return $map;
 	}
 
-	private static function getGroupIdForDatabase( string $groupId ): string {
-		// Check if length is more than 200 bytes
-		if ( strlen( $groupId ) <= 200 ) {
-			return $groupId;
-		}
-
-		// We take 160 bytes of the original string and append the md5 hash (32 bytes)
-		return mb_strcut( $groupId, 0, 160 ) . '||' . hash( 'md5', $groupId );
-	}
 }

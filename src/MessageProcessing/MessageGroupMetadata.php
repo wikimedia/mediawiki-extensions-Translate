@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionStore;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -27,7 +28,7 @@ class MessageGroupMetadata {
 	}
 
 	public function preloadGroups( array $groups, string $caller ): void {
-		$dbGroupIds = array_map( $this->getGroupIdForDatabase( ... ), $groups );
+		$dbGroupIds = array_map( MessageGroupSubscriptionStore::getGroupIdForDatabase( ... ), $groups );
 		$missing = array_keys( array_diff_key( array_flip( $dbGroupIds ), $this->cache ) );
 		if ( !$missing ) {
 			return;
@@ -60,7 +61,8 @@ class MessageGroupMetadata {
 	 */
 	public function get( string $group, string $key ): string|false {
 		$this->preloadGroups( [ $group ], __METHOD__ );
-		return $this->cache[$this->getGroupIdForDatabase( $group )][$key] ?? false;
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $group );
+		return $this->cache[$dbGroupId][$key] ?? false;
 	}
 
 	/**
@@ -81,7 +83,7 @@ class MessageGroupMetadata {
 	 */
 	public function set( string $groupId, string $key, string|false $value ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
 		$data = [ 'tmd_group' => $dbGroupId, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
@@ -139,7 +141,7 @@ class MessageGroupMetadata {
 	public function deleteGroup( string $groupId ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase();
 
-		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'translate_metadata' )
 			->where( [ 'tmd_group' => $dbGroupId ] )
@@ -178,7 +180,7 @@ class MessageGroupMetadata {
 			}
 		}
 
-		$dbGroupId = $this->getGroupIdForDatabase( $groupId );
+		$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
 		$isDiscouraged = MessageGroups::getPriority( $groupId ) === 'discouraged';
 		$hasLimitedLanguages = isset( $this->priorityCache[$dbGroupId] );
 		$isLanguageIncluded = isset( $this->priorityCache[$dbGroupId][$code] );
@@ -198,7 +200,8 @@ class MessageGroupMetadata {
 		$dbGroupIdMap = [];
 
 		foreach ( $groupIds as $groupId ) {
-			$dbGroupIdMap[ $this->getGroupIdForDatabase( $groupId ) ] = $groupId;
+			$dbGroupId = MessageGroupSubscriptionStore::getGroupIdForDatabase( $groupId );
+			$dbGroupIdMap[$dbGroupId] = $groupId;
 		}
 
 		$res = $db->newSelectQueryBuilder()
@@ -262,14 +265,4 @@ class MessageGroupMetadata {
 			->fetchFieldValues();
 	}
 
-	private function getGroupIdForDatabase( string $groupId ): string {
-		// Check if length is more than 200 bytes
-		if ( strlen( $groupId ) <= 200 ) {
-			return $groupId;
-		}
-
-		$hash = hash( 'md5', $groupId );
-		// We take 160 bytes of the original string and append the md5 hash (32 bytes)
-		return mb_strcut( $groupId, 0, 160 ) . '||' . $hash;
-	}
 }
