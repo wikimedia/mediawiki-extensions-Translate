@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "Пошук перакладаў",
 	"tux-sst-edit": "Зьмяніць пераклад",
+	"tux-sst-view-foreign": "Пагляд на $1",
 	"tux-sst-search": "Шукаць",
 	"tux-sst-search-ph": "Пошук перакладаў",
 	"tux-sst-search-info": "Ужывайце апэратары <code>language:</code> або <code>group:</code> каб удакладніць крытэр пошуку",
@@ -19,5 +20,13 @@
 	"tux-sst-solr-offline-title": "Пошук недаступны",
 	"tux-sst-solr-offline-body": "Служба пошуку часова недаступная.",
 	"tux-sst-next": "Наступныя ›",
-	"tux-sst-prev": "‹ Папярэднія"
+	"tux-sst-prev": "‹ Папярэднія",
+	"tux-sst-default": "Пераклады",
+	"tux-sst-translated": "Пераклады з $1",
+	"tux-sst-untranslated": "Няма перакладу з $1",
+	"tux-sst-outdated": "Састарэлыя пераклады з $1",
+	"tux-sst-ellipsis-untranslated": "Няма перакладу",
+	"tux-sst-ellipsis-outdated": "Састарэлыя пераклады",
+	"tux-sst-link-all-match": "Патрабуюцца ўсе словы пошуку.",
+	"tux-sst-case-sensitive": "Уважаць памеры літараў"
 }
