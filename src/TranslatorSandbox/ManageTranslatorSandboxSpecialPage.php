@@ -30,13 +30,13 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		private readonly TranslationStashReader $stash,
 		private readonly UserOptionsLookup $userOptionsLookup,
 		private readonly TranslateSandbox $translateSandbox,
-		ServiceOptions $options
+		private readonly ServiceOptions $options,
 	) {
-		parent::__construct(
-			'ManageTranslatorSandbox',
-			'translate-sandboxmanage',
-			$options->get( 'TranslateUseSandbox' )
-		);
+		parent::__construct( 'ManageTranslatorSandbox', 'translate-sandboxmanage' );
+	}
+
+	public function isListed(): bool {
+		return $this->options->get( 'TranslateUseSandbox' );
 	}
 
 	/** @inheritDoc */
