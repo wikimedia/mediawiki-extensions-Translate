@@ -27,7 +27,12 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	public function __construct(
 		private readonly BagOStuff $cache,
 	) {
-		parent::__construct( 'ImportTranslations', 'translate-import' );
+		parent::__construct( 'ImportTranslations' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'translate-import';
 	}
 
 	/** @inheritDoc */

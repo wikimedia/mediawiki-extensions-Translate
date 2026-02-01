@@ -56,7 +56,12 @@ class DeleteTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 		private readonly TranslatableBundleDeleter $bundleDeleter,
 		private readonly TranslatableBundleFactory $bundleFactory,
 	) {
-		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
+		parent::__construct( 'PageTranslationDeletePage' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'pagetranslation';
 	}
 
 	/** @inheritDoc */

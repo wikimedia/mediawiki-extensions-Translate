@@ -13,7 +13,12 @@ use MediaWiki\SpecialPage\SpecialPage;
  */
 class MigrateTranslatablePageSpecialPage extends SpecialPage {
 	public function __construct() {
-		parent::__construct( 'PageMigration', 'pagetranslation' );
+		parent::__construct( 'PageMigration' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'pagetranslation';
 	}
 
 	protected function getGroupName(): string {
