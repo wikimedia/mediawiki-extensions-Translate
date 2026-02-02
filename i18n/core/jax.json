@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Muhamad Izzul Fiqih"
+			"Muhamad Izzul Fiqih",
+			"Pitchrigi"
 		]
 	},
 	"translate-page-group": "Grup:",
-	"translate-language-field-name": "Bahaso:"
+	"translate-language-field-name": "Bahaso:",
+	"translate-documentation-language": "Dokumentasi pesan"
 }

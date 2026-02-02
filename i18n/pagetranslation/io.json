@@ -6,8 +6,12 @@
 			"Malafaya"
 		]
 	},
+	"nstab-translations": "Segmento por tradukar",
 	"right-pagetranslation": "Indikar versioni di pagini por tradukar",
 	"action-pagetranslation": "administrar tradukebla pagini",
+	"tpt-section": "Segmento por tradukar $1",
+	"tpt-section-new": "Nova segmento por tradukar.\nNomo: $1",
+	"tpt-section-deleted": "Segmento por tradukar $1",
 	"tpt-diff-old": "Antea texto",
 	"tpt-diff-new": "Nova texto",
 	"tpt-tag-oldsyntax": "anciena sintaxo",

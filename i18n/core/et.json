@@ -23,7 +23,7 @@
 	"translate-page-disabled": "Selle rühma sõnumite tõlkimine selles keeles on keelatud.\nPõhjus:\n\n<em>$1</em>",
 	"translate-language-disabled": "Sellesse keelde tõlkimine on keelatud.",
 	"translate-page-settings-legend": "Seadistused",
-	"translate-page-group": "Rühm",
+	"translate-page-group": "Rühm:",
 	"translate-page-language": "Keel",
 	"translate-page-limit": "Limiit",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|sõnum|sõnumit}} lehel",
