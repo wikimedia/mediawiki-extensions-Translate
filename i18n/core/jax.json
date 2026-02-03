@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Muhamad Izzul Fiqih"
+			"Muhamad Izzul Fiqih",
+			"Pitchrigi"
 		]
-	}
+	},
+	"translate-documentation-language": "Dokumentasi pesan"
 }
