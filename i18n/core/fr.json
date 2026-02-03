@@ -73,7 +73,7 @@
 	"translate-page-disabled": "Les traductions dans cette langue ont été désactivées pour ce groupe de messages.\nMotif :\n\n<em>$1</em>",
 	"translate-language-disabled": "La traduction dans cette langue est désactivée.",
 	"translate-page-settings-legend": "Configuration",
-	"translate-page-group": "Groupe",
+	"translate-page-group": "Groupe :",
 	"translate-page-language": "Langue",
 	"translate-page-limit": "Limite",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|message|messages}} par page",
