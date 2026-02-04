@@ -166,6 +166,8 @@
 	"tpt-manage-message-group-subscriptions-normal-submit": "Eemalda tellimused",
 	"tpt-manage-message-group-subscriptions-raw-explain": "Allpool on näidatud sinu sõnumirühmade tellimused, mida saad muuta neid loendisse lisades või neid sealt eemaldades, üks sõnumirühm rea kohta. Kui oled valmis, klõpsa nuppu \"{{int:Tpt-manage-message-group-subscriptions-raw-submit}}\".",
 	"tpt-manage-message-group-subscriptions-raw-legend": "Tellimuste toorandmete muutmine",
+	"special-tab-managemessagegroupsubscriptions-short": "Vaata ja redigeeri",
+	"special-tab-managemessagegroupsubscriptions-raw-short": "Redigeeri loendi toorandmeid",
 	"tpt-manage-message-group-subscriptions-edit-raw-title": "Tellimuste toorandmete muutmine",
 	"tpt-manage-message-group-subscriptions-edit-normal-title": "Tellimuste eemaldamine",
 	"tpt-manage-message-group-subscriptions-raw-done": "Sinu tellimused on uuendatud.",
