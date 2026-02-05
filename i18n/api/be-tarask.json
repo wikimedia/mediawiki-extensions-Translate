@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Renessaince"
+			"Renessaince",
+			"Ucukor"
 		]
 	},
 	"apihelp-query+messagetranslations-param-title": "Назва старонкі вядомага паведамленьня з прасторай назвы і кодам мовы.",
 	"apihelp-translationaids-param-title": "Назва старонкі вядомага паведамленьня з прасторай назвы і кодам мовы.",
 	"apihelp-translationreview-summary": "Пазначыць пераклады як правераныя.",
+	"apihelp-markfortranslation-param-prioritylanguages": "Сьпіс прыярытэтаў моўных кодаў. Калі ён няісны, кожнае папярэдняе значэньне будзе захаванае.",
+	"apihelp-markfortranslation-param-transclusion": "Калі <kbd>так</kbd> ці няіснае, падлучыць трансклюзію перакладу для гэтай старонкі. Калі <kbd>не</kbd>, адлучыць трансклюзію.",
 	"apierror-translate-nomessagefortitle": "Загаловак не адпавядае перакладному паведамленьню"
 }
