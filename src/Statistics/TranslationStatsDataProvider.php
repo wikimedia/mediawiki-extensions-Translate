@@ -28,6 +28,7 @@ class TranslationStatsDataProvider {
 		private readonly ObjectFactory $objectFactory,
 		private readonly IConnectionProvider $dbProvider,
 	) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	private function getGraphSpecifications(): array {

@@ -33,6 +33,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		private readonly ServiceOptions $options,
 	) {
 		parent::__construct( 'ManageTranslatorSandbox', 'translate-sandboxmanage' );
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	public function isListed(): bool {

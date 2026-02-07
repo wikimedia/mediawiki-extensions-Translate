@@ -35,6 +35,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		private readonly ServiceOptions $options,
 	) {
 		parent::__construct( 'TranslationStash' );
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	/** @inheritDoc */
