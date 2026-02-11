@@ -12,6 +12,8 @@
 	"tux-sst-facet-group": "Соа̄гэ группа",
 	"tux-sst-default": "Ёарркмуж",
 	"tux-sst-translated": "Ёарркмуж $1 кӣлэсьт",
+	"tux-sst-untranslated": "Евла ёарркмуж $1 кӣлэсьт",
 	"tux-sst-ellipsis-untranslated": "Элля ёарркмуж",
-	"tux-sst-ellipsis-outdated": "Вуамма ёарркмуж"
+	"tux-sst-ellipsis-outdated": "Вуамма ёарркмуж",
+	"tux-sst-case-sensitive": "Регистэр ло̄гкэ"
 }
