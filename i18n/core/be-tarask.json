@@ -398,7 +398,7 @@
 	"log-action-filter-translationreview-group": "Зьмены ў стане ходу перакладаў",
 	"log-action-filter-translationreview-unfuzzy": "Прагляд перакладаў радкоў, што пазначаны актуальнымі",
 	"echo-category-title-translate-message-group-subscription": "Падпіскі на перакладзеныя групы радкоў",
-	"echo-pref-tooltip-translate-message-group-subscription": "Абвясьціць мяне пра зьмены ў перакладах групаў радкоў, на якія зроблена падпіска",
+	"echo-pref-tooltip-translate-message-group-subscription": "Абвяшчаць мяне пра зьмены ў перакладах групаў радкоў, на якія зроблена падпіска",
 	"notification-header-message-group-subscription": "Пераклад абноўлены для $1",
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|новы ці абноўлены радок|новых ці абноўленых радкоў}}",
 	"tpt-cleanchanges-language": "Мова:",
