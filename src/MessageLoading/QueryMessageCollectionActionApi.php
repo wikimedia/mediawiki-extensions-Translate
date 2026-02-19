@@ -244,7 +244,7 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 				ParamValidator::PARAM_DEFAULT => 500,
 				ParamValidator::PARAM_TYPE => 'limit',
 				IntegerDef::PARAM_MIN => 1,
-				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG2,
+				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2,
 			],
 			'offset' => [
