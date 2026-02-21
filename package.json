@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"@vue/test-utils": "2.4.6",
-		"@wikimedia/codex-design-tokens": "2.3.2",
+		"@wikimedia/codex-design-tokens": "2.3.4",
 		"eslint-config-wikimedia": "0.32.3",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.13.0",
