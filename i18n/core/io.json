@@ -137,6 +137,7 @@
 	"log-description-translationreview": "Registro di omna tradukuro-revizuri e mesajo-grupi.",
 	"right-translate-sandboxmanage": "Administrar uzeri qui uzas \"areno-buxo\" (''sandbox'')",
 	"action-translate-sandboxmanage": "administrar uzeri qui uzas \"areno-buxo\" (''sandbox'')",
+	"translate-workflow-state-": "(deskapabligita)",
 	"translate-workflowstatus": "Stando: $1",
 	"translate-stats-workflow": "Stando",
 	"translate-dynagroup-recent-label": "recenta tradukuri",
