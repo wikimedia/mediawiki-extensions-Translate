@@ -12,7 +12,8 @@
 			"Unomano",
 			"ZlyiLev",
 			"Тест",
-			"Чаховіч Уладзіслаў"
+			"Чаховіч Уладзіслаў",
+			"Ucukor"
 		]
 	},
 	"pagetranslation": "Пераклад старонкі",
@@ -141,7 +142,7 @@
 	"tpt-aggregategroup-edit-name": "Назва:",
 	"tpt-aggregategroup-edit-description": "Апісанне:",
 	"tpt-aggregategroup-update": "Запісаць",
-	"tpt-aggregategroup-update-cancel": "Адмена",
+	"tpt-aggregategroup-update-cancel": "Скасаваць",
 	"tpt-aggregategroup-expand-all-groups": "Разгарнуць усе групы",
 	"tpt-aggregategroup-collapse-all-groups": "Згарнуць усе групы",
 	"tpt-aggregategroup-expand-group": "разгарнуць групу",
@@ -266,7 +267,7 @@
 	"pagemigration-summary": "Пазначце старонку перакладу і аднавіце любы пераклад, зроблены перад тым, як на гэтай старонцы быў уключаны пераклад зместу.",
 	"pm-import-button-label": "Імпартаваць",
 	"pm-savepages-button-label": "Запісаць",
-	"pm-cancel-button-label": "Адмяніць",
+	"pm-cancel-button-label": "Скасаваць",
 	"pm-page-does-not-exist": "Старонкі $1 няма.",
 	"pm-old-translations-missing": "Старонка $1 не мае старых перакладаў.",
 	"pm-extra-units-warning": "Могуць прысутнічаць дадатковыя адзінкі. Калі ласка, правільна супастаўце адзінкі крыніцы і перакладу.",
@@ -292,7 +293,7 @@
 	"pp-pagename-placeholder": "Увядзіце назву старонкі",
 	"pp-prepare-button-label": "Падрыхтаваць",
 	"pp-save-button-label": "Апублікаваць",
-	"pp-cancel-button-label": "Адмена",
+	"pp-cancel-button-label": "Скасаваць",
 	"pp-save-message": "Старонка была апублікаваная. Вы можаце яе [$1 правіць].",
 	"pp-prepare-message": "Старонка была падрыхтаваная да перакладу. Глядзіце ўнізе адрозненні. Калі ўсё добра, націсніце кнопку «{{int:pp-save-button-label}}»!",
 	"pp-already-prepared-message": "Выглядае, што старонка або ўжо была падрыхтаваная да перакладу, або не можа быць падрыхтавана аўтаматычна. Няма ніякіх зменаў у параўнанні з мінулай версіяй.",

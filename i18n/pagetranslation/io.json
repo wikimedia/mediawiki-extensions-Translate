@@ -29,6 +29,7 @@
 	"tpt-unknown-page": "Ca ''namespace'' rezervesis por traduko di pagini kun kontenajo.\nLa pagino quan vu probas redaktar semblas ne korespondar ad irga pagino indikata por tradukado.",
 	"tpt-translation-restricted-no-reason": "La traduko di ca pagino a ca idiomo impedesis da ula administranto di tradukuri.",
 	"tpt-discouraged-language-header": "Tradukar ad $1 ne esas prioreso por ca pagino.",
+	"tpt-discouraged-language-content": "Ul administranto di tradukado decidis koncentrar traduko-labori en $1.",
 	"tpt-aggregategroup-add": "Adjuntar",
 	"tpt-aggregategroup-save": "Konservez",
 	"tpt-aggregategroup-close": "Klozar",

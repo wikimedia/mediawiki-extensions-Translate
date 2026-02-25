@@ -85,7 +85,7 @@
 	"translate-checks-unicode-plural-missing": "Tərcümədə mütləq <nowiki>{{PLURAL|}}</nowiki> olmalıdır.",
 	"translate-checks-unicode-plural-unsupported": "Bu mesaj <nowiki>{{PLURAL|}}</nowiki> dəstəkləmir.",
 	"translate-checks-unicode-plural-invalid": "Cəm formaları $1 kimi müəyyən edilməlidir. Bu tərcümə $2 ehtiva edir.",
-	"translate-checks-pagename": "Anlayışdakı ad sahəsi dəyişdirilib",
+	"translate-checks-pagename": "Anlayışdakı ad fəzası dəyişdirilib",
 	"translate-checks-format": "Bu tərcümə tərifə uyğun gəlmir və ya yanlış sintaksisə malikdir: $1",
 	"translate-checks-replacement": "$1 əvəzinə $2 istifadə edin.",
 	"translate-checks-empty": "Məzmunsuz və ya yalnız boşluq olan tərcüməyə icazə verilmir.",

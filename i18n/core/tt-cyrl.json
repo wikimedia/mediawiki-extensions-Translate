@@ -11,7 +11,7 @@
 			"Рашат Якупов"
 		]
 	},
-	"translate": "Тәрҗемә ит",
+	"translate": "Тәрҗемә итү",
 	"translate-extensionname": "Тәрҗемә",
 	"translate-desc": "MediaWiki һәм башка программалар тәрҗемә итү өчен [[Special:Translate|Махсус бит]]",
 	"translate-taskui-export-as-po": "Оффлайнда тәрҗемә итү өчен экспортлау",
@@ -82,7 +82,7 @@
 	"translate-statsf-count-reviewers": "Тикшерүчеләр",
 	"translate-statsf-language": "Тел кодлары өтер аша:",
 	"translate-statsf-group": "Туплам кодлары өтер аша:",
-	"translate-statsf-submit": "Алдан карау",
+	"translate-statsf-submit": "Карап алу",
 	"translate-sidebar-alltrans": "Башка телләрдә",
 	"translations": "Барлык тәрҗемәләр",
 	"translate-translations-count": "{{PLURAL:$1|бер генә тәрҗемә|$1 тәрҗемә}} табылды.",
@@ -159,7 +159,7 @@
 	"tux-editor-editsummary-placeholder": "Мәҗбүри булмаган тасвирлама",
 	"tux-editor-paste-original-button-label": "Чыганак текст өстәү",
 	"tux-editor-discard-changes-button-label": "Үзгәрешләрне кире кагу",
-	"tux-editor-save-button-label": "Тәрҗемәне сакла",
+	"tux-editor-save-button-label": "Тәрҗемәне саклау",
 	"tux-editor-skip-button-label": "Киләсе",
 	"tux-editor-cancel-button-label": "Кире алу",
 	"tux-editor-confirm-button-label": "Тәрҗемәне раслау",
