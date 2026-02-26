@@ -13,7 +13,8 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"沈澄心",
-			"铁桶"
+			"铁桶",
+			"ShuQizhe"
 		]
 	},
 	"managetranslatorsandbox": "管理译者沙盒",
@@ -50,7 +51,7 @@
 	"translate-translationstash-welcome": "欢迎您{{GENDER:$1|$1}}，您已成为新的译者",
 	"translate-translationstash-welcome-note": "逐渐熟悉翻译工具。翻译一些信息，获得完整的译者权限去参与你喜欢的项目。",
 	"translate-translationstash-initialtranslation": "您的初始翻译",
-	"translate-translationstash-translations": "$1完成了翻译",
+	"translate-translationstash-translations": "完成了$1则翻译",
 	"translate-translationstash-skip-button-label": "尝试其他",
 	"tsb-limit-reached-title": "感谢您的翻译",
 	"tsb-limit-reached-body": "您已达到新进翻译人员翻译额度之上限。\n我们将尽快审核并升级您的账户，届时您便可不受限制地翻译。",
