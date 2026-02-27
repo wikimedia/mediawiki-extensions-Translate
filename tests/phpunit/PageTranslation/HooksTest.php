@@ -159,7 +159,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		HookHandler::validateMessage( $requestContext, $content, $status, '', $plainUser );
 
-		$this->assertFalse( $status->isOK(),
+		$this->assertStatusNotOK( $status,
 			'translation with errors is not saved if a normal user is translating.' );
 		$this->assertGreaterThan( 0, $status->getErrors(),
 			'errors are specified when translation fails validation.' );
@@ -169,7 +169,7 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 
 		HookHandler::validateMessage( $requestContext, $content, $newStatus, '', $superUser );
 
-		$this->assertTrue( $newStatus->isOK(),
+		$this->assertStatusOK( $newStatus,
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );
 	}
 

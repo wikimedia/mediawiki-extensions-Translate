@@ -18,7 +18,7 @@ class UtilitiesTest extends MediaWikiIntegrationTestCase {
 	 */
 	private function createPageWithNameAndText( string $name, string $text, User $user ): RevisionRecord {
 		$status = $this->editPage( $name, $text, '', NS_MAIN, $user );
-		$this->assertTrue( $status->isOK() );
+		$this->assertStatusOK( $status );
 		return $status->getValue()['revision-record'];
 	}
 
