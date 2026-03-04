@@ -404,29 +404,66 @@
 		return priorityLanguages.includes( language );
 	}
 
-	function setupLanguageSelector( $element ) {
-		var ulsOptions = {
-			languages: mw.config.get( 'wgTranslateLanguages' ),
-			showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions ),
-			onSelect: function ( languageCode ) {
-				var languageDetails = mw.translate.getLanguageDetailsForHtml( languageCode );
-				mw.translate.changeLanguage( languageCode );
-				$element
-					.find( '.ext-translate-target-language' )
-					.text( languageDetails.autonym )
-					.prop( {
-						lang: languageDetails.code,
-						dir: languageDetails.direction
-					} );
-			},
-			ulsPurpose: 'translate-special-translate',
-			quickList: function () {
-				return mw.uls.getFrequentLanguageList();
-			}
+	/**
+	 * Setup the target language selector
+	 * @param {Object} $element jQuery trigger element
+	 * @param {string|null} initialLanguage Language code to select by default, null to select none.
+	 */
+	function setupLanguageSelector( $element, initialLanguage ) {
+		const languages = mw.config.get( 'wgTranslateLanguages' );
+		mw.translate.addExtraLanguagesToLanguageData( languages, [ 'SP' ] );
+
+		const onLanguageChange = function ( languageCode ) {
+			mw.translate.changeLanguage( languageCode );
+			const languageDetails = mw.translate.getLanguageDetailsForHtml( languageCode );
+			$element
+				.find( '.ext-translate-target-language' )
+				.text( languageDetails.autonym )
+				.prop( {
+					lang: languageDetails.code,
+					dir: languageDetails.direction
+				} );
 		};
 
-		mw.translate.addExtraLanguagesToLanguageData( ulsOptions.languages, [ 'SP' ] );
-		$element.uls( ulsOptions );
+		if ( mw.uls.shouldLoadUlsRewrite() ) {
+			mw.loader.using( [ 'ext.uls.rewrite' ] ).then( function () {
+				const { createUniversalLanguageSelector } = require( 'ext.uls.rewrite' );
+
+				const mountPoint = document.createElement( 'div' );
+				document.body.appendChild( mountPoint );
+
+				const app = createUniversalLanguageSelector( {
+					triggerElement: $element[ 0 ],
+					selectableLanguages: languages,
+					selected: initialLanguage ? [ initialLanguage ] : [],
+					onSelect: function ( language ) {
+						const languageCode = language.code;
+						onLanguageChange( languageCode );
+					},
+					mode: 'interface'
+				} );
+
+				const mountedVm = app.mount( mountPoint );
+
+				$element.on( 'click', function ( event ) {
+					event.preventDefault();
+					event.stopPropagation();
+					mountedVm.toggle();
+				} );
+			} );
+		} else {
+			var ulsOptions = {
+				languages: languages,
+				showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions ),
+				onSelect: onLanguageChange,
+				ulsPurpose: 'translate-special-translate',
+				quickList: function () {
+					return mw.uls.getFrequentLanguageList();
+				}
+			};
+
+			$element.uls( ulsOptions );
+		}
 	}
 
 	function addTuxGroupWarningContainer() {
@@ -667,7 +704,7 @@
 		$( '.ext-translate-language-selector .uls' ).one( 'click', function () {
 			var $target = $( this );
 			mw.loader.using( 'ext.uls.mediawiki' ).done( function () {
-				setupLanguageSelector( $target );
+				setupLanguageSelector( $target, state.language );
 				$target.trigger( 'click' );
 			} );
 		} ).on( 'keypress', function () {
