@@ -256,7 +256,7 @@
 	"translate-searchprofile": "Пераклады",
 	"translate-searchprofile-tooltip": "Шукаць па ўсіх перакладах",
 	"translate-search-languagefilter": "Мова паведамленьняў:",
-	"translate-search-nofilter": "любая",
+	"translate-search-nofilter": "будзь якая",
 	"log-name-translationreview": "Журнал рэцэнзіяў перакладаў",
 	"log-description-translationreview": "Журнал усіх рэцэнзіяў перакладаў і групаў радкоў.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|ухваліў|ухваліла}} пераклад $3",
