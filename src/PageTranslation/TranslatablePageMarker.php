@@ -524,6 +524,8 @@ class TranslatablePageMarker {
 						$s->type = 'changed';
 						$s->oldText = $storedText;
 					}
+				} else {
+					$s->type = 'new';
 				}
 			}
 		}

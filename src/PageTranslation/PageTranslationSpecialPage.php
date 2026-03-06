@@ -919,7 +919,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		// Display template changes if applicable
 		$markedTag = $page->getMarkedTag();
 		if ( $markedTag !== null ) {
-			$hasChanges = true;
 			$newTemplate = $operation->getParserOutput()->sourcePageTemplateForDiffs();
 			$tpTitle = $page->getTitle();
 			$oldPage = TranslatablePage::newFromRevision( $tpTitle, $markedTag );

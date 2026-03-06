@@ -32,7 +32,7 @@
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|View the list of translatable pages.]]",
 	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimized to avoid unnecessary work for translators.",
 	"tpt-mark-summary": "Marked this version for translation",
-	"tpt-mark-nochanges": "No changes to review. Marking this page for translation will not edit the page nor any existing translation unit.",
+	"tpt-mark-nochanges": "No changes to review. Marking this page for translation will not change the content of any translation units.",
 	"tpt-edit-failed": "Could not update the page: $1",
 	"tpt-duplicate": "Translation unit name <strong><bdi>$1</bdi></strong> is used more than once.",
 	"tpt-invalid": "Translation unit name <strong><bdi>$1</bdi></strong> must not contain underscore or slash.",
