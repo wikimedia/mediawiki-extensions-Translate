@@ -35,7 +35,11 @@ function configureDropdownForFuzzySelector( $container ) {
 
 function configureHideUnchangedTranslationUnits( $container ) {
 	var $form = $container.find( '.mw-tpt-sp-markform' );
-	$form.find( 'input[name="unchanged-translation-units"]' ).on( 'change', function () {
+	var $input = $form.find( 'input[name="unchanged-translation-units"]' );
+	// Set the form class now (rather than relying on it being set by the PHP code)
+	// so checking the checkbox before JS loads works properly
+	$form.toggleClass( 'mw-tpt-hide-unchanged', $input.prop( 'checked' ) );
+	$input.on( 'change', function () {
 		$form.toggleClass( 'mw-tpt-hide-unchanged', $( this ).prop( 'checked' ) );
 	} );
 }

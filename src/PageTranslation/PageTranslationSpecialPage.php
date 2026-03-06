@@ -717,7 +717,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		$this->addPageForm(
 			$page->getTitle(),
-			'mw-tpt-sp-markform',
+			'mw-tpt-sp-markform mw-tpt-hide-unchanged',
 			'mark',
 			$page->getRevision()
 		);
@@ -747,7 +747,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$hideUnchangedUnitToggle = ( new FieldLayout(
 				new ToggleSwitchWidget( [
 					'name' => 'unchanged-translation-units',
-					'selected' => false
+					'selected' => true
 				] ),
 				[
 					'label' => $this->msg( 'tpt-translate-hide-unchanged-units' )->text(),
