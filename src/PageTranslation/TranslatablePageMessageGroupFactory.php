@@ -8,20 +8,21 @@ use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use Wikimedia\Rdbms\IReadableDatabase;
 use WikiPageMessageGroup;
 
 /**
- * Translatable page message group factories that uses caching.
  * @since 2024.05
  * @license GPL-2.0-or-later
  * @author Niklas Laxström
  */
 final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFactory {
 	public const SERVICE_OPTIONS = [
-		'EnablePageTranslation'
+		'EnablePageTranslation',
+		'LanguageCode',
 	];
 
 	private ServiceOptions $options;
@@ -36,7 +37,7 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	}
 
 	public function getCacheVersion(): int {
-		return 2;
+		return 3;
 	}
 
 	/** @return CacheDependency[] */
@@ -44,40 +45,42 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 		return [ new MainConfigDependency( 'EnablePageTranslation' ) ];
 	}
 
-	/** @return string[] */
+	/** @return array[] */
 	public function getData( IReadableDatabase $db ): array {
 		if ( !$this->options->get( 'EnablePageTranslation' ) ) {
 			return [];
 		}
 
-		$groupTitles = [];
+		$data = [];
 		$res = $db->newSelectQueryBuilder()
-			->select( [ 'page_id', 'page_namespace', 'page_title' ] )
+			->select( [ 'page_namespace', 'page_title', 'page_lang' ] )
 			->from( 'page' )
 			->join( 'revtag', null, 'page_id=rt_page' )
 			->where( [ 'rt_type' => RevTagStore::TP_MARK_TAG ] )
 			->caller( __METHOD__ )
-			->groupBy( [ 'rt_page', 'page_id', 'page_namespace', 'page_title' ] )
+			->groupBy( [ 'rt_page', 'page_namespace', 'page_title', 'page_lang' ] )
 			->fetchResultSet();
 
 		foreach ( $res as $r ) {
-			$title = Title::newFromRow( $r );
-			$groupTitles[] = $title->getPrefixedText();
+			$data[] = [ (int)$r->page_namespace, $r->page_title, $r->page_lang ];
 		}
 
-		return $groupTitles;
+		return $data;
 	}
 
 	/**
-	 * @param string[] $data
+	 * @param array[] $data
 	 * @return MessageGroup[]
 	 */
 	public function createGroups( $data ): array {
+		$defaultLanguage = $this->options->get( 'LanguageCode' );
+
 		$groups = [];
-		foreach ( $data as $title ) {
-			$title = Title::newFromText( $title );
+		foreach ( $data as [ $namespace, $text, $language ] ) {
+			$pageReference = PageReferenceValue::localReference( $namespace, $text );
+			$title = Title::newFromPageReference( $pageReference );
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$groups[$id] = new WikiPageMessageGroup( $id, $title );
+			$groups[$id] = new WikiPageMessageGroup( $id, $title, $language ?? $defaultLanguage );
 		}
 
 		return $groups;

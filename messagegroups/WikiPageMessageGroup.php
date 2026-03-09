@@ -27,23 +27,21 @@ use Wikimedia\Rdbms\IDBAccessObject;
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends MessageGroupOld {
-	/** @var Title|string */
-	protected $title;
-	/** @var int */
-	protected $namespace = NS_TRANSLATIONS;
-
 	/**
 	 * @param string $id
 	 * @param Title|string $title
+	 * @param ?string $sourceLanguage
 	 */
-	public function __construct( $id, $title ) {
-		$this->id = $id;
-		$this->title = $title;
+	public function __construct(
+		protected $id,
+		protected $title,
+		private readonly ?string $sourceLanguage = null
+	) {
 	}
 
 	/** @inheritDoc */
-	public function getSourceLanguage() {
-		return $this->getTitle()->getPageLanguage()->getCode();
+	public function getSourceLanguage(): string {
+		return $this->sourceLanguage ?? $this->getTitle()->getPageLanguage()->getCode();
 	}
 
 	public function getTitle(): Title {
@@ -199,7 +197,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";
 		$pageLanguageCode = $this->getSourceLanguage();
-		$inLanguageCode = $context ? $context->getLanguage()->getCode() : null;
+		$inLanguageCode = $context?->getLanguage()->getCode();
 		$languageName = MediaWikiServices::getInstance()->getLanguageNameUtils()
 			->getLanguageName( $pageLanguageCode, $inLanguageCode );
 
