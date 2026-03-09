@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"@vue/test-utils": "2.4.6",
-		"@wikimedia/codex-design-tokens": "2.3.4",
+		"@wikimedia/codex-design-tokens": "2.4.0",
 		"eslint-config-wikimedia": "0.32.3",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.13.0",
@@ -18,6 +18,6 @@
 		"jsdoc": "4.0.5",
 		"jsdoc-wmf-theme": "1.2.0",
 		"stylelint-config-wikimedia": "0.18.0",
-		"svgo": "3.2.0"
+		"svgo": "3.3.3"
 	}
 }
