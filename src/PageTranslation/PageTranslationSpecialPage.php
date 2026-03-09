@@ -1009,11 +1009,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 					[
 						'label' => $this->msg( 'tpt-select-prioritylangs' )->text(),
 						'align' => 'top',
-						'help' => new HtmlSnippet( Html::element(
-							'span',
-							[ 'class' => 'tux-nojs' ],
-							$this->msg( 'tpt-select-prioritylangs-help' )->text()
-						) ),
 						'helpInline' => true,
 					]
 				),
@@ -1051,7 +1046,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$languages = Utilities::getLanguageNames( $interfaceLanguage );
 		$options = [];
 		foreach ( $languages as $code => $name ) {
-			$options[$code] = "$code - $name";
+			$options[$code] = $name;
 		}
 
 		return $options;
