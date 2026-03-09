@@ -201,19 +201,10 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$languageName = MediaWikiServices::getInstance()->getLanguageNameUtils()
 			->getLanguageName( $pageLanguageCode, $inLanguageCode );
 
-		// Allow for adding a custom group description by using
-		// "MediaWiki:Tp-custom-<group ID>".
-		$customText = '';
-		$msg = wfMessage( 'tp-custom-' . $this->id );
-		self::addContext( $msg, $context );
-		if ( $msg->exists() ) {
-			$customText = $msg->plain();
-		}
-
 		$msg = wfMessage( 'translate-tag-page-desc', $title, $target, $languageName, $pageLanguageCode );
 		self::addContext( $msg, $context );
 
-		return $msg->plain() . $customText;
+		return $msg->plain();
 	}
 
 	/** @inheritDoc */
