@@ -8,7 +8,7 @@
 	},
 	"searchtranslations": "Piskiza tradusons",
 	"tux-sst-edit": "Idita traduson",
-	"tux-sst-view-foreign": "Odja na $1",
+	"tux-sst-view-foreign": "Udja na $1",
 	"tux-sst-search": "Piskiza",
 	"tux-sst-search-ph": "Piskiza tradusons",
 	"tux-sst-count": "{{PLURAL:$1|$1 razultadu nkontradu}}",
@@ -29,6 +29,6 @@
 	"tux-sst-link-all-match": "Tradusons ku tudu palabra di piskiza.",
 	"tux-sst-match-message": "Li ta mustradu tradusons ki ta nklui kolker un di kes palabra di piskiza. $1",
 	"tux-sst-case-sensitive": "Distingi létras maiúsklu di minúsklu",
-	"tux-sst-error-offset": "Ka é pusívi mustra más razultadus di piskiza. Di sumóla, fasi un piskiza más limitadu.",
-	"tux-sst-error-language": "Es língua ka podi ser uzadu ku es tipu di piskiza."
+	"tux-sst-error-offset": "Ka é pusívi mustra más razultadu di piskiza. Di sumóla, fasi un piskiza más limitadu.",
+	"tux-sst-error-language": "Es linga ka podi uzadu ku es tipu di piskiza."
 }
