@@ -27,6 +27,9 @@ use Wikimedia\Rdbms\IDBAccessObject;
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends MessageGroupOld {
+	/** @var int */
+	protected $namespace = NS_TRANSLATIONS;
+
 	/**
 	 * @param string $id
 	 * @param Title|string $title
