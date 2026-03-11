@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
+use function array_key_exists;
 
 /**
  * Api module for querying MessageGroups.
@@ -114,9 +115,14 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			$this->messageGroupMetadata->preloadGroups( array_keys( $messageGroupIds ), __METHOD__ );
 		}
 
+		$subscriptions = [];
+		if ( isset( $props['subscription'] ) ) {
+			$subscriptions = array_flip( $this->groupSubscription->getUserSubscriptions( $this->getUser() ) );
+		}
+
 		/** @var MessageGroup|array $mixed */
 		foreach ( $groups as $index => $mixed ) {
-			$a = $this->formatGroup( $mixed, $props );
+			$a = $this->formatGroup( $mixed, $props, $subscriptions );
 
 			$result->setIndexedTagName( $a, 'group' );
 
@@ -135,9 +141,10 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 	/**
 	 * @param array|MessageGroup $mixed
 	 * @param array $props List of props as the array keys
+	 * @param array $subscriptions List of message group ids as the array keys
 	 * @param int $depth
 	 */
-	protected function formatGroup( $mixed, array $props, int $depth = 0 ): array {
+	protected function formatGroup( $mixed, array $props, array $subscriptions, int $depth = 0 ): array {
 		$params = $this->extractRequestParams();
 		$context = $this->getContext();
 
@@ -212,7 +219,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 			isset( $props['subscription'] ) &&
 			$this->groupSubscription->canUserSubscribeToGroup( $g, $this->getUser() )->isOK()
 		) {
-			$a['subscription'] = $this->groupSubscription->isUserSubscribedTo( $g, $this->getUser() );
+			$a['subscription'] = array_key_exists( $groupId, $subscriptions );
 		}
 
 		$this->hookRunner->onTranslateProcessAPIMessageGroupsProperties( $a, $props, $params, $g );
@@ -228,7 +235,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		// Always empty array for flat format, only sometimes for tree format
 		if ( $subgroups !== [] ) {
 			foreach ( $subgroups as $sg ) {
-				$a['groups'][] = $this->formatGroup( $sg, $props );
+				$a['groups'][] = $this->formatGroup( $sg, $props, $subscriptions, $depth + 1 );
 			}
 			$result = $this->getResult();
 			$result->setIndexedTagName( $a['groups'], 'group' );
