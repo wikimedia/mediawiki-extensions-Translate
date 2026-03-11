@@ -327,6 +327,9 @@ class Hooks {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
+		if ( $title->isSpecialPage() ) {
+			return;
+		}
 		$isSource = TranslatablePage::isSourcePage( $title );
 		$isTranslation = TranslatablePage::isTranslationPage( $title );
 
@@ -343,6 +346,12 @@ class Hooks {
 			$out->addModuleStyles( 'ext.translate' );
 
 			$out->addJsConfigVars( 'wgTranslatePageTranslation', $isTranslation ? 'translation' : 'source' );
+		} else {
+			$viewTranslatablePage = Services::getInstance()->getTranslatablePageView();
+			$user = $out->getUser();
+			if ( $viewTranslatablePage->canDisplayTranslationSettingsBanner( $title, $user ) ) {
+				$out->addModules( 'ext.translate.uls.translation.banner' );
+			}
 		}
 	}
 

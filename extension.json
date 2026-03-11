@@ -626,6 +626,25 @@
 				"mediawiki.util"
 			]
 		},
+		"ext.translate.uls.translation.banner": {
+			"packageFiles": [
+				"resources/js/ext.translate.uls.translation.banner.js",
+				{
+					"name": "resources/js/ext.translate.uls.translation.banner.icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconSettings"
+					]
+				}
+			],
+			"dependencies": [
+				"ext.uls.rewrite.entrypoints",
+				"mediawiki.util"
+			],
+			"messages": [
+				"tpt-translation-settings-page-title"
+			]
+		},
 		"ext.translate.edit.documentation.styles": {
 			"styles": [
 				"resources/css/ext.translate.edit.documentation.less"

@@ -23,6 +23,8 @@ class TranslatablePageView {
 	private TranslatablePageStateStore $translatablePageStateStore;
 	/** @var int[] */
 	private array $pageTranslationBannerNamespaces;
+	/** @var array<string, bool> */
+	private static array $canDisplayTranslationSettingsBannerCache = [];
 
 	public function __construct(
 		IConnectionProvider $dbProvider,
@@ -48,6 +50,13 @@ class TranslatablePageView {
 
 	/** Determines whether the banner to mark a page for translation should be displayed */
 	public function canDisplayTranslationSettingsBanner( Title $articleTitle, User $user ): bool {
+		$cacheKey = $articleTitle->getId() . ':' . $user->getId();
+		if ( isset( self::$canDisplayTranslationSettingsBannerCache[ $cacheKey ] ) ) {
+			return self::$canDisplayTranslationSettingsBannerCache[ $cacheKey ];
+		} else {
+			self::$canDisplayTranslationSettingsBannerCache[ $cacheKey ] = false;
+		}
+
 		if ( !$user->isNamed() ) {
 			return false;
 		}
@@ -66,7 +75,9 @@ class TranslatablePageView {
 			return false;
 		}
 
-		return $this->isRecentEditor( $articleTitle, $user );
+		self::$canDisplayTranslationSettingsBannerCache[ $cacheKey ] =
+			$this->isRecentEditor( $articleTitle, $user );
+		return self::$canDisplayTranslationSettingsBannerCache[ $cacheKey ];
 	}
 
 	public function isTranslationBannerNamespaceConfigured(): bool {
