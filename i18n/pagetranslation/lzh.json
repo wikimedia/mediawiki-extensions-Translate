@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Davidzdh",
 			"SolidBlock",
 			"StephDC",
 			"Yanteng3"
@@ -8,5 +9,8 @@
 	},
 	"tpt-languages-nonzero": "$1（$2%已翻譯）",
 	"tpt-aggregategroup-save": "存",
-	"pm-old-translations-missing": "$1 不含旧譯。"
+	"tpt-aggregategroup-update-cancel": "罷",
+	"pm-cancel-button-label": "棄",
+	"pm-old-translations-missing": "$1 不含旧譯。",
+	"pp-cancel-button-label": "罷"
 }
