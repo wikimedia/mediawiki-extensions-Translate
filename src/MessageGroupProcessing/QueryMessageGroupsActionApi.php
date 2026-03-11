@@ -102,8 +102,16 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		}
 
 		if ( $needsMetadata && $groups ) {
-			// FIXME: This doesn't preload subgroups in a tree structure
-			$this->messageGroupMetadata->preloadGroups( array_keys( $groups ), __METHOD__ );
+			// Collect all message group ids. Handles tree format and removes duplicates.
+			// This is one of the few cases where array_walk_recursive actually does what we want.
+			$messageGroupIds = [];
+			array_walk_recursive(
+				array: $groups,
+				callback: static function ( MessageGroup $value ) use ( &$messageGroupIds ) {
+					$messageGroupIds[$value->getId()] = true;
+				}
+			);
+			$this->messageGroupMetadata->preloadGroups( array_keys( $messageGroupIds ), __METHOD__ );
 		}
 
 		/** @var MessageGroup|array $mixed */
