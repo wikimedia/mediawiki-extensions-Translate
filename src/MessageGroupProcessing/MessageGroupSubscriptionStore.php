@@ -51,7 +51,12 @@ class MessageGroupSubscriptionStore {
 
 		if ( $groupIds ) {
 			$dbGroupIds = array_map( self::getGroupIdForDatabase( ... ), $groupIds );
+			$dbGroupIdMap = array_combine( $dbGroupIds, $groupIds );
 			$queryBuilder->where( [ 'tmgs_group' => $dbGroupIds ] );
+		} else {
+			$groupIds = array_keys( MessageGroups::getAllGroups() );
+			$dbGroupIds = array_map( self::getGroupIdForDatabase( ... ), $groupIds );
+			$dbGroupIdMap = array_combine( $dbGroupIds, $groupIds );
 		}
 
 		if ( $userId ) {
@@ -60,7 +65,8 @@ class MessageGroupSubscriptionStore {
 
 		$subscriptions = [];
 		foreach ( $queryBuilder->fetchResultSet() as $row ) {
-			$subscriptions[$row->tmgs_group][] = (int)$row->tmgs_user_id;
+			// Handle unknown groups gracefully so that they can be removed
+			$subscriptions[$dbGroupIdMap[$row->tmgs_group] ?? $row->tmgs_group][] = (int)$row->tmgs_user_id;
 		}
 		return $subscriptions;
 	}
