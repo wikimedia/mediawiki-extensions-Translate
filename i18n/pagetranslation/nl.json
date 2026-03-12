@@ -47,7 +47,7 @@
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Toon de lijst met vertaalbare pagina's.]]",
 	"tpt-showpage-intro": "Hieronder zijn nieuwe, bestaande en verwijderde vertaaleenheden opgenomen.\nControleer voordat u deze versie voor vertaling markeert of de wijzigingen aan de vertaaleenheden zo klein mogelijk zijn om onnodig werk voor vertalers te voorkomen.",
 	"tpt-mark-summary": "Deze versie gemarkeerd voor vertaling",
-	"tpt-mark-nochanges": "Er zijn geen wijzigingen om te beoordelen. Als u deze pagina markeert voor vertaling, worden de pagina en de bestaande vertaaleenheden niet bewerkt.",
+	"tpt-mark-nochanges": "Er zijn geen wijzigingen om te beoordelen. Als u deze pagina markeert voor vertaling, worden er helemaal geen vertaaleenheden gewijzigd.",
 	"tpt-edit-failed": "De pagina kon niet bijgewerkt worden: $1",
 	"tpt-duplicate": "De vertaaleenheid <strong><bdi>$1</bdi></strong> wordt meer dan eens gebruikt.",
 	"tpt-invalid": "De vertaaleenheidnaam <strong><bdi>$1</bdi></strong> mag geen laag streepje (_) of schuine streep (/) bevatten.",

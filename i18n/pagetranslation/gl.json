@@ -35,7 +35,7 @@
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Ver a lista de páxinas traducibles.]]",
 	"tpt-showpage-intro": "A continuación están listadas as unidades de tradución novas, existentes e borradas.\nAntes de marcar esta versión para ser traducida, comproba que as modificacións feitas ás unidades de tradución foron minimizadas para evitarlles traballo innecesario aos tradutores.",
 	"tpt-mark-summary": "Marcou esta versión para ser traducida",
-	"tpt-mark-nochanges": "Non hai cambios para revisar. Marcar esta páxina para a tradución non editará a páxina nin ningunha unidade de tradución existente.",
+	"tpt-mark-nochanges": "Non hai cambios para revisar. Marcar esta páxina para a tradución non modificará o contido de ningunha unidade de tradución.",
 	"tpt-edit-failed": "Non se puido actualizar a páxina: $1",
 	"tpt-duplicate": "O nome da unidade de tradución «<strong><bdi>$1</bdi></strong>» úsase máis dunha vez.",
 	"tpt-invalid": "O nome da unidade de tradución «<strong><bdi>$1</bdi></strong>» non pode conter guións baixos nin barras inclinadas.",

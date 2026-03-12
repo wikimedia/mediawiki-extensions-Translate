@@ -31,7 +31,7 @@
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|Lëscht vun den iwwersetzbare Säite weisen.]]",
 	"tpt-showpage-intro": "Ënnendrënner stinn déi nei, aktuell a geläscht Abschnitter.\nIer Dir dës Versioun fir d'iwwersetze markéiert, kuckt wgl. no datt d'Ännerunge vun den Abschnitter déi iwwersat solle ginn op e Minimum reduzéiert gi fir onnëtz Aarbecht vun den Iwwersetzer ze vermeiden.",
 	"tpt-mark-summary": "huet dës Versioun fir d'Iwwersetzung markéiert",
-	"tpt-mark-nochanges": "Keng Ännerunge fir nozekucken. D'Markéiere fir z'iwwersetze vun dëser Säit ännert weder d'Säit nach eng Iwwersetzungseenheet déi et scho gëtt.",
+	"tpt-mark-nochanges": "Keng Ännerunge fir nozekucken. Duerch d'Markéiere fir z'iwwersetze vun dëser Säit ännert sech kenger Iwwersetzungseenheet hire Contenu.",
 	"tpt-edit-failed": "D'Säit konnt net aktualiséiert ginn: $1",
 	"tpt-duplicate": "Den Numm vun der Iwwersetzungseenheet <strong><bdi>$1</bdi></strong> gëtt méi wéi eemol benotzt.",
 	"tpt-unmarked": "D'Säit [[:$1]] ass net méi fir z'iwwersetze markéiert.",
