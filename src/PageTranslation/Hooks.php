@@ -324,19 +324,16 @@ class Hooks {
 	 * @param Skin $skin
 	 */
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
-		global $wgTranslatePageTranslationULS;
-
 		$title = $out->getTitle();
 		if ( $title->isSpecialPage() ) {
 			return;
 		}
+
 		$isSource = TranslatablePage::isSourcePage( $title );
 		$isTranslation = TranslatablePage::isTranslationPage( $title );
 
 		if ( $isSource || $isTranslation ) {
-			if ( $wgTranslatePageTranslationULS ) {
-				$out->addModules( 'ext.translate.pagetranslation.uls' );
-			}
+			$out->addModules( 'ext.translate.pagetranslation.uls' );
 
 			if ( $isSource ) {
 				// Adding a help notice
@@ -346,6 +343,17 @@ class Hooks {
 			$out->addModuleStyles( 'ext.translate' );
 
 			$out->addJsConfigVars( 'wgTranslatePageTranslation', $isTranslation ? 'translation' : 'source' );
+
+			$groupId = TranslatablePage::getMessageGroupIdFromTitle( $title );
+			$out->addJsConfigVars( 'wgTranslatePageTranslationGroup', $groupId );
+
+			$priorityLanguages = Services::getInstance()->getMessageGroupMetadata()->get( $groupId, 'prioritylangs' );
+			if ( $priorityLanguages ) {
+				$priorityLanguages = explode( ',', $priorityLanguages );
+			} else {
+				$priorityLanguages = [];
+			}
+			$out->addJsConfigVars( 'wgTranslatePriorityLanguages', $priorityLanguages );
 		} else {
 			$viewTranslatablePage = Services::getInstance()->getTranslatablePageView();
 			$user = $out->getUser();

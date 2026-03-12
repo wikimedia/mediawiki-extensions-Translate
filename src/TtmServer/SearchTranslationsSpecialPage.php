@@ -14,7 +14,6 @@ use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
-use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
@@ -76,10 +75,6 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$out->addModuleStyles( [ 'mediawiki.ui.button', 'mediawiki.ui.input', 'mediawiki.ui.checkbox' ] );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
-		$out->addJsConfigVars(
-			'wgTranslateLanguages',
-			Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS )
-		);
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );

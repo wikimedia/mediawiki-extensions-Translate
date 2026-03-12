@@ -377,5 +377,6 @@
 	"translate-category-summary": "Edit summary used by FuzzyBot when creating categories.\n\nParameters:\n* $1 - the name of the page that triggered the category creation.",
 	"right-translate-empty-category": "{{doc-right|translate-empty-category}}",
 	"action-translate-empty-category": "{{doc-action|translate-empty-category}}",
-	"tpt-create-empty-category": "Error message displayed when editing a translation unit. \n\nParameters:\n* $1 - the name of the category involved"
+	"tpt-create-empty-category": "Error message displayed when editing a translation unit. \n\nParameters:\n* $1 - the name of the category involved",
+	"ext-uls-empty-search-entrypoint-description": "Description for the empty search entry point in ULS that encourages users to translate the page"
 }

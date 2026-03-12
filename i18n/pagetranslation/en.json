@@ -343,5 +343,6 @@
 	"translate-category-summary": "Automatically creating translation of category used on [[$1]]",
 	"right-translate-empty-category": "Create translation units for empty categories",
 	"action-translate-empty-category": "create translation units for empty categories",
-	"tpt-create-empty-category": "Cannot create translation unit for category [[:$1]] which is empty."
+	"tpt-create-empty-category": "Cannot create translation unit for category [[:$1]] which is empty.",
+	"ext-uls-empty-search-entrypoint-description": "You can translate this page. It’s an easy way to create content in your language"
 }

@@ -58,7 +58,10 @@ const {
 	CdxMessage
 } = require( '../../../../codex.js' );
 const { LookupLanguageSelector } = require( 'mediawiki.languageselector' );
-const { supportedLanguages, undeterminedLanguageCode } = require( '../../language-map.json' );
+const {
+	supportedLanguages,
+	undeterminedLanguageCode
+} = require( 'ext.translate.languages' );
 
 // @vue/component
 module.exports = {

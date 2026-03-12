@@ -620,10 +620,32 @@
 			]
 		},
 		"ext.translate.pagetranslation.uls": {
-			"scripts": "resources/js/ext.translate.pagetranslation.uls.js",
+			"packageFiles": [
+				"resources/js/ext.translate.pagetranslation.uls.js",
+				{
+					"name": "resources/js/ext.translate.pagetranslation.uls.config.json",
+					"config": [
+						"TranslatePageTranslationULS"
+					]
+				},
+				{
+					"name": "resources/js/ext.translate.pagetranslation.uls.icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconSettings",
+						"cdxIconAdd"
+					]
+				}
+			],
 			"dependencies": [
 				"ext.uls.mediawiki",
-				"mediawiki.util"
+				"mediawiki.util",
+				"ext.uls.rewrite.entrypoints",
+				"ext.translate.languages"
+			],
+			"messages": [
+				"tpt-translation-settings-page-title",
+				"ext-uls-empty-search-entrypoint-description"
 			]
 		},
 		"ext.translate.uls.translation.banner": {
@@ -643,6 +665,15 @@
 			],
 			"messages": [
 				"tpt-translation-settings-page-title"
+			]
+		},
+		"ext.translate.languages": {
+			"packageFiles": [
+				"resources/js/ext.translate.languages.js",
+				{
+					"name": "resources/js/languages.json",
+					"callback": "MediaWiki\\Extension\\Translate\\HookHandler::getLanguageJson"
+				}
 			]
 		},
 		"ext.translate.edit.documentation.styles": {
@@ -972,7 +1003,8 @@
 				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.uls.mediawiki",
-				"mediawiki.language"
+				"mediawiki.language",
+				"ext.translate.languages"
 			],
 			"messages": [
 				"translate-search-more-groups-info",
@@ -1003,7 +1035,8 @@
 				"mediawiki.api",
 				"mediawiki.language",
 				"mediawiki.jqueryMsg",
-				"mediawiki.storage"
+				"mediawiki.storage",
+				"ext.translate.languages"
 			],
 			"messages": [
 				"pagetitle",
@@ -1129,7 +1162,8 @@
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"dependencies": [
 				"vue",
-				"mediawiki.languageselector"
+				"mediawiki.languageselector",
+				"ext.translate.languages"
 			],
 			"messages": [
 				"tpt-aggregategroup-save",
@@ -1172,10 +1206,6 @@
 						"cdxIconAdd",
 						"cdxIconClose"
 					]
-				},
-				{
-					"name": "resources/src/language-map.json",
-					"callback": "MediaWiki\\Extension\\Translate\\HookHandler::getLanguageJson"
 				}
 			],
 			"codexComponents": [

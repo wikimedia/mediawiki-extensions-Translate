@@ -8,7 +8,6 @@ use MediaWiki\Config\Config;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageFactory;
@@ -78,7 +77,6 @@ class TranslateSpecialPage extends SpecialPage {
 
 		$out->addModules( 'ext.translate.special.translate' );
 		$out->addJsConfigVars( [
-			'wgTranslateLanguages' => Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS ),
 			'wgTranslateEnableMessageGroupSubscription' => $this->isMessageGroupSubscriptionEnabled
 		] );
 
