@@ -94,6 +94,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 			$this->importInProgress = false;
 		}
 
+		// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 		if ( $importResult === false ) {
 			throw new TranslatableBundleImportException( 'Unknown error while importing translatable bundle.' );
 		}

@@ -90,8 +90,6 @@ class ValidatorFactory {
 			$spec['args'] = [ $params ];
 		}
 
-		// Phan seems to misunderstand the param type as callable instead of an array
-		// @phan-suppress-next-line PhanTypeInvalidCallableArraySize
 		return MediaWikiServices::getInstance()->getObjectFactory()->createObject( $spec );
 	}
 

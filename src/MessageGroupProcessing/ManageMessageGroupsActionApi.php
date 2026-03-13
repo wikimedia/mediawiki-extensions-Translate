@@ -233,12 +233,10 @@ class ManageMessageGroupsActionApi extends ApiBase {
 		}
 
 		if ( $msgState === MessageSourceChange::RENAME ) {
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$msgState = $sourceChanges->breakRename( $code, $msg['key'] );
 		}
 
 		if ( $renameMsgState === MessageSourceChange::RENAME ) {
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$renameMsgState = $sourceChanges->breakRename( $code, $renameMsg['key'] );
 		}
 
@@ -258,9 +256,7 @@ class ManageMessageGroupsActionApi extends ApiBase {
 		// Add as rename
 		$stringComparator = new SimpleStringComparator();
 		$similarity = $stringComparator->getSimilarity(
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$msg['content'],
-			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable T240141
 			$renameMsg['content']
 		);
 		$sourceChanges->addRename( $code, $msg, $renameMsg, $similarity );

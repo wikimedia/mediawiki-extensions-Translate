@@ -60,8 +60,6 @@ class FileFormatFactory {
 		// Pass the given params as one item, instead of expanding
 		$spec['args'][] = $group;
 
-		// Phan seems to misunderstand the param type as callable instead of an array
-		// @phan-suppress-next-line PhanTypeInvalidCallableArrayKey
 		return $this->objectFactory->createObject( $spec );
 	}
 

@@ -405,12 +405,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * are not in the second list (conditition = false and true respectively).
 	 * What makes this more complex is that second list of keys might not be a
 	 * subset of the first list of keys.
-	 * @param string[] $keys List of keys to filter.
-	 * @param string[] $condKeys Second list of keys for filtering.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
+	 * @param array<string,mixed> $condKeys Second list of keys for filtering.
 	 * @param bool $condition True (default) to return keys which are on first
 	 * but not on the second list, false to return keys which are on both.
 	 * second.
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterOnCondition( array $keys, array $condKeys, bool $condition = true ): array {
 		if ( $condition === self::EXCLUDE_MATCHING ) {
@@ -432,10 +432,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Filters list of keys according to whether the translation is fuzzy.
-	 * @param string[] $keys List of keys to filter.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
 	 * @param bool $condition True to filter away fuzzy translations, false
 	 * to filter non-fuzzy translations.
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterFuzzy( array $keys, bool $condition ): array {
 		$this->loadInfo( $keys );
@@ -460,10 +460,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Filters list of keys according to whether they have a translation.
-	 * @param string[] $keys List of keys to filter.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
 	 * @param bool $condition True to filter away translated, false
 	 * to filter untranslated.
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterHastranslation( array $keys, bool $condition ): array {
 		$this->loadInfo( $keys );
@@ -493,10 +493,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Filters list of keys according to whether the current translation
 	 * differs from the commited translation.
-	 * @param string[] $keys List of keys to filter.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
 	 * @param bool $condition True to filter changed translations, false
 	 * to filter unchanged translations.
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterChanged( array $keys, bool $condition ): array {
 		$this->loadData( $keys );
@@ -540,11 +540,11 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Filters list of keys according to whether the user has accepted them.
-	 * @param string[] $keys List of keys to filter.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
 	 * @param bool $condition True to remove translatations $user has accepted,
 	 * false to get only translations accepted by $user.
 	 * @param ?int $userId
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterReviewer( array $keys, bool $condition, ?int $userId ): array {
 		$this->loadReviewInfo( $keys );
@@ -566,10 +566,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * @param string[] $keys List of keys to filter.
+	 * @param array<string,TitleValue> $keys List of keys to filter.
 	 * @param bool $condition True to remove translatations where last translator is $user
 	 * false to get only last translations done by others.
-	 * @return string[] Filtered keys.
+	 * @return array<string,TitleValue> Filtered keys.
 	 */
 	private function filterLastTranslator( array $keys, bool $condition, ?int $userId ): array {
 		$this->loadData( $keys );
@@ -591,7 +591,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Takes list of keys and converts them into database format.
-	 * @return array ( string => string ) Array of keys in database format indexed by display format.
+	 * @return array<string,TitleValue> Array of keys in database format indexed by display format.
 	 */
 	private function fixKeys(): array {
 		$newkeys = [];
@@ -609,7 +609,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Loads existence and fuzzy state for given list of keys.
-	 * @param string[] $keys List of keys in database format.
+	 * @param array<string,TitleValue> $keys List of keys in database format.
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadInfo( array $keys, ?array $titleConds = null ): void {
@@ -651,7 +651,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Loads reviewers for given messages.
-	 * @param string[] $keys List of keys in database format.
+	 * @param array<string,TitleValue> $keys List of keys in database format.
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadReviewInfo( array $keys, ?array $titleConds = null ): void {
@@ -689,7 +689,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Loads translation for given list of keys.
-	 * @param string[] $keys List of keys in database format.
+	 * @param array<string,TitleValue> $keys List of keys in database format.
 	 * @param string[]|null $titleConds Database query condition based on current keys.
 	 */
 	private function loadData( array $keys, ?array $titleConds = null ): void {

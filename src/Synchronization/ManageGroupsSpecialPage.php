@@ -289,7 +289,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			'title' => !$this->hasRight ? $this->msg( 'translate-smg-notallowed' )->plain() : null,
 			'flags' => [ 'primary', 'progressive' ],
 		] );
-		$out->addHTML( $button );
+		$out->addHTML( (string)$button );
 		$out->addHTML( Html::closeElement( 'form' ) );
 	}
 

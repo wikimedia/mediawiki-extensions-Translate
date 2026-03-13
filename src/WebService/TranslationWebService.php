@@ -76,7 +76,6 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 				'services' => $serviceDetails['deps'] ?? [],
 			];
 
-			// @phan-suppress-next-line PhanTypeInvalidCallableArraySize due to annotations on createObject?
 			$serviceObject = $objectFactory->createObject( $spec );
 			if ( $serviceObject instanceof LoggerAwareInterface ) {
 				$serviceObject->setLogger( LoggerFactory::getInstance( LogNames::TRANSLATION_SERVICES ) );

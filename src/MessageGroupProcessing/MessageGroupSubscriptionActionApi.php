@@ -85,7 +85,7 @@ class MessageGroupSubscriptionActionApi extends ApiBase {
 		return 'csrf';
 	}
 
-	private function handleSubscriptionFailure( StatusValue $status ): void {
+	private function handleSubscriptionFailure( StatusValue $status ): never {
 		if ( $status->hasMessage( MessageGroupSubscription::NOT_ENABLED ) ) {
 			$this->dieWithError( 'apierror-translate-messagegroupsubscription-disabled' );
 		} elseif ( $status->hasMessage( MessageGroupSubscription::UNNAMED_USER_UNSUPPORTED ) ) {
