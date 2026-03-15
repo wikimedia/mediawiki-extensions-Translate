@@ -15,6 +15,7 @@ use MediaWiki\Json\FormatJson;
  */
 abstract class CxserverWebService extends TranslationWebService {
 
+	/** @throws TranslationWebServiceConfigurationException */
 	public function __construct(
 		private readonly HttpRequestFactory $httpRequestFactory,
 		string $service,

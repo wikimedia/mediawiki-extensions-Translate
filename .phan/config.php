@@ -10,8 +10,6 @@ $cfg['enable_class_alias_support'] = true;
 
 // Gives false positives for uninitialized properties
 $cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
-// TODO fix these
-$cfg['suppress_issue_types'][] = 'PhanThrowTypeAbsent';
 
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],

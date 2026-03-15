@@ -30,6 +30,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 		return $this->getEngine()->registerInterface( $extensionLuaPath, $lib, $opts );
 	}
 
+	/** @throws LuaError */
 	public function validate( string $messageBundleTitle ): void {
 		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
 		$mbTitle = $titleFactory->newFromText( $messageBundleTitle );
@@ -42,6 +43,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 		}
 	}
 
+	/** @throws LuaError */
 	public function getMessageBundleTranslations(
 		string $messageBundleTitle,
 		string $languageCode,

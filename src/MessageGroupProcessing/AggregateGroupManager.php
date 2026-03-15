@@ -54,6 +54,7 @@ class AggregateGroupManager {
 		return $this->titleFactory->newFromLinkTarget( $relatedGroupPage );
 	}
 
+	/** @throws DuplicateAggregateGroupException */
 	public function add( string $name, string $description, ?string $languageCode ): string {
 		// Throw error if the group already exists
 		if ( MessageGroups::labelExists( $name ) ) {
@@ -78,6 +79,9 @@ class AggregateGroupManager {
 	 * @param string $aggregateGroupId
 	 * @param string[] $newSubgroupIds
 	 * @return string[] List of subgroup ids that were associated
+	 * @throws AggregateGroupAssociationFailure
+	 * @throws AggregateGroupLanguageMismatchException
+	 * @throws AggregateGroupNotFoundException
 	 */
 	public function associate( string $aggregateGroupId, array $newSubgroupIds ): array {
 		$existingSubgroupIds = $this->getSubgroups( $aggregateGroupId );
@@ -178,6 +182,7 @@ class AggregateGroupManager {
 		return array_diff( $subGroupIds, $existingIds );
 	}
 
+	/** @throws AggregateGroupNotFoundException */
 	private function getSubgroups( string $aggregateGroupId ): array {
 		$existingSubGroupIds = $this->messageGroupMetadata->getSubgroups( $aggregateGroupId );
 		if ( $existingSubGroupIds !== null ) {

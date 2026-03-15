@@ -84,6 +84,7 @@ class MessageBundleStore implements TranslatableBundleStore {
 		$this->jobQueue->push( RebuildMessageIndexJob::newJob( __METHOD__ ) );
 	}
 
+	/** @throws MalformedBundle */
 	public function validate( Title $pageTitle, MessageBundleContent $content ): void {
 		$content->validate();
 		// Verify that the language code is valid

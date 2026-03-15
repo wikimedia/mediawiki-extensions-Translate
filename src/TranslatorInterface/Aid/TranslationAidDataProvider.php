@@ -43,6 +43,8 @@ class TranslationAidDataProvider {
 
 	/**
 	 * Get the message definition. Cached for performance.
+	 *
+	 * @throws TranslationHelperException
 	 */
 	public function getDefinition(): string {
 		if ( $this->definition !== null ) {

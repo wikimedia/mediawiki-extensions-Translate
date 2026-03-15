@@ -95,6 +95,7 @@ class MessageBundleContent extends JsonContent {
 		return $this->messages;
 	}
 
+	/** @throws MalformedBundle */
 	public function getMetadata(): MessageBundleMetadata {
 		if ( $this->metadata !== null ) {
 			return $this->metadata;
@@ -164,6 +165,7 @@ class MessageBundleContent extends JsonContent {
 		return $this->metadata;
 	}
 
+	/** @throws MalformedBundle */
 	private function getRawData(): array {
 		$status = FormatJson::parse( $this->getText(), FormatJson::FORCE_ASSOC );
 		if ( !$status->isOK() ) {

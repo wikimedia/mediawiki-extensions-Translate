@@ -40,6 +40,7 @@ class MintCxserverWebService extends CxserverWebService {
 		return trim( $this->unwrapUntranslatable( $responseBody[ 'contents' ] ) );
 	}
 
+	/** @throws TranslationWebServiceInvalidInputException */
 	protected function wrapUntranslatable( string $text ): string {
 		// Check if at least one instance of the patterns exists in the source string
 		foreach ( self::WIKITEXT_REGEX as $pattern ) {

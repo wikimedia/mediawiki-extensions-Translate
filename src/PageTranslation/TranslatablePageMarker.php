@@ -565,6 +565,7 @@ class TranslatablePageMarker {
 		return $newRevisionRecord !== null ? $newRevisionRecord->getId() : null;
 	}
 
+	/** @throws TranslatablePageMarkException */
 	private function throwIfEditFailed( PageUpdater $pageUpdater, MessageLocalizer $messageLocalizer ): void {
 		$status = $pageUpdater->getStatus();
 		if ( !$status->isOK() ) {

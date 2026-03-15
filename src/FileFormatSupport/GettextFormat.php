@@ -169,6 +169,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		];
 	}
 
+	/** @throws GettextParseException */
 	private function parseGettextSection( string $section, ?int $pluralCount ): ?array {
 		if ( trim( $section ) === '' ) {
 			return null;

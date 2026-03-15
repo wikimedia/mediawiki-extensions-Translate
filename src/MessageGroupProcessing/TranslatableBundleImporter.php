@@ -50,6 +50,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		return Services::getInstance()->getTranslatableBundleImporter();
 	}
 
+	/** @throws TranslatableBundleImportException */
 	public function import(
 		string $importFilePath,
 		string $interwikiPrefix,
@@ -126,7 +127,11 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		$entry->publish( $logId );
 	}
 
-	/** Add ready tag in case the page imported has <translate> markup */
+	/**
+	 * Add ready tag in case the page imported has <translate> markup
+	 *
+	 * @throws TranslatableBundleImportException
+	 */
 	private function addReadyTagForTranslatablePage( Title $translatablePageTitle ) {
 		$revisionRecord = $this->revisionLookup->getRevisionByTitle( $translatablePageTitle );
 		if ( !$revisionRecord ) {

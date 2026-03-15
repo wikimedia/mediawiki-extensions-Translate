@@ -78,6 +78,7 @@ class LegacyTranslationAids {
 		);
 	}
 
+	/** @throws TranslationHelperException */
 	private function getDefinitionBox(): string {
 		$definition = $this->getDefinition();
 		if ( $definition === null || $definition === '' ) {
@@ -106,6 +107,7 @@ class LegacyTranslationAids {
 		return Utilities::fieldset( $label, $msg, $class );
 	}
 
+	/** @throws TranslationHelperException */
 	private function getDocumentationBox(): string {
 		global $wgTranslateDocumentationLanguageCode;
 

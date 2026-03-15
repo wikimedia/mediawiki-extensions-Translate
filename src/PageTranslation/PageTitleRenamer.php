@@ -62,6 +62,7 @@ class PageTitleRenamer {
 		];
 	}
 
+	/** @throws InvalidPageTitleRename */
 	public function getNewTitle( Title $title ): Title {
 		$instructions = $this->map[$title->getNamespace()] ?? null;
 		if ( $instructions === null ) {

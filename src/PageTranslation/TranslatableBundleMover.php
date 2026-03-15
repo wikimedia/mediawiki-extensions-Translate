@@ -69,6 +69,7 @@ class TranslatableBundleMover {
 		$this->cache = $objectCacheFactory->getInstance( CACHE_ANYTHING );
 	}
 
+	/** @throws ImpossiblePageMove */
 	public function getPageMoveCollection(
 		Title $source,
 		?Title $target,
