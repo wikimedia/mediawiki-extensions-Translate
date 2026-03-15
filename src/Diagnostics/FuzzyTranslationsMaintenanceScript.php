@@ -190,18 +190,18 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * @param string|null $comment Edit summary.
 	 */
 	private function updateMessage( Title $title, string $text, bool $dryrun, ?string $comment = null ) {
-		$this->output( "Updating {$title->getPrefixedText()}... ", $title );
+		$this->output( "Updating {$title->getPrefixedText()}... ", $title->getPrefixedText() );
 
 		$documentationLanguageCode = $this->getConfig()->get( 'TranslateDocumentationLanguageCode' );
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $documentationLanguageCode ) {
-			$this->output( 'IGNORED!', $title );
+			$this->output( 'IGNORED!', $title->getPrefixedText() );
 
 			return;
 		}
 
 		if ( $dryrun ) {
-			$this->output( 'DRY RUN!', $title );
+			$this->output( 'DRY RUN!', $title->getPrefixedText() );
 
 			return;
 		}
@@ -215,6 +215,6 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
 		$status = $updater->getStatus();
 
-		$this->output( $status->isOK() ? 'OK' : 'FAILED', $title );
+		$this->output( $status->isOK() ? 'OK' : 'FAILED', $title->getPrefixedText() );
 	}
 }

@@ -1223,13 +1223,13 @@ class Hooks {
 
 		// Don't use MessageBundle::isSourcePage for the same reason
 		if ( $oldTitle->getContentModel() === MessageBundleContent::CONTENT_MODEL_ID ) {
-			$status->fatal( 'mb-manual-move', $oldTitle );
+			$status->fatal( 'mb-manual-move', $oldTitle->getPrefixedText() );
 		}
 
 		$tp = TranslatablePage::isTranslationPage( $oldTitle );
 		if ( $tp ) {
 			// Somewhat confusingly $tp->getTitle actually returns the source page here
-			$status->fatal( 'tpt-manual-move-translation', $tp->getTitle() );
+			$status->fatal( 'tpt-manual-move-translation', $tp->getTitle()->getPrefixedText() );
 		}
 	}
 
