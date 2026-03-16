@@ -19,6 +19,7 @@ use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPluralValidator
 use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiTimeListValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NewlineValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NotEmptyValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\NotSupportedValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NumericalParameterValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\PrintfValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValidator;
@@ -59,6 +60,7 @@ class ValidatorFactory {
 		'MediaWikiTimeList' => MediaWikiTimeListValidator::class,
 		'Newline' => NewlineValidator::class,
 		'NotEmpty' => NotEmptyValidator::class,
+		'NotSupported' => NotSupportedValidator::class,
 		'NumericalParameter' => NumericalParameterValidator::class,
 		'Printf' => PrintfValidator::class,
 		'PythonInterpolation' => PythonInterpolationValidator::class,

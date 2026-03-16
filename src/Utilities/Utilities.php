@@ -441,6 +441,28 @@ class Utilities {
 
 		return !$handle->isDoc() && isset( $codes[ $languageCode ] );
 	}
+
+	/**
+	 * Validate a regular exception.
+	 *
+	 * @param string $pattern The regular expression to validate.
+	 * @param string|null &$error Output parameter containing the error message, if any.
+	 * @return bool Whether the regular exception is valid.
+	 */
+	public static function isValidRegex( string $pattern, ?string &$error = null ): bool {
+		set_error_handler( static function ( $severity, $message ) use ( &$error ) {
+			$error = $message;
+			return true;
+		} );
+
+		try {
+			// @phan-suppress-next-line PhanParamSuspiciousOrder
+			$result = preg_match( $pattern, '' );
+			return $result !== false;
+		} finally {
+			restore_error_handler();
+		}
+	}
 }
 
 class_alias( Utilities::class, 'TranslateUtils' );

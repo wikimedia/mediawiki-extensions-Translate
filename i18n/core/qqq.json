@@ -137,6 +137,7 @@
 	"translate-checks-newline-extra-end": "Notice message shown when there are extra newline characters are at the end of a translation. Parameters:\n* $1 - number of extra characters.",
 	"translate-checks-value-not-present": "Notice message shown when the translation is not present in the set of permitted values. Parameters:\n* $1 - set of permitted values.\n* $2 - number of items in the set of permitted values.",
 	"translate-checks-replacement": "Notice message shown when the translation contains content that should not be used. Parameters:\n* $1 - content that should not be used\n* $2 - content that should be used instead.",
+	"translate-checks-notsupported": "Notice message shown when a translation contains an unsupported feature or pattern. Parameters:\n* $1 - the unsupported feature or pattern, not translatable\n{{Related|Translate-checks}}",
 	"translate-checks-empty": "Notice message shown when the translation has no content or consists of only whitespace. Includes newlines and spaces.",
 	"translate-pref-editassistlang": "Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.\n{{Identical|Assistant language}}",
 	"prefs-translate": "Caption of a section at [[Special:Preferences#mw-prefsection-editing|Special:Preferences]] in the tab \"{{int:prefs-editing}}\"",
