@@ -6,6 +6,7 @@
 			"Derugon",
 			"Gomoko",
 			"Pols12",
+			"Sik666",
 			"Thibaut120094",
 			"Titip1995",
 			"TomT0m",
@@ -40,5 +41,6 @@
 	"tux-sst-case-sensitive": "Sensible à la casse",
 	"tux-sst-error-offset": "Il n’est pas possible d’afficher davantage de résultats de recherche. Veuillez affiner votre recherche.",
 	"tux-sst-error-language": "Cette langue ne peut pas être utilisée avec ce type de recherche.",
-	"tux-sst-error-unsupported-language": "La recherche dans la langue <code>$1</code> n’est pas prise en charge."
+	"tux-sst-error-unsupported-language": "La recherche dans la langue <code>$1</code> n’est pas prise en charge.",
+	"tux-sst-search-backend-error": "Erreur inattendue au niveau du serveur, veuillez réessayer ultérieurement"
 }
