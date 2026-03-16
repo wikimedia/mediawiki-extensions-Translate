@@ -955,7 +955,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	public function valid(): bool {
-		return isset( $this->messages[key( $this->keys )] );
+		$key = key( $this->keys );
+		return $key !== null && isset( $this->messages[$key] );
 	}
 
 	public function count(): int {
