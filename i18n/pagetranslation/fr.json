@@ -45,7 +45,8 @@
 			"Derugon",
 			"McDutchie",
 			"BlueCamille",
-			"Escargot bleu"
+			"Escargot bleu",
+			"Sik666"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -211,7 +212,7 @@
 	"logentry-messagebundle-moveok": "$1 {{GENDER:$2|a terminé}} le renommage du groupe de messages $3 en $4",
 	"logentry-messagebundle-movenok": "$1 {{GENDER:$2|a rencontré}} un problème en renommant le groupe de messages $3 en $4",
 	"logentry-messagebundle-deletefok": "$1 {{GENDER:$2|a terminé}} la suppression du groupe de messages $3",
-	"logentry-messagebundle-deletefnok": "$1 {{GENDER:$2|n’a pas réussi}} à supprimer $3 qui appartient au groupe de messages $4",
+	"logentry-messagebundle-deletefnok": "$1 {{GENDER:$2|n’a pas réussi}} à supprimer $3, qui appartient au groupe de messages $4",
 	"log-action-filter-messagebundle": "Type d’action :",
 	"log-action-filter-messagebundle-move": "Déplacements de groupes de messages",
 	"log-action-filter-messagebundle-delete": "Suppressions de groupes de messages",
@@ -259,7 +260,7 @@
 	"pt-locked-page": "Cette page est verrouillée parce que la page traduisible est en cours de renommage.",
 	"pt-deletepage-lang-title": "Suppression de la page de traduction « $1 »",
 	"pt-deletepage-tp-title": "Suppression de la page traduisible « $1 »",
-	"pt-deletepage-mb-title": "Suppression du groupe de message « $1 »",
+	"pt-deletepage-mb-title": "Suppression du groupe de messages « $1 »",
 	"pt-deletepage-invalid-title": "La page spécifiée n’est pas valide.",
 	"pt-deletepage-invalid-text": "La page spécifiée n’est pas une page traduisible, ni une traduction de celle-ci.",
 	"pt-deletepage-action-check": "Lister les pages à supprimer",
@@ -284,7 +285,7 @@
 	"pt-deletepage-lang-logreason": "Partie de la page de traduction « $1 »",
 	"pt-deletepage-lang-outdated-logreason": "La page n’a plus aucune traduction.",
 	"pt-deletepage-started": "Veuillez vérifier le [[$1|journal des traductions]] pour les erreurs et le message de complétion.",
-	"pt-deletepage-intro": "Cette page spéciale vous permet de supprimer entièrement une page traduisible, un groupe de messages ou une page d’une traduction dans une langue particulière.\nL’action de suppression n’est pas instantanée car plusieurs pages dépendantes de celle-ci seront aussi supprimées.\nLes échecs seront inscrits dans le [[$1|journal correspondant]] et ils doivent être corrigés à la main.",
+	"pt-deletepage-intro": "Cette page spéciale vous permet de supprimer entièrement une page traduisible, un groupe de messages ou une page d’une traduction dans une langue spécifique.\nL’action de suppression n’est pas instantanée, car plusieurs pages dépendantes de celle-ci seront aussi supprimées.\nLes éventuels échecs seront inscrits dans le [[$1|journal correspondant]] et devront être corrigés à la main.",
 	"pagemigration": "Migration de page de traduction",
 	"pagemigration-summary": "Spécifier une page de traduction et rétablir toute traduction faite avant que le système de traduction soit activé sur cette page.",
 	"pm-import-button-label": "Importer",

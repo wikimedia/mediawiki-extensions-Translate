@@ -5,6 +5,7 @@
 			"شاه زمان پټان"
 		]
 	},
+	"apihelp-aggregategroups-summary": "د پيغام ټوليز ډلې مهارول.",
 	"apihelp-aggregategroups-param-do": "د پيغام ډلې راغونډولو سره څه کولی شو.",
 	"apihelp-aggregategroups-param-aggregategroup": "د پيغام ډلې پېژند راغونډول.",
 	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
@@ -13,9 +14,14 @@
 	"apihelp-aggregategroups-example-1": "يوه ډله اړوندول",
 	"apihelp-groupreview-param-group": "پيغام ډله. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-groupreview-param-language": "د ژبې کوډ.",
+	"apihelp-query+languagestats-summary": "د پوښتنې د ژبې شمارنې.",
 	"apihelp-query+languagestats-param-language": "د ژبې کوډ.",
+	"apihelp-query+languagestats-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
+	"apihelp-query+languagestats-example-2": "د الپ گروپ لپاره د فينلينډي ژبې د ژباړې بشپړېدو د شمارنو لړليک",
+	"apihelp-query+managemessagegroups-param-messageKey": "پيغام کونجي",
 	"apihelp-query+messagecollection-param-group": "پيغام ډله. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-query+messagecollection-param-language": "د ژبې کوډ.",
+	"apihelp-query+messagecollection-paramvalue-prop-definition": "پيغام پېژندون.",
 	"apihelp-query+messagecollection-example-1": "د ملاتړو ژبو لړليک",
 	"apihelp-query+messagegroups-example-1": "پيغام ډلې ښکاره کول",
 	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
