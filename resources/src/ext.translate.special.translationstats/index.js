@@ -32,28 +32,6 @@
 		entitySelector.mount( group );
 	}
 
-	function activateLanguageSelector( languageInput ) {
-		const container = document.getElementById( 'language-selector' );
-		if ( !languageInput || !container ) {
-			return;
-		}
-
-		const { getMultiselectLookupLanguageSelector } = require( 'mediawiki.languageselector' );
-
-		const selectedLanguages = languageInput.value ? languageInput.value.split( ',' ).map(
-			( lang ) => lang.trim()
-		).filter( Boolean ) : [];
-
-		const app = getMultiselectLookupLanguageSelector( {
-			selectedLanguage: selectedLanguages,
-			onLanguageChange: function ( languages ) {
-				languageInput.value = languages.join( ',' );
-			}
-		} );
-
-		app.mount( container );
-	}
-
 	function getAllOptions() {
 		/**
 		 * @param {HTMLInputElement} input
@@ -79,6 +57,11 @@
 			}
 		}
 
+		function getSplitValuesFromMultiSelect( input ) {
+			return Array.from( input.selectedOptions )
+				.map( ( option ) => option.value );
+		}
+
 		/** @type {HTMLFormElement} */
 		var form = document.getElementById( 'translationStatsConfig' );
 		return {
@@ -87,7 +70,7 @@
 			start: getOptionalDate( form.elements.namedItem( 'start' ) ),
 			granularity: form.elements.namedItem( 'scale' ).value,
 			group: getSplitValues( form.elements.namedItem( 'group' ) ),
-			language: getSplitValues( form.elements.namedItem( 'language' ) ),
+			language: getSplitValuesFromMultiSelect( form.elements.namedItem( 'language[]' ) ),
 			height: form.elements.namedItem( 'height' ).valueAsNumber,
 			width: form.elements.namedItem( 'width' ).valueAsNumber
 		};
@@ -95,7 +78,6 @@
 
 	$( function () {
 		activateEntitySelector( document.querySelector( '#group' ) );
-		activateLanguageSelector( document.querySelector( '#language' ) );
 
 		var graphContainer = document.getElementById( 'translationStatsGraphContainer' );
 

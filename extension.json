@@ -1044,7 +1044,7 @@
 			"dependencies": [
 				"ext.translate.translationstats.graphbuilder.js",
 				"ext.translate.entity.selector",
-				"mediawiki.languageselector",
+				"mediawiki.widgets.LanguageSelectWidget",
 				"mediawiki.Uri"
 			]
 		},

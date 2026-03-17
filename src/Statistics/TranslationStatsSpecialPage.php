@@ -5,10 +5,12 @@ namespace MediaWiki\Extension\Translate\Statistics;
 
 use DateTime;
 use DateTimeZone;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\FormOptions;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Widget\LanguageSelectWidget;
 use function wfEscapeWikiText;
 
 /**
@@ -112,6 +114,16 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			];
 		}
 
+		$interfaceLanguage = $this->getLanguage()->getCode();
+		$languages = Utilities::getLanguageNames( $interfaceLanguage );
+		$languageValue = $opts[ 'language' ] ?? [];
+		$languageSelectWidget = new LanguageSelectWidget( [
+			'name' => 'language[]',
+			'value' => $languageValue,
+			'languages' => $languages,
+			'multiple' => true
+		] );
+
 		$data = [
 			'action' => $this->getConfig()->get( 'Script' ),
 			'pageTitle' => $this->getPageTitle()->getPrefixedText(),
@@ -135,7 +147,7 @@ class TranslationStatsSpecialPage extends SpecialPage {
 			'countLabel' => $this->msg( 'translate-statsf-count' )->text(),
 			'countOptions' => $countOptions,
 			'languageLabel' => $this->msg( 'translate-statsf-language' )->text(),
-			'language' => implode( ',', $opts['language'] ),
+			'languageSelectHtml' => $languageSelectWidget->toString(),
 			'groupLabel' => $this->msg( 'translate-statsf-group' )->text(),
 			'group' => implode( ',', $opts['group'] ),
 			'submitLabel' => $this->msg( 'translate-statsf-submit' )->text(),
