@@ -555,6 +555,9 @@
 			"styles": "resources/css/ext.translate.dropdownmenu.less",
 			"scripts": "resources/js/ext.translate.dropdownmenu.js"
 		},
+		"ext.translate.translationassistlanguagesfield.styles": {
+			"styles": "resources/css/ext.translate.translationassistlanguagesfield.less"
+		},
 		"ext.translate.specialpages.styles": {
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"codexStyleOnly": "true",
@@ -743,9 +746,6 @@
 		},
 		"ext.translate.quickedit": {
 			"styles": "resources/css/ext.translate.quickedit.less"
-		},
-		"ext.translate.selecttoinput": {
-			"scripts": "resources/js/ext.translate.selecttoinput.js"
 		},
 		"ext.translate.special.groupstats": {
 			"styles": "resources/css/ext.translate.special.groupstats.less"
