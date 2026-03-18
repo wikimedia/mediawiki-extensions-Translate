@@ -322,6 +322,7 @@
 	"tux-editor-placeholder-language": "Vaš prijevod na $1",
 	"tux-editor-editsummary-placeholder": "Opišite izmjene (neobvezno)",
 	"tux-editor-paste-original-button-label": "Zalijepi izvorni tekst",
+	"tux-editor-copy-original-button-label": "Kopiraj izvorni tekst",
 	"tux-editor-discard-changes-button-label": "Zanemari izmjene",
 	"tux-editor-save-button-label": "Objavi prijevod",
 	"tux-editor-skip-button-label": "Preskoči na sljedeću poruku",
