@@ -30,7 +30,7 @@
 	"translate-page-disabled": "Vertimai į šią kalbą šioje grupėje buvo išjungti.\nPriežastis:\n\n<em>$1</em>",
 	"translate-language-disabled": "Vertimai į šią kalbą yra išjungtas.",
 	"translate-page-settings-legend": "Nustatymai",
-	"translate-page-group": "Grupė",
+	"translate-page-group": "Grupė:",
 	"translate-page-language": "Kalba",
 	"translate-page-limit": "Limitas",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|pranešimas|pranešimai|pranešimų}} puslapyje",

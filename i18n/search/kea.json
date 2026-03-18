@@ -27,7 +27,7 @@
 	"tux-sst-ellipsis-untranslated": "Sin traduson",
 	"tux-sst-ellipsis-outdated": "Tradusons dizatualizadu",
 	"tux-sst-link-all-match": "Tradusons ku tudu palabra di piskiza.",
-	"tux-sst-match-message": "Li ta mustradu tradusons ki ta nklui kolker un di kes palabra di piskiza. $1",
+	"tux-sst-match-message": "Li sa-ta izibidu tradusons ki ta nklui kolker un di kes palabra piskizadu. $1",
 	"tux-sst-case-sensitive": "Distingi létras maiúsklu di minúsklu",
 	"tux-sst-error-offset": "Ka é pusívi mustra más razultadu di piskiza. Di sumóla, fasi un piskiza más limitadu.",
 	"tux-sst-error-language": "Es linga ka podi uzadu ku es tipu di piskiza."
