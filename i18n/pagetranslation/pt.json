@@ -61,7 +61,6 @@
 	"tpt-tag-oldsyntax": "sintaxe antiga",
 	"tpt-tag-no-transclusion-support": "sem suporte de transclusão",
 	"tpt-select-prioritylangs": "Idiomas prioritários",
-	"tpt-select-prioritylangs-help": "Os códigos de idioma separados por quebras de linha ou vírgulas",
 	"tpt-select-prioritylangs-force": "Impedir as traduções para línguas que não sejam as prioritárias",
 	"tpt-select-prioritylangs-reason": "Motivo",
 	"tpt-sections-prioritylangs": "Línguas prioritárias",

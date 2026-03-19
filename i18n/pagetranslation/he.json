@@ -63,7 +63,6 @@
 	"tpt-tag-oldsyntax": "תחביר ישן",
 	"tpt-tag-no-transclusion-support": "ללא תמיכה בהכללה",
 	"tpt-select-prioritylangs": "שפות מועדפות",
-	"tpt-select-prioritylangs-help": "רשימה של קודי שפות מופרדת בירידות שורה או בפסיקים",
 	"tpt-select-prioritylangs-force": "למנוע תרגום לשפות שאינן מוגדרות כמועדפות",
 	"tpt-select-no-prioritylangs-force": "מניעת תרגומים לשפות שאינן מועדפות ללא בחירת שפות מועדפות תמנע תרגומים לכל השפות.",
 	"tpt-select-prioritylangs-reason": "סיבה",

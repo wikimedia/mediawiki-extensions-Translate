@@ -64,7 +64,6 @@
 	"tpt-tag-oldsyntax": "régi szintaxis",
 	"tpt-tag-no-transclusion-support": "nincs beillesztési támogatás",
 	"tpt-select-prioritylangs": "Kiemelt nyelvek",
-	"tpt-select-prioritylangs-help": "Sortöréssel vagy vesszővel elválasztott nyelvkódok",
 	"tpt-select-prioritylangs-force": "A nem kiemelt nyelvekre történő fordítás megakadályozása",
 	"tpt-select-no-prioritylangs-force": "Ha megakadályozod a nem kiemelt nyelvekre történő fordítást, viszont nem adsz meg kiemelt nyelvet, a lap semmilyen nyelvre nem lesz fordítható.",
 	"tpt-select-prioritylangs-reason": "Indoklás",

@@ -68,7 +68,6 @@
 	"tpt-tag-oldsyntax": "oude syntaxis",
 	"tpt-tag-no-transclusion-support": "geen ondersteuning voor transclusie",
 	"tpt-select-prioritylangs": "Prioriteitstalen",
-	"tpt-select-prioritylangs-help": "Taalcodes gescheiden door regelafbrekingen of komma’s",
 	"tpt-select-prioritylangs-force": "Vertalingen in andere talen dan de prioriteitstalen verhinderen",
 	"tpt-select-no-prioritylangs-force": "Als u het vertalen in niet-prioriteitstalen verhindert zonder prioriteitstalen uit te kiezen, wordt het vertalen in alle talen verhinderd.",
 	"tpt-select-prioritylangs-reason": "Reden",

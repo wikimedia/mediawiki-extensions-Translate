@@ -96,7 +96,6 @@
 	"tpt-tag-oldsyntax": "ancienne syntaxe",
 	"tpt-tag-no-transclusion-support": "transclusion non prise en charge",
 	"tpt-select-prioritylangs": "Langues prioritaires",
-	"tpt-select-prioritylangs-help": "Codes de langue séparés par des sauts de ligne ou des virgules",
 	"tpt-select-prioritylangs-force": "Empêcher les traductions en d’autres langues que les langues prioritaires",
 	"tpt-select-no-prioritylangs-force": "Empêcher les traductions dans les langues non prioritaires sans choisir de langue prioritaire empêchera toute traduction, dans toutes les langues.",
 	"tpt-select-prioritylangs-reason": "Motif",

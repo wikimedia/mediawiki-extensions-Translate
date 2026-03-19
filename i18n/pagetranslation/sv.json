@@ -68,7 +68,6 @@
 	"tpt-tag-oldsyntax": "gammal syntax",
 	"tpt-tag-no-transclusion-support": "inget stöd för transkludering",
 	"tpt-select-prioritylangs": "Prioriterade språk",
-	"tpt-select-prioritylangs-help": "Språkkoder separerade med radbrytningar eller kommatecken",
 	"tpt-select-prioritylangs-force": "Förhindra översättningar på andra språk än de prioriterade språken",
 	"tpt-select-prioritylangs-reason": "Anledning",
 	"tpt-sections-prioritylangs": "Prioriterade språk",

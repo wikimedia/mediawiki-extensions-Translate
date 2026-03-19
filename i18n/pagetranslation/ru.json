@@ -80,7 +80,6 @@
 	"tpt-tag-oldsyntax": "старый синтаксис",
 	"tpt-tag-no-transclusion-support": "без поддержки раскрытия (трансклюзии) шаблонов",
 	"tpt-select-prioritylangs": "Предпочитаемые языки",
-	"tpt-select-prioritylangs-help": "Коды языков, разделённые запятой или переносом строки:",
 	"tpt-select-prioritylangs-force": "Предотвратить переводы на другие языки, помимо приоритетных",
 	"tpt-select-no-prioritylangs-force": "Запрет перевода на неприоритетные языки без выбора приоритетных языков предотвратит переводы на все языки.",
 	"tpt-select-prioritylangs-reason": "Причина",

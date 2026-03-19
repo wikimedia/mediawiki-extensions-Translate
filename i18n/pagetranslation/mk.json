@@ -53,7 +53,6 @@
 	"tpt-tag-oldsyntax": "стара синтакса",
 	"tpt-tag-no-transclusion-support": "не е поддржано превметнување",
 	"tpt-select-prioritylangs": "Приоритетни јазици",
-	"tpt-select-prioritylangs-help": "Јазични кодови одделени во нови редови или со запирки",
 	"tpt-select-prioritylangs-force": "Спречи преведување на јазици што не се приоритетни",
 	"tpt-select-no-prioritylangs-force": "Спречувањето на преводи на неприоритетни јазици без да се изберат приоритетните јазици ќе спречи преведување на сите јазици.",
 	"tpt-select-prioritylangs-reason": "Причина",

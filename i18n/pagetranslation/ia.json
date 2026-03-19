@@ -52,7 +52,6 @@
 	"tpt-tag-oldsyntax": "syntaxe ancian",
 	"tpt-tag-no-transclusion-support": "sin supporto de transclusion",
 	"tpt-select-prioritylangs": "Linguas prioritari",
-	"tpt-select-prioritylangs-help": "Codices de lingua separate per rupturas de linea o commas",
 	"tpt-select-prioritylangs-force": "Impedir le traduction in linguas non prioritari",
 	"tpt-select-no-prioritylangs-force": "Impedir le traduction in linguas non prioritari sin seliger linguas prioritari impedira le traduction in tote le linguas.",
 	"tpt-select-prioritylangs-reason": "Motivo",

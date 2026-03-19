@@ -70,7 +70,6 @@
 	"tpt-tag-oldsyntax": "старий синтаксис",
 	"tpt-tag-no-transclusion-support": "немає підтримки переключення",
 	"tpt-select-prioritylangs": "Пріоритетні мови",
-	"tpt-select-prioritylangs-help": "Коди мов, розділені розривами рядків або комами",
 	"tpt-select-prioritylangs-force": "Запобігти перекладу іншими мовами, крім пріоритетних",
 	"tpt-select-no-prioritylangs-force": "Заборона перекладу непріоритетними мовами без вибору пріоритетних мов призведе до запобігання перекладу будь-якою мовою.",
 	"tpt-select-prioritylangs-reason": "Причина",

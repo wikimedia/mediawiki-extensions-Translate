@@ -56,7 +56,6 @@
 	"tpt-tag-oldsyntax": "舊嘅語法",
 	"tpt-tag-no-transclusion-support": "冇轉錄支援",
 	"tpt-select-prioritylangs": "優先語言",
-	"tpt-select-prioritylangs-help": "以斷行或逗號嚟分開嘅語言代碼",
 	"tpt-select-prioritylangs-force": "防止翻譯成優先語言以外嘅語言",
 	"tpt-select-no-prioritylangs-force": "如果唔揀任何優先語言，就阻止翻譯到非優先語言，就會阻止翻譯到所有語言。",
 	"tpt-select-prioritylangs-reason": "原因",

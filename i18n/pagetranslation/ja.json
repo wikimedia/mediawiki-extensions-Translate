@@ -67,7 +67,6 @@
 	"tpt-tag-oldsyntax": "旧構文",
 	"tpt-tag-no-transclusion-support": "参照読み込み未対応",
 	"tpt-select-prioritylangs": "優先言語のコードを列挙 (カンマ区切り):",
-	"tpt-select-prioritylangs-help": "改行またはカンマで区切った言語コード",
 	"tpt-select-prioritylangs-force": "優先言語以外への翻訳を防止",
 	"tpt-select-no-prioritylangs-force": "優先言語を指定せずに優先言語以外への翻訳を防止すると、すべての言語への翻訳が防止されます。",
 	"tpt-select-prioritylangs-reason": "理由",

@@ -76,7 +76,6 @@
 	"tpt-tag-oldsyntax": "舊語法",
 	"tpt-tag-no-transclusion-support": "不支援內嵌",
 	"tpt-select-prioritylangs": "優先語言",
-	"tpt-select-prioritylangs-help": "以換行或逗號分隔的語言代碼",
 	"tpt-select-prioritylangs-force": "禁止翻譯成優先語言以外的語言",
 	"tpt-select-no-prioritylangs-force": "在未選擇任何優先語言的情況下，使用禁止翻譯成非優先語言功能會禁止翻譯成任何語言。",
 	"tpt-select-prioritylangs-reason": "原因",

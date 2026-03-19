@@ -60,7 +60,6 @@
 	"tpt-tag-oldsyntax": "بناء الجملة القديم",
 	"tpt-tag-no-transclusion-support": "لا يوجد دعم للتضمين",
 	"tpt-select-prioritylangs": "اللغات ذات الأولوية",
-	"tpt-select-prioritylangs-help": "رموز اللغة مفصولة بفواصل الأسطر أو الفواصل",
 	"tpt-select-prioritylangs-force": "امنع الترجمات للغات غير اللغات التي لها الأولوية",
 	"tpt-select-no-prioritylangs-force": "إن منع الترجمة إلى اللغات غير ذات الأولوية دون تحديد أي لغة ذات أولوية سيمنع الترجمة إلى كافة اللغات.",
 	"tpt-select-prioritylangs-reason": "السبب",

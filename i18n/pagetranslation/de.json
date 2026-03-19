@@ -67,7 +67,6 @@
 	"tpt-tag-oldsyntax": "alte Syntax",
 	"tpt-tag-no-transclusion-support": "keine Transklusionsunterstützung",
 	"tpt-select-prioritylangs": "Priorisierte Sprachen",
-	"tpt-select-prioritylangs-help": "Sprachcodes durch Zeilenumbrüche oder Kommas getrennt",
 	"tpt-select-prioritylangs-force": "Übersetzungen in andere Sprachen als die priorisierte Sprache verhindern",
 	"tpt-select-no-prioritylangs-force": "Das Verhindern von Übersetzungen in nicht-priorisierte Sprachen ohne Auswahl von priorisierten Sprachen verhindert Übersetzungen in alle Sprachen.",
 	"tpt-select-prioritylangs-reason": "Grund",

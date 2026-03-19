@@ -88,7 +88,6 @@
 	"tpt-tag-oldsyntax": "sintaxis antigua",
 	"tpt-tag-no-transclusion-support": "sin soporte de transclusión",
 	"tpt-select-prioritylangs": "Idiomas prioritarios",
-	"tpt-select-prioritylangs-help": "Códigos de idioma separados por saltos de línea o comas",
 	"tpt-select-prioritylangs-force": "Impedir las traducciones a otros idiomas distintos de los prioritarios",
 	"tpt-select-no-prioritylangs-force": "La prevención de las traducciones a lenguas no prioritarias sin seleccionar ninguna de las lenguas prioritarias impedirá las traducciones en todas las lenguas.",
 	"tpt-select-prioritylangs-reason": "Razón",
