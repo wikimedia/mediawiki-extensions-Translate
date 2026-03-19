@@ -281,7 +281,7 @@
 	"tag-translate-translation-pages-description": "Translate-laajennuksen automaattiset muokkaukset käännössivuille",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "Kirjaudu sisään katsoaksesi tai muokataksesi viestiryhmätilauksiesi kohteita.",
 	"tpt-manage-message-group-subscriptions-normal-legend": "Peru viestiryhmien tilaus",
-	"tpt-manage-message-group-subscriptions-normal-explain": "Tilaamasi viestiryhmät näytetään alla. Poistaaksesi viestiryhmän, valitse sen vieressä olev valintaruutu ja klikkaa ”Peruuta tilaukset”. Voit myös muokata listaa [[Special:ManageMessageGroupSubscriptions/raw|raakamuodossa]].",
+	"tpt-manage-message-group-subscriptions-normal-explain": "Tilaamasi viestiryhmät näkyvät alla. Voit poistaa viestiryhmän  valitsemalla sen vieressä olevan valintaruudun ja napsauttamalla ”Peruuta tilaukset”. Voit myös muokata listaa [[Special:ManageMessageGroupSubscriptions/raw|raakamuodossa]].",
 	"tpt-manage-message-group-subscriptions-normal-submit": "Peruuta tilaukset",
 	"tpt-manage-message-group-subscriptions-raw-explain": "Tilaamasi viestiryhmät näytetään alla, ja niitä voit muokata lisäämällä tai poistamalla niitä listalta; yksi viestiryhmä riviä kohden. Lopuksi klikkaa ”Päivitä tilaukset”.",
 	"tpt-manage-message-group-subscriptions-raw-legend": "Muokkaa tilauksia raakamuodossa",
