@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CLDR\LanguageNames;
 use MediaWiki\Extension\Translate\ConfigNames;
 use MediaWiki\Hook\FetchChangesListHook;
@@ -39,13 +40,12 @@ class CleanChangesFilters implements
 	public function onChangesListSpecialPageQuery(
 		$name, &$tables, &$fields, &$conds, &$query_options, &$join_conds, $opts
 	) {
-		global $wgRequest;
 		if ( !$this->config->get( ConfigNames::RecentChangesLanguageFilter ) ) {
 			return;
 		}
 
 		$opts->add( 'trailer', '' );
-		$trailer = $wgRequest->getVal( 'trailer', '' );
+		$trailer = RequestContext::getMain()->getRequest()->getVal( 'trailer', '' );
 		if ( $trailer === '' ) {
 			return;
 		}
@@ -60,19 +60,19 @@ class CleanChangesFilters implements
 	 * @inheritDoc
 	 */
 	public function onSpecialRecentChangesPanel( &$extraOpts, $opts ) {
-		global $wgLang, $wgRequest;
 		if ( !$this->config->get( ConfigNames::RecentChangesLanguageFilter ) ) {
 			return;
 		}
 
+		$context = RequestContext::getMain();
 		// TODO the query is parsed (and unknown options are discarded) before we got a chance to define our option.
 		// SEE https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/1053288/comment/5303b6a3_aaef9399/
-		$default = $wgRequest->getVal( 'trailer', '' );
+		$default = $context->getRequest()->getVal( 'trailer', '' );
 
 		if ( is_callable( [ LanguageNames::class, 'getNames' ] ) ) {
 			// cldr extension
 			$languages = LanguageNames::getNames(
-				$wgLang->getCode(),
+				$context->getLanguage()->getCode(),
 				LanguageNames::FALLBACK_NORMAL
 			);
 		} else {
