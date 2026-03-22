@@ -39,14 +39,14 @@
 	}
 
 	/**
-	 * Remove all the <translate> tags and {{translation}} templates before
+	 * Remove all the <translate> tags and {{#translation:}} templates before
 	 * preparing the page. The tool will add them back wherever needed.
 	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
 	function cleanupTags( pageContent ) {
-		return pageContent.replace( /<\/?translate>\n?/gi, '' );
+		return pageContent.replace( /<\/?translate>\n?/gi, '' ).replace( /\{\{#translation:\}\}/, '' );
 	}
 
 	/**
@@ -65,7 +65,7 @@
 
 	/**
 	 * Add <translate> tags around Categories to make them a part of the page template
-	 * and tag them with the {{translation}} template.
+	 * and tag them with the {{#translation:}} parser function.
 	 *
 	 * @param {string} pageContent
 	 * @return {string}
@@ -74,7 +74,7 @@
 		var aliasList = getNamespaceRegex( 14 );
 		// Regex: https://regex101.com/r/sJ3gZ4/2
 		var categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
-			':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
+			':[^\\|\\]]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
 		return pageContent.replace( categoryRegex, '\n</translate>\n' +
 			'[[$1{{#translation:}}$3]]\n<translate>\n' );
 	}
@@ -109,40 +109,6 @@
 	}
 
 	/**
-	 * Add an anchor to a section header with the given headerText.
-	 *
-	 * @param {string} headerText
-	 * @param {string} pageContent
-	 * @return {string}
-	 */
-	function addAnchor( headerText, pageContent ) {
-		var anchorID = headerText.replace( ' ', '-' ).toLowerCase();
-
-		headerText = mw.util.escapeRegExp( headerText );
-		// Search for the header having text as headerText
-		// Regex: https://regex101.com/r/fD6iL1
-		var headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
-		// This is to ensure that the tags and the anchor are added only once
-
-		if ( !pageContent.includes( '<span id="' + mw.html.escape( anchorID ) + '"' ) ) {
-			pageContent = pageContent.replace( headerSearchRegex, '</translate>\n' +
-				'<span id="' + mw.html.escape( anchorID ) + '"></span>\n<translate>\n$1' );
-		}
-
-		// This is to add back the tags which were removed in cleanupTags()
-		if ( !pageContent.includes( '</translate>\n<span id="' + anchorID + '"' ) ) {
-			var spanSearchRegex = new RegExp( '(<span id="' + mw.util.escapeRegExp( anchorID ) + '"></span>)', 'gi' );
-			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
-		}
-
-		// Replace the link text with the anchorID defined above
-		// Regex: https://regex101.com/r/kB5bK3
-		var replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
-		return pageContent.replace( replaceAnchorRegex, '$1' +
-			anchorID.replace( '$', '$$$' ) + '$2' );
-	}
-
-	/**
 	 * Convert all the links into the two-party form and add the 'Special:MyLanguage/' prefix
 	 * to links in valid namespaces for the wiki. For example, [[Example]] would be converted
 	 * to [[Special:MyLanguage/Example|Example]].
@@ -151,7 +117,6 @@
 	 * @return {string}
 	 */
 	function fixInternalLinks( pageContent ) {
-		var searchText = pageContent;
 
 		var categoryNsString = getNamespaceRegex( 14 );
 		var normalizeRegex = new RegExp( '\\[\\[(?!' + categoryNsString + ')([^|]*?)\\]\\]', 'gi' );
@@ -162,16 +127,8 @@
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
 
 		var nsString = getNamespaceRegex( null );
-		// Finds all the links to sections on the same page.
-		// Regex: https://regex101.com/r/cX6jT3
-		var sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?]]/gi );
-		var match = sectionLinksRegex.exec( searchText );
-		while ( match !== null ) {
-			pageContent = addAnchor( match[ 1 ], pageContent );
-			match = sectionLinksRegex.exec( searchText );
-		}
 
-		var linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
+		var linkPrefixRegex = new RegExp( '\\[\\[((?:(?:' + nsString +
 			'):)?[^:]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
 		// main namespace.
@@ -282,33 +239,45 @@
 			action: 'edit',
 			title: pageName,
 			text: pageContent,
-			summary: summary
+			summary: summary,
+			errorformat: 'html'
 		} ).promise();
 	}
 
 	/**
 	 * Display error message to the user
-	 *
-	 * @param {string} errorMessage Error message to display to the user
+	* @param {jQuery} $errorMessage Error message to display to the user
 	 */
-	function displayError( errorMessage ) {
-		if ( errorMessage === undefined ) {
-			errorMessage = mw.msg( 'pp-unexpected-error' );
+	function displayError( $errorMessage ) {
+		if ( $errorMessage === undefined ) {
+			$errorMessage = mw.message( 'pp-unexpected-error' ).parseDom();
 		}
-
 		$( '.messageDiv' )
-			.text( errorMessage )
+			.empty()
 			.removeClass( 'hide' )
+			.append( $errorMessage )
 			.addClass( 'mw-message-box-error' );
+	}
+	function displayErrorsFromData( data ) {
+		var errors = data.errors;
+		if ( errors.length === 1 ) {
+			displayError( $.parseHTML( errors[ 0 ][ '*' ] ) );
+		} else {
+			var $errorList = $( '<ul>' );
+			for ( var i = 0; i < errors.length; i++ ) {
+				$errorList.append( $( '<li>' ).html( errors[ i ][ '*' ] ) );
+			}
+			displayError( $errorList );
+		}
 	}
 
 	/**
 	 * Failure callback method for the prepare step
 	 *
-	 * @param {string} errorMessage Error message to display to the user
+	 * @param {jQuery} $errorMessage Error message to display to the user
 	 */
-	function onPrepareFailure( errorMessage ) {
-		displayError( errorMessage );
+	function onPrepareFailure( $errorMessage ) {
+		displayError( $errorMessage );
 		$( '#action-prepare' ).prop( 'disabled', false );
 	}
 
@@ -321,7 +290,7 @@
 		} );
 
 		var pageContent;
-		$( '#action-save' ).on( 'click', function () {
+		function handlePublish() {
 			var pageName = $input.val().trim();
 			$messageDiv.removeClass( 'mw-message-box-error mw-message-box-success' );
 			savePage( pageName, pageContent, $( '#pp-summary' ).val() ).done( function () {
@@ -336,24 +305,26 @@
 				$input.val( '' );
 				$( '#action-save, #action-cancel' ).addClass( 'hide' );
 			} ).fail( function ( _code, data ) {
-				displayError( data.error.info );
+				displayErrorsFromData( data );
 			} );
-		} );
+		}
+		$( '#action-save' ).on( 'click', handlePublish );
 
-		$( '#action-prepare' ).on( 'click', function () {
+		var isReadyToSave = false;
+
+		function doPrepare() {
 			var pageName = $input.val().trim();
 			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
 			if ( pageName === '' ) {
-				// eslint-disable-next-line no-alert
-				alert( mw.msg( 'pp-pagename-missing' ) );
+				displayError( mw.message( 'pp-pagename-missing' ).parseDom() );
 				return;
 			}
-			$( this ).prop( 'disabled', true );
+			$( '#action-prepare' ).prop( 'disabled', true );
 
 			getPageContent( pageName ).done( function ( contentData ) {
 				// Check if the page actually exists
 				if ( contentData.query.pages[ 0 ].revisions === undefined ) {
-					onPrepareFailure( mw.msg( 'pp-page-does-not-exist', pageName ) );
+					onPrepareFailure( mw.message( 'pp-page-does-not-exist', pageName ).parseDom() );
 					return $.Deferred().reject();
 				}
 
@@ -375,25 +346,37 @@
 					$prepare.prop( 'disabled', false );
 					$messageDiv.removeClass( 'hide' );
 					if ( diff === undefined ) {
-						onPrepareFailure( mw.msg( 'pp-diff-error' ) );
+						onPrepareFailure( mw.message( 'pp-diff-error' ).parseDom() );
 						return $.Deferred().reject();
 					}
 
 					if ( diff !== '' ) {
+						isReadyToSave = true;
 						$( '.diff tbody' ).html( diff );
 						$( '.divDiff' ).removeClass( 'hide' );
 						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
 						$prepare.addClass( 'hide' );
 						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					} else {
-						displayError( mw.msg( 'pp-already-prepared-message' ) );
+						displayError( mw.message( 'pp-already-prepared-message' ).parseDom() );
 					}
 				} ).fail( function ( _code, errorData ) {
-					onPrepareFailure( errorData.error && errorData.error.info );
+					displayErrorsFromData( errorData );
+					$( '#action-prepare' ).prop( 'disabled', false );
 				} );
 			} ).fail( function ( _code, errorData ) {
-				onPrepareFailure( errorData.error && errorData.error.info );
+				displayErrorsFromData( errorData );
+				$( '#action-prepare' ).prop( 'disabled', false );
 			} );
+		}
+		$( '#action-prepare' ).on( 'click', doPrepare );
+		$( '.mw-tpp-sp-form' ).on( 'submit', function () {
+			if ( isReadyToSave ) {
+				handlePublish();
+			} else {
+				doPrepare();
+			}
+			return false;
 		} );
 	} );
 

@@ -17,7 +17,7 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 	private TemplateParser $templateParser;
 
 	public function __construct() {
-		parent::__construct( 'PagePreparation', 'pagetranslation' );
+		parent::__construct( 'PagePreparation' );
 		$this->templateParser = new TemplateParser( __DIR__ . '/templates' );
 	}
 
