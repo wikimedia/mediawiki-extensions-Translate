@@ -916,6 +916,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 			}
 		}
 
+		if ( !$hasChanges ) {
+			$out->wrapWikiMsg( Html::successBox( '$1' ), 'tpt-mark-nochanges' );
+		}
+
 		// Display template changes if applicable
 		$markedTag = $page->getMarkedTag();
 		if ( $markedTag !== null ) {
@@ -951,10 +955,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 				$out->addHTML( Html::rawElement( 'div', [], $text ) );
 			}
-		}
-
-		if ( !$hasChanges ) {
-			$out->wrapWikiMsg( Html::successBox( '$1' ), 'tpt-mark-nochanges' );
 		}
 
 		$this->priorityLanguagesForm( $page );
