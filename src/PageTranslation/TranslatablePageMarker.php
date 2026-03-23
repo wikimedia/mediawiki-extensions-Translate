@@ -146,7 +146,10 @@ class TranslatablePageMarker {
 	 * @param PageRecord $page
 	 * @param ?int $revision Revision to use, or null to use the latest
 	 *  revision of the given page (i.e. not do the latest revision check)
-	 * @param ?bool $validateUnitTitle
+	 * @param ?bool $translateTitle
+	 *  - true: The user explicitly said they wanted to translate the title
+	 *  - false: The user explicitly said they didn't want to translate the title
+	 *  - null: The user didn't say anything about whether to translate the title or not
 	 * @throws TranslatablePageMarkException If the revision was provided and was
 	 *  non-latest, or if the latest revision of the page is not ready to be marked
 	 * @throws ParsingFailure If the parse fails
@@ -154,7 +157,7 @@ class TranslatablePageMarker {
 	public function getMarkOperation(
 		PageRecord $page,
 		?int $revision,
-		?bool $validateUnitTitle
+		?bool $translateTitle
 	): TranslatablePageMarkOperation {
 		$latestRevID = $page->getLatest();
 		if ( $revision === null ) {
@@ -193,9 +196,9 @@ class TranslatablePageMarker {
 		// If the page is marked for translation the first time, default to
 		// allowing title translation, unless the page is a template. T305240
 		$isFirstMark = $translatablePage->getMarkedTag() === null;
-		if ( $validateUnitTitle === null ) {
+		if ( $translateTitle === null ) {
 			$isTemplateNamespace = $translatablePage->getTitle()->inNamespace( NS_TEMPLATE );
-			$validateUnitTitle = ( $isFirstMark && !$isTemplateNamespace ) || $translatablePage->hasPageDisplayTitle();
+			$translateTitle = ( $isFirstMark && !$isTemplateNamespace ) || $translatablePage->hasPageDisplayTitle();
 		}
 
 		$parserOutput = $this->translatablePageParser->parse( $translatablePage->getText() );
@@ -203,7 +206,7 @@ class TranslatablePageMarker {
 
 		// Give extensions a chance to disable title translation.
 		$reason = null;
-		$defaultState = $validateUnitTitle ?
+		$defaultState = $translateTitle ?
 			TranslateTitleEnum::DEFAULT_CHECKED :
 			TranslateTitleEnum::DEFAULT_UNCHECKED;
 		$this->hookRunner->onTranslateTitlePageTranslation(
@@ -215,7 +218,7 @@ class TranslatablePageMarker {
 		$unitValidationStatus = $this->validateUnitNames(
 			$translatablePage,
 			$units,
-			$defaultState !== TranslateTitleEnum::DISABLED && $validateUnitTitle
+			$defaultState !== TranslateTitleEnum::DISABLED && $translateTitle
 		);
 
 		return new TranslatablePageMarkOperation(

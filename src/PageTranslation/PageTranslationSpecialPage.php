@@ -286,7 +286,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$revision,
 				// If the request was not posted, validate all the units so that initially we display all the errors
 				// and then the user can choose whether they want to translate the title
-				!$request->wasPosted() || $translateTitle
+				$request->wasPosted() ? $translateTitle : null
 			);
 		} catch ( TranslatablePageMarkException $e ) {
 			$out->addHTML( Html::errorBox( $this->msg( $e->getMessageObject() )->parse() ) );
@@ -331,7 +331,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$forcePriorityLanguage,
 				$priorityLanguageReason,
 				$noFuzzyUnits,
-				$translateTitle,
+				$operation->titleTranslationState !== TranslateTitleEnum::DISABLED && $translateTitle,
 				$request->getCheck( 'use-latest-syntax' ),
 				$request->getCheck( 'transclusion' )
 			);
@@ -728,14 +728,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
 		$hasChanges = false;
 
-		// Check whether page title was previously marked for translation.
-		// If the page is marked for translation the first time, default to checked,
-		// unless the page is a template. T305240
-		$defaultChecked = (
-			$operation->isFirstMark() &&
-			!$page->getTitle()->inNamespace( NS_TEMPLATE )
-		) || $page->hasPageDisplayTitle();
-
 		$sourceLanguage = $this->languageFactory->getLanguage( $page->getSourceLanguageCode() );
 
 		$hideUnchangedUnitToggle = '';
@@ -802,7 +794,9 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $operation->getUnits() as $s ) {
 			if ( $s->id === TranslatablePage::DISPLAY_TITLE_UNIT_ID ) {
 				// Set section type as new if title previously unchecked
-				$s->type = $defaultChecked ? $s->type : 'new';
+				if ( !$page->hasPageDisplayTitle() ) {
+					$s->type = 'new';
+				}
 				$translationTitleStateReason = null;
 				if ( $operation->titleTranslationState === TranslateTitleEnum::DISABLED ) {
 					$translationTitleStateReason = $operation->titleTranslationStateReason ??
