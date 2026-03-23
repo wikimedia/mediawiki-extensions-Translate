@@ -117,7 +117,7 @@
 	"translate-tes-message-prefix": "Prifísku - $1",
 	"translate-tes-entity-not-found": "Niun razultadu",
 	"supportedlanguages": "Lingas saportadu",
-	"supportedlanguages-summary": "Es pájina ta izibi un lista di lingas ativu na uiki {{SITENAME}}, ku tudu nómi di tradutor di kada linga.\nKantu más traduson fetu pa un tradutor, más grandi si nómi ta parsi na lista.\nKor di sublinhadu ta ndika kuantu rasentimenti un tradutor stivi ativi li.",
+	"supportedlanguages-summary": "Es pájina ta izibi un lista di lingas ativu na uiki {{SITENAME}}, ku tudu nómi di tradutor di kada linga.\nKantu más traduson fetu pa un tradutor, más grandi si nómi ta parsi na lista.\nKor di sublinhadu ta ndika kantu rasentimenti un tradutor stivi ativu li.",
 	"supportedlanguages-colorlegend": "Lijénda di koris: últimu traduson fasedu $1 dia dipatrás.",
 	"supportedlanguages-sqlite-error": "SQLite ka é saportadu",
 	"supportedlanguages-postgres-error": "PostgreSQL ka é saportadu",

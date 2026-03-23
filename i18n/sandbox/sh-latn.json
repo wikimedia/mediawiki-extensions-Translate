@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
@@ -9,7 +10,7 @@
 	"tsb-reminder-title-generic": "Popunite Vaše predstavljanje da bi ste postali prevodilac",
 	"tsb-reminder-sending": "Šaljem podsjetnik...",
 	"tsb-reminder-sent-new": "Poslan podsjetnik",
-	"tsb-reminder-failed": "Nisam uspio poslati podsjetnik",
+	"tsb-reminder-failed": "Slanje podsjetnika nije uspjelo",
 	"tsb-email-promoted-subject": "Sad ste prevodilac na {{GRAMMAR:dativ|{{SITENAME}}}}",
 	"tsb-all-languages-button-label": "Svi jezici",
 	"tsb-search-requests": "Pretražite zahtjeve na čekanju",
