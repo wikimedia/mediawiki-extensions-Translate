@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"apihelp-aggregategroups-summary": "Upravljanje zbirnim grupama poruka.",
@@ -22,5 +23,5 @@
 	"apihelp-query+languagestats-param-group": "Naznaka grupe poruka.",
 	"apihelp-query+languagestats-example-1": "Spisak statistika dovršenosti prijevoda na finski",
 	"apihelp-managemessagegroups-param-changesetName": "Naziv skupa promjena — Zadano / Bez nadzora / MediaWiki itd.",
-	"apihelp-managemessagegroups-param-changesetModified": "Unix vremenska oznaka kada je promjena posljednji put modificirana. Ako nakon toga je izmijenjena, izvršnik će izbaciti pogrešku."
+	"apihelp-managemessagegroups-param-changesetModified": "Unix vremenska oznaka kada je promjena posljednji put modificirana. Ako nakon toga je izmijenjena, izvršnik će izbaciti grešku."
 }
