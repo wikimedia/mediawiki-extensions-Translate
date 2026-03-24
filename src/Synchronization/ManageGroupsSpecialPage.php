@@ -591,7 +591,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			'SupportedLanguages' => 'views',
 			'TranslationStats' => 'views',
 		];
-		if ( !isset( $pagesInGroup[$alias] ) ) {
+		if ( $alias === null || !isset( $pagesInGroup[$alias] ) ) {
 			return;
 		}
 
