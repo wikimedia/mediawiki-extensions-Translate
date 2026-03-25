@@ -74,9 +74,8 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 	/** @dataProvider provideTestHasEntryWithTag */
 	public function testHasEntryWithTag(
 		array $input,
-		string $tagToSearch,
-		bool $expected,
-		string $message
+		string $expectedTag,
+		bool $hasEntryWithTag,
 	) {
 		$entry = new PersistentCacheEntry(
 			$input['keyname'],
@@ -86,12 +85,12 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		);
 		$this->persistentCache->set( $entry );
 
-		$hasTag = $this->persistentCache->hasEntryWithTag( $tagToSearch );
-		$this->assertSame( $expected, $hasTag, $message );
+		$hasTag = $this->persistentCache->hasEntryWithTag( $expectedTag );
+		$this->assertSame( $hasEntryWithTag, $hasTag );
 	}
 
 	/** @dataProvider provideTestHasExpired */
-	public function testHasExpiredEntry( array $input, bool $expected ) {
+	public function testHasExpiredEntry( array $input, bool $hasEntryExpired ) {
 		$entry = new PersistentCacheEntry(
 			$input['keyname'],
 			$input['value'],
@@ -103,20 +102,20 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 
 		$getEntry = $this->persistentCache->get( $input['keyname'] )[0];
 
-		$this->assertSame( $expected, $entry->hasExpired() );
-		$this->assertSame( $expected, $getEntry->hasExpired() );
+		$this->assertSame( $hasEntryExpired, $entry->hasExpired() );
+		$this->assertSame( $hasEntryExpired, $getEntry->hasExpired() );
 	}
 
 	/** @dataProvider provideTestGetByTag */
 	public function testGetByTag(
-		array $inputs, ?int $exptime, ?string $inputTag, string $searchTag, int $count
+		array $inputs, ?int $exptime, ?string $inputTag, string $expectedTag, int $expectedEntryCount
 	) {
 		$entries = $this->getEntriesFromInput( $inputs, $exptime, $inputTag );
 
 		$this->persistentCache->set( ...$entries );
-		$entries = $this->persistentCache->getByTag( $searchTag );
+		$entries = $this->persistentCache->getByTag( $expectedTag );
 
-		$this->assertCount( $count, $entries );
+		$this->assertCount( $expectedEntryCount, $entries );
 	}
 
 	public function testDelete() {
@@ -238,7 +237,7 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		$tomorrow = ( new DateTime() )->add( new DateInterval( 'P1D' ) );
 		$yesterday = ( new DateTime() )->sub( new DateInterval( 'P1D' ) );
 
-		yield [
+		yield 'return false if no tag is present' => [
 			'input' => [
 				'keyname' => 'hello',
 				'value' => 'World',
@@ -247,10 +246,9 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 			],
 			'expectedTag' => $testTag,
 			'hasEntryWithTag' => false,
-			'testMessage' => 'return false if no tag is present'
 		];
 
-		yield [
+		yield 'return true if tag is present' => [
 			'input' => [
 				'keyname' => 'hello',
 				'value' => 'World',
@@ -259,10 +257,9 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 			],
 			'expectedTag' => $testTag,
 			'hasEntryWithTag' => true,
-			'testMessage' => 'return true if tag is present'
 		];
 
-		yield [
+		yield 'return true for entries that have expired' => [
 			'input' => [
 				'keyname' => 'hello',
 				'value' => 'World',
@@ -271,7 +268,6 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 			],
 			'expectedTag' => $testTag,
 			'hasEntryWithTag' => true,
-			'testMessage' => 'return true for entries that have expired'
 		];
 	}
 
@@ -308,18 +304,18 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 				'key2' => 'value2'
 			],
 			'exptime' => null,
-			'tag' => $testTag,
-			'test2',
+			'inputTag' => $testTag,
+			'expectedTag' => 'test2',
 			'expectedEntryCount' => 0
 		];
 
 		yield [
-			'input' => [
+			'inputs' => [
 				'key5' => 'value5',
 				'key6' => null
 			],
 			'exptime' => ( new DateTime() )->getTimestamp(),
-			'tag' => $testTag,
+			'inputTag' => $testTag,
 			'expectedTag' => $testTag,
 			'expectedEntryCount' => 2
 		];

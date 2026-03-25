@@ -184,10 +184,10 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public static function provideMessageIndexImplementation(): Generator {
-		yield [ 'TestableDatabaseMessageIndex' => [ 'class' => TestableDatabaseMessageIndex::class ] ];
-		yield [ 'TestableCDBMessageIndex' => [ 'class' => TestableCDBMessageIndex::class ] ];
-		yield [ 'TestableSerializedMessageIndex' => [ 'class' => TestableSerializedMessageIndex::class ] ];
-		yield [ 'TestableHashMessageIndex' => [ 'class' => TestableHashMessageIndex::class ] ];
+		yield 'TestableDatabaseMessageIndex' => [ [ 'class' => TestableDatabaseMessageIndex::class ] ];
+		yield 'TestableCDBMessageIndex' => [ [ 'class' => TestableCDBMessageIndex::class ] ];
+		yield 'TestableSerializedMessageIndex' => [ [ 'class' => TestableSerializedMessageIndex::class ] ];
+		yield 'TestableHashMessageIndex' => [ [ 'class' => TestableHashMessageIndex::class ] ];
 	}
 
 	public function testInterimCache(): void {

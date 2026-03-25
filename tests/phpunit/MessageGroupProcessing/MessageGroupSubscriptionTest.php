@@ -67,7 +67,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideTestSendNotifications() {
 		yield 'notification for an aggregate group and another subgroup' => [
-			'changes to process' => [
+			'info' => [
 				'agg-group-id' => [
 					MessageGroupSubscription::STATE_ADDED => [ 'msg1' ],
 					MessageGroupSubscription::STATE_UPDATED => [ 'msg2' ]
@@ -77,7 +77,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
 				]
 			],
-			'arguments for Event::create' => [
+			'expectedValues' => [
 				[
 					'type' => 'translate-mgs-message-added',
 					'extra' => [
@@ -113,11 +113,11 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					]
 				]
 			],
-			'input for getSubscriber method' => [ 'agg-group-id', 'agg-group-id-tp-1', 'parent-agg-group-id' ],
+			'expectedGroupIds' => [ 'agg-group-id', 'agg-group-id-tp-1', 'parent-agg-group-id' ],
 		];
 
 		yield 'notification for an aggregate subgroup and a normal group' => [
-			'changes to process' => [
+			'info' => [
 				'agg-group-id-tp-1' => [
 					MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
 					MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
@@ -127,7 +127,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 				]
 			],
-			'arguments for Event::create' => [
+			'expectedValues' => [
 				[
 					'type' => 'translate-mgs-message-added',
 					'extra' => [
@@ -175,17 +175,17 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					]
 				]
 			],
-			'input for getSubscriber method' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1', 'parent-agg-group-id' ]
+			'expectedGroupIds' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1', 'parent-agg-group-id' ]
 		];
 
 		yield 'notification for a normal group' => [
-			'changes tro process' => [
+			'info' => [
 				'bar' => [
 					MessageGroupSubscription::STATE_ADDED => [ 'bar-msg1' ],
 					MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 				]
 			],
-			'arguments for Event::create' => [
+			'expectedValues' => [
 				[
 					'type' => 'translate-mgs-message-added',
 					'extra' => [
@@ -198,7 +198,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					]
 				]
 			],
-			'input for getSubscriber method' => [ 'bar' ]
+			'expectedGroupIds' => [ 'bar' ]
 		];
 	}
 
