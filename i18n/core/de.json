@@ -90,7 +90,7 @@
 	"translate-checks-links-missing": "{{PLURAL:$2|Der folgende Link fehlt|Die folgenden $2 Links fehlen}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Die Übersetzungsvorlage verwendet <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.",
 	"translate-checks-plural-forms": "Zu <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|wurde eine Ausprägung|wurden $1 Ausprägungen}} angegeben. Es {{PLURAL:$2|wird allerdings nur eine Ausprägung|werden allerdings nur $2 Ausprägungen}} unterstützt (auschließlich 0= und 1= forms).",
-	"translate-checks-plural-dupe": "Zu <nowiki>{{PLURAL:}}</nowiki> wurden zwei gleiche Ausprägungen angegeben. Bspw. sollte aber <nowiki>{{PLURAL:$1|Milch|Milch}}</nowiki> als <nowiki>{{PLURAL:$1|Milch}}</nowiki> angegeben werden.",
+	"translate-checks-plural-dupe": "Zu <nowiki>{{PLURAL:}}</nowiki> wurden zwei gleiche Ausprägungen angegeben. Bspw. sollte aber <nowiki>$1 {{PLURAL:$1|Fehler|Fehler}}</nowiki> als <nowiki>$1 {{PLURAL:$1|Fehler}}</nowiki> angegeben werden.",
 	"translate-checks-gettext-plural-missing": "Diese Übersetzung muss <nowiki>{{PLURAL:GETTEXT|}}</nowiki> haben.",
 	"translate-checks-gettext-plural-unsupported": "Diese Nachricht unterstützt kein <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> akzeptiert genau $1 {{PLURAL:$1|Pluralform|Pluralformen}}. Gegenwärtig {{PLURAL:$2|ist eine Pluralform|sind $2 Pluralformen}} angegeben.",
