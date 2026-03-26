@@ -58,4 +58,32 @@
 			} ) );
 		}
 	}, 'content' );
+
+	EntrypointRegistry.register( 'missing-languages', {
+		id: 'translate-missing-languages-recommendation',
+		shouldShow: ( context ) => {
+			const missingLanguages = context.missingLanguages || [];
+			return missingLanguages.some( ( code ) => {
+				const isAllowedByPriority = priorityLanguages.length === 0 || priorityLanguages.includes( code );
+				return isAllowedByPriority && !!supportedLanguages[ code ];
+			} );
+		},
+		getConfig: ( context ) => {
+			const missingLanguages = context.missingLanguages || [];
+			const codes = missingLanguages.filter( ( code ) => {
+				const isAllowedByPriority = priorityLanguages.length === 0 || priorityLanguages.includes( code );
+				return isAllowedByPriority && !!supportedLanguages[ code ];
+			} );
+
+			return codes.map( ( code ) => ( {
+				label: supportedLanguages[ code ],
+				description: mw.msg( 'ext-uls-missing-languages-entrypoint-description' ),
+				icon: cdxIconAdd,
+				url: mw.util.getUrl( 'Special:Translate', {
+					group: groupId,
+					language: code
+				} )
+			} ) );
+		}
+	}, 'content' );
 }() );
