@@ -22,7 +22,7 @@
 	"translate-page-disabled": "Jurgâlusah taan kielân taan juávhust lii estum.\nSuijâ:\n\n<em>$1</em>",
 	"translate-language-disabled": "Jurgâlem taan kielân ij lah máhđulâš.",
 	"translate-page-settings-legend": "Asâttâsah",
-	"translate-page-group": "Juávkku",
+	"translate-page-group": "Juávkku:",
 	"translate-page-language": "Kielâ",
 	"translate-page-limit": "Raijiittâs",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|viestâ|viestâ|viestâ|viestâd}} siijđost",

@@ -112,6 +112,7 @@
 	"translate-checks-newline-extra-end": "Am Ende der Übersetzung {{PLURAL:$1|ist ein zusätzliches|sind $1 zusätzliche}} Zeilenumbruchzeichen.",
 	"translate-checks-value-not-present": "Die Übersetzung muss {{PLURAL:$2|1=„$1“ sein|einem der folgenden Werte entsprechen: $1}}.",
 	"translate-checks-replacement": "Verwende $2 anstatt $1.",
+	"translate-checks-notsupported": "Die folgende Funktion wird nicht unterstützt: <strong>$1</strong>.",
 	"translate-checks-empty": "Übersetzungen ohne Inhalt oder nur mit Leerzeichen sind nicht zulässig.",
 	"translate-pref-editassistlang": "Unterstützungssprachen:",
 	"prefs-translate": "Übersetzungsoptionen",

@@ -351,5 +351,6 @@
 	"translate-category-summary": "Automatische Erstellung der Übersetzung der Kategorie, die auf [[$1]] verwendet wird",
 	"right-translate-empty-category": "Erstellen von Übersetzungseinheiten für leere Kategorien",
 	"action-translate-empty-category": "Übersetzungseinheiten für leere Kategorien zu erstellen",
-	"tpt-create-empty-category": "Für die leere Kategorie [[:$1]] kann keine Übersetzungseinheit erstellt werden."
+	"tpt-create-empty-category": "Für die leere Kategorie [[:$1]] kann keine Übersetzungseinheit erstellt werden.",
+	"ext-uls-empty-search-entrypoint-description": "Du kannst diese Seite übersetzen. Das ist ein einfacher Weg, um Inhalte in deiner Sprache zu erstellen."
 }
