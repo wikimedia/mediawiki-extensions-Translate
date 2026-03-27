@@ -244,5 +244,6 @@
 	"visualeditor-annotations-tvar-start": "Inizio del contenuto non traducibile",
 	"visualeditor-annotations-tvar-end": "Fine del contenuto non traducibile",
 	"tag-translate-translation-pages-description": "Modifiche automatiche alle pagine di traduzione dell'estensione Translate",
-	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppi:"
+	"tpt-manage-message-group-subscriptions-raw-titles": "Gruppi:",
+	"ext-uls-empty-search-entrypoint-description": "Puoi tradurre questa pagina. È un modo facile per creare contenuti nella tua lingua"
 }

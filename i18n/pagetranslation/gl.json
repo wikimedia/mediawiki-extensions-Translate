@@ -340,5 +340,6 @@
 	"translate-category-summary": "Creación automática da tradución da categoría utilizada en «[[$1]]»",
 	"right-translate-empty-category": "Crear unidades de tradución para categorías baleiras",
 	"action-translate-empty-category": "crear unidades de tradución para categorías baleiras",
-	"tpt-create-empty-category": "Non se pode crear unha unidade de tradución para a categoría «[[:$1]]», que está baleira."
+	"tpt-create-empty-category": "Non se pode crear unha unidade de tradución para a categoría «[[:$1]]», que está baleira.",
+	"ext-uls-empty-search-entrypoint-description": "Podes traducir esta páxina. É un xeito sinxelo de creares contido na túa lingua."
 }

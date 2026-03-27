@@ -95,6 +95,7 @@
 	"translate-checks-newline-extra-end": "Hai $1 {{PLURAL:$1|carácter|caracteres}} de liña nova de máis ao final da tradución.",
 	"translate-checks-value-not-present": "A tradución debe ser igual a {{PLURAL:$2|1=|un dos seguintes valores:}} $1.",
 	"translate-checks-replacement": "Use «$2» no canto de «$1».",
+	"translate-checks-notsupported": "A seguinte funcionalidade non é compatible: <strong>$1</strong>.",
 	"translate-checks-empty": "Non se permite a tradución se non hai contidos ou se só hai espazos en branco.",
 	"translate-pref-editassistlang": "Linguas axudantes:",
 	"prefs-translate": "Opcións de tradución",

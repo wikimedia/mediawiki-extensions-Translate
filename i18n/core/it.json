@@ -101,6 +101,7 @@
 	"translate-checks-newline-extra-end": "{{PLURAL:$1|C'è|Ci sono}} $1 {{PLURAL:$1|carattere|caratteri}} di nuova riga in più alla fine della traduzione.",
 	"translate-checks-value-not-present": "La traduzione deve essere uguale a {{PLURAL:$2|1=|uno dei seguenti valori:}} $1.",
 	"translate-checks-replacement": "Usa $2 anziché $1.",
+	"translate-checks-notsupported": "La seguente funzionalità non è supportata: <strong>$1</strong>.",
 	"translate-pref-editassistlang": "Lingue di confronto:",
 	"prefs-translate": "Opzioni di traduzione",
 	"translate-pref-editassistlang-help": "Codici delle lingue separati da virgola.\nLe traduzioni di un messaggio in queste lingue sono mostrate durante la traduzione.\nL'elenco predefinito (default) delle lingue dipende dalla propria lingua.",
