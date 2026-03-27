@@ -115,7 +115,7 @@ class TranslateEditAddons {
 			return;
 		}
 
-		// TODO: Convert this method to a listener for PageRevisionUpdatedEvent,
+		// TODO: Convert this method to a listener for PageLatestRevisionChangedEvent,
 		// which provides a better way to detect dummy revisions and null edits.
 		$isDummyRevision = !$editResult->isNew()
 			&& ( $editResult->getOriginalRevisionId() === $revisionRecord->getParentId() );
