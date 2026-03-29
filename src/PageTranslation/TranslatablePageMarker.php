@@ -16,6 +16,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Language\FormatterFactory;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Message\Message;
 use MediaWiki\Page\PageRecord;
@@ -311,6 +312,8 @@ class TranslatablePageMarker {
 	 * @param MessageLocalizer $localizer
 	 * @param User $user User performing the action. Checking user
 	 * permissions is the caller’s responsibility
+	 * @throws TranslatablePageMarkException If marking the page for translation failed
+	 *  (because some extension hook interfered with the process)
 	 * @return int The number of translation units actually used
 	 */
 	public function markForTranslation(
@@ -336,6 +339,15 @@ class TranslatablePageMarker {
 		$maxId = (int)$this->messageGroupMetadata->get( $groupId, 'maxid' );
 
 		$pageId = $title->getId();
+		if ( $pageSettings->shouldTranslateTitle() &&
+			$operation->titleTranslationState === TranslateTitleEnum::DISABLED
+		) {
+			if ( $operation->titleTranslationStateReason ) {
+				throw new TranslatablePageMarkException( new RawMessage( $operation->titleTranslationStateReason ) );
+			} else {
+				throw new TranslatablePageMarkException( 'tpt-translate-title-disabled' );
+			}
+		}
 		$sections = $pageSettings->shouldTranslateTitle()
 			? $operation->getUnits()
 			: array_filter(

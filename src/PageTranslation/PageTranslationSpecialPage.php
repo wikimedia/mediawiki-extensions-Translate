@@ -284,8 +284,13 @@ class PageTranslationSpecialPage extends SpecialPage {
 					$request->wasPosted() ? IDBAccessObject::READ_LATEST : IDBAccessObject::READ_NORMAL
 				),
 				$revision,
-				// If the request was not posted, validate all the units so that initially we display all the errors
-				// and then the user can choose whether they want to translate the title
+				// This parameter does double-duty; it specifies both whether to validate that the title can be
+				// translated and tells the TranslateTitlePageTranslation hook what title translation settings the user
+				// requested on form load, no settings were requested (null), so the hook should have the ability to
+				// specify whether the checkbox defaults to checked or unchecked on the basis of the default state
+				// (whether it has pre-existing title translations, is a template, etc.)
+				// This also means the page display title translatability won't be validated if it isn't checked by
+				// default which may or may not be a good thing
 				$request->wasPosted() ? $translateTitle : null
 			);
 		} catch ( TranslatablePageMarkException $e ) {
@@ -331,7 +336,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$forcePriorityLanguage,
 				$priorityLanguageReason,
 				$noFuzzyUnits,
-				$operation->titleTranslationState !== TranslateTitleEnum::DISABLED && $translateTitle,
+				$translateTitle,
 				$request->getCheck( 'use-latest-syntax' ),
 				$request->getCheck( 'transclusion' )
 			);
@@ -800,7 +805,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				$translationTitleStateReason = null;
 				if ( $operation->titleTranslationState === TranslateTitleEnum::DISABLED ) {
 					$translationTitleStateReason = $operation->titleTranslationStateReason ??
-						$this->msg( 'tpt-translate-title-disabled-reason' )->text();
+						$this->msg( 'tpt-translate-title-disabled' )->text();
 				}
 
 				// Checkbox for page title optional translation
