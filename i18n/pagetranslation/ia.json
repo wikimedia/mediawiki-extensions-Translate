@@ -336,5 +336,6 @@
 	"translate-category-summary": "Traduction create automaticamente de un categoria usate sur [[$1]]",
 	"right-translate-empty-category": "Crear unitates de traduction pro categorias vacue",
 	"action-translate-empty-category": "crear unitates de traduction pro categorias vacue",
-	"tpt-create-empty-category": "Non pote crear un unitate de traduction pro le categoria [[:$1]] que es vacue."
+	"tpt-create-empty-category": "Non pote crear un unitate de traduction pro le categoria [[:$1]] que es vacue.",
+	"ext-uls-empty-search-entrypoint-description": "Tu pote traducer iste pagina. Es un maniera facile de crear contento in tu lingua."
 }

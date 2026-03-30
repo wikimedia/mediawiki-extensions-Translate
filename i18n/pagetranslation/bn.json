@@ -123,5 +123,6 @@
 	"pp-diff-old-header": "উত্স পাঠ্য",
 	"pp-unexpected-error": "আপনার অনুরোধটি প্রক্রিয়াকরণের সময় একটি ত্রুটি হয়েছে",
 	"tpt-generic-button": "নিশ্চিত করুন",
-	"visualeditor-annotations-tvar-end": "অ-অনুবাদযোগ্য বিষয়বস্তুর সমাপ্তি"
+	"visualeditor-annotations-tvar-end": "অ-অনুবাদযোগ্য বিষয়বস্তুর সমাপ্তি",
+	"ext-uls-empty-search-entrypoint-description": "আপনি এই পাতাটি অনুবাদ করতে পারেন। এটি আপনার ভাষায় বিষয়বস্তু তৈরি করার একটি সহজ উপায়।"
 }
