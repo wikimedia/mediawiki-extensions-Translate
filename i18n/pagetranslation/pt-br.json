@@ -19,7 +19,8 @@
 			"Robertpontes",
 			"Rodrigo codignoli",
 			"Shirayuki",
-			"YuriNikolai"
+			"YuriNikolai",
+			"BraunOBruno"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -36,7 +37,7 @@
 	"tpt-submit": "Marcar esta versão para tradução",
 	"tpt-sections-oldnew": "Unidades de tradução novas e existentes",
 	"tpt-sections-deleted": "Unidades de tradução apagadas",
-	"tpt-sections-template": "Modelo de página de tradução",
+	"tpt-sections-template": "Predefinição de página de tradução",
 	"tpt-action-fuzzy": "Necessário atualizar a tradução",
 	"tpt-badtitle": "O nome de página dado ($1) não é um título válido",
 	"tpt-nosuchpage": "A página $1 não existe",
