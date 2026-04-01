@@ -440,6 +440,7 @@
 						const languageCode = language.code;
 						onLanguageChange( languageCode );
 					},
+					displayLanguageCode: mw.config.get( 'wgUserLanguage' ),
 					mode: 'interface'
 				} );
 
