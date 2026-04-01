@@ -350,7 +350,7 @@
 	"translate-msggroupselector-search-placeholder": "ابحث عن المجموعات",
 	"translate-msggroupselector-search-all": "الكل",
 	"translate-msggroupselector-search-recent": "الأخيرة",
-	"translate-msggroupselector-search-watched": "شاهدت",
+	"translate-msggroupselector-search-watched": "مُراقبة",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|مجموعة فرعية|مجموعات فرعية}}",
 	"translate-msggroupselector-special-msgsubscriptions-label": "إدارة اشتراكاتك",
 	"tux-languageselector": "ترجم إلى",
