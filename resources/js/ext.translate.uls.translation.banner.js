@@ -1,7 +1,8 @@
 const EntrypointRegistry = require( 'ext.uls.rewrite.entrypoints' );
+const { ENTRYPOINT_TYPE, ULS_MODE } = EntrypointRegistry;
 const { cdxIconSettings } = require( './ext.translate.uls.translation.banner.icons.json' );
 
-EntrypointRegistry.register( 'empty-list', {
+EntrypointRegistry.register( ENTRYPOINT_TYPE.EMPTY_LIST, {
 	id: 'translation-settings-banner',
 	shouldShow: () => true,
 	getConfig: () => ( {
@@ -12,4 +13,4 @@ EntrypointRegistry.register( 'empty-list', {
 			target: mw.config.get( 'wgPageName' )
 		} )
 	} )
-}, 'content' );
+}, ULS_MODE.CONTENT );

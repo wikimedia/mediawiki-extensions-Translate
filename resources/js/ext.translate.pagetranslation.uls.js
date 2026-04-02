@@ -22,12 +22,13 @@
 	};
 
 	const EntrypointRegistry = require( 'ext.uls.rewrite.entrypoints' );
+	const { ENTRYPOINT_TYPE, ULS_MODE } = EntrypointRegistry;
 	const { cdxIconAdd } = require( './ext.translate.pagetranslation.uls.icons.json' );
 	const { supportedLanguages } = require( 'ext.translate.languages' );
 	const priorityLanguages = mw.config.get( 'wgTranslatePriorityLanguages' ) || [];
 	const groupId = mw.config.get( 'wgTranslatePageTranslationGroup' );
 
-	EntrypointRegistry.register( 'empty-search', {
+	EntrypointRegistry.register( ENTRYPOINT_TYPE.EMPTY_SEARCH, {
 		id: 'translate-empty-search-recommendation',
 		shouldShow: ( context ) => {
 			const hitCodes = Object.keys( context.searchQueryHits || {} );
@@ -57,9 +58,9 @@
 				} )
 			} ) );
 		}
-	}, 'content' );
+	}, ULS_MODE.CONTENT );
 
-	EntrypointRegistry.register( 'missing-languages', {
+	EntrypointRegistry.register( ENTRYPOINT_TYPE.MISSING_CONTENT_LANGUAGES, {
 		id: 'translate-missing-languages-recommendation',
 		shouldShow: ( context ) => {
 			const missingLanguages = context.missingLanguages || [];
@@ -85,5 +86,5 @@
 				} )
 			} ) );
 		}
-	}, 'content' );
+	}, ULS_MODE.CONTENT );
 }() );
