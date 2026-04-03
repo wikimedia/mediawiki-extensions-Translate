@@ -40,9 +40,7 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 			'mediawiki.codex.messagebox.styles',
 		] );
 
-		$out = '';
-		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-container grid' ] );
-		$out .= Html::rawElement(
+		$errorDiv = Html::rawElement(
 			'div',
 			[
 				'class' => 'mw-tpm-sp-error row',
@@ -53,63 +51,79 @@ class MigrateTranslatablePageSpecialPage extends SpecialPage {
 				[ 'class' => 'mw-tpm-sp-error__message five columns hide' ]
 			)
 		);
-		$out .= Html::openElement(
+
+		$summaryHidden = Html::hidden(
+			'',
+			$this->msg( 'pm-summary-import' )->inContentLanguage()->text(),
+			[ 'id' => 'pm-summary' ]
+		);
+
+		$textInput = Html::rawElement(
+			'div',
+			[ 'class' => 'cdx-text-input' ],
+			Html::input(
+				'',
+				'',
+				'text',
+				[
+					'id' => 'title',
+					'class' => 'mw-searchInput cdx-text-input__input',
+					'data-mw-searchsuggest' => FormatJson::encode( [ 'wrapAsLink' => false ] ),
+					'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text(),
+				]
+			)
+		);
+
+		$importButton = Html::element(
+			'button',
+			[
+				'id' => 'action-import',
+				'class' => 'cdx-button cdx-button--action-progressive cdx-button--weight-primary',
+				'type' => 'button',
+			],
+			$this->msg( 'pm-import-button-label' )->text()
+		);
+
+		$saveButton = Html::element(
+			'button',
+			[
+				'id' => 'action-save',
+				'class' => 'cdx-button cdx-button--action-progressive cdx-button--weight-primary hide',
+				'type' => 'button',
+			],
+			$this->msg( 'pm-savepages-button-label' )->text()
+		);
+
+		$cancelButton = Html::element(
+			'button',
+			[
+				'id' => 'action-cancel',
+				'class' => 'cdx-button cdx-button--action-default cdx-button--weight-quiet hide',
+				'type' => 'button',
+			],
+			$this->msg( 'pm-cancel-button-label' )->text()
+		);
+
+		$form = Html::rawElement(
 			'form',
 			[
 				'class' => 'mw-tpm-sp-form row',
 				'id' => 'mw-tpm-sp-primary-form',
 				'action' => '',
-			]
+			],
+			$summaryHidden . "\n" . $textInput . "\n" . $importButton . "\n" . $saveButton . "\n" . $cancelButton
 		);
-		$out .= Html::hidden(
-			'',
-			$this->msg( 'pm-summary-import' )->inContentLanguage()->text(),
-			[ 'id' => 'pm-summary' ]
-		) . "\n";
-		$out .= Html::input(
-			'',
-			'',
-			'text',
-			[
-				'id' => 'title',
-				'class' => 'mw-searchInput mw-ui-input',
-				'data-mw-searchsuggest' => FormatJson::encode( [ 'wrapAsLink' => false ] ),
-				'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text(),
-			]
-		) . "\n";
-		$out .= Html::input(
-			'',
-			$this->msg( 'pm-import-button-label' )->text(),
-			'button',
-			[
-				'id' => 'action-import',
-				'class' => 'mw-ui-button mw-ui-progressive',
-			]
-		) . "\n";
-		$out .= Html::input(
-			'',
-			$this->msg( 'pm-savepages-button-label' )->text(),
-			'button',
-			[
-				'id' => 'action-save',
-				'class' => 'mw-ui-button mw-ui-progressive hide',
-			]
-		) . "\n";
-		$out .= Html::input(
-			'',
-			$this->msg( 'pm-cancel-button-label' )->text(),
-			'button',
-			[
-				'id' => 'action-cancel',
-				'class' => 'mw-ui-button mw-ui-quiet hide',
-			]
-		);
-		$out .= Html::closeElement( 'form' );
-		$out .= Html::element( 'div', [ 'class' => 'mw-tpm-sp-instructions hide' ] );
-		$out .= Html::element( 'div', [ 'class' => 'mw-tpm-sp-unit-listing' ] );
-		$out .= Html::closeElement( 'div' );
 
-		$output->addHTML( $out );
+		$instructions = Html::element( 'div', [ 'class' => 'mw-tpm-sp-instructions hide' ] );
+		$unitListing = Html::element( 'div', [ 'class' => 'mw-tpm-sp-unit-listing' ] );
+
+		$container = Html::rawElement(
+			'div',
+			[ 'class' => 'mw-tpm-sp-container grid' ],
+			$errorDiv . $form . $instructions . $unitListing
+		);
+
+		$output->addHTML( $container );
 		$output->addHTML(
 			Html::errorBox(
 				$this->msg( 'tux-nojs' )->escaped(),

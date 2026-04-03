@@ -375,7 +375,7 @@
 				.removeClass( 'hide' );
 			return;
 		} else {
-			$( 'input' ).prop( 'disabled', true );
+			$( 'input, button' ).prop( 'disabled', true );
 			$( '.mw-tpm-sp-instructions' ).addClass( 'hide' );
 			for ( var i = 0; i < noOfSourceUnits; i++ ) {
 				var content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
@@ -387,12 +387,12 @@
 
 			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
-				$( 'input' ).prop( 'disabled', false );
+				$( 'input, button' ).prop( 'disabled', false );
 				$( '.mw-tpm-sp-instructions' )
 					.text( mw.msg( 'pm-on-save-message-text' ) )
 					.removeClass( 'hide' );
 			} ).fail( function ( errmsg ) {
-				$( 'input' ).prop( 'disabled', false );
+				$( 'input, button' ).prop( 'disabled', false );
 				// eslint-disable-next-line mediawiki/msg-doc
 				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).removeClass( 'hide' );
 			} );
