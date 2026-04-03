@@ -305,7 +305,7 @@
 	"translate-import-err-dl-failed": "इस फाइल को न लाया जा सका:\n$1",
 	"translate-import-err-ul-failed": "चित्र अपलोड विफल रहा",
 	"translate-import-err-invalid-title": "दर्ज किया गया फाइलनाम <nowiki>$1</nowiki> अमान्य था।",
-	"translate-import-err-no-such-file": "फाइल <nowiki>$1</nowiki> मौजूद नहीं है या फिर इसे लोकल रूप से अपलोड नहीं किया गया है।",
+	"translate-import-err-no-such-file": "फ़ाइल <nowiki>$1</nowiki> मौजूद नहीं है या फिर इसे स्थानीय रूप से अपलोड नहीं किया गया है।",
 	"translate-import-err-stale-group": "वह संदेश समूह मौजूद नहीं है जिसमें यह फाइल है।",
 	"translate-import-err-no-headers": "फाइल अनुवाद एक्सटेंशन के प्रारूप में एक अच्छे-से बनाया गया Gettext फाइल नहीं है:\nफाइल के हैडर से संदेश समूह और भाषा का पता नहीं लगाया जा सका।",
 	"translate-import-err-gettext-parse-failed": "फ़ाइल अच्छी तरह से निर्मित Gettext फ़ाइल नहीं है:\n$1",
