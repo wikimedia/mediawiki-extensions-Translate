@@ -72,7 +72,6 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		$out->addModuleStyles( 'ext.translate.specialpages.styles' );
 		$out->addModuleStyles( 'ext.translate.special.translate.styles' );
 		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
-		$out->addModuleStyles( [ 'mediawiki.ui.button', 'mediawiki.ui.input', 'mediawiki.ui.checkbox' ] );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
 
@@ -310,7 +309,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		if ( $total - $offset > $this->limit ) {
 			$newParams = [ 'offset' => $offset + $this->limit ] + $params;
 			$attribs = [
-				'class' => 'mw-ui-button pager-next',
+				'class' => 'cdx-button cdx-button--fake-button cdx-button--fake-button--enabled pager-next',
 				'href' => $this->getPageTitle()->getLocalURL( $newParams ),
 			];
 			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
@@ -318,7 +317,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		if ( $offset ) {
 			$newParams = [ 'offset' => max( 0, $offset - $this->limit ) ] + $params;
 			$attribs = [
-				'class' => 'mw-ui-button pager-prev',
+				'class' => 'cdx-button cdx-button--fake-button cdx-button--fake-button--enabled pager-prev',
 				'href' => $this->getPageTitle()->getLocalURL( $newParams ),
 			];
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
@@ -615,35 +614,88 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 	private function getSearchInput( string $query ): string {
 		$attribs = [
 			'placeholder' => $this->msg( 'tux-sst-search-ph' )->text(),
-			'class' => 'searchinputbox mw-ui-input',
+			'class' => 'searchinputbox cdx-text-input__input',
 			'dir' => $this->getLanguage()->getDir()
 		];
 
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$input = Html::input( 'query', $query, 'text', $attribs );
-		$submit = Html::submitButton(
-			$this->msg( 'tux-sst-search' )->text(),
-			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
+
+		// 1. Text input
+		$textInput = Html::rawElement(
+			'div',
+			[ 'class' => 'cdx-text-input cdx-text-input--has-start-icon' ],
+			Html::input( 'query', $query, 'search', $attribs ) .
+			Html::element( 'span', [ 'class' => 'cdx-text-input__icon cdx-text-input__start-icon' ] )
 		);
 
-		$typeHint = Html::rawElement(
+		// 2. Input wrapper
+		$inputWrapper = Html::rawElement(
 			'div',
-			[ 'class' => 'tux-searchinputbox-hint' ],
-			$this->msg( 'tux-sst-search-info' )->parse()
+			[ 'class' => 'cdx-search-input__input-wrapper' ],
+			$textInput
+		);
+
+		// 3. Search button
+		$searchButton = Html::element(
+			'button',
+			[
+				'class' => 'cdx-button cdx-search-input__end-button ' .
+					'cdx-button--action-progressive cdx-button--weight-primary',
+				'type' => 'submit',
+			],
+			$this->msg( 'tux-sst-search' )->text()
+		);
+
+		// 4. Integrated search input
+		$searchInput = Html::rawElement(
+			'div',
+			[ 'class' => 'cdx-search-input cdx-search-input--has-end-button' ],
+			$inputWrapper . $searchButton
+		);
+
+		// 5. Wrap everything in a field
+		$field = Html::rawElement(
+			'div',
+			[ 'class' => 'cdx-field' ],
+			Html::rawElement( 'div', [ 'class' => 'cdx-field__control' ], $searchInput )
+			. Html::rawElement(
+				'div',
+				[ 'class' => 'cdx-field__help-text' ],
+				$this->msg( 'tux-sst-search-info' )->parse()
+			)
 		);
 
 		$nonDefaults = $this->opts->getChangedValues();
-		$checkLabel = Html::check( 'case', isset( $nonDefaults['case'] ), [
+		$checkbox = Html::element( 'input', [
+			'type' => 'checkbox',
+			'name' => 'case',
+			'class' => 'cdx-checkbox__input',
 			'value' => '1',
 			'id' => 'tux-case-sensitive',
-		] ) . "\u{00A0}" . Html::label(
-			$this->msg( 'tux-sst-case-sensitive' )->text(),
-			'tux-case-sensitive'
-		);
+			'checked' => isset( $nonDefaults['case'] ),
+		] );
 		$checkLabel = Html::rawElement(
 			'div',
-			[ 'class' => 'tux-search-operators mw-ui-checkbox' ],
-			$checkLabel
+			[ 'class' => 'cdx-checkbox' ],
+			Html::rawElement(
+				'div',
+				[ 'class' => 'cdx-checkbox__wrapper' ],
+				$checkbox
+				. Html::element( 'span', [ 'class' => 'cdx-checkbox__icon' ] )
+				. Html::rawElement(
+					'div',
+					[ 'class' => 'cdx-checkbox__label cdx-label' ],
+					Html::rawElement(
+						'label',
+						[ 'class' => 'cdx-label__label', 'for' => 'tux-case-sensitive' ],
+						Html::element(
+							'span',
+							[ 'class' => 'cdx-label__label__text' ],
+							$this->msg( 'tux-sst-case-sensitive' )->text()
+						)
+					)
+				)
+			)
 		);
 
 		$lang = $this->getRequest()->getVal( 'language' );
@@ -652,7 +704,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 		return Html::rawElement(
 			'form',
 			[ 'action' => wfScript(), 'name' => 'searchform' ],
-			$title . $input . $submit . $typeHint . $checkLabel . $language
+			$title . $field . $checkLabel . $language
 		);
 	}
 

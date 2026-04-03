@@ -559,7 +559,12 @@
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"codexStyleOnly": "true",
 			"codexComponents": [
-				"CdxAccordion"
+				"CdxAccordion",
+				"CdxButton",
+				"CdxTextInput",
+				"CdxCheckbox",
+				"CdxSearchInput",
+				"CdxField"
 			],
 			"styles": [
 				"resources/css/ext.translate.special.managegroups.less",

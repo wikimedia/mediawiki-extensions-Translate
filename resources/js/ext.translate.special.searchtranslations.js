@@ -6,7 +6,7 @@
 	$( function () {
 		resultGroups = $( '.facet.groups' ).data( 'facets' );
 
-		$( '.tux-searchpage .mw-ui-button' ).on( 'click', function () {
+		$( '.tux-searchpage .cdx-button' ).on( 'click', function () {
 			var query = $( '.tux-searchpage .searchinputbox' ).val(),
 				result = lexOperators( query ),
 				$form = $( '.tux-searchpage form[name=searchform]' );
