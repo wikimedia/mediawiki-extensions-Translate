@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
+			"Bayahiu",
 			"Bennylin",
 			"Chinamoonroll",
 			"Daud I.F. Argana",
@@ -90,7 +91,7 @@
 	"translate-checks-smartformat-plural-count": "Banyak bentuk jamak yang salah di <strong>$3</strong>. Markah tersebut harus memiliki $1 {{PLURAL:$1|bentuk jamak}}. Saat ini diberikan $2 {{PLURAL:$2|bentuk jamak}}.",
 	"translate-checks-unicode-plural-missing": "Terjemahan ini harus memiliki <nowiki>{{PLURAL|}}</nowiki>.",
 	"translate-checks-unicode-plural-unsupported": "Pesan ini tidak mendukung <nowiki>{{PLURAL|}}</nowiki>.",
-	"translate-checks-unicode-plural-invalid": "Bentuk jamak seharusnya didefinisikan sebagai $1. Terjemahan ini mengandung $2.",
+	"translate-checks-unicode-plural-invalid": "Bentuk jamak seharusnya terdefinisi sebagai $1. Terjemahan ini berisi $2.",
 	"translate-checks-pagename": "Ruang nama berubah dari definisinya",
 	"translate-checks-format": "Terjemahan ini tidak mengikuti definisi atau memiliki sintaks yang tidak sah: $1",
 	"translate-checks-escape": "{{PLURAL:$2|Karakter|Karakter-karakter}} ''escape'' berikut mungkin tidak disengaja: <strong>$1</strong>. {{PLURAL:$4|Karakter ''escape'' yang valid adalah|Karakter-karakter ''escape'' yang valid adalah:}} $3.",

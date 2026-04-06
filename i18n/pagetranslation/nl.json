@@ -352,5 +352,6 @@
 	"translate-category-summary": "Automatisch aangemaakte vertaling van een op [[$1]] gebruikte categorie",
 	"right-translate-empty-category": "Vertaaleenheden aanmaken voor lege categorieën",
 	"action-translate-empty-category": "vertaaleenheden aan te maken voor lege categorieën",
-	"tpt-create-empty-category": "Kan geen vertaaleenheid aanmaken voor de categorie [[:$1]] omdat die leeg is."
+	"tpt-create-empty-category": "Kan geen vertaaleenheid aanmaken voor de categorie [[:$1]] omdat die leeg is.",
+	"ext-uls-empty-search-entrypoint-description": "U kunt deze pagina vertalen. Dat is een makkelijke manier om inhoud in uw taal te maken"
 }
