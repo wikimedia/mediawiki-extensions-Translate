@@ -950,15 +950,12 @@
 			"styles": "resources/css/ext.translate.special.movetranslatablebundles.less"
 		},
 		"ext.translate.special.pagemigration": {
-			"scripts": [
-				"resources/js/jquery.ajaxdispatcher.js",
-				"resources/js/ext.translate.special.pagemigration.js"
-			],
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"dependencies": [
 				"mediawiki.api",
 				"mediawiki.Title",
-				"mediawiki.ui",
-				"mediawiki.ui.button"
+				"jquery.uls.data",
+				"vue"
 			],
 			"messages": [
 				"pm-add-icon-hover-text",
@@ -969,8 +966,10 @@
 				"pm-old-translations-missing",
 				"pm-page-does-not-exist",
 				"pm-pagename-missing",
+				"pm-pagetitle-label",
 				"pm-pagetitle-invalid",
 				"pm-pagetitle-missing",
+				"pm-import-button-label",
 				"pm-swap-icon-hover-text",
 				"pm-on-import-message-text",
 				"pm-on-save-message-text",
@@ -979,6 +978,31 @@
 				"pm-pagetitle-not-translatable",
 				"pm-translation-unit-fetch-failed",
 				"tpt-unknown-page"
+			],
+			"packageFiles": [
+				"resources/src/ext.translate.pagemigration/init.js",
+				"resources/src/ext.translate.pagemigration/services.js",
+				"resources/src/ext.translate.pagemigration/components/PageMigrationApp.vue",
+				"resources/src/ext.translate.pagemigration/components/TranslationUnit.vue",
+				{
+					"name": "resources/src/ext.translate.pagemigration/icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconAdd",
+						"cdxIconClear",
+						"cdxIconTableMoveRowAfter",
+						"cdxIconTrash"
+					]
+				}
+			],
+			"codexComponents": [
+				"CdxButton",
+				"CdxField",
+				"CdxIcon",
+				"CdxLookup",
+				"CdxMessage",
+				"CdxTextArea",
+				"CdxTextInput"
 			]
 		},
 		"ext.translate.special.pagepreparation": {

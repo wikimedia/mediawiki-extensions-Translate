@@ -6,67 +6,65 @@ QUnit.module( 'ext.translate.special.pagemigration', function ( hooks ) {
 
 	hooks.beforeEach( function () {
 		this.server = this.sandbox.useFakeServer();
+		this.server.respondImmediately = true;
 	} );
 
-	QUnit.test( 'Source units', function ( assert ) {
-		var data = '{ "query": { "messagecollection": [ { "key": "key_",' +
-			' "definition": "definition_", "title": "title_" }, { "key": "key_1",' +
-			' "definition": "definition_1", "title": "title_1" } ] } }';
+	const services = require( 'ext.translate.special.pagemigration/resources/src/ext.translate.pagemigration/services.js' );
+
+	const goodMessageCollection = '{ "query": { "messagecollection": [ { "key": "key_",' +
+		' "definition": "definition_", "title": "title_" }, { "key": "key_1",' +
+		' "definition": "definition_1", "title": "title_1" } ] } }';
+	const badMessageCollection = '{ "error": { "code": "badparameter", "info": "Invalid value for parameter \\"mcgroup\\"." } }';
+	const goodFuzzyBotRevisions = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
+		'[ {"timestamp": "2014-02-18T20:59:58Z" }, { "timestamp": "t2" } ] } ] } }';
+	const badFuzzyBotRevisions = '{ "query": { "pages": [ { "ns": 0, "title": "Special pages/fr", "missing": true } ] } }';
+	const goodPreFuzzyBotRevisions = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
+		'[ { "content": "unit1\\n\\nunit2\\n\\nunit3" } ] } ] } }';
+	const badPreFuzzyBotRevisions = '{ "query": { "pages": [ { "pageid": "19563" } ] } }';
+
+	QUnit.test( 'Load data', function ( assert ) {
+		const expected = {
+			sourceUnits: [ { identifier: 'key_', definition: 'definition_' }, { identifier: 'key_1', definition: 'definition_1' } ],
+			translationUnits: [ 'unit1', 'unit2', 'unit3' ],
+			translationLang: 'fr',
+			translationDir: 'ltr'
+		};
+
+		this.server.respondWith( /list=messagecollection/, [ 200, { 'Content-Type': 'application/json' }, goodMessageCollection ] );
+		this.server.respondWith( /prop=revisions.*&rvuser=FuzzyBot/, [ 200, { 'Content-Type': 'application/json' }, goodFuzzyBotRevisions ] );
+		this.server.respondWith( /prop=revisions.*&rvstart=.*/, [ 200, { 'Content-Type': 'application/json' }, goodPreFuzzyBotRevisions ] );
 
 		var done = assert.async();
-		mw.translate.getSourceUnits( 'Help:Special pages' ).done( function ( sourceUnits ) {
-			assert.strictEqual( sourceUnits.length, 2, 'Source units retrieved' );
+		services.loadData( 'Special pages/fr' ).then( function ( units ) {
+			// Deep equality won’t work with functions, but neither are we interested
+			delete units.save;
+
+			assert.deepEqual( units, expected, 'Data loaded' );
 			done();
 		} );
-
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, data );
-		} );
 	} );
 
-	QUnit.test( 'Page does not exist', function ( assert ) {
-		var data = '{ "query": { "pages": { "-1": { "missing": "" } } } }';
+	QUnit.test( 'Load data about a source-language translation (which was created by FuzzyBot)', function ( assert ) {
+		this.server.respondWith( /list=messagecollection/, [ 200, { 'Content-Type': 'application/json' }, goodMessageCollection ] );
+		this.server.respondWith( /prop=revisions.*&rvuser=FuzzyBot/, [ 200, { 'Content-Type': 'application/json' }, goodFuzzyBotRevisions ] );
+		this.server.respondWith( /prop=revisions.*&rvstart=.*/, [ 200, { 'Content-Type': 'application/json' }, badPreFuzzyBotRevisions ] );
 
-		var done = assert.async();
-		mw.translate.getFuzzyTimestamp( 'ugagagagagaga/uga' ).fail( function ( timestamp ) {
-			assert.strictEqual( timestamp, undefined, 'Page does not exist' );
-			done();
-		} );
-
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, data );
-		} );
+		assert.rejects( services.loadData( 'Special pages/en' ), /^\(pm-old-translations-missing: Special pages\/en\)$/, 'Missing revision handled' );
 	} );
 
-	QUnit.test( 'Fuzzy timestamp', function ( assert ) {
-		var data = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
-			'[ {"timestamp": "2014-02-18T20:59:58Z" }, { "timestamp": "t2" } ] } ] } }';
+	QUnit.test( 'Load data about non-existing translation', function ( assert ) {
+		this.server.respondWith( /list=messagecollection/, [ 200, { 'Content-Type': 'application/json' }, goodMessageCollection ] );
+		this.server.respondWith( /prop=revisions.*&rvuser=FuzzyBot/, [ 200, { 'Content-Type': 'application/json' }, badFuzzyBotRevisions ] );
 
-		var done = assert.async();
-		mw.translate.getFuzzyTimestamp( 'Help:Special pages/fr' ).done( function ( timestamp ) {
-			assert.strictEqual( timestamp, '2014-02-18T20:59:57.000Z', 'Fuzzy timestamp retrieved' );
-			done();
-		} );
-
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, data );
-		} );
+		assert.rejects( services.loadData( 'Special pages/fr' ), /^\(pm-old-translations-missing: Special pages\/fr\)$/, 'Missing revision handled' );
 	} );
 
-	QUnit.test( 'Split translation page', function ( assert ) {
-		var data = '{ "query": { "pages": [ { "pageid": "19563", "revisions": ' +
-			'[ { "content": "unit1\\n\\nunit2\\n\\nunit3" } ] } ] } }';
+	QUnit.test( 'Load data about a page no longer using Translate', function ( assert ) {
+		this.server.respondWith( /list=messagecollection/, [ 200, { 'Content-Type': 'application/json' }, badMessageCollection ] );
+		this.server.respondWith( /prop=revisions.*&rvuser=FuzzyBot/, [ 200, { 'Content-Type': 'application/json' }, goodFuzzyBotRevisions ] );
+		this.server.respondWith( /prop=revisions.*&rvstart=.*/, [ 200, { 'Content-Type': 'application/json' }, goodPreFuzzyBotRevisions ] );
 
-		var done = assert.async();
-		mw.translate.splitTranslationPage( '2014-02-18T20:59:57.000Z', 'Help:Special pages/fr' )
-			.done( function ( translationUnits ) {
-				assert.strictEqual( translationUnits.length, 3, 'Translation page split into units' );
-				done();
-			} );
-
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, data );
-		} );
+		assert.rejects( services.loadData( 'Special pages/fr' ), /^\(pm-pagetitle-not-translatable: Special pages\)$/, 'Missing message group handled' );
 	} );
 
 	QUnit.test( 'Split headers', function ( assert ) {
@@ -103,7 +101,7 @@ QUnit.module( 'ext.translate.special.pagemigration', function ( hooks ) {
 			'== header ==',
 			'more text\nwith a newline'
 		];
-		result = mw.translate.splitHeaders( translationUnits );
+		result = services.splitHeaders( translationUnits );
 		assert.deepEqual( result, expected, 'Headers split into separate units' );
 
 	} );
@@ -121,10 +119,10 @@ QUnit.module( 'ext.translate.special.pagemigration', function ( hooks ) {
 		var result1 = [ '', '==123==', 'pqr', '', '', '==456==' ];
 		var result2 = [ 'abc\nlmn\n', '==123==', 'pqr', '', '', '==456==' ];
 
-		translationUnits1 = mw.translate.alignHeaders( sourceUnits, translationUnits1 );
+		services.alignHeaders( sourceUnits, translationUnits1 );
 		assert.deepEqual( result1, translationUnits1, 'h2 headers aligned without merging' );
 
-		translationUnits2 = mw.translate.alignHeaders( sourceUnits, translationUnits2 );
+		services.alignHeaders( sourceUnits, translationUnits2 );
 		assert.deepEqual( result2, translationUnits2, 'h2 headers aligned with merging' );
 	} );
 } );
