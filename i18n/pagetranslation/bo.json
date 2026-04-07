@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Freeyak",
+			"Pecha-G.Dhargyal",
 			"Phurbutsering",
 			"TaDhondup"
 		]
 	},
 	"pagetranslation": "ཤོག་ངོས་ཡིག་སྒྱུར།",
+	"tpt-section-deleted": "ཡིག་སྒྱུར་ཚིག་ཚན་ $1 ([[$2|ཡིག་སྒྱུར།]])",
 	"tpt-diff-old": "ཡིག་འབྲུ་གོང་མ།",
 	"tpt-diff-new": "ཡིག་འབྲུ་གསར་བ།",
 	"tpt-list-pages-in-translations": "[[དམིགས་བསལ། ལོ་ཙཱའི་ཤོག་ངོས། ལོ་ཙཱ་བྱ་དགོས་པའི་ཤོག་ངོས་རྣམས་སྟོན།]]",
