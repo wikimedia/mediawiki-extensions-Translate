@@ -19,7 +19,8 @@
 			"William Surya Permana",
 			"WillsonEP09",
 			"පසිඳු කාවින්ද",
-			"Penyuwangi"
+			"Penyuwangi",
+			"Bayahiu"
 		]
 	},
 	"pagetranslation": "Penerjemahan halaman",
@@ -85,7 +86,7 @@
 	"translate-tag-markthis": "Tandai halaman ini untuk diterjemahkan",
 	"translate-tag-markthisagain": "Halaman ini telah diubah <span class=\"plainlinks\">[$1 kali]</span> sejak terakhir <span class=\"plainlinks\">[$2 ditandai untuk diterjemahkan]</span>.",
 	"translate-tag-hasnew": "Halaman ini berisikan <span class=\"plainlinks\">[$1 revisi]</span> yang tidak ditandai untuk diterjemahkan.",
-	"tpt-translation-intro": "Halaman ini adalah sebuah <span class=\"plainlinks\">[$1 versi terjemahan]</span> dari halaman [[$2]] dan terjemahannya telah selesai $3% dari sumber terkini.",
+	"tpt-translation-intro": "Halaman ini adalah <span class=\"plainlinks\">[$1 versi terjemahan]</span> dari halaman [[$2]] dan telah selesai $3%.",
 	"tpt-translation-intro-fuzzy": "Terjemahan usang ditandai seperti ini.",
 	"tpt-languages-legend": "Bahasa lain:",
 	"tpt-languages-zero": "Mulai terjemahan dalam bahasa ini",
