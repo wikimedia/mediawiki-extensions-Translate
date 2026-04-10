@@ -3,6 +3,7 @@
 		"authors": [
 			"LiteHell",
 			"Revi",
+			"Tensama0415",
 			"YeBoy371",
 			"Ykhwong",
 			"아라"
@@ -25,6 +26,8 @@
 	"apihelp-query+messagecollection-param-language": "언어 코드.",
 	"apihelp-query+messagecollection-example-1": "지원하는 언어 목록",
 	"apihelp-query+messagegroups-summary": "메시지 그룹에 관한 정보를 반환합니다.",
+	"apihelp-query+messagegroups-example-1": "메세지 그룹 표시",
+	"apihelp-query+messagegroupstats-summary": "쿼리 메세지 그룹 통계.",
 	"apihelp-query+messagegroupstats-param-group": "메시지 그룹 ID. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-managemessagegroups-param-groupId": "그룹 Id. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-messagegroupsubscription-param-operation": "수행할 작업입니다.",
