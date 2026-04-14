@@ -27,7 +27,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		private readonly MessageGroupMetadata $messageGroupMetadata,
 		private readonly AggregateGroupManager $aggregateGroupManager,
 	) {
-		parent::__construct( 'AggregateGroups', 'translate-manage' );
+		parent::__construct( 'AggregateGroups' );
 		$this->templateParser = new TemplateParser( __DIR__ . '/templates' );
 	}
 
