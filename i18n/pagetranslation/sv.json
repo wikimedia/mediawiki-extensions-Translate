@@ -248,7 +248,6 @@
 	"pm-add-icon-hover-text": "Lägg till en enhet nedan",
 	"pm-swap-icon-hover-text": "Byt med enheten nedan",
 	"pm-delete-icon-hover-text": "Radera enhet",
-	"pm-pagetitle-placeholder": "Ange sidans titel",
 	"pm-pagetitle-invalid": "Sidmigrering fungerar endast på översättningssidor, t.ex. \"Sida/de\". Den angivna titeln är inte en giltig titel.",
 	"pm-pagetitle-missing": "Ange sidans titel.",
 	"pm-langcode-missing": "Sidmigrering fungerar endast på översättningssidor, t.ex. \"Sida/de\". Den angivna titeln är inte en översättningssida.",

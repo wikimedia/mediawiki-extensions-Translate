@@ -289,7 +289,6 @@
 	"pm-swap-icon-hover-text": "替換以下單元",
 	"pm-delete-icon-hover-text": "刪除單元",
 	"pm-clear-icon-hover-text": "清除譯文單位",
-	"pm-pagetitle-placeholder": "輸入頁面標題",
 	"pm-pagetitle-invalid": "頁面遷移僅適用於譯文頁面，例如「Page/de」。提供的標題不是有效標題。",
 	"pm-pagetitle-missing": "請輸入頁面標題。",
 	"pm-langcode-missing": "頁面遷移僅適用於譯文頁面，例如「Page/de」。提供的標題不是譯文頁面。",

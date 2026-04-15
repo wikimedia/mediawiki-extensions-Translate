@@ -98,7 +98,6 @@
 	"translate-pref-editassistlang": "সহযোগী ভাষা:",
 	"prefs-translate": "অনুবাদ অপশন",
 	"translate-pref-editassistlang-help": "কমা দ্বারা পৃথক করা ভাষার কোডের তালিকা। আপনি অনুবাদ করার সময় এই ভাষাগুলিতে বার্তার অনুবাদ থাকলে তা প্রদর্শিত হবে। ভাষাগুলির পূর্বনির্ধারিত তালিকা আপনার ভাষার উপর নির্ভর করে।",
-	"translate-pref-editassistlang-bad": "তালিকায় অবৈধ ভাষা কোড:\n<nowiki> $1</nowiki>।",
 	"right-translate": "অনুবাদ ইন্টারফেস ব্যবহার করে সম্পাদনা",
 	"action-translate": "অনুবাদ ইন্টারফেস ব্যবহার করে সম্পাদনা করার",
 	"right-translate-manage": "বার্তা দল ব্যবস্থাপনা",

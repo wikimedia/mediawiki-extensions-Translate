@@ -120,7 +120,6 @@
 	"pm-add-icon-hover-text": "Pridėti vienetą žemiau",
 	"pm-swap-icon-hover-text": "Apkeisti su vienetu žemiau",
 	"pm-delete-icon-hover-text": "Trinti vienetą",
-	"pm-pagetitle-placeholder": "Įveskite puslapio pavadinimą",
 	"pm-pagetitle-invalid": "Prašome įvesti galiojantį puslapio pavadinimą. Jis turėtų būti <page-name>/<language-code> formatu",
 	"pm-pagetitle-missing": "Prašome įvesti puslapio pavadinimą.",
 	"tpt-translate-title": "Leisti puslapio pavadinimo vertimus",

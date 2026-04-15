@@ -271,7 +271,6 @@
 	"pm-swap-icon-hover-text": "Csere az alábbi egységgel",
 	"pm-delete-icon-hover-text": "Egység törlése",
 	"pm-clear-icon-hover-text": "Az egység kiürítése",
-	"pm-pagetitle-placeholder": "Írd be a lap címét",
 	"pm-pagetitle-invalid": "A migráció csak lefordított lapokon használható (pl. „Lap/hu”). A megadott cím érvénytelen.",
 	"pm-pagetitle-missing": "Írd be a lap címét.",
 	"pm-langcode-missing": "A migráció csak lefordított lapokon használható (pl. „Lap/hu”). A megadott cím nem egy lefordított lap címe.",

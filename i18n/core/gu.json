@@ -58,7 +58,6 @@
 	"translate-pref-editassistlang": "સહાયક ભાષાઓ:",
 	"prefs-translate": "ભાષાંતર વિકલ્પો",
 	"translate-pref-editassistlang-help": "અલ્પવિરામો વડે વિભાજીત ભાષાસંકેતોની યાદી.\n\nજ્યારે તમે ભાષાંતર કરતા હશો ત્યારે આ ભાષાઓમાં ભાષાંતરીત સંદેશાઓ જોવા મળશે.\n\nભાષાઓની ડિફોલ્ટ યાદી તમારી ભાષા પર આધારીત છે.",
-	"translate-pref-editassistlang-bad": "યાદી <nowiki>$1</nowiki> માં અમાન્ય ભાષાસંકેત.",
 	"translate-rcfilters-translations": "ભાષાંતરો",
 	"translate-rcfilters-translations-only-label": "ભાષાંતરો",
 	"translate-rc-translation-filter": "ભાષાંતરોને ચાળો:",

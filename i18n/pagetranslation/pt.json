@@ -252,7 +252,6 @@
 	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
 	"pm-delete-icon-hover-text": "Eliminar unidade",
 	"pm-clear-icon-hover-text": "Limpar unidade",
-	"pm-pagetitle-placeholder": "Introduza o título da página",
 	"pm-pagetitle-invalid": "A migração de páginas só funciona nas páginas das traduções, por exemplo \"Página/pt\". O título fornecido não é válido.",
 	"pm-pagetitle-missing": "Introduza o título da página, por favor.",
 	"pm-langcode-missing": "A migração de páginas só funciona nas páginas das traduções, por exemplo \"Página/pt\". O título fornecido não é uma página de tradução.",

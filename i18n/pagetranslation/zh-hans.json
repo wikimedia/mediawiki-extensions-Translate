@@ -317,7 +317,6 @@
 	"pm-swap-icon-hover-text": "和下面的单位替换",
 	"pm-delete-icon-hover-text": "删除单位",
 	"pm-clear-icon-hover-text": "清除翻译单位",
-	"pm-pagetitle-placeholder": "输入页面标题",
 	"pm-pagetitle-invalid": "页面迁移仅适用于翻译页面，例如“Page/de”。提供的标题不是翻译页面。",
 	"pm-pagetitle-missing": "请输入页面标题。",
 	"pm-langcode-missing": "页面迁移仅适用于翻译页面，例如“Page/de”。提供的标题不是翻译页面。",

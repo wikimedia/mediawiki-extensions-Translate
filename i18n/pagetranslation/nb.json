@@ -274,7 +274,6 @@
 	"pm-swap-icon-hover-text": "Bytt med enheten under",
 	"pm-delete-icon-hover-text": "Slett enhet",
 	"pm-clear-icon-hover-text": "Tøm enhet",
-	"pm-pagetitle-placeholder": "Skriv inn sidetittelen",
 	"pm-pagetitle-invalid": "Sidemigrasjon fungerer kun for oversettelsessider, for eksempel «Page/de». Den angitte tittelen har ikke gyldig format.",
 	"pm-pagetitle-missing": "Skriv inn sidetittelen.",
 	"pm-langcode-missing": "Sidemigrasjon fungerer kun for oversettelsessider, for eksempel «Page/de». Den gitte tittelen er ikke en oversettelsesside.",

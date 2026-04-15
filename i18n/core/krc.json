@@ -94,7 +94,6 @@
 	"translate-pref-editassistlang": "Болушлукъ тилле:",
 	"prefs-translate": "Кёчюрюу опцияла",
 	"translate-pref-editassistlang-help": "Тил кодланы запятой бла айрылгъан тизмеси. \nБу тилледе билдириуню кёчюрюую, кёчюрюу этген заманыгъызда кёргюзюлюр.\nТынгылау бла тиллени тизмеси сизни тилигизге байламлыды.",
-	"translate-pref-editassistlang-bad": "Тизмеде джараусуз тил код:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Кёчюрюу интерфейсни хайырланыб тюзет",
 	"action-translate": "кёчюрюу интерфейсни хайырланыб тюзет",
 	"right-translate-manage": "Билдириу къауумланы оноуларын джюрют",

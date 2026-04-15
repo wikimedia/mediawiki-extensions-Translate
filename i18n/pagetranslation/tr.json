@@ -223,7 +223,6 @@
 	"pm-add-icon-hover-text": "Aşağıya bir birim ekleyin",
 	"pm-swap-icon-hover-text": "Aşağıdaki birim ile değiştir",
 	"pm-delete-icon-hover-text": "Birimi sil",
-	"pm-pagetitle-placeholder": "Sayfa başlığı girin",
 	"pm-pagetitle-invalid": "Sayfa taşıma yalnızca çeviri sayfalarında çalışır, örneğin \"Sayfa/tr\". Sağlanan başlık geçerli bir başlık değil.",
 	"pm-pagetitle-missing": "Lütfen sayfa adı girin.",
 	"pm-langcode-missing": "Sayfa taşıma yalnızca çeviri sayfalarında çalışır, örneğin \"Sayfa/tr\". Sağlanan başlık bir çeviri sayfası değildir.",

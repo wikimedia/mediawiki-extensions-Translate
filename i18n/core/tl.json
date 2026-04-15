@@ -65,7 +65,6 @@
 	"translate-pref-editassistlang": "Katulong na mga wika:",
 	"prefs-translate": "Mga mapagpipilian na pangsalinwika",
 	"translate-pref-editassistlang-help": "Talaan ng mga kodigong pangwika na pinaghihiwalay ng kuwit.\nAng salinwika ng isang mensahe sa mga wikang ito ay ipinapakita kapag nagsasalinwika ka.\nNakasalalay sa wika mo ang likas na nakatakdang talaan ng mga wika.",
-	"translate-pref-editassistlang-bad": "Hindi tanggap na kodigong pangwika sa loob ng talaan:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Baguhing ginagamit ang ugnayang-hangganan (''interface'') na pangpagsasalinwika",
 	"right-translate-manage": "Pamahalaan ang mga pangkat ng mensahe",
 	"action-translate-manage": "pamahalaan ang mga pangkat ng mensahe",

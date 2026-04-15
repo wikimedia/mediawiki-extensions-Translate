@@ -282,7 +282,6 @@
 	"pm-swap-icon-hover-text": "Intercambiar con la unidad siguiente",
 	"pm-delete-icon-hover-text": "Eliminar unidad",
 	"pm-clear-icon-hover-text": "Limpiar unidad",
-	"pm-pagetitle-placeholder": "Escribe el título de la página",
 	"pm-pagetitle-invalid": "La migración de páginas solo funciona en páginas de traducción, por ejemplo «Página/de». El título proporcionado no es un título válido.",
 	"pm-pagetitle-missing": "Escribe el título de la página.",
 	"pm-langcode-missing": "La migración de páginas solo funciona en páginas de traducción, por ejemplo «Página/de». El título proporcionado no es una página de traducción.",

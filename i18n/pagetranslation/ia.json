@@ -265,7 +265,6 @@
 	"pm-swap-icon-hover-text": "Excambiar con le unitate hic infra",
 	"pm-delete-icon-hover-text": "Deler unitate",
 	"pm-clear-icon-hover-text": "Rader unitate",
-	"pm-pagetitle-placeholder": "Entra le titulo del pagina",
 	"pm-pagetitle-invalid": "Le migration de paginas functiona solmente pro paginas de traduction, per exemplo \"Pagina/ia\". Le titulo fornite non es un titulo valide.",
 	"pm-pagetitle-missing": "Per favor entra le titulo del pagina.",
 	"pm-langcode-missing": "Le migration de paginas functiona solmente pro paginas de traduction, per exemplo \"Pagina/ia\". Le titulo fornite non es un pagina de traduction.",

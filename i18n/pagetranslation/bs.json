@@ -171,7 +171,6 @@
 	"pm-add-icon-hover-text": "Dodaj jedinicu ispod",
 	"pm-swap-icon-hover-text": "Zamijeni s jedinicom ispod",
 	"pm-delete-icon-hover-text": "Obriši jedinicu",
-	"pm-pagetitle-placeholder": "Upišite naziv stranice",
 	"pm-pagetitle-invalid": "Upišite ispravan naziv stranice. Treba biti u formatu <page-name>/<language-code>.",
 	"pm-pagetitle-missing": "Upišite naziv stranice.",
 	"pm-langcode-missing": "U nazivu nedostaje jezički kôd. Upišite naziv stranice u formatu <page-name>/<language-code>.",

@@ -65,7 +65,6 @@
 	"translate-pref-editassistlang": "Dagiti katakunaynay a pagsasao:",
 	"prefs-translate": "Dagiti pagpilian ti panagipatarus",
 	"translate-pref-editassistlang-help": "Listaan dagiti kodigo ti pagsasao nga insinsina ti koma.\nTi patarus ti mensahe kadagitoy a pagsasao ket maipakita no agipatpataruska.\nTi kasisigud a listan dagiti pagsasao ket depende iti pagsasaom.",
-	"translate-pref-editassistlang-bad": "Imbalido a kodigo ti pagsasao iti listaan:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Agurnos nga agusar ti interface ti panagipatarus",
 	"right-translate-manage": "Agtaripato kadagiti grupo ti mensahe",
 	"action-translate-manage": "agtaripato kadagiti grupo ti mensahe",

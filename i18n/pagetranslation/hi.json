@@ -247,7 +247,6 @@
 	"pm-swap-icon-hover-text": "नीचे की इकाई से बदलें",
 	"pm-delete-icon-hover-text": "इकाई हटाएँ",
 	"pm-clear-icon-hover-text": "इकाई खाली करें",
-	"pm-pagetitle-placeholder": "पृष्ठ का शीर्षक लिखें",
 	"pm-pagetitle-invalid": "पृष्ठ माइग्रेशन सिर्फ अनुवाद पृष्ठों पर काम करता है, जैसे \"Page/de\"। निर्धारित शीर्षक अमान्य है।",
 	"pm-pagetitle-missing": "कृपया पृष्ठ का नाम लिखें।",
 	"pm-langcode-missing": "पृष्ठ माइग्रेशन सिर्फ अनुवाद पृष्ठों पर काम करता है, जैसे \"Page/de\"। निर्धारित शीर्षक कोई अनुवाद पृष्ठ नहीं है।",

@@ -171,7 +171,6 @@
 	"pm-add-icon-hover-text": "Amiesta una unidá abaxo",
 	"pm-swap-icon-hover-text": "Cambiar cola unidá d'abaxo",
 	"pm-delete-icon-hover-text": "Desaniciar unidá",
-	"pm-pagetitle-placeholder": "Escribe'l títulu de la páxina",
 	"pm-pagetitle-invalid": "Escribe un títulu de páxina válidu. Tien de tener el formatu <nome-de-páxina>/<códigu-de-llingua>.",
 	"pm-pagetitle-missing": "Escribe'l títulu de la páxina.",
 	"pm-langcode-missing": "Paez que falta'l códigu de llingua nel títulu. Escribe'l títulu de la páxina col formatu <page-name>/<language-code>.",

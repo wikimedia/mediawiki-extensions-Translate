@@ -266,7 +266,6 @@
 	"pm-swap-icon-hover-text": "同下面嘅單位交換",
 	"pm-delete-icon-hover-text": "刪除單位",
 	"pm-clear-icon-hover-text": "清除單位",
-	"pm-pagetitle-placeholder": "輸入頁面標題",
 	"pm-pagetitle-invalid": "頁面轉移只會喺翻譯頁面上面運作，例如「頁面/描述」。提供嘅標題唔係有效嘅標題。",
 	"pm-pagetitle-missing": "請輸入頁面標題。",
 	"pm-langcode-missing": "頁面轉移只會喺翻譯頁面上面運作，例如「頁面/描述」。畀出嚟嘅標題唔係翻譯頁面。",

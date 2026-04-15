@@ -123,7 +123,6 @@
 	"translate-pref-editassistlang": "輔助語言：",
 	"prefs-translate": "譯文選項",
 	"translate-pref-editassistlang-help": "以逗號分隔語言代碼。當您翻譯時，會隨著顯示這些語言的訊息。預設值依據您使用的語言而不同。",
-	"translate-pref-editassistlang-bad": "清單中的語言代碼無效：<nowiki>$1</nowiki>。",
 	"right-translate": "使用翻譯介面編輯",
 	"action-translate": "使用翻譯介面編輯",
 	"right-translate-manage": "管理訊息群組",

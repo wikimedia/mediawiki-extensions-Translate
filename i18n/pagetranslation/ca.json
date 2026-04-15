@@ -119,7 +119,6 @@
 	"pm-add-icon-hover-text": "Afegeix una unitat a sota",
 	"pm-swap-icon-hover-text": "Intercanvia amb la unitat a sota",
 	"pm-delete-icon-hover-text": "Elimina la unitat",
-	"pm-pagetitle-placeholder": "Introduïu el títol de la pàgina",
 	"pm-pagetitle-invalid": "Introduïu un títol vàlid per la pàgina. Ha d'estar en format <nom-de-pàgina>/<codi-d'idioma>.",
 	"pm-pagetitle-missing": "Introduïu el títol de la pàgina.",
 	"pm-langcode-missing": "Sembla que falta el codi d’idioma al títol. Introduïu un títol vàlid per la pàgina en format <nom-de-pàgina>/<codi-d'idioma>.",

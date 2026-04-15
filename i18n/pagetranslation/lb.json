@@ -195,7 +195,6 @@
 	"pm-swap-icon-hover-text": "Mat der Eenheet drënner wiesselen",
 	"pm-delete-icon-hover-text": "Eenheet läschen",
 	"pm-clear-icon-hover-text": "Eenheet eidel maachen",
-	"pm-pagetitle-placeholder": "Gitt de Säitentitel an",
 	"pm-pagetitle-invalid": "Gitt wgl. e valabelen Titel fir d'Säit an. Et muss am <page-name>/<language-code> Format sinn.",
 	"pm-pagetitle-missing": "Gitt wgl. den Titel vun der Säit an.",
 	"pm-langcode-missing": "Gitt wgl. de Sproochcode an. Gitt wgl. de Säitentitel am <page-name>/<language-code> Format an.",

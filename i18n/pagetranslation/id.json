@@ -222,7 +222,6 @@
 	"pm-add-icon-hover-text": "Tambahkan satuan di bawah",
 	"pm-swap-icon-hover-text": "Tukar dengan satuan di bawah",
 	"pm-delete-icon-hover-text": "Hapus satuan",
-	"pm-pagetitle-placeholder": "Masukkan judul halaman",
 	"pm-pagetitle-invalid": "Migrasi halaman hanya berfungsi pada halaman terjemahan, misalnya \"Page/de\". Judul yang disediakan bukan judul yang sah.",
 	"pm-pagetitle-missing": "Tolong masukkan judul halamannya.",
 	"pm-langcode-missing": "Migrasi halaman hanya berfungsi pada halaman terjemahan, misalnya \"Page/de\". Judul yang diberikan bukanlah halaman terjemahan.",

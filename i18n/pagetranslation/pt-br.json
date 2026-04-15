@@ -254,7 +254,6 @@
 	"pm-add-icon-hover-text": "Adicione uma unidade abaixo",
 	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
 	"pm-delete-icon-hover-text": "Excluir unidade",
-	"pm-pagetitle-placeholder": "Digite o título da página",
 	"pm-pagetitle-invalid": "A migração de página funciona somente em páginas de tradução; por exemplo, \"Page/de\". O título fornecido não é um título válido.",
 	"pm-pagetitle-missing": "Por favor, insira o título da página.",
 	"pm-langcode-missing": "A migração de página funciona somente em páginas de tradução; por exemplo, \"Page/de\". O título fornecido não é um título válido.",

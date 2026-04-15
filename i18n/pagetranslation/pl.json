@@ -277,7 +277,6 @@
 	"pm-swap-icon-hover-text": "Zamień z jednostką poniżej",
 	"pm-delete-icon-hover-text": "Usuń jednostkę",
 	"pm-clear-icon-hover-text": "Wyczyść jednostkę",
-	"pm-pagetitle-placeholder": "Podaj tytuł strony",
 	"pm-pagetitle-invalid": "Migracja stron działa tylko dla przetłumaczonych stron, na przykład \"Strona/de\". Podany tytuł nie jest prawidłowym tytułem.",
 	"pm-pagetitle-missing": "Podaj tytuł strony.",
 	"pm-langcode-missing": "Migracja stron działa tylko dla przetłumaczonych stron, na przykład \"Strona/de\". Podany tytuł nie jest stroną tłumaczenia.",

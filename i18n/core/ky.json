@@ -53,7 +53,6 @@
 	"translate-checks-replacement": "$1 ордуна $2 колдонуңуз.",
 	"translate-pref-editassistlang": "Көмөкчү тилдер:",
 	"prefs-translate": "Которуу параметрлери",
-	"translate-pref-editassistlang-bad": "Тизмедеги тил коду жараксыз: <nowiki>$1</nowiki>.",
 	"right-translate": "Которуу интерфейсин колдонуп түзөтүү",
 	"action-translate": "которуу интерфейсин колдонуп түзөтө албайсыз",
 	"right-translate-messagereview": "Котормолорду текшерүү",

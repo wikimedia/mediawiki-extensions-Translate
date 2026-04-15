@@ -228,7 +228,6 @@
 	"pm-add-icon-hover-text": "Thêm một đơn vị bên dưới",
 	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
 	"pm-delete-icon-hover-text": "Xóa đơn vị",
-	"pm-pagetitle-placeholder": "Nhập tên trang",
 	"pm-pagetitle-invalid": "Xin vui lòng nhập một tên trang hợp lệ. Nên sử dụng định dạng <tên-trang>/<mã-ngôn-ngữ>.",
 	"pm-pagetitle-missing": "Vui lòng nhập tên trang.",
 	"pm-langcode-missing": "Tính năng di chuyển trang chỉ hoạt động trên các trang bản dịch, ví dụ: \"Trang/de\". Tiêu đề bạn đã cung cấp không phải là trang bản dịch.",

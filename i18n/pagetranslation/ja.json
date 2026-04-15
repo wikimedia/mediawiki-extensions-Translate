@@ -237,7 +237,6 @@
 	"pm-add-icon-hover-text": "単位を下に追加",
 	"pm-swap-icon-hover-text": "下の単位と入れ替える",
 	"pm-delete-icon-hover-text": "単位を削除",
-	"pm-pagetitle-placeholder": "ページ名を入力",
 	"pm-pagetitle-invalid": "ページの移入は翻訳ページ、例えば\"Page/de\"でのみ有効です。提示されたページ名は翻訳ページではありません。",
 	"pm-pagetitle-missing": "ページ名を入力してください。",
 	"pm-langcode-missing": "ページの移入は翻訳ページ、例えば\"Page/de\"でのみ有効です。提示されたページ名は翻訳ページではありません。",
