@@ -86,7 +86,7 @@
 	"translate-checks-empty": "Iwwersetzungen ouni Inhalt oder mat nëmmen Espacë sinn net erlaabt.",
 	"translate-pref-editassistlang": "Ënnerstëtzungssproochen:",
 	"prefs-translate": "Iwwersetzungsoptiounen",
-	"translate-pref-editassistlang-help": "Mat Kommae getrennte Lëscht vu Sproochcoden.\nD'Iwwersetzung vun engem Message an dëse Sprooche gëtt gewisen, wann Dir iwwersetzt.\nD'Standardlëscht vu Sproochen hänkt vun Ärer Sprooch of.",
+	"translate-pref-editassistlang-help": "D'Iwwersetzung vun engem Message an dës Sprooche gëtt ugewisen, wärend Dir iwwersetzt.\nD'Standardlëscht vu Sproochen hänkt vun Ärer Sprooch of.",
 	"right-translate": "Mam Iwwersetzungs-Interface änneren",
 	"action-translate": "mam Iwwersetzungs-Interface z'änneren",
 	"right-translate-manage": "Gruppe vu Messagë geréieren",

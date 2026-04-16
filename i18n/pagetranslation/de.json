@@ -286,7 +286,7 @@
 	"pm-langcode-missing": "Die Seitenmigration funktioniert nur bei Übersetzungsseiten, zum Beispiel „Page/de“. Der angegebene Titel ist keine Übersetzungsseite.",
 	"pm-summary-import": "Übersetzung importiert mithilfe der [[Special:PageMigration|Seitenmigration]]",
 	"pm-on-import-message-text": "Die alten Übersetzungen wurden importiert. Verwende die Hinzufügungs-, Tausch- und Löschoptionen, um die Übersetzungseinheiten anzupassen, und klicke auf die Schaltfläche „{{int:pm-savepages-button-label}}“, um sie zu speichern, oder zum Verwerfen auf die Schaltfläche „{{int:pm-cancel-button-label}}“.",
-	"pm-on-save-message-text": "Die Übersetzungseinheiten wurden gespeichert. Du kannst jetzt zur Migration den Titel einer neuen Übersetzungsseite eingeben oder oben  Änderungen an den Einheiten durchführen und eine neue Version speichern.",
+	"pm-on-save-message-text": "Die Übersetzungseinheiten wurden gespeichert. Du kannst jetzt zur Migration den Titel einer neuen Übersetzungsseite eingeben oder oben Änderungen an den Einheiten durchführen und eine neue Version speichern.",
 	"pm-pagetitle-not-translatable": "$1 ist nicht Teil einer übersetzbaren Seite.",
 	"pm-translation-unit-fetch-failed": "Beim Abrufen der Übersetzungseinheiten für diese Seite ist ein Fehler aufgetreten.",
 	"tpt-translate-title": "Übersetzung des Seitentitels erlauben",

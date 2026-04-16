@@ -447,6 +447,7 @@
 	"translate-hidetranslations": "번역 문서 숨기기",
 	"echo-category-title-translate-message-group-subscription": "번역 가능한 메시지 그룹 구독",
 	"echo-pref-tooltip-translate-message-group-subscription": "구독 중인 번역 가능한 메시지 그룹에 변경이 있으면 내게 알립니다",
+	"notification-header-message-group-subscription": "$1의 번역 업데이트",
 	"notification-link-mgs-group-translate": "$1 번역",
 	"tpt-cleanchanges-language": "언어:",
 	"tpt-cleanchanges-language-na": "모두",
