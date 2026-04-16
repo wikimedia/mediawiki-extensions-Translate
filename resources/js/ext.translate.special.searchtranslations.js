@@ -128,16 +128,44 @@
 				.text( mw.msg( 'translate-search-more-languages-info', resultCount - quickLanguageList.length ) );
 			$languages.append( $ulsTrigger, $count );
 
-			$ulsTrigger.uls( {
-				onSelect: function ( language ) {
-					window.location = languages[ language ].url;
-				},
-				compact: true,
-				languages: ulslanguages,
-				ulsPurpose: 'translate-special-searchtranslations',
-				top: $languages.offset().top,
-				showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions )
-			} );
+			if ( mw.config.get( 'wgULSLanguageSelectorV2Enabled' ) ) {
+				mw.loader.using( [ 'ext.uls.rewrite' ] ).then( function () {
+					const { createUniversalLanguageSelector } = require( 'ext.uls.rewrite' );
+					var mountPoint = document.createElement( 'div' );
+					document.body.appendChild( mountPoint );
+
+					var app = createUniversalLanguageSelector( {
+						triggerElement: $ulsTrigger[ 0 ],
+						selectableLanguages: ulslanguages,
+						displayLanguageCode: mw.config.get( 'wgUserLanguage' ),
+						mode: 'interface',
+						onSelect: function ( language ) {
+							window.location = languages[ language.code ].url;
+						},
+						floatingOptions: {
+							placement: 'top-start'
+						}
+					} );
+
+					var mountedVm = app.mount( mountPoint );
+					$ulsTrigger.on( 'click', function ( event ) {
+						event.preventDefault();
+						event.stopPropagation();
+						mountedVm.toggle();
+					} );
+				} );
+			} else {
+				$ulsTrigger.uls( {
+					onSelect: function ( language ) {
+						window.location = languages[ language ].url;
+					},
+					compact: true,
+					languages: ulslanguages,
+					ulsPurpose: 'translate-special-searchtranslations',
+					top: $languages.offset().top,
+					showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions )
+				} );
+			}
 		}
 	}
 
