@@ -17,6 +17,7 @@
 			"Valtlai",
 			"Valtlait",
 			"VezonThunder",
+			"Wikipeedikko",
 			"ZeiP"
 		]
 	},
@@ -241,6 +242,7 @@
 	"pm-swap-icon-hover-text": "Vaihda paikkaa alla olevan yksikön kanssa",
 	"pm-delete-icon-hover-text": "Poista yksikkö",
 	"pm-clear-icon-hover-text": "Tyhjennä yksikkö",
+	"pm-pagetitle-label": "Valitse käännössivu",
 	"pm-pagetitle-invalid": "Sivujen siirto toimii vain käännössivuilla, esimerkiksi \"Page/de\". Annettu otsikko ei ole kelvollinen.",
 	"pm-pagetitle-missing": "Anna sivun nimi.",
 	"pm-langcode-missing": "Sivujen siirto toimii vain käännössivuilla, esimerkiksi \"Page/de\". Annettu otsikko ei ole käännössivu.",
