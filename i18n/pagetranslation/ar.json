@@ -264,6 +264,7 @@
 	"pm-swap-icon-hover-text": "بدل مع الوحدة بالأسفل",
 	"pm-delete-icon-hover-text": "حذف الوحدة",
 	"pm-clear-icon-hover-text": "وحدة واضحة",
+	"pm-pagetitle-label": "اختر صفحة ترجمة",
 	"pm-pagetitle-invalid": "ترحيل الصفحة يعمل فقط على صفحات الترجمة ، على سبيل المثال \"الصفحة / دي\". العنوان المقدم ليس عنوانًا صالحًا.",
 	"pm-pagetitle-missing": "من فضلك أدخل عنوان الصفحة.",
 	"pm-langcode-missing": "ترحيل الصفحة يعمل فقط على صفحات الترجمة ، على سبيل المثال \"الصفحة / دي\". العنوان المقدم ليس صفحة ترجمة.",
@@ -329,5 +330,6 @@
 	"translate-category-summary": "إنشاء ترجمة تلقائية للفئة المستخدمة في [[$1]]",
 	"right-translate-empty-category": "إنشاء وحدات ترجمة للفئات الفارغة",
 	"action-translate-empty-category": "إنشاء وحدات ترجمة للفئات الفارغة",
-	"tpt-create-empty-category": "لا يمكن إنشاء وحدة ترجمة للفئة [[:$1]] وهي فارغة."
+	"tpt-create-empty-category": "لا يمكن إنشاء وحدة ترجمة للفئة [[:$1]] وهي فارغة.",
+	"ext-uls-empty-search-entrypoint-description": "يمكنك ترجمة هذه الصفحة. إنها طريقة سهلة لإنشاء محتوى بلغتك."
 }
