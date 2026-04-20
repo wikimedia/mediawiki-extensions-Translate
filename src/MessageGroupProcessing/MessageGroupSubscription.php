@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use EmptyIterator;
 use Iterator;
-use JobQueueGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;

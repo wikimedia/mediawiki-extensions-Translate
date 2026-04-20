@@ -4,16 +4,16 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use Exception;
-use JobQueueGroup;
-use MapCacheLRU;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Title\Title;
 use MessageGroup;
 use Psr\Log\LoggerInterface;
 use Wikimedia\ObjectCache\BagOStuff;
+use Wikimedia\ObjectCache\MapCacheLRU;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IConnectionProvider;
 

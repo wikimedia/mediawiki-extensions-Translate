@@ -4,10 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Closure;
-use DumpStringOutput;
+use MediaWiki\Export\DumpStringOutput;
+use MediaWiki\Export\WikiExporter;
 use MediaWiki\Export\WikiExporterFactory;
 use MediaWiki\Title\Title;
-use WikiExporter;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

@@ -11,8 +11,8 @@ use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
 use RuntimeException;
-use StringUtils;
 use UtfNormal\Validator;
+use Wikimedia\StringUtils\StringUtils;
 
 /**
  * A very basic FileFormatSupport module that implements some basic functionality and

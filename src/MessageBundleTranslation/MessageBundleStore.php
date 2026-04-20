@@ -13,7 +13,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\JobQueue\JobQueueGroup;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Message\Message;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Specials\SpecialPageLanguage;

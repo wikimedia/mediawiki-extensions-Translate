@@ -3,17 +3,17 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use Article;
-use JobQueueGroup;
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Html\Html;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Article;
 use MediaWiki\Page\Hook\ArticleViewHeaderHook;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Revision\SlotRecord;

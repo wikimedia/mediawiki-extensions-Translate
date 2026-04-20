@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
-use Job;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Page\PageReference;
 

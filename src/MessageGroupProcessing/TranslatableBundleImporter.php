@@ -5,14 +5,16 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Closure;
 use Exception;
-use ImportStreamSource;
-use ManualLogEntry;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\Hook\AfterImportPageHook;
+use MediaWiki\Import\Hook\AfterImportPageHook;
+use MediaWiki\Import\ImportStreamSource;
+use MediaWiki\Import\WikiImporterFactory;
 use MediaWiki\Language\FormatterFactory;
+use MediaWiki\Language\MessageLocalizer;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
@@ -20,8 +22,6 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserIdentity;
-use MessageLocalizer;
-use WikiImporterFactory;
 
 /**
  * Service to import a translatable bundle from a file. Uses WikiImporter from MediaWiki core.

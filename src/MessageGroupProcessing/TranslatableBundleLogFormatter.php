@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use LogFormatter;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Logging\LogFormatter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;

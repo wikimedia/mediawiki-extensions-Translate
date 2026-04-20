@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use InvalidArgumentException;
-use ManualLogEntry;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
 use MessageGroup;

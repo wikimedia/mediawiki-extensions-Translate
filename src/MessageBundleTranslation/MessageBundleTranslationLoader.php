@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageBundleTranslation;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
-use MediaWiki\Languages\LanguageFallback;
+use MediaWiki\Language\LanguageFallback;
 use RuntimeException;
 
 class MessageBundleTranslationLoader {

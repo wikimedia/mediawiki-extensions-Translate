@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use LocalizedException;
+use MediaWiki\Exception\LocalizedException;
 use Wikimedia\Message\MessageValue;
 
 /**

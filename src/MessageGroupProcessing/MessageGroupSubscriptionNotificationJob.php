@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use GenericParameterJob;
-use Job;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\JobQueue\GenericParameterJob;
+use MediaWiki\JobQueue\Job;
 
 /**
  * Send Echo notifications to subscribed users

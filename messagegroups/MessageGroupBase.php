@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\CombinedInserta
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertableFactory;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 
