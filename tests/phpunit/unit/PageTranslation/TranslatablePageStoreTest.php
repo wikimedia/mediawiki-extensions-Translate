@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageStatus;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Title\Title;
 use MediaWikiUnitTestCase;
 use Wikimedia\Rdbms\IConnectionProvider;

@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use JobQueueGroup;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -11,8 +10,9 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\FormatterFactory;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;

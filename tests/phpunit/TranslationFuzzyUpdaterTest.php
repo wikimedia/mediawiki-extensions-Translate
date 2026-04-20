@@ -11,6 +11,7 @@ use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Page\PageReference;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\EditResult;
