@@ -10,7 +10,7 @@
  */
 
 use CLDRPluralRuleParser\Evaluator;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 

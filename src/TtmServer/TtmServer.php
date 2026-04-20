@@ -7,7 +7,7 @@ namespace MediaWiki\Extension\Translate\TtmServer;
 
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\MediaWikiServices;
-use WikiPage;
+use MediaWiki\Page\WikiPage;
 
 /**
  * TtmServer - The Translate extension translation memory interface

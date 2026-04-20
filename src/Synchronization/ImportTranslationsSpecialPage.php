@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use FileBasedMessageGroup;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextParseException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -47,7 +48,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	/**
 	 * Special page entry point.
 	 * @param null|string $parameters
-	 * @throws \PermissionsError
+	 * @throws PermissionsError
 	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();

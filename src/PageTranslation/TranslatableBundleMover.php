@@ -3,20 +3,20 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use JobQueueGroup;
 use LogicException;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\SubpageListBuilder;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Message\Message;
+use MediaWiki\ObjectCache\ObjectCacheFactory;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use ObjectCacheFactory;
 use SplObjectStorage;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Rdbms\IConnectionProvider;

@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Title\Title;
-use MessageLocalizer;
 
 /**
  * Display Group synchronization related information

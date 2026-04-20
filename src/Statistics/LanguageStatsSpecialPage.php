@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use AggregateMessageGroup;
-use JobQueueGroup;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Deferred\DeferredUpdates;
@@ -14,12 +13,13 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\JobQueue\JobQueueGroup;
+use MediaWiki\Language\LanguageNameUtils;
+use MediaWiki\ObjectCache\ObjectCacheFactory;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Widget\LanguageSelectWidget;
 use MessageGroup;
-use ObjectCacheFactory;
 use Wikimedia\ObjectCache\BagOStuff;
 use WikiPageMessageGroup;
 

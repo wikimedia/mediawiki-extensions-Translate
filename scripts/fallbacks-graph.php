@@ -8,7 +8,7 @@
  * @file
  */
 
-use MediaWiki\Languages\LanguageFallback;
+use MediaWiki\Language\LanguageFallback;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Xml\Xml;

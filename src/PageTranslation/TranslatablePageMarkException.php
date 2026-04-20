@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use LocalizedException;
+use MediaWiki\Exception\LocalizedException;
 
 /**
  * Exception thrown when TranslatablePageMarker is unable to unmark a page for translation

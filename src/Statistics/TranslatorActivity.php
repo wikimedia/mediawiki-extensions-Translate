@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Statistics;
 
 use InvalidArgumentException;
-use JobQueueGroup;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\JobQueue\JobQueueGroup;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\PoolCounter\PoolCounterWorkViaCallback;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Timestamp\ConvertibleTimestamp;

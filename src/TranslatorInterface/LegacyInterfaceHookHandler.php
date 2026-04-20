@@ -3,18 +3,18 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use DifferenceEngine;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Diff\Hook\ArticleContentOnDiffHook;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
-use MediaWiki\Hook\SidebarBeforeOutputHook;
 use MediaWiki\Hook\TitleGetEditNoticesHook;
-use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Language\LanguageFactory;
 use MediaWiki\Output\OutputPage;
-use MediaWiki\Skin\SkinComponentUtils;
+use MediaWiki\Skin\Components\SkinComponentUtils;
+use MediaWiki\Skin\Hook\SidebarBeforeOutputHook;
 
 /**
  * Integration point to MediaWiki for the legacy translation aids.

@@ -4,12 +4,12 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Hook\LonelyPagesQueryHook;
-use MediaWiki\Hook\SpecialPrefixIndexGetFormFiltersHook;
-use MediaWiki\Hook\SpecialPrefixIndexQueryHook;
-use MediaWiki\Hook\SpecialWhatLinksHereQueryHook;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeFormDisplayHook;
+use MediaWiki\Specials\Hook\LonelyPagesQueryHook;
+use MediaWiki\Specials\Hook\SpecialPrefixIndexGetFormFiltersHook;
+use MediaWiki\Specials\Hook\SpecialPrefixIndexQueryHook;
+use MediaWiki\Specials\Hook\SpecialWhatLinksHereQueryHook;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements

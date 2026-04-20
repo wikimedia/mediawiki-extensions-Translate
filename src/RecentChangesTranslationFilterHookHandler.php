@@ -3,19 +3,19 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate;
 
-use ChangesListStringOptionsFilterGroup;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\RecentChanges\ChangesListStringOptionsFilterGroup;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageStructuredFiltersHook;
+use MediaWiki\Specials\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\Specials\SpecialRecentChanges;
 use MediaWiki\Storage\NameTableAccessException;
 use MediaWiki\Xml\XmlSelect;
-use RecentChange;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IReadableDatabase;
 

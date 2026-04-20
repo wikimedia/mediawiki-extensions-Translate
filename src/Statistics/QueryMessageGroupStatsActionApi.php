@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use IJobSpecification;
-use JobQueueGroup;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\JobQueue\IJobSpecification;
+use MediaWiki\JobQueue\JobQueueGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

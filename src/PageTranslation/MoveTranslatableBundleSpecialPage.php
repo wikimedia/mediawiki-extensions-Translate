@@ -5,6 +5,8 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use InvalidArgumentException;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Exception\ThrottledError;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleFactory;
@@ -16,9 +18,7 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
-use PermissionsError;
 use SplObjectStorage;
-use ThrottledError;
 use Wikimedia\ObjectFactory\ObjectFactory;
 
 /**

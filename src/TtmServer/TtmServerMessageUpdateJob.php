@@ -4,11 +4,11 @@ declare ( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TtmServer;
 
 use Exception;
-use Job;
-use JobQueueGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\JobQueue\Job;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;

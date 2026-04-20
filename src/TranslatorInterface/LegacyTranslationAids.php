@@ -10,7 +10,7 @@ use MediaWiki\Extension\Translate\TranslatorInterface\Aid\MessageDefinitionAid;
 use MediaWiki\Extension\Translate\TranslatorInterface\Aid\TranslationAidDataProvider;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
-use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Language\LanguageFactory;
 use MediaWiki\Title\Title;
 use MessageGroup;
 

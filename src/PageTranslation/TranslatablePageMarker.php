@@ -4,9 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use EmptyIterator;
-use JobQueueGroup;
 use LogicException;
-use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\HookRunner;
@@ -15,13 +13,17 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\FormatterFactory;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Message\Message;
 use MediaWiki\Page\PageRecord;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\Storage\PageUpdater;
@@ -31,8 +33,6 @@ use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MessageLocalizer;
-use RecentChange;
 use Wikimedia\Rdbms\IConnectionProvider;
 use WikiPageMessageGroup;
 

@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use GenericParameterJob;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Jobs\GenericTranslateJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\JobQueue\GenericParameterJob;
 use MediaWiki\MediaWikiServices;
 
 /**

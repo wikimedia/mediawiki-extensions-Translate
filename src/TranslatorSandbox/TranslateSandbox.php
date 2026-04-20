@@ -4,8 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorSandbox;
 
 use InvalidArgumentException;
-use JobQueueGroup;
-use MailAddress;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
@@ -14,6 +12,8 @@ use MediaWiki\Deferred\SiteStatsUpdate;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\JobQueue\JobQueueGroup;
+use MediaWiki\Mail\MailAddress;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use EditWatchlistCheckboxSeriesField;
+use MediaWiki\Exception\UserNotLoggedIn;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
 use MediaWiki\Html\Html;
@@ -11,9 +11,9 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\HTMLForm\OOUIHTMLForm;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
+use MediaWiki\Specials\FormFields\EditWatchlistCheckboxSeriesField;
 use MediaWiki\Status\Status;
 use MessageGroup;
-use UserNotLoggedIn;
 
 /**
  * Allows users to manage message group subscriptions.

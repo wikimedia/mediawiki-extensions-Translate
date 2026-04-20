@@ -8,9 +8,9 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Synchronization\UpdateMessageJob;
+use MediaWiki\JobQueue\RunnableJob;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use RunnableJob;
 
 /**
  * Job for updating translation units and translation pages when

@@ -7,11 +7,11 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CLDR\LanguageNames;
 use MediaWiki\Extension\Translate\ConfigNames;
-use MediaWiki\Hook\FetchChangesListHook;
-use MediaWiki\Hook\SpecialRecentChangesPanelHook;
 use MediaWiki\Html\Html;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
+use MediaWiki\RecentChanges\Hook\FetchChangesListHook;
 use MediaWiki\SpecialPage\Hook\ChangesListSpecialPageQueryHook;
+use MediaWiki\Specials\Hook\SpecialRecentChangesPanelHook;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

@@ -3,17 +3,17 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use HtmlArmor;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\TitleValue;
 use MessageGroup;
-use MessageLocalizer;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 /**
  * Implements generation of HTML stats table.
