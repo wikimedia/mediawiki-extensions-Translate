@@ -431,7 +431,7 @@
 			}
 		};
 
-		if ( mw.uls.shouldLoadUlsRewrite() ) {
+		if ( mw.config.get( 'wgULSLanguageSelectorV2Enabled' ) ) {
 			mw.loader.using( [ 'ext.uls.rewrite' ] ).then( function () {
 				const { createUniversalLanguageSelector } = require( 'ext.uls.rewrite' );
 
