@@ -413,6 +413,8 @@
 		const languages = mw.config.get( 'wgTranslateLanguages' );
 		mw.translate.addExtraLanguagesToLanguageData( languages, [ 'SP' ] );
 
+		let mountedVm = null;
+
 		const onLanguageChange = function ( languageCode ) {
 			mw.translate.changeLanguage( languageCode );
 			const languageDetails = mw.translate.getLanguageDetailsForHtml( languageCode );
@@ -423,6 +425,10 @@
 					lang: languageDetails.code,
 					dir: languageDetails.direction
 				} );
+
+			if ( mountedVm ) {
+				mountedVm.updateSelected( [ languageCode ] );
+			}
 		};
 
 		if ( mw.uls.shouldLoadUlsRewrite() ) {
@@ -444,7 +450,7 @@
 					mode: 'interface'
 				} );
 
-				const mountedVm = app.mount( mountPoint );
+				mountedVm = app.mount( mountPoint );
 
 				$element.on( 'click', function ( event ) {
 					event.preventDefault();
