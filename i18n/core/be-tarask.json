@@ -179,7 +179,7 @@
 	"translate-mgs-totals": "Усе $1 {{PLURAL:$1|мова|мовы|моваў}} разам",
 	"translate-mgs-invalid-group": "Пазначаная група «$1» не існуе.",
 	"translate-mgs-message-prefix-limit": "Прэфікс радку месьціць больш за $1 {{PLURAL:$1|радок|радкоў}}. Запыт буйной колькасьці радкоў выконваецца павольна. Калі ласка, удакладніце пошук.",
-	"translate-mgs-nothing": "На гэты запыт статыстыка адсутнічае.",
+	"translate-mgs-nothing": "На гэты запыт няма статыстыкі.",
 	"translate-mgs-invalid-entity": "Выбраная група радкоў ці прэфікс ня знойдзены",
 	"translate-tes-optgroup-message": "Радкі",
 	"translate-tes-message-prefix": "Прэфікс - $1",
