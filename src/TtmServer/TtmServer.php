@@ -55,6 +55,6 @@ abstract class TtmServer {
 		}
 
 		$job = TtmServerMessageUpdateJob::newJob( $handle, 'rebuild' );
-		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
+		MediaWikiServices::getInstance()->getJobQueueGroup()->lazyPush( $job );
 	}
 }
