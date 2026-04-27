@@ -258,6 +258,10 @@ class MessageIndex {
 		$this->statusCache->touchCheckKey( $this->getStatusCacheKey() );
 
 		$this->clearMessageGroupStats( $diff );
+		$this->logger->info(
+			'[MessageIndex] Finished everything in {duration}',
+			[ 'duration' => microtime( true ) - $tsStart ]
+		);
 
 		$recursion--;
 
