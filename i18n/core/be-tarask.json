@@ -386,7 +386,7 @@
 	"translate-messagebundle-error-invalid-prioritylanguage": "{{PLURAL:$2| няслушны код мовы| няслушныя коды мовы}} ў metadata: $1",
 	"translate-messagebundle-error-invalid-prioritylanguage-format": "Няслушны фармат прыярытэтнай мовы ў metadata. Прыярытэтная мова мае быць масівам тэкставых радкоў.",
 	"translate-messagebundle-error-invalid-description": "Няслушнае апісаньне набору радкоў у metadata. Апісаньне мае быць тэкставым радком.",
-	"translate-messagebundle-error-invalid-label": "Няслушная шыльда набору радкоў у metadata. Шыльда мае быць тэкставым радком.",
+	"translate-messagebundle-error-invalid-label": "Няслушная метка набору радкоў у metadata. Метка мае быць тэкставым радком.",
 	"translate-messagebundle-group-description": "Радкі набору радкоў вызначаны на старонцы [[$2|$1]].",
 	"translate-messagebundle-change-sourcelanguage": "Налады крынічнай мовы для набору радкоў як у metadata.",
 	"translate-messagebundle-sourcelanguage-changed": "Крынічную мову набору радкоў нельга зьмяніць пасьля стварэньня.",
