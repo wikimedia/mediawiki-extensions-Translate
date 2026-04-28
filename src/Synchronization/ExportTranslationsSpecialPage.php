@@ -70,7 +70,6 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.exporttranslations' );
 		$out->addModuleStyles( [
 			'ext.translate.special.exporttranslations.styles',
-			'ext.translate.special.exporttranslations',
 			'mediawiki.codex.messagebox.styles',
 			'codex-styles'
 		] );
