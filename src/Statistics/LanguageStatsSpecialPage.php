@@ -108,7 +108,6 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$out->addModules( 'ext.translate.special.languagestats' );
 		$out->addModuleStyles( [
 			'ext.translate.special.languagestats.styles',
-			'ext.translate.special.languagestats',
 			'ext.translate.statstable',
 			'mediawiki.codex.messagebox.styles',
 			'codex-styles'
