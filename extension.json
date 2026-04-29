@@ -1191,7 +1191,7 @@
 			"class": "MediaWiki\\ResourceLoader\\CodexModule",
 			"dependencies": [
 				"vue",
-				"mediawiki.languageselector",
+				"mediawiki.languageselector.lookup",
 				"ext.translate.languages"
 			],
 			"messages": [

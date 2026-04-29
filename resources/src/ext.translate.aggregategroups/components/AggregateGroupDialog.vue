@@ -57,7 +57,7 @@ const {
 	CdxTextInput,
 	CdxMessage
 } = require( '../../../../codex.js' );
-const { LookupLanguageSelector } = require( 'mediawiki.languageselector' );
+const { LookupLanguageSelector } = require( 'mediawiki.languageselector.lookup' );
 const {
 	supportedLanguages,
 	undeterminedLanguageCode
