@@ -227,6 +227,7 @@
 	"tux-tab-untranslated": "Tərcümə edilməyən",
 	"tux-tab-outdated": "Köhnələn",
 	"tux-tab-translated": "Tərcümə edilən",
+	"tux-tab-unproofread": "Yoxlanılmamış",
 	"tux-edit": "Redaktə et",
 	"tux-status-optional": "Məcburi deyil",
 	"tux-status-fuzzy": "Köhnələn",
@@ -291,6 +292,8 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tərcümə edilib, $2% yoxlanılıb, $3% köhnəlib",
 	"translate-search-more-groups-info": "$1 daha çox {{PLURAL:$1|qrup}}",
 	"translate-syntax-error": "Tərcümə sintaksis xətaları ehtiva edir",
+	"echo-category-title-translate-message-group-subscription": "Tərcümə edilə bilən mesaj qrupları abunəlikləri",
+	"echo-pref-tooltip-translate-message-group-subscription": "Abunə olduğum tərcümə edilə bilən mesaj qruplarındakı dəyişikliklər barədə bildiriş göndərilsin",
 	"notification-link-mgs-group-translate": "Tərcümə et: $1",
 	"tpt-cleanchanges-language": "Dil:",
 	"tpt-cleanchanges-language-na": "Hamısı"
