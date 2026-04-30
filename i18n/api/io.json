@@ -8,6 +8,7 @@
 	"apihelp-translationstash-param-subaction": "Agado.",
 	"apihelp-translationstash-param-translation": "Tradukuro facita dal uzero.",
 	"apihelp-translationstash-example-1": "Adjuntez tradukuro a rezervajo por [[MediaWiki:Jan/fi]]",
+	"apihelp-translationcheck-summary": "Konfirmar tradukuri.",
 	"apierror-translate-nomessagefortitle": "Titulo ne korespondas a tradukebla mesajo",
 	"apiwarn-translate-alreadyreviewedbyyou": "Vu ja indikis kom revizita"
 }
