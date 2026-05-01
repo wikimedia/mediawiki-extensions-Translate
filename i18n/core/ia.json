@@ -91,7 +91,7 @@
 	"translate-checks-empty": "Un traduction sin contento o con solo spatios non es permittite.",
 	"translate-pref-editassistlang": "Linguas assistente:",
 	"prefs-translate": "Optiones de traduction",
-	"translate-pref-editassistlang-help": "Lista de codices de linguas separate per commas.\nLe traductiones de un message in iste linguas es monstrate quando tu traduce.\nLe lista predefinite de linguas depende de tu lingua.",
+	"translate-pref-editassistlang-help": "Le traductiones de un message in iste linguas es monstrate quando tu traduce.\nLe lista predefinite de linguas depende de tu lingua.",
 	"right-translate": "Modificar con le interfacie de traduction",
 	"action-translate": "modificar con le interfacie de traduction",
 	"right-translate-manage": "Gerer gruppos de messages",
