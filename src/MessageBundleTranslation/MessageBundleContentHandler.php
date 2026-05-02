@@ -59,7 +59,7 @@ class MessageBundleContentHandler extends TextContentHandler {
 		}
 
 		if ( !$content->isValid() ) {
-			$parserOutput->setRawText( null );
+			$parserOutput->setContentHolderText( null );
 			return;
 		}
 
@@ -70,10 +70,10 @@ class MessageBundleContentHandler extends TextContentHandler {
 
 		if ( $cpoParams->getGenerateHtml() ) {
 			/** @param $content JsonContent::class */
-			$parserOutput->setRawText( $content->rootValueTable( $content->getData()->getValue() ) );
+			$parserOutput->setContentHolderText( $content->rootValueTable( $content->getData()->getValue() ) );
 			$parserOutput->addModuleStyles( [ 'mediawiki.content.json' ] );
 		} else {
-			$parserOutput->setRawText( null );
+			$parserOutput->setContentHolderText( null );
 		}
 	}
 }
