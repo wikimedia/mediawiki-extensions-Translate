@@ -15,6 +15,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Language\LanguageCode;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MessageGroup;
@@ -80,18 +81,18 @@ class Utilities {
 	}
 
 	/**
-	 * Fetches contents for pagenames in given namespace without side effects.
+	 * Fetches the latest RevisionRecords for page names in a given namespace.
 	 *
-	 * @param string|string[] $titles Database page names.
+	 * Only pages whose main slot contains TextContent are included in the result.
+	 *
+	 * @param string[] $titles Database page names.
 	 * @param int $namespace The number of the namespace.
-	 * @return array ( string => array ( string, string ) ) Tuples of page
-	 * text and last author indexed by page name.
+	 * @return array<string, RevisionRecord> RevisionRecords indexed by page title.
 	 */
-	public static function getContents( $titles, int $namespace ): array {
+	private static function fetchLatestRevisionsByTitles( array $titles, int $namespace ): array {
 		$mwServices = MediaWikiServices::getInstance();
 		$dbr = $mwServices->getConnectionProvider()->getReplicaDatabase();
 		$revStore = $mwServices->getRevisionStore();
-		$titleContents = [];
 
 		$rows = $revStore->newSelectQueryBuilder( $dbr )
 			->joinPage()
@@ -105,17 +106,39 @@ class Utilities {
 			'content' => true
 		] )->getValue();
 
+		$result = [];
 		foreach ( $rows as $row ) {
-			$content = $revisions[$row->rev_id]?->getContent( SlotRecord::MAIN );
-			if ( $content instanceof TextContent ) {
-				$titleContents[$row->page_title] = [
-					$content->getText(),
-					$row->rev_user_text
-				];
+			$revision = $revisions[$row->rev_id] ?? null;
+			if ( $revision !== null ) {
+				$content = $revision->getContent( SlotRecord::MAIN );
+				if ( $content instanceof TextContent ) {
+					$result[$row->page_title] = $revision;
+				}
 			}
 		}
 
 		$rows->free();
+
+		return $result;
+	}
+
+	/**
+	 * Fetches contents for page names in given namespace.
+	 *
+	 * @param string|string[] $titles Database page names.
+	 * @param int $namespace The number of the namespace.
+	 * @return array ( string => array ( string, string ) ) Tuples of page
+	 * text and last author indexed by page name.
+	 */
+	public static function getContents( $titles, int $namespace ): array {
+		$titleContents = [];
+		foreach ( self::fetchLatestRevisionsByTitles( (array)$titles, $namespace ) as $pageTitle => $revision ) {
+			$user = $revision->getUser( RevisionRecord::FOR_PUBLIC );
+			$titleContents[$pageTitle] = [
+				self::getTextFromTextContent( $revision->getContent( SlotRecord::MAIN ) ),
+				$user ? $user->getName() : '',
+			];
+		}
 
 		return $titleContents;
 	}
@@ -127,17 +150,8 @@ class Utilities {
 	 * @return string|null
 	 */
 	public static function getContentForTitle( Title $title, bool $addFuzzy = false ): ?string {
-		$store = MediaWikiServices::getInstance()->getRevisionStore();
-		$revision = $store->getRevisionByTitle( $title );
-
-		if ( $revision === null ) {
-			return null;
-		}
-
-		$content = $revision->getContent( SlotRecord::MAIN );
-		$wiki = ( $content instanceof TextContent ) ? $content->getText() : null;
-
-		// Either unexpected content type, or the revision content is hidden
+		$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionByTitle( $title );
+		$wiki = self::getTextFromContentOrNull( $revision?->getContent( SlotRecord::MAIN ) );
 		if ( $wiki === null ) {
 			return null;
 		}
@@ -378,6 +392,20 @@ class Utilities {
 		return isset( $all[ $code ] );
 	}
 
+	/**
+	 * Best-effort extraction of text from content.
+	 *
+	 * Returns null when the content is missing, hidden or not text-based.
+	 */
+	public static function getTextFromContentOrNull( ?Content $content ): ?string {
+		return $content instanceof TextContent ? $content->getText() : null;
+	}
+
+	/**
+	 * Strict extraction of text from content.
+	 *
+	 * Throws when the content is missing, hidden or not text-based.
+	 */
 	public static function getTextFromTextContent( ?Content $content ): string {
 		if ( !$content ) {
 			throw new UnexpectedValueException( 'Expected $content to be TextContent, got null instead.' );
@@ -397,6 +425,32 @@ class Utilities {
 	 * text and last author indexed by page name.
 	 */
 	public static function getTranslations( MessageHandle $handle ): array {
+		$titleContents = [];
+		foreach ( self::getTranslationRevisions( $handle ) as $pageTitle => $revision ) {
+			$user = $revision->getUser( RevisionRecord::FOR_PUBLIC );
+			$titleContents[$pageTitle] = [
+				self::getTextFromTextContent( $revision->getContent( SlotRecord::MAIN ) ),
+				$user ? $user->getName() : '',
+			];
+		}
+
+		return $titleContents;
+	}
+
+	/**
+	 * Returns the latest RevisionRecord for each existing translation of a message.
+	 *
+	 * This is the typed counterpart of {@see getTranslations()}: callers that need
+	 * more than page text and author name (e.g. revision timestamp) should use this
+	 * method and read whatever fields they need from the RevisionRecord objects directly.
+	 *
+	 * Results are ordered by page title (ascending), matching the order that
+	 * {@see getTranslations()} returns.
+	 *
+	 * @param MessageHandle $handle Language code is ignored.
+	 * @return array<string, RevisionRecord> RevisionRecords indexed by page title.
+	 */
+	public static function getTranslationRevisions( MessageHandle $handle ): array {
 		$namespace = $handle->getTitle()->getNamespace();
 		$base = $handle->getKey();
 
@@ -417,7 +471,16 @@ class Utilities {
 			return [];
 		}
 
-		return self::getContents( $titles, $namespace );
+		// fetchLatestRevisionsByTitles may return results in a different order
+		// (by rev_id or row insertion), so re-index in the original page_title order.
+		$revisionsByTitle = self::fetchLatestRevisionsByTitles( $titles, $namespace );
+		$ordered = [];
+		foreach ( $titles as $title ) {
+			if ( isset( $revisionsByTitle[$title] ) ) {
+				$ordered[$title] = $revisionsByTitle[$title];
+			}
+		}
+		return $ordered;
 	}
 
 	public static function isTranslationPage( MessageHandle $handle ): bool {

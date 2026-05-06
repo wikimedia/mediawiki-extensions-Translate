@@ -213,6 +213,8 @@
 	"translate-translations-project": "Used in [[Special:Translations]].\n{{Identical|Project}}",
 	"translate-translations-including-no-param": "Shown when using <code>&#x7b;{Special:Translations}}</code>, but a parameter is required, e.g. <code>&#x7b;{Special:Translations/MediaWiki:Mainpagetext}}</code>",
 	"translate-translations-history-short": "Shortest possible abbreviation of \"history\". Used on [[Special:Translations]].",
+	"translate-translations-last-edit-header": "Column header for the last-edit column in the translations table on [[Special:Translations]].\n\n{{Identical|Last edit}}",
+	"translate-translations-last-edit": "Cell content for the last-edit column in the translations table on [[Special:Translations]]. Describes when and by whom a translation was last modified.\n\nParameters:\n* $1 - relative time of the edit (e.g. \"2 hours ago\", \"yesterday at 15:30\")\n* $2 - linked username of the last editor (raw HTML, may be a suppressed-user placeholder)",
 	"languagestats": "{{doc-special|LanguageStats}}\n{{Identical|Language statistics}}",
 	"languagestats-summary": "Used in [[Special:LanguageStats]].",
 	"messagegroupstats-summary": "Used in [[Special:MessageGroupStats]]",

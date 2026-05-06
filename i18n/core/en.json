@@ -170,6 +170,8 @@
 	"translate-translations-project": "Project:",
 	"translate-translations-including-no-param": "Please specify a valid message key in the subpage parameter",
 	"translate-translations-history-short": "h",
+	"translate-translations-last-edit-header": "Last edit",
+	"translate-translations-last-edit": "$1 by $2",
 	"languagestats": "Language statistics",
 	"languagestats-summary": "This page shows translation statistics for all message groups for a language.",
 	"messagegroupstats-summary": "This page shows message group statistics.",

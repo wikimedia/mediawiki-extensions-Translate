@@ -10,9 +10,13 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Message\Message;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Search\SearchEngineFactory;
 use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\Utils\MWTimestamp;
+use UnexpectedValueException;
 use Wikimedia\HtmlArmor\HtmlArmor;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -151,7 +155,6 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 	private function showTranslations( Title $title ): void {
 		$handle = new MessageHandle( $title );
 		$namespace = $title->getNamespace();
-		$message = $handle->getKey();
 
 		if ( !$handle->isValid() ) {
 			$this->getOutput()->addWikiMsg( 'translate-translations-no-message', $title->getPrefixedText() );
@@ -159,20 +162,9 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			return;
 		}
 
-		$dbr = $this->dbProvider->getReplicaDatabase();
-		/** @var string[] */
-		$titles = $dbr->newSelectQueryBuilder()
-			->select( 'page_title' )
-			->from( 'page' )
-			->where( [
-				'page_namespace' => $namespace,
-				'page_title ' . $dbr->buildLike( "$message/", $dbr->anyString() ),
-			] )
-			->caller( __METHOD__ )
-			->orderBy( 'page_title' )
-			->fetchFieldValues();
+		$revisions = Utilities::getTranslationRevisions( $handle );
 
-		if ( !$titles ) {
+		if ( !$revisions ) {
 			$this->getOutput()->addWikiMsg(
 				'translate-translations-no-message',
 				$title->getPrefixedText()
@@ -182,18 +174,17 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 		} else {
 			$this->getOutput()->addWikiMsg(
 				'translate-translations-count',
-				Message::numParam( count( $titles ) )
+				Message::numParam( count( $revisions ) )
 			);
 		}
-
-		$pageInfo = Utilities::getContents( $titles, $namespace );
 
 		$rows = [
 			Html::rawElement(
 				'tr',
 				[],
 				Html::element( 'th', [], $this->msg( 'allmessagesname' )->text() ) .
-					Html::element( 'th', [], $this->msg( 'allmessagescurrent' )->text() )
+					Html::element( 'th', [], $this->msg( 'allmessagescurrent' )->text() ) .
+					Html::element( 'th', [], $this->msg( 'translate-translations-last-edit-header' )->text() )
 			),
 		];
 
@@ -202,7 +193,7 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			"</sup>\u{00A0}";
 		$separator = $this->msg( 'word-separator' )->plain();
 
-		foreach ( $titles as $key ) {
+		foreach ( $revisions as $key => $revision ) {
 			$tTitle = Title::makeTitle( $namespace, $key );
 			$tHandle = new MessageHandle( $tTitle );
 
@@ -227,8 +218,15 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				),
 			];
 
+			$mainContent = $revision->getContent( SlotRecord::MAIN );
+			try {
+				$pageText = Utilities::getTextFromTextContent( $mainContent );
+			} catch ( UnexpectedValueException ) {
+				continue;
+			}
+
 			$class = '';
-			if ( MessageHandle::hasFuzzyString( $pageInfo[$key][0] ) || $tHandle->isFuzzy() ) {
+			if ( MessageHandle::hasFuzzyString( $pageText ) || $tHandle->isFuzzy() ) {
 				$class = 'mw-sp-translate-fuzzy';
 			}
 
@@ -241,13 +239,35 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				];
 			}
 
-			$formattedContent = Utilities::convertWhiteSpaceToHTML( $pageInfo[$key][0] );
+			$formattedContent = Utilities::convertWhiteSpaceToHTML( $pageText );
+
+			// Build the last-edit cell with a sortable Unix timestamp and a linked username.
+			$revTimestamp = $revision->getTimestamp();
+			$unixTimestamp = wfTimestamp( TS_UNIX, $revTimestamp );
+			$humanTimestamp = $this->getLanguage()->getHumanTimestamp( new MWTimestamp( $revTimestamp ) );
+
+			$user = $revision->getUser( RevisionRecord::FOR_PUBLIC );
+			if ( $user !== null ) {
+				$userLinkHtml = $this->getLinkRenderer()->makeUserLink( $user, $this->getContext() );
+			} else {
+				$userLinkHtml = Html::element(
+					'span',
+					[ 'class' => 'history-deleted' ],
+					$this->msg( 'rev-deleted-user' )->text()
+				);
+			}
+
+			$lastEditHtml = $this->msg( 'translate-translations-last-edit' )
+				->params( $humanTimestamp )
+				->rawParams( $userLinkHtml )
+				->escaped();
 
 			$rows[] = Html::rawElement(
 				'tr',
 				[ 'class' => $class ],
 				Html::rawElement( 'td', [], $tools['history'] . $tools['edit'] ) .
-					Html::rawElement( 'td', $languageAttributes, $formattedContent )
+					Html::rawElement( 'td', $languageAttributes, $formattedContent ) .
+					Html::rawElement( 'td', [ 'data-sort-value' => $unixTimestamp ], $lastEditHtml )
 			);
 		}
 
