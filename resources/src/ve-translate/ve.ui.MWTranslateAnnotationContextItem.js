@@ -41,7 +41,7 @@ ve.ui.MWTranslateAnnotationContextItem.prototype.getLabelMessage = function () {
 	};
 
 	var type = this.model.getAttribute( 'type' );
-	// eslint-disable-next-line mediawiki/msg-doc
+
 	var msg = mw.message( map[ type ] );
 	return msg.text();
 };
@@ -56,7 +56,6 @@ ve.ui.MWTranslateAnnotationContextItem.prototype.getDescriptionMessage = functio
 		'mw:Annotation/tvar': 'visualeditor-annotations-tvar-description'
 	};
 
-	// eslint-disable-next-line mediawiki/msg-doc
 	var msg = mw.message( map[ type ] );
 	return msg.parseDom();
 };

@@ -246,7 +246,8 @@
 
 	/**
 	 * Display error message to the user
-	* @param {jQuery} $errorMessage Error message to display to the user
+	 *
+	 * @param {jQuery} $errorMessage Error message to display to the user
 	 */
 	function displayError( $errorMessage ) {
 		if ( $errorMessage === undefined ) {

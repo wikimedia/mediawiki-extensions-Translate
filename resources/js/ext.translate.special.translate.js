@@ -406,6 +406,7 @@
 
 	/**
 	 * Setup the target language selector
+	 *
 	 * @param {Object} $element jQuery trigger element
 	 * @param {string|null} initialLanguage Language code to select by default, null to select none.
 	 */

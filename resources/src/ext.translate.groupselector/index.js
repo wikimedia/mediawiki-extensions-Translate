@@ -69,7 +69,7 @@
 				.addClass( 'grid hide' );
 
 			if ( this.customOptions.menuClass ) {
-				// eslint-disable-next-line mediawiki/class-doc
+
 				this.$menu.addClass( this.customOptions.menuClass );
 			}
 

@@ -58,7 +58,7 @@
 					that.message.translation = translation;
 
 					// `status` class is documented elsewhere
-					// eslint-disable-next-line mediawiki/class-doc
+
 					that.$message.find( '.tux-pagemode-status' )
 						.removeClass( 'translated fuzzy proofread untranslated' )
 						.addClass( that.message.properties.status );
@@ -83,7 +83,7 @@
 			var targetLangDir = $.uls.data.getDir( targetLangAttrib );
 
 			// `status` class is documented elsewhere
-			// eslint-disable-next-line mediawiki/class-doc
+
 			this.$message.append(
 				// `status` class is documented elsewhere
 				// eslint-disable-next-line mediawiki/class-doc
