@@ -64,7 +64,7 @@
 	"translate-checks-malformed": "<nowiki>$1</nowiki> on väärdunud.",
 	"translate-pref-editassistlang": "Tugikeeled:",
 	"prefs-translate": "Tõlkesätted",
-	"translate-pref-editassistlang-help": "Komaga eraldatud keelte loetelu.\nTõlkimisel kuvatakse sõnumi tõlge nendes keeltes.\nVaikeloetelu sõltub kasutaja keelest.",
+	"translate-pref-editassistlang-help": "Tõlkimisel kuvatakse sõnumi tõlge nendes keeltes.\nVaikeloetelu sõltub kasutaja keelest.",
 	"right-translate": "Kasutada tõlkeliidest",
 	"right-translate-manage": "Hallata sõnumirühmi",
 	"action-translate-manage": "sõnumirühmi hallata",
