@@ -154,6 +154,7 @@
 		"OutputPageParserOutput": "MediaWiki\\Extension\\Translate\\HookHandler::showFakeCategories",
 		"Translate:newTranslation": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::updateTransverTag",
 		"SkinTemplateNavigation::Universal": [
+			"legacyInterface",
 			"MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateSpecialPage::tabify",
 			"MediaWiki\\Extension\\Translate\\Synchronization\\ManageGroupsSpecialPage::tabify"
 		],

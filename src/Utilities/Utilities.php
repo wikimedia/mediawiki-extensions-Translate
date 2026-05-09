@@ -323,9 +323,14 @@ class Utilities {
 	 * @param MessageHandle $handle
 	 * @param string $action_source If non-empty, defines where
 	 * the link originates from, for metrics (event logging)
+	 * @param bool $includeLanguageParam Whether the language parameter should be included
 	 * @return string Domain relative URL
 	 */
-	public static function getEditorUrl( MessageHandle $handle, string $action_source = '' ): string {
+	public static function getEditorUrl(
+		MessageHandle $handle,
+		string $action_source = '',
+		bool $includeLanguageParam = true
+	): string {
 		if ( !$handle->isValid() ) {
 			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
 		}
@@ -335,7 +340,7 @@ class Utilities {
 		$urlParameters = [
 			'showMessage' => $handle->getInternalKey(),
 			'group' => $handle->getGroup()->getId(),
-			'language' => $handle->getCode(),
+			'language' => $includeLanguageParam ? $handle->getCode() : null,
 		];
 
 		if ( $action_source !== '' ) {

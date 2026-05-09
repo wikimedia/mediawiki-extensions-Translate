@@ -8,6 +8,7 @@ use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Diff\Hook\ArticleContentOnDiffHook;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_initialHook;
 use MediaWiki\Hook\TitleGetEditNoticesHook;
@@ -15,6 +16,8 @@ use MediaWiki\Language\LanguageFactory;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Skin\Components\SkinComponentUtils;
 use MediaWiki\Skin\Hook\SidebarBeforeOutputHook;
+use MediaWiki\Skin\Hook\SkinTemplateNavigation__UniversalHook;
+use Wikimedia\ArrayUtils\ArrayUtils;
 
 /**
  * Integration point to MediaWiki for the legacy translation aids.
@@ -27,7 +30,8 @@ class LegacyInterfaceHookHandler
 	ArticleContentOnDiffHook,
 	EditPage__showEditForm_initialHook,
 	TitleGetEditNoticesHook,
-	SidebarBeforeOutputHook
+	SidebarBeforeOutputHook,
+	SkinTemplateNavigation__UniversalHook
 {
 
 	public function __construct(
@@ -125,5 +129,34 @@ class LegacyInterfaceHookHandler
 			'id' => 't-alltrans',
 			'msg' => 'translate-sidebar-alltrans',
 		];
+	}
+
+	/**
+	 * Adds "Translate" tab to pages. Only shown when the page is
+	 * actually a translatable/translated message.
+	 *
+	 * @inheritDoc
+	 */
+	public function onSkinTemplateNavigation__Universal( $skin, &$tabs ): void {
+		$title = $skin->getTitle();
+		$handle = new MessageHandle( $title );
+
+		if ( !$handle->isValid() ) {
+			return;
+		}
+
+		// Don't add language parameter if viewing the message in the source language
+		$isSourceLanguage = $handle->getCode() === $handle->getGroup()->getSourceLanguage();
+
+		$tab = [
+			'text' => $skin->msg( 'tpt-tab-translate' )->text(),
+			'href' => Utilities::getEditorUrl(
+				handle: $handle,
+				action_source: 'message_page_tab',
+				includeLanguageParam: !$isSourceLanguage
+			),
+		];
+
+		$tabs['views'] = ArrayUtils::insertAfter( $tabs[ 'views' ], [ 'translate' => $tab ], 'view' );
 	}
 }
