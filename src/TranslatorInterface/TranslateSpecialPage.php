@@ -283,11 +283,11 @@ class TranslateSpecialPage extends SpecialPage {
 
 	private function tuxLanguageSelector(): string {
 		if ( $this->options['language'] === $this->getConfig()->get( 'TranslateDocumentationLanguageCode' ) ) {
-			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 			$targetLanguage = $this->contentLanguage;
+			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 		} else {
-			$targetLangName = $this->languageNameUtils->getLanguageName( $this->options['language'] );
 			$targetLanguage = $this->languageFactory->getLanguage( $this->options['language'] );
+			$targetLangName = $this->languageNameUtils->getLanguageName( $targetLanguage->getCode() );
 		}
 
 		$label = Html::element( 'span', [], $this->msg( 'tux-languageselector' )->text() );
