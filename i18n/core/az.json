@@ -273,7 +273,7 @@
 	"tux-message-filter-result": "\"$2\" üçün $1 nəticə {{PLURAL:$1|tapıldı}}",
 	"tux-message-filter-advanced-button": "Qabaqcıl axtarış",
 	"tux-message-filter-optional-messages-label": "Məcburi olmayan mesajlar",
-	"tux-proofread-translated-by-self": "Siz tərcümə etmisiz",
+	"tux-proofread-translated-by-self": "Siz tərcümə etmisiniz",
 	"tux-empty-list-all": "Bu mesaj qrupu boşdur",
 	"tux-empty-list-all-guide": "Tərcümə etmək üçün fərqli mesaj qrupu seçin",
 	"tux-editor-close-tooltip": "Bağla",
