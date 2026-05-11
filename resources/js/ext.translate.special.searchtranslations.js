@@ -135,6 +135,7 @@
 					document.body.appendChild( mountPoint );
 
 					var app = createUniversalLanguageSelector( {
+						visible: false,
 						triggerElement: $ulsTrigger[ 0 ],
 						selectableLanguages: ulslanguages,
 						displayLanguageCode: mw.config.get( 'wgUserLanguage' ),
