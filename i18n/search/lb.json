@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Les Meloures",
 			"Robby"
 		]
 	},
@@ -26,5 +27,5 @@
 	"tux-sst-ellipsis-outdated": "Vereelzt Iwwersetzungen",
 	"tux-sst-link-all-match": "All Sichwierder verlaangen.",
 	"tux-sst-match-message": "Iwwersetzunge weise mat engem vun de gesichte Wierder. $1",
-	"tux-sst-case-sensitive": "Ënnerscheed tëscht groussen a klenge Buschtawen"
+	"tux-sst-case-sensitive": "Ënnerscheet tëscht groussen a klenge Buschtawen"
 }
