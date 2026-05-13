@@ -243,7 +243,7 @@
 	"pt-deletepage-lang-title": "De vertaalde pagina \"$1\" wordt verwijderd",
 	"pt-deletepage-tp-title": "De vertaalbare pagina \"$1\" wordt verwijderd",
 	"pt-deletepage-mb-title": "Verwijderen berichtenbundel “$1”",
-	"pt-deletepage-invalid-title": "De opgegeven pagina is ongeldig.",
+	"pt-deletepage-invalid-title": "De opgegeven pagina is onjuist.",
 	"pt-deletepage-invalid-text": "De opgegeven pagina is geen vertaalbare pagina en ook geen vertaalde pagina.",
 	"pt-deletepage-action-check": "Lijst met te verwijderen pagina's weergeven",
 	"pt-deletepage-action-perform": "Doorgaan met verwijderen",
