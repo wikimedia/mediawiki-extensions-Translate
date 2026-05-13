@@ -720,13 +720,20 @@ class ElasticSearchTtmServer
 			throw new RuntimeException( 'Unable to determine elasticsearch version, aborting.' );
 		}
 
-		return $result[ 'version' ][ 'number' ];
+		$distribution = $result['version']['distribution'] ?? 'elasticsearch';
+
+		return $distribution . '-' . $result[ 'version' ][ 'number' ];
 	}
 
 	private function checkElasticsearchVersion(): void {
 		$version = $this->getElasticsearchVersion();
-		if ( !str_starts_with( $version, '6.8' ) && !str_starts_with( $version, '7.' ) ) {
-			throw new RuntimeException( "Only Elasticsearch 6.8.x and 7.x are supported. Your version: $version." );
+		if ( !str_starts_with( $version, 'elasticsearch-6.8' )
+			&& !str_starts_with( $version, 'elasticsearch-7.' )
+			&& !str_starts_with( $version, 'opensearch-1.' )
+			&& !str_starts_with( $version, 'opensearch-2.' ) ) {
+			throw new RuntimeException(
+				'Only OpenSearch 1.x and 2.x, Elasticsearch 6.8.x and 7.x are supported. ' .
+				'Your version: $version.' );
 		}
 	}
 
