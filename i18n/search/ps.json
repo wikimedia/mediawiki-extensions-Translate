@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"searchtranslations": "ژباړې پلټل",
@@ -9,8 +10,14 @@
 	"tux-sst-view-foreign": "په $1 باندې کتل",
 	"tux-sst-search": "پلټل",
 	"tux-sst-search-ph": "ژباړې پلټل",
+	"tux-sst-search-info": "د لټون چارو د لاښه کولو لپاره <code>language:</code> or <code>group:</code> چلوونکي وکاروئ",
+	"tux-sst-count": "{{PLURAL:$1|يوه پايله وموندل شوه|$1 پايلې وموندل شوې}}",
 	"tux-sst-facet-language": "ژبې",
 	"tux-sst-facet-group": "پيغام ډلې",
+	"tux-sst-nosolr-title": "د پلټل د لاسرسي وړ نه دي",
+	"tux-sst-nosolr-body": "دا ويکي د ژباړې پلټلو چوپړ نه لري.",
+	"tux-sst-solr-offline-title": "پلټل د لاسرسي وړ نه دي",
+	"tux-sst-solr-offline-body": "د پلټلو چوپړ په لنډمهاله توگه د لاسرسي وړ نه دی.",
 	"tux-sst-next": "راتلونکی ›",
 	"tux-sst-prev": "‹ پخوانی",
 	"tux-sst-default": "ژباړې",
@@ -18,5 +25,11 @@
 	"tux-sst-untranslated": "له $1 څخه ژباړې نشته",
 	"tux-sst-outdated": "له $1 څخه نېټه اوښتې ژباړې",
 	"tux-sst-ellipsis-untranslated": "ژباړه نشته",
-	"tux-sst-ellipsis-outdated": "نېټه اوښتې ژباړې"
+	"tux-sst-ellipsis-outdated": "نېټه اوښتې ژباړې",
+	"tux-sst-link-all-match": "ټول پلټل ويي اړين دي.",
+	"tux-sst-match-message": "د هغه ژباړو ښودل چې د پلټل ويوکو سره سمون خوري. $1",
+	"tux-sst-case-sensitive": "د تورو لويوالي او کوچنيوالي سره حساس",
+	"tux-sst-error-offset": "نورې لټون پايلې نه‌شي ښودل کیدی. مهرباني وکړئ خپله پلټنه رالنډه کړئ.",
+	"tux-sst-error-language": "دا ژبه د پلټلو دې ډول سره نه‌شي کارول کېدی.",
+	"tux-sst-error-unsupported-language": "په <code>$1</code> ژبه د پلټلو ملاتړ نه کېږي."
 }

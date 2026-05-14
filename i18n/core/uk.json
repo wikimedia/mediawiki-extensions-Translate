@@ -28,10 +28,12 @@
 			"Test",
 			"Vlad5250",
 			"Ата",
-			"Тест"
+			"Тест",
+			"Repakr"
 		]
 	},
 	"translate": "Переклад",
+	"translate-group": "Переклад $1",
 	"translate-extensionname": "Перекласти",
 	"translate-desc": "[[Special:Translate|Спеціальна сторінка]] для перекладу MediaWiki та інших програм",
 	"translate-fuzzybot-desc": "Це — спеціальний системний обліковий запис, який використовується [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate розширенням перекладу] MediaWiki для обслуговування перекладів.\nЦей обліковий запис є частиною програмного забезпечення MediaWiki й не належить жодному користувачеві.",
@@ -322,6 +324,7 @@
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існує або не завантажений локально.",
 	"translate-import-err-stale-group": "Група повідомлень, до якої належить цей файл, не існує.",
 	"translate-import-err-no-headers": "Файл не є правильно побудованим Gettext-файлом у форматі розширення Translate: не вдалося визначити групу і мову із заголовка файлу.",
+	"translate-import-err-gettext-parse-failed": "Файл не є правильно побудованим Gettext-файлом:\n$1",
 	"translate-js-support-unsaved-warning": "Маєте неопубліковані переклади.",
 	"translate-documentation-language": "документація повідомлень",
 	"translate-searchprofile": "Переклади",

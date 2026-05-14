@@ -175,7 +175,7 @@
 	"supportedlanguages-recenttranslations": "последни преводи",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|език|езици}} общо.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|редакция|редакции}} - последната преди $3 {{PLURAL:$3|ден|дни}}",
-	"abusefilter-edit-builder-vars-translate-source-text": "Изходен текст на преводната единица",
+	"abusefilter-edit-builder-vars-translate-source-text": "Изходен текст на преводната единица ($1)",
 	"translate-jssti-add": "Добавяне към списъка",
 	"managemessagegroups": "Управление на групи съобщения",
 	"translate-smg-notallowed": "Не ви е позволено да извършите това действие.",

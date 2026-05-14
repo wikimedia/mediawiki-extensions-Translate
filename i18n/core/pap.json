@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"ObaTango"
+			"ObaTango",
+			"Kallmemel"
 		]
 	},
-	"translate-documentation-language": "Dokumentashon di mensahe"
+	"translate-documentation-language": "Dokumentashon di mensahe",
+	"group-translate-sandboxed": "Traduktor no aprobá",
+	"group-translate-sandboxed-member": "{{GENDER:$1|traduktor no aprobá}}"
 }
