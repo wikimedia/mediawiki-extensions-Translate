@@ -3,7 +3,8 @@
 		"authors": [
 			"Khan27",
 			"Nemoralis",
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Əkrəm"
 		]
 	},
 	"searchtranslations": "Tərcümələri axtar",
@@ -31,5 +32,7 @@
 	"tux-sst-match-message": "Axtarış sözlərindən hər hansı birinə uyğun gələn tərcümələr göstərilir. $1",
 	"tux-sst-case-sensitive": "Böyük-kiçik hərfə həssas",
 	"tux-sst-error-offset": "Daha çox axtarış nəticələri göstərilə bilməz. Zəhmət olmasa axtarışınızı daraldın.",
-	"tux-sst-error-language": "Bu dil bu növ axtarışla istifadə edilə bilməz."
+	"tux-sst-error-language": "Bu dil bu növ axtarışla istifadə edilə bilməz.",
+	"tux-sst-error-unsupported-language": "<code>$1</code> dilində axtarış dəstəklənmir.",
+	"tux-sst-search-backend-error": "Axtarış sistemində gözlənilməz xəta baş verdi; zəhmət olmasa, yenidən sınayın"
 }

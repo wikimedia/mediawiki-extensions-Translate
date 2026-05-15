@@ -5,7 +5,7 @@
 			"شاه زمان پټان"
 		]
 	},
-	"managetranslatorsandbox": "ژباړن شگبکس مهارول",
+	"managetranslatorsandbox": "ژباړن ازمون‌مخ مهارول",
 	"tsb-filter-pending": "په تمه غوښتنې",
 	"tsb-reminder-title-generic": "د ژباړن کېدو لپاره مو خپله پېژندگولي بشپړه کړئ",
 	"tsb-reminder-content-generic": "سلام $1$1،\n\nپه {{SITENAME}} کې له نوم‌ليکنې مو مننه.\n\nکه تاسو خپلې ازمېښتي ژباړې بشپړې کړئ؛ نو پازوالان به له هغې وروسته ډېر ژر تاسو ته د بشپړ ژباړونکي لاسرسی در کړي\n\nمهرباني وکړئ، دلته راشئ او ځينې نورې ژباړې دلته وکړئ:\n$2\n\n$3،\n{{SITENAME}} کارگر",
@@ -45,8 +45,8 @@
 	"tsb-limit-reached-body": "تاسو د نويو کارنانو لپاره د ژباړې حد ته رسېدلې ياست.\nزموږ ډله به ډېر ژر ستاسو گڼون تاييد او لوړ کړي\nبيا به نو تاسو پرته له محدوديته د ژباړو ترسره کولو وړتيا ولرئ.",
 	"tsb-no-requests-from-new-users": "د نويو کارنانو هېڅ غوښتنه نشته",
 	"tsb-create-user-page": "يو بنسټيز کارن‌مخ جوړول",
-	"log-name-translatorsandbox": "د ژباړې شگبکس يادښت",
-	"log-description-translatorsandbox": "د ژباړې د شگبکس کارنانو د چارو يو يادښت",
+	"log-name-translatorsandbox": "د ژباړې ازمون‌مخ يادښت",
+	"log-description-translatorsandbox": "د ژباړې د ازمون‌مخ کارنانو د چارو يو يادښت",
 	"logentry-translatorsandbox-promoted": "$1، $3 د {{GENDER:$4|ژباړن}} درجې ته {{GENDER:$2|پورته‌شوی}}",
 	"logentry-translatorsandbox-rejected": "$1 د \"$3\" د ژباړن کېدو غوښتنه  {{GENDER:$2|ونه‌ٔمنله}}",
 	"logentry-newusers-tsbpromoted": "د $3 گڼون له ازمون‌مخ نه د پورته‌کولو پر بنسټ {{GENDER:$2|جوړ‌شوی}} و",

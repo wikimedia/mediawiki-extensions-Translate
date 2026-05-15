@@ -54,7 +54,8 @@
 			"神樂坂秀吉",
 			"范",
 			"铁桶",
-			"阿pp"
+			"阿pp",
+			"Kelly Hsueh"
 		]
 	},
 	"pagetranslation": "页面翻译",
@@ -83,7 +84,7 @@
 	"tpt-list-pages-in-translations": "[[Special:PageTranslation|查看可翻译页面列表。]]",
 	"tpt-showpage-intro": "以下列出新建、现存及已删除的翻译单元。\n在标记此版本进行翻译之前，请检查对翻译单元的改动是否最小，以避免给译者带来不必要的工作。",
 	"tpt-mark-summary": "标记此版本进行翻译",
-	"tpt-mark-nochanges": "没有要复核的更改。将此页面标记翻译将既不会编辑页面，又不会编辑任何现有翻译单元。",
+	"tpt-mark-nochanges": "将此页面标记翻译将不会改变任何翻译单元。",
 	"tpt-edit-failed": "无法更新该页面：$1",
 	"tpt-duplicate": "翻译单元名称<strong><bdi>$1</bdi></strong>已被使用超过一次。",
 	"tpt-invalid": "翻译单元名称<strong><bdi>$1</bdi></strong>不得包含下划线或斜线。",
@@ -322,7 +323,7 @@
 	"pm-langcode-missing": "页面迁移仅适用于翻译页面，例如“Page/de”。提供的标题不是翻译页面。",
 	"pm-summary-import": "已通过[[Special:PageMigration|页面迁移]]导入翻译",
 	"pm-on-import-message-text": "旧翻译已被导入。使用添加、交换和删除选项以调整翻译单元，并点击“{{int:pm-savepages-button-label}}”按钮添加它们。点击“{{int:pm-cancel-button-label}}”按钮丢弃。",
-	"pm-on-save-message-text": "翻译单元以保存。您现在可以输入新翻译页面的标题以迁移它，或在下方对单元做出更改并保存新版本。",
+	"pm-on-save-message-text": "翻译单元已保存。您现在可以输入新翻译页面的标题以迁移它，或在上方对单元做出更改并保存新版本。",
 	"pm-pagetitle-not-translatable": "$1不是一个可翻译页面的一部分。",
 	"pm-translation-unit-fetch-failed": "获取页面的翻译单元时出错。",
 	"tpt-translate-title": "允许页面标题的翻译",

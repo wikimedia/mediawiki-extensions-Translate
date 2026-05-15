@@ -330,7 +330,7 @@
 	"tag-translate-translation-pages-description": "번역 확장 기능을 통한 번역 페이지의 자동 편집",
 	"tpt-cant-edit-source-language": "원본 언어의 번역 단위를 수동으로 편집할 수 없습니다. 대신 기본 문서([[:$1]])를 변경한 다음 번역 대상으로 표시하세요.",
 	"tpt-manage-message-group-subscriptions-list-anon-text": "메시지 그룹 구독에 대한 항목을 보거나 편집하려면 로그인해 주십시오.",
-	"tpt-manage-message-group-subscriptions-normal-legend": "메시지 그룹에서 구독을 취소",
+	"tpt-manage-message-group-subscriptions-normal-legend": "메시지 그룹에서 구독을 해지",
 	"tpt-manage-message-group-subscriptions-normal-explain": "구독 중인 메시지 그룹 목록은 아래와 같습니다. 메시지 그룹을 삭제하려면 해당 그룹 옆의 확인란을 선택하고 '구독 삭제'를 클릭하세요. [[Special:ManageMessageGroupSubscriptions/raw|원본 목록]]을 편집할 수도 있습니다.",
 	"tpt-manage-message-group-subscriptions-normal-submit": "구독 제거",
 	"tpt-manage-message-group-subscriptions-raw-explain": "구독 중인 메시지 그룹 목록이 아래에 표시됩니다. 목록에 메시지 그룹을 추가하거나 삭제하여 편집할 수 있습니다. 한 줄에 하나의 메시지 그룹만 입력 가능합니다. 편집이 완료되면 '구독 업데이트'를 클릭하세요.",
