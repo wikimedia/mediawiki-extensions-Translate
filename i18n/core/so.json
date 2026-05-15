@@ -3,6 +3,7 @@
 		"authors": [
 			"Abdullahi",
 			"Abshirdheere",
+			"AhmedG612",
 			"Maax",
 			"Mimursal"
 		]
@@ -46,5 +47,6 @@
 	"supportedlanguages-count": "Wadarta ku jirta waa $1 {{PLURAL:$1|luqad|luqadood}}.",
 	"translate-documentation-language": "Dukumiinti fariin ah",
 	"translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada.",
-	"tux-message-filter-advanced-button": "Raadinta sare"
+	"tux-message-filter-advanced-button": "Raadinta sare",
+	"notification-body-translate-mgs-message-added": "$1 farriin cusub ama la cusboonaysiiyay {{PLURAL:$1|farriin|farriimo}}"
 }
