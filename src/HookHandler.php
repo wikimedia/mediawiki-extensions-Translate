@@ -27,6 +27,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFo
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;
+use MediaWiki\Extension\Translate\PageTranslation\DiscourageActionApi;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\MarkForTranslationActionApi;
 use MediaWiki\Extension\Translate\PageTranslation\MigrateTranslatablePageSpecialPage;
@@ -223,6 +224,12 @@ class HookHandler implements
 				'services' => [
 					'Translate:TranslatablePageMarker',
 					'Translate:MessageGroupMetadata',
+				]
+			];
+			$wgAPIModules['discouragetranslation'] = [
+				'class' => DiscourageActionApi::class,
+				'services' => [
+					'JobQueueGroup'
 				]
 			];
 
