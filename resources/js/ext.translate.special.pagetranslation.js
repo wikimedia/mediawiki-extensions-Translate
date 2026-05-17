@@ -6,20 +6,44 @@
  * @license GPL-2.0-or-later
  */
 function configurePostLinks( $container ) {
-	$container.on( 'click', '.mw-translate-jspost', function ( e ) {
-		const url = new URL( e.target.href );
-		// In future use Object.fromEntries()
-		const params = {
-			token: mw.user.tokens.get( 'csrfToken' )
-		};
-		for ( const [ key, value ] of url.searchParams.entries() ) {
-			params[ key ] = value;
-		}
-
-		$.post( url.pathname, params ).done( function () {
-			location.reload();
+	$container.on( 'click', '.mw-translate-encourage, .mw-translate-discourage', function ( e ) {
+		const $this = $( e.currentTarget );
+		const dis = $this.hasClass( 'mw-translate-discourage' );
+		const $li = $this.closest( '.mw-tpt-pagelist-item' );
+		const api = new mw.Api();
+		api.postWithToken( 'csrf', {
+			action: 'discouragetranslation',
+			title: $li.attr( 'data-target' ),
+			do: dis ? 'discourage' : 'encourage'
+		} ).then( updateLinks, function ( _code, data ) {
+			if ( data.error.code === 'discouragetranslation-alreadydone' ) {
+				updateLinks();
+			} else {
+				mw.notify( data.error.info, { type: 'error' } );
+			}
 		} );
 
+		function updateLinks() {
+			// Update the link
+			if ( dis ) {
+				$this.removeClass( 'mw-translate-discourage' )
+					.addClass( 'mw-translate-encourage' )
+					.attr( 'title', mw.msg( 'tpt-rev-encourage-tooltip' ) )
+					.text( mw.msg( 'tpt-rev-encourage' ) );
+			} else {
+				$this.removeClass( 'mw-translate-encourage' )
+					.addClass( 'mw-translate-discourage' )
+					.attr( 'title', mw.msg( 'tpt-rev-discourage-tooltip' ) )
+					.text( mw.msg( 'tpt-rev-discourage' ) );
+			}
+			// Now update the (discouraged | old syntax | no transclusion support) list.
+			const $acts = $li.find( '.mw-tpt-actions' );
+			if ( dis ) {
+				$acts.prepend( $( '<li>' ).addClass( 'mw-tpt-actions-discouraged' ).text( mw.msg( 'tpt-tag-discouraged' ) ) );
+			} else {
+				$acts.find( '.mw-tpt-actions-discouraged' ).remove();
+			}
+		}
 		e.preventDefault();
 	} );
 }

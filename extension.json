@@ -577,6 +577,11 @@
 				"resources/css/ext.translate.special.supportedlanguages.less",
 				"resources/css/ext.translate.special.translations.less",
 				"resources/src/ext.translate.aggregategroups/style.less"
+			],
+			"lessMessages": [
+				"pipe-separator",
+				"parentheses-start",
+				"parentheses-end"
 			]
 		},
 		"ext.translate.loader": {
@@ -1294,6 +1299,13 @@
 				"oojs-ui-widgets",
 				"user.options",
 				"mediawiki.widgets.LanguageSelectWidget"
+			],
+			"messages": [
+				"tpt-rev-encourage",
+				"tpt-rev-encourage-tooltip",
+				"tpt-rev-discourage",
+				"tpt-rev-discourage-tooltip",
+				"tpt-tag-discouraged"
 			]
 		},
 		"ext.translate.special.managegroups": {

@@ -72,3 +72,32 @@
 		display: none;
 	}
 }
+
+.mw-tpt-pagelist-item .mw-tpt-actions {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+
+	&:empty {
+		display: none;
+	}
+
+	&::before {
+		content: '@{msg-parentheses-start}';
+	}
+
+	&::after {
+		content: '@{msg-parentheses-end}';
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+		display: inline;
+
+		&:not( :first-child )::before {
+			content: '@{msg-pipe-separator}';
+		}
+	}
+}

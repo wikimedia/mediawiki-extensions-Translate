@@ -650,9 +650,6 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$title = $page['title'];
 		$user = $this->getUser();
 
-		// Class to allow one-click POSTs
-		$js = [ 'class' => 'mw-translate-jspost' ];
-
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
 			// Enable re-marking of all pages to allow changing of priority languages
 			// or migration to the new syntax version
@@ -674,7 +671,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
 						$messageCache['encourage'],
-						[ 'title' => $messageCache['encourage-tooltip'] ] + $js,
+						[
+							'title' => $messageCache['encourage-tooltip'],
+							'class' => [ 'mw-translate-encourage' ],
+						],
 						[
 							'do' => 'encourage',
 							'target' => $title->getPrefixedText(),
@@ -685,7 +685,10 @@ class PageTranslationSpecialPage extends SpecialPage {
 					$actions[] = $this->getLinkRenderer()->makeKnownLink(
 						$this->getPageTitle(),
 						$messageCache['discourage'],
-						[ 'title' => $messageCache['discourage-tooltip'] ] + $js,
+						[
+							'title' => $messageCache['discourage-tooltip'],
+							'class' => [ 'mw-translate-discourage' ],
+						],
 						[
 							'do' => 'discourage',
 							'target' => $title->getPrefixedText(),
@@ -1124,11 +1127,22 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 	private function getPageList( array $pages, string $type ): string {
 		$items = [];
-		$tagsTextCache = [];
 
-		$tagDiscouraged = $this->msg( 'tpt-tag-discouraged' )->escaped();
-		$tagOldSyntax = $this->msg( 'tpt-tag-oldsyntax' )->escaped();
-		$tagNoTransclusionSupport = $this->msg( 'tpt-tag-no-transclusion-support' )->escaped();
+		$tagDiscouraged = Html::element(
+			'li',
+			[ 'class' => 'mw-tpt-actions-discouraged' ],
+			$this->msg( 'tpt-tag-discouraged' )->text()
+		);
+		$tagOldSyntax = Html::element(
+			'li',
+			[ 'class' => 'mw-tpt-actions-oldsyntax' ],
+			$this->msg( 'tpt-tag-oldsyntax' )->text()
+		);
+		$tagNoTransclusionSupport = Html::element(
+			'li',
+			[ 'class' => 'mw-tpt-actions-notransclusion-support' ],
+			$this->msg( 'tpt-tag-no-transclusion-support' )->text()
+		);
 
 		foreach ( $pages as $page ) {
 			$link = $this->getLinkRenderer()->makeKnownLink( $page['title'] );
@@ -1147,22 +1161,20 @@ class PageTranslationSpecialPage extends SpecialPage {
 				}
 			}
 
-			$tagList = '';
-			if ( $tags ) {
-				// Performance optimization to avoid calling $this->msg in a loop
-				$tagsKey = implode( '', $tags );
-				$tagsTextCache[$tagsKey] ??= $this->msg( 'parentheses' )
-					->rawParams( $this->getLanguage()->pipeList( $tags ) )
-					->escaped();
-
-				$tagList = Html::rawElement(
-					'span',
-					[ 'class' => 'mw-tpt-actions' ],
-					$tagsTextCache[$tagsKey]
-				);
-			}
-
-			$items[] = "<li class='mw-tpt-pagelist-item'>$link $tagList $acts</li>";
+			// Include an actions list even if there are no tags so that JS discouragement can find it
+			$tags = Html::rawElement(
+				'ul',
+				[ 'class' => 'mw-tpt-actions' ],
+				implode( '', $tags )
+			);
+			$items[] = Html::rawElement(
+				'li',
+				[
+					'class' => 'mw-tpt-pagelist-item',
+					'data-target' => $page['title']->getPrefixedText(),
+				],
+				"$link $tags $acts"
+			);
 		}
 
 		return '<ol>' . implode( '', $items ) . '</ol>';
