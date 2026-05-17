@@ -197,17 +197,26 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 		// On GET requests, show form which has token
 		if ( !$request->wasPosted() ) {
-			if ( $action === 'unlink' ) {
-				$this->showUnlinkConfirmation( $title );
-			} else {
-				$params = [
-					'do' => $action,
-					'target' => $title->getPrefixedText(),
-					'revision' => $revision,
-				];
-				$this->showGenericConfirmation( $params );
+			$params = [
+				'do' => $action,
+				'target' => $title->getPrefixedText(),
+				'revision' => $revision,
+			];
+			switch ( $action ) {
+				case 'unlink':
+				case 'unmark':
+					$this->showConfirmation( $params, 'tpt-unlink-button', 'mw-ui-destructive' );
+					break;
+				case 'discourage':
+				case 'encourage':
+					$this->showConfirmation( $params );
+					break;
+				default:
+					$out->wrapWikiMsg(
+						Html::errorBox( '$1' ),
+						[ 'tpt-nosuchaction', $action ]
+					);
 			}
-
 			return;
 		}
 
@@ -270,7 +279,12 @@ class PageTranslationSpecialPage extends SpecialPage {
 			}
 
 			$out->addWikiMsg( 'tpt-list-pages-in-translations' );
+			return;
 		}
+		$out->wrapWikiMsg(
+			Html::errorBox( '$1' ),
+			[ 'tpt-nosuchaction', $action ]
+		);
 	}
 
 	protected function onActionMark( Title $title, ?int $revision ): void {
@@ -407,7 +421,11 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'tpt-list-pages-in-translations' );
 	}
 
-	private function showGenericConfirmation( array $params ): void {
+	private function showConfirmation(
+		array $params,
+		string $buttonKey = 'tpt-generic-button',
+		string $buttonClass = 'mw-ui-progressive',
+	): void {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getLocalURL(),
@@ -420,35 +438,16 @@ class PageTranslationSpecialPage extends SpecialPage {
 		foreach ( $params as $key => $value ) {
 			$hidden .= Html::hidden( $key, $value );
 		}
+		$action = $params['do'];
 
 		$this->getOutput()->addHTML(
 			Html::openElement( 'form', $formParams ) .
 			$hidden .
-			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
+			// tpt-discourage-confirm tpt-encourage-confirm tpt-unlink-confirm tpt-unmark-confirm
+			$this->msg( "tpt-$action-confirm" )->params( $params[ 'target' ] )->parseAsBlock() .
 			Html::submitButton(
-				$this->msg( 'tpt-generic-button' )->text(),
-				[ 'class' => 'mw-ui-button mw-ui-progressive' ]
-			) .
-			Html::closeElement( 'form' )
-		);
-	}
-
-	private function showUnlinkConfirmation( Title $target ): void {
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle()->getLocalURL(),
-		];
-
-		$this->getOutput()->addHTML(
-			Html::openElement( 'form', $formParams ) .
-			Html::hidden( 'do', 'unlink' ) .
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-			Html::hidden( 'target', $target->getPrefixedText() ) .
-			Html::hidden( 'token', $this->getContext()->getCsrfTokenSet()->getToken() ) .
-			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedText() )->parseAsBlock() .
-			Html::submitButton(
-				$this->msg( 'tpt-unlink-button' )->text(),
-				[ 'class' => 'mw-ui-button mw-ui-destructive' ]
+				$this->msg( $buttonKey )->text(),
+				[ 'class' => "mw-ui-button $buttonClass" ]
 			) .
 			Html::closeElement( 'form' )
 		);
