@@ -350,8 +350,8 @@
 	"tpt-manage-message-group-subscriptions-normal-check-all": "모두 체크",
 	"tpt-manage-message-group-subscriptions-raw-submit": "구독 업데이트",
 	"translate-category-summary": "[[$1]]에 사용된 분류의 번역을 자동으로 생성함",
-	"right-translate-empty-category": "비어 있는 분류 에 대한 번역 단위를 생성함",
-	"action-translate-empty-category": "비어 있는 분류 에 대한 번역 단위를 생성할",
+	"right-translate-empty-category": "비어 있는 분류 대한 번역 단위를 생성하기",
+	"action-translate-empty-category": "비어 있는 분류에 대한 번역 단위를 생성하기",
 	"tpt-create-empty-category": "비어 있는 분류 [[:$1]]에 대한 번역 단위를 생성할 수 없습니다.",
 	"ext-uls-empty-search-entrypoint-description": "이 문서를 번역할 수 있습니다. 자신의 언어로 콘텐츠를 만들기 쉬운 방법입니다"
 }
