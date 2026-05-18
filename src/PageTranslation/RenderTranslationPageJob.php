@@ -100,8 +100,8 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		Hooks::$allowTargetEdit = true;
 
 		$commentStoreComment = CommentStoreComment::newUnsavedComment( $summary );
-		// $percentageTranslated is modified by reference
-		$content = $tpPage->getPageContent( $mwServices->getParser(), $percentageTranslated );
+		$isTranslated = false; // modified below by reference
+		$content = $tpPage->getPageContent( $mwServices->getParser(), $isTranslated );
 		$translationPageTitleExists = $translationPageTitle->exists();
 		if ( $this->isCategoryTrigger() ) {
 			$isNonEmptyCategory = true;
@@ -111,14 +111,14 @@ class RenderTranslationPageJob extends GenericTranslateJob {
 		} else {
 			$isNonEmptyCategory = false;
 		}
-		if ( $percentageTranslated === 0 && !$translationPageTitleExists && !$isNonEmptyCategory ) {
+		if ( !$isTranslated && !$translationPageTitleExists && !$isNonEmptyCategory ) {
 			Hooks::$allowTargetEdit = false;
 			$this->logInfo( 'No translations found and translation page does not exist. Nothing to do.' );
 			return true;
 		}
 
 		if (
-			$percentageTranslated === 0 &&
+			!$isTranslated &&
 			$translationPageTitleExists &&
 			$this->hasOnlyFuzzyBotAsAuthor( $mwServices->getRevisionStore(), $translationPageTitle ) &&
 			!$isNonEmptyCategory
