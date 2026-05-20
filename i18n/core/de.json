@@ -188,6 +188,8 @@
 	"translate-translations-project": "Projekt:",
 	"translate-translations-including-no-param": "Bitte {{#FORMAL:gib|geben Sie}} einen gültigen Nachrichtennamen als Unterseitenparameter an",
 	"translate-translations-history-short": "V",
+	"translate-translations-last-edit-header": "Letzte Bearbeitung",
+	"translate-translations-last-edit": "$1 durch $2",
 	"languagestats": "Statistiken zu Sprachen",
 	"languagestats-summary": "Diese Seite zeigt Statistiken zu Übersetzungen für alle Nachrichtengruppen einer Sprache.",
 	"messagegroupstats-summary": "Diese Seite zeigt Statistiken zu Nachrichtengruppen.",

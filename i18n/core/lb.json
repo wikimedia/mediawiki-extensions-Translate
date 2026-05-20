@@ -154,6 +154,8 @@
 	"translate-translations-project": "Projet:",
 	"translate-translations-including-no-param": "Gitt wgl. e gëltege Code vun engem Message als Parameter fir d'Ënnersäit un",
 	"translate-translations-history-short": "V",
+	"translate-translations-last-edit-header": "Lescht Ännerung",
+	"translate-translations-last-edit": "$1 vum $2",
 	"languagestats": "Sproochstatistiken",
 	"languagestats-summary": "Dës Säit weist d'Statistike vun der Iwwersetzung fir all Gruppe vu Message fir eng Sprooch.",
 	"messagegroupstats-summary": "Dës Säit weist d'Statistike vun de Gruppe vu Messagen.",

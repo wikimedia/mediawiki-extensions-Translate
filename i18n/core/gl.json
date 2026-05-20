@@ -171,6 +171,8 @@
 	"translate-translations-project": "Proxecto:",
 	"translate-translations-including-no-param": "Por favor, especifique unha clave de mensaxe válida no parámetro da subpáxina",
 	"translate-translations-history-short": "h",
+	"translate-translations-last-edit-header": "Última edición",
+	"translate-translations-last-edit": "$1 por $2",
 	"languagestats": "Estatísticas da lingua",
 	"languagestats-summary": "Esta páxina amosa as estatísticas de tradución dos grupos de mensaxes dunha lingua.",
 	"messagegroupstats-summary": "Esta páxina amosa as estatísticas dos grupos de mensaxes.",

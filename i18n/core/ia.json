@@ -163,6 +163,8 @@
 	"translate-translations-project": "Projecto:",
 	"translate-translations-including-no-param": "Per favor specifica un clave de message valide in le parametro subpagina",
 	"translate-translations-history-short": "h",
+	"translate-translations-last-edit-header": "Ultime modification",
+	"translate-translations-last-edit": "$1 per $2",
 	"languagestats": "Statisticas per lingua",
 	"languagestats-summary": "Iste pagina monstra le statisticas de traduction pro tote le gruppos de messages pro un lingua.",
 	"messagegroupstats-summary": "Iste pagina monstra statisticas pro le gruppos de messages.",

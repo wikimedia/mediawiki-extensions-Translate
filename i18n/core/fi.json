@@ -187,6 +187,8 @@
 	"translate-translations-project": "Projekti",
 	"translate-translations-including-no-param": "Lisää viesti alasivuparametriksi.",
 	"translate-translations-history-short": "h",
+	"translate-translations-last-edit-header": "Viimeisin muokkaus",
+	"translate-translations-last-edit": "$1 – $2",
 	"languagestats": "Kielitilastot",
 	"languagestats-summary": "Tämä sivu näyttää valitun kielen käännöstilastot kaikille viestiryhmille.",
 	"messagegroupstats-summary": "Tällä sivulla on tilastoja viestiryhmistä.",

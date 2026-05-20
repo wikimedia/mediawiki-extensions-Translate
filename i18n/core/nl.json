@@ -182,6 +182,8 @@
 	"translate-translations-project": "Project:",
 	"translate-translations-including-no-param": "Geef een geldige berichtsleutel op in de parameter ‘subpage’",
 	"translate-translations-history-short": "g",
+	"translate-translations-last-edit-header": "Laatste bewerking",
+	"translate-translations-last-edit": "$1 door $2",
 	"languagestats": "Taalstatistieken",
 	"languagestats-summary": "Op deze pagina worden vertaalstatistieken weergegeven voor alle berichtengroepen voor een taal.",
 	"messagegroupstats-summary": "Op deze pagina worden berichtengroepstatistieken weergegeven.",
