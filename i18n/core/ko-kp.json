@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Delim",
-			"Gminky"
+			"Gminky",
+			"Tensama0415"
 		]
 	},
 	"translate": "번역하기",
@@ -72,10 +73,10 @@
 	"translate-pref-editassistlang-help": "반점으로 언어부호목록을 구분하세요.\n번역할 때는 해당 언어로 통보문 번역이 보입니다.\n언어의 기본 목록은 내 언어에 따라 달라집니다.",
 	"translate-pref-editassistlang-bad": "목록에서 잘못된 언어 부호가 있습니다:\n<nowiki>$1</nowiki>.",
 	"right-translate": "체계 통보문을 번역",
-	"right-translate-manage": "통보문집단 관리",
-	"action-translate-manage": "통보문 집단을 관리할",
+	"right-translate-manage": "통보문 집단 관리",
+	"action-translate-manage": "통보문 집단 관리",
 	"right-translate-import": "비직결 번역 반입",
-	"action-translate-import": "비직결 번역을 반입할",
+	"action-translate-import": "비직결 번역 반입",
 	"right-translate-messagereview": "번역 검토하기",
 	"action-translate-messagereview": "모든 번역 검토하기",
 	"right-translate-groupreview": "통보문 집단의 작업 상태를 바꾸기",
