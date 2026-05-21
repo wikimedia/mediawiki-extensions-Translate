@@ -240,6 +240,9 @@ class TranslatableBundleMover {
 		string $moveReason,
 		?callable $progressCallback = null
 	): void {
+		$this->lock( array_keys( $pagesToMove ) );
+		$this->lock( array_values( $pagesToMove ) );
+
 		$sourceBundle = $this->bundleFactory->getValidBundle( $source );
 
 		$this->move( $sourceBundle, $performer, $pagesToMove, $pagesToRedirect, $moveReason, $progressCallback );

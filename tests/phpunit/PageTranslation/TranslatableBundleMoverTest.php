@@ -200,7 +200,7 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function testMoveSynchronouslyDoesNotAcquireLocks(): void {
+	public function testMoveSynchronouslyAcquiresLocks(): void {
 		$user = $this->getTestSysop()->getUser();
 		$sourceTitle = Title::newFromText( 'MoveLockSyncSource' );
 		$targetTitle = Title::newFromText( 'MoveLockSyncTarget' );
@@ -223,13 +223,20 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
-		$sourceKey = $cache->makeKey( 'pt-lock', sha1( $sourceTitle->getPrefixedText() ) );
+		$targetKey = $cache->makeKey( 'pt-lock', sha1( $targetTitle->getPrefixedText() ) );
 
-		// Verify no lock exists before the move
 		$this->assertFalse(
-			$cache->get( $sourceKey ),
-			'Source page must not be locked before moveSynchronously'
+			$cache->get( $targetKey ),
+			'Target page must not be locked before moveSynchronously'
 		);
+
+		// Use the progress callback to observe that locks are held during the move
+		$lockObservedDuringMove = false;
+		$callback = static function () use ( $cache, $targetKey, &$lockObservedDuringMove ) {
+			if ( $cache->get( $targetKey ) === 'locked' ) {
+				$lockObservedDuringMove = true;
+			}
+		};
 
 		$this->bundleMover->moveSynchronously(
 			source: $sourceTitle,
@@ -237,14 +244,13 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 			pagesToMove: $pageCollection->getListOfPages(),
 			pagesToRedirect: $pageCollection->getListOfPagesToRedirect(),
 			performer: $user,
-			moveReason: 'test move'
+			moveReason: 'test move',
+			progressCallback: $callback
 		);
 
-		// moveSynchronously currently does NOT acquire locks before moving.
-		// This documents the gap that allows concurrent interference.
-		$this->assertFalse(
-			$cache->get( $sourceKey ),
-			'Source page lock must not exist after moveSynchronously (no pre-lock)'
+		$this->assertTrue(
+			$lockObservedDuringMove,
+			'Target page must be locked during moveSynchronously'
 		);
 	}
 
