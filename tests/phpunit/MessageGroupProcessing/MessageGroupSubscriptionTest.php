@@ -43,17 +43,15 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideTestSendNotifications */
 	public function testSendNotifications( array $info, array $expectedValues, array $expectedGroupIds ): void {
-		$groupCount = $this->exactly( count( $expectedGroupIds ) );
-
-		$consecutiveValues = [];
-		foreach ( $expectedValues as $value ) {
-			$consecutiveValues[] = [ $this->equalTo( $value ) ];
-		}
+		$invocationCount = 0;
 
 		$this->mockEventCreator
-			->expects( $groupCount )
+			->expects( $this->exactly( count( $expectedGroupIds ) ) )
 			->method( 'create' )
-			->withConsecutive( ...$consecutiveValues );
+			->willReturnCallback( function ( $value ) use ( &$invocationCount, $expectedValues ) {
+				$this->assertEquals( $expectedValues[$invocationCount], $value );
+				$invocationCount++;
+			} );
 		$this->subscriptionStoreMock
 			->expects( $this->once() )
 			->method( 'getSubscriptions' )
