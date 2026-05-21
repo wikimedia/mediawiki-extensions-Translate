@@ -205,7 +205,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			switch ( $action ) {
 				case 'unlink':
 				case 'unmark':
-					$this->showConfirmation( $params, 'tpt-unlink-button', 'mw-ui-destructive' );
+					$this->showConfirmation( $params, 'tpt-unlink-button', 'cdx-button--action-destructive' );
 					break;
 				case 'discourage':
 				case 'encourage':
@@ -424,7 +424,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 	private function showConfirmation(
 		array $params,
 		string $buttonKey = 'tpt-generic-button',
-		string $buttonClass = 'mw-ui-progressive',
+		string $buttonClass = 'cdx-button--action-progressive',
 	): void {
 		$formParams = [
 			'method' => 'post',
@@ -447,7 +447,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$this->msg( "tpt-$action-confirm" )->params( $params[ 'target' ] )->parseAsBlock() .
 			Html::submitButton(
 				$this->msg( $buttonKey )->text(),
-				[ 'class' => "mw-ui-button $buttonClass" ]
+				[ 'class' => "cdx-button cdx-button--weight-primary $buttonClass" ]
 			) .
 			Html::closeElement( 'form' )
 		);
