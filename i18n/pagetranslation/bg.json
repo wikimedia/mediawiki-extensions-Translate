@@ -46,6 +46,5 @@
 	"pp-save-button-label": "Публикуване",
 	"pp-cancel-button-label": "Отказ",
 	"pp-diff-old-header": "Изходен текст",
-	"pp-diff-new-header": "Подготвен текст",
-	"tpt-generic-confirm": "Моля, потвърдете действието."
+	"pp-diff-new-header": "Подготвен текст"
 }

@@ -195,5 +195,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "조회 중인 개체 유형",
 	"apihelp-translationentitysearch-param-grouptypes": "필터링할 그룹 유형(들)",
 	"apihelp-translationentitysearch-param-query": "검색 쿼리",
-	"apihelp-translationentitysearch-param-limit": "검색 결과 최대 수"
+	"apihelp-translationentitysearch-param-limit": "검색 결과 최대 수",
+	"apierror-discouragetranslation-invalidtitle": "요청된 제목은 번역 대상으로 표시되어 있지 않습니다.",
+	"apierror-discouragetranslation-alreadydone": "요청된 제목은 이미 권장하지 않음 상태가 요청되었습니다.",
+	"apihelp-discouragetranslation-summary": "번역 가능한 문서를 권장하지 않음 또는 권장하지 않음이 아님으로 표시합니다. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage 권장하지 않음으로 표시된 문서]는 번역을 할 문서를 검색할 때 번역 인터페이스에서 숨겨지지만, 직접 번역하는 것은 여전히 가능합니다.",
+	"apihelp-discouragetranslation-param-title": "작업을 수행할 문서의 제목입니다. <var>title</var> 또는 <var>pageID</var> 중 하나는 반드시 설정되어야 합니다.",
+	"apihelp-discouragetranslation-param-pageid": "작업을 수행할 문서의 문서 ID입니다. <var>title</var> 또는 <var>pageID</var> 중 하나는 반드시 설정되어야 합니다.",
+	"apihelp-discouragetranslation-param-do": "문서에 수행하고자 하는 작업입니다.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "이 문서를 권장하지 않음으로 표시하여, 번역을 위한 문서 목록에서 숨겨지게 만듭니다.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "이 문서를 더이상 권장하지 않음이 아니도록 표시하여, 번역을 위한 문서 목록에 나타나게 만듭니다.",
+	"apihelp-discouragetranslation-param-reason": "[[Special:Log/pagetranslation]]에 기록할 때 사용할 로그 요약입니다"
 }

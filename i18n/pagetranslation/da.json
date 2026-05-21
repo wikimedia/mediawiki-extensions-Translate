@@ -172,6 +172,6 @@
 	"pp-diff-old-header": "Kildetekst",
 	"pp-diff-new-header": "Forberedt tekst",
 	"tpt-unlink-button": "Fjern fra oversættelse",
-	"tpt-unlink-summary": "Fjernede siden fra oversættelse.",
-	"tpt-generic-button": "Bekræft"
+	"tpt-generic-button": "Bekræft",
+	"tpt-unlink-summary": "Fjernede siden fra oversættelse."
 }

@@ -134,7 +134,6 @@
 	"pp-diff-old-header": "Šaltinio tekstas",
 	"pp-diff-new-header": "Paruoštas tekstas",
 	"tpt-unlink-button": "Pašalinti iš vertimo",
-	"tpt-unlink-summary": "Puslapis pašalintas iš vertimo",
-	"tpt-generic-confirm": "Prašome patvirtinti šį veiksmą.",
-	"tpt-generic-button": "Patvirtinti"
+	"tpt-generic-button": "Patvirtinti",
+	"tpt-unlink-summary": "Puslapis pašalintas iš vertimo"
 }

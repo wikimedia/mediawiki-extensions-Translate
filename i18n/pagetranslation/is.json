@@ -174,7 +174,6 @@
 	"pp-diff-old-header": "Frumtexti",
 	"pp-diff-new-header": "Undirbúinn texti",
 	"tpt-unlink-button": "Fjarlægja úr þýðingu",
-	"tpt-unlink-summary": "Fjarlægði síðu úr þýðingu",
-	"tpt-generic-confirm": "Endilega staðfestu aðgerðina.",
-	"tpt-generic-button": "Staðfesta"
+	"tpt-generic-button": "Staðfesta",
+	"tpt-unlink-summary": "Fjarlægði síðu úr þýðingu"
 }

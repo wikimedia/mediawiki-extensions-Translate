@@ -134,7 +134,6 @@
 	"pp-diff-old-header": "Text font",
 	"pp-diff-new-header": "Text preparat",
 	"tpt-unlink-button": "Suprimeix de la traducció",
-	"tpt-unlink-summary": "S'ha suprimit la pàgina de la traducció",
-	"tpt-generic-confirm": "Confirmeu l'acció.",
-	"tpt-generic-button": "Confirma"
+	"tpt-generic-button": "Confirma",
+	"tpt-unlink-summary": "S'ha suprimit la pàgina de la traducció"
 }

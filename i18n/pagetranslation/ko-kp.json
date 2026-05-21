@@ -178,7 +178,6 @@
 	"pp-pagename-missing": "문서 이름을 입력하세요.",
 	"pp-diff-old-header": "원문",
 	"tpt-unlink-button": "번역에서 제거",
-	"tpt-unlink-summary": "번역에서 문서 제거",
-	"tpt-generic-confirm": "조작을 확인해 주십시오.",
-	"tpt-generic-button": "확인"
+	"tpt-generic-button": "확인",
+	"tpt-unlink-summary": "번역에서 문서 제거"
 }

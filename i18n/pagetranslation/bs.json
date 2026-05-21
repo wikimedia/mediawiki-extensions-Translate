@@ -192,7 +192,6 @@
 	"pp-diff-new-header": "Pripremljeni tekst",
 	"tpt-unlink-confirm": "Potvrdite da zaista želite ukloniti ovu stranicu iz sistema za prevođenje.\nJezički selektor i prevedeni nazivi stranica prestat će raditi.\nStranice prijevoda neće se moći uređivati.",
 	"tpt-unlink-button": "Ukloni iz prijevoda",
-	"tpt-unlink-summary": "Uklonjena stranica iz prijevoda",
-	"tpt-generic-confirm": "Potvrdite radnju.",
-	"tpt-generic-button": "Potvrdi"
+	"tpt-generic-button": "Potvrdi",
+	"tpt-unlink-summary": "Uklonjena stranica iz prijevoda"
 }

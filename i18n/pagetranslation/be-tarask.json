@@ -241,14 +241,13 @@
 	"pp-unexpected-error": "Падчас апрацоўкі вашага запыту адбылася памылка",
 	"tpt-unlink-confirm": "Калі ласка, пацьвердзіце, што вы сапраўды хочаце выключыць гэтую старонку з сыстэмы перакладу.\nВыбар мовы і назвы перакладзеных старонак перастануць працаваць.\nСтаронкі перакладу стануць рэдагавальнымі.",
 	"tpt-unlink-button": "Выдаліць зь перакладу",
+	"tpt-generic-button": "Пацьвердзіць",
 	"tpt-unlink-summary": "Старонка выдаленая зь перакладу",
 	"tpt-general-area-header": "Агульны абшар",
 	"tpt-fuzzy-select-label": "Патрабаваць абнаўленьня перакладу зьмененых блёкаў",
 	"tpt-fuzzy-select-all": "Для ўсіх зьмененых адзінак",
 	"tpt-fuzzy-select-none": "Для ніводнай з адзінак",
 	"tpt-fuzzy-select-custom": "Індывідуальны выбар",
-	"tpt-generic-confirm": "Калі ласка, пацьвердзьце дзеяньне.",
-	"tpt-generic-button": "Пацьвердзіць",
 	"tpt-validation-not-insertable": "Назва зьменай перакладу „$1“ непрыдатная для ўстаўкі ў інтэрфэйсе перакладу. Унікайце спэцыяльных сымбаляў.",
 	"tpt-validation-name-reuse": "Зьменная перакладу „$1“ апісаная мноства разоў з розным зьместам. Памяняйце назвы зьменных, каб унутры адзінкі перакладу яны былі ўнікальнымі.",
 	"visualeditor-annotations-translate-start": "Пачатак перакладальнага зьместу",
@@ -256,5 +255,6 @@
 	"visualeditor-annotations-translate-description": "Гэты дыяпазон пазначаны перакладальным. Пераканайцеся, што выконваеце рэкамэндацыі, пададзеныя для [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text зьмены крынічнага тэксту].",
 	"visualeditor-annotations-tvar-start": "Пачатак неперакладальнага зьместу",
 	"visualeditor-annotations-tvar-end": "Канец неперакладальнага зьместу",
-	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту]."
+	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту].",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Пазначыць усе"
 }
