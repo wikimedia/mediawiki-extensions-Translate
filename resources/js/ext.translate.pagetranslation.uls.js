@@ -39,9 +39,12 @@
 		},
 		getConfig: ( context ) => {
 			const hitCodes = Object.keys( context.searchQueryHits || {} );
-			const suggestionCodes = context.suggestions || [];
+			const preferredLanguages = context.preferredLanguages || [];
+			const highlightedLanguageCodes = preferredLanguages.length > 0 ?
+				preferredLanguages :
+				( context.suggestions || [] );
 
-			const codes = [ ...new Set( [ ...hitCodes, ...suggestionCodes ] ) ]
+			const codes = [ ...new Set( [ ...hitCodes, ...highlightedLanguageCodes ] ) ]
 				.filter( ( code ) => {
 					const isAllowedByPriority = priorityLanguages.length === 0 || priorityLanguages.includes( code );
 					return isAllowedByPriority && !!supportedLanguages[ code ];
