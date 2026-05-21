@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
@@ -38,7 +39,7 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 
 		$this->createMarkedTranslatablePage(
 			$sourceTitle->getPrefixedText(),
-			'Unit one' . "\n\n" . 'Unit two',
+			"Unit one\n\nUnit two",
 			$user
 		);
 		MessageGroups::singleton()->recache();
@@ -63,12 +64,12 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$this->bundleMover->moveSynchronously(
-			$sourceTitle,
-			$targetTitle,
-			$pagesToMove,
-			$pagesToRedirect,
-			$user,
-			'test move'
+			source: $sourceTitle,
+			target: $targetTitle,
+			pagesToMove: $pagesToMove,
+			pagesToRedirect: $pagesToRedirect,
+			performer: $user,
+			moveReason: 'test move'
 		);
 
 		// Use fresh Title objects to avoid stale article ID caches
@@ -125,13 +126,13 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 		};
 
 		$this->bundleMover->moveSynchronously(
-			$sourceTitle,
-			$targetTitle,
-			$pagesToMove,
-			$pagesToRedirect,
-			$user,
-			'test move',
-			$callback
+			source: $sourceTitle,
+			target: $targetTitle,
+			pagesToMove: $pagesToMove,
+			pagesToRedirect: $pagesToRedirect,
+			performer: $user,
+			moveReason: 'test move',
+			progressCallback: $callback
 		);
 
 		$this->assertSameSize(
@@ -158,6 +159,93 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 				"Move of {$invocation['old']} must succeed"
 			);
 		}
+	}
+
+	public function testMoveAsynchronouslyAcquiresLocks(): void {
+		$user = $this->getTestSysop()->getUser();
+		$sourceTitle = Title::newFromText( 'MoveLockAsyncSource' );
+		$targetTitle = Title::newFromText( 'MoveLockAsyncTarget' );
+
+		$this->createMarkedTranslatablePage(
+			$sourceTitle->getPrefixedText(),
+			'Lock test content',
+			$user
+		);
+		MessageGroups::singleton()->recache();
+
+		$this->bundleMover->moveAsynchronously(
+			source: $sourceTitle,
+			target: $targetTitle,
+			moveSubPages: true,
+			user: $user,
+			moveReason: 'test move',
+			moveTalkPages: true,
+			leaveRedirect: true,
+			userSessionInfo: []
+		);
+
+		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
+		$sourceKey = $cache->makeKey( 'pt-lock', sha1( $sourceTitle->getPrefixedText() ) );
+		$targetKey = $cache->makeKey( 'pt-lock', sha1( $targetTitle->getPrefixedText() ) );
+
+		$this->assertSame(
+			'locked',
+			$cache->get( $sourceKey ),
+			'Source page must be locked after moveAsynchronously'
+		);
+		$this->assertSame(
+			'locked',
+			$cache->get( $targetKey ),
+			'Target page must be locked after moveAsynchronously'
+		);
+	}
+
+	public function testMoveSynchronouslyDoesNotAcquireLocks(): void {
+		$user = $this->getTestSysop()->getUser();
+		$sourceTitle = Title::newFromText( 'MoveLockSyncSource' );
+		$targetTitle = Title::newFromText( 'MoveLockSyncTarget' );
+
+		$this->createMarkedTranslatablePage(
+			$sourceTitle->getPrefixedText(),
+			'Lock test content',
+			$user
+		);
+		MessageGroups::singleton()->recache();
+
+		$pageCollection = $this->bundleMover->getPageMoveCollection(
+			source: $sourceTitle,
+			target: $targetTitle,
+			user: $user,
+			reason: 'test move',
+			moveSubPages: true,
+			moveTalkPages: true,
+			leaveRedirect: false
+		);
+
+		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
+		$sourceKey = $cache->makeKey( 'pt-lock', sha1( $sourceTitle->getPrefixedText() ) );
+
+		// Verify no lock exists before the move
+		$this->assertFalse(
+			$cache->get( $sourceKey ),
+			'Source page must not be locked before moveSynchronously'
+		);
+
+		$this->bundleMover->moveSynchronously(
+			source: $sourceTitle,
+			target: $targetTitle,
+			pagesToMove: $pageCollection->getListOfPages(),
+			pagesToRedirect: $pageCollection->getListOfPagesToRedirect(),
+			performer: $user,
+			moveReason: 'test move'
+		);
+
+		// moveSynchronously currently does NOT acquire locks before moving.
+		// This documents the gap that allows concurrent interference.
+		$this->assertFalse(
+			$cache->get( $sourceKey ),
+			'Source page lock must not exist after moveSynchronously (no pre-lock)'
+		);
 	}
 
 	public function testMoveSynchronouslyContinuesOnIndividualFailure(): void {
@@ -205,13 +293,13 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 		};
 
 		$this->bundleMover->moveSynchronously(
-			$sourceTitle,
-			$targetTitle,
-			$pagesToMove,
-			$pagesToRedirect,
-			$user,
-			'test move',
-			$callback
+			source: $sourceTitle,
+			target: $targetTitle,
+			pagesToMove: $pagesToMove,
+			pagesToRedirect: $pagesToRedirect,
+			performer: $user,
+			moveReason: 'test move',
+			progressCallback: $callback
 		);
 
 		$this->assertContains(
