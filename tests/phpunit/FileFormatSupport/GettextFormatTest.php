@@ -264,6 +264,49 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 			'{{PLURAL:GETTEXT|The bunnies stole one carrot.|The bunnies stole %{count} carrots.}}' ) );
 	}
 
+	public function testReadFromVariableRejectsInvalidUtf8(): void {
+		$gettextFormat = $this->getGettextInstance();
+
+		// Create a minimal valid PO file structure but with invalid UTF-8 in a msgstr
+		// 0x92 is a Windows-1252 right single quotation mark, invalid in UTF-8
+		$invalidUtf8Char = "\x92";
+		$poContent = <<<PO
+		msgid ""
+		msgstr ""
+		"Content-Type: text/plain; charset=UTF-8\\n"
+		"X-Language-Code: nl\\n"
+		"X-Message-Group: test-group\\n"
+
+		msgctxt "context"
+		msgid "Hello"
+		msgstr "Hallo{$invalidUtf8Char}"
+		PO;
+
+		$this->expectException( GettextParseException::class );
+		$this->expectExceptionMessage( 'invalid-utf8' );
+		$gettextFormat->readFromVariable( $poContent );
+	}
+
+	public function testReadFromVariableAcceptsValidUtf8(): void {
+		$gettextFormat = $this->getGettextInstance();
+
+		$poContent = <<<'PO'
+		msgid ""
+		msgstr ""
+		"Content-Type: text/plain; charset=UTF-8\n"
+		"X-Language-Code: nl\n"
+		"X-Message-Group: test-group\n"
+
+		msgctxt "context"
+		msgid "Hello"
+		msgstr "Héllo wörld"
+		PO;
+
+		$result = $gettextFormat->readFromVariable( $poContent );
+		$this->assertArrayHasKey( 'MESSAGES', $result );
+		$this->assertNotEmpty( $result['MESSAGES'] );
+	}
+
 	private function getGettextInstance(): GettextFormat {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		return new GettextFormat( $group );

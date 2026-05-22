@@ -55,7 +55,12 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		}
 	}
 
+	/** @throws GettextParseException */
 	public function readFromVariable( string $data ): array {
+		if ( !mb_check_encoding( $data, 'UTF-8' ) ) {
+			throw new GettextParseException( 'invalid-utf8' );
+		}
+
 		# Authors first
 		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );

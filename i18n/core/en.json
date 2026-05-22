@@ -305,6 +305,7 @@
 	"translate-import-err-stale-group": "The message group this file belongs to does not exist.",
 	"translate-import-err-no-headers": "File is not a well-formed Gettext file in Translate extension format:\nUnable to determine message group and language from file headers.",
 	"translate-import-err-gettext-parse-failed": "File is not a well-formed Gettext file:\n$1",
+	"translate-import-err-invalid-encoding": "File contains invalid UTF-8 encoding. Please ensure the file is saved as UTF-8 before importing.",
 	"translate-js-support-unsaved-warning": "You have unpublished translations.",
 	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "Translations",

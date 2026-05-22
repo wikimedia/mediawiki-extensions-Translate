@@ -138,6 +138,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		// translate-import-err-invalid-title, translate-import-err-no-such-file,
 		// translate-import-err-stale-group, translate-import-err-no-headers,
 		// translate-import-err-gettext-parse-failed,
+		// translate-import-err-invalid-encoding,
 		if ( $msg[0] !== 'ok' ) {
 			$errorWrap = Html::errorBox( '$1' );
 			$msg[0] = 'translate-import-err-' . $msg[0];
@@ -217,6 +218,9 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 		try {
 			$parseOutput = $ffs->readFromVariable( $data );
 		} catch ( GettextParseException $e ) {
+			if ( $e->getMessage() === 'invalid-utf8' ) {
+				return [ 'invalid-encoding' ];
+			}
 			return [
 				'gettext-parse-failed',
 				Message::rawParam( Html::element( 'pre', [], $e->getMessage() ) )
