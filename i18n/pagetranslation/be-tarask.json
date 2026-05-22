@@ -256,5 +256,6 @@
 	"visualeditor-annotations-translate-description": "Гэты дыяпазон пазначаны перакладальным. Пераканайцеся, што выконваеце рэкамэндацыі, пададзеныя для [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text зьмены крынічнага тэксту].",
 	"visualeditor-annotations-tvar-start": "Пачатак неперакладальнага зьместу",
 	"visualeditor-annotations-tvar-end": "Канец неперакладальнага зьместу",
-	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту]."
+	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту].",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Пазначыць усе"
 }

@@ -334,7 +334,7 @@
 	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation",
 	"pp-unexpected-error": "Error message displayed on Special:PagePreparation when an error occurs",
 	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation.",
-	"tpt-unlink-button": "Button text",
+	"tpt-unlink-button": "Button text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-general-area-header": "Header text for the general area in Special:PageTranslation",
 	"tpt-fuzzy-select-label": "Label of the select all nofuzzy checkbox in the general area. \"Edited units\" means \"units that were edited\".",

@@ -4,7 +4,8 @@
 			"Abdullahi",
 			"Abshirdheere",
 			"Maax",
-			"Mimursal"
+			"Mimursal",
+			"AhmedG612"
 		]
 	},
 	"translate": "Turjun",
@@ -29,8 +30,10 @@
 	"translate-page-showing-all": "Muujin $1 {{PLURAL:$1|farriin|farriimood}}.",
 	"translate-page-showing-none": "Wax qoraal ah lama soo bandhigin.",
 	"translate-page-description-legend": "Macluumaad kusaabsan qaybta",
+	"translate-edit-no-information": "<em>Fariintani ma laha sharaxaad.\nHaddii aad taqaan meesha ama sida fariintan loo adeegsado, waxaad caawin kartaa turjumayaasha kale adigoo ku daraya sharaxaadda fariintan.</em>",
 	"translate-edit-nopermission": "Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.",
 	"translate-tag-page-desc": "Turjumidda ee bogga wiki [[$2|$1]].",
+	"translate-translations-none": "Ma jiraan turjumaado \"$1\"",
 	"languagestats": "Tirakoobka luqadda",
 	"languagestats-summary": "Boggaan waxaa lagu soo bandhigay tirakoobka turjumaadda qayba kasta oo ka mid ah fariimaha luaqadaha.",
 	"languagestats-stats-for": "Tirakoobka turtumida luqadda  $1 ($2).",
@@ -46,5 +49,6 @@
 	"supportedlanguages-count": "Wadarta ku jirta waa $1 {{PLURAL:$1|luqad|luqadood}}.",
 	"translate-documentation-language": "Dukumiinti fariin ah",
 	"translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada.",
-	"tux-message-filter-advanced-button": "Raadinta sare"
+	"tux-message-filter-advanced-button": "Raadinta sare",
+	"notification-body-translate-mgs-message-added": "$1 farriin cusub ama la cusboonaysiiyay {{PLURAL:$1|farriin|farriimo}}"
 }
