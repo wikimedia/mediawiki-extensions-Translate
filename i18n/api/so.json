@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apierror-discouragetranslation-invalidtitle": "Cinwaanka la codsaday looma calaamadin turjumaad.",
+	"apierror-discouragetranslation-alreadydone": "Cinwaanka la codsaday hore ayuu u leeyahay xaaladda niyad jabka ee la codsaday.",
+	"apihelp-discouragetranslation-summary": "Calaamadee bog la turjumi karo inuu yahay mid niyad-jabsan ama aan niyad-jabsanayn. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Bogagga niyad jabsan] waxaa laga qariyaa is-dhexgalka turjumaadda marka la raadinayo bogag la turjumi karo, laakiin weli si toos ah ayaa loo turjumi karaa.",
+	"apihelp-discouragetranslation-param-title": "Cinwaanka bogga la falgalayo. Midkood <var>title</var> ama <var>pageid</var> waa in la dejiyaa.",
+	"apihelp-discouragetranslation-param-pageid": "Aqoonsiga bogga ee bogga la falgalayo. Midkood <var>title</var> ama <var>pageid</var> waa in la dejiyaa.",
+	"apihelp-discouragetranslation-param-do": "Ficilka la doonayo in lagu fuliyo bogga.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Calaamadee bogga inuu yahay mid niyad-jabsan, taasoo ka dhigaysa in laga qariyo liisaska bogagga la turjumi karo.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Bogga ka saar calaamadda niyad-jabka, taasoo ka dhigaysa in lagu muujiyo liisaska bogagga la turjumi karo.",
+	"apihelp-discouragetranslation-param-reason": "Soo koobid diiwaan ah oo la adeegsanayo marka lagu diiwaangelinayo [[Special:Log/pagetranslation]]"
+}

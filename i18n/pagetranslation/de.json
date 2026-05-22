@@ -309,7 +309,7 @@
 	"pp-diff-new-header": "Vorbereiteter Text",
 	"pp-unexpected-error": "Bei der Bearbeitung deiner Anfrage ist ein Fehler aufgetreten",
 	"tpt-unlink-confirm": "Bitte bestätige, dass du wirklich [[:$1]] aus dem Übersetzungssystem entfernen möchtest.\nDie Sprachauswahl und übersetzte Seitennamen hören auf zu funktionieren.\nDie Übersetzungsseiten werden bearbeitbar.\nAlle Übersetzungsmarkierungen werden von der Quellseite entfernt.",
-	"tpt-unmark-confirm": "Bitte bestätige, dass du [[:$1]] wirklich aus dem Übersetzungssystem entfernen möchtest\nDie Sprachauswahl und die übersetzten Seitennamen funktionieren dann nicht mehr.\nDie Übersetzungsseiten können dann bearbeitet werden.\nDie Quellseite wird nicht bearbeitet.",
+	"tpt-unmark-confirm": "Bitte bestätige, dass du [[:$1]] wirklich aus dem Übersetzungssystem entfernen möchtest.\nDie Sprachauswahl und die übersetzten Seitennamen funktionieren dann nicht mehr.\nDie Übersetzungsseiten können dann bearbeitet werden.\nDie Quellseite wird nicht bearbeitet.",
 	"tpt-discourage-confirm": "Bitte bestätige, dass du die Übersetzung von [[:$1]] unterbinden möchtest. [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Seiten, deren Übersetzung unterbunden wurde], werden bei der Suche nach zu übersetzenden Seiten in der Übersetzungsoberfläche ausgeblendet, können aber weiterhin direkt übersetzt werden.",
 	"tpt-encourage-confirm": "Bitte bestätige, dass du die Übersetzung von [[:$1]] fördern möchtest. Der Eintrag wird in der Übersetzungsoberfläche angezeigt, wenn nach zu übersetzenden Seiten gesucht wird.",
 	"tpt-unlink-button": "Von der Übersetzung entfernen",

@@ -198,5 +198,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "Het op te vragen type entiteit",
 	"apihelp-translationentitysearch-param-grouptypes": "Groepstype(n) waarop gefilterd met worden",
 	"apihelp-translationentitysearch-param-query": "Zoekopdracht",
-	"apihelp-translationentitysearch-param-limit": "Maximumaantal zoekresultaten"
+	"apihelp-translationentitysearch-param-limit": "Maximumaantal zoekresultaten",
+	"apierror-discouragetranslation-invalidtitle": "De gevraagde titel is niet gemarkeerd voor vertaling.",
+	"apierror-discouragetranslation-alreadydone": "De gevraagde titel heeft al de aangevraagde ontmoedigingsstatus.",
+	"apihelp-discouragetranslation-summary": "Markeer een vertaalbare pagina als afgeraden of niet afgeraden. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Afgeraden pagina's] worden verborgen in de vertaalinterface wanneer er wordt gezocht naar pagina's om te vertalen, maar kunnen nog steeds rechtstreeks worden vertaald.",
+	"apihelp-discouragetranslation-param-title": "De titel van de te markeren pagina. Of <var>title</var> of <var>pageid</var> moet opgegeven worden.",
+	"apihelp-discouragetranslation-param-pageid": "De pagina-ID van de te markeren pagina. Of <var>title</var> of <var>pageid</var> moet opgegeven worden.",
+	"apihelp-discouragetranslation-param-do": "De gewenste handeling die op de pagina moet worden uitgevoerd.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Markeer de pagina als afgeraden, waardoor deze niet meer in de lijst met te vertalen pagina's verschijnt.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Markeer de pagina als niet langer afgeraden, zodat deze wordt weergegeven in lijsten met te vertalen pagina's.",
+	"apihelp-discouragetranslation-param-reason": "Logboeksamenvatting voor het schrijven naar [[Special:Log/pagetranslation]]"
 }

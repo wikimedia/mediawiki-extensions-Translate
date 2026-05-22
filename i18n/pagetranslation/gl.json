@@ -297,7 +297,10 @@
 	"pp-diff-old-header": "Texto fonte",
 	"pp-diff-new-header": "Texto preparado",
 	"pp-unexpected-error": "Houbo un erro ao procesar a súa solicitude",
-	"tpt-unlink-confirm": "Confirma que realmente queres eliminar esta páxina do sistema de tradución.\nO selector de linguas e os nomes das páxinas traducidas deixarán de funcionar.\nAs páxinas de tradución volveranse editables.",
+	"tpt-unlink-confirm": "Confirma que realmente queres eliminar «[[:$1]]» do sistema de tradución.\nO selector de linguas e os nomes das páxinas traducidas deixarán de funcionar.\nAs páxinas de tradución volveranse editables.\nToda a notación de tradución eliminarase da páxina de orixe.",
+	"tpt-unmark-confirm": "Confirma que realmente queres eliminar «[[:$1]]» do sistema de tradución.\nO selector de linguas e os nomes das páxinas traducidas deixarán de funcionar.\nAs páxinas de tradución volveranse editables.\nA páxina de orixe non se editará.",
+	"tpt-discourage-confirm": "Confirma que realmente queres eliminar «[[:$1]]» do sistema de tradución. As [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage páxinas desaconselladas] agóchanse da interface de tradución cando se buscan as páxinas que traducir, pero poden traducirse directamente.",
+	"tpt-encourage-confirm": "Confirma que realmente queres eliminar «[[:$1]]» do sistema de tradución. Aparecerá na interface de tradución cando se busquen as páxinas que traducir.",
 	"tpt-unlink-button": "Eliminar da tradución",
 	"tpt-generic-button": "Confirmar",
 	"tpt-unlink-summary": "Páxina eliminada da tradución",
@@ -340,5 +343,6 @@
 	"right-translate-empty-category": "Crear unidades de tradución para categorías baleiras",
 	"action-translate-empty-category": "crear unidades de tradución para categorías baleiras",
 	"tpt-create-empty-category": "Non se pode crear unha unidade de tradución para a categoría «[[:$1]]», que está baleira.",
-	"ext-uls-empty-search-entrypoint-description": "Podes traducir esta páxina. É un xeito sinxelo de creares contido na túa lingua."
+	"ext-uls-empty-search-entrypoint-description": "Podes traducir esta páxina. É un xeito sinxelo de creares contido na túa lingua.",
+	"tpt-nosuchaction": "«$1» non é unha acción recoñecida que se poida realizar nunha páxina traducible."
 }

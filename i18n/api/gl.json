@@ -196,5 +196,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "Tipo de entidade que se está a consultar",
 	"apihelp-translationentitysearch-param-grouptypes": "Tipo(s) de grupo a filtrar",
 	"apihelp-translationentitysearch-param-query": "Consulta de procura",
-	"apihelp-translationentitysearch-param-limit": "Número máximo de resultados de procura"
+	"apihelp-translationentitysearch-param-limit": "Número máximo de resultados de procura",
+	"apierror-discouragetranslation-invalidtitle": "O título solicitado non está marcado para a súa tradución.",
+	"apierror-discouragetranslation-alreadydone": "O título solicitado xa ten pedido o estado de desaconsellado.",
+	"apihelp-discouragetranslation-summary": "Marca unha páxina traducible como desaconsellada ou non desaconsellada. As [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage páxinas desaconselladas] agóchanse da interface de tradución cando se buscan as páxinas que traducir, pero poden traducirse directamente.",
+	"apihelp-discouragetranslation-param-title": "O título da páxina sobre a que actuar. Debe establecerse ou ben <var>title</var> ou ben <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-pageid": "O identificador da páxina sobre a que actuar. Debe establecerse ou ben <var>title</var> ou ben <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-do": "A acción que se quere realizar sobre a páxina.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Marcar a páxina como desaconsellada, facendo que se agoche nas listas de páxinas para traducir.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Marcar a páxina como que xa non está desaconsellada, facendo que se mostre nas listas de páxinas para traducir.",
+	"apihelp-discouragetranslation-param-reason": "Resumo de rexistro a utilizar cando se crea unha entrada en [[Special:Log/pagetranslation]]"
 }

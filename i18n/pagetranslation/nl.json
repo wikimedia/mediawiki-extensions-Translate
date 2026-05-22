@@ -309,7 +309,10 @@
 	"pp-diff-old-header": "Brontekst",
 	"pp-diff-new-header": "Voorbereide tekst",
 	"pp-unexpected-error": "Er is een fout opgetreden bij het verwerken van uw verzoek",
-	"tpt-unlink-confirm": "Bevestig dat u deze pagina daadwerkelijk uit het vertalingssysteem wilt verwijderen.\nDe taalbalk en vertaalde paginanamen zullen niet meer werken. \nDe vertaalde pagina's zullen bewerkbaar worden.",
+	"tpt-unlink-confirm": "Bevestig dat u [[:$1]] daadwerkelijk uit het vertalingssysteem wilt verwijderen.\nDe taalbalk en vertaalde paginanamen werken dan niet meer. \nDe vertaalde pagina's worden bewerkbaar.\nAlle vertaalmarkering wordt van de bronpagina verwijderd.",
+	"tpt-unmark-confirm": "Bevestig alstublieft dat u [[:$1]] echt uit het vertaalsysteem wilt verwijderen.\nDe taalkiezer en de vertaalde paginanamen werken dan niet meer.\nDe vertaalpagina's worden bewerkbaar.\nDe bronpagina wordt niet bewerkt.",
+	"tpt-discourage-confirm": "Bevestig alstublieft dat u de vertaling van [[:$1]] wilt ontmoedigen. [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Ontmoedigde pagina's] zijn verborgen in de vertaalinterface wanneer u zoekt naar pagina's om te vertalen, maar kunnen nog steeds rechtstreeks worden vertaald.",
+	"tpt-encourage-confirm": "Bevestig alstublieft dat u de vertaling van [[:$1]] wilt aanmoedigen. Deze verschijnt in de vertaalinterface wanneer u zoekt naar pagina's om te vertalen.",
 	"tpt-unlink-button": "Verwijderen uit vertaling",
 	"tpt-generic-button": "Bevestigen",
 	"tpt-unlink-summary": "Verwijderd als vertaalbare pagina",
@@ -352,5 +355,6 @@
 	"right-translate-empty-category": "Vertaaleenheden aanmaken voor lege categorieën",
 	"action-translate-empty-category": "vertaaleenheden aan te maken voor lege categorieën",
 	"tpt-create-empty-category": "Kan geen vertaaleenheid aanmaken voor de categorie [[:$1]] omdat die leeg is.",
-	"ext-uls-empty-search-entrypoint-description": "U kunt deze pagina vertalen. Dat is een makkelijke manier om inhoud in uw taal te maken"
+	"ext-uls-empty-search-entrypoint-description": "U kunt deze pagina vertalen. Dat is een makkelijke manier om inhoud in uw taal te maken",
+	"tpt-nosuchaction": "\"$1\" is geen handeling die kan worden uitgevoerd op een vertaalbare pagina."
 }

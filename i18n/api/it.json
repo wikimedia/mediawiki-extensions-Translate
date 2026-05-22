@@ -64,6 +64,7 @@
 	"apierror-translate-unknownmessage": "Messaggio sconosciuto",
 	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te",
 	"apihelp-translationentitysearch-param-limit": "Numero massimo di risultati della ricerca",
+	"apihelp-discouragetranslation-param-do": "L'azione desiderata da eseguire sulla pagina.",
 	"apihelp-discouragetranslation-paramvalue-do-discourage": "Contrassegna la pagina come scoraggiata, in modo che venga nascosta dagli elenchi delle pagine da tradurre.",
 	"apihelp-discouragetranslation-paramvalue-do-encourage": "Contrassegna la pagina come non più scoraggiata, in modo che venga mostrata negli elenchi di pagine da tradurre."
 }

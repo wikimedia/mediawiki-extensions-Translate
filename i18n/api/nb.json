@@ -192,5 +192,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "Entitetstype det spørres etter",
 	"apihelp-translationentitysearch-param-grouptypes": "Gruppetype(r) det skal filtreres etter",
 	"apihelp-translationentitysearch-param-query": "Søkeord",
-	"apihelp-translationentitysearch-param-limit": "Maksimalt antall søkeresultater"
+	"apihelp-translationentitysearch-param-limit": "Maksimalt antall søkeresultater",
+	"apierror-discouragetranslation-invalidtitle": "Den etterspurte tittelen er ikke merket for oversettelse.",
+	"apierror-discouragetranslation-alreadydone": "Den etterspurte tittelen har allerede den etterspurte frarådningsstatusen.",
+	"apihelp-discouragetranslation-summary": "Marker en oversettelse som frarådet eller ikke frarådet. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Frarådede sider] skjules fra oversettelsesgrensesnittet når man søker etter sider å oversette, men kan fortsatt oversettes direkte.",
+	"apihelp-discouragetranslation-param-title": "Tittelen på siden det skal handles på. Enten <var>title</var> eller <var>pageid</var> må være satt.",
+	"apihelp-discouragetranslation-param-pageid": "Side-ID-en for siden det skal handles på. Enten <var>title</var> eller <var>pageid</var> må være satt.",
+	"apihelp-discouragetranslation-param-do": "Den ønskede handlingen som skal utføres på siden.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Marker siden som frarådet, så den skjules fra lister over sider som kan oversettes.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Marker siden som ikke lenger frarådet, så den igjen vises på lister over sider som kan oversettes.",
+	"apihelp-discouragetranslation-param-reason": "Loggsammendrag som skal brukes når man loggfører til [[Special:Log/pagetranslation]]"
 }

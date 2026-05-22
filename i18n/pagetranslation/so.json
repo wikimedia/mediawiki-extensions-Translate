@@ -11,5 +11,11 @@
 	"tpt-languages-nonzero": "$1 ($2% la turjumay)",
 	"pt-cta-mark-translation": "Boggaan waxaa lagu calaamadayn karaa  turjumaadda bulshada. Hagaajinta [$1 dooqyada turjumaadda bogga] si aad u ogaysiiso tifaftirayaasha in ay bilaabi karaan turjumaadda waxa ku jira.",
 	"pt-movepage-block-tp-invalid": "Cinwaanka bogga tarjumaadda ee \"[[:$1]]\" waa aan ansax ahayn (ma aad u dheer yahay?).",
-	"pt-movepage-block-subpage-invalid": "Cinwaanka bog-hoosaadka ee \"[[:$1]]\" waa aan ansax ahayn (ma aad u dheer yahay?)."
+	"pt-movepage-block-subpage-invalid": "Cinwaanka bog-hoosaadka ee \"[[:$1]]\" waa aan ansax ahayn (ma aad u dheer yahay?).",
+	"tpt-unlink-confirm": "Fadlan xaqiiji inaad runtii rabto inaad ka saarto [[:$1]] nidaamka turjumaadda. Xulashada luqadda iyo magacyada bogagga la turjumay ma sii shaqeyn doonaan. Bogagga turjumaadda waxay noqon doonaan kuwo la tafatiri karo. Dhammaan calaamadaha turjumaadda waa laga saari doonaa bogga isha.",
+	"tpt-unmark-confirm": "Fadlan xaqiiji inaad runtii rabto inaad ka saarto [[:$1]] nidaamka turjumaadda. Xulashada luqadda iyo magacyada bogagga la turjumay ma sii shaqeyn doonaan. Bogagga turjumaadda waxay noqon doonaan kuwo la tafatiri karo. Bogga isha lama tafatiri doono.",
+	"tpt-discourage-confirm": "Fadlan xaqiiji inaad rabto inaad niyad-jabiso turjumaadda [[:$1]]. [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Bogagga niyad-jabsan] waxaa laga qariyaa is-dhexgalka turjumaadda marka la raadinayo bogag la turjumi karo, laakiin weli si toos ah ayaa loo turjumi karaa.",
+	"tpt-encourage-confirm": "Fadlan xaqiiji inaad rabto inaad dhiirrigeliso turjumaadda [[:$1]]. Waxay ka soo muuqan doontaa is-dhexgalka turjumaadda marka la raadinayo bogag la turjumi karo.",
+	"tpt-unlink-button": "Ka saar turjumaadda",
+	"tpt-nosuchaction": "\"$1\" ma aha ficil la aqoonsan yahay oo lagu fulin karo bog la turjumi karo."
 }
