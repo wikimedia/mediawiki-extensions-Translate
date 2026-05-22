@@ -307,6 +307,35 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotEmpty( $result['MESSAGES'] );
 	}
 
+	public function testReadFromVariableNormalizesUnicode(): void {
+		$gettextFormat = $this->getGettextInstance();
+
+		// U+0065 (e) + U+0301 (combining acute accent) = NFD form of é
+		$nfdE = "e\xCC\x81";
+		// U+00E9 = NFC form of é
+		$nfcE = "\xC3\xA9";
+
+		$poContent = <<<PO
+		msgid ""
+		msgstr ""
+		"Content-Type: text/plain; charset=UTF-8\\n"
+		"X-Language-Code: nl\\n"
+		"X-Message-Group: test-group\\n"
+
+		msgctxt "context"
+		msgid "Hello"
+		msgstr "H{$nfdE}llo"
+		PO;
+
+		$result = $gettextFormat->readFromVariable( $poContent );
+		$messages = $result['MESSAGES'];
+		$translation = reset( $messages );
+		$this->assertStringContainsString( $nfcE, $translation,
+			'NFD input should be normalized to NFC' );
+		$this->assertStringNotContainsString( $nfdE, $translation,
+			'NFD sequences should not remain after normalization' );
+	}
+
 	private function getGettextInstance(): GettextFormat {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		return new GettextFormat( $group );

@@ -16,6 +16,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialVersion;
 use MediaWiki\Title\Title;
+use UtfNormal\Validator;
 
 /**
  * FileFormat class that implements support for gettext file format.
@@ -60,6 +61,8 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		if ( !mb_check_encoding( $data, 'UTF-8' ) ) {
 			throw new GettextParseException( 'invalid-utf8' );
 		}
+
+		$data = Validator::cleanUp( $data );
 
 		# Authors first
 		$matches = [];
