@@ -87,6 +87,9 @@ class MessageChangeStorage {
 		}
 		$allChanges[$groupId] = $changes;
 
+		// Destroy the reader to close the file before opening it for writing
+		$reader = null;
+
 		self::writeChanges( $allChanges, $cdbPath );
 	}
 
