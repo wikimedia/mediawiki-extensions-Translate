@@ -93,6 +93,56 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 				'translate_sections',
 				"{$dir}/{$dbType}/tables-generated.sql"
 			);
+			$updater->addExtensionTable(
+				'revtag',
+				"{$dir}/{$dbType}/revtag.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_groupstats',
+				"{$dir}/{$dbType}/translate_groupstats.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_reviews',
+				"{$dir}/{$dbType}/translate_reviews.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_groupreviews',
+				"{$dir}/{$dbType}/translate_groupreviews.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_tms',
+				"{$dir}/{$dbType}/translate_tm.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_metadata',
+				"{$dir}/{$dbType}/translate_metadata.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_messageindex',
+				"{$dir}/{$dbType}/translate_messageindex.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_stash',
+				"{$dir}/{$dbType}/translate_stash.sql"
+			);
+			$updater->addExtensionTable(
+				'translate_translatable_bundles',
+				"{$dir}/{$dbType}/translate_translatable_bundles.sql"
+			);
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-translate',
+				'addTable',
+				'translate_message_group_subscriptions',
+				"{$dir}/{$dbType}/translate_message_group_subscriptions.sql",
+				true
+			] );
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-translate',
+				'addTable',
+				'translate_cache',
+				"{$dir}/{$dbType}/translate_cache.sql",
+				true
+			] );
 			$updater->addExtensionUpdateOnVirtualDomain( [
 				'virtual-translate',
 				'changeField',
