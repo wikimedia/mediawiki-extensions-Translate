@@ -314,6 +314,7 @@
 	"translate-import-err-stale-group": "De berichtengroep die in dit bestand staat bestaat niet.",
 	"translate-import-err-no-headers": "Het bestand heeft geen goed gevormde Gettext-opmaak zoals vereist door de uitbreiding Translate:\nhet was niet mogelijk de groep en taal te bepalen aan de hand van de bestandskoppen.",
 	"translate-import-err-gettext-parse-failed": "Het bestand is geen goed gevormd Gettext-bestand:\n$1",
+	"translate-import-err-invalid-encoding": "Het bestand bevat een onjuiste UTF-8-codering. Zorg ervoor dat het bestand als UTF-8 is opgeslagen voordat u het importeert.",
 	"translate-js-support-unsaved-warning": "U hebt niet-opgeslagen vertalingen.",
 	"translate-documentation-language": "Berichtbeschrijving",
 	"translate-searchprofile": "Vertalingen",

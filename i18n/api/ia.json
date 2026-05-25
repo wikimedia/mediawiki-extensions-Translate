@@ -190,5 +190,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "Le typo de entitate que se consulta",
 	"apihelp-translationentitysearch-param-grouptypes": "Typo(s) de gruppo per le qual(es) filtrar",
 	"apihelp-translationentitysearch-param-query": "Consulta de recerca",
-	"apihelp-translationentitysearch-param-limit": "Numero maxime de resultatos del recerca"
+	"apihelp-translationentitysearch-param-limit": "Numero maxime de resultatos del recerca",
+	"apierror-discouragetranslation-invalidtitle": "Le titulo requestate non es marcate pro traduction.",
+	"apierror-discouragetranslation-alreadydone": "Le titulo requestate ha ja le stato de discoragiamento requestate.",
+	"apihelp-discouragetranslation-summary": "Marcar un pagina traducibile como discoragiate o non discoragiate. Le [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage paginas discoragiate] es celate in le interfacie de traduction quando le usator cerca paginas a traducer, ma pote ancora esser traducite directemente.",
+	"apihelp-discouragetranslation-param-title": "Le titulo del pagina sur le qual operar. O <var>title</var> o <var>pageid</var> debe esser definite.",
+	"apihelp-discouragetranslation-param-pageid": "Le ID de pagina del pagina sur le qual operar. O <var>title</var> o <var>pageid</var> debe esser definite.",
+	"apihelp-discouragetranslation-param-do": "Le action desirate a exequer sur le pagina.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Marcar le pagina como discoragiate, causante que illo se cela in le listas de paginas a traducer.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Marcar le pagina como non plus discoragiate, causante que illo appare in le listas de paginas a traducer.",
+	"apihelp-discouragetranslation-param-reason": "Summario de registro a usar quando se registra in [[Special:Log/pagetranslation]]"
 }

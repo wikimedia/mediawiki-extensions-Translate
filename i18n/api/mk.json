@@ -191,5 +191,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "Вид на единицата што се бара",
 	"apihelp-translationentitysearch-param-grouptypes": "Тип(ови) групи за филтрирање",
 	"apihelp-translationentitysearch-param-query": "Побарување",
-	"apihelp-translationentitysearch-param-limit": "Највеќе ставки во исходот"
+	"apihelp-translationentitysearch-param-limit": "Највеќе ставки во исходот",
+	"apierror-discouragetranslation-invalidtitle": "Бараниот наслов не е означен за преведување.",
+	"apierror-discouragetranslation-alreadydone": "Бараниот наслов е веќе го има побараниот статус на непожелен.",
+	"apihelp-discouragetranslation-summary": "Означете преводлива страница како непожелен или ненепожелен. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Непожелните страници] се скриени од преводниот посредник при пребарување на страници за преведување, но сепак можат непосредно да се преведат.",
+	"apihelp-discouragetranslation-param-title": "Наслов на страницата врз која се врши дејството. Мора да се зададе или <var>title</var> или <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-pageid": "Назнака на страницата врз која се врши дејството. Мора да се зададе или <var>title</var> или <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-do": "Саканото дејство што треба да се изврши врз страницата.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "Означување на страницата како непожелна, со што таа ќе биде скриена од списоците на страници за преведување.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "Означување на страницата дека веќе не е непожелна, со што таа ќе се прикажува на списоците на страници за преведување.",
+	"apihelp-discouragetranslation-param-reason": "Дневнички опис што ќе се користи при пријава на [[Special:Log/pagetranslation]]"
 }

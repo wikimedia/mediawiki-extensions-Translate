@@ -320,6 +320,7 @@
 	"translate-import-err-stale-group": "Die Nachrichtengruppe, der diese Datei zugeordnet wurde, ist nicht vorhanden.",
 	"translate-import-err-no-headers": "Die Datei ist keine Datei im Gettext-Format der Erweiterung „Translate“:\nDie Gruppen und Sprache konnten nicht aus dem Dateikopf ermittelt werden.",
 	"translate-import-err-gettext-parse-failed": "Die Datei ist keine wohlgeformte Gettext-Datei:\n$1",
+	"translate-import-err-invalid-encoding": "Die Datei enthält eine ungültige UTF-8-Kodierung. Bitte stelle sicher, dass die Datei vor dem Import als UTF-8 gespeichert ist.",
 	"translate-js-support-unsaved-warning": "Es sind nicht veröffentlichte Übersetzungen vorhanden.",
 	"translate-documentation-language": "Nachrichtendokumentation",
 	"translate-searchprofile": "Übersetzungen",

@@ -293,7 +293,10 @@
 	"pp-diff-old-header": "Texto fonte",
 	"pp-diff-new-header": "Texto preparate",
 	"pp-unexpected-error": "Un error occurreva durante le processamento de tu requesta",
-	"tpt-unlink-confirm": "Per favor confirma que tu vermente vole remover iste pagina del systema de traduction.\nLe selector de linguas e le nomines traducite del pagina non functionara plus.\nLe paginas traducite devenira modificabile.",
+	"tpt-unlink-confirm": "Per favor confirma que tu vermente vole remover [[:$1]] del systema de traduction.\nLe selector de linguas e le nomines traducite del pagina non functionara plus.\nLe paginas traducite devenira modificabile.\nTote le marcation de traduction essera removite del pagina de origine.",
+	"tpt-unmark-confirm": "Per favor confirma que tu vermente vole remover [[:$1]] del systema de traduction.\nLe selector de linguas e le nomines traducite del pagina non functionara plus.\nLe paginas traducite devenira modificabile.\nLe pagina de origine non essera modificate.",
+	"tpt-discourage-confirm": "Per favor confirma que tu vole discoragiar le traduction de [[:$1]]. Le [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage paginas discoragiate] es celate in le interfacie de traduction quando le usator cerca paginas a traducer, ma pote ancora esser traducite directemente.",
+	"tpt-encourage-confirm": "Per favor confirma que tu vole incoragiar le traduction de [[:$1]]. Illo apparera in le interfacie de traduction quando le usator cerca paginas a traducer.",
 	"tpt-unlink-button": "Remover del traduction",
 	"tpt-generic-button": "Confirmar",
 	"tpt-unlink-summary": "Pagina removite del traduction",
@@ -336,5 +339,6 @@
 	"right-translate-empty-category": "Crear unitates de traduction pro categorias vacue",
 	"action-translate-empty-category": "crear unitates de traduction pro categorias vacue",
 	"tpt-create-empty-category": "Non pote crear un unitate de traduction pro le categoria [[:$1]] que es vacue.",
-	"ext-uls-empty-search-entrypoint-description": "Tu pote traducer iste pagina. Es un maniera facile de crear contento in tu lingua."
+	"ext-uls-empty-search-entrypoint-description": "Tu pote traducer iste pagina. Es un maniera facile de crear contento in tu lingua.",
+	"tpt-nosuchaction": "“$1” non es un action recognoscite que pote esser exequite sur un pagina traducibile."
 }
