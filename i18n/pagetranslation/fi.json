@@ -184,6 +184,8 @@
 	"pt-movepage-list-pages": "Lista siirrettävistä sivuista",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Käännössivu|Käännössivut}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Käännösosiosivut}}",
+	"pt-movepage-list-nonmovable": "{{PLURAL:$1|Ei-siirrettävä alasivu|Ei-siirrettävät alasivut}}",
+	"pt-movepage-list-nonmovable-note": "{{PLURAL:$1|Seuraavaa alasivua|Seuraavia alasivuja}} ei voi siirtää.",
 	"pt-movepage-list-translatable": "{{PLURAL:$1|Käännettävä alasivu|Käännettävät alasivut}}",
 	"pt-movepage-list-translatable-note": "Nämä sivut on siirrettävä erikseen.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Muu alasivu|Muut alasivut}}",
