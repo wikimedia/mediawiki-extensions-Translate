@@ -120,7 +120,7 @@
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
-						.addClass( 'accept mw-ui-button mw-ui-progressive' )
+						.addClass( 'accept cdx-button cdx-button--weight-primary cdx-button--action-progressive' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
 							mw.notify( mw.msg( 'tsb-accept-confirmation', 1 ) );
@@ -137,7 +137,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'reject mw-ui-button mw-ui-destructive' )
+						.addClass( 'reject cdx-button cdx-button--weight-primary cdx-button--action-destructive' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
 							mw.notify( mw.msg( 'tsb-reject-confirmation', 1 ) );
@@ -297,7 +297,7 @@
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
-						.addClass( 'accept-all mw-ui-button mw-ui-progressive' )
+						.addClass( 'accept-all cdx-button cdx-button--weight-primary cdx-button--action-progressive' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
 							mw.notify( mw.msg( 'tsb-accept-confirmation', selectedUserIDs.length ) );
@@ -314,7 +314,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'reject-all mw-ui-button mw-ui-destructive' )
+						.addClass( 'reject-all cdx-button cdx-button--weight-primary cdx-button--action-destructive' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
 							mw.notify( mw.msg( 'tsb-reject-confirmation', selectedUserIDs.length ) );

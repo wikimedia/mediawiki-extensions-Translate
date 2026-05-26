@@ -246,8 +246,9 @@
 	background: @background-color-warning-subtle;
 	padding: 5px;
 
-	& button {
-		background: inherit;
+	& button.cdx-button {
+		background-color: transparent;
+		border-color: transparent;
 	}
 }
 
@@ -269,6 +270,10 @@
 .tux-empty-list-actions {
 	font-size: 15px;
 	padding: 8px 0;
+
+	.cdx-button {
+		font-size: inherit;
+	}
 }
 
 .tux-empty-list-actions a {

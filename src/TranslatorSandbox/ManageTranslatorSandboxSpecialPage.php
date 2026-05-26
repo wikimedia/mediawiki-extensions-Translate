@@ -63,7 +63,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		$out->addModuleStyles(
 			[
 				'ext.translate.special.managetranslatorsandbox.styles',
-				'mediawiki.ui.button',
+				'codex-styles',
 				'jquery.uls.grid',
 				'mediawiki.codex.messagebox.styles',
 			]

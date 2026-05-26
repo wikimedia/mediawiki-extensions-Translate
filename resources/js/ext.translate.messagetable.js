@@ -362,7 +362,7 @@
 					.addClass( 'advanced-search' );
 
 				var $button = $( '<button>' )
-					.addClass( 'mw-ui-button' )
+					.addClass( 'cdx-button' )
 					.text( mw.msg( 'tux-message-filter-advanced-button' ) );
 
 				$result = $( '<div>' )
@@ -609,7 +609,7 @@
 		 */
 		otherActionButton: function ( labelMsg, callback ) {
 			return $( '<button>' )
-				.addClass( 'mw-ui-button mw-ui-progressive mw-ui-big' )
+				.addClass( 'cdx-button cdx-button--weight-primary cdx-button--action-progressive cdx-button--size-large' )
 				.text( mw.msg( labelMsg ) )
 				.on( 'click', callback );
 		},

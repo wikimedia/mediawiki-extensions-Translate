@@ -445,9 +445,13 @@ class PageTranslationSpecialPage extends SpecialPage {
 			$hidden .
 			// tpt-discourage-confirm tpt-encourage-confirm tpt-unlink-confirm tpt-unmark-confirm
 			$this->msg( "tpt-$action-confirm" )->params( $params[ 'target' ] )->parseAsBlock() .
-			Html::submitButton(
-				$this->msg( $buttonKey )->text(),
-				[ 'class' => "cdx-button cdx-button--weight-primary $buttonClass" ]
+			Html::element(
+				'button',
+				[
+					'type' => 'submit',
+					'class' => "cdx-button cdx-button--weight-primary $buttonClass",
+				],
+				$this->msg( $buttonKey )->text()
 			) .
 			Html::closeElement( 'form' )
 		);

@@ -62,7 +62,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 
 		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $limit );
 		$out->addModules( 'ext.translate.specialTranslationStash' );
-		$out->addModuleStyles( 'mediawiki.ui.button' );
+		$out->addModuleStyles( 'codex-styles' );
 		$this->showPage();
 	}
 
@@ -158,7 +158,7 @@ class TranslationStashSpecialPage extends SpecialPage {
 		$value = Html::rawElement(
 			'span',
 			[
-				'class' => 'uls mw-ui-button',
+				'class' => 'uls cdx-button',
 				'tabindex' => 0,
 				'title' => $this->msg( 'tux-select-target-language' )->text()
 			],

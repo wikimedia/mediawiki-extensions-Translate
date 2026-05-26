@@ -61,7 +61,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$out->addModuleStyles( [
 			'ext.translate.special.translate.styles',
 			'jquery.uls.grid',
-			'mediawiki.ui.button',
+			'codex-styles',
 			"mediawiki.codex.messagebox.styles",
 		] );
 
@@ -315,7 +315,7 @@ class TranslateSpecialPage extends SpecialPage {
 		$value = Html::rawElement(
 			'span',
 			[
-				'class' => 'uls mw-ui-button',
+				'class' => 'uls cdx-button',
 				'tabindex' => 0,
 				'title' => $this->msg( 'tux-select-target-language' )->text()
 			],

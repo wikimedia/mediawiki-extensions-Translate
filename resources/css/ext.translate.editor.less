@@ -531,8 +531,8 @@
 	}
 }
 
-.message-desc-editor .mw-ui-button,
-.tux-editor-control-buttons .mw-ui-button {
+.message-desc-editor .cdx-button,
+.tux-editor-control-buttons .cdx-button {
 	margin: 10px 5px;
 }
 
@@ -576,13 +576,14 @@
 }
 
 /* Hide the cancel button by default, but show it in the last message. */
-.tux-editor-cancel-button {
+/* The `.cdx-button` qualifier raises specificity above Codex's own */
+.tux-editor-cancel-button.cdx-button {
 	display: none;
 }
 
 .last-message {
-	.tux-editor-cancel-button {
-		display: inline-block;
+	.tux-editor-cancel-button.cdx-button {
+		display: inline-flex;
 	}
 
 	.tux-editor-skip-button {

@@ -368,7 +368,7 @@
 			// CSS Classes:
 			// * tux-watch-group--watch
 			// * tux-watch-group--unwatch
-			.addClass( 'mw-ui-button tux-watch-button ' + watchClass )
+			.addClass( 'cdx-button tux-watch-button ' + watchClass )
 			.data( 'subscribed', group.subscription )
 			.on( 'click', toggleSubscription );
 
