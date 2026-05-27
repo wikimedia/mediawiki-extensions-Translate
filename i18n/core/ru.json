@@ -219,6 +219,8 @@
 	"translate-translations-project": "Проект:",
 	"translate-translations-including-no-param": "Пожалуйста, укажите ключ сообщения в качестве параметра подстраницы",
 	"translate-translations-history-short": "ист.",
+	"translate-translations-last-edit-header": "Последняя правка",
+	"translate-translations-last-edit": "$1 от $2",
 	"languagestats": "Статистика по языку",
 	"languagestats-summary": "На этой странице представлена статистика переводов для всех групп сообщений данного языка.",
 	"messagegroupstats-summary": "Эта страница показывает статистику группы сообщений.",
