@@ -144,7 +144,7 @@
 							window.location = languages[ language.code ].url;
 						},
 						floatingOptions: {
-							placement: 'top-start'
+							placement: 'bottom-start'
 						}
 					} );
 
