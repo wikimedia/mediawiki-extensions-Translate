@@ -15,7 +15,7 @@ use RuntimeException;
  *
  * This class has not yet been battle-tested, so beware.
  *
- * @author Brion Vibber <bvibber@wikimedia.org>
+ * @author Brooke Vibber <bvibber@pobox.com>
  * @ingroup FileFormatSupport
  */
 class AppleFormat extends SimpleFormat {

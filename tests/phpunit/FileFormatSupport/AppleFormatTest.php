@@ -12,7 +12,7 @@ use MessageGroupBase;
  * files, which are used in many iOS and macOS projects.
  * These tests check that the message keys are loaded, mangled and unmangled
  * correctly.
- * @author Brion Vibber
+ * @author Brooke Vibber
  * @author Niklas Laxström
  * @covers \MediaWiki\Extension\Translate\FileFormatSupport\AppleFormat
  */
