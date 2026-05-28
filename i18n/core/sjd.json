@@ -5,6 +5,7 @@
 		]
 	},
 	"translate": "Ёарркэ",
+	"translate-group": "Ёарркэ $1",
 	"translate-extensionname": "Ёарркэ",
 	"translate-taction-translate": "Ёарксэ",
 	"translate-taction-lstats": "Кӣлл статистика",
@@ -77,6 +78,7 @@
 	"tux-tab-unproofread": "Эйй кӣһчла",
 	"tux-edit": "Воа̄йхэ",
 	"tux-status-translated": "Ёаркса",
+	"tux-status-unsaved": "Элля элмсаһтма",
 	"tux-editor-placeholder-documentation": "Лажьхэ соа̄г документация",
 	"tux-editor-editsummary-placeholder": "Оа̄нтшадтҍ то̄н воа̄йхэзэтҍ (та̄һтмуж мӣлльтэ)",
 	"tux-editor-paste-original-button-label": "Пыйе ка̄ййв текст",
@@ -125,5 +127,6 @@
 	"tux-editor-loading": "Лоа̄дтмушш...",
 	"specialpages-group-translation": "Ёарркмушш",
 	"translate-hidetranslations": "Пе̄ҋҋтэ ёарркмушш лыстэтҍ",
+	"notification-link-mgs-group-translate": "Ёарркэ $1",
 	"tpt-cleanchanges-language": "Кӣлл:"
 }
