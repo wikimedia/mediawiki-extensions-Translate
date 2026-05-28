@@ -61,7 +61,7 @@
 	"tpt-select-prioritylangs-reason": "Прычына",
 	"tpt-sections-prioritylangs": "Прыярытэтныя мовы",
 	"tpt-sections-syntaxversion": "Вэрсія сынтаксу",
-	"tpt-syntaxversion-text": "На гэтай старонцы цяпер выкарыстаная старая вэрсія крынічнага сынтаксу перакладальных старонак. Новая вэрсія агартацьмеце неперакладзеныя разьдзелы HTML-тэґам, які пазначацьме слушную мову тэксту. Прыклад: $1. Новым сынтаксам разьметкі $2 можна скарыстацца, каб унікнуць усялякага абгортваньня ў непрымальных месцах, напрыклад пры перакладзе атрыбуту <code>title</code> элемэнтаў. Вярнуцца да старой вэрсіі сынтаксу немагчыма.",
+	"tpt-syntaxversion-text": "На гэтай старонцы цяпер выкарыстаная старая вэрсія крынічнага сынтаксу перакладальных старонак. Новая вэрсія агартацьмеце неперакладзеныя разьдзелы HTML-тэгам, які пазначацьме слушную мову тэксту. Прыклад: $1. Новым сынтаксам разьметкі $2 можна скарыстацца, каб унікнуць усялякага абгортваньня ў непрымальных месцах, напрыклад пры перакладзе атрыбуту <code>title</code> элемэнтаў. Вярнуцца да старой вэрсіі сынтаксу немагчыма.",
 	"tpt-syntaxversion-label": "Ужыць для гэтай старонкі найноўшую вэрсію сынтаксу",
 	"tpt-transclusion": "Уключэньне шаблёнаў",
 	"tpt-transclusion-label": "Дазволіць для гэтай старонкі ўключэньне перакладзеных шаблёнаў",
@@ -258,5 +258,6 @@
 	"visualeditor-annotations-translate-description": "Гэты дыяпазон пазначаны перакладальным. Пераканайцеся, што выконваеце рэкамэндацыі, пададзеныя для [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text зьмены крынічнага тэксту].",
 	"visualeditor-annotations-tvar-start": "Пачатак неперакладальнага зьместу",
 	"visualeditor-annotations-tvar-end": "Канец неперакладальнага зьместу",
-	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту]."
+	"visualeditor-annotations-tvar-description": "Гэты дыяпазон пазначаны неперакладальным. Дзеля падрабязьнейшай інфармацыі зьвярніцеся, калі ласка, да [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Сэгмэнтацыі крынічнага тэксту].",
+	"tpt-manage-message-group-subscriptions-normal-check-all": "Пазначыць усе"
 }

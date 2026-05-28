@@ -2,10 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Abdullahi",
-			"Abshirdheere"
+			"Abshirdheere",
+			"AhmedG612"
 		]
 	},
+	"nstab-translations": "Qayb tarjumaad",
+	"tpt-new-pages-title": "Bogagga loo soo jeediyay turjumaad",
 	"tpt-translation-settings-subtitle": "Xogta boggani ma tahay mid deggan oo diyaar u ah tarjumaada bulshada?",
+	"tpt-languages-legend": "Luqadaha kale",
 	"tpt-languages-nonzero": "$1 ($2% la turjumay)",
-	"pt-cta-mark-translation": "Boggaan waxaa lagu calaamadayn karaa  turjumaadda bulshada. Hagaajinta [$1 dooqyada turjumaadda bogga] si aad u ogaysiiso tifaftirayaasha in ay bilaabi karaan turjumaadda waxa ku jira."
+	"pt-cta-mark-translation": "Boggaan waxaa lagu calaamadayn karaa  turjumaadda bulshada. Hagaajinta [$1 dooqyada turjumaadda bogga] si aad u ogaysiiso tifaftirayaasha in ay bilaabi karaan turjumaadda waxa ku jira.",
+	"pt-movepage-block-tp-invalid": "Cinwaanka bogga tarjumaadda ee \"[[:$1]]\" waa aan ansax ahayn (ma aad u dheer yahay?).",
+	"pt-movepage-block-subpage-invalid": "Cinwaanka bog-hoosaadka ee \"[[:$1]]\" waa aan ansax ahayn (ma aad u dheer yahay?).",
+	"pt-deletepage-action-perform": "Samee tirtiridda",
+	"tpt-unlink-button": "Ka saar turjumaadda"
 }

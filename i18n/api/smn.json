@@ -5,10 +5,10 @@
 			"Yupik"
 		]
 	},
-	"apihelp-groupreview-param-group": "Viestâjuávkku.",
+	"apihelp-groupreview-param-group": "Viestâjuávkku. Keejâ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Kielâkoodi.",
 	"apihelp-query+languagestats-param-language": "Kielâkoodi.",
-	"apihelp-query+messagecollection-param-group": "Viestâjuávkku.",
+	"apihelp-query+messagecollection-param-group": "Viestâjuávkku. Keejâ <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+messagecollection-param-language": "Kielâkoodi.",
 	"apihelp-searchtranslations-summary": "Uusâ jurgâlusâid.",
 	"apierror-translate-unknownmessage": "Tubdâmettum viestâ"

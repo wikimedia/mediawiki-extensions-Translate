@@ -20,7 +20,8 @@
 			"Yusuke1109",
 			"そらたこ",
 			"ネイ",
-			"青子守歌"
+			"青子守歌",
+			"Tensama0415"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -130,8 +131,8 @@
 	"tpt-aggregategroup-language-none": "(なし)",
 	"tpt-aggregategroup-remove-confirm": "この集約群を本当に削除しますか?",
 	"tpt-aggregategroup-invalid-group": "集約群が存在しません",
-	"tpt-aggregategroup-edit-name": "名前:",
-	"tpt-aggregategroup-edit-description": "説明:",
+	"tpt-aggregategroup-edit-name": "名前",
+	"tpt-aggregategroup-edit-description": "説明",
 	"tpt-aggregategroup-update-cancel": "キャンセル",
 	"tpt-aggregategroup-expand-all-groups": "メッセージ群をすべて展開",
 	"tpt-aggregategroup-collapse-all-groups": "メッセージ群をすべて折りたたむ",
