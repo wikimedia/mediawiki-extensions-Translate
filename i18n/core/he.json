@@ -179,6 +179,8 @@
 	"translate-translations-project": "מיזם:",
 	"translate-translations-including-no-param": "נא לציין שם הודעה תקין בפרמטר של דף־המשנה",
 	"translate-translations-history-short": "ג״ק",
+	"translate-translations-last-edit-header": "עריכה אחרונה",
+	"translate-translations-last-edit": "$1 על־ידי $2",
 	"languagestats": "סטטיסטיקת השפה",
 	"languagestats-summary": "הדף הזה מציג את סטטיסטיקת תרגומים עבור כל קבוצות ההודעות של שפה.",
 	"messagegroupstats-summary": "הדף הזה מציג סטטיסטיקות של קבוצות הודעות.",
