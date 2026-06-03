@@ -304,6 +304,7 @@
 	"translate-import-err-stale-group": "Податотекава припаѓа на непостоечка група пораки.",
 	"translate-import-err-no-headers": "Податотеката не е добро обликувана Gettext податотека во форматот за преведување на додатоци:\nНе можам да одредам група и јазик од насловите на податотеката.",
 	"translate-import-err-gettext-parse-failed": "Податотеката не е добро срочена Gettext-податотека:\n$1",
+	"translate-import-err-invalid-encoding": "Податотеката содржи невачеко UTF-8-кодирање. Проверете дали податотеката е зачувана како UTF-8 пред да увезувате.",
 	"translate-js-support-unsaved-warning": "Имате необјавени преводи.",
 	"translate-documentation-language": "документација на пораки",
 	"translate-searchprofile": "Преводи",
