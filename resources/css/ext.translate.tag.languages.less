@@ -18,8 +18,9 @@
 	}
 }
 
-/* Visually merge languages box border into translate box where available */
-.mw-pt-translate-header ~ .mw-parser-output .mw-pt-languages {
+// Visually merge languages box border into translate box where available
+// T428096: Only when it is the first child, don't eat into other content.
+.mw-pt-translate-header ~ .mw-parser-output .mw-pt-languages:first-child {
 	margin-top: -1px;
 }
 
