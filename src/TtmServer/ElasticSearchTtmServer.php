@@ -300,7 +300,7 @@ class ElasticSearchTtmServer
 			'group' => $handle->getGroupIds(),
 		];
 
-		return new Document( $globalid, $data, '_doc' );
+		return new Document( $globalid, $data );
 	}
 
 	/** @param bool $rebuild Deletes index first if already exists */
@@ -735,7 +735,7 @@ class ElasticSearchTtmServer
 			&& !str_starts_with( $version, 'opensearch-2.' ) ) {
 			throw new RuntimeException(
 				'Only OpenSearch 1.x and 2.x, Elasticsearch 6.8.x and 7.x are supported. ' .
-				'Your version: $version.' );
+				"Your version: $version." );
 		}
 	}
 
