@@ -332,7 +332,9 @@ class ElasticSearchTtmServer
 			],
 		];
 		$replicas = $this->getReplicaCount();
-		$key = str_contains( $replicas, '-' ) ? 'auto_expand_replicas' : 'number_of_replicas';
+		$key = is_string( $replicas ) && str_contains( $replicas, '-' )
+			? 'auto_expand_replicas'
+			: 'number_of_replicas';
 		$indexSettings['settings']['index'][$key] = $replicas;
 
 		$this->getIndex()->create( $indexSettings, $rebuild );
@@ -387,7 +389,7 @@ class ElasticSearchTtmServer
 		];
 
 		$mapping = new Mapping( $properties );
-		$mapping->send( $index, [ 'include_type_name' => 'false' ] );
+		$mapping->send( $index );
 
 		$this->waitUntilReady();
 	}
@@ -468,7 +470,7 @@ class ElasticSearchTtmServer
 		return $this->config['shards'] ?? 1;
 	}
 
-	private function getReplicaCount(): string {
+	private function getReplicaCount(): int|string {
 		return $this->config['replicas'] ?? '0-2';
 	}
 
