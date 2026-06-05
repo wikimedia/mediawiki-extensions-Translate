@@ -14,7 +14,8 @@
 			"TreeIsLife",
 			"Vegetator",
 			"Vinickw",
-			"Yardom78"
+			"Yardom78",
+			"Wizzard"
 		]
 	},
 	"translate": "Preložiť",
@@ -213,6 +214,8 @@
 	"log-name-translationreview": "Log hodnotení prekladov",
 	"log-description-translationreview": "Log všetkých hodnotení prekladov a skupín správ.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|skontroloval|skontrolovala}} preklad $3",
+	"logentry-translationreview-group": "$1 {{GENDER:$2|zmenil|zmenila}} stav prekladov stránky $3 do jazyka $4 z $6 na $7",
+	"logentry-translationreview-unfuzzy": "$1 {{GENDER:$2|označil|označila}} preklad $3 ako nezastaraný",
 	"translate-dynagroup-recent-label": "Nedávne preklady",
 	"translate-dynagroup-recent-desc": "Táto skupina správ obsahuje všetky nedávne preklady do tohoto jazyka.\nUžitočné najmä pre korektúry.",
 	"translate-dynagroup-additions-label": "Nedávno pridané",
