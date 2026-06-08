@@ -262,6 +262,7 @@
 	"pp-diff-new-header": "対象テキスト",
 	"pp-unexpected-error": "要求の処理中にエラーが発生しました。",
 	"tpt-unlink-confirm": "このページを翻訳システムから本当に除去するかどうか確認してください。\n言語選択と、翻訳されたページ名が、動作しなくなります。\n翻訳ページが編集できる状態になります。",
+	"tpt-discourage-confirm": "[[:$1]] の翻訳を非推奨にすることを確認してください。[https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage 非推奨ページ]は、翻訳するページを検索する際の翻訳インターフェイスには表示されなくなりますが、直接翻訳することは引き続き可能です。",
 	"tpt-unlink-button": "翻訳対象から除去",
 	"tpt-generic-button": "確認",
 	"tpt-unlink-summary": "ページを翻訳対象から除去",
