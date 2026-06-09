@@ -43,8 +43,13 @@
 			<template #label>
 				{{ $i18n( "tpt-aggregategroup-select-source-language" ) }}
 			</template>
-			<lookup-language-selector v-model:selected="formData.languageCode" :selectable-languages="allLanguages">
-			</lookup-language-selector>
+			<language-selector
+				v-model:selected="formData.languageCode"
+				:selectable-languages="allLanguages"
+				:is-multiple="false"
+				:search-api-url="apiUrl"
+			>
+			</language-selector>
 		</cdx-field>
 	</cdx-dialog>
 </template>
@@ -57,7 +62,7 @@ const {
 	CdxTextInput,
 	CdxMessage
 } = require( '../../../../codex.js' );
-const { LookupLanguageSelector } = require( 'mediawiki.languageselector.lookup' );
+const { LanguageSelector } = require( 'mediawiki.languageselector.lookup' );
 const {
 	supportedLanguages,
 	undeterminedLanguageCode
@@ -72,7 +77,7 @@ module.exports = {
 		CdxTextArea,
 		CdxTextInput,
 		CdxMessage,
-		LookupLanguageSelector
+		LanguageSelector
 	},
 	inject: [ 'aggregateGroupApi' ],
 	props: {
@@ -106,7 +111,8 @@ module.exports = {
 			inputNameStatus: 'default',
 			apiLoadError: null,
 			apiSaveError: null,
-			allLanguages
+			allLanguages,
+			apiUrl: mw.util.wikiScript( 'api' )
 		};
 	},
 	computed: {

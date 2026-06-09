@@ -70,8 +70,8 @@ class TestMT extends Maintenance {
 			}
 
 			/** @inheritDoc */
-			public function log( $level, $msg, array $context = [] ) {
-				( $this->logger )( "[$level] $msg\n" );
+			public function log( $level, $message, array $context = [] ): void {
+				( $this->logger )( "[$level] $message\n" );
 			}
 		};
 
