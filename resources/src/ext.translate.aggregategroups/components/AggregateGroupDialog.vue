@@ -47,7 +47,6 @@
 				v-model:selected="formData.languageCode"
 				:selectable-languages="allLanguages"
 				:is-multiple="false"
-				:search-api-url="apiUrl"
 			>
 			</language-selector>
 		</cdx-field>
@@ -111,8 +110,7 @@ module.exports = {
 			inputNameStatus: 'default',
 			apiLoadError: null,
 			apiSaveError: null,
-			allLanguages,
-			apiUrl: mw.util.wikiScript( 'api' )
+			allLanguages
 		};
 	},
 	computed: {
