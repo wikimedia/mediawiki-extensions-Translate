@@ -25,11 +25,12 @@
 	"apihelp-translationstash-param-subaction": "Aktioun.",
 	"apihelp-translationstash-param-translation": "Iwwersetzung vum Benotzer.",
 	"apihelp-translationstash-param-metadata": "JSON-Objet.",
-	"apihelp-ttmserver-param-sourcelanguage": "De Sproochcode vum Quelltext.",
+	"apihelp-ttmserver-param-sourcelanguage": "De Sproochcode vum Ausgangstext.",
 	"apihelp-ttmserver-param-targetlanguage": "De Sproochcode vum Virschlag.",
 	"apihelp-searchtranslations-summary": "Iwwersetzunge sichen.",
 	"apihelp-searchtranslations-param-service": "Wat fir ee vun den disponibelen Iwwersetzungsservicer benotzt gi soll.",
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
+	"apihelp-searchtranslations-param-sourcelanguage": "De Sproochcode vum Ausgangstext.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
 	"apihelp-translationcheck-summary": "Iwwersetzunge validéieren.",
@@ -44,5 +45,6 @@
 	"apierror-translate-sandboxdisabled": "Sandkaul-Funktioun gëtt net benotzt",
 	"apierror-translate-unknownmessage": "Onbekannte Message",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass",
+	"apiwarn-translate-language-disabled-source": "D'Ausgangssprooch vun dëser Grupp ass $1. Wielt wgl. eng aner Sprooch, op déi Dir iwwersetze wëllt.",
 	"apihelp-translationentitysearch-param-limit": "Maximal Zuel vu Sichresultater"
 }
