@@ -23,7 +23,8 @@
 			"Sezgin İbiş",
 			"Suelnur",
 			"Vito Genovese",
-			"Ömer Berkay"
+			"Ömer Berkay",
+			"HakanIST"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -258,5 +259,7 @@
 	"visualeditor-annotations-translate-description": "Bu aralık çevrilebilir olarak işaretlenmiştir. Lütfen [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text kaynak metni değiştirme] için verilen yönergeleri uyguladığınızdan emin olun.",
 	"visualeditor-annotations-tvar-start": "Çevrilemeyecek içerik başlangıcı",
 	"visualeditor-annotations-tvar-end": "Çevrilemeyecek içerik sonu",
-	"visualeditor-annotations-tvar-description": "Bu aralık çevrilemez olarak işaretlendi. Daha fazla bilgi için lütfen [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Kaynak metnin bölümlenmesi] sayfasına bakın."
+	"visualeditor-annotations-tvar-description": "Bu aralık çevrilemez olarak işaretlendi. Daha fazla bilgi için lütfen [https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration#Segmentation Kaynak metnin bölümlenmesi] sayfasına bakın.",
+	"right-translate-empty-category": "Boş kategoriler için çeviri birimleri oluştur",
+	"action-translate-empty-category": "boş kategoriler için çeviri birimleri oluşturma"
 }
