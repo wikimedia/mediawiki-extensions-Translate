@@ -313,10 +313,9 @@ class TranslateSpecialPage extends SpecialPage {
 		);
 
 		$value = Html::rawElement(
-			'span',
+			'button',
 			[
 				'class' => 'uls cdx-button',
-				'tabindex' => 0,
 				'title' => $this->msg( 'tux-select-target-language' )->text()
 			],
 			$languageIcon . $targetLanguageName . $expandIcon
