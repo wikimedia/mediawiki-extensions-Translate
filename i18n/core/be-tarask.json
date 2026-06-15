@@ -308,6 +308,7 @@
 	"tux-status-saving": "Публікацыя…",
 	"tux-status-unsaved": "Не апублікавана",
 	"tux-editor-placeholder-documentation": "Дадаць дакумэнтацыю радку",
+	"tux-editor-editsummary-placeholder": "Растлумачце вашыя зьмены (неабавязкова)",
 	"tux-editor-paste-original-button-label": "Уставіць крынічны тэкст",
 	"tux-editor-copy-original-button-label": "Капіяваць крынічны тэкст",
 	"tux-editor-copied-original-button-label": "Скапіявана!",
