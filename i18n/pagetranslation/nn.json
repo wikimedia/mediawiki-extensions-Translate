@@ -7,7 +7,8 @@
 			"Harald Khan",
 			"Jon Harald Søby",
 			"Njardarlogar",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Ranveig"
 		]
 	},
 	"pagetranslation": "Sideomsetjing",
@@ -37,6 +38,7 @@
 	"tpt-tag-discouraged": "frårådd",
 	"tpt-select-prioritylangs-reason": "Årsak:",
 	"tpt-sections-prioritylangs": "Prioriterte språk",
+	"tpt-syntaxversion-text": "Denne sida bruker ein gammal versjon av kjeldesyntaksen for omsettbare sider. Den nye versjonen vil omfatta uomsette seksjonar med ein HTML-tagg som indikerer det rette språket til teksten. Døme: $1. Du kan bruka den nye markeringssyntaksen $2 for å forhindra omfatting av tekst der det ikkje passar, som under omsetjing av <code>title</code>-attributten til eit element. Det er ikkje mogleg å gå tilbake til den gamle syntaksversjonen.",
 	"tpt-rev-mark": "merk for omsetjing",
 	"tpt-rev-unmark": "fjerna frå omsetjing",
 	"tpt-rev-discourage": "råd frå",
