@@ -328,7 +328,7 @@
 	"logentry-translationreview-unfuzzy": "$1님이 $3 번역을 더이상 오래된 것이 아니라고 {{GENDER:$2|표시함}}",
 	"right-unfuzzy": "번역 단위 업데이트",
 	"action-unfuzzy": "번역 단위 업데이트",
-	"translate-unfuzzy-comment": "더 이상 변경할 내용이 없으므로 번역 단위를 오래되지 않은 것으로 표시함",
+	"translate-unfuzzy-comment": "번역 단위를 변경 사항 없이 오래되지 않은 것으로 표시함",
 	"group-translate-sandboxed": "승인하지 않은 번역자",
 	"group-translate-sandboxed-member": "{{GENDER:$1|승인하지 않은 번역자}}",
 	"right-translate-sandboxmanage": "연습장 사용자 관리",
