@@ -99,7 +99,7 @@
 	"right-translate-manage": "Mesaj qruplarını idarə etmək",
 	"action-translate-manage": "mesaj qruplarını idarə et",
 	"right-translate-import": "Oflayn tərcümələr idxal etmək",
-	"action-translate-import": "xətdə olmayan tərcümələri içəri köçür",
+	"action-translate-import": "oflayn tərcümələri idxal et",
 	"right-translate-messagereview": "Tərcümələri yoxlamaq",
 	"action-translate-messagereview": "tərcümələri yoxlamaq",
 	"right-translate-groupreview": "Mesaj qruplarının iş axını vəziyyətini dəyişdirmək",
