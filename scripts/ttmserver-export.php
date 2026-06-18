@@ -279,7 +279,7 @@ class TTMServerBootstrap extends Maintenance {
 				continue;
 			}
 
-			foreach ( $this->getTranslations( $collection, $targetLanguage ) as $batch ) {
+			foreach ( $this->getTranslations( $collection, $sourceLanguage, $targetLanguage ) as $batch ) {
 				$translationCount += count( $batch );
 				foreach ( $servers as $server ) {
 					$transWrites -= microtime( true );
@@ -333,7 +333,11 @@ class TTMServerBootstrap extends Maintenance {
 		}
 	}
 
-	private function getTranslations( MessageCollection $collection, string $targetLanguage ): Generator {
+	private function getTranslations(
+		MessageCollection $collection,
+		string $sourceLanguage,
+		string $targetLanguage
+	): Generator {
 		$collection->resetForNewLanguage( $targetLanguage );
 		$collection->filter( MessageCollection::FILTER_IGNORED, MessageCollection::EXCLUDE_MATCHING );
 		$collection->filter( MessageCollection::FILTER_TRANSLATED, MessageCollection::INCLUDE_MATCHING );
@@ -343,7 +347,7 @@ class TTMServerBootstrap extends Maintenance {
 		foreach ( $collection->keys() as $mkey => $titleValue ) {
 			$title = Title::newFromLinkTarget( $titleValue );
 			$handle = new MessageHandle( $title );
-			$translations[] = [ $handle, $targetLanguage, $collection[$mkey]->translation() ];
+			$translations[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
 			if ( $this->mBatchSize && count( $translations ) === $this->mBatchSize ) {
 				yield $translations;
 				$translations = [];
