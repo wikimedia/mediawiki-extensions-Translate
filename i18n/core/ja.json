@@ -31,7 +31,8 @@
 			"もなー(偽物)",
 			"神樂坂秀吉",
 			"青子守歌",
-			"아라"
+			"아라",
+			"Tensama0415"
 		]
 	},
 	"translate": "翻訳",
@@ -55,7 +56,7 @@
 	"translate-page-disabled": "この群では、この言語への翻訳は停止されています。\n理由:\n\n<em>$1</em>",
 	"translate-language-disabled": "この言語への翻訳は無効になっています。",
 	"translate-page-settings-legend": "設定",
-	"translate-page-group": "群",
+	"translate-page-group": "メッセージ群:",
 	"translate-page-language": "言語",
 	"translate-page-limit": "表示数",
 	"translate-page-limit-option": "ページごとに$1{{PLURAL:$1|個のメッセージ}}",
@@ -122,7 +123,7 @@
 	"translate-checks-empty": "内容がない翻訳や空白のみの翻訳は許可されません。",
 	"translate-pref-editassistlang": "補助言語:",
 	"prefs-translate": "翻訳設定",
-	"translate-pref-editassistlang-help": "言語コードをカンマ区切りで列挙します。\n翻訳中に、これらの言語での翻訳が表示されます。\n既定の言語一覧は、自身の言語により変化します。",
+	"translate-pref-editassistlang-help": "翻訳中に、これらの言語での翻訳が表示されます。\n既定の言語一覧は、自身の言語により変化します。",
 	"right-translate": "翻訳用インターフェイスを使用して編集",
 	"action-translate": "翻訳用インターフェイスを使用した編集",
 	"right-translate-manage": "メッセージ群を管理",
@@ -173,8 +174,8 @@
 	"translate-statsf-count-registrations": "新しい利用者",
 	"translate-statsf-count-reviews": "翻訳査読回数",
 	"translate-statsf-count-reviewers": "査読者",
-	"translate-statsf-language": "言語コードを列挙 (カンマ区切り):",
-	"translate-statsf-group": "メッセージ群コードを列挙 (カンマ区切り):",
+	"translate-statsf-language": "1つ以上の言語を選択:",
+	"translate-statsf-group": "1つ以上のメッセージ群を選択:",
 	"translate-statsf-submit": "プレビュー",
 	"translate-statsf-unknown-error": "不明なエラーが発生しました。",
 	"translate-statsf-error-message": "グラフの読み込み中にエラーが発生しました: $1",
