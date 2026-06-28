@@ -4,7 +4,19 @@
 		<div class="mw-tpp-sp-input">
 			<input name="page" id="page" class="mw-searchInput cdx-text-input__input"
 				placeholder="{{ pagenamePlaceholder }}" value="{{ inputValue }}"/>
+			{{#translateTaggerUrl}}
 			<button
+				id="action-prepare-translate-tagger-api"
+				class="cdx-button
+				cdx-button--action-progressive
+				cdx-button--weight-primary"
+				type="button"
+				data-api-url="{{ translateTaggerUrl }}"
+			>
+				{{ prepareWithTranslateTagger }}
+			</button>
+			{{/translateTaggerUrl}}
+				<button
 				id="action-prepare"
 				class="cdx-button
 				cdx-button--action-progressive

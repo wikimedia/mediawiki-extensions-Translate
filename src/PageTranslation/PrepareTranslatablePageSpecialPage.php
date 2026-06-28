@@ -56,14 +56,18 @@ class PrepareTranslatablePageSpecialPage extends SpecialPage {
 		$diffHeader = $diff->addHeader( ' ', $this->msg( 'pp-diff-old-header' )->escaped(),
 			$this->msg( 'pp-diff-new-header' )->escaped() );
 
+		$translateTaggerUrl = $this->getConfig()->get( 'TranslateEnableTranslateTaggerAPIIntegration' );
+
 		$data = [
 			'pagenamePlaceholder' => $this->msg( 'pp-pagename-placeholder' )->text(),
 			'prepareButtonLabel' => $this->msg( 'pp-prepare-button-label' )->text(),
+			'prepareWithTranslateTagger' => $this->msg( 'pp-prepare-with-translate-tagger-button-label' )->text(),
 			'saveButtonLabel' => $this->msg( 'pp-save-button-label' )->text(),
 			'cancelButtonLabel' => $this->msg( 'pp-cancel-button-label' )->text(),
 			'summaryValue' => $this->msg( 'pp-save-summary' )->inContentLanguage()->text(),
 			'inputValue' => $inputValue,
-			'diffHeaderHtml' => $diffHeader
+			'diffHeaderHtml' => $diffHeader,
+			'translateTaggerUrl' => $translateTaggerUrl,
 		];
 
 		return $this->templateParser->processTemplate( 'PrepareTranslatablePageTemplate', $data );

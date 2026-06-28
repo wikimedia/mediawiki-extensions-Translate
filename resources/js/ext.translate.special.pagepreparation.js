@@ -1,6 +1,5 @@
 ( function () {
 	'use strict';
-
 	/**
 	 * Get a regex snippet matching any aliases (including the canonical
 	 * name) of the given namespace, or of “other” namespaces if the
@@ -279,7 +278,6 @@
 	 */
 	function onPrepareFailure( $errorMessage ) {
 		displayError( $errorMessage );
-		$( '#action-prepare' ).prop( 'disabled', false );
 	}
 
 	$( function () {
@@ -313,6 +311,15 @@
 
 		var isReadyToSave = false;
 
+		const $prepareTranslateTaggerBtn = $( '#action-prepare-translate-tagger-api' );
+		const $prepareBtn = $( '#action-prepare' );
+		const enableButton = false;
+
+		function togglePrepareButtons( status ) {
+			$prepareTranslateTaggerBtn.prop( 'disabled', status );
+			$prepareBtn.prop( 'disabled', status );
+		}
+
 		function doPrepare() {
 			var pageName = $input.val().trim();
 			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
@@ -320,12 +327,13 @@
 				displayError( mw.message( 'pp-pagename-missing' ).parseDom() );
 				return;
 			}
-			$( '#action-prepare' ).prop( 'disabled', true );
+			togglePrepareButtons( !enableButton );
 
 			getPageContent( pageName ).done( function ( contentData ) {
 				// Check if the page actually exists
 				if ( contentData.query.pages[ 0 ].revisions === undefined ) {
 					onPrepareFailure( mw.message( 'pp-page-does-not-exist', pageName ).parseDom() );
+					togglePrepareButtons( enableButton );
 					return $.Deferred().reject();
 				}
 
@@ -342,9 +350,7 @@
 				pageContent = pageContent.trim();
 				getDiff( pageName, pageContent ).done( function ( diffData ) {
 					var diff = diffData.compare.body;
-					var $prepare = $( '#action-prepare' );
-					// Enable prepare button whether the diff failed or not, so it can be clicked again...
-					$prepare.prop( 'disabled', false );
+					togglePrepareButtons( enableButton );
 					$messageDiv.removeClass( 'hide' );
 					if ( diff === undefined ) {
 						onPrepareFailure( mw.message( 'pp-diff-error' ).parseDom() );
@@ -356,21 +362,110 @@
 						$( '.diff tbody' ).html( diff );
 						$( '.divDiff' ).removeClass( 'hide' );
 						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
-						$prepare.addClass( 'hide' );
+						$prepareBtn.addClass( 'hide' );
 						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					} else {
 						displayError( mw.message( 'pp-already-prepared-message' ).parseDom() );
 					}
 				} ).fail( function ( _code, errorData ) {
 					displayErrorsFromData( errorData );
-					$( '#action-prepare' ).prop( 'disabled', false );
+					togglePrepareButtons( enableButton );
 				} );
 			} ).fail( function ( _code, errorData ) {
 				displayErrorsFromData( errorData );
-				$( '#action-prepare' ).prop( 'disabled', false );
+				togglePrepareButtons( enableButton );
 			} );
 		}
-		$( '#action-prepare' ).on( 'click', doPrepare );
+
+		/**
+		 * Call the Translate Tagger API with the raw page content and handle the
+		 * response: validate it, fetch the diff, and update the UI accordingly.
+		 *
+		 * @param {string} translateTaggerUrl URL of the Translate Tagger API endpoint
+		 * @param {string} pageName Page title being prepared
+		 * @param {string} rawContent Raw wikitext of the page
+		 */
+		function callTranslateTaggerAPI( translateTaggerUrl, pageName, rawContent ) {
+			$.ajax( {
+				url: translateTaggerUrl,
+				type: 'POST',
+				dataType: 'json',
+				contentType: 'application/json; charset=UTF-8',
+				data: JSON.stringify( {
+					wikitext: rawContent
+				} )
+			} ).done( function ( apiResponse ) {
+				if ( !apiResponse || !apiResponse.converted ) {
+					onPrepareFailure( mw.message( 'pp-translate-tagger-api-error', 'Invalid response from API' ).parseDom() );
+					togglePrepareButtons( enableButton );
+					return;
+				}
+
+				pageContent = apiResponse.converted.trim();
+
+				getDiff( pageName, pageContent ).done( function ( diffData ) {
+					const diff = diffData.compare.body;
+					togglePrepareButtons( enableButton );
+					$messageDiv.removeClass( 'hide' );
+
+					if ( diff === undefined ) {
+						onPrepareFailure( mw.message( 'pp-diff-error' ).parseDom() );
+						return;
+					}
+
+					if ( diff !== '' ) {
+						isReadyToSave = true;
+						$( '.diff tbody' ).html( diff );
+						$( '.divDiff' ).removeClass( 'hide' );
+						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
+						$prepareBtn.add( $prepareTranslateTaggerBtn ).addClass( 'hide' );
+						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
+					} else {
+						displayError( mw.message( 'pp-already-prepared-message' ).parseDom() );
+					}
+				} ).fail( function ( _code, errorData ) {
+					displayErrorsFromData( errorData );
+					togglePrepareButtons( enableButton );
+				} );
+
+			} ).fail( function ( _xhr, status, error ) {
+				onPrepareFailure( mw.message( 'pp-translate-tagger-api-error', ( error || status ) ).parseDom() );
+				togglePrepareButtons( enableButton );
+			} );
+		}
+
+		function doPrepareTranslateTaggerAPI( event ) {
+			const translateTaggerUrl = event.target.dataset.apiUrl;
+			if ( !translateTaggerUrl ) {
+				throw new Error( 'Unexpected condition: Translate tagger API URL not found' );
+			}
+			const pageName = $input.val().trim();
+			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
+			if ( pageName === '' ) {
+				displayError( mw.message( 'pp-pagename-missing' ).parseDom() );
+				return;
+			}
+
+			togglePrepareButtons( !enableButton );
+
+			getPageContent( pageName ).done( function ( contentData ) {
+				if ( contentData.query.pages[ 0 ].revisions === undefined ) {
+					onPrepareFailure( mw.message( 'pp-page-does-not-exist', pageName ).parseDom() );
+					togglePrepareButtons( enableButton );
+					return $.Deferred().reject();
+				}
+
+				const rawContent = contentData.query.pages[ 0 ].revisions[ 0 ].content.trim();
+				callTranslateTaggerAPI( translateTaggerUrl, pageName, rawContent );
+			} ).fail( function ( _code, errorData ) {
+				displayErrorsFromData( errorData );
+				togglePrepareButtons( enableButton );
+			} );
+		}
+
+		$prepareBtn.on( 'click', doPrepare );
+		$prepareTranslateTaggerBtn.on( 'click', doPrepareTranslateTaggerAPI );
+
 		$( '.mw-tpp-sp-form' ).on( 'submit', function () {
 			if ( isReadyToSave ) {
 				handlePublish();

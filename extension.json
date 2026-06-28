@@ -1027,7 +1027,8 @@
 				"pp-page-does-not-exist",
 				"pp-prepare-message",
 				"pp-save-button-label",
-				"pp-save-message"
+				"pp-save-message",
+				"pp-translate-tagger-api-error"
 			]
 		},
 		"ext.translate.special.searchtranslations": {
@@ -1345,6 +1346,10 @@
 		]
 	},
 	"config": {
+		"TranslateEnableTranslateTaggerAPIIntegration": {
+			"value": null,
+			"description": "API URL path (string) to enable integration with the Translate Tagger API, or null to disable it."
+		},
 		"TranslateRecentChangesLanguageFilter": {
 			"value": false,
 			"description": "Add language filter to the Special:RecentChanges"
