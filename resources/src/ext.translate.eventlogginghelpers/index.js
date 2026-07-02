@@ -1,9 +1,13 @@
 ( function () {
 	'use strict';
 
-	const streamName = 'mediawiki.product_metrics.translate_extension';
-	const schemaId = '/analytics/product_metrics/web/translation/1.0.0';
+	// Machine-readable name of the instrument registered in Test Kitchen.
+	// The instrument encapsulates the destination stream and the event schema
+	// so neither needs to be specified at the call site.
+	const INSTRUMENT_NAME = 'translate-click-actions';
 	const config = require( './config.json' );
+
+	let instrument;
 
 	const eventLoggingHelpers = {
 		isEventLoggingEnabled: function () {
@@ -16,25 +20,7 @@
 		 * @param {Object|null} translation
 		 */
 		logClickEvent: function ( actionSubtype, actionSource, translation ) {
-			if ( !this.isEventLoggingEnabled() ) {
-				return;
-			}
-
-			const interactionData = {
-				translation: translation || {}
-			};
-
-			if ( actionSubtype ) {
-				// eslint-disable-next-line camelcase
-				interactionData.action_subtype = actionSubtype;
-			}
-
-			if ( actionSource ) {
-				// eslint-disable-next-line camelcase
-				interactionData.action_source = actionSource;
-			}
-
-			mw.eventLog.submitInteraction( streamName, schemaId, 'click', interactionData );
+			this.logEvent( 'click', actionSubtype, actionSource, translation );
 		},
 
 		/**
@@ -44,8 +30,16 @@
 		 * @param {Object|null} translation
 		 */
 		logEvent: function ( action, actionSubtype, actionSource, translation ) {
-			if ( !config.TranslateEnableEventLogging ) {
+			// Cheap config gate first, so getInstrument() is skipped entirely when
+			// event logging is disabled. Test Kitchen is a soft dependency: it
+			// loads its own SDK (mw.testKitchen) when installed and enabled, so we
+			// no-op when it is unavailable.
+			if ( !this.isEventLoggingEnabled() || !mw.testKitchen ) {
 				return;
+			}
+
+			if ( !instrument ) {
+				instrument = mw.testKitchen.getInstrument( INSTRUMENT_NAME );
 			}
 
 			const interactionData = {
@@ -62,7 +56,7 @@
 				interactionData.action_source = actionSource;
 			}
 
-			mw.eventLog.submitInteraction( streamName, schemaId, action, interactionData );
+			instrument.send( action, interactionData );
 		}
 	};
 
