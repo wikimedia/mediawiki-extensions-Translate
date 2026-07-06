@@ -55,6 +55,7 @@ function addDeleteAction() {
 	document.querySelector( '#ext-translate-aggregategroups' )
 		.insertAdjacentElement( 'afterend', div );
 	vmDeleteDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+	vmDeleteDialogApp.provide( 'CdxTeleportMenus', true );
 	vmDeleteDialogApp.mount( div );
 
 	function onDeleteClick( event ) {
@@ -106,6 +107,7 @@ function addEditAction() {
 	document.querySelector( '#ext-translate-aggregategroups' )
 		.insertAdjacentElement( 'afterend', div );
 	vmEditDialogApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+	vmEditDialogApp.provide( 'CdxTeleportMenus', true );
 	vmEditDialogApp.mount( div );
 
 	function onEditClick( event ) {
@@ -221,6 +223,7 @@ function addAssociateSubGroupAction() {
 		} );
 		vmGroupAssociationApp.provide( 'performEntitySearch', performEntitySearch );
 		vmGroupAssociationApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+		vmGroupAssociationApp.provide( 'CdxTeleportMenus', true );
 		vmGroupAssociationApp.mount( element );
 	}
 
@@ -272,6 +275,7 @@ const hasPermissionToManage = appContainer.dataset.haspermission;
 if ( hasPermissionToManage ) {
 	const aggregateGroupsManageApp = Vue.createMwApp( App );
 	aggregateGroupsManageApp.provide( 'aggregateGroupApi', aggregateGroupApi );
+	aggregateGroupsManageApp.provide( 'CdxTeleportMenus', true );
 	aggregateGroupsManageApp.mount( appContainer );
 
 	addDeleteAction();
