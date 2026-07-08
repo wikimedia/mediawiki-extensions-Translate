@@ -26,6 +26,7 @@
 			"Okras",
 			"Pacha Tchernof",
 			"Purodha",
+			"Shabe",
 			"Stjn",
 			"Vlad5250",
 			"WindEwriX",
@@ -357,5 +358,6 @@
 	"translate-category-summary": "Автоматическое создание перевода категории, используемой на странице «[[$1]]»",
 	"right-translate-empty-category": "Создание единиц перевода для пустых категорий",
 	"action-translate-empty-category": "создание единиц перевода для пустых категорий",
-	"tpt-create-empty-category": "Невозможно создать единицу перевода для пустой категории [[:$1]]."
+	"tpt-create-empty-category": "Невозможно создать единицу перевода для пустой категории [[:$1]].",
+	"ext-uls-empty-search-entrypoint-description": "Вы можете перевести эту страницу. Это простой способ создать контент на вашем языке"
 }

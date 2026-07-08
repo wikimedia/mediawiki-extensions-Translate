@@ -330,5 +330,6 @@
 	"right-translate-empty-category": "إنشاء وحدات ترجمة للفئات الفارغة",
 	"action-translate-empty-category": "إنشاء وحدات ترجمة للفئات الفارغة",
 	"tpt-create-empty-category": "لا يمكن إنشاء وحدة ترجمة للفئة [[:$1]] وهي فارغة.",
-	"ext-uls-empty-search-entrypoint-description": "يمكنك ترجمة هذه الصفحة. إنها طريقة سهلة لإنشاء محتوى بلغتك."
+	"ext-uls-empty-search-entrypoint-description": "يمكنك ترجمة هذه الصفحة. إنها طريقة سهلة لإنشاء محتوى بلغتك.",
+	"tpt-nosuchaction": "\" $1 \" ليس إجراءً معترفًا به يمكن تنفيذه على صفحة قابلة للترجمة."
 }

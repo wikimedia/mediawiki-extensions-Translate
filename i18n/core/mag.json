@@ -23,7 +23,7 @@
 	"translate-page-disabled": "ई भाषामे अनुवादके अक्षम कैल गेलहे ।\nकारण:\n\n<em>$1</em>",
 	"translate-language-disabled": "ई भाषामे अनुवादके अक्षम कैल गेलहे ।",
 	"translate-page-settings-legend": "सेटिङ्ग्स",
-	"translate-page-group": "समूह",
+	"translate-page-group": "समूह:",
 	"translate-page-language": "भाषा",
 	"translate-page-limit": "सीमा",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|सन्देश}} प्रतिपन्ना",
@@ -124,5 +124,5 @@
 	"translate-smg-rename-new": "नया नियन जोड़ी...",
 	"translate-smg-rename-rename": "एकर स्थानान्तरण नियन जोड़ी...",
 	"translate-smg-strong-sync-help": "सहायता",
-	"translate-documentation-language": "सन्देस प्रलेखन"
+	"translate-documentation-language": "सन्देश प्रलेखन"
 }

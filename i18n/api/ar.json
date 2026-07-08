@@ -194,5 +194,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "نوع الكيان الذي يتم الاستعلام عنه",
 	"apihelp-translationentitysearch-param-grouptypes": "نوع المجموعة التي يتم تصفيتها حسبها",
 	"apihelp-translationentitysearch-param-query": "استعلام البحث",
-	"apihelp-translationentitysearch-param-limit": "الحد الأقصى لعدد نتائج البحث"
+	"apihelp-translationentitysearch-param-limit": "الحد الأقصى لعدد نتائج البحث",
+	"apierror-discouragetranslation-invalidtitle": "العنوان المطلوب غير مُحدد للترجمة.",
+	"apierror-discouragetranslation-alreadydone": "العنوان المطلوب يحمل بالفعل حالة التثبيط المطلوبة.",
+	"apihelp-discouragetranslation-summary": "حدد صفحة قابلة للترجمة على أنها غير مستحبة أو غير مستحبة. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage الصفحات غير المستحبة] مخفية من واجهة الترجمة عند البحث عن صفحات للترجمة، ولكن لا يزال من الممكن ترجمتها مباشرةً.",
+	"apihelp-discouragetranslation-param-title": "عنوان الصفحة المراد العمل عليها. يجب تحديد إما <var>العنوان</var> أو <var>معرف الصفحة</var> .",
+	"apihelp-discouragetranslation-param-pageid": "معرّف الصفحة المراد العمل عليها. يجب تحديد إما <var>العنوان</var> أو <var>معرّف الصفحة</var> .",
+	"apihelp-discouragetranslation-param-do": "الإجراء المطلوب تنفيذه على الصفحة.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "قم بتمييز الصفحة على أنها غير مرغوب فيها، مما يؤدي إلى إخفائها من قوائم الصفحات المراد ترجمتها.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "قم بتحديد الصفحة على أنها لم تعد غير مستحبة، مما يؤدي إلى ظهورها في قوائم الصفحات المراد ترجمتها.",
+	"apihelp-discouragetranslation-param-reason": "ملخص السجل الذي سيتم استخدامه عند تسجيل الدخول إلى [[Special:Log/pagetranslation]]"
 }

@@ -195,6 +195,7 @@
 	"translate-translations-project": "プロジェクト:",
 	"translate-translations-including-no-param": "下位ページ引数に有効なメッセージキーを指定してください",
 	"translate-translations-history-short": "履歴",
+	"translate-translations-last-edit-header": "最終編集",
 	"languagestats": "言語別翻訳状況",
 	"languagestats-summary": "このページでは指定した言語におけるメッセージの翻訳状況をメッセージ群ごとに表示しています。",
 	"messagegroupstats-summary": "このページでは、メッセージ群の統計を表示します。",
