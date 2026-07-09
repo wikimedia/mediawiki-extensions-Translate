@@ -26,7 +26,7 @@
 	"tpt-tag-discouraged": "हतोत्साहित",
 	"tpt-tag-oldsyntax": "पुरान सिण्टेक्स",
 	"tpt-tag-no-transclusion-support": "ट्रान्सक्लूशन समर्थित न",
-	"tpt-select-prioritylangs-reason": "कारण:",
+	"tpt-select-prioritylangs-reason": "कारण",
 	"tpt-sections-prioritylangs": "आवश्यक भाषा",
 	"tpt-sections-syntaxversion": "सिण्टेक्स के संस्करण",
 	"tpt-rev-discourage": "हतोत्साहित करी",
@@ -40,9 +40,9 @@
 	"tpt-aggregategroup-close": "बन्द करी",
 	"tpt-aggregategroup-add-new": "एगो नया स्थायी समूह जोड़ी",
 	"tpt-aggregategroup-invalid-group": "समूह उपलब्ध न हे",
-	"tpt-aggregategroup-edit-name": "नाम:",
-	"tpt-aggregategroup-edit-description": "बिवरण:",
+	"tpt-aggregategroup-edit-name": "नाम",
+	"tpt-aggregategroup-edit-description": "विवरण",
 	"tpt-aggregategroup-update-cancel": "निरस्त करी",
-	"tpt-aggregategroup-expand-all-groups": "सब समूह फैलावी",
-	"tpt-aggregategroup-collapse-all-groups": "सब समूह सिकोड़ी"
+	"tpt-aggregategroup-expand-all-groups": "सभ समूह विस्तृत करथिन",
+	"tpt-aggregategroup-collapse-all-groups": "सभ समूह सिकोड़थिन"
 }

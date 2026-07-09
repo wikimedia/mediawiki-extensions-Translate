@@ -6,6 +6,7 @@
 		]
 	},
 	"translate": "Prěvodženje",
+	"translate-group": "Prěvesti $1",
 	"translate-desc": "[[Special:Translate|Specialna stranica]] za prěvodženje MediaWiki i druge",
 	"translate-taskui-export-to-file": "Eksportovati v rodnom formatu",
 	"translate-taskui-export-as-po": "Eksportovati za oflajn-prěvodženje",
