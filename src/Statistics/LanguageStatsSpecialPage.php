@@ -253,7 +253,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 			$hiddenFields['group'] = $val;
 		}
 
-		$languages = Utilities::getLanguageNames( 'en' );
+		$languages = Utilities::getLanguageNames( LanguageNameUtils::AUTONYMS );
 		$languageSelectWidget = new LanguageSelectWidget( [
 			'name' => 'language',
 			'value' => $this->target,
