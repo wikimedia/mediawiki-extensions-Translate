@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"searchtranslations": "Raadi tarjumaadaha",
+	"tux-sst-edit": "Wax ka beddel tarjumaadda",
+	"tux-sst-view-foreign": "Ka eeg $1",
+	"tux-sst-search": "Raadi",
+	"tux-sst-search-ph": "Raadi tarjumaadaha",
+	"tux-sst-search-info": "Isticmaal hawlwadeennada <code>language:</code> ama <code>group:</code> si aad u sii qeexdo shuruudaha raadinta",
+	"tux-sst-count": "{{PLURAL:$1|Hal natiijo ayaa la helay|$1 natiijo ayaa la helay}}",
+	"tux-sst-facet-language": "Luuqadaha",
+	"tux-sst-facet-group": "Kooxda fariimaha",
+	"tux-sst-nosolr-title": "Raadinta lama heli karo",
+	"tux-sst-nosolr-body": "Wiki-gan ma laha adeeg raadinta tarjumaadaha.",
+	"tux-sst-solr-offline-title": "Raadinta lama heli karo",
+	"tux-sst-solr-offline-body": "Adeegga raadintu si ku meel gaar ah uma shaqaynayo.",
+	"tux-sst-next": "Xiga ›",
+	"tux-sst-prev": "‹ Kii hore",
+	"tux-sst-default": "Turjumaadaha",
+	"tux-sst-translated": "Tarjumaadaha laga soo qaatay $1",
+	"tux-sst-untranslated": "Ma jiro tarjumaad laga soo qaatay $1",
+	"tux-sst-outdated": "Tarjumaadaha duugoobay ee laga soo qaatay $1",
+	"tux-sst-ellipsis-untranslated": "Ma jiro tarjumaad",
+	"tux-sst-ellipsis-outdated": "Tarjumaadaha duugoobay",
+	"tux-sst-link-all-match": "U baahan dhammaan erayada raadinta.",
+	"tux-sst-match-message": "Muujinaya tarjumaadaha ku habboon mid kasta oo ka mid ah erayada raadinta. $1",
+	"tux-sst-case-sensitive": "Kiis xasaasi ah",
+	"tux-sst-error-offset": "Ma jiraan natiijooyin raadis oo dheeraad ah oo la muujin karo. Fadlan yaree raadintaada.",
+	"tux-sst-error-language": "Luqaddan looma isticmaali karo noocan raadinta ah.",
+	"tux-sst-error-unsupported-language": "Raadinta luqadda <code>$1</code> lama taageero.",
+	"tux-sst-search-backend-error": "Cilad lama filaan ah ayaa ka dhacday nidaamka raadinta, fadlan mar kale isku day mar dambe"
+}
