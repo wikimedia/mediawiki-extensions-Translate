@@ -12,6 +12,14 @@ use MediaWikiUnitTestCase;
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser
  */
 class TranslatablePageParserTest extends MediaWikiUnitTestCase {
+	protected function setUp(): void {
+		parent::setUp();
+		// wfEscapeWikiText() is called when throwing ParsingFailure exceptions (e.g. pt-shake-whitespace).
+		// Since this is a unit test, we must initialize the global it depends on.
+		global $wgEnableMagicLinks;
+		$wgEnableMagicLinks = [];
+	}
+
 	/** @dataProvider provideTestContainsMarkup */
 	public function testContainsMarkup( string $input, bool $expected ) {
 		 $parser = new TranslatablePageParser( new ParsingPlaceholderFactory() );
@@ -141,10 +149,16 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		string $expectedSourceTemplate,
 		array $expectedUnits
 	) {
+		$input = self::normalizeNewlines( $input );
+		$expectedTranslationTemplate = self::normalizeNewlines( $expectedTranslationTemplate );
+		$expectedSourceTemplate = self::normalizeNewlines( $expectedSourceTemplate );
 		$parser = new TranslatablePageParser( new TestingParsingPlaceholderFactory() );
 		$output = $parser->parse( $input );
 		$this->assertSame( $expectedTranslationTemplate, $output->translationPageTemplate() );
 		$this->assertSame( $expectedSourceTemplate, $output->sourcePageTemplate() );
+		foreach ( $expectedUnits as $u ) {
+			$u->text = self::normalizeNewlines( $u->text );
+		}
 		$this->assertEquals( $expectedUnits, $output->units() );
 	}
 
@@ -263,10 +277,15 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 		array $expectedUnits,
 		string $comment
 	) {
+		$input = self::normalizeNewlines( $input );
+		$expectedTemplate = self::normalizeNewlines( $expectedTemplate );
 		$parser = new TranslatablePageParser( new TestingParsingPlaceholderFactory() );
 		$canWrap = true;
 		$result = $parser->parseSection( $input, $canWrap );
 		$this->assertSame( $expectedTemplate, $result['template'], $comment );
+		foreach ( $expectedUnits as $u ) {
+			$u->text = self::normalizeNewlines( $u->text );
+		}
 		$this->assertEquals( $expectedUnits, $result['sections'], $comment );
 	}
 
@@ -306,5 +325,53 @@ class TranslatablePageParserTest extends MediaWikiUnitTestCase {
 			[ '<0>' => $u0, '<1>' => $u1, '<2>' => $u2 ],
 			'Splitting with multiple empty lines',
 		];
+	}
+
+	/** @dataProvider provideTestParseExceptions */
+	public function testParseExceptions(
+		string $input,
+		string $expectedExceptionMessage,
+		string $expectedExceptionKey
+	) {
+		$parser = new TranslatablePageParser( new TestingParsingPlaceholderFactory() );
+		try {
+			$parser->parse( $input );
+			$this->fail( 'Expected ParsingFailure exception' );
+		} catch ( ParsingFailure $e ) {
+			$this->assertSame( $expectedExceptionMessage, $e->getMessage() );
+			$this->assertSame( $expectedExceptionKey, $e->getMessageSpecification()->getKey() );
+		}
+	}
+
+	public static function provideTestParseExceptions() {
+		yield [
+			"<translate>Hello <!--T: 122 --></translate>",
+			'Translation unit marker has leading or trailing whitespace',
+			'pt-shake-whitespace',
+		];
+		yield [
+			"<translate>Hello <!--T:122  --></translate>",
+			'Translation unit marker has leading or trailing whitespace',
+			'pt-shake-whitespace',
+		];
+		yield [
+			"<translate>Hello <!--T:  122--></translate>",
+			'Translation unit marker has leading or trailing whitespace',
+			'pt-shake-whitespace',
+		];
+		yield [
+			"<translate>Hello <!--T:--></translate>",
+			'Translation unit marker has no name',
+			'pt-shake-empty-marker',
+		];
+		yield [
+			"<translate>Hello <!--T:   --></translate>",
+			'Translation unit marker has no name',
+			'pt-shake-empty-marker',
+		];
+	}
+
+	private static function normalizeNewlines( string $text ): string {
+		return str_replace( "\r\n", "\n", $text );
 	}
 }

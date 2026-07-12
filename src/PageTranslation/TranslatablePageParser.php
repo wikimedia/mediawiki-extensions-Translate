@@ -175,6 +175,20 @@ class TranslatablePageParser {
 			foreach ( $matches as $match ) {
 				[ /*full*/, $id ] = $match;
 
+				if ( trim( $id ) === '' ) {
+					throw new ParsingFailure(
+						'Translation unit marker has no name',
+						new MessageValue( 'pt-shake-empty-marker' )
+					);
+				}
+
+				if ( trim( $id ) !== $id ) {
+					throw new ParsingFailure(
+						'Translation unit marker has leading or trailing whitespace',
+						new MessageValue( 'pt-shake-whitespace', [ wfEscapeWikiText( $id ) ] )
+					);
+				}
+
 				// Currently handle only these two standard places.
 				// Is this too strict?
 				$rer1 = '~^<!--T:(.*?)-->( |\n)~'; // Normal sections

@@ -186,6 +186,8 @@
 	"pt-shake-multiple": "Each translation unit (=section) can only contain one marker.\n\nParameters:\n* $1 - translation unit (=section) text",
 	"pt-shake-position": "Error shown after an attempt to mark a page for translation, see [[mw:Special:MyLanguage/Help:Extension:Translate/Page translation administration]] for context.\n\nSee definitions on [[mw:Special:MyLanguage/Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit (=section) text",
 	"pt-shake-empty": "Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>).\n\nParameters:\n* $1 - translation unit ID",
+	"pt-shake-whitespace": "Error message shown when a translation unit marker has leading or trailing whitespace.\n\nParameters:\n* $1 - translation unit ID",
+	"pt-shake-empty-marker": "Error message shown when a translation unit marker is empty (i.e. has no name).",
 	"log-description-pagetranslation": "Description of a log type on [[Special:Log/pagetranslation]]",
 	"log-name-pagetranslation": "{{doc-logpage}}",
 	"logentry-pagetranslation-mark": "{{logentry|[[Special:Log/pagetranslation]]}}",
