@@ -58,8 +58,21 @@ class MessageBundleContentHandler extends TextContentHandler {
 			);
 		}
 
-		if ( !$content->isValid() ) {
-			$parserOutput->setContentHolderText( null );
+		try {
+			$content->validate();
+		} catch ( MalformedBundle $exception ) {
+			if ( $cpoParams->getGenerateHtml() ) {
+				// if HTML generation is requested, the content of the ParserOutput cannot be null - this sets an
+				// error message to help the user debug
+				$error = wfMessage( 'invalid-json-data', $exception->getMessage() )->inUserLanguage()->parse();
+				// MessageBundleContentHandler does not support ParserCache - so these parses should never enter the
+				// cache anyway. But, out of an abundance of caution, let's make sure that, if it happens in the future,
+				// the cache is split.
+				$cpoParams->getParserOptions()->getUserLang();
+			} else {
+				$error = null;
+			}
+			$parserOutput->setContentHolderText( $error );
 			return;
 		}
 
