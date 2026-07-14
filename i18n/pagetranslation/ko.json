@@ -288,7 +288,7 @@
 	"pp-save-message": "문서가 게시되었습니다. 그것을 [$1 편집]할 수 있습니다.",
 	"pp-prepare-message": "문서가 번역을 위해 준비되었습니다. 아래의 차이을 확인하세요. 괜찮으면 \"{{int:pp-save-button-label}}\" 버튼을 클릭하세요!",
 	"pp-already-prepared-message": "해당 문서는 이미 번역 준비가 완료되었거나, 자동으로 번역 준비를 할 수 없는 것 같습니다. 이전 버전과 비교했을 때 변경 사항은 없습니다.",
-	"pp-diff-error": "서버로부터 diff를 가져오는 동안 오류가 발생했습니다.",
+	"pp-diff-error": "서버로부터 차이를 가져오는 동안 오류가 발생했습니다.",
 	"pp-pagename-missing": "문서 이름을 입력하세요.",
 	"pp-page-does-not-exist": "$1 문서가 존재하지 않습니다.",
 	"pp-diff-old-header": "원래 텍스트",

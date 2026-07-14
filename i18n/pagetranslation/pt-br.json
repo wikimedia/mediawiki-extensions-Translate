@@ -20,7 +20,8 @@
 			"Rodrigo codignoli",
 			"Shirayuki",
 			"YuriNikolai",
-			"BraunOBruno"
+			"BraunOBruno",
+			"EGobi"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -53,7 +54,7 @@
 	"tpt-edit-failed": "Não foi possível atualizar a página: $1",
 	"tpt-duplicate": "<strong><bdi>$1</bdi></strong> é usado como nome de unidade de tradução mais de uma vez.",
 	"tpt-invalid": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> não deve conter sublinhado nem barra.",
-	"tpt-unit-title-too-long": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> é muito longo. O comprimento combinado do título da página traduzível com o prefixo do namespace, o nome da unidade de tradução e o código do idioma é de $2 {{PLURAL:$2|byte|bytes}}, que é maior que o comprimento máximo suportado de $3 {{PLURAL:$3|byte|bytes}}. Encurte o nome da unidade de tradução (se tiver sido personalizado) ou [[Special:MovePage/$4|renomeie a página traduzível]] para um nome mais curto para permitir a tradução.",
+	"tpt-unit-title-too-long": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> é muito longo. O comprimento combinado do título da página traduzível com o prefixo do espaço nominal, o nome da unidade de tradução e o código do idioma é de $2 ''{{PLURAL:$2|byte|bytes}}'', que é maior que o comprimento máximo suportado de $3 ''{{PLURAL:$3|byte|bytes}}''. Encurte o nome da unidade de tradução (se tiver sido personalizado) ou [[Special:MovePage/$4|renomeie a página traduzível]] para um nome mais curto para permitir a tradução.",
 	"tpt-unit-title-invalid": "O nome da unidade de tradução <strong><bdi>$1</bdi></strong> é inválido: $2",
 	"tpt-unmarked": "A página [[:$1]] deixou de estar marcada para tradução.",
 	"tpt-list-nopages": "Não há páginas nem marcadas para tradução, nem prontas para serem marcadas para tradução.",
@@ -190,7 +191,7 @@
 	"pt-movepage-block-subpage-invalid": "O título da subpágina de destino para [[:$1]] seria inválido (talvez muito longo).",
 	"pt-movepage-block-talkpage-invalid": "O título da página de discussão de destino para \"[[:$1]]\" seria inválido (muito longo?)",
 	"pt-movepage-block-unknown-page": "A página ([[:$1]]) que está sendo movida não parece fazer parte da página traduzível.",
-	"pt-movepage-block-ns-talk-unsupported": "A página ([[:$1]]) está sendo movida para um namespace que não suporta páginas de discussão.",
+	"pt-movepage-block-ns-talk-unsupported": "A página ([[:$1]]) está sendo movida para um espaço nominal incompatível com páginas de discussão.",
 	"pt-movepage-block-rename-failed": "Ocorreu um erro ao gerar um novo título para a página [[:$1]]",
 	"pt-movepage-list-pages": "Lista de páginas para serem movidas",
 	"pt-movepage-list-source": "Página traduzível de origem",
