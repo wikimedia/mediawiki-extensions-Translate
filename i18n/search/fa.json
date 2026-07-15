@@ -6,7 +6,8 @@
 			"Ebrahim",
 			"Ebraminio",
 			"Huji",
-			"Reza1615"
+			"Reza1615",
+			"Mohammad ebz"
 		]
 	},
 	"searchtranslations": "جستجوی ترجمه‌ها",
@@ -14,6 +15,7 @@
 	"tux-sst-view-foreign": "نمایش در $1",
 	"tux-sst-search": "جستجو",
 	"tux-sst-search-ph": "جستجوی ترجمه‌ها",
+	"tux-sst-search-info": "برای بررسی دقیق‌تر معیارهای جستجو، از عملگرهای <code>language:</code> یا <code>group:</code> استفاده کنید.",
 	"tux-sst-count": "{{PLURAL:$1|یک نتیجه یافت شد|$1 نتیجه یافت شد}}",
 	"tux-sst-facet-language": "زبان‌ها",
 	"tux-sst-facet-group": "گروه‌های پیام",

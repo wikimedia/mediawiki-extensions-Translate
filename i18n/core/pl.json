@@ -34,7 +34,8 @@
 			"Woytecr",
 			"Wpedzich",
 			"Žekřil71pl",
-			"Rzuwig"
+			"Rzuwig",
+			"PanWor"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -48,7 +49,7 @@
 	"translate-export-csv-definition": "Tekst źródłowy komunikatu",
 	"translate-taction-translate": "Przetłumacz",
 	"translate-taction-proofread": "Przejrzano",
-	"translate-taction-lstats": "Statystyka języka",
+	"translate-taction-lstats": "Statystyki języka",
 	"translate-taction-mstats": "Statystyki grupy komunikatów",
 	"translate-taction-export": "Eksport",
 	"translate-taction-disabled": "Ta akcja jest zablokowana w tej wiki.",
@@ -323,7 +324,7 @@
 	"translate-import-err-no-headers": "Plik nie jest prawidłowo sformatowanym plikiem Gettext właściwym dla rozszerzenia Translate – nie udało się odczytać grupy i języka z nagłówków pliku.",
 	"translate-js-support-unsaved-warning": "Masz nieopublikowane tłumaczenia.",
 	"translate-documentation-language": "opis komunikatu",
-	"translate-searchprofile": "Tłumaczenia",
+	"translate-searchprofile": "w tłumaczeniach",
 	"translate-searchprofile-tooltip": "Szukaj we wszystkich tłumaczeniach",
 	"translate-searchprofile-note": "Więcej opcji wyszukiwania dostępnych jest w [$1 wyszukiwarce tłumaczeń].",
 	"translate-search-languagefilter": "Filtruj według języka",
