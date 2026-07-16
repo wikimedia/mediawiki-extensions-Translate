@@ -74,7 +74,7 @@
 	"tpt-priority-languages": "Seorang penyelia penterjemahan telah menetapkan bahasa-bahasa utama kumpulan ini kepada: $1",
 	"tpt-priority-languages-force": "Penyelia terjemahan telah menetapkan bahasa-bahasa keutamaan kepada $1 bagi kumpulan ini. Tidak dibenarkan menterjemah kepada bahasa-bahasa lain.",
 	"tpt-render-summary": "Mengemas kini agar sepadan dengan versi baru laman sumber",
-	"aggregategroups": "ډلې يوځای‌کول",
+	"aggregategroups": "Kumpulan agregat",
 	"tpt-aggregategroup-add": "Tambahkan",
 	"tpt-aggregategroup-save": "Simpan",
 	"tpt-aggregategroup-add-new": "Tambahkan kumpulan agregat baru",

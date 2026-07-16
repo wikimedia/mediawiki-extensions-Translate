@@ -192,5 +192,7 @@
 	"tpt-manage-message-group-subscriptions-raw-done": "ستاسو ونډکښنې هم‌مهاله شوې.",
 	"tpt-manage-message-group-subscriptions-raw-titles": "ډلې:",
 	"tpt-manage-message-group-subscriptions-normal-check-all": "ټولې خانې ډکول",
-	"tpt-manage-message-group-subscriptions-raw-submit": "ونډکښنې هممهالول"
+	"tpt-manage-message-group-subscriptions-raw-submit": "ونډکښنې هممهالول",
+	"right-translate-empty-category": "د تشو وېشنيزو لپاره د ژباړې يوه‌کي جوړول",
+	"action-translate-empty-category": "د تشو وېشنيزو لپاره د ژباړې يوه‌کي جوړول"
 }
