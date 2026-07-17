@@ -18,7 +18,8 @@
 			"Tacsipacsi",
 			"Tobulos1",
 			"WikiPhoenix",
-			"Yupik"
+			"Yupik",
+			"Boivie"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -170,6 +171,8 @@
 	"log-action-filter-pagetranslation-discourage": "Avråds från att översättas",
 	"log-action-filter-pagetranslation-prioritylanguages": "Ändring av prioriterade språk",
 	"log-action-filter-pagetranslation-aggregategroups": "Ändring av aggregerade grupper",
+	"log-description-messagebundle": "Logg för åtgärder relaterade till meddelandepaketsystemet",
+	"log-name-messagebundle": "Meddelandepaketlogg",
 	"logentry-messagebundle-moveok": "$1 {{GENDER:$2|döpte om}} meddelandepaketet $3 till $4",
 	"logentry-messagebundle-movenok": "$1 {{GENDER:$2|stötte}} på ett problem när meddelandepaketet $3 skulle flyttas till $4",
 	"logentry-messagebundle-deletefok": "$1 {{GENDER:$2|raderade}} meddelandepaketet $3",

@@ -20,7 +20,8 @@
 			"Pols12",
 			"Reza1615",
 			"ZxxZxxZ",
-			"پاناروما"
+			"پاناروما",
+			"Mohammad ebz"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -84,6 +85,8 @@
 	"tpt-rev-unmark-tooltip": "حذف این صفحه از ترجمه.",
 	"tpt-rev-discourage-tooltip": "بازاشتن از ترجمه‌های بیشتر در این صفحه.",
 	"tpt-rev-encourage-tooltip": "بازیابی این صفحه به ترجمهٔ معمولی.",
+	"tpt-translation-settings-page-title": "تنظیمات ترجمه",
+	"tpt-translation-settings-save": "ذخیرهٔ تنظیمات",
 	"translate-tag-translate-link-desc": "ترجمهٔ این صفحه",
 	"translate-tag-markthis": "علامت‌گذاری این صفحه برای ترجمه",
 	"translate-tag-markthisagain": "این صفحه از آخرین باری که <span class=\"plainlinks\">[$2 برای ترجمه علامت‌گذاری]</span> شده بود <span class=\"plainlinks\">[$1 تغییراتی]</span> داشته است.",
@@ -115,7 +118,7 @@
 	"tpt-aggregategroup-add-new": "افزودن یک گروه انبوه جدید",
 	"tpt-aggregategroup-remove-confirm": "آیا شما مطمئن هستید که می‌خواهید این گروه انبوه را حذف کنید؟",
 	"tpt-aggregategroup-invalid-group": "گروه وجود ندارد",
-	"tpt-aggregategroup-edit-name": "نام:",
+	"tpt-aggregategroup-edit-name": "نام",
 	"tpt-aggregategroup-edit-description": "توضیحات:",
 	"tpt-aggregategroup-update-cancel": "لغو",
 	"tpt-aggregategroup-expand-all-groups": "گسترش همهٔ گروه‌ها",
