@@ -9,7 +9,6 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Page\PageStoreRecord;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Session\SessionManager;
 use MediaWiki\Status\Status;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
@@ -322,7 +321,7 @@ class MarkForTranslationActionApiTest extends MediaWikiIntegrationTestCase {
 			$expectedSettings['enableTransclusion'] ?? true
 		);
 
-		$sessionObj = SessionManager::singleton()->getEmptySession();
+		$sessionObj = $this->getServiceContainer()->getSessionManager()->getEmptySession();
 		$params['token'] = ApiQueryTokens::getToken(
 			$user,
 			$sessionObj,
