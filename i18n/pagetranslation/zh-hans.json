@@ -201,6 +201,8 @@
 	"pt-shake-multiple": "单一翻译单元含多个翻译单元标记。\n确保翻译单元由空白行分隔。\n翻译单元文本：<pre>$1</pre>",
 	"pt-shake-position": "翻译单元标记在意外位置。翻译单元文本：<pre>$1</pre>",
 	"pt-shake-empty": "为“$1”的翻译单位标记是空的。",
+	"pt-shake-whitespace": "翻译单位标记“$1”有前导或尾随空格。",
+	"pt-shake-empty-marker": "不允许空的翻译单元标记。",
 	"log-description-pagetranslation": "页面翻译系统的对应活动日志",
 	"log-name-pagetranslation": "页面翻译日志",
 	"logentry-pagetranslation-mark": "$1将$3{{GENDER:$2|标记为}}需要翻译",

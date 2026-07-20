@@ -162,6 +162,8 @@
 	"pt-shake-multiple": "Mehrere Übersetzungseinheitenmarker für eine Übersetzungseinheit.\nAchte darauf, dass die Übersetzungseinheiten durch Leerzeilen getrennt sind.\nText der Übersetzungseinheit: <pre>$1</pre>",
 	"pt-shake-position": "Übersetzungseinheitenmarker befinden sich an unerwarteter Stelle.\nText der Übersetzungseinheit: <pre>$1</pre>",
 	"pt-shake-empty": "Die Übersetzungseinheit für Marker „$1“ ist leer.",
+	"pt-shake-whitespace": "Die Übersetzungseinheitsmarkierung „$1“ enthält führende oder nachfolgende Leerzeichen.",
+	"pt-shake-empty-marker": "Leere Übersetzungseinheitenmarkierungen sind nicht zulässig.",
 	"log-description-pagetranslation": "Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten",
 	"log-name-pagetranslation": "Übersetzungs-Logbuch",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|markierte}} die Seite $3 zum Übersetzen",
