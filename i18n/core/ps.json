@@ -257,6 +257,7 @@
 	"log-name-translationreview": "د ژباړې د بياکتنې يادښت",
 	"log-description-translationreview": "د ژباړو او پيغام ډلو د ټولو بياکتنو يادښت",
 	"logentry-translationreview-message": "$1 د $3 د ژباړو {{GENDER:$2|بياکتنه وکړه}}",
+	"right-unfuzzy": "د ژباړې يوه‌کي د نور نېټه‌نه‌اوښتونکي په توگه په نښه‌کول",
 	"group-translate-sandboxed": "ناتاييد شوي ژباړونکي",
 	"group-translate-sandboxed-member": "{{GENDER:$1|ناتاييد شوی ژباړونکی}}",
 	"right-translate-sandboxmanage": "د شگبکس‌شوو کارنانو چاروالي",
