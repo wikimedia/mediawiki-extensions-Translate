@@ -21,7 +21,7 @@
 	"tsb-search-requests": "Oppen Ufroen duerchsichen",
 	"tsb-accept-button-label": "Akzeptéieren",
 	"tsb-reject-button-label": "Refuséieren",
-	"tsb-selected-count": "{{PLURAL:$1|Ee|$1}}Benotzer erausgesicht",
+	"tsb-selected-count": "{{PLURAL:$1|Ee|$1}} Benotzer erausgesicht",
 	"tsb-older-requests": "$1 méi al {{PLURAL:$1|Ufro|Ufroen}}",
 	"tsb-accept-all-button-label": "All akzeptéieren",
 	"tsb-reject-all-button-label": "Alles refuséieren",
