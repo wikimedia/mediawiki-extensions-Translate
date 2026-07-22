@@ -3,7 +3,8 @@
 		"authors": [
 			"Delim",
 			"Gminky",
-			"Tensama0415"
+			"Tensama0415",
+			"YeBoy371"
 		]
 	},
 	"translate": "번역하기",
@@ -96,7 +97,7 @@
 	"translate-stats-users": "번역자",
 	"translate-stats-registrations": "등록",
 	"translate-stats-reviews": "검토",
-	"translate-stats-reviewers": "평론가",
+	"translate-stats-reviewers": "검토자",
 	"translate-statsf-intro": "이 양식으로부터 간단한 통계를 만들수 있습니다.\n모든 값은 최고 및 최저 제한이 있습니다.",
 	"translate-statsf-options": "그라프 설정",
 	"translate-statsf-width": "화소 단위 너비:",
@@ -112,8 +113,8 @@
 	"translate-statsf-count-edits": "편집수",
 	"translate-statsf-count-users": "활동중인 번역자",
 	"translate-statsf-count-registrations": "새 사용자",
-	"translate-statsf-count-reviews": "번역 평론가",
-	"translate-statsf-count-reviewers": "평론가",
+	"translate-statsf-count-reviews": "번역 검토자",
+	"translate-statsf-count-reviewers": "검토자",
 	"translate-statsf-language": "언어부호의 반점으로 구분한 목록:",
 	"translate-statsf-group": "집단부호의 반점으로 구분한 목록:",
 	"translate-statsf-submit": "미리보기",
