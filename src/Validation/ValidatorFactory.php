@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\Validation;
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\Validation\Validators\BraceBalanceValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\EscapeCharacterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\FluentVariableValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\GettextNewlineValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\InsertableRegexValidator;
@@ -40,6 +41,7 @@ class ValidatorFactory {
 	private static $validators = [
 		'BraceBalance' => BraceBalanceValidator::class,
 		'EscapeCharacter' => EscapeCharacterValidator::class,
+		'FluentVariable' => FluentVariableValidator::class,
 		'GettextNewline' => GettextNewlineValidator::class,
 		'GettextPlural' => GettextPluralValidator::class,
 		'InsertableRegex' => InsertableRegexValidator::class,

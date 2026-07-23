@@ -26,6 +26,7 @@ class FileFormatFactory {
 		'Apple' => AppleFormat::class,
 		'Dtd' => DtdFormat::class,
 		'FlatPhp' => FlatPhpFormat::class,
+		'Fluent' => FluentFormat::class,
 		'Gettext' => GettextFormat::class,
 		'Ini' => IniFormat::class,
 		'Java' => JavaFormat::class,

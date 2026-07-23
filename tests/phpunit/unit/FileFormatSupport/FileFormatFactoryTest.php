@@ -51,6 +51,7 @@ class FileFormatFactoryTest extends MediaWikiUnitTestCase {
 	}
 
 	public static function provideTestGetFileFormat(): Generator {
+		yield [ 'Fluent', FluentFormat::class ];
 		yield [ 'Json', JsonFormat::class ];
 		yield [ 'AndroidXml', AndroidXmlFormat::class ];
 	}

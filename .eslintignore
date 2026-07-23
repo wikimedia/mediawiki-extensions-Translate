@@ -6,3 +6,7 @@
 /**/i18n/**/*.json
 !/**/i18n/**/en.json
 !/**/i18n/**/qqq.json
+
+# Upstream Fluent spec fixtures, kept verbatim from
+# github.com/projectfluent/fluent (their own indentation style)
+/tests/phpunit/data/fluent/
