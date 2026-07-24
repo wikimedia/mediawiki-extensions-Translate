@@ -31,7 +31,7 @@ class CsvTranslationImporter {
 	public function parseFile( string $csvFilePath ): StatusValue {
 		if ( !file_exists( $csvFilePath ) || !is_file( $csvFilePath ) ) {
 			return StatusValue::newFatal(
-				"CSV file path '$csvFilePath' does not exist, is not readable or is not a file"
+				'CSV file does not exist, is not readable or is not a file'
 			);
 		}
 

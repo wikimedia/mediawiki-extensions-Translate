@@ -121,6 +121,9 @@ class ExternalMessageSourceStateComparator {
 		$ffs = $group->getFFS();
 		if ( $language === $sourceLanguage && !$ffs->exists( $language ) ) {
 			$path = $group->getSourceFilePath( $language );
+			// Warning: this exception message contains a local filesystem path. If this method
+			// is ever called from a web-facing context, the message must be sanitized to avoid
+			// disclosing server directory structure to end users.
 			throw new RuntimeException( "Source message file for {$group->getId()} does not exist: $path" );
 		}
 

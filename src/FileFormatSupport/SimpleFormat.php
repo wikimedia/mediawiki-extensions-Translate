@@ -175,10 +175,14 @@ class SimpleFormat implements FileFormatSupport {
 		}
 
 		if ( !file_exists( $writePath ) ) {
+			// Warning: this exception message contains a local filesystem path. If this method
+			// is ever called from a web-facing context, the message must be sanitized to avoid
+			// disclosing server directory structure to end users.
 			throw new InvalidArgumentException( "Write path '$writePath' does not exist." );
 		}
 
 		if ( !is_writable( $writePath ) ) {
+			// Warning: this exception message contains a local filesystem path (see above).
 			throw new InvalidArgumentException( "Write path '$writePath' is not writable." );
 		}
 
