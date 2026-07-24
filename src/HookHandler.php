@@ -402,6 +402,7 @@ class HookHandler implements
 					'WikiPageFactory',
 					'UserOptionsLookup',
 					'Translate:TranslateSandbox',
+					'ObjectCacheFactory',
 				],
 				'args' => [
 					static function () {

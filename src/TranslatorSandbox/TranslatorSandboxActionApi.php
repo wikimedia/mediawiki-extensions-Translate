@@ -10,6 +10,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\ObjectCache\ObjectCacheFactory;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Revision\SlotRecord;
@@ -30,8 +31,10 @@ use Wikimedia\ParamValidator\ParamValidator;
 class TranslatorSandboxActionApi extends ApiBase {
 
 	private bool $isSandboxEnabled;
+	private readonly int $sandboxCreationHourlyLimit;
 	public const CONSTRUCTOR_OPTIONS = [
 		'TranslateUseSandbox',
+		'TranslateSandboxCreationHourlyLimit',
 	];
 
 	public function __construct(
@@ -43,11 +46,13 @@ class TranslatorSandboxActionApi extends ApiBase {
 		private readonly WikiPageFactory $wikiPageFactory,
 		private readonly UserOptionsLookup $userOptionsLookup,
 		private readonly TranslateSandbox $translateSandbox,
+		private readonly ObjectCacheFactory $cacheFactory,
 		ServiceOptions $options
 	) {
 		parent::__construct( $mainModule, $moduleName );
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->isSandboxEnabled = $options->get( 'TranslateUseSandbox' );
+		$this->sandboxCreationHourlyLimit = (int)$options->get( 'TranslateSandboxCreationHourlyLimit' );
 	}
 
 	public function execute(): void {
@@ -75,6 +80,16 @@ class TranslatorSandboxActionApi extends ApiBase {
 	}
 
 	private function doCreate(): void {
+		if ( $this->sandboxCreationHourlyLimit > 0 ) {
+			$cache = $this->cacheFactory->getInstance( CACHE_ANYTHING );
+			$key = $cache->makeKey( 'translate-sandbox-creates-hourly' );
+			$count = (int)$cache->get( $key );
+			if ( $count >= $this->sandboxCreationHourlyLimit ) {
+				$this->dieWithError( 'apierror-ratelimited' );
+			}
+			$cache->incrWithInit( $key, 3600, 1, 1 );
+		}
+
 		$params = $this->extractRequestParams();
 
 		// Do validations

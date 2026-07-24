@@ -1477,6 +1477,10 @@
 			"value": 20,
 			"description": "Maximum number of translations a user can make in the sandbox."
 		},
+		"TranslateSandboxCreationHourlyLimit": {
+			"value": 20,
+			"description": "Maximum number of sandbox accounts that can be created globally (across all users/IPs) per hour. Set to 0 to disable."
+		},
 		"TranslateUsePreSaveTransform": {
 			"value": false,
 			"description": "Pre-save transform for message pages. MediaWiki does this by default (including for pages in the MediaWiki-namespace). By setting this to false it allows users to put untransformed syntax such as '~~~~' into a page without having them be transformed upon save."
