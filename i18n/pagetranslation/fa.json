@@ -276,5 +276,6 @@
 	"tag-translate-translation-pages-description": "ویرایش‌های خودکار در صفحه‌های ترجمه با استفاده از افزونهٔ ترجمه",
 	"right-translate-empty-category": "ایجاد واحدهای ترجمه برای رده‌های خالی",
 	"action-translate-empty-category": "ایجاد واحدهای ترجمه برای رده‌های خالی",
-	"tpt-create-empty-category": "ناتوان در ایجاد واحد ترجمه برای ردهٔ [[:$1]] که خالی است."
+	"tpt-create-empty-category": "ناتوان در ایجاد واحد ترجمه برای ردهٔ [[:$1]] که خالی است.",
+	"ext-uls-empty-search-entrypoint-description": "شما می‌توانید این صفحه را ترجمه کنید. این یک راه آسان برای ایجاد محتوا به زبان شماست."
 }
