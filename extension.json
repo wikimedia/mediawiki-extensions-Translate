@@ -407,7 +407,9 @@
 		"languagestats": {
 			"class": "\\MediaWiki\\Extension\\Translate\\Statistics\\QueryLanguageStatsActionApi",
 			"services": [
-				"JobQueueGroup"
+				"JobQueueGroup",
+				"Translate:ConfigHelper",
+				"Translate:MessageGroupMetadata"
 			]
 		},
 		"managemessagegroups": "MediaWiki\\Extension\\Translate\\MessageGroupProcessing\\QueryManageMessageGroupsActionApi",
