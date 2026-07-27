@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
-use InvalidArgumentException;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextPluralException;
 
 /**
@@ -18,16 +17,17 @@ class GettextPlural {
 	 * Returns Gettext plural rule for given language.
 	 *
 	 * @param string $code Language tag in MediaWiki internal format.
+	 * @param string|null $ruleFile Path to the plural rules file; defaults to the bundled data file.
 	 * @return string Empty string if no plural rule found
 	 */
-	public static function getPluralRule( string $code ): string {
+	public static function getPluralRule( string $code, ?string $ruleFile = null ): string {
 		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			return 'nplurals=1; plural=0;';
 		}
 
-		$rulefile = __DIR__ . '/../../data/plural-gettext.txt';
+		$rulefile = $ruleFile ?? __DIR__ . '/../../data/plural-gettext.txt';
 		$rules = file_get_contents( $rulefile );
 		foreach ( explode( "\n", $rules ) as $line ) {
 			if ( trim( $line ) === '' ) {
@@ -46,13 +46,13 @@ class GettextPlural {
 	 * Returns how many plural forms are expected by a given plural rule.
 	 *
 	 * @param string $rule Gettext style plural rule.
-	 * @throws InvalidArgumentException
+	 * @throws GettextPluralException if the rule is malformed or a placeholder.
 	 */
 	public static function getPluralCount( string $rule ): int {
 		$m = [];
 		$ok = preg_match( '/nplurals=([0-9]+).*;/', $rule, $m );
 		if ( !$ok ) {
-			throw new InvalidArgumentException( "Rule $rule is malformed" );
+			throw new GettextPluralException( "Rule $rule is malformed" );
 		}
 		return (int)$m[ 1 ];
 	}

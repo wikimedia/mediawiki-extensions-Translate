@@ -307,6 +307,36 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotEmpty( $result['MESSAGES'] );
 	}
 
+	public function testReadFromVariableWithPlaceholderPluralForms(): void {
+		$gettextFormat = $this->getGettextInstance();
+
+		$poContent = <<<'PO'
+		msgid ""
+		msgstr ""
+		"Content-Type: text/plain; charset=UTF-8\n"
+		"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+		"X-Language-Code: en\n"
+		"X-Message-Group: test-group\n"
+
+		msgctxt "context"
+		msgid "Hello"
+		msgstr "Hello"
+
+		msgctxt "plural-context"
+		msgid "One apple"
+		msgid_plural "%d apples"
+		msgstr[0] "One apple"
+		msgstr[1] "%d apples"
+		PO;
+
+		$result = $gettextFormat->readFromVariable( $poContent );
+		$this->assertArrayHasKey( 'MESSAGES', $result );
+		$this->assertNull( $result['EXTRA']['METADATA']['plural'],
+			'Placeholder Plural-Forms header should result in null plural count' );
+		$this->assertCount( 2, $result['MESSAGES'],
+			'Plural message should not be dropped when plural count is unknown' );
+	}
+
 	public function testReadFromVariableNormalizesUnicode(): void {
 		$gettextFormat = $this->getGettextInstance();
 

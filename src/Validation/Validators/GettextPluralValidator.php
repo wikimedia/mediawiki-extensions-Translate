@@ -3,29 +3,50 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Validation\Validators;
 
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextPluralException;
+use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 use MediaWiki\Extension\Translate\Validation\MessageValidator;
 use MediaWiki\Extension\Translate\Validation\ValidationIssue;
 use MediaWiki\Extension\Translate\Validation\ValidationIssues;
+use MediaWiki\Logger\LoggerFactory;
 
 /**
  * @license GPL-2.0-or-later
  * @since 2019.09
  */
 class GettextPluralValidator implements MessageValidator {
+	public function __construct(
+		private readonly ?string $ruleFile = null,
+	) {
+	}
+
 	public function getIssues( Message $message, string $targetLanguage ): ValidationIssues {
 		$issues = new ValidationIssues();
 
-		$pluralRule = GettextPlural::getPluralRule( $targetLanguage );
+		$pluralRule = GettextPlural::getPluralRule( $targetLanguage, $this->ruleFile );
 		// Skip validation for languages for which we do not know the plural rule
 		if ( !$pluralRule ) {
 			return $issues;
 		}
 
+		try {
+			$expectedPluralCount = GettextPlural::getPluralCount( $pluralRule );
+		} catch ( GettextPluralException $e ) {
+			LoggerFactory::getInstance( LogNames::MAIN )->warning(
+				'GettextPluralValidator: malformed plural rule {rule} for language {language}',
+				[
+					'rule' => $pluralRule,
+					'language' => $targetLanguage,
+					'exception' => $e,
+				]
+			);
+			return $issues;
+		}
+
 		$definition = $message->definition();
 		$translation = $message->translation();
-		$expectedPluralCount = GettextPlural::getPluralCount( $pluralRule );
 		$definitionHasPlural = GettextPlural::hasPlural( $definition );
 		$translationHasPlural = GettextPlural::hasPlural( $translation );
 

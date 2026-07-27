@@ -140,7 +140,18 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		if ( $potmode ) {
 			$pluralCount = 2;
 		} elseif ( isset( $headers['Plural-Forms'] ) ) {
-			$pluralCount = $metadata['plural'] = GettextPlural::getPluralCount( $headers['Plural-Forms'] );
+			try {
+				$pluralCount = GettextPlural::getPluralCount( $headers['Plural-Forms'] );
+			} catch ( GettextPluralException $e ) {
+				LoggerFactory::getInstance( LogNames::MAIN )->warning(
+					'GettextFormat: malformed Plural-Forms header {rule} in group {group}',
+					[
+						'rule' => $headers['Plural-Forms'],
+						'group' => $headers['X-Message-Group'] ?? 'unknown',
+						'exception' => $e,
+					]
+				);
+			}
 		}
 
 		$metadata['plural'] = $pluralCount;
@@ -261,14 +272,25 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	private function processGettextPluralMessage( ?int $pluralCount, string $section ): string {
 		$actualForms = [];
 
-		for ( $i = 0; $i < $pluralCount; $i++ ) {
+		if ( $pluralCount === null ) {
+			// Plural count unknown: collect however many msgstr[N] forms are present
+			$i = 0;
 			$match = $this->expectKeyword( "msgstr\\[$i\\]", $section );
-
-			if ( $match !== null ) {
+			while ( $match !== null ) {
 				$actualForms[] = $this->formatForWiki( $match );
-			} else {
-				$actualForms[] = '';
-				error_log( "Plural $i not found, expecting total of $pluralCount for $section" );
+				$i++;
+				$match = $this->expectKeyword( "msgstr\\[$i\\]", $section );
+			}
+		} else {
+			for ( $i = 0; $i < $pluralCount; $i++ ) {
+				$match = $this->expectKeyword( "msgstr\\[$i\\]", $section );
+
+				if ( $match !== null ) {
+					$actualForms[] = $this->formatForWiki( $match );
+				} else {
+					$actualForms[] = '';
+					error_log( "Plural $i not found, expecting total of $pluralCount for $section" );
+				}
 			}
 		}
 
@@ -404,7 +426,20 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 				[ 'languagecode' => $code ]
 			);
 		}
-		$pluralCount = GettextPlural::getPluralCount( $pluralRule );
+		try {
+			$pluralCount = GettextPlural::getPluralCount( $pluralRule );
+		} catch ( GettextPluralException $e ) {
+			LoggerFactory::getInstance( LogNames::MAIN )->warning(
+				'GettextFormat: malformed plural rule {rule} for language {languagecode} in group {group}',
+				[
+					'rule' => $pluralRule,
+					'languagecode' => $code,
+					'group' => $this->group->getId(),
+					'exception' => $e,
+				]
+			);
+			$pluralCount = 2;
+		}
 
 		$documentationLanguageCode = MediaWikiServices::getInstance()
 			->getMainConfig()

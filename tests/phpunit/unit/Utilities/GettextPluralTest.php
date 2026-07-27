@@ -4,6 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\GettextPluralException;
 use MediaWiki\Extension\Translate\Utilities\GettextPlural;
 
 /** @coversDefaultClass \MediaWiki\Extension\Translate\Utilities\GettextPlural */
@@ -39,6 +40,7 @@ class GettextPluralTest extends MediaWikiUnitTestCase {
 	public static function provideGetPluralCountThrows() {
 		yield [ 'nplurals=; plural=(n != 1);' ];
 		yield [ 'hello' ];
+		yield [ 'nplurals=INTEGER; plural=EXPRESSION;' ];
 	}
 
 	/**
@@ -46,7 +48,7 @@ class GettextPluralTest extends MediaWikiUnitTestCase {
 	 * @covers ::getPluralCount
 	 */
 	public function testGetPluralCountThrows( $input ) {
-		$this->expectException( InvalidArgumentException::class );
+		$this->expectException( GettextPluralException::class );
 		GettextPlural::getPluralCount( $input );
 	}
 

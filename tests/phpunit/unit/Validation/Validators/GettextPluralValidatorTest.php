@@ -9,9 +9,23 @@ use MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator;
  * @covers \MediaWiki\Extension\Translate\Validation\Validators\GettextPluralValidator
  */
 class GettextPluralValidatorTest extends BaseValidatorTestCase {
+	private const TEST_RULE_FILE = __DIR__ . '/data/plural-gettext.txt';
+
 	/** @dataProvider provideTestCases */
 	public function test( ...$params ) {
 		$this->runValidatorTests( new GettextPluralValidator(), 'plural', ...$params );
+	}
+
+	public function testMalformedPluralRuleResultsInNoIssues() {
+		$this->runValidatorTests(
+			new GettextPluralValidator( self::TEST_RULE_FILE ),
+			'plural',
+			'{{PLURAL:GETTEXT|meter|meters}}',
+			'metres',
+			[],
+			'Malformed plural rule results in no issues',
+			'x-test-malformed'
+		);
 	}
 
 	public static function provideTestCases() {
@@ -49,6 +63,14 @@ class GettextPluralValidatorTest extends BaseValidatorTestCase {
 			'{{PLURAL:GETTEXT|meter|meters}}',
 			[ 'unsupported' ],
 			'Plural in translation when lacking in the source an issue'
+		];
+
+		yield [
+			'{{PLURAL:GETTEXT|meter|meters}}',
+			'metres',
+			[],
+			'Unknown language results in no issues',
+			'x-test-unknown'
 		];
 	}
 }
