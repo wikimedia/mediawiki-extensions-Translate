@@ -306,7 +306,8 @@
 				"LanguageNameUtils",
 				"JobQueueGroup",
 				"Translate:MessageGroupReviewStore",
-				"ObjectCacheFactory"
+				"ObjectCacheFactory",
+				"Translate:ConfigHelper"
 			]
 		},
 		"MessageGroupStats": {

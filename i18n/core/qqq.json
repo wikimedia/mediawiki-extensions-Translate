@@ -226,6 +226,7 @@
 	"translate-langstats-collapse": "{{doc-actionlink}}\nUsed in [[Special:LanguageStats]] to collapse subgroups.\n{{Identical|Collapse}}",
 	"translate-langstats-expandall": "{{doc-actionlink}}\nUsed in [[Special:LanguageStats]] to expand all subgroups.\n\nSee also:\n* {{msg-mw|Translate-langstats-collapseall}}",
 	"translate-langstats-collapseall": "{{doc-actionlink}}\nUsed in [[Special:LanguageStats]] to collapse all subgroups.\n\nSee also:\n* {{msg-mw|Translate-langstats-expandall}}",
+	"translate-langstats-disabled-language": "Screen-reader-only label appended to a message group name in [[Special:LanguageStats]] when translation to the selected language is disabled for that group. The row is also shown with strike-through text as a visual cue; this message conveys the same information to users of assistive technology.",
 	"translate-language-code": "Name of fieldset in [[Special:LanguageStats]].\n\n{{Identical|Language code}}",
 	"translate-language-field-name": "Used in [[Special:LanguageStats]].\n\n{{Identical|Language}}",
 	"translate-suppress-complete": "Used in [[Special:LanguageStats]].",

@@ -9,6 +9,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
@@ -70,7 +71,8 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		private readonly LanguageNameUtils $languageNameUtils,
 		private readonly JobQueueGroup $jobQueueGroup,
 		private readonly MessageGroupReviewStore $groupReviewStore,
-		ObjectCacheFactory $objectCacheFactory
+		ObjectCacheFactory $objectCacheFactory,
+		private readonly ConfigHelper $configHelper
 	) {
 		parent::__construct( 'LanguageStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();
@@ -203,7 +205,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		return [ 'languagecode' => $target ];
 	}
 
-	/** Return true if language exist in the list of allowed languages or false otherwise. */
+	/**
+	 * Return true if language exist in the list of allowed languages or false otherwise.
+	 */
 	private function isValidValue( string $value ): bool {
 		$langs = $this->languageNameUtils->getLanguageNames();
 
@@ -403,15 +407,20 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		int $depth = 0
 	): string {
 		$groupId = $group->getId();
-
-		if ( $this->table->isExcluded( $group, $this->target ) ) {
-			return '';
-		}
+		$isExcluded = $this->table->isExcluded( $group, $this->target );
 
 		$stats = $cache[$groupId];
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $stats[MessageGroupStats::FUZZY];
+
+		if ( $isExcluded && !$this->configHelper->canSeeExcludedLanguageStats(
+			$this->getAuthority(),
+			$translated ?? 0,
+			$fuzzy ?? 0
+		) ) {
+			return '';
+		}
 
 		// Quick checks to see whether filters apply
 		if ( $this->noComplete && $fuzzy === 0 && $translated === $total ) {
@@ -441,11 +450,12 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$params[] = md5( $this->target );
 		$params[] = $parent ? $parent->getId() : '!';
 		$params[] = $depth;
+		$params[] = $isExcluded ? '1' : '0';
 
 		return $this->cache->getWithSetCallback(
-			$this->cache->makeKey( __METHOD__ . '-v3', implode( '-', $params ) ),
+			$this->cache->makeKey( __METHOD__ . '-v4', implode( '-', $params ) ),
 			$this->cache::TTL_DAY,
-			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $depth ) {
+			function () use ( $translated, $total, $groupId, $group, $parent, $stats, $depth, $isExcluded ) {
 				// Any data variable read below should be part of the cache key above
 				$extra = [];
 				if ( $translated === $total ) {
@@ -455,6 +465,9 @@ class LanguageStatsSpecialPage extends SpecialPage {
 				$rowParams = [];
 				$rowParams['data-groupid'] = $groupId;
 				$rowParams['class'] = get_class( $group );
+				if ( $isExcluded ) {
+					$rowParams['class'] .= ' tux-langstats-disabled';
+				}
 				if ( $parent ) {
 					$rowParams['data-parentgroup'] = $parent->getId();
 				}
@@ -462,13 +475,25 @@ class LanguageStatsSpecialPage extends SpecialPage {
 					$rowParams['data-depth'] = $depth;
 				}
 
+				// For excluded groups, append a visually-hidden label so the disabled
+				// status is conveyed to screen-reader and touchscreen users, not only
+				// through the strike-through styling.
+				$groupNameCell = $this->table->makeGroupLink( $group, $this->target, $extra );
+				if ( $isExcluded ) {
+					$groupNameCell .= ' ' . Html::element(
+						'span',
+						[ 'class' => 'tux-langstats-disabled-label' ],
+						$this->msg( 'translate-langstats-disabled-language' )->text()
+					);
+				}
+
 				return "\t" .
 					Html::openElement( 'tr', $rowParams ) .
 					"\n\t\t" .
 					Html::rawElement(
 						'td',
-						 [],
-						$this->table->makeGroupLink( $group, $this->target, $extra )
+						[],
+						$groupNameCell
 					) . $this->table->makeNumberColumns( $stats ) .
 					$this->getWorkflowStateCell( $groupId ) .
 					"\n\t" .

@@ -1,4 +1,5 @@
 @import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
 
 .mw-special-LanguageStats .mw-body-content {
 	form {
@@ -14,4 +15,18 @@
 	.mw-translate-hide {
 		display: none;
 	}
+}
+
+.tux-langstats-disabled {
+	> td:first-child {
+		text-decoration: line-through;
+
+		a {
+			color: @color-subtle;
+		}
+	}
+}
+
+.tux-langstats-disabled-label {
+	.mixin-screen-reader-text();
 }

@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Tests\Utilities;
 
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
+use MediaWiki\Permissions\Authority;
 use MediaWikiIntegrationTestCase;
 use MessageGroup;
 
@@ -144,6 +145,30 @@ class ConfigHelperTest extends MediaWikiIntegrationTestCase {
 			true,
 			'Global reason'
 		];
+	}
+
+	/** @dataProvider provideCanSeeExcludedLanguageStats */
+	public function testCanSeeExcludedLanguageStats(
+		bool $expected,
+		bool $userHasRight,
+		int $translated,
+		int $fuzzy
+	): void {
+		$authority = $this->createMock( Authority::class );
+		$authority->method( 'isAllowed' )->willReturn( $userHasRight );
+
+		$this->assertSame(
+			$expected,
+			( new ConfigHelper() )->canSeeExcludedLanguageStats( $authority, $translated, $fuzzy )
+		);
+	}
+
+	public static function provideCanSeeExcludedLanguageStats(): iterable {
+		yield 'user lacks right' => [ false, false, 10, 0 ];
+		yield 'no translations exist' => [ false, true, 0, 0 ];
+		yield 'has right and translated messages' => [ true, true, 10, 0 ];
+		yield 'has right and fuzzy messages only' => [ true, true, 0, 5 ];
+		yield 'has right and both translated and fuzzy' => [ true, true, 3, 2 ];
 	}
 
 	/** @dataProvider provideIsAuthorExcluded */

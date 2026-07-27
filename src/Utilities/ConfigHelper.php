@@ -3,6 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
+use MediaWiki\Permissions\Authority;
 use MessageGroup;
 
 /**
@@ -73,6 +74,27 @@ class ConfigHelper {
 		}
 
 		return $isLanguageDisabled;
+	}
+
+	/**
+	 * Whether an excluded language group with existing translations should be
+	 * visible to the given user. Users with the 'pagetranslation' right (i.e.
+	 * translation admins) can see disabled-language groups that already have
+	 * translations; everyone else has them hidden as before.
+	 *
+	 * @param Authority $authority The current user.
+	 * @param int $translated Number of translated messages.
+	 * @param int $fuzzy Number of fuzzy messages.
+	 */
+	public function canSeeExcludedLanguageStats(
+		Authority $authority,
+		int $translated,
+		int $fuzzy
+	): bool {
+		if ( $translated === 0 && $fuzzy === 0 ) {
+			return false;
+		}
+		return $authority->isAllowed( 'pagetranslation' );
 	}
 
 	public function isAuthorExcluded( MessageGroup|string $group, string $languageCode, string $username ): bool {

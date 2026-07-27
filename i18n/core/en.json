@@ -182,6 +182,7 @@
 	"translate-langstats-collapse": "collapse",
 	"translate-langstats-expandall": "expand all",
 	"translate-langstats-collapseall": "collapse all",
+	"translate-langstats-disabled-language": "Translation to this language is disabled for this group.",
 	"translate-language-code": "Language code",
 	"translate-language-field-name": "Language:",
 	"translate-suppress-complete": "Suppress completely translated message groups",
