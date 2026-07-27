@@ -251,6 +251,11 @@ class TranslatablePage extends TranslatableBundle {
 	}
 
 	public function getTranslationPage( string $targetLanguage ): TranslationPage {
+		$group = $this->getMessageGroup() ?? new WikiPageMessageGroup(
+			$this->getMessageGroupId(),
+			$this->getTitle()
+		);
+
 		$mwServices = MediaWikiServices::getInstance();
 		$config = $mwServices->getMainConfig();
 		$services = Services::getInstance();
@@ -263,7 +268,7 @@ class TranslatablePage extends TranslatableBundle {
 
 		return new TranslationPage(
 			$parserOutput,
-			$this->getMessageGroup(),
+			$group,
 			$languageFactory->getLanguage( $targetLanguage ),
 			$languageFactory->getLanguage( $this->getSourceLanguageCode() ),
 			$config->get( 'TranslateKeepOutdatedTranslations' ),
