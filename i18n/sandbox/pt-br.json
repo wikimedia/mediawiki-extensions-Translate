@@ -4,7 +4,8 @@
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
 			"Fabsouza1",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"NenhumaFênix"
 		]
 	},
 	"managetranslatorsandbox": "Gerenciar tradutor da página de testes",
@@ -32,7 +33,7 @@
 	"tsb-reminder-link-text": "Enviar lembrete de e-mail",
 	"tsb-didnt-make-any-translations": "Este usuário não fez nenhuma tradução.",
 	"tsb-translations-source": "Fonte",
-	"tsb-translations-user": "{{GENDER:$1|Traduções do usuário|Traduções da usuária}}",
+	"tsb-translations-user": "{{GENDER:$1|Traduções do usuário|Traduções da usuária|Traduções de usuário(a)}}",
 	"tsb-translations-current": "Traduções existentes",
 	"tsb-delete-userpage-summary": "Excluindo a página de usuário de um usuário da página de testes",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Usuário rejeitado|Usuários rejeitados}}",
@@ -49,7 +50,7 @@
 	"tsb-create-user-page": "Página de usuário básica criada",
 	"log-name-translatorsandbox": "Registro da página de testes de tradução",
 	"log-description-translatorsandbox": "Um registro de ações dos usuários de página de testes de tradução",
-	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveu}} $3 para {{GENDER:$4|tradutor|tradutora}}",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveu}} $3 para {{GENDER:$4|tradutor|tradutora|tradutor(a)}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rejeitou}} o pedido de \"$3\" para se tornar um tradutor",
 	"logentry-newusers-tsbpromoted": "A conta de usuário $3 foi {{GENDER:$2|criada}} por promoção da página de testes"
 }
