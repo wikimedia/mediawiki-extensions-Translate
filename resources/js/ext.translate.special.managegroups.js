@@ -60,7 +60,7 @@
 		/**
 		 * Click handler triggered when "Add as rename" is clicked in the dropdown.
 		 */
-		$( '.smg-rename-rename-action' ).on( 'click', function () {
+		$( '.smg-rename-rename-action' ).on( 'click', function ( event ) {
 			var keyData = RenameDropdown.getData(),
 				$renameButton = getRenameButton( $( event.target ) );
 			toggleLoading( $renameButton, true );
@@ -89,7 +89,7 @@
 		/**
 		 * Click handler triggered when "Add as new" is clicked in the dropdown.
 		 */
-		$( '.smg-rename-new-action' ).on( 'click', function () {
+		$( '.smg-rename-new-action' ).on( 'click', function ( event ) {
 			var keyData = RenameDropdown.getData(),
 				$renameButton = getRenameButton( $( event.target ) ),
 				isReloading = false;
