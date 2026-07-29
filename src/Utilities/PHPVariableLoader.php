@@ -23,7 +23,7 @@ class PHPVariableLoader {
 		} else {
 			require $_filename;
 
-			return $$_variable ?? null;
+			return $$_variable ?? null; // NOSONAR(php:S2757)
 		}
 	}
 }
