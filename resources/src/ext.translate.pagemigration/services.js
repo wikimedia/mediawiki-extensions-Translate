@@ -159,6 +159,41 @@ function getHeaderUnit( startIndex, translationUnits ) {
 }
 
 /**
+ * Align a single h2 header unit at position i within translationUnits.
+ *
+ * @param {number} i Target index in translationUnits
+ * @param {number} tIndex Current index of the header in translationUnits
+ * @param {string[]} translationUnits Modified in-place
+ */
+function alignHeader( i, tIndex, translationUnits ) {
+	// remove the unit
+	let matchText = translationUnits.splice( tIndex, 1 ).toString();
+	let emptyCount = i - tIndex;
+	if ( emptyCount > 0 ) {
+		// add empty units
+		while ( emptyCount !== 0 ) {
+			translationUnits.splice( tIndex, 0, '' );
+			emptyCount -= 1;
+		}
+	} else if ( emptyCount < 0 ) {
+		// merge units until there is room for tIndex translation unit to
+		// align with ith source unit
+		let mergeText = '';
+		while ( emptyCount !== 0 ) {
+			mergeText += translationUnits.splice( i, 1 ).toString() + '\n';
+			emptyCount += 1;
+		}
+		if ( i !== 0 ) {
+			translationUnits[ i - 1 ] += '\n' + mergeText;
+		} else {
+			matchText = mergeText + matchText;
+		}
+	}
+	// add the unit back
+	translationUnits.splice( i, 0, matchText );
+}
+
+/**
  * Align h2 headers in the order they appear.
  * Assumption: The source headers and translation headers appear in
  * the same order.
@@ -179,35 +214,11 @@ function alignHeaders( units, translationUnits ) {
 	for ( let i = 0; i < units.length; i++ ) {
 		if ( regex.test( units[ i ].definition ) ) {
 			tIndex = getHeaderUnit( tIndex, translationUnits );
-			let mergeText = '';
 			// search is over
 			if ( tIndex === -1 ) {
 				break;
 			}
-			// remove the unit
-			let matchText = translationUnits.splice( tIndex, 1 ).toString();
-			let emptyCount = i - tIndex;
-			if ( emptyCount > 0 ) {
-				// add empty units
-				while ( emptyCount !== 0 ) {
-					translationUnits.splice( tIndex, 0, '' );
-					emptyCount -= 1;
-				}
-			} else if ( emptyCount < 0 ) {
-				// merge units until there is room for tIndex translation unit to
-				// align with ith source unit
-				while ( emptyCount !== 0 ) {
-					mergeText += translationUnits.splice( i, 1 ).toString() + '\n';
-					emptyCount += 1;
-				}
-				if ( i !== 0 ) {
-					translationUnits[ i - 1 ] += '\n' + mergeText;
-				} else {
-					matchText = mergeText + matchText;
-				}
-			}
-			// add the unit back
-			translationUnits.splice( i, 0, matchText );
+			alignHeader( i, tIndex, translationUnits );
 			tIndex = i + 1;
 		}
 	}
