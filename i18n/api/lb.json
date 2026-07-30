@@ -37,6 +37,7 @@
 	"apihelp-translationcheck-param-translation": "D'Iwweersetzung fir ze validéieren.",
 	"apihelp-translationstats-summary": "Statistike vun der Iwwersetzung ofruffen",
 	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
+	"apierror-translate-invalidgroup": "De Grupp existéiert net oder ass ongülteg",
 	"apierror-translate-invalidlanguage": "Déi gefrot Sprooch ass net valabel.",
 	"apierror-translate-invalidupdate": "Ongülteg Aktualiséierung",
 	"apierror-translate-language-disabled": "Iwwersetzung op $1 ass ausgeschalt.",
@@ -44,6 +45,7 @@
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-sandboxdisabled": "Sandkaul-Funktioun gëtt net benotzt",
 	"apierror-translate-unknownmessage": "Onbekannte Message",
+	"apierror-translate-invalid-operation": "Ongülteg Operatioun: $1. Gülteg Wäerter – $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass",
 	"apiwarn-translate-language-disabled-source": "D'Ausgangssprooch vun dëser Grupp ass $1. Wielt wgl. eng aner Sprooch, op déi Dir iwwersetze wëllt.",
 	"apihelp-translationentitysearch-param-limit": "Maximal Zuel vu Sichresultater"
