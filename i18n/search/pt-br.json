@@ -34,5 +34,7 @@
 	"tux-sst-match-message": "Mostrando traduções que correspondem a qualquer das palavras da pesquisa. $1",
 	"tux-sst-case-sensitive": "Maiúsculas e minúsculas",
 	"tux-sst-error-offset": "Nenhum outro resultado de pesquisa pode ser exibido. Por favor, restrinja sua pesquisa.",
-	"tux-sst-error-language": "Esse idioma não pode ser usado com este tipo de pesquisa."
+	"tux-sst-error-language": "Esse idioma não pode ser usado com este tipo de pesquisa.",
+	"tux-sst-error-unsupported-language": "Não é suportada a pesquisa no idioma <code>$1</code>.",
+	"tux-sst-search-backend-error": "Falha inesperada no servidor de pesquisa. Por favor, tente novamente mais tarde."
 }
