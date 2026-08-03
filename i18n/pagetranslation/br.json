@@ -52,7 +52,7 @@
 	"translate-tag-markthis": "Merkañ ar bajenn-mañ evit an treiñ",
 	"translate-tag-markthisagain": "Er bajenn-mañ ez eus bet <span class=\"plainlinks\">[$1 kemm]</span> abaoe m'eo bet <span class=\"plainlinks\">[$2 merket da vezañ troet]</span>.",
 	"translate-tag-hasnew": "Er bajenn-mañ ez eus <span class=\"plainlinks\">[$1 kemm]</span> ha n'int ket bet merket da vezañ troet.",
-	"tpt-translation-intro": "Ur stumm <span class=\"plainlinks\">[$1 troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ; kaset ez eus bet da benn $3% eus an droidigezh anezhi, ha diouzh an deiz emañ.",
+	"tpt-translation-intro": "Ur <span class=\"plainlinks\">[$1 stumm troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ ha $3% eus an droidigezh zo graet.",
 	"tpt-translation-intro-fuzzy": "Evel-mañ eo merket an troidigezhioù dispredet.",
 	"tpt-languages-legend": "Yezhoù all :",
 	"tpt-languages-zero": "Stagañ gant an troidigezhioù evit ar yezh-se",
@@ -120,5 +120,6 @@
 	"pt-deletepage-lang-logreason": "Perzh eus ar bajenn da dreiñ \"$1\"",
 	"pm-page-does-not-exist": "N'eus ket eus ar bajenn $1.",
 	"pp-prepare-button-label": "Prientiñ",
-	"pp-save-button-label": "Embann"
+	"pp-save-button-label": "Embann",
+	"ext-uls-empty-search-entrypoint-description": "Gallout a rit treiñ ar bajenn-mañ. Un doare aes eo da grouiñ endalc'h en ho yezh"
 }
