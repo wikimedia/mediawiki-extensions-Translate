@@ -52,5 +52,6 @@
 	"log-description-translatorsandbox": "Um registro de ações dos usuários de página de testes de tradução",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveu}} $3 para {{GENDER:$4|tradutor|tradutora|tradutor(a)}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rejeitou}} o pedido de \"$3\" para se tornar um tradutor",
-	"logentry-newusers-tsbpromoted": "A conta de usuário $3 foi {{GENDER:$2|criada}} por promoção da página de testes"
+	"logentry-newusers-tsbpromoted": "A conta de usuário $3 foi {{GENDER:$2|criada}} por promoção da página de testes",
+	"tsb-other-actions": "Você precisa [[Special:TranslationStash|enviar algumas traduções de teste]] e aguardar a aprovação delas antes de editar."
 }
