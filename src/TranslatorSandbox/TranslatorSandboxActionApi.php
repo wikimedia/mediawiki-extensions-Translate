@@ -206,6 +206,8 @@ class TranslatorSandboxActionApi extends ApiBase {
 	}
 
 	private function doRemind(): void {
+		$this->checkUserRightsAny( 'translate-sandboxmanage' );
+
 		$params = $this->extractRequestParams();
 
 		foreach ( $params['userid'] as $userId ) {
