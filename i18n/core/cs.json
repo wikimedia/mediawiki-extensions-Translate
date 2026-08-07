@@ -102,7 +102,7 @@
 	"translate-checks-empty": "Překlad bez obsahu nebo obsahující pouze bílé znaky není dovolen.",
 	"translate-pref-editassistlang": "Pomocné jazyky:",
 	"prefs-translate": "Nastavení pro překládání",
-	"translate-pref-editassistlang-help": "Překlady zvolené zprávy do těchto jazyků jsou zobrazeny při překládání.\nImplicitní seznam (''default'') závisí na vašem jazyce.",
+	"translate-pref-editassistlang-help": "Překlady zvolené zprávy do těchto jazyků jsou zobrazeny při překládání.\nVýchozí seznam jazyků závisí na vašem jazyce.",
 	"right-translate": "Editace překladu pomocí rozhraní ''Přeložit''",
 	"action-translate": "editovat pomocí rozhraní pro překlad",
 	"right-translate-manage": "Správa skupin zpráv",
