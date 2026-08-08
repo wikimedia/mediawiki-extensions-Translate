@@ -513,16 +513,11 @@
 		 * @param {Array} groups Array of message group objects to add.
 		 */
 		addGroupRows: function ( groups ) {
-			var groupSelector = this,
-				$msgGroupRows = [];
-
 			if ( !groups ) {
 				return;
 			}
 
-			groups.forEach( function ( group ) {
-				$msgGroupRows.push( groupSelector.prepareMessageGroupRow( group ) );
-			} );
+			var $msgGroupRows = groups.map( ( group ) => this.prepareMessageGroupRow( group ) );
 
 			if ( this.parentGroupId ) {
 				var $parent = this.$list.find( '.tux-grouplist__item[data-msggroupid="' +
