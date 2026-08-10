@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Above mountain",
 			"Davidzdh",
 			"SolidBlock",
 			"StephDC",
 			"Yanteng3"
 		]
 	},
+	"tpt-translation-intro": "斯頁乃[[$2]]之<span class=\"plainlinks\">[$1 譯本]</span>，功竟$3%。",
 	"tpt-languages-nonzero": "$1（$2%已翻譯）",
 	"tpt-aggregategroup-save": "存",
 	"tpt-aggregategroup-update-cancel": "罷",
