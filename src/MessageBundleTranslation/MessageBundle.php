@@ -8,7 +8,6 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\Title\Title;
-use Wikimedia\Rdbms\Database;
 
 /**
  * @author Abijeet Patro
@@ -66,10 +65,7 @@ class MessageBundle extends TranslatableBundle {
 		$messageBundleIds = $cache->getWithSetCallback(
 			$cacheKey,
 			$cache::TTL_HOUR * 2,
-			static function ( $oldValue, &$ttl, array &$setOpts ) use ( $mwServices ) {
-				$dbr = $mwServices->getConnectionProvider()->getReplicaDatabase();
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
+			static function () {
 				$ids = RevTagStore::getTranslatableBundleIds( [ RevTagStore::MB_VALID_TAG ] );
 				// Adding a comma at the end and beginning so that we can check for page Id
 				// existence with the "," delimiters

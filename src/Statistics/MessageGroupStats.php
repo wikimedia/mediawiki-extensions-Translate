@@ -17,7 +17,6 @@ use MediaWiki\MediaWikiServices;
 use MessageGroup;
 use stdClass;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -200,10 +199,7 @@ class MessageGroupStats {
 		return $cache->getWithSetCallback(
 			self::LANGUAGE_STATS_KEY,
 			WANObjectCache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = Utilities::getSafeReadDB();
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
+			function () {
 				return self::getAllLanguageStats();
 			},
 			[

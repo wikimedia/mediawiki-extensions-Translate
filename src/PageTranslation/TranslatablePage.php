@@ -22,7 +22,6 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDBAccessObject;
 use WikiPageMessageGroup;
 
@@ -542,15 +541,9 @@ class TranslatablePage extends TranslatableBundle {
 	/**
 	 * Get list of translatable page ids to be stored in the cache
 	 * @internal
-	 * @param mixed $oldValue
-	 * @param int &$ttl
-	 * @param array &$setOpts
 	 * @return string
 	 */
-	public static function getCacheValue( $oldValue, &$ttl, array &$setOpts ): string {
-		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
-		$setOpts += Database::getCacheSetOptions( $dbr );
-
+	public static function getCacheValue(): string {
 		$ids = RevTagStore::getTranslatableBundleIds(
 			// Find pages where the latest revision can be marked for translation ...
 			[ RevTagStore::TP_READY_TAG ],

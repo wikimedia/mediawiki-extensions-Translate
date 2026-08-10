@@ -9,7 +9,6 @@ use MessageGroup;
 use MessageGroupLoader;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -53,7 +52,7 @@ class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, Messa
 		return $this->cache->getWithSetCallback(
 			$this->cacheKey,
 			self::CACHE_TTL,
-			fn ( $oldValue, &$ttl, array &$setOpts ) => $this->getCacheData( $setOpts ),
+			fn () => $this->getCacheData(),
 			[
 				// avoid stampedes (mutex)
 				'lockTSE' => 30,
@@ -64,13 +63,8 @@ class CachedMessageGroupFactoryLoader implements CachedMessageGroupLoader, Messa
 		);
 	}
 
-	private function getCacheData( array &$setOpts ): DependencyWrapper {
+	private function getCacheData(): DependencyWrapper {
 		$dbr = $this->dbProvider->getReplicaDatabase();
-
-		// Some factories may not use the database, in which case this is superflous.
-		// Having it here for simplicity.
-		$setOpts += Database::getCacheSetOptions( $dbr );
-
 		$wrapper = new DependencyWrapper(
 			$this->factory->getData( $dbr ),
 			$this->factory->getDependencies()
