@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Les Meloures",
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"searchtranslations": "Iwwersetzunge sichen",
@@ -10,22 +11,27 @@
 	"tux-sst-view-foreign": "Op $1 kucken",
 	"tux-sst-search": "Sichen",
 	"tux-sst-search-ph": "Iwwersetzunge sichen",
+	"tux-sst-search-info": "Benotzt d'Operatore <code>language:</code> oder <code>group:</code>, fir d'Sichkrittäre weider ze qualifizéieren",
 	"tux-sst-count": "{{PLURAL:$1|Ee Resultat|$1 Resultater}} fonnt",
 	"tux-sst-facet-language": "Sproochen",
 	"tux-sst-facet-group": "Gruppe vu Messagen",
-	"tux-sst-nosolr-title": "Sichen ass net disponibel",
-	"tux-sst-nosolr-body": "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
-	"tux-sst-solr-offline-title": "Sichen ass net disponibel",
-	"tux-sst-solr-offline-body": "D'Sichfonctioun ass temporär net disponibel.",
+	"tux-sst-nosolr-title": "Sich net disponibel",
+	"tux-sst-nosolr-body": "Dës Wiki huet kee Service fir Iwwersetzungen ze sichen.",
+	"tux-sst-solr-offline-title": "Sich net disponibel",
+	"tux-sst-solr-offline-body": "De Service fir ze sichen ass temporär net disponibel.",
 	"tux-sst-next": "Nächst ›",
 	"tux-sst-prev": "‹ Vireg",
 	"tux-sst-default": "Iwwersetzungen",
 	"tux-sst-translated": "Iwwersetzunge vu(n) $1",
 	"tux-sst-untranslated": "Keng Iwwersetzung vu(n) $1",
-	"tux-sst-outdated": "Vereelzt Iwwersetzung vu(n) $1",
+	"tux-sst-outdated": "Vereelzt Iwwersetzunge vu(n) $1",
 	"tux-sst-ellipsis-untranslated": "Keng Iwwersetzung",
 	"tux-sst-ellipsis-outdated": "Vereelzt Iwwersetzungen",
 	"tux-sst-link-all-match": "All Sichwierder verlaangen.",
-	"tux-sst-match-message": "Iwwersetzunge weise mat engem vun de gesichte Wierder. $1",
-	"tux-sst-case-sensitive": "Ënnerscheet tëscht groussen a klenge Buschtawen"
+	"tux-sst-match-message": "Et ginn Iwwersetzunge gewisen, an deenen op d'mannst ee vun de gesichte Wierder virkënnt. $1",
+	"tux-sst-case-sensitive": "Grouss- a Klengschreiwung ënnerscheeden",
+	"tux-sst-error-offset": "Et kënnen keng weider Sichresultater gewise ginn. Schränkt Är Sich wgl. weider an.",
+	"tux-sst-error-language": "Dës Sprooch kann net mat dëser Zort Sich benotzt ginn.",
+	"tux-sst-error-unsupported-language": "D'Sich an der Sprooch <code>$1</code> gëtt net ënnerstëtzt.",
+	"tux-sst-search-backend-error": "Onerwaarte Feeler am Backend vun der Sich, probéiert wgl. méi spéit nach eng Kéier"
 }
