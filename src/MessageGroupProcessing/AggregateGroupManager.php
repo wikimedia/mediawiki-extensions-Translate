@@ -176,13 +176,20 @@ class AggregateGroupManager {
 		return $aggregates;
 	}
 
-	/** @return string[] */
+	/**
+	 * @param MessageGroup[] $subGroups
+	 * @param string[] $subGroupIds
+	 * @return string[]
+	 */
 	private function findMissingGroupIds( array $subGroups, array $subGroupIds ): array {
 		$existingIds = array_map( static fn ( $group ) => $group->getId(), $subGroups );
 		return array_diff( $subGroupIds, $existingIds );
 	}
 
-	/** @throws AggregateGroupNotFoundException */
+	/**
+	 * @return string[]
+	 * @throws AggregateGroupNotFoundException
+	 */
 	private function getSubgroups( string $aggregateGroupId ): array {
 		$existingSubGroupIds = $this->messageGroupMetadata->getSubgroups( $aggregateGroupId );
 		if ( $existingSubGroupIds !== null ) {

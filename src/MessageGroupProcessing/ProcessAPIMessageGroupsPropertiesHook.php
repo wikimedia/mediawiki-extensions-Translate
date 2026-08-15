@@ -17,7 +17,8 @@ interface ProcessAPIMessageGroupsPropertiesHook {
 	 * Allows extra property requests to be acted upon, and the new properties returned
 	 *
 	 * @param array &$a Associative array of the properties of $group that will be returned
-	 * @param array $props Associative array ($name => true) of properties the user has specifically requested
+	 * @param array<string,int> $props Associative array of properties the user has specifically requested
+	 *  (key is the property, value is unspecified)
 	 * @param array $params Parameter input by the user (unprefixed name => value)
 	 * @param MessageGroup $g The group in question
 	 * @return bool|void True or no return value to continue or false to abort

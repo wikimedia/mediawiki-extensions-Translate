@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Storage\PageUpdateStatus;
 use MediaWiki\Title\Title;
 use SplFileObject;
 use StatusValue;
@@ -27,7 +28,11 @@ class CsvTranslationImporter {
 	) {
 	}
 
-	/** Parse and validate the CSV file */
+	/**
+	 * Parse and validate the CSV file
+	 *
+	 * @return StatusValue<array<int,array{messageTitle:string,translations:array<string,string>}>|null>
+	 */
 	public function parseFile( string $csvFilePath ): StatusValue {
 		if ( !file_exists( $csvFilePath ) || !is_file( $csvFilePath ) ) {
 			return StatusValue::newFatal(
@@ -61,7 +66,6 @@ class CsvTranslationImporter {
 				if ( !$status->isGood() ) {
 					return $status;
 				}
-				/** @var string[] $indexedLanguageCodes */
 				$indexedLanguageCodes = $status->getValue();
 				continue;
 			}
@@ -125,7 +129,16 @@ class CsvTranslationImporter {
 		return StatusValue::newGood( $importData );
 	}
 
-	/** Import the data returned from the parseFile method */
+	/**
+	 * Import the data returned from the parseFile method
+	 *
+	 * @param array<int,array{messageTitle:string,translations:array<string,string>}> $messagesWithTranslations
+	 * @param Authority $authority
+	 * @param string $comment
+	 * @param null|callable(Title,PageUpdateStatus[],int,int):void $progressReporter If not null,
+	 *  called with the current message title, the per-language import results for that message, the number
+	 *  of messages to import and the number of messages imported so far
+	 */
 	public function importData(
 		array $messagesWithTranslations,
 		Authority $authority,
@@ -192,6 +205,10 @@ class CsvTranslationImporter {
 		return $importStatus;
 	}
 
+	/**
+	 * @return StatusValue<array<string,int>|null> If good, contains a mapping from language codes
+	 *  to column indices (counting from the message title column)
+	 */
 	private function getLanguagesFromHeader( array $csvHeader ): StatusValue {
 		if ( count( $csvHeader ) < 2 ) {
 			return StatusValue::newFatal(
@@ -241,6 +258,7 @@ class CsvTranslationImporter {
 		return null;
 	}
 
+	/** @param (string|null)[] $csvRow */
 	private function isCsvRowEmpty( array $csvRow ): bool {
 		return count( $csvRow ) === 1 && ( $csvRow[0] === null || trim( $csvRow[0] ) === '' );
 	}

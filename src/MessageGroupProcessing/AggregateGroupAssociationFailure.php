@@ -13,6 +13,7 @@ use MediaWiki\Message\Message;
  * @since 2024.11
  */
 class AggregateGroupAssociationFailure extends LocalizedException {
+	/** @param string[] $groupIds */
 	public function __construct( array $groupIds ) {
 		parent::__construct(
 			[

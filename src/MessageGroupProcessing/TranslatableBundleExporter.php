@@ -18,6 +18,7 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class TranslatableBundleExporter {
 	private WikiExporter $wikiExporter;
+	/** @var null|callable(Title[],string):void */
 	private ?Closure $exportPageCallback;
 
 	public function __construct(
@@ -64,6 +65,7 @@ class TranslatableBundleExporter {
 		return (string)$sink;
 	}
 
+	/** @param callable(Title[],string):void $callable */
 	public function setExportPageCallback( callable $callable ) {
 		$this->exportPageCallback = Closure::fromCallable( $callable );
 	}

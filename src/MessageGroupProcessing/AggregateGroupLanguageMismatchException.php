@@ -13,6 +13,10 @@ use MediaWiki\Message\Message;
  * @since 2024.11
  */
 class AggregateGroupLanguageMismatchException extends LocalizedException {
+	/**
+	 * @param string[] $invalidGroupIds
+	 * @param string $aggregateGroupLanguageCode
+	 */
 	public function __construct( array $invalidGroupIds, string $aggregateGroupLanguageCode ) {
 		parent::__construct(
 			[

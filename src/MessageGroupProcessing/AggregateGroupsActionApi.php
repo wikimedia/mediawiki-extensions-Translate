@@ -218,6 +218,8 @@ class AggregateGroupsActionApi extends ApiBase {
 	 * Aggregate groups have an explicit source language that should match with
 	 * the associated message group source language. Thus, we check which of the subgroups
 	 * of an aggregate group don't have a matching source language.
+	 *
+	 * @return string[]
 	 */
 	private function getGroupsWithDifferentLanguage(
 		string $aggregateGroupId,
@@ -284,6 +286,7 @@ class AggregateGroupsActionApi extends ApiBase {
 		];
 	}
 
+	/** @return array<string,string> */
 	private function getIncludableGroups(): array {
 		$groups = MessageGroups::getAllGroups();
 		$pages = [];

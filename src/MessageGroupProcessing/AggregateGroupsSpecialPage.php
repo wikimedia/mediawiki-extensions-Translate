@@ -6,8 +6,10 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
+use MessageGroup;
 
 /**
  * Contains logic for special page Special:AggregateGroups.
@@ -92,6 +94,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 		}
 	}
 
+	/** @param string[] $subGroupIds */
 	private function getSubGroupInfoForTemplate( array $subGroupIds ): array {
 		$subGroups = MessageGroups::getGroupsById( $subGroupIds );
 		uasort( $subGroups, [ MessageGroups::class, 'groupLabelSort' ] );
@@ -121,6 +124,9 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	/**
 	 * Adds titles of subgroups into the link cache and execute it to add them to the LinkCache
 	 * to avoid potentially thousands of separate database queries from LinkRenderer::makeKnownLink
+	 *
+	 * @param MessageGroup[] $subGroups
+	 * @return array<string,LinkTarget>
 	 */
 	private function getGroupCache( array $subGroups ): array {
 		$groupCache = [];

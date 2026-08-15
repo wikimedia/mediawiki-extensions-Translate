@@ -140,8 +140,8 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 	/**
 	 * @param array|MessageGroup $mixed
-	 * @param array $props List of props as the array keys
-	 * @param array $subscriptions List of message group ids as the array keys
+	 * @param array<string,int> $props List of props as the array keys
+	 * @param array<string,int> $subscriptions List of message group ids as the array keys
 	 * @param int $depth
 	 */
 	protected function formatGroup( $mixed, array $props, array $subscriptions, int $depth = 0 ): array {
@@ -154,6 +154,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 
 		// Format = tree and has subgroups
 		if ( is_array( $mixed ) ) {
+			/** @var MessageGroup $g */
 			$g = array_shift( $mixed );
 			$subgroups = $mixed;
 		}
@@ -325,6 +326,8 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 	 * Returns an array of properties and their descriptions. Descriptions are ignored.
 	 * Descriptions come from apihelp-query+messagegroups-param-prop and that is not
 	 * extensible.
+	 *
+	 * @return array<string,int>
 	 */
 	private function getPropertyList(): array {
 		$properties = array_flip( [

@@ -195,6 +195,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		return $interwikiPrefix;
 	}
 
+	/** @return string[] */
 	private function getPriorityLanguages(): array {
 		$priorityLanguageCodes = self::commaList2Array( $this->getOption( 'priority-languages' ) ?? '' );
 		$knownLanguageCodes = array_keys( Utilities::getLanguageNames( 'en' ) );

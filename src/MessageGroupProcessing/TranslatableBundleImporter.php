@@ -18,6 +18,7 @@ use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\ForeignTitle;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
@@ -32,6 +33,7 @@ use MediaWiki\User\UserIdentity;
 class TranslatableBundleImporter implements AfterImportPageHook {
 
 	private ?Title $bundleTitle;
+	/** @var null|callable(Title,ForeignTitle):void */
 	private ?Closure $pageImportCompleteCallback = null;
 	private bool $importInProgress = false;
 
@@ -112,6 +114,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 		return $this->bundleTitle;
 	}
 
+	/** @param callable(Title,ForeignTitle):void $callable */
 	public function setPageImportCompleteCallback( callable $callable ): void {
 		$this->pageImportCompleteCallback = Closure::fromCallable( $callable );
 	}

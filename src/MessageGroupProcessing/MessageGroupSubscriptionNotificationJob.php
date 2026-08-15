@@ -14,6 +14,7 @@ use MediaWiki\JobQueue\Job;
  * @author Abijeet Patro
  */
 class MessageGroupSubscriptionNotificationJob extends Job implements GenericParameterJob {
+	/** @param array<string,array<string,array<int,string>>> $messageChanges */
 	public static function newJob( array $messageChanges ): self {
 		$params = [ 'changes' => $messageChanges ];
 		return new self( $params );

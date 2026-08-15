@@ -25,6 +25,7 @@ use StatusValue;
 class MessageGroupSubscription {
 
 	private bool $isMessageGroupSubscriptionEnabled;
+	/** @var array<string,array<string,array<int,string>>> */
 	private array $queuedMessages = [];
 	private ?MockEventCreator $mockEventCreator = null;
 
@@ -69,6 +70,10 @@ class MessageGroupSubscription {
 		$this->groupSubscriptionStore->removeSubscriptions( $group->getId(), $user->getId() );
 	}
 
+	/**
+	 * @param string[] $groupIds
+	 * @param UserIdentity $user
+	 */
 	public function unsubscribeFromGroupsById( array $groupIds, UserIdentity $user ): void {
 		$uniqueGroupIds = array_unique( $groupIds );
 		foreach ( $uniqueGroupIds as $groupId ) {
@@ -76,6 +81,10 @@ class MessageGroupSubscription {
 		}
 	}
 
+	/**
+	 * @param string[] $groupIds
+	 * @param UserIdentity $user
+	 */
 	public function subscribeToGroupsById( array $groupIds, UserIdentity $user ): void {
 		$uniqueGroupIds = array_unique( $groupIds );
 		foreach ( $uniqueGroupIds as $groupId ) {
@@ -83,7 +92,7 @@ class MessageGroupSubscription {
 		}
 	}
 
-	/** @return string[] */
+	/** @return array<int,string> */
 	public function getUserSubscriptions( UserIdentity $user ): array {
 		$groups = $this->groupSubscriptionStore->getSubscriptions( null, $user->getId() );
 		return array_keys( $groups );
@@ -313,6 +322,11 @@ class MessageGroupSubscription {
 		return $groupIdAggregateMapped;
 	}
 
+	/**
+	 * @param array<string,array<int,string>> $existingState
+	 * @param array<string,array<int,string>> $newState
+	 * @return array<string,array<int,string>>
+	 */
 	private function appendToState( array $existingState, array $newState ): array {
 		foreach ( $newState as $stateType => $stateValues ) {
 			$existingState[$stateType] = array_unique(
