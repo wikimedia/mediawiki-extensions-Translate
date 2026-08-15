@@ -1005,8 +1005,7 @@
 				"CdxIcon",
 				"CdxLookup",
 				"CdxMessage",
-				"CdxTextArea",
-				"CdxTextInput"
+				"CdxTextArea"
 			]
 		},
 		"ext.translate.special.pagepreparation": {
