@@ -26,7 +26,7 @@ class TS extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = $this->getDB( DB_REPLICA );
+		$dbr = $this->getReplicaDB();
 
 		$users = $dbr->newSelectQueryBuilder()
 			->select( [
