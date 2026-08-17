@@ -379,5 +379,6 @@
 	"translate-category-summary": "Création automatique de la traduction de la catégorie utilisée sur [[$1]]",
 	"right-translate-empty-category": "Créer des unités de traduction pour les catégories vides",
 	"action-translate-empty-category": "créer des unités de traduction pour les catégories vides",
-	"tpt-create-empty-category": "Impossible de créer une unité de traduction pour la catégorie [[:$1]] qui est vide."
+	"tpt-create-empty-category": "Impossible de créer une unité de traduction pour la catégorie [[:$1]] qui est vide.",
+	"ext-uls-empty-search-entrypoint-description": "Vous pouvez traduire cette page. C’est un moyen simple de créer du contenu dans votre langue."
 }
