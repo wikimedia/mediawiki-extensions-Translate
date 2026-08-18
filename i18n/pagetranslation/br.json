@@ -97,7 +97,7 @@
 	"pt-movepage-action-check": "Gwiriekaat ha posupl eo adenvel",
 	"pt-movepage-action-perform": "Adenvel",
 	"pt-movepage-action-other": "Kemmañ ar moned",
-	"pt-movepage-intro": "Gant ar bajenn dibar-mañ e c'hallit adenvel pajennoù a zo merket da vezañ troet.\nNe vo ket trumm an adenvel rak kalz pajennoù a ranko bezañ adanvet.\nAmzer adenvel ar pajennoù-se ne c'hallot ket o c'hemmañ e nep doare.\nEr [[Special:Log/pagetranslation|page marilh treiñ]] e vo enrollet ar mankoù adenvel, a rank bezañ kempennet gant an dorn.",
+	"pt-movepage-intro": "Dre ar bajenn dibar-mañ e c'hallit adenvel pajennoù a zo merket da vezañ troet.\nNe vo ket trumm an adenvel rak kalz pajennoù a ranko bezañ adanvet.\nAmzer adenvel ar pajennoù-se ne c'hallot ket o c'hemmañ e nep doare.\nEr [[$1|marilh]] e vo enrollet ar c'hwitadennoù, a rank bezañ kempennet gant an dorn.",
 	"pt-movepage-logreason": "Perzh eus ar bajenn da dreiñ \"[[$1]]\"",
 	"pt-movepage-started": "Mar plij, gwiriit [[$1|pajenn marilh an troidigezhioù]] a-benn nebeut evit kempenn ar fazioù, mar bez, ha lenn ar gemennadenn glozañ.",
 	"pt-locked-page": "Prennet eo ar bajenn-mañ dre m' emeur oc'h adenvel ar bajenn da dreiñ.",
