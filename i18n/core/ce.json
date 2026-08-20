@@ -282,7 +282,7 @@
 	"translate-manage-import-ignore": "$1 хаам чекхболуьйту.",
 	"translate-manage-import-rename-summary": "Арахьарчу хьостанехь цӀе хийцина",
 	"translate-manage-conflict-summary": "Керла верси арахьарчу хьостанера импортйеш йу.\nДехар до, хьажахьа цуьнга.",
-	"translate-manage-submit": "Кхочушдé",
+	"translate-manage-submit": "Кхочушдан",
 	"translate-manage-intro-other": "Бухахь меттан гочдаран хийцамаш бу: $1.\nХийцамаш хьажа, хӀора хийцамна хьайна лууш болу ардам харжа.\nХийцамаш тергал ца беш битахь, цхьана ханна хир ду иза.",
 	"translate-manage-import-ok": "Импортйина: $1",
 	"translate-manage-import-done": "[[Special:Translate/$1|$2]] тобанна гочдарш импортдар чекхдаьлла (мотт: $3)!",
