@@ -273,7 +273,7 @@
 	"translate-manage-submit": "Végrehajtás",
 	"translate-manage-intro-other": "Alább látható a(z) $1 nyelv fordításaiban történt változtatások listája.\nEllenőrizd a változtatásokat, és válaszd ki azt a műveletet, amit alkalmazni szeretnél minden egyes frissítésre.\nHa figyelmen kívül hagyod a változtatásokat, az csak ideiglenes művelet.",
 	"translate-manage-import-ok": "Importálva: $1",
-	"translate-manage-import-done": "$3 fordítás importálása a(z) [[Special:Translate/$1|$2]] csoportba kész!",
+	"translate-manage-import-done": "A(z) $3 fordítások importálása a(z) [[Special:Translate/$1|$2]] csoportba kész!",
 	"importtranslations": "Fordítások importálása",
 	"translate-import-from-local": "Helyi fájlfeltöltés:",
 	"translate-import-load": "Fájl betöltése",
