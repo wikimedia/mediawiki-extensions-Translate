@@ -108,7 +108,6 @@
 		"MediaWiki\\Extension\\Translate\\FileFormatSupport\\SimpleFormat": "src/FileFormatSupport/SimpleFormat.php",
 		"TranslatablePage": "src/PageTranslation/TranslatablePage.php",
 		"MediaWiki\\Extension\\Translate\\PageTranslation\\TranslatablePage": "src/PageTranslation/TranslatablePage.php",
-		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
 		"TranslateUtils": "src/Utilities/Utilities.php",
 		"MediaWiki\\Extension\\Translate\\Utilities\\Utilities": "src/Utilities/Utilities.php",
 		"WikiMessageGroup": "messagegroups/WikiMessageGroup.php",

@@ -13,6 +13,10 @@
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
+use MediaWiki\Extension\Translate\Statistics\Output\CsvStatsOutput;
+use MediaWiki\Extension\Translate\Statistics\Output\TextStatsOutput;
+use MediaWiki\Extension\Translate\Statistics\Output\TranslateStatsOutput;
+use MediaWiki\Extension\Translate\Statistics\Output\WikiStatsOutput;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Maintenance\Maintenance;

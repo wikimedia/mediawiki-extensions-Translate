@@ -1,5 +1,7 @@
 <?php
 
+namespace MediaWiki\Extension\Translate\Statistics\Output;
+
 /**
  * Provides heading, summaryheading and free text addition for stats output in
  * wiki format.
