@@ -120,6 +120,7 @@
 	"tpt-languages-nonzero": "$1 ($2 % traducido)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "No se puede actualizar esta página manualmente.\nEsta página es una traducción de la página [[$1]] y puedes actualizar la traducción mediante [$2 la herramienta correspondiente].",
+	"tpt-source-mirror": "Esta página es un espejo generado automáticamente de la página [[$1]] y no se puede actualizar manualmente. Para actualizarla, realice los cambios en esa página y pida a alguien marcarla para su traducción.",
 	"tpt-unknown-page": "Este espacio de nombres está reservado para traducciones de páginas de contenido.\nLa página que estás tratando de editar no parece corresponder con ninguna página marcada para traducción.",
 	"mb-manual-move": "Los paquetes de mensajes solo se pueden mover mediante el formulario específico proporcionado por la extensión Translate. Vaya a [[{{#special:MovePage/$1}}]] para mover la página.",
 	"tpt-translation-restricted-no-reason": "La traducción de esta página a este idioma ha sido impedida por un administrador de traducción.",
