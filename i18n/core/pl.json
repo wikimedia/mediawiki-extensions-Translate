@@ -463,7 +463,7 @@
 	"translate-search-more-groups-info": "$1 więcej  {{PLURAL:$1|grupa|grup}}",
 	"translate-syntax-error": "Tłumaczenie zawiera błąd składni",
 	"tux-session-expired": "Nie jesteś już zalogowany. Zaloguj się w osobnej karcie. Alternatywnie, możesz wykonać kopię niezapisanych tłumaczeń, zalogować się i powrócić do tej strony, a następnie ponownie wprowadzić tłumaczenia.",
-	"tux-nojs": "To narzędzie nie działa, jeżeli nie działa obsługa JavaScript. Jest u ciebie wyłączona, nie działa lub ta przeglądarka nie jest wspierana.",
+	"tux-nojs": "To narzędzie nie działa, jeżeli nie działa obsługa JavaScriptu. Jest u Ciebie wyłączona, nie działa lub ta przeglądarka nie jest wspierana.",
 	"specialpages-group-translation": "Tłumaczenie",
 	"translate-error-association-failure": "{{PLURAL:$2|Następującej grupy|Następujących grup}} komunikatów nie można powiązać z grupą zbiorczą: $1",
 	"translate-error-invalid-aggregategroup": "Nieprawidłowa zbiorcza grupa komunikatów $1",

@@ -5,7 +5,8 @@
 			"Kusavica",
 			"Luky001",
 			"Sudo77(new)",
-			"Vegetator"
+			"Vegetator",
+			"Wizzard"
 		]
 	},
 	"searchtranslations": "Hľadanie v prekladoch",
@@ -13,8 +14,10 @@
 	"tux-sst-view-foreign": "Zobraziť na $1",
 	"tux-sst-search": "Hľadať",
 	"tux-sst-search-ph": "Hľadať v prekladoch",
+	"tux-sst-search-info": "Pomocou operátorov <code>language:</code> alebo <code>group:</code> môžete kritériá vyhľadávania ešte spresniť",
 	"tux-sst-count": "{{PLURAL:$1|Nájdený jeden výsledok|Nájdené $1 výsledky|Nájdených $1 výsledkov}}",
 	"tux-sst-facet-language": "Jazyky",
+	"tux-sst-facet-group": "Skupiny správ",
 	"tux-sst-nosolr-title": "Hľadanie nie je dostupné",
 	"tux-sst-nosolr-body": "Táto wiki nemá službu pre vyhľadávanie prekladov.",
 	"tux-sst-solr-offline-title": "Hľadanie nie je dostupné",
@@ -29,5 +32,8 @@
 	"tux-sst-ellipsis-outdated": "Zastarané preklady",
 	"tux-sst-link-all-match": "Vyžaduje všetky hľadané slová.",
 	"tux-sst-match-message": "Zobrazujú sa preklady, ktoré su totožné k ľubovoľnému z hľadaných slov. $1",
-	"tux-sst-case-sensitive": "Rozlišovať veľkosť písmen"
+	"tux-sst-case-sensitive": "Rozlišovať veľkosť písmen",
+	"tux-sst-error-offset": "Ďalšie výsledky vyhľadávania sa nedajú zobraziť. Spresnite, prosím, svoje vyhľadávanie.",
+	"tux-sst-error-language": "Tento jazyk nemožno použiť s týmto typom vyhľadávania.",
+	"tux-sst-error-unsupported-language": "Vyhľadávanie v jazyku <code>$1</code> nie je podporované."
 }
