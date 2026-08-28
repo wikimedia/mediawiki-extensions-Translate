@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Translate\Synchronization;
 use InvalidArgumentException;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
-use MediaWiki\Context\RequestContext;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -14,13 +14,11 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
-use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 use MessageGroup;
 use RuntimeException;
 
@@ -35,7 +33,6 @@ use RuntimeException;
  */
 class MessageWebImporter {
 	private Title $title;
-	private User $user;
 	private MessageGroup $group;
 	private string $code;
 	/** @var int|null */
@@ -45,21 +42,19 @@ class MessageWebImporter {
 	private const MAX_PROCESSING_TIME = 43;
 
 	/**
-	 * @param Title $title
-	 * @param User $user
-	 * @param MessageLocalizer $messageLocalizer
+	 * @param Title $title The title to send the user to when they submit the form; this may or may not
+	 *  be the title of `$context` (e.g. the special page subpage may be removed from it)
+	 * @param IContextSource $context
 	 * @param MessageGroup|string|null $group
 	 * @param string $code
 	 */
 	public function __construct(
 		Title $title,
-		User $user,
-		private readonly MessageLocalizer $messageLocalizer,
+		private readonly IContextSource $context,
 		$group = null,
 		string $code = 'en'
 	) {
 		$this->setTitle( $title );
-		$this->setUser( $user );
 		$this->setGroup( $group );
 		$this->setCode( $code );
 	}
@@ -71,14 +66,6 @@ class MessageWebImporter {
 
 	public function setTitle( Title $title ): void {
 		$this->title = $title;
-	}
-
-	public function getUser(): User {
-		return $this->user;
-	}
-
-	public function setUser( User $user ): void {
-		$this->user = $user;
 	}
 
 	public function getGroup(): MessageGroup {
@@ -115,7 +102,7 @@ class MessageWebImporter {
 			'class' => 'mw-translate-manage'
 		];
 
-		$csrfTokenSet = RequestContext::getMain()->getCsrfTokenSet();
+		$csrfTokenSet = $this->context->getCsrfTokenSet();
 		return Html::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'token', $csrfTokenSet->getToken() ) .
@@ -127,9 +114,8 @@ class MessageWebImporter {
 	}
 
 	protected function allowProcess(): bool {
-		$context = RequestContext::getMain();
-		$request = $context->getRequest();
-		$csrfTokenSet = $context->getCsrfTokenSet();
+		$request = $this->context->getRequest();
+		$csrfTokenSet = $this->context->getCsrfTokenSet();
 
 		return $request->wasPosted()
 			&& $request->getBool( 'process' )
@@ -145,11 +131,11 @@ class MessageWebImporter {
 	}
 
 	public function execute( array $messages ): bool {
-		$context = RequestContext::getMain();
+		$context = $this->context;
 		$output = $context->getOutput();
 
 		// Set up diff engine
-		$diff = new DifferenceEngine();
+		$diff = new DifferenceEngine( $context );
 		$diff->showDiffStyle();
 		$diff->setReducedLineNumbers();
 
@@ -411,7 +397,7 @@ class MessageWebImporter {
 				$message = MessageHandle::makeFuzzyString( $message );
 			}
 
-			return self::doImport( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
+			return $this->doImport( $title, $message, $comment );
 		} elseif ( $action === 'ignore' ) {
 			return [ 'translate-manage-import-ignore', $key ];
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
@@ -419,9 +405,9 @@ class MessageWebImporter {
 		) {
 			$message = MessageHandle::makeFuzzyString( $message );
 
-			return self::doImport( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
+			return $this->doImport( $title, $message, $comment );
 		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
-			return self::doFuzzy( $title, $message, $comment, $this->getUser(), $this->messageLocalizer );
+			return $this->doFuzzy( $title, $message, $comment );
 		} else {
 			throw new InvalidArgumentException( "Unhandled action $action" );
 		}
@@ -432,17 +418,12 @@ class MessageWebImporter {
 	}
 
 	/** @return string[] */
-	private static function doImport(
-		Title $title,
-		string $message,
-		string $summary,
-		User $user,
-		MessageLocalizer $messageLocalizer
-	): array {
+	private function doImport( Title $title, string $message, string $summary ): array {
 		$mwServices = MediaWikiServices::getInstance();
 		$wikiPage = $mwServices->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $message, $title );
 
+		$user = $this->context->getUser();
 		$updater = $wikiPage->newPageUpdater( $user )->setContent( SlotRecord::MAIN, $content );
 		if ( $user->authorizeWrite( 'autopatrol', $title ) ) {
 			$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
@@ -459,24 +440,17 @@ class MessageWebImporter {
 
 		$statusFormatter = $mwServices
 			->getFormatterFactory()
-			->getStatusFormatter( $messageLocalizer );
+			->getStatusFormatter( $this->context );
 		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
 		$text .= $statusFormatter->getWikiText( $status );
 		throw new RuntimeException( $text );
 	}
 
 	/** @return string[] */
-	private static function doFuzzy(
-		Title $title,
-		string $message,
-		string $comment,
-		User $user,
-		MessageLocalizer $messageLocalizer
-	): array {
-		$context = RequestContext::getMain();
+	private function doFuzzy( Title $title, string $message, string $comment ): array {
 		$services = MediaWikiServices::getInstance();
 
-		if ( !$context->getUser()->isAllowed( 'translate-manage' ) ) {
+		if ( !$this->context->getUser()->isAllowed( 'translate-manage' ) ) {
 			return [ 'badaccess-group0' ];
 		}
 
@@ -522,20 +496,14 @@ class MessageWebImporter {
 			}
 
 			// Do actual import
-			$changed[] = self::doImport(
-				$translationTitle,
-				$text,
-				$comment,
-				$user,
-				$messageLocalizer
-			);
+			$changed[] = $this->doImport( $translationTitle, $text, $comment );
 		}
 
 		// Format return text
 		$text = '';
 		foreach ( $changed as $c ) {
 			$key = array_shift( $c );
-			$text .= '* ' . $context->msg( $key, $c )->plain() . "\n";
+			$text .= '* ' . $this->context->msg( $key, $c )->plain() . "\n";
 		}
 
 		return [ 'translate-manage-import-fuzzy', "\n" . $text ];

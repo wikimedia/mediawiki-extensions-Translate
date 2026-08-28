@@ -42,7 +42,6 @@ class MessageWebImporterTest extends MediaWikiIntegrationTestCase {
 		$context->setRequest( $fauxRequest );
 		return new MessageWebImporter(
 			Title::makeTitle( self::PAGE_NAMESPACE, self::PAGE_DBKEY ),
-			$user,
 			$context,
 			self::GROUP,
 			$langCode,
