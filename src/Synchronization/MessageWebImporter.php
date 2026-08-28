@@ -11,7 +11,6 @@ use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
-use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
@@ -467,11 +466,11 @@ class MessageWebImporter {
 	}
 
 	/** @return string[] */
-	public static function doFuzzy(
+	private static function doFuzzy(
 		Title $title,
 		string $message,
 		string $comment,
-		?User $user,
+		User $user,
 		MessageLocalizer $messageLocalizer
 	): array {
 		$context = RequestContext::getMain();
@@ -479,11 +478,6 @@ class MessageWebImporter {
 
 		if ( !$context->getUser()->isAllowed( 'translate-manage' ) ) {
 			return [ 'badaccess-group0' ];
-		}
-
-		// Edit with fuzzybot if there is no user.
-		if ( !$user ) {
-			$user = FuzzyBot::getUser();
 		}
 
 		// Work on all subpages of base title.
