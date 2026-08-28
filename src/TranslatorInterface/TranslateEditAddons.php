@@ -73,17 +73,12 @@ class TranslateEditAddons {
 		}
 
 		$configHelper = Services::getInstance()->getConfigHelper();
-		$isDisabled = $configHelper->isTargetLanguageDisabled( $group, $langCode, $reason );
-		if ( !$isDisabled ) {
+		$status = $configHelper->getTargetLanguageDisabledStatus( $group, $langCode );
+		if ( $status->isOK() ) {
 			return true;
 		}
 
-		if ( $reason === null ) {
-			$result = [ 'translate-language-disabled' ];
-		} else {
-			$result = [ 'translate-page-disabled', $reason ];
-		}
-
+		$result = $status->getMessages( 'error' )[0];
 		return false;
 	}
 

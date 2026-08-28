@@ -165,8 +165,6 @@
 	"apierror-translate-invalidstate": "The requested state is invalid.",
 	"apierror-translate-invalidlanguage": "Language code $1 is not valid.",
 	"apierror-translate-invalidupdate": "Invalid update",
-	"apierror-translate-language-disabled": "Translation to $1 is disabled.",
-	"apierror-translate-language-disabled-reason": "Translation to $1 is disabled: $2",
 	"apierror-translate-nodynamicgroups": "Dynamic message groups are not supported here",
 	"apierror-translate-nomessagefortitle": "Title does not correspond to a translatable message",
 	"apierror-translate-notranslationservices": "No public translation services have been configured. The wiki administrator needs to set <var>$wgTranslateTranslationServices</var> appropriately before this feature can be used.",

@@ -175,8 +175,6 @@
 	"apierror-translate-invalidstate": "{{doc-apierror}}",
 	"apierror-translate-invalidlanguage": "{{doc-apierror}}\n\nParameters:\n* $1 - language code",
 	"apierror-translate-invalidupdate": "{{doc-apierror}}",
-	"apierror-translate-language-disabled": "{{doc-apierror}}",
-	"apierror-translate-language-disabled-reason": "{{doc-apierror}}\n\nParameters:\n* $1 - language name\n* $2 - reason, probably in English",
 	"apierror-translate-nodynamicgroups": "{{doc-apierror}}",
 	"apierror-translate-nomessagefortitle": "{{doc-apierror}}",
 	"apierror-translate-notranslationservices": "{{doc-apierror}}",

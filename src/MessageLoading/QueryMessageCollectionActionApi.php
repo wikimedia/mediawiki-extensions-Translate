@@ -75,14 +75,9 @@ class QueryMessageCollectionActionApi extends ApiQueryGeneratorBase {
 			$this->addWarning( [ 'apiwarn-translate-language-disabled-source', wfEscapeWikiText( $name ) ] );
 		}
 
-		$isDisabled = $this->configHelper->isTargetLanguageDisabled( $group, $languageCode, $reason );
-		if ( $isDisabled ) {
-			$name = $this->getLanguageName( $languageCode );
-			if ( $reason === null ) {
-				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
-			} else {
-				$this->dieWithError( [ 'apierror-translate-language-disabled-reason', $name, $reason ] );
-			}
+		$status = $this->configHelper->getTargetLanguageDisabledStatus( $group, $languageCode );
+		if ( !$status->isOK() ) {
+			$this->dieStatus( $status );
 		}
 
 		// A check for cases where the source language of group messages

@@ -3,7 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Tests\Utilities;
 
+use MediaWiki\Api\ApiErrorFormatter;
+use MediaWiki\Api\ApiResult;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Permissions\Authority;
 use MediaWikiIntegrationTestCase;
@@ -46,13 +50,13 @@ class ConfigHelperTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/** @dataProvider provideIsTargetLanguageDisabled */
-	public function testIsTargetLanguageDisabled(
+	/** @dataProvider provideTargetLanguageDisabledStatus */
+	public function testGetTargetLanguageDisabledStatus(
 		array $disabledLanguages,
 		string $groupId,
 		?array $translatableLanguages,
 		string $languageCode,
-		bool $expected,
+		?string $expectedError,
 		?string $expectedReason
 	): void {
 		$this->setMwGlobals( 'wgTranslateDisabledTargetLanguages', $disabledLanguages );
@@ -61,89 +65,52 @@ class ConfigHelperTest extends MediaWikiIntegrationTestCase {
 		$group->method( 'getId' )->willReturn( $groupId );
 		$group->method( 'getTranslatableLanguages' )->willReturn( $translatableLanguages );
 
-		$configHelper = new ConfigHelper();
-		$reason = null;
-		$this->assertSame(
-			$expected,
-			$configHelper->isTargetLanguageDisabled( $group, $languageCode, $reason ),
-			'it should return the correct disabled status'
-		);
+		$status = ( new ConfigHelper() )
+			->getTargetLanguageDisabledStatus( $group, $languageCode );
 
-		$this->assertSame( $expectedReason, $reason, 'it should set the correct reason' );
+		if ( $expectedError === null ) {
+			$this->assertStatusGood( $status );
+		} else {
+			$this->assertStatusError( $expectedError, $status );
+			$params = $status->getMessages( 'error' )[0]->getParams();
+			$this->assertCount( $expectedReason === null ? 1 : 2, $params );
+			if ( $expectedReason !== null ) {
+				$this->assertSame( $expectedReason, $params[1] );
+			}
+		}
 	}
 
-	public static function provideIsTargetLanguageDisabled(): iterable {
+	public static function provideTargetLanguageDisabledStatus(): iterable {
 		yield 'disabled via global config with specific group id' => [
 			[ 'test-group' => [ 'de' => 'No reason' ] ],
-			'test-group',
-			MessageGroup::DEFAULT_LANGUAGES,
-			'de',
-			true,
-			'No reason'
+			'test-group', MessageGroup::DEFAULT_LANGUAGES, 'de', 'translate-language-disabled-reason', 'No reason'
 		];
 		yield 'disabled via global config with partial group id' => [
 			[ 'test' => [ 'de' => 'No reason' ] ],
-			'test-group',
-			MessageGroup::DEFAULT_LANGUAGES,
-			'de',
-			true,
-			'No reason'
+			'test-group', MessageGroup::DEFAULT_LANGUAGES, 'de', 'translate-language-disabled-reason', 'No reason'
 		];
 		yield 'disabled via global config with wildcard' => [
 			[ '*' => [ 'de' => 'No reason' ] ],
-			'test-group',
-			MessageGroup::DEFAULT_LANGUAGES,
-			'de',
-			true,
-			'No reason'
+			'test-group', MessageGroup::DEFAULT_LANGUAGES, 'de', 'translate-language-disabled-reason', 'No reason'
 		];
 		yield 'not in group translatable languages' => [
-			[],
-			'test-group',
-			[ 'en' => 'en' ],
-			'de',
-			true,
-			null
+			[], 'test-group', [ 'en' => 'en' ], 'de', 'translate-language-disabled', null
 		];
 		yield 'not disabled' => [
-			[],
-			'test-group',
-			MessageGroup::DEFAULT_LANGUAGES,
-			'de',
-			false,
-			null
+			[], 'test-group', MessageGroup::DEFAULT_LANGUAGES, 'de', null, null
 		];
 		yield 'not disabled with group languages' => [
-			[],
-			'test-group',
-			[ 'de' => 'de' ],
-			'de',
-			false,
-			null
+			[], 'test-group', [ 'de' => 'de' ], 'de', null, null
 		];
 		yield 'globally enabled but disabled via group languages' => [
-			[],
-			'test-group',
-			[ 'en' => 'en' ],
-			'de',
-			true,
-			null
+			[], 'test-group', [ 'en' => 'en' ], 'de', 'translate-language-disabled', null
 		];
 		yield 'globally disabled but enabled via group languages' => [
-			[ '*' => [ 'de' => 'No reason' ] ],
-			'test-group',
-			[ 'de' => 'de' ],
-			'de',
-			false,
-			null
+			[ '*' => [ 'de' => 'No reason' ] ], 'test-group', [ 'de' => 'de' ], 'de', null, null
 		];
 		yield 'disabled globally and via group languages' => [
 			[ '*' => [ 'de' => 'Global reason' ] ],
-			'test-group',
-			[ 'en' => 'en' ],
-			'de',
-			true,
-			'Global reason'
+			'test-group', [ 'en' => 'en' ], 'de', 'translate-language-disabled-reason', 'Global reason'
 		];
 	}
 
@@ -169,6 +136,58 @@ class ConfigHelperTest extends MediaWikiIntegrationTestCase {
 		yield 'has right and translated messages' => [ true, true, 10, 0 ];
 		yield 'has right and fuzzy messages only' => [ true, true, 0, 5 ];
 		yield 'has right and both translated and fuzzy' => [ true, true, 3, 2 ];
+	}
+
+	public function testGlobalDisabledReasonWithGroupLanguageConfiguration(): void {
+		$this->setMwGlobals( 'wgTranslateDisabledTargetLanguages', [
+			'*' => [ 'de' => 'Use de-formal' ]
+		] );
+		$group = MessageGroupBase::factory( [
+			'BASIC' => [
+				'class' => FileBasedMessageGroup::class,
+				'id' => 'test-group',
+				'namespace' => 'NS_MEDIAWIKI',
+			],
+			'LANGUAGES' => [ 'exclude' => [ 'fr' ] ],
+		] );
+
+		$status = ( new ConfigHelper() )->getTargetLanguageDisabledStatus( $group, 'de' );
+
+		$this->assertStatusError( 'translate-language-disabled-reason', $status );
+		$this->assertSame( 'Use de-formal', $status->getMessages( 'error' )[0]->getParams()[1] );
+	}
+
+	/** @dataProvider provideDisabledLanguageMessages */
+	public function testDisabledLanguageNameUsesRenderingLanguage( ?string $reason ): void {
+		$this->setMwGlobals( 'wgTranslateDisabledTargetLanguages',
+			$reason === null ? [] : [ '*' => [ 'de' => $reason ] ]
+		);
+		$group = $this->createMock( MessageGroup::class );
+		$group->method( 'getId' )->willReturn( 'test-group' );
+		$group->method( 'getTranslatableLanguages' )->willReturn( [ 'en' => 'en' ] );
+		$status = ( new ConfigHelper() )->getTargetLanguageDisabledStatus( $group, 'de' );
+		$name = $status->getMessages( 'error' )[0]->getParams()[0];
+
+		foreach ( [ 'en' => 'German', 'fr' => 'allemand', 'de' => 'Deutsch' ] as $code => $expected ) {
+			// Use a core message to test the parameter independently of the error's translations.
+			$message = wfMessage( 'rawmessage', $name )->inLanguage( $code );
+			$this->assertSame( $expected, $message->text() );
+			$this->assertSame( $expected, strip_tags( $message->parse() ) );
+
+			$formatter = new ApiErrorFormatter(
+				new ApiResult( 100000 ),
+				$this->getServiceContainer()->getLanguageFactory()->getLanguage( $code )
+			);
+			foreach ( [ 'plaintext', 'wikitext', 'html' ] as $format ) {
+				$result = $formatter->formatMessage( $message, $format );
+				$this->assertSame( $expected, strip_tags( $result[$format === 'html' ? 'html' : 'text'] ) );
+			}
+		}
+	}
+
+	public static function provideDisabledLanguageMessages(): iterable {
+		yield 'group restriction' => [ null ];
+		yield 'global restriction with reason' => [ 'Use de-formal' ];
 	}
 
 	/** @dataProvider provideIsAuthorExcluded */

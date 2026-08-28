@@ -72,7 +72,7 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 		$group = MessageGroups::getGroup( $item );
 		if ( $group !== null ) {
 			$language = $this->getParameter( 'language' );
-			$isExcluded = $this->configHelper->isTargetLanguageDisabled( $group, $language )
+			$isExcluded = !$this->configHelper->getTargetLanguageDisabledStatus( $group, $language )->isOK()
 				|| $this->messageGroupMetadata->isExcluded( $group, $language );
 			if ( $isExcluded ) {
 				if ( !$this->configHelper->canSeeExcludedLanguageStats(

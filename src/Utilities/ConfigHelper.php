@@ -4,7 +4,10 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Utilities;
 
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Language\RawMessage;
+use MediaWiki\Message\Message;
 use MediaWiki\Permissions\Authority;
+use StatusValue;
 
 /**
  * A helper class added to work with configuration values of the Translate Extension
@@ -35,17 +38,14 @@ class ConfigHelper {
 	}
 
 	/**
-	 * Helper to validate MessageGroup::getTranslatableLanguage against site configuration.
-	 * @param MessageGroup $group The message group to check.
+	 * Check whether a target language is disabled for a message group, by
+	 * $wgTranslateDisabledTargetLanguages or by the group's own language list.
+	 *
+	 * @param MessageGroup $group
 	 * @param string $languageCode Target language code.
-	 * @param string|null &$reason Store the reason why the language is disabled, if applicable.
-	 * @return bool True if the target language is disabled, false otherwise.
+	 * @return StatusValue Good if enabled, fatal with the error message if disabled.
 	 */
-	public function isTargetLanguageDisabled(
-		MessageGroup $group,
-		string $languageCode,
-		?string &$reason = null
-	): bool {
+	public function getTargetLanguageDisabledStatus( MessageGroup $group, string $languageCode ): StatusValue {
 		$globalDisabledReason = null;
 		$groupId = $group->getId();
 		$checks = [
@@ -64,16 +64,21 @@ class ConfigHelper {
 
 		$groupLanguages = $group->getTranslatableLanguages();
 
-		$isLanguageDisabled = $groupLanguages === MessageGroup::DEFAULT_LANGUAGES
-			? $globalDisabledReason !== null
-			: !array_key_exists( $languageCode, $groupLanguages );
-
-		// Only set the reason if the language is actually disabled
-		if ( $isLanguageDisabled ) {
-			$reason = $globalDisabledReason;
+		$isLanguageEnabled = $groupLanguages === MessageGroup::DEFAULT_LANGUAGES
+			? $globalDisabledReason === null
+			: array_key_exists( $languageCode, $groupLanguages );
+		if ( $isLanguageEnabled ) {
+			return StatusValue::newGood();
 		}
 
-		return $isLanguageDisabled;
+		// Resolve the name in the language chosen when the error is rendered.
+		$languageName = new RawMessage( '{{#language:$1|{{PAGELANGUAGE}}}}', [ $languageCode ] );
+		$message = $globalDisabledReason === null
+			? new Message( 'translate-language-disabled', [ $languageName ] )
+			: new Message( 'translate-language-disabled-reason', [ $languageName, $globalDisabledReason ] );
+
+		// Preserve the nested RawMessage instead of converting it to a MessageValue.
+		return StatusValue::newFatal( $message );
 	}
 
 	/**
