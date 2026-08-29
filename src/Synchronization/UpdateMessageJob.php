@@ -290,7 +290,7 @@ class UpdateMessageJob extends GenericTranslateJob {
 			}
 		}
 
-		$dbw = $mwInstance->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+		$dbw = $mwInstance->getConnectionProvider()->getPrimaryDatabase();
 
 		if ( $fuzzies !== [] ) {
 			$inserts = [];
