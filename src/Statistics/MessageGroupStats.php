@@ -16,6 +16,7 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use stdClass;
+use Throwable;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -590,7 +591,6 @@ class MessageGroupStats {
 			return;
 		}
 
-		$dbw = $mwInstance->getConnectionProvider()->getPrimaryDatabase(); // avoid connecting yet
 		$callers = wfGetAllCallers( 50 );
 		$functionName = __METHOD__;
 		$callback = static function ( IDatabase $dbw, $method ) use ( $callers, $mwInstance ) {
@@ -615,16 +615,26 @@ class MessageGroupStats {
 				->execute();
 			self::$updates = [];
 
-			$mwInstance->getMainWANObjectCache()->touchCheckKey( self::LANGUAGE_STATS_KEY );
+			// Start the cache holdoff only once the new stats are committed.
+			$dbw->onTransactionCommitOrIdle(
+				static function () use ( $mwInstance ) {
+					$mwInstance->getMainWANObjectCache()->touchCheckKey( self::LANGUAGE_STATS_KEY );
+				},
+				$method
+			);
 		};
-		$updateOp = static function () use ( $dbw, $functionName, $callback ) {
+		$updateOp = static function () use ( $mwInstance, $functionName, $callback ) {
 			// Maybe another deferred update already processed these
 			if ( self::$updates === [] ) {
 				return;
 			}
 
 			$lockName = 'MessageGroupStats:updates';
-			if ( !$dbw->lock( $lockName, $functionName, 1 ) ) {
+			$lockManager = $mwInstance->getLockManager();
+			// Use an explicit lock, not a scoped lock: it must be held until the
+			// write commits. A scoped lock releases when this closure returns,
+			// before deferred/job transactions commit.
+			if ( !$lockManager->lockKey( $lockName, 1 ) ) {
 				$groups = array_unique( array_column( self::$updates, 'tgs_group' ) );
 				LoggerFactory::getInstance( LogNames::MAIN )->warning(
 					'Message group stats update of {count} rows failed for group(s) {groups} due to lock',
@@ -637,11 +647,27 @@ class MessageGroupStats {
 				return; // raced out
 			}
 
-			$dbw->commit( $functionName, 'flush' );
-			$callback( $dbw, $functionName );
-			$dbw->commit( $functionName, 'flush' );
+			$dbw = $mwInstance->getConnectionProvider()->getPrimaryDatabase();
+			try {
+				$callback( $dbw, $functionName );
+			} catch ( Throwable $e ) {
+				// Nothing committed to wait for; release now.
+				$lockManager->unlockKey( $lockName );
+				throw $e;
+			}
 
-			$dbw->unlock( $lockName, $functionName );
+			// Release the lock only after the write commits (or rolls back), so the
+			// rows are visible before another process can acquire the lock.
+			if ( $dbw->trxLevel() ) {
+				$dbw->onTransactionResolution(
+					static function () use ( $lockManager, $lockName ) {
+						$lockManager->unlockKey( $lockName );
+					},
+					$functionName
+				);
+			} else {
+				$lockManager->unlockKey( $lockName );
+			}
 		};
 
 		if ( $flags & self::FLAG_IMMEDIATE_WRITES ) {

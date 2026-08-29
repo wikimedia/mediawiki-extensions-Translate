@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\MessageGroups\WikiMessageGroup;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestTrait;
+use MockWikiMessageGroup;
 use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\ObjectCache\WANObjectCache;
 
@@ -64,6 +65,58 @@ class MessageGroupStatsTest extends MediaWikiIntegrationTestCase {
 			MessageGroupStats::getDatabaseIdForGroupId( $longId2 ),
 			'Two long ids with the same prefix do not collide'
 		);
+	}
+
+	public function testQueueUpdatesWritesStats() {
+		// Trigger stats calculation without FLAG_CACHE_ONLY so $updates is populated,
+		// then flush immediately with FLAG_IMMEDIATE_WRITES.
+		$flags = MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES;
+		MessageGroupStats::forGroup( 'theid', $flags );
+
+		$dbr = $this->getDb();
+		$count = $dbr->newSelectQueryBuilder()
+			->from( 'translate_groupstats' )
+			->where( [ 'tgs_group' => 'theid' ] )
+			->caller( __METHOD__ )
+			->fetchRowCount();
+		$this->assertGreaterThan( 0, $count, 'Stats rows were written (lock was acquired and callback ran)' );
+	}
+
+	/** @dataProvider provideStatsCacheInvalidation */
+	public function testStatsCacheInvalidation( bool $rollback ): void {
+		$invalidated = false;
+		$cache = $this->getMockBuilder( WANObjectCache::class )
+			->setConstructorArgs( [ [ 'cache' => new HashBagOStuff() ] ] )
+			->onlyMethods( [ 'touchCheckKey' ] )->getMock();
+		$cache->expects( $rollback ? $this->never() : $this->once() )->method( 'touchCheckKey' )
+			->with( 'translate-all-language-stats' )
+			->willReturnCallback( static function () use ( &$invalidated ) {
+				$invalidated = true;
+				return true;
+			} );
+		$this->setService( 'WANObjectCache', $cache );
+		MessageGroups::singleton()->overrideGroupsForTesting( [
+			'theid' => new MockWikiMessageGroup( 'theid', [ 'key' => 'Message' ] ),
+		] );
+		$lbFactory = $this->getServiceContainer()->getDBLoadBalancerFactory();
+		$lbFactory->beginPrimaryChanges( __METHOD__ );
+
+		try {
+			MessageGroupStats::forItem( 'theid', 'fi',
+				MessageGroupStats::FLAG_NO_CACHE | MessageGroupStats::FLAG_IMMEDIATE_WRITES );
+			$this->assertFalse( $invalidated, 'Do not invalidate while the stats are uncommitted' );
+		} finally {
+			if ( $rollback ) {
+				$lbFactory->rollbackPrimaryChanges( __METHOD__ );
+			} else {
+				$lbFactory->commitPrimaryChanges( __METHOD__ );
+			}
+		}
+		$this->assertSame( !$rollback, $invalidated );
+	}
+
+	public static function provideStatsCacheInvalidation(): array {
+		return [ 'commit' => [ false ], 'rollback' => [ true ] ];
 	}
 
 	public function testFunctionReturnFormat() {
