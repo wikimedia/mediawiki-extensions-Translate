@@ -91,10 +91,6 @@ class HookHandler implements
 	UserGetReservedNamesHook,
 	ResourceLoaderRegisterModulesHook
 {
-	/**
-	 * Any user of this list should make sure that the tables
-	 * actually exist, since they may be optional
-	 */
 	private const USER_MERGE_TABLES = [
 		'translate_stash' => 'ts_user',
 		'translate_reviews' => 'trr_user',
@@ -772,21 +768,19 @@ class HookHandler implements
 	 * Hook: MergeAccountFromTo
 	 * For UserMerge extension.
 	 */
-	public static function onMergeAccountFromTo( User $oldUser, User $newUser ): void {
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+	public function onMergeAccountFromTo( User $oldUser, User $newUser ): void {
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
 		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
-			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
-				$dbw->newUpdateQueryBuilder()
-					->update( $table )
-					->ignore()
-					->set( [ $field => $newUser->getId() ] )
-					->where( [ $field => $oldUser->getId() ] )
-					->caller( __METHOD__ )
-					->execute();
-			}
+			$dbw->newUpdateQueryBuilder()
+				->update( $table )
+				->ignore()
+				->set( [ $field => $newUser->getId() ] )
+				->where( [ $field => $oldUser->getId() ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 	}
 
@@ -794,18 +788,16 @@ class HookHandler implements
 	 * Hook: DeleteAccount
 	 * For UserMerge extension.
 	 */
-	public static function onDeleteAccount( User $oldUser ): void {
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+	public function onDeleteAccount( User $oldUser ): void {
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::USER_MERGE_TABLES as $table => $field ) {
-			if ( $dbw->tableExists( $table, __METHOD__ ) ) {
-				$dbw->newDeleteQueryBuilder()
-					->deleteFrom( $table )
-					->where( [ $field => $oldUser->getId() ] )
-					->caller( __METHOD__ )
-					->execute();
-			}
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( $table )
+				->where( [ $field => $oldUser->getId() ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 	}
 

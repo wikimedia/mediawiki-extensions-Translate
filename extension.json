@@ -185,8 +185,8 @@
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
 		"AdminLinks": "MediaWiki\\Extension\\Translate\\HookHandler::onAdminLinks",
-		"MergeAccountFromTo": "MediaWiki\\Extension\\Translate\\HookHandler::onMergeAccountFromTo",
-		"DeleteAccount": "MediaWiki\\Extension\\Translate\\HookHandler::onDeleteAccount",
+		"MergeAccountFromTo": "main",
+		"DeleteAccount": "main",
 		"AbuseFilterAlterVariables": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterAlterVariables",
 		"AbuseFilter-computeVariable": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterComputeVariable",
 		"AbuseFilter-builder": "MediaWiki\\Extension\\Translate\\HookHandler::onAbuseFilterBuilder",
