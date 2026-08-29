@@ -12,10 +12,10 @@ use MediaWiki\Extension\Translate\Statistics\RebuildMessageGroupStatsJob;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
+use Wikimedia\LockManager\ILockManager;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\MapCacheLRU;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -48,7 +48,7 @@ class MessageIndex {
 		private readonly HookRunner $hookRunner,
 		private readonly LoggerInterface $logger,
 		private readonly BagOStuff $interimCache,
-		private readonly IConnectionProvider $dbProvider,
+		private readonly ILockManager $lockManager,
 		ServiceOptions $options
 	) {
 		$this->keysCache = new MapCacheLRU( 30 );
@@ -134,29 +134,14 @@ class MessageIndex {
 	}
 
 	private function lock(): bool {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
-
-		// Any transaction should be flushed after getting the lock to avoid
-		// stale pre-lock REPEATABLE-READ snapshot data.
-		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 5 );
-		if ( $ok ) {
-			$dbw->commit( __METHOD__, 'flush' );
-		}
-
-		return $ok;
+		return $this->lockManager->lockKey( 'translate-messageindex', 5 );
 	}
 
 	private function unlock(): void {
-		$fname = __METHOD__;
-		$dbw = $this->dbProvider->getPrimaryDatabase();
-		// Unlock once the rows are actually unlocked to avoid deadlocks
-		if ( !$dbw->trxLevel() ) {
-			$dbw->unlock( 'translate-messageindex', $fname );
-		} else {
-			$dbw->onTransactionResolution( static function () use ( $dbw, $fname ) {
-				$dbw->unlock( 'translate-messageindex', $fname );
-			}, $fname );
-		}
+		$lockManager = $this->lockManager;
+		$this->messageIndexStore->releaseRebuildLock( static function () use ( $lockManager ) {
+			$lockManager->unlockKey( 'translate-messageindex' );
+		} );
 	}
 
 	/**
@@ -181,6 +166,9 @@ class MessageIndex {
 
 		$tsStart = ConvertibleTimestamp::hrtime();
 		if ( !$this->lock() ) {
+			// Decrement before throwing so the static counter does not leak into
+			// subsequent calls (e.g. the next test in the same process).
+			$recursion--;
 			throw new MessageIndexException( __CLASS__ . ': unable to acquire lock' );
 		}
 
@@ -189,6 +177,9 @@ class MessageIndex {
 			'[MessageIndex] Got lock in {duration}',
 			[ 'duration' => $lockWaitDuration / 1e9 ]
 		);
+
+		// Let the store flush any stale pre-lock snapshot before we read it.
+		$this->messageIndexStore->prepareForRebuild();
 
 		$groups = MessageGroups::singleton()->getGroups();
 		$this->keysCache->clear();

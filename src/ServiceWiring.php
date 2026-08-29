@@ -297,7 +297,7 @@ return [
 			$services->get( 'Translate:HookRunner' ),
 			LoggerFactory::getInstance( LogNames::MAIN ),
 			$services->getMainObjectStash(),
-			$services->getConnectionProvider(),
+			$services->getLockManager(),
 			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() ),
 		);
 	},

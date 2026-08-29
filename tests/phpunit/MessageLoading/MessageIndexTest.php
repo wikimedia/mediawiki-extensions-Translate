@@ -4,12 +4,15 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageLoading;
 
 use Generator;
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MockWikiMessageGroup;
+use Wikimedia\LockManager\ILockManager;
 use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\ObjectCache\WANObjectCache;
 
@@ -188,6 +191,79 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		yield 'TestableCDBMessageIndex' => [ [ 'class' => TestableCDBMessageIndex::class ] ];
 		yield 'TestableSerializedMessageIndex' => [ [ 'class' => TestableSerializedMessageIndex::class ] ];
 		yield 'TestableHashMessageIndex' => [ [ 'class' => TestableHashMessageIndex::class ] ];
+	}
+
+	public function testRebuildThrowsWhenLockFails(): void {
+		$lockManager = $this->createMock( ILockManager::class );
+		$lockManager->method( 'lockKey' )->willReturn( false );
+
+		$services = $this->getServiceContainer();
+		$messageIndex = new MessageIndex(
+			new HashMessageIndex(),
+			$services->getMainWANObjectCache(),
+			$services->getJobQueueGroup(),
+			Services::getInstance()->getHookRunner(),
+			LoggerFactory::getInstance( 'test' ),
+			$services->getMainObjectStash(),
+			$lockManager,
+			new ServiceOptions(
+				MessageIndex::SERVICE_OPTIONS,
+				$services->getMainConfig()
+			)
+		);
+
+		$this->expectException( MessageIndexException::class );
+		$messageIndex->rebuild();
+	}
+
+	/** @dataProvider provideRebuildLockRelease */
+	public function testRebuildLockRelease( bool $database, bool $rollback ): void {
+		$groups = [];
+		$this->getTestGroups( $groups );
+		MessageGroups::singleton()->overrideGroupsForTesting( $groups );
+		$services = $this->getServiceContainer();
+		$lbFactory = $services->getDBLoadBalancerFactory();
+		$lbFactory->beginPrimaryChanges( __METHOD__ );
+		$unlocked = false;
+		$lockManager = $this->createMock( ILockManager::class );
+		$lockManager->expects( $this->once() )->method( 'lockKey' )
+			->with( 'translate-messageindex', 5 )->willReturn( true );
+		$lockManager->expects( $this->once() )->method( 'unlockKey' )
+			->with( 'translate-messageindex' )
+			->willReturnCallback( static function () use ( &$unlocked ) {
+				$unlocked = true;
+				return true;
+			} );
+		$messageIndex = new MessageIndex(
+			$database ? new DatabaseMessageIndex() : new HashMessageIndex(),
+			$services->getMainWANObjectCache(),
+			$services->getJobQueueGroup(),
+			Services::getInstance()->getHookRunner(),
+			LoggerFactory::getInstance( 'test' ),
+			$services->getMainObjectStash(),
+			$lockManager,
+			new ServiceOptions( MessageIndex::SERVICE_OPTIONS, $services->getMainConfig() )
+		);
+
+		try {
+			$messageIndex->rebuild();
+			$this->assertSame( !$database, $unlocked, 'Database writes must commit before unlocking' );
+		} finally {
+			if ( $rollback ) {
+				$lbFactory->rollbackPrimaryChanges( __METHOD__ );
+			} else {
+				$lbFactory->commitPrimaryChanges( __METHOD__ );
+			}
+		}
+		$this->assertTrue( $unlocked, 'Release the lock on commit or rollback' );
+	}
+
+	public static function provideRebuildLockRelease(): array {
+		return [
+			'database commit' => [ true, false ],
+			'database rollback' => [ true, true ],
+			'non-database' => [ false, false ],
+		];
 	}
 
 	public function testInterimCache(): void {

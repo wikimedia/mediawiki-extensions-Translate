@@ -26,6 +26,20 @@ abstract class MessageIndexStore {
 	}
 
 	/**
+	 * Hook called once the rebuild lock has been acquired, before the index is
+	 * read and rebuilt. Backends that read from the primary database override
+	 * this to flush any open transaction, so the rebuild does not operate on a
+	 * stale pre-lock snapshot. The default is a no-op.
+	 */
+	public function prepareForRebuild(): void {
+	}
+
+	/** Release the rebuild lock once the stored index is visible to other processes. */
+	public function releaseRebuildLock( callable $unlock ): void {
+		$unlock();
+	}
+
+	/**
 	 * These are probably slower than serialize and unserialize,
 	 * but they are more space efficient because we only need
 	 * strings and arrays.

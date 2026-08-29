@@ -23,6 +23,21 @@ class DatabaseMessageIndex extends MessageIndexStore {
 		$this->dbProvider = MediaWikiServices::getInstance()->getConnectionProvider();
 	}
 
+	public function prepareForRebuild(): void {
+		// Flush any open transaction after the rebuild lock is acquired, so the
+		// subsequent read does not use a stale pre-lock REPEATABLE-READ snapshot.
+		$this->dbProvider->getPrimaryDatabase()->commit( __METHOD__, 'flush' );
+	}
+
+	public function releaseRebuildLock( callable $unlock ): void {
+		$dbw = $this->dbProvider->getPrimaryDatabase();
+		if ( $dbw->trxLevel() ) {
+			$dbw->onTransactionResolution( $unlock, __METHOD__ );
+		} else {
+			$unlock();
+		}
+	}
+
 	public function retrieve( bool $readLatest = false ): array {
 		if ( $this->index !== null && !$readLatest ) {
 			return $this->index;
