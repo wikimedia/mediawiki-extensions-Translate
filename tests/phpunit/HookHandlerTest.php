@@ -90,6 +90,48 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 
+	public function testOnTitleIsAlwaysKnown_nonSpecialNamespace_leavesKnownUnset(): void {
+		$isKnown = null;
+		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_MAIN, 'Foo' ), $isKnown );
+		$this->assertTrue( $result );
+		$this->assertNull( $isKnown );
+	}
+
+	public function testOnTitleIsAlwaysKnown_specialNotMyLanguage_leavesKnownUnset(): void {
+		$isKnown = null;
+		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_SPECIAL, 'RecentChanges' ), $isKnown );
+		$this->assertTrue( $result );
+		$this->assertNull( $isKnown );
+	}
+
+	public function testOnTitleIsAlwaysKnown_myLanguageNoSubpage_leavesKnownUnset(): void {
+		$isKnown = null;
+		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_SPECIAL, 'MyLanguage' ), $isKnown );
+		$this->assertTrue( $result );
+		$this->assertNull( $isKnown );
+	}
+
+	public function testOnTitleIsAlwaysKnown_myLanguageSubpageNotExists_setsKnownFalse(): void {
+		$isKnown = null;
+		$result = HookHandler::onTitleIsAlwaysKnown(
+			Title::makeTitle( NS_SPECIAL, 'MyLanguage/PageThatDoesNotExist' ),
+			$isKnown
+		);
+		$this->assertFalse( $result );
+		$this->assertFalse( $isKnown );
+	}
+
+	public function testOnTitleIsAlwaysKnown_myLanguageSubpageExists_leavesKnownUnset(): void {
+		$this->editPage( 'ExistingPage', 'content' );
+		$isKnown = null;
+		$result = HookHandler::onTitleIsAlwaysKnown(
+			Title::makeTitle( NS_SPECIAL, 'MyLanguage/ExistingPage' ),
+			$isKnown
+		);
+		$this->assertTrue( $result );
+		$this->assertNull( $isKnown );
+	}
+
 	public function testSearchProfile() {
 		$profiles = [
 			'files' => [],
