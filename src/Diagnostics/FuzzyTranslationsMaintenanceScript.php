@@ -14,8 +14,8 @@ use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\ActorNormalization;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
-use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**
@@ -26,7 +26,7 @@ use Wikimedia\Rdbms\IResultWrapper;
 class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	private ActorNormalization $actorNormalization;
 	private RevisionStore $revisionStore;
-	private ILoadBalancer $DBLoadBalancer;
+	private IConnectionProvider $connectionProvider;
 	private WikiPageFactory $wikiPageFactory;
 
 	public function __construct() {
@@ -65,7 +65,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$mwServices = MediaWikiServices::getInstance();
 		$this->actorNormalization = $mwServices->getActorNormalization();
 		$this->revisionStore = $mwServices->getRevisionStore();
-		$this->DBLoadBalancer = $mwServices->getDBLoadBalancer();
+		$this->connectionProvider = $mwServices->getConnectionProvider();
 		$this->wikiPageFactory = $mwServices->getWikiPageFactory();
 	}
 
@@ -125,7 +125,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 	/** Searches pages that match given patterns */
 	private function getPagesForPattern( string $pattern, array $skipLanguages = [] ): array {
-		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
+		$dbr = $this->connectionProvider->getReplicaDatabase();
 
 		$conds = [
 			'page_latest=rev_id',
@@ -155,7 +155,7 @@ class FuzzyTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	private function getPagesForUser( string $userName, array $skipLanguages = [] ): array {
-		$dbr = $this->DBLoadBalancer->getMaintenanceConnectionRef( DB_REPLICA );
+		$dbr = $this->connectionProvider->getReplicaDatabase();
 		$actorId = $this->actorNormalization->findActorIdByName( $userName, $dbr );
 		if ( $actorId === null ) {
 			return [];
