@@ -298,10 +298,11 @@ class Utilities {
 	 * replica otherwise
 	 */
 	public static function getSafeReadDB(): IReadableDatabase {
-		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$index = self::shouldReadFromPrimary() ? DB_PRIMARY : DB_REPLICA;
-
-		return $lb->getConnection( $index );
+		$icp = MediaWikiServices::getInstance()->getConnectionProvider();
+		if ( self::shouldReadFromPrimary() ) {
+			return $icp->getPrimaryDatabase();
+		}
+		return $icp->getReplicaDatabase();
 	}
 
 	/** Check whether primary should be used for reads to avoid reading stale data. */
