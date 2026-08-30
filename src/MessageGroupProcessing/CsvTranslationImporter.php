@@ -8,10 +8,10 @@ use MediaWiki\Content\ContentHandler;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\WikiPageFactory;
-use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\PageUpdateStatus;
 use MediaWiki\Title\Title;
+use MediaWiki\User\UserIdentity;
 use SplFileObject;
 use StatusValue;
 
@@ -133,7 +133,7 @@ class CsvTranslationImporter {
 	 * Import the data returned from the parseFile method
 	 *
 	 * @param array<int,array{messageTitle:string,translations:array<string,string>}> $messagesWithTranslations
-	 * @param Authority $authority
+	 * @param UserIdentity $user
 	 * @param string $comment
 	 * @param null|callable(Title,PageUpdateStatus[],int,int):void $progressReporter If not null,
 	 *  called with the current message title, the per-language import results for that message, the number
@@ -141,7 +141,7 @@ class CsvTranslationImporter {
 	 */
 	public function importData(
 		array $messagesWithTranslations,
-		Authority $authority,
+		UserIdentity $user,
 		string $comment,
 		?callable $progressReporter = null
 	): StatusValue {
@@ -170,7 +170,7 @@ class CsvTranslationImporter {
 
 				// Perform the update for the translation page
 				$updater = $this->wikiPageFactory->newFromTitle( $translationTitle )
-					->newPageUpdater( $authority );
+					->newPageUpdater( $user );
 				$content = ContentHandler::makeContent( $translation, $translationTitle );
 				$updater->setContent( SlotRecord::MAIN, $content );
 				$updater->setFlags( EDIT_FORCE_BOT );

@@ -575,7 +575,8 @@ class TranslatablePageMarker {
 		MessageLocalizer $localizer,
 		TranslatablePageMarkOperation $operation
 	): ?int {
-		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getPageIdentity() )->newPageUpdater( $authority );
+		$pageUpdater = $this->wikiPageFactory->newFromTitle( $page->getPageIdentity() )
+			->newPageUpdater( $authority->getUser() );
 		$content = ContentHandler::makeContent(
 			$operation->getParserOutput()->sourcePageTextForSaving(),
 			$page->getTitle()

@@ -321,7 +321,7 @@ class WikiWriter {
 
 		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = ContentHandler::makeContent( $text, $title );
-		$updater = $page->newPageUpdater( $this->performer )->setContent( SlotRecord::MAIN, $content );
+		$updater = $page->newPageUpdater( $this->performer->getUser() )->setContent( SlotRecord::MAIN, $content );
 
 		if ( $this->performer->authorizeWrite( 'autopatrol', $title ) ) {
 			$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
