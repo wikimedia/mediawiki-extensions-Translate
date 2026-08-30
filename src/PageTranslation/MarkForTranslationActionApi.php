@@ -7,8 +7,6 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MediaWiki\Status\Status;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\IDBAccessObject;
 
@@ -73,7 +71,7 @@ class MarkForTranslationActionApi extends ApiBase {
 		if ( isset( $params['prioritylanguages'] ) ) {
 			// Set priority languages
 			$priorityLanguages = $params['prioritylanguages'];
-			$priorityLanguageStatus = $this->validatePriorityLanguages( $priorityLanguages );
+			$priorityLanguageStatus = $this->translatablePageMarker->validatePriorityLanguages( $priorityLanguages );
 			if ( !$priorityLanguageStatus->isOK() ) {
 				$this->addMessagesFromStatus( $priorityLanguageStatus );
 				return;
@@ -129,24 +127,6 @@ class MarkForTranslationActionApi extends ApiBase {
 	/** Get a nullable boolean parameter */
 	private function getTriState( array $params, string $name ): ?bool {
 		return isset( $params[$name] ) ? $params[$name] === 'yes' : null;
-	}
-
-	private function validatePriorityLanguages( array $priorityLanguageCodes ): Status {
-		$knownLanguageCodes = array_keys( Utilities::getLanguageNames( 'en' ) );
-		$invalidLanguageCodes = array_diff( $priorityLanguageCodes, $knownLanguageCodes );
-		$context = $this->getContext();
-
-		if ( $invalidLanguageCodes ) {
-			return Status::newFatal(
-				$context->msg( 'apierror-markfortranslation-invalid-prioritylangs' )
-					->params(
-						count( $invalidLanguageCodes ),
-						$context->getLanguage()->commaList( $invalidLanguageCodes )
-					)
-			);
-		}
-
-		return Status::newGood();
 	}
 
 	/** @inheritDoc */

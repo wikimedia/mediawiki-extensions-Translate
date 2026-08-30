@@ -320,6 +320,15 @@ class PageTranslationSpecialPage extends SpecialPage {
 			[ $priorityLanguages, $forcePriorityLanguage, $priorityLanguageReason ] =
 				$this->getPriorityLanguage( $this->getRequest() );
 
+			$priorityLangStatus = $this->translatablePageMarker->validatePriorityLanguages( $priorityLanguages );
+			if ( !$priorityLangStatus->isOK() ) {
+				$out->addHTML(
+					Html::errorBox( $this->statusFormatter->getHTML( $priorityLangStatus ) )
+				);
+				$this->showPage( $operation );
+				return;
+			}
+
 			$unitFuzzySelector = $request->getRawVal( 'unit-fuzzy-selector' );
 			if ( $unitFuzzySelector === 'all' ) {
 				$noFuzzyUnits = [];

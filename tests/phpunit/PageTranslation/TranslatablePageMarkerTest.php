@@ -256,4 +256,25 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			->getText();
 		$this->assertEquals( 'FooBar', $currentText );
 	}
+
+	public static function provideValidatePriorityLanguages(): array {
+		return [
+			'empty list is valid' => [ [], true ],
+			'known codes are valid' => [ [ 'en', 'de', 'fr' ], true ],
+			'unknown code is invalid' => [ [ 'en', 'not-a-language' ], false ],
+			'all unknown codes are invalid' => [ [ 'xx', 'yy' ], false ],
+		];
+	}
+
+	/** @dataProvider provideValidatePriorityLanguages */
+	public function testValidatePriorityLanguages( array $codes, bool $expectValid ): void {
+		$marker = $this->createTranslatableMarkPage();
+		$language = $this->getServiceContainer()->getLanguageFactory()->getLanguage( 'en' );
+		$status = $marker->validatePriorityLanguages( $codes, $language );
+		if ( $expectValid ) {
+			$this->assertStatusGood( $status );
+		} else {
+			$this->assertStatusNotGood( $status );
+		}
+	}
 }

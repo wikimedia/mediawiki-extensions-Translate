@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatablePageStore;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Language\MessageLocalizer;
@@ -33,6 +34,7 @@ use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\Message\ListType;
 use Wikimedia\Rdbms\IConnectionProvider;
 use WikiPageMessageGroup;
 
@@ -447,6 +449,19 @@ class TranslatablePageMarker {
 		);
 
 		$this->handlePriorityLanguages( $operation->getPage(), $pageSettings, $user );
+	}
+
+	public function validatePriorityLanguages( array $codes ): Status {
+		$knownCodes = array_keys( Utilities::getLanguageNames( 'en' ) );
+		$invalidCodes = array_diff( $codes, $knownCodes );
+		if ( $invalidCodes ) {
+			return Status::newFatal(
+				'tpt-priority-languages-invalid',
+				count( $invalidCodes ),
+				Message::listParam( array_values( $invalidCodes ), ListType::AND )
+			);
+		}
+		return Status::newGood();
 	}
 
 	private function handlePriorityLanguages(
