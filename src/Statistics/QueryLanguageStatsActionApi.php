@@ -58,6 +58,17 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 
 	/** @inheritDoc */
 	protected function makeStatsItem( string $item, array $stats ): ?array {
+		$translated = $stats[MessageGroupStats::TRANSLATED];
+		$fuzzy = $stats[MessageGroupStats::FUZZY];
+		$total = $stats[MessageGroupStats::TOTAL];
+
+		if ( $this->getParameter( 'suppresscomplete' ) && $fuzzy === 0 && $translated > 0 && $translated === $total ) {
+			return null;
+		}
+		if ( $this->getParameter( 'suppressempty' ) && $translated === 0 && $fuzzy === 0 ) {
+			return null;
+		}
+
 		$group = MessageGroups::getGroup( $item );
 		if ( $group !== null ) {
 			$language = $this->getParameter( 'language' );
@@ -66,8 +77,8 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 			if ( $isExcluded ) {
 				if ( !$this->configHelper->canSeeExcludedLanguageStats(
 					$this->getAuthority(),
-					$stats[MessageGroupStats::TRANSLATED],
-					$stats[MessageGroupStats::FUZZY]
+					$translated,
+					$fuzzy
 				) ) {
 					return null;
 				}
@@ -99,6 +110,14 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 			ParamValidator::PARAM_TYPE => 'string',
 		];
 
+		$params['suppresscomplete'] = [
+			ParamValidator::PARAM_TYPE => 'boolean',
+		];
+
+		$params['suppressempty'] = [
+			ParamValidator::PARAM_TYPE => 'boolean',
+		];
+
 		return $params;
 	}
 
@@ -106,9 +125,11 @@ class QueryLanguageStatsActionApi extends QueryStatsActionApi {
 	protected function getExamplesMessages(): array {
 		return [
 			'action=query&meta=languagestats&lslanguage=fi'
-			=> 'apihelp-query+languagestats-example-1',
-			'action=query&meta=languagestats&lslanguage=fi&group=A'
-			=> 'apihelp-query+languagestats-example-2'
+				=> 'apihelp-query+languagestats-example-1',
+			'action=query&meta=languagestats&lslanguage=fi&lsgroup=A'
+				=> 'apihelp-query+languagestats-example-2',
+			'action=query&meta=languagestats&lslanguage=fi&lssuppresscomplete=1&lssuppressempty=1'
+				=> 'apihelp-query+languagestats-example-3',
 		];
 	}
 }
