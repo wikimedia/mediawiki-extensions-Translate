@@ -158,16 +158,18 @@
 		}
 	}
 
-	li {
+	> li {
 		&.selected {
 			border-bottom: @border-width-thick @border-style-base @border-color-progressive;
 
-			a {
+			> a,
+			> span {
 				color: @color-progressive;
 			}
 		}
 
-		a {
+		> a,
+		> span {
 			color: @color-subtle;
 			text-decoration: none;
 			white-space: nowrap;

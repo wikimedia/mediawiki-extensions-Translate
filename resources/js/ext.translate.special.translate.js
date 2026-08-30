@@ -743,7 +743,7 @@
 			var $this = $( this );
 
 			if ( $this.hasClass( 'more' ) ) {
-				return false;
+				return;
 			}
 
 			var newFilter = $this.data( 'filter' );
@@ -760,8 +760,14 @@
 			// TODO: this could should be in messagetable
 			$hideTranslatedButton.toggleClass( 'hide', translated )
 				.prop( 'disabled', !translated && !getTranslatedMessages( $translateContainer ).length );
+		} );
 
-			return false;
+		// Message filter keyboard handler for accessibility
+		$translateContainer.find( '.row.tux-message-selector > li > span' ).on( 'keydown', function ( e ) {
+			if ( e.key === 'Enter' || e.key === ' ' ) {
+				e.preventDefault();
+				$( this ).trigger( 'click' );
+			}
 		} );
 
 		// TODO: this could should be in messagetable

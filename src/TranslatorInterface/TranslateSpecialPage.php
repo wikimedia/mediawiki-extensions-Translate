@@ -203,7 +203,14 @@ class TranslateSpecialPage extends SpecialPage {
 			// tux-tab-translated
 			// tux-tab-unproofread
 			$tabClass = "tux-tab-$tab";
-			$link = Html::element( 'a', [ 'href' => '#' ], $this->msg( $tabClass )->text() );
+			$link = Html::element(
+				'span',
+				[
+					'role' => 'button',
+					'tabindex' => '0',
+				],
+				$this->msg( $tabClass )->text()
+			);
 			$output .= Html::rawElement( 'li', [
 				'class' => 'column ' . $tabClass,
 				'data-filter' => $filter,
