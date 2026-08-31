@@ -457,7 +457,7 @@ class TranslatablePageMarker {
 		if ( $invalidCodes ) {
 			return Status::newFatal(
 				'tpt-priority-languages-invalid',
-				count( $invalidCodes ),
+				Message::numParam( count( $invalidCodes ) ),
 				Message::listParam( array_values( $invalidCodes ), ListType::AND )
 			);
 		}
