@@ -200,6 +200,7 @@
 	"translate-langstats-collapse": "einklappen",
 	"translate-langstats-expandall": "alle ausklappen",
 	"translate-langstats-collapseall": "alle einklappen",
+	"translate-langstats-disabled-language": "Die Übersetzung in diese Sprache ist für diese Gruppe deaktiviert.",
 	"translate-language-code": "Sprachcode",
 	"translate-language-field-name": "Sprache:",
 	"translate-suppress-complete": "Vollständig übersetzte Nachrichtengruppen unterdrücken",

@@ -182,6 +182,7 @@
 	"translate-langstats-collapse": "собери",
 	"translate-langstats-expandall": "прикажи сè",
 	"translate-langstats-collapseall": "скриј сè",
+	"translate-langstats-disabled-language": "Преведувањето на овој јазик е оневозможено за оваа група.",
 	"translate-language-code": "Јазичен код",
 	"translate-language-field-name": "Јазик:",
 	"translate-suppress-complete": "Не прикажувај наполно преведени групи на пораки",

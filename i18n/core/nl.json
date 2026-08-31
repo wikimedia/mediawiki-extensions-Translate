@@ -194,6 +194,7 @@
 	"translate-langstats-collapse": "samenvouwen",
 	"translate-langstats-expandall": "alles uitvouwen",
 	"translate-langstats-collapseall": "alles samenvouwen",
+	"translate-langstats-disabled-language": "Vertalen naar deze taal is voor deze groep uitgeschakeld.",
 	"translate-language-code": "Taalcode",
 	"translate-language-field-name": "Taal:",
 	"translate-suppress-complete": "Volledig vertaalde berichtengroepen verbergen",

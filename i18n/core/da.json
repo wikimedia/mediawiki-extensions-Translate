@@ -188,6 +188,7 @@
 	"translate-langstats-collapse": "fold sammen",
 	"translate-langstats-expandall": "fold alle ud",
 	"translate-langstats-collapseall": "fold alle sammen",
+	"translate-langstats-disabled-language": "Oversættelse til dette sprog er deaktiveret for denne gruppe.",
 	"translate-language-code": "Sprogkode",
 	"translate-language-field-name": "Sprog:",
 	"translate-suppress-complete": "Vis ikke beskedgrupper som er fuldt oversatte",

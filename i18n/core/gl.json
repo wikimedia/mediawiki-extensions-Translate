@@ -183,6 +183,7 @@
 	"translate-langstats-collapse": "encartar",
 	"translate-langstats-expandall": "despregar todo",
 	"translate-langstats-collapseall": "encartar todo",
+	"translate-langstats-disabled-language": "A tradución deste grupo está desactivada nesta lingua.",
 	"translate-language-code": "Código de lingua",
 	"translate-language-field-name": "Lingua:",
 	"translate-suppress-complete": "Omitir os grupos de mensaxes completamente traducidos",

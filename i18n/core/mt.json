@@ -298,7 +298,7 @@
 	"tux-editor-doc-editor-save": "Ippubblika d-dokumentazzjoni",
 	"tux-editor-doc-editor-cancel": "Xejjen",
 	"tux-message-filter-placeholder": "Iffiltra lista",
-	"tux-message-filter-result": "Sibna $1{{PLURAL:$1|one= riżultat|few= riżultati|many=-il riżultat|other= riżultati}} għal \"$2\"",
+	"tux-message-filter-result": "Sibna $1{{PLURAL:$1|riżultat|riżultati|-il riżultat|riżultat}} għal \"$2\"",
 	"tux-message-filter-advanced-button": "Tfittxija avvanzata",
 	"tux-message-filter-optional-messages-label": "Messaġġi fakultattivi",
 	"tux-proofread-translated-by-self": "Tradotti minnek",
