@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ezagren"
+			"Ezagren",
+			"Badak Jawa"
 		]
 	},
 	"translate-extensionname": "Tarjamahan",
@@ -22,6 +23,7 @@
 	"importtranslations": "Impur tarjamahan",
 	"translate-documentation-language": "Dokuméntasi pasan",
 	"translate-searchprofile": "Tarjamahan",
+	"translate-msggroupselector-search-recent": "Pahanyarnya",
 	"tux-notices-hide": "suhukakan",
 	"tux-editor-collapse-tooltip": "Ungsutakan"
 }
