@@ -181,7 +181,6 @@
 	"apierror-translate-rename-state-invalid": "ЦӀе хийца дӀакхачийначу хаамех цхьаъ керла тӀетоха деза, важа дӀадаккха деза. Карара статус - тӀетохар: $1 а, дӀадаккхар а: $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "Хаамийн тобанна тӀе тӀейаздар дац",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Динамикин хаамийн тобанаш хьажар ловш дац.",
-	"apierror-markfortranslation-invalid-prioritylangs": "Меттан нийса йоцу {{PLURAL:$1|код хьалхара меттанашна билгалйаьккхина|кодаш хьалхара меттанашна билгалйаьхна}}: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "ХӀинцале а билгалдаьккхина хьо хьаьжна санна",
 	"apiwarn-translate-language-disabled-source": "ХӀокху тобанан йуьхьанцара мотт бу — $1. Дехар до, кхин мотт схьахаржа, гочдан.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Ахь гочдеш ду <bdi>$1</bdi>.</strong> Иза вариант <bdi>$2</bdi> хӀинцале а хӀокху хаамийн йуьхьанцара мотт бу. Хаьржина мотт нийса хиларх тешна хила, меттан варианташна йукъахь йолу башхаллаш тидаме а оьцуш, дика гочдар дан.",

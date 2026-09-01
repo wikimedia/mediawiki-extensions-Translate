@@ -186,7 +186,6 @@
 	"apierror-translate-rename-state-invalid": "이름 변경을 위해 전달된 메시지 중 하나는 새로 추가되고 다른 하나는 삭제되어야 합니다. 현재 상태 - 추가: $1, 삭제: $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "메시지 그룹 구독이 활성화되지 않았습니다",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "동적 메시지 그룹 주시는 지원하지 않습니다",
-	"apierror-markfortranslation-invalid-prioritylangs": "우선 언어에 대해 잘못된 언어 {{PLURAL:$1|코드가|코드들이}} 지정됨: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "이미 당신이 검토한 것으로 표시되었습니다",
 	"apiwarn-translate-language-disabled-source": "이 그룹의 원본 언어는 $1입니다. 번역 결과물에 쓰일 다른 언어를 선택해 주십시오.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>현재 <bdi>$1</bdi>로 번역 중입니다.</strong> 이는 이미 이 메시지의 원본 언어로 사용되고 있는 <bdi>$2</bdi>의 변종입니다. 선택한 언어가 올바른지 확인하고, 양질의 번역을 제공하기 위해 언어 변종 간 차이점을 고려하기 바랍니다.",

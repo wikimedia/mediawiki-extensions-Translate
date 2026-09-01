@@ -186,7 +186,6 @@
 	"apierror-translate-rename-state-invalid": "其中一個傳送嚟改名嘅訊息應該係新加入嘅，而另一個訊息應該係要刪除。最新狀態 - 新增：$1 同刪除：$2。",
 	"apierror-translate-messagegroupsubscription-disabled": "訊息谷嘅訂閱未啟用",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "唔支援睇動態訊息谷",
-	"apierror-markfortranslation-invalid-prioritylangs": "無效嘅語言{{PLURAL:$1|code|代碼}}為優先語言指定：$2",
 	"apiwarn-translate-alreadyreviewedbyyou": "已經標記為你評論過嘅",
 	"apiwarn-translate-language-disabled-source": "呢個群谷嘅源語言係 $1 。請揀另一種語言翻譯。",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>你翻譯緊成<bdi>$1</bdi>。</strong>佢係一個變體<bdi>$2</bdi>, 呢個已經係呢啲訊息嘅源語言，確保所選語言係正確嘅，同埋考慮唔同語言變體嘅差異，以便提供一個好嘅翻譯。",

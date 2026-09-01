@@ -183,7 +183,6 @@
 	"apierror-translate-rename-state-invalid": "En av beskjedene som ble gitt for omdøping bør være lagt til som ny, og den andre slettet. Nåværende statuser – tillegg: $1 og sletting: $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "Abonnement på meldingsgrupper er ikke aktivert",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Overvåking av dynamiske meldingsgrupper støttes ikke",
-	"apierror-markfortranslation-invalid-prioritylangs": "{{PLURAL:$1|Ugyldig språkkode|Ugyldige språkkoder}} angitt for prioriterte språk: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "Allerede merket som vurdert av deg",
 	"apiwarn-translate-language-disabled-source": "Kildespråket for denne gruppa er $1. Velg et annet språk å oversette til.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Du oversetter til <bdi>$1</bdi>.</strong> Det er en variant av <bdi>$2</bdi>, som allerede er kildespråket for disse beskjedene. Sørg for at det valgte språket er riktig, og vurder forskjellene mellom disse språkvariantene for å gjøre en god oversettelse.",

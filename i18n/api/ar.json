@@ -185,7 +185,6 @@
 	"apierror-translate-rename-state-invalid": "تجب إضافة إحدى الرسائل التي تم تمريرها لإعادة التسمية مؤخرا وحذف الرسالة الأخر، الحالات الحالية، الإضافة: $1 والحذف: $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "لم يتم تفعيل اشتراك مجموعة الرسائل",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "لا يتم دعم مشاهدة مجموعات الرسائل الديناميكية",
-	"apierror-markfortranslation-invalid-prioritylangs": "لغة غير صالحة {{PLURAL:$1|كود}} المحددة للغات ذات الأولوية: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "تم تعليمها كمراجعة من قبلك",
 	"apiwarn-translate-language-disabled-source": "لغة المصدر لهذه المجموعة هي $1; يُرجَى تحديد لغة أخرى للترجمة إليها.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>أنت تقوم بالترجمة إلى لغة <bdi>$1</bdi>.</strong> إنه أحد أشكال <bdi>$2</bdi> ، وهي لغة المصدر لهذه الرسائل. تأكد من صحة اللغة المختارة، وراعِ الاختلافات بين اللغات المختلفة للحصول على ترجمة جيدة.",

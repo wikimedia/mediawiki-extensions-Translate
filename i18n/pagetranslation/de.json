@@ -128,6 +128,7 @@
 	"tpt-discouraged-language-header": "Das Übersetzen dieser Seite auf $1 hat keine Priorität.",
 	"tpt-discouraged-language-content": "Ein Übersetzungsadministrator hat entschieden, die Übersetzungsarbeiten auf $1 zu konzentrieren.",
 	"tpt-discouraged-language-force": "<strong>Diese Seite kann nicht in $2 übersetzt werden.</strong>\n\nEin Übersetzungsadministrator hat entschieden, dass diese Seite nur in $3 übersetzt werden kann.",
+	"tpt-priority-languages-invalid": "Für die vorrangigen Sprachen {{PLURAL:$1|wurde ein ungültiger Sprachecode|wurden ungültige Sprachecodes}} angegeben: $2",
 	"tpt-priority-languages": "Ein Übersetzungsadministrator hat die priorisierte Sprachen für diese Nachrichtengruppe auf $1 festgelegt.",
 	"tpt-priority-languages-force": "Ein Übersetzungsadministrator hat die priorisierten Sprachen für diese Gruppe auf $1 festgelegt. Das Übersetzen in andere Sprachen ist nicht erlaubt.",
 	"tpt-discouraged-translation-header": "Von der Übersetzung dieser Seite wurde abgeraten.",

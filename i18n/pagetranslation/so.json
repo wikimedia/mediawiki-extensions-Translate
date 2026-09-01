@@ -114,6 +114,7 @@
 	"tpt-discouraged-language-header": "Tarjumaadda $1 ma aha mudnaan u leh boggan.",
 	"tpt-discouraged-language-content": "Maamule tarjumaad ayaa go'aamiyay in dadaallada tarjumaadda lagu saleeyo $1.",
 	"tpt-discouraged-language-force": "<strong>Boggan looma tarjumi karo $2.</strong>\n\nMaamule tarjumaad ayaa go'aamiyay in boggan lagu tarjumi karo oo keliya $3.",
+	"tpt-priority-languages-invalid": "Luuqada {{PLURAL:$1|koodhka|koodhadhka}} aan ansax ahayn ayaa lagu cayimay luqadaha mudnaanta leh: $2",
 	"tpt-priority-languages": "Maamule tarjumaad ayaa u dejiyay luuqadaha mudnaanta leh ee kooxdan $1.",
 	"tpt-priority-languages-force": "Maamule tarjumaad ayaa u dejiyay luuqadaha mudnaanta leh ee kooxdan $1. Tarjumaadaha luuqado kale lama oggola.",
 	"tpt-discouraged-translation-header": "Tarjumaadda boggan waa laga niyad jabiyay",

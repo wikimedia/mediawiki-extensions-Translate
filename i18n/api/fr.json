@@ -199,7 +199,6 @@
 	"apierror-translate-rename-state-invalid": "Un des messages passés pour renommage devrait être nouvellement ajouté et l’autre supprimé. États actuels – ajout de : $1 et suppression de : $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "L’abonnement aux groupes de messages n’est pas activé.",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Le suivi de groupes de messages dynamiques n’est pas pris en charge.",
-	"apierror-markfortranslation-invalid-prioritylangs": "Pour les langues prioritaires, {{PLURAL:$1|le code de langue spécifié suivant est invalide|les codes de langues spécifiés suivants sont invalides}} : $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Déjà marqué comme ayant été relu par vous",
 	"apiwarn-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Vous traduisez en <bdi>$1</bdi>.</strong> C’est une variante des messages en <bdi> $2</bdi>, qui est déjà la langue source de tels messages. Assurez-vous que la langue sélectionnée est correcte et tenez compte des différences entre les variantes linguistiques pour fournir une bonne traduction.",

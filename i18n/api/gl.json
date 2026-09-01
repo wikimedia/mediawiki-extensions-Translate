@@ -187,7 +187,6 @@
 	"apierror-translate-rename-state-invalid": "Unha das mensaxes pasadas para cambiar o nome debería engadirse novamente e a outra eliminarse. Estados actuais - adición: $1 e eliminación: $2.",
 	"apierror-translate-messagegroupsubscription-disabled": "A subscrición ao grupo de mensaxes non está activada",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "Non se admite a vixilancia de grupos de mensaxes dinámicas",
-	"apierror-markfortranslation-invalid-prioritylangs": "{{PLURAL:$1|Especifiouse un código de lingua non válido|Especificáronse códigos de lingua non válidos}} para as linguas prioritarias: $2",
 	"apiwarn-translate-alreadyreviewedbyyou": "Xa marcada como revisada por ti",
 	"apiwarn-translate-language-disabled-source": "A lingua de orixe deste grupo é o $1. Seleccione outra lingua á que traducir.",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>Estás traducindo ao <bdi>$1</bdi>.</strong> É unha variante do <bdi>$2</bdi>, que xa é a lingua de orixe destas mensaxes. Asegúrese de que a lingua seleccionada é correcta e considere as diferenzas entre as variantes lingüísticas para proporcionar unha boa tradución.",

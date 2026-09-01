@@ -187,7 +187,6 @@
 	"apierror-translate-rename-state-invalid": "傳遞用於重新命名的訊息裡其中一個得重新添加，而另一個應刪除。目前狀態 - 添加：$1，刪除：$2。",
 	"apierror-translate-messagegroupsubscription-disabled": "未啟用訊息群組訂閱",
 	"apierror-translate-messagegroupsubscription-dynamic-group-unsupported": "不支援監視動態訊息群組",
-	"apierror-markfortranslation-invalid-prioritylangs": "優先語言指定的語言{{PLURAL:$1|代碼}}無效：$2",
 	"apiwarn-translate-alreadyreviewedbyyou": "已由您標記為已審核",
 	"apiwarn-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。",
 	"apiwarn-translate-language-targetlang-variant-of-source": "<strong>您正在將訊息翻譯成<bdi>$1</bdi>。</strong>該語言是<bdi>$2</bdi>的變體，而<bdi>$2</bdi>已經是這些訊息的來源語言。請確保正確選擇語言，並注意不同語言變體之間的差異，提供良好的譯文。",
