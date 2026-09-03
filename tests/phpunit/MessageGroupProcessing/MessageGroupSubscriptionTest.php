@@ -8,6 +8,9 @@ use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Notification\Notification;
+use MediaWiki\Notification\NotificationService;
+use MediaWiki\Notification\RecipientSet;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use MessageGroupTestConfig;
@@ -23,8 +26,8 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;
 
 	private MessageGroupSubscription $subscription;
-	/** @var MockEventCreator&MockObject */
-	private MockEventCreator $mockEventCreator;
+	/** @var NotificationService&MockObject */
+	private NotificationService $notificationServiceMock;
 	/** @var MessageGroupSubscriptionStore&MockObject */
 	private MessageGroupSubscriptionStore $subscriptionStoreMock;
 
@@ -43,15 +46,28 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
 	}
 
-	/** @dataProvider provideTestSendNotifications */
-	public function testSendNotifications( array $info, array $expectedValues, array $expectedGroupIds ): void {
+	/**
+	 * @dataProvider provideTestSendNotifications
+	 * @param array $info
+	 * @param array $expectedProperties
+	 * @param string[] $expectedGroupIds
+	 */
+	public function testSendNotifications( array $info, array $expectedProperties, array $expectedGroupIds ): void {
 		$invocationCount = 0;
+		$subscriberId = $this->getTestUser()->getUser()->getId();
 
-		$this->mockEventCreator
-			->expects( $this->exactly( count( $expectedGroupIds ) ) )
-			->method( 'create' )
-			->willReturnCallback( function ( $value ) use ( &$invocationCount, $expectedValues ) {
-				$this->assertEquals( $expectedValues[$invocationCount], $value );
+		$this->notificationServiceMock
+			->expects( $this->exactly( count( $expectedProperties ) ) )
+			->method( 'notify' )
+			->willReturnCallback( function ( Notification $notification, RecipientSet $recipients )
+				use ( &$invocationCount, $expectedProperties, $subscriberId ) {
+				$this->assertSame( 'translate-mgs-message-added', $notification->getType() );
+				$this->assertEquals( $expectedProperties[$invocationCount], $notification->getProperties() );
+				$this->assertEqualsCanonicalizing(
+					[ $subscriberId ],
+					array_map( static fn ( $user ) => $user->getId(), $recipients->getRecipients() )
+				);
+
 				$invocationCount++;
 			} );
 		$this->subscriptionStoreMock
@@ -61,7 +77,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 				return count( $actualGroupIds ) === count( $expectedGroupIds ) &&
 					!array_diff( $actualGroupIds, $expectedGroupIds );
 			} ) )
-			->willReturn( array_fill_keys( $expectedGroupIds, [ 1 ] ) );
+			->willReturn( array_fill_keys( $expectedGroupIds, [ $subscriberId ] ) );
 		$this->subscription->sendNotifications( $info );
 	}
 
@@ -77,41 +93,24 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
 				]
 			],
-			'expectedValues' => [
+			'expectedProperties' => [
 				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'agg-group-id',
-						'groupLabel' => 'aggregate group',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'msg1', 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'msg2', 'tp-msg2' ]
-						],
-					]
+					'groupId' => 'agg-group-id',
+					'groupLabel' => 'aggregate group',
+					'changes' => [
+						MessageGroupSubscription::STATE_ADDED => [ 'msg1', 'tp-msg1' ],
+						MessageGroupSubscription::STATE_UPDATED => [ 'msg2', 'tp-msg2' ]
+					],
 				],
 				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'agg-group-id-tp-1',
-						'groupLabel' => 'none',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
-						],
-					]
+					'groupId' => 'agg-group-id-tp-1',
+					'groupLabel' => 'none',
+					'changes' => [
+						MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
+						MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
+					],
 				],
-				[
-					'type' => 'translate-mgs-message-added',
-					'extra'	=> [
-						'groupId' => 'parent-agg-group-id',
-						'groupLabel' => 'parent aggregate group',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'msg1', 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'msg2', 'tp-msg2' ]
-						],
-						'sourceGroupIds' => [ 'agg-group-id', 'agg-group-id-tp-1' ]
-					]
-				]
+				// parent-agg-group-id is not notified: its subscriber is already notified via both source groups
 			],
 			'expectedGroupIds' => [ 'agg-group-id', 'agg-group-id-tp-1', 'parent-agg-group-id' ],
 		];
@@ -127,55 +126,27 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 				]
 			],
-			'expectedValues' => [
+			'expectedProperties' => [
 				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'agg-group-id-tp-1',
-						'groupLabel' => 'none',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
-						],
-					]
+					'groupId' => 'agg-group-id-tp-1',
+					'groupLabel' => 'none',
+					'changes' => [
+						MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
+						MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
+					],
 				],
 				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'bar',
-						'groupLabel' => 'none',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'bar-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
-						]
+					'groupId' => 'bar',
+					'groupLabel' => 'none',
+					'changes' => [
+						MessageGroupSubscription::STATE_ADDED => [ 'bar-msg1' ],
+						MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 					]
 				],
-				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'agg-group-id',
-						'groupLabel' => 'aggregate group',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
-						],
-						'sourceGroupIds' => [ 'agg-group-id-tp-1' ]
-					]
-				],
-				[
-					'type' => 'translate-mgs-message-added',
-					'extra'	=> [
-						'groupId' => 'parent-agg-group-id',
-						'groupLabel' => 'parent aggregate group',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'tp-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'tp-msg2' ]
-						],
-						'sourceGroupIds' => [ 'agg-group-id-tp-1' ]
-					]
-				]
+				// agg-group-id and parent-agg-group-id are not notified: their subscriber is already
+				// notified via the agg-group-id-tp-1 source group
 			],
-			'expectedGroupIds' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1', 'parent-agg-group-id' ]
+			'expectedGroupIds' => [ 'agg-group-id', 'bar', 'agg-group-id-tp-1', 'parent-agg-group-id' ],
 		];
 
 		yield 'notification for a normal group' => [
@@ -185,20 +156,17 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 					MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 				]
 			],
-			'expectedValues' => [
+			'expectedProperties' => [
 				[
-					'type' => 'translate-mgs-message-added',
-					'extra' => [
-						'groupId' => 'bar',
-						'groupLabel' => 'none',
-						'changes' => [
-							MessageGroupSubscription::STATE_ADDED => [ 'bar-msg1' ],
-							MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
-						]
+					'groupId' => 'bar',
+					'groupLabel' => 'none',
+					'changes' => [
+						MessageGroupSubscription::STATE_ADDED => [ 'bar-msg1' ],
+						MessageGroupSubscription::STATE_UPDATED => [ 'bar-msg2' ]
 					]
 				]
 			],
-			'expectedGroupIds' => [ 'bar' ]
+			'expectedGroupIds' => [ 'bar' ],
 		];
 	}
 
@@ -249,11 +217,14 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
+		$this->notificationServiceMock = $this->createMock( NotificationService::class );
+
 		$serviceContainer = $this->getServiceContainer();
 		$this->subscription = new MessageGroupSubscription(
 			$this->subscriptionStoreMock,
 			$serviceContainer->getJobQueueGroup(),
 			$serviceContainer->getUserIdentityLookup(),
+			$this->notificationServiceMock,
 			LoggerFactory::getInstance( 'test.translate' ),
 			new ServiceOptions(
 				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
@@ -262,13 +233,6 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 				]
 			)
 		);
-
-		$this->mockEventCreator = $this->getMockBuilder( MockEventCreator::class )
-			->disableOriginalConstructor()
-			->onlyMethods( [ 'create' ] )
-			->getMock();
-
-		$this->subscription->setMockEventCreator( $this->mockEventCreator );
 	}
 
 	private function getTestGroups(): array {

@@ -245,6 +245,7 @@ return [
 			$services->get( 'Translate:MessageGroupSubscriptionStore' ),
 			$services->getJobQueueGroup(),
 			$services->getUserIdentityLookup(),
+			$services->getNotificationService(),
 			LoggerFactory::getInstance( LogNames::GROUP_SUBSCRIPTION ),
 			new ServiceOptions(
 				MessageGroupSubscription::CONSTRUCTOR_OPTIONS,
@@ -259,10 +260,7 @@ return [
 		if ( !$services->getExtensionRegistry()->isLoaded( 'Echo' ) ) {
 			return null;
 		}
-		return new MessageGroupSubscriptionHookHandler(
-			$services->get( 'Translate:MessageGroupSubscription' ),
-			$services->getUserFactory()
-		);
+		return new MessageGroupSubscriptionHookHandler();
 	},
 
 	'Translate:MessageGroupSubscriptionStore' => static function (

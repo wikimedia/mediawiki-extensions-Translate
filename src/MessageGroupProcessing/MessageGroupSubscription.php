@@ -6,9 +6,11 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 use EmptyIterator;
 use Iterator;
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\JobQueue\JobQueueGroup;
+use MediaWiki\Notification\Notification;
+use MediaWiki\Notification\NotificationService;
+use MediaWiki\Notification\RecipientSet;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -27,7 +29,6 @@ class MessageGroupSubscription {
 	private bool $isMessageGroupSubscriptionEnabled;
 	/** @var array<string,array<string,array<int,string>>> */
 	private array $queuedMessages = [];
-	private ?MockEventCreator $mockEventCreator = null;
 
 	public const STATE_ADDED = 'added';
 	public const STATE_UPDATED = 'updated';
@@ -41,6 +42,7 @@ class MessageGroupSubscription {
 		private readonly MessageGroupSubscriptionStore $groupSubscriptionStore,
 		private readonly JobQueueGroup $jobQueueGroup,
 		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly NotificationService $notificationService,
 		private readonly LoggerInterface $logger,
 		ServiceOptions $options
 	) {
@@ -195,26 +197,30 @@ class MessageGroupSubscription {
 				'changes' => $state,
 			];
 
-			if ( isset( $sourceGroupIdMap[ $groupId ] ) ) {
-				$extraParams['sourceGroupIds'] = array_unique( array_keys( $sourceGroupIdMap[ $groupId ] ) );
+			$sourceGroupIds = array_keys( $sourceGroupIdMap[ $groupId ] ?? [] );
+
+			$recipientIds = $this->excludeCommonSubscribers(
+				$groupSubscribers, $sourceGroupIds, $allGroupSubscribers
+			);
+
+			if ( $recipientIds === [] ) {
+				$this->logger->info(
+					'All subscribers of {groupId} group are notified via a source group.',
+					[ 'groupId' => $groupId ]
+				);
+				continue;
 			}
 
-			if ( $this->mockEventCreator ) {
-				$this->mockEventCreator->create( [
-					'type' => 'translate-mgs-message-added',
-					'extra' => $extraParams
-				] );
-			} else {
-				Event::create( [
-					'type' => 'translate-mgs-message-added',
-					'extra' => $extraParams
-				] );
-			}
+			$this->notificationService->notify(
+				new Notification( 'translate-mgs-message-added', $extraParams ),
+				new RecipientSet( iterator_to_array( $this->getUserIdentities( $recipientIds ) ) )
+			);
 
 			$this->logger->info(
-				'Event created for {groupId} with {subscriberCount} subscribers.',
+				'Event created for {groupId} with {recipientCount} out of {subscriberCount} subscribers.',
 				[
 					'groupId' => $groupId,
+					'recipientCount' => count( $recipientIds ),
 					'subscriberCount' => count( $groupSubscribers )
 				]
 			);
@@ -229,28 +235,49 @@ class MessageGroupSubscription {
 	public function getGroupSubscribers( string $groupId ): Iterator {
 		$groupSubscriberIds = $this->getSubscriberIdsForGroups( [ $groupId ] );
 		$groupSubscriberIds = $groupSubscriberIds[ $groupId ] ?? [];
-		if ( $groupSubscriberIds === [] ) {
+
+		return $this->getUserIdentities( $groupSubscriberIds );
+	}
+
+	/**
+	 * Remove subscribers who are also subscribed to every one of the given source groups, since
+	 * they will already receive a more specific notification for those groups.
+	 * @param int[] $subscriberIds
+	 * @param string[] $sourceGroupIds
+	 * @param array<string,int[]> $allGroupSubscribers
+	 * @return int[]
+	 */
+	private function excludeCommonSubscribers(
+		array $subscriberIds, array $sourceGroupIds, array $allGroupSubscribers
+	): array {
+		if ( !$sourceGroupIds ) {
+			return $subscriberIds;
+		}
+
+		$subscriberSets = array_map(
+			static fn ( string $sourceGroupId ) => $allGroupSubscribers[ $sourceGroupId ] ?? [],
+			$sourceGroupIds
+		);
+		// array_intersect() only requires one array; Phan's signature for it is overly strict.
+		// @phan-suppress-next-line PhanParamTooFewInternalUnpack
+		$commonSubscriberIds = array_intersect( ...$subscriberSets );
+
+		return array_diff( $subscriberIds, $commonSubscriberIds );
+	}
+
+	/**
+	 * @param int[] $userIds
+	 * @return Iterator<UserIdentity>
+	 */
+	private function getUserIdentities( array $userIds ): Iterator {
+		if ( $userIds === [] ) {
 			return new EmptyIterator();
 		}
 
 		return $this->userIdentityLookup->newSelectQueryBuilder()
-			->whereUserIds( $groupSubscriberIds )
+			->whereUserIds( $userIds )
 			->caller( __METHOD__ )
 			->fetchUserIdentities();
-	}
-
-	/**
-	 * Return a list of users ids that belong to all the given groups
-	 *
-	 * @param string[] $groupIds
-	 * @return int[]
-	 */
-	public function getGroupSubscriberUnion( array $groupIds ): array {
-		return $this->groupSubscriptionStore->getSubscriptionByGroupUnion( $groupIds );
-	}
-
-	public function setMockEventCreator( MockEventCreator $mockEventCreator ): void {
-		$this->mockEventCreator = $mockEventCreator;
 	}
 
 	/**
