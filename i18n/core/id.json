@@ -25,7 +25,7 @@
 		]
 	},
 	"translate": "Terjemahkan",
-	"translate-extensionname": "Terjemahan",
+	"translate-extensionname": "Terjemahkan",
 	"translate-desc": "[[Special:Translate|Halaman istimewa]] untuk menerjemahkan MediaWiki dan lain-lain",
 	"translate-fuzzybot-desc": "Ini adalah akun sistem khusus yang digunakan oleh [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate ekstensi Terjemahan] MediaWiki untuk mengelola terjemahan. Akun ini adalah bagian dari perangkat lunak MediaWiki dan tidak dimiliki oleh pengguna mana pun.",
 	"translate-taskui-export-to-file": "Ekspor dalam format asli",

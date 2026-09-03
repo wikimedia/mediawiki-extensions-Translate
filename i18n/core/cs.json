@@ -377,6 +377,8 @@
 	"specialpages-group-translation": "Překlad",
 	"content-model-translate-messagebundle": "Balíček přeložitelných hlášení",
 	"translate-hidetranslations": "Skrýt stránky překladů",
+	"echo-category-title-translate-message-group-subscription": "sledované skupiny přeložitelných zpráv",
+	"echo-pref-tooltip-translate-message-group-subscription": "Upozorněte mě na změny ve skupinách přeložitelných zpráv, které sleduji",
 	"notification-header-message-group-subscription": "Aktualizace překladů $1",
 	"notification-body-translate-mgs-message-added": "$1 {{PLURAL:$1|nové nebo aktualizované|nová nebo aktualizovaná|nových nebo aktualizovaných}} hlášení",
 	"notification-link-mgs-group-translate": "Překládat $1",
