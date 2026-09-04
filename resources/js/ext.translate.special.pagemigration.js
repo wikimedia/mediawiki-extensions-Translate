@@ -393,7 +393,6 @@
 					.removeClass( 'hide' );
 			} ).fail( function ( errmsg ) {
 				$( 'input' ).prop( 'disabled', false );
-				// eslint-disable-next-line mediawiki/msg-doc
 				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).removeClass( 'hide' );
 			} );
 		}
