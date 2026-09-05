@@ -5,11 +5,15 @@ namespace MediaWiki\Extension\Translate;
 
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
+use MediaWiki\Content\TextContent;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWikiLangTestCase;
 use MessageGroupTestTrait;
 use MockWikiMessageGroup;
+use StatusValue;
 
 /**
  * Test for various code using hooks.
@@ -98,6 +102,18 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 		HookHandler::searchProfile( $profiles );
 
 		$this->assertEquals( $expected, array_keys( $profiles ) );
+	}
+
+	public function testValidateMessageWithNoTitle(): void {
+		$context = $this->createMock( IContextSource::class );
+		$context->method( 'getTitle' )->willReturn( null );
+
+		$content = $this->createMock( TextContent::class );
+		$status = new StatusValue();
+		$user = $this->createMock( User::class );
+
+		$result = HookHandler::validateMessage( $context, $content, $status, 'Summary', $user );
+		$this->assertTrue( $result );
 	}
 
 }

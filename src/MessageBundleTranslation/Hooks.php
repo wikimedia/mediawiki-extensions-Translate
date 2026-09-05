@@ -69,11 +69,12 @@ class Hooks implements ArticleViewHeaderHook, EditFilterMergedContentHook, PageS
 		User $user,
 		$minoredit
 	): void {
-		if ( $content instanceof MessageBundleContent ) {
+		$title = $context->getTitle();
+		if ( $content instanceof MessageBundleContent && $title ) {
 			try {
 				// Validation is performed in the store because injecting services into the
 				// Content class is not straightforward
-				$this->messageBundleStore->validate( $context->getTitle(), $content );
+				$this->messageBundleStore->validate( $title, $content );
 			} catch ( MalformedBundle $e ) {
 				// MalformedBundle implements MessageSpecifier, but for unknown reason it gets
 				// cast to a string if we don't convert it to a proper message.

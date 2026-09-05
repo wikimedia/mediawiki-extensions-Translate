@@ -866,8 +866,11 @@ class HookHandler implements
 			return true;
 		}
 
-		$text = $content->getText();
 		$title = $context->getTitle();
+		if ( !$title ) {
+			return true;
+		}
+
 		$handle = new MessageHandle( $title );
 
 		if ( !$handle->isValid() ) {
@@ -891,7 +894,7 @@ class HookHandler implements
 			}
 
 			$message = new FatMessage( $handle->getKey(), $definition );
-			$message->setTranslation( $text );
+			$message->setTranslation( $content->getText() );
 
 			$messageValidator = $group->getValidator();
 			if ( !$messageValidator ) {
