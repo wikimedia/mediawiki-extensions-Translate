@@ -332,7 +332,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		);
 
 		if ( $count === $this->serviceFailureCount ) {
-			$this->logger->error( "Translation service $service suspended" );
+			$this->logger->warning( "Translation service $service suspended" );
 		} elseif ( $count > $this->serviceFailureCount ) {
 			$this->logger->warning( "Translation service $service still suspended" );
 		}
