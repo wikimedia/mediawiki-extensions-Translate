@@ -185,6 +185,7 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		$validator = new ValidationRunner( $this->getId() );
 		$validator->setValidators( [
 			[ 'id' => 'MediaWikiPlural' ],
+			[ 'id' => 'MediaWikiGender' ],
 			[ 'id' => 'BraceBalance' ]
 		] );
 

@@ -130,6 +130,7 @@ class PremadeMediaWikiExtensionGroups {
 			[ 'id' => 'MediaWikiPageName' ],
 			[ 'id' => 'MediaWikiParameter' ],
 			[ 'id' => 'MediaWikiPlural' ],
+			[ 'id' => 'MediaWikiGender' ],
 		];
 
 		$conf['INSERTABLES'] = [

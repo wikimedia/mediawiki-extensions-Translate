@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\Validation\Validators\InsertableRegexValidator
 use MediaWiki\Extension\Translate\Validation\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\IosVariableValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\MatchSetValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiGenderValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiLinkValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiPageNameValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\MediaWikiParameterValidator;
@@ -48,6 +49,14 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'IosVariable' => IosVariableValidator::class,
 		'MatchSet' => MatchSetValidator::class,
+		'MediaWikiGender' => [
+			'class' => MediaWikiGenderValidator::class,
+			'services' => [
+				'LanguageFactory',
+				'ParserFactory',
+				'UserFactory'
+			]
+		],
 		'MediaWikiLink' => MediaWikiLinkValidator::class,
 		'MediaWikiPageName' => MediaWikiPageNameValidator::class,
 		'MediaWikiParameter' => MediaWikiParameterValidator::class,
