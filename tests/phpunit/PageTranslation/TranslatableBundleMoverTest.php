@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\Services;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
@@ -184,7 +183,7 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 			userSessionInfo: []
 		);
 
-		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
+		$cache = $this->getServiceContainer()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
 		$sourceKey = $cache->makeKey( 'pt-lock', sha1( $sourceTitle->getPrefixedText() ) );
 		$targetKey = $cache->makeKey( 'pt-lock', sha1( $targetTitle->getPrefixedText() ) );
 
@@ -222,7 +221,7 @@ class TranslatableBundleMoverTest extends MediaWikiIntegrationTestCase {
 			leaveRedirect: false
 		);
 
-		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
+		$cache = $this->getServiceContainer()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
 		$targetKey = $cache->makeKey( 'pt-lock', sha1( $targetTitle->getPrefixedText() ) );
 
 		$this->assertFalse(
