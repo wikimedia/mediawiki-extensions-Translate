@@ -23,8 +23,11 @@ use MediaWiki\Extension\Translate\Validation\Validators\NewlineValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NotEmptyValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NotSupportedValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\NumericalParameterValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PercentEscapeValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PrintfIndexedParameterValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\PrintfValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\PythonInterpolationValidator;
+use MediaWiki\Extension\Translate\Validation\Validators\PythonNamedParameterValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\ReplacementValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extension\Translate\Validation\Validators\UnicodePluralValidator;
@@ -73,8 +76,11 @@ class ValidatorFactory {
 		'NotEmpty' => NotEmptyValidator::class,
 		'NotSupported' => NotSupportedValidator::class,
 		'NumericalParameter' => NumericalParameterValidator::class,
+		'PercentEscape' => PercentEscapeValidator::class,
 		'Printf' => PrintfValidator::class,
+		'PrintfIndexedParameter' => PrintfIndexedParameterValidator::class,
 		'PythonInterpolation' => PythonInterpolationValidator::class,
+		'PythonNamedParameter' => PythonNamedParameterValidator::class,
 		'Replacement' => ReplacementValidator::class,
 		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
