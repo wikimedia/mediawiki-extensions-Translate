@@ -220,6 +220,8 @@
 	"translate-translations-history-short": "Shortest possible abbreviation of \"history\". Used on [[Special:Translations]].",
 	"translate-translations-last-edit-header": "Column header for the last-edit column in the translations table on [[Special:Translations]].\n\n{{Identical|Last edit}}",
 	"translate-translations-last-edit": "Cell content for the last-edit column in the translations table on [[Special:Translations]]. Describes when and by whom a translation was last modified.\n\nParameters:\n* $1 - relative time of the edit (e.g. \"2 hours ago\", \"yesterday at 15:30\")\n* $2 - linked username of the last editor (raw HTML, may be a suppressed-user placeholder)",
+	"translate-translations-status-header": "Column header for the status column in the translations table on [[Special:Translations]]. The column shows the text of {{msg-mw|translate-translations-status-outdated}} for outdated (fuzzy) translations and is empty otherwise.\n\n{{Identical|Status}}",
+	"translate-translations-status-outdated": "Cell content in the status column of [[Special:Translations]], shown for outdated (fuzzy) translations.\n\n{{Identical|Outdated}}",
 	"languagestats": "{{doc-special|LanguageStats}}\n{{Identical|Language statistics}}",
 	"languagestats-summary": "Used in [[Special:LanguageStats]].",
 	"messagegroupstats-summary": "Used in [[Special:MessageGroupStats]]",

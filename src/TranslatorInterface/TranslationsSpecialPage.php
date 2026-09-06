@@ -184,7 +184,8 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				[],
 				Html::element( 'th', [], $this->msg( 'allmessagesname' )->text() ) .
 					Html::element( 'th', [], $this->msg( 'allmessagescurrent' )->text() ) .
-					Html::element( 'th', [], $this->msg( 'translate-translations-last-edit-header' )->text() )
+					Html::element( 'th', [], $this->msg( 'translate-translations-last-edit-header' )->text() ) .
+					Html::element( 'th', [], $this->msg( 'translate-translations-status-header' )->text() )
 			),
 		];
 
@@ -225,10 +226,8 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				continue;
 			}
 
-			$class = '';
-			if ( MessageHandle::hasFuzzyString( $pageText ) || $tHandle->isFuzzy() ) {
-				$class = 'mw-sp-translate-fuzzy';
-			}
+			$isFuzzy = MessageHandle::hasFuzzyString( $pageText ) || $tHandle->isFuzzy();
+			$class = $isFuzzy ? 'mw-sp-translate-fuzzy' : '';
 
 			$languageAttributes = [];
 			if ( $this->languageNameUtils->isKnownLanguageTag( $code ) ) {
@@ -262,12 +261,17 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				->rawParams( $userLinkHtml )
 				->escaped();
 
+			$statusCellHtml = $isFuzzy
+				? $this->msg( 'translate-translations-status-outdated' )->escaped()
+				: '';
+
 			$rows[] = Html::rawElement(
 				'tr',
 				[ 'class' => $class ],
 				Html::rawElement( 'td', [], $tools['history'] . $tools['edit'] ) .
 					Html::rawElement( 'td', $languageAttributes, $formattedContent ) .
-					Html::rawElement( 'td', [ 'data-sort-value' => $unixTimestamp ], $lastEditHtml )
+					Html::rawElement( 'td', [ 'data-sort-value' => $unixTimestamp ], $lastEditHtml ) .
+					Html::rawElement( 'td', [], $statusCellHtml )
 			);
 		}
 
