@@ -63,7 +63,7 @@ module.exports = ( function () {
 		return api.postWithToken( 'csrf', {
 			action: ACTION,
 			do: 'dissociate',
-			group: groupId,
+			groups: [ groupId ],
 			aggregategroup: aggregateGroupId
 		} );
 	}
@@ -79,7 +79,7 @@ module.exports = ( function () {
 		return api.postWithToken( 'csrf', {
 			action: ACTION,
 			do: 'associate',
-			group: groupId,
+			groups: [ groupId ],
 			aggregategroup: aggregateGroupId
 		} );
 	}

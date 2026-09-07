@@ -49,14 +49,12 @@ class AggregateGroupsActionApi extends ApiBase {
 		$action = $params['do'];
 		$output = [];
 		if ( $action === 'associate' || $action === 'dissociate' ) {
-			// Group or groups is mandatory only for these two actions
-			$this->requireOnlyOneParameter( $params, 'group', 'groups' );
-
-			if ( isset( $params['groups'] ) ) {
-				$subgroupIds = array_map( 'trim', $params['groups'] );
-			} else {
-				$subgroupIds = [ $params['group'] ];
+			// Groups is mandatory only for these two actions
+			if ( !isset( $params['groups'] ) ) {
+				$this->dieWithError( [ 'apierror-missingparam', 'groups' ] );
 			}
+
+			$subgroupIds = array_map( 'trim', $params['groups'] );
 
 			if ( !isset( $params['aggregategroup'] ) ) {
 				$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
@@ -254,11 +252,6 @@ class AggregateGroupsActionApi extends ApiBase {
 			],
 			'aggregategroup' => [
 				ParamValidator::PARAM_TYPE => 'string',
-			],
-			'group' => [
-				// For backward compatibility
-				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_DEPRECATED => true,
 			],
 			'groups' => [
 				// Not providing a list of values to allow dissociation of unknown groups

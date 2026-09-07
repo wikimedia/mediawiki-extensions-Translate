@@ -17,7 +17,6 @@
 	"apihelp-aggregategroups-extended-description": "{{doc-apihelp-extended-description|aggregategroups}}",
 	"apihelp-aggregategroups-param-do": "{{doc-apihelp-param|aggregategroups|do}}",
 	"apihelp-aggregategroups-param-aggregategroup": "{{doc-apihelp-param|aggregategroups|aggregategroup}}",
-	"apihelp-aggregategroups-param-group": "{{doc-apihelp-param|aggregategroups|group}}",
 	"apihelp-aggregategroups-param-groups": "{{doc-apihelp-param|aggregategroups|groups}}",
 	"apihelp-aggregategroups-param-groupname": "{{doc-apihelp-param|aggregategroups|groupname}}",
 	"apihelp-aggregategroups-param-groupdescription": "{{doc-apihelp-param|aggregategroups|groupdescription}}",
