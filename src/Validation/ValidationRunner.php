@@ -107,7 +107,7 @@ class ValidationRunner {
 			'instance' => $validator,
 			'insertable' => $isInsertable,
 			'enforce' => $validatorConfig['enforce'] ?? false,
-			'include' => $validatorConfig['keymatch'] ?? $validatorConfig['include'] ?? false,
+			'include' => $validatorConfig['include'] ?? false,
 			'exclude' => $validatorConfig['exclude'] ?? false
 		];
 	}
