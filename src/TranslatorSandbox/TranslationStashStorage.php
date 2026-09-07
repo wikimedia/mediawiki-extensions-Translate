@@ -36,7 +36,7 @@ class TranslationStashStorage implements TranslationStashReader, TranslationStas
 				$user,
 				Title::makeTitle( (int)$row->ts_namespace, $row->ts_title ),
 				$row->ts_value,
-				unserialize( $row->ts_metadata )
+				unserialize( $row->ts_metadata, [ 'allowed_classes' => false ] )
 			);
 		}
 

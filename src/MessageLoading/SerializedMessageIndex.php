@@ -30,7 +30,7 @@ class SerializedMessageIndex extends MessageIndexStore {
 
 		$file = Utilities::cacheFile( self::FILENAME );
 		if ( file_exists( $file ) ) {
-			$this->index = unserialize( file_get_contents( $file ) );
+			$this->index = unserialize( file_get_contents( $file ), [ 'allowed_classes' => false ] );
 		} else {
 			$this->index = [];
 		}
