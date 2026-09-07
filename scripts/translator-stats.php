@@ -7,6 +7,8 @@
  * @file
  */
 
+use MediaWiki\Logging\LogEntryBase;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Maintenance\Maintenance;
 
 // Standard boilerplate to define $IP
@@ -92,10 +94,9 @@ class TS extends Maintenance {
 					$method = 'sandbox';
 					break;
 				} elseif ( $log->log_action === 'rights' ) {
-					// phpcs:disable Generic.PHP.NoSilencedErrors.Discouraged
-					$data = @unserialize( $log->log_params );
+					$data = LogEntryBase::extractParams( $log->log_params, $log->log_type . '/' . $log->log_action );
 					if ( $data === false ) {
-						$lines = explode( "\n", $log->log_params, 3 );
+						$lines = LogPage::extractParams( $log->log_params );
 						if ( str_contains( $lines[1], 'translator' ) ) {
 							$promoted = $log->log_timestamp;
 							break;
