@@ -77,5 +77,7 @@
 	"apihelp-searchtranslations-param-query": "هغه لړۍ چې د هغې لپاره لټون کېږي.",
 	"apihelp-searchtranslations-param-sourcelanguage": "د سرچينې ليک ژبکوډ.",
 	"apihelp-searchtranslations-param-limit": "د پايلې کچه.",
-	"apihelp-searchtranslations-example-1": "د ټاکلې ژبې ژباړې ښکاره کول."
+	"apihelp-searchtranslations-example-1": "د ټاکلې ژبې ژباړې ښکاره کول.",
+	"apierror-translate-unknownmessage": "ناپېژانده پيغام",
+	"apihelp-translationentitysearch-param-query": "تپوس پلټل"
 }

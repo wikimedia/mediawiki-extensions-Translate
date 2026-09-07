@@ -325,6 +325,7 @@
 	"translate-statsbar-tooltip": "$1% tradott, $2% rivedut",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradott, $2% rivedut, $3% skadut",
 	"specialpages-group-translation": "Traduzzjoni",
+	"notification-link-mgs-group-translate": "Ittraduċi $1",
 	"tpt-cleanchanges-language": "Lingwa:",
 	"tpt-cleanchanges-language-na": "Kollox"
 }

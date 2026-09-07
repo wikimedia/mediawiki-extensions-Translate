@@ -4,6 +4,9 @@
 			"AhmedG612"
 		]
 	},
+	"apihelp-query+languagestats-param-suppresscomplete": "Ha ku darin kooxaha leh tarjumaado dhammaystiran.",
+	"apihelp-query+languagestats-param-suppressempty": "Ha ku darin kooxaha aan lahayn tarjumaado.",
+	"apihelp-query+languagestats-example-3": "Liiska tirakoobyada dhammaystirka tarjumaadda ee Finnish, iyadoo la qarinayo kooxaha si buuxda loo tarjumay iyo kuwa madhan",
 	"apierror-discouragetranslation-invalidtitle": "Cinwaanka la codsaday looma calaamadin turjumaad.",
 	"apierror-discouragetranslation-alreadydone": "Cinwaanka la codsaday hore ayuu u leeyahay xaaladda niyad jabka ee la codsaday.",
 	"apihelp-discouragetranslation-summary": "Calaamadee bog la turjumi karo inuu yahay mid niyad-jabsan ama aan niyad-jabsanayn. [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage Bogagga niyad jabsan] waxaa laga qariyaa is-dhexgalka turjumaadda marka la raadinayo bogag la turjumi karo, laakiin weli si toos ah ayaa loo turjumi karaa.",

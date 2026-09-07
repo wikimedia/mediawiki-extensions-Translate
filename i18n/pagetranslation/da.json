@@ -120,6 +120,7 @@
 	"tpt-discouraged-language-header": "Oversættelser til $1 er ikke en prioritet for denne side.",
 	"tpt-discouraged-language-content": "En oversættelsesadministrator besluttede at fokusere oversættelsesindsatsen på $1.",
 	"tpt-discouraged-language-force": "<strong>Denne side kan ikke oversættes til $2.</strong>\n\nEn oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",
+	"tpt-priority-languages-invalid": "Ugyldig {{PLURAL:$1|sprogkode|sprogkoder}} angivet for prioriterede sprog: $2",
 	"tpt-priority-languages": "En oversættelsesadministrator har sat prioritetssprogene for denne gruppe til $1.",
 	"tpt-priority-languages-force": "En oversættelsesadministrator har sat prioritetssprogene for denne gruppe til $1. Oversættelse til andre sprog er ikke tilladt.",
 	"tpt-discouraged-translation-header": "Oversættelse af denne side er blevet frarådet",

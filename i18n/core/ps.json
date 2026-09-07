@@ -140,6 +140,8 @@
 	"translate-translations-project": "پروژه:",
 	"translate-translations-including-no-param": "مهرباني وکړئ د څېرمه‌مخ پاراميتر کې باوري پيغام کونجي څرگنده کړئ.",
 	"translate-translations-history-short": "پ",
+	"translate-translations-last-edit-header": "وروستی سمون",
+	"translate-translations-last-edit": "$1 د $2 له‌خوا",
 	"languagestats": "د ژبې شمار",
 	"languagestats-summary": "دا مخ د يوې ژبې د ټولو پيغام ډلو د ژباړې شمارنې ښکاره کوي.",
 	"messagegroupstats-summary": "دا مخ د پيغام ډلې شمارنې راښيي.",
