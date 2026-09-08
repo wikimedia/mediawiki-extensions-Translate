@@ -9,7 +9,6 @@
 	"apihelp-aggregategroups-extended-description": "Összesített üzenetcsoportok hozzáadása és eltávolítása, illetve üzenetcsoportok hozzáadása egy összesített csoporthoz vagy eltávolítása onnan (egyszerre egy).",
 	"apihelp-aggregategroups-param-do": "Mit csináljon az összesített üzenetcsoporttal.",
 	"apihelp-aggregategroups-param-aggregategroup": "Összesített üzenetcsoport azonosítója.",
-	"apihelp-aggregategroups-param-group": "Az üzenetcsoport azonosítója. A lehetséges értékekért lásd: <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groups": "Üzenetcsoport-azonosítók listája. A lehetséges értékekért lásd: <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Összesített üzenetcsoport neve.",
 	"apihelp-aggregategroups-param-groupdescription": "Összesített üzenetcsoport leírása.",

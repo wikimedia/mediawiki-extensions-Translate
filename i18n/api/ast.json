@@ -9,7 +9,6 @@
 	"apihelp-aggregategroups-extended-description": "Pues amestar y desaniciar grupos de mensaxes agregaos y asociar o disociar grupos de mensaxes d'ellos (unu de cada vez).",
 	"apihelp-aggregategroups-param-do": "Qué facer col grupu de mensaxes agregaos.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID del grupu de mensaxes agregaos.",
-	"apihelp-aggregategroups-param-group": "ID del grupu de mensaxes.",
 	"apihelp-aggregategroups-param-groupname": "Nome del grupu de mensaxes agregaos.",
 	"apihelp-aggregategroups-param-groupdescription": "Descripción del grupu de mensaxes agregaos.",
 	"apihelp-aggregategroups-example-1": "Asociar un grupu",

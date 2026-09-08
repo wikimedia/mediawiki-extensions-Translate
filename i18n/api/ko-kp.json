@@ -9,7 +9,6 @@
 	"apihelp-aggregategroups-extended-description": "집계 통보문집단을 추가/제거하거나 통보문집단을 련관/분리시킬수 있습니다(한번에 하나씩).",
 	"apihelp-aggregategroups-param-do": "집계 통보문집단 조작방법",
 	"apihelp-aggregategroups-param-aggregategroup": "집계 통보문집단 ID.",
-	"apihelp-aggregategroups-param-group": "통보문집단 ID. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-aggregategroups-param-groups": "통보문집단 ID 목록. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-aggregategroups-param-groupname": "집계 통보문집단 이름.",
 	"apihelp-aggregategroups-param-groupdescription": "집계 통보문집단 설명.",

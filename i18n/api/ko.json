@@ -13,7 +13,6 @@
 	"apihelp-aggregategroups-extended-description": "집계 메시지 그룹을 추가 및 제거할 수 있으며, 메시지 그룹을 해당 그룹과 연결하거나 연결 해제할 수 있습니다 (한 번에 하나씩).",
 	"apihelp-aggregategroups-param-do": "집계 메시지 그룹으로 무엇을 할 수 있는지.",
 	"apihelp-aggregategroups-param-aggregategroup": "집계 메시지 그룹 ID.",
-	"apihelp-aggregategroups-param-group": "메시지 그룹 ID입니다. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-aggregategroups-param-groups": "메시지 그룹 ID 목록입니다. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>를 참조하세요.",
 	"apihelp-aggregategroups-param-groupname": "집계 메시지 그룹 이름.",
 	"apihelp-aggregategroups-param-groupdescription": "집계 메시지 그룹 설명.",

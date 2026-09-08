@@ -14,7 +14,6 @@
 	"apihelp-aggregategroups-extended-description": "集約メッセージ群を追加/除去したり、メッセージ群をそれらに関連付け/解除できます (一度に1つずつ)。",
 	"apihelp-aggregategroups-param-do": "集約メッセージ群の操作方法。",
 	"apihelp-aggregategroups-param-aggregategroup": "集約メッセージ群の ID。",
-	"apihelp-aggregategroups-param-group": "メッセージ群の ID。 <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>を参照。",
 	"apihelp-aggregategroups-param-groups": "メッセージ群の IDのリスト。 <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>を参照。",
 	"apihelp-aggregategroups-param-groupname": "集約メッセージ群の名前。",
 	"apihelp-aggregategroups-param-groupdescription": "メッセージ群の説明をまとめる。",

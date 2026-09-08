@@ -14,7 +14,6 @@
 	"apihelp-aggregategroups-extended-description": "您可以添加或移除集合訊息群組，以及從其中來關聯或取消關聯訊息群組（每一次一個）。",
 	"apihelp-aggregategroups-param-do": "要與集合訊息群組做的項目。",
 	"apihelp-aggregategroups-param-aggregategroup": "集合訊息群組 ID。",
-	"apihelp-aggregategroups-param-group": "訊息群組ID。參見<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-aggregategroups-param-groups": "訊息群組清單 ID。請參見 <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-aggregategroups-param-groupname": "集合訊息群組名稱。",
 	"apihelp-aggregategroups-param-groupdescription": "集合訊息群組描述。",

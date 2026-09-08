@@ -12,7 +12,6 @@
 	"apihelp-aggregategroups-extended-description": "आप समग्र संदेश समूह जोड़ या हटा सकते हैं और उनसे संदेश समूह जोड़ या हटा सकते हैं (एक बार में एक)।",
 	"apihelp-aggregategroups-param-do": "समग्र संदेश समूह से क्या करें।",
 	"apihelp-aggregategroups-param-aggregategroup": "समग्र संदेश समूह की ID।",
-	"apihelp-aggregategroups-param-group": "संदेश समूह की ID। <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> देखें।",
 	"apihelp-aggregategroups-param-groupname": "समग्र संदेश समूह का नाम।",
 	"apihelp-aggregategroups-param-groupdescription": "समग्र संदेश समूह का विवरण।",
 	"apihelp-aggregategroups-example-1": "समूह जोड़ें",

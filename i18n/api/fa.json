@@ -14,7 +14,6 @@
 	"apihelp-aggregategroups-summary": "مدیریت گروه‌های پیام انبوه",
 	"apihelp-aggregategroups-param-do": "با گروه پیام انبوه چه کنیم.",
 	"apihelp-aggregategroups-param-aggregategroup": "شناسهٔ گروه پیام انبوه.",
-	"apihelp-aggregategroups-param-group": "شناسهٔ گروه پیام.",
 	"apihelp-aggregategroups-param-groupname": "نام گروه پیام انبوه.",
 	"apihelp-aggregategroups-param-groupdescription": "توضیحات گروه پیام انبوه.",
 	"apihelp-aggregategroups-example-1": "متصل کردن یک گروه",

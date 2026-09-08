@@ -10,7 +10,6 @@
 	"apihelp-aggregategroups-extended-description": "Du kan legge til og fjerne aggregatmeldingsgrupper og assosiere eller disassosiere meldingsgrupeer fra dem (én av gangen).",
 	"apihelp-aggregategroups-param-do": "Hva som skal gjøres med aggregatmeldingsgruppa.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID for aggregatmeldingsgruppe.",
-	"apihelp-aggregategroups-param-group": "Meldingsgruppe-ID. Se <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groups": "Liste over meldingsgruppe-ID-er. Se <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Navn på aggregatmeldingsgruppe.",
 	"apihelp-aggregategroups-param-groupdescription": "Beskrivelse for aggregatmeldingsgruppe.",

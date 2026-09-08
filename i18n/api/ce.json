@@ -8,7 +8,6 @@
 	"apihelp-aggregategroups-extended-description": "Ахьа йиш йу гулйина хаамийн тобанаш тӀетоха а, дӀайаха а, царех хаамийн тобанаш уьйр латто а, дӀасакъасто а (цхьацца).",
 	"apihelp-aggregategroups-param-do": "Агрегатийн хаамийн тобанца хӀун дан деза.",
 	"apihelp-aggregategroups-param-aggregategroup": "Агрегатийн хаамийн тобанан ID.",
-	"apihelp-aggregategroups-param-group": "Хаамийн тобанан ID. Хьажа <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groups": "Хаамийн тобанийн идентификаторийн могӀам. Хьажа <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Агрегатан хаамийн тобанан цӀе.",
 	"apihelp-aggregategroups-param-groupdescription": "Агрегатан хаамийн тобанах лаьцна.",

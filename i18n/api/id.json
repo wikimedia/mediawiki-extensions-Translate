@@ -9,7 +9,6 @@
 	},
 	"apihelp-aggregategroups-summary": "Kelola kelompok pesan agregat.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID kelompok pesan agregat.",
-	"apihelp-aggregategroups-param-group": "ID kelompok pesan.",
 	"apihelp-aggregategroups-param-groupname": "Nama kelompok pesan agregat.",
 	"apihelp-aggregategroups-param-groupdescription": "Deskripsi kelompok pesan agregat.",
 	"apihelp-groupreview-param-group": "Kelompok pesan.",

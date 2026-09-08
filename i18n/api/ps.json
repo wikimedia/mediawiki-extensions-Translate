@@ -9,7 +9,6 @@
 	"apihelp-aggregategroups-extended-description": "تاسو کولی شئ د پيغامونو غونډ ډلې ورگډې او لرې کړئ او د پيغامونو ډلې له دوی سره يوځای يا جلا کړئ (په يو وخت کې يو).",
 	"apihelp-aggregategroups-param-do": "د پيغام ډلې راغونډولو سره څه کولی شو.",
 	"apihelp-aggregategroups-param-aggregategroup": "د پيغام ډلې پېژند راغونډول.",
-	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-aggregategroups-param-groups": "د پيغام ډلې پېژند لړليک <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd> وگورئ.",
 	"apihelp-aggregategroups-param-groupname": "د پيغام ډلې نوم راغونډول.",
 	"apihelp-aggregategroups-param-groupdescription": "د پيغام ډلې څرگندونه راغونډول.",

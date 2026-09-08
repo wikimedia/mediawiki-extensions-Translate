@@ -12,7 +12,6 @@
 	},
 	"apihelp-aggregategroups-param-do": "Cosa fare il gruppo messaggi aggregato.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID gruppo messaggi aggregato.",
-	"apihelp-aggregategroups-param-group": "ID gruppo messaggi. Vedi <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Nome gruppo messaggi aggregato.",
 	"apihelp-aggregategroups-param-groupdescription": "Descrizione gruppo messaggi aggregato.",
 	"apihelp-aggregategroups-example-1": "Associa un gruppo",

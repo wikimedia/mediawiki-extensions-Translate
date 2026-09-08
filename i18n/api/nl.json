@@ -16,7 +16,6 @@
 	"apihelp-aggregategroups-extended-description": "U kunt samengestelde berichtgroepen toevoegen en verwijderen. Ook kunt u berichtgroepen eraan koppelen of ervan ontkoppelen (één per keer).",
 	"apihelp-aggregategroups-param-do": "Wat te doen met een samengestelde berichtengroep.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID van de samengestelde berichtengroep.",
-	"apihelp-aggregategroups-param-group": "Berichtgroep-ID. Zie <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groups": "Lijst met berichtengroep-ID’s. Zie <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Naam van de samengestelde berichtengroep.",
 	"apihelp-aggregategroups-param-groupdescription": "Beschrijving van de samengestelde berichtengroep.",

@@ -16,7 +16,6 @@
 	"apihelp-aggregategroups-extended-description": "Du kan lägga till och ta bort aggregerade meddelandegrupper och associera eller sluta associera meddelandegrupper från dem (en i taget).",
 	"apihelp-aggregategroups-param-do": "Vad ska man göra med aggregerade meddelandegrupper.",
 	"apihelp-aggregategroups-param-aggregategroup": "Aggregerad meddelandegrupp-ID.",
-	"apihelp-aggregategroups-param-group": "Meddelandegrupps-ID. Se <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Namn på aggregerat meddelandegrupp.",
 	"apihelp-aggregategroups-param-groupdescription": "Beskrivning aggregerad meddelandegrupp.",
 	"apihelp-aggregategroups-example-1": "Associera en grupp",

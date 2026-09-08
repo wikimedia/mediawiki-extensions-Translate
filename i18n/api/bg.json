@@ -10,7 +10,6 @@
 	"apihelp-aggregategroups-extended-description": "Можете да добавяте и премахвате обобщени групи съобщения и да асоциирате или отделяте групи от съобщения от тях (една по една).",
 	"apihelp-aggregategroups-param-do": "Какво да правим с обобщената група съобщения.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID на обобщената група съобщения.",
-	"apihelp-aggregategroups-param-group": "ID на група съобщения. Вижте <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Название на обобщената групата съобщения.",
 	"apihelp-aggregategroups-param-groupdescription": "Описание на обобщената група съобщения.",
 	"apihelp-aggregategroups-example-1": "Асоцииране на група",

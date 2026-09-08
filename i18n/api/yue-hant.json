@@ -13,7 +13,6 @@
 	"apihelp-aggregategroups-extended-description": "你可以加入同埋剷走彙整嘅訊息群組，同埋將訊息群組同佢哋關聯或者解離（一次一個）。",
 	"apihelp-aggregategroups-param-do": "點樣處理聚合訊息谷。",
 	"apihelp-aggregategroups-param-aggregategroup": "彙整訊息谷ID。",
-	"apihelp-aggregategroups-param-group": "訊息谷ID 。睇吓<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groups": "訊息谷嘅ID清單。睇吓<kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>。",
 	"apihelp-aggregategroups-param-groupname": "彙整訊息谷個名。",
 	"apihelp-aggregategroups-param-groupdescription": "彙整訊息谷嘅描述。",
