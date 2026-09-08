@@ -180,6 +180,7 @@
 	"pp-cancel-button-label": "ناگارل",
 	"pp-pagename-missing": "لطفاً د مخ نوم مو ورکړئ.",
 	"pp-diff-old-header": "د سرچينې ليک",
+	"pp-diff-new-header": "چمتو شوی ليک",
 	"tpt-generic-confirm": "مهرباني وکړئ چاره تاييد کړئ.",
 	"tpt-generic-button": "تاييدول"
 }
