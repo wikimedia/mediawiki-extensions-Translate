@@ -8,6 +8,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extension\Translate\FileFormatSupport\AndroidCodeMapper;
 use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupCache;
@@ -177,26 +178,69 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	/**
+	 * Map an internal MediaWiki language code to the code used in the exported file.
+	 *
+	 * Resolution order:
+	 *  1. An explicit FILES.codeMap entry always wins (manual override).
+	 *  2. If FILES.codeMapAlgorithm is set, the corresponding deterministic
+	 *     transformer computes the value for codes not present in codeMap.
+	 *  3. Otherwise the code is returned unchanged, unless it collides with a
+	 *     target of the reverse map (guarding against ambiguous exports).
+	 *
 	 * @param string $code Language code.
 	 * @return string
 	 */
 	public function mapCode( $code ) {
-		if ( !isset( $this->conf['FILES']['codeMap'] ) ) {
+		$codeMap = $this->conf['FILES']['codeMap'] ?? [];
+		$algorithm = $this->conf['FILES']['codeMapAlgorithm'] ?? null;
+
+		if ( !$codeMap && $algorithm === null ) {
 			return $code;
 		}
 
-		if ( isset( $this->conf['FILES']['codeMap'][$code] ) ) {
-			return $this->conf['FILES']['codeMap'][$code];
-		} else {
+		// 1. Explicit overrides always take precedence.
+		if ( isset( $codeMap[$code] ) ) {
+			return $codeMap[$code];
+		}
+
+		// 2. Deterministic algorithm, when opted in for this group.
+		if ( $algorithm !== null ) {
+			$mapped = $this->mapCodeWithAlgorithm( $algorithm, $code );
+			if ( $mapped !== null ) {
+				return $mapped;
+			}
+		}
+
+		// 3. Guard against a raw code that is really the target of a manual
+		// mapping (e.g. someone requesting "iw" directly when he->iw is mapped).
+		if ( $codeMap ) {
 			if ( $this->reverseCodeMap === null ) {
-				$this->reverseCodeMap = array_flip( $this->conf['FILES']['codeMap'] );
+				$this->reverseCodeMap = array_flip( $codeMap );
 			}
 
 			if ( isset( $this->reverseCodeMap[$code] ) ) {
 				return 'x-invalidLanguageCode';
 			}
+		}
 
-			return $code;
+		return $code;
+	}
+
+	/**
+	 * Apply a named, deterministic code-mapping algorithm.
+	 *
+	 * @param string $algorithm Algorithm identifier from FILES.codeMapAlgorithm.
+	 * @param string $code Internal MediaWiki language code.
+	 * @return string|null Mapped code, or null if the algorithm leaves the code unchanged.
+	 */
+	private function mapCodeWithAlgorithm( string $algorithm, string $code ): ?string {
+		switch ( $algorithm ) {
+			case 'android':
+				return ( new AndroidCodeMapper() )->map( $code );
+			default:
+				throw new InvalidArgumentException(
+					"Unknown FILES.codeMapAlgorithm '$algorithm' in group '{$this->getId()}'."
+				);
 		}
 	}
 
@@ -218,6 +262,10 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 								'_type' => 'array',
 								'_ignore_extra_keys' => true,
 								'_children' => [],
+							],
+							'codeMapAlgorithm' => [
+								'_type' => 'enum',
+								'_values' => [ 'none', 'android' ],
 							],
 							'definitionFile' => [
 								'_type' => 'text',
