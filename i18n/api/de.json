@@ -19,7 +19,7 @@
 	"apihelp-aggregategroups-extended-description": "Du kannst aggregierte Nachrichtengruppen hinzufügen und entfernen und Nachrichtengruppen damit verknüpfen oder davon trennen (eine nach der anderen).",
 	"apihelp-aggregategroups-param-do": "Was mit der zusammengefassten Nachrichtengruppe getan werden soll.",
 	"apihelp-aggregategroups-param-aggregategroup": "Kennung der zusammengefassten Nachrichtengruppe.",
-	"apihelp-aggregategroups-param-groups": "Liste der zusammengefassten Nachrichtengruppen, s. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-aggregategroups-param-groups": "Liste der Kennungen von Nachrichtengruppen, s. <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-aggregategroups-param-groupname": "Name der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-groupdescription": "Beschreibung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-groupsourcelanguagecode": "Quellsprache der zusammengefassten Nachrichtengruppe oder <kbd>-</kbd>, um keine Quellsprache festzulegen bzw. die bestehende zu entfernen.",
