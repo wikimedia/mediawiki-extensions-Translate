@@ -70,13 +70,17 @@ class MoveTranslatableBundleSpecialPage extends UnlistedSpecialPage {
 
 		if ( $this->oldTitle == null ) {
 			// Not a valid title at all. Let core MovePage display the validation error to ensure consistency
-			$this->objectFactory->createObject( $this->movePageSpec )->execute( $par );
+			$movePage = $this->objectFactory->createObject( $this->movePageSpec );
+			$movePage->setContext( $this->getContext() );
+			$movePage->execute( $par );
 			return;
 		}
 		$bundle = $this->bundleFactory->getBundle( $this->oldTitle );
 		if ( !$bundle || !$bundle->isMoveable() ) {
 			// Not a translatable page. Let core MovePage handle it
-			$this->objectFactory->createObject( $this->movePageSpec )->execute( $par );
+			$movePage = $this->objectFactory->createObject( $this->movePageSpec );
+			$movePage->setContext( $this->getContext() );
+			$movePage->execute( $par );
 			return;
 		}
 		// Now we know we're actually moving a translatable page
