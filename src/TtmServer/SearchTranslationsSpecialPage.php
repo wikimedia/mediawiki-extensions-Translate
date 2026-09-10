@@ -703,7 +703,11 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 
 		return Html::rawElement(
 			'form',
-			[ 'action' => wfScript(), 'name' => 'searchform' ],
+			[
+				'action' => wfScript(),
+				'name' => 'searchform',
+				'class' => 'mw-htmlform-codex',
+			],
 			$title . $field . $checkLabel . $language
 		);
 	}

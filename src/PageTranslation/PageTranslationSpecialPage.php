@@ -438,6 +438,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getLocalURL(),
+			'class' => 'mw-htmlform-codex',
 		];
 
 		$params['title'] = $this->getPageTitle()->getPrefixedText();
