@@ -46,7 +46,7 @@
 			<language-selector
 				v-model:selected="formData.languageCode"
 				:selectable-languages="allLanguages"
-				:is-multiple="false"
+				v-bind="languageSelectorProps"
 			>
 			</language-selector>
 		</cdx-field>
@@ -61,7 +61,12 @@ const {
 	CdxTextInput,
 	CdxMessage
 } = require( '../../../../codex.js' );
-const { LanguageSelector } = require( 'mediawiki.languageselector.lookup' );
+const languageSelector = require( 'mediawiki.languageselector.lookup' );
+// MediaWiki 1.46 exports LookupLanguageSelector, which needs different props.
+// Remove this fallback after the MLEB 2026.09 release.
+const isLegacyLanguageSelector = !languageSelector.LanguageSelector;
+const LanguageSelector = languageSelector.LanguageSelector ||
+	languageSelector.LookupLanguageSelector;
 const {
 	supportedLanguages,
 	undeterminedLanguageCode
@@ -99,8 +104,13 @@ module.exports = {
 			supportedLanguages
 		);
 
+		const languageSelectorProps = isLegacyLanguageSelector ?
+			{ searchApiUrl: mw.config.get( 'wgScriptPath' ) + '/api.php' } :
+			{ isMultiple: false };
+
 		return {
 			defaultAction,
+			languageSelectorProps,
 			formData: {
 				name: '',
 				description: '',
