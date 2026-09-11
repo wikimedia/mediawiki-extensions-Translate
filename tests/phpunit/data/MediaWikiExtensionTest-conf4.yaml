@@ -6,7 +6,7 @@ BASIC:
   descriptionmsg: exampleextension2-desc
 
 FILES:
-  format: Json
+  class: 'MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat'
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/foo"
 
 VALIDATORS:
@@ -15,9 +15,11 @@ VALIDATORS:
   - id: MediaWikiPageName
   - id: MediaWikiParameter
   - id: MediaWikiPlural
+  - id: MediaWikiGender
 
 INSERTABLES:
-  - class: "MediaWiki\\Extension\\Translate\\TranslatorInterface\\Insertable\\MediaWikiInsertablesSuggester"
+  - class: 'MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester'
+  - class: 'MediaWiki\Extension\Translate\TranslatorInterface\Insertable\UrlInsertablesSuggester'
 
 TAGS:
   optional:

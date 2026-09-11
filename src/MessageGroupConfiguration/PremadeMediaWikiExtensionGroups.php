@@ -94,6 +94,7 @@ class PremadeMediaWikiExtensionGroups {
 		}
 
 		$conf['FILES'] = [
+			// @todo Use 'format' => 'Json' for consistency with YAML-configured groups
 			'class' => JsonFormat::class,
 			'sourcePattern' => $this->path . '/' . $info['file'],
 		];
