@@ -55,7 +55,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 			],
 		];
 
-		$group = MessageGroupBase::factory( $conf );
+		$group = Services::getInstance()->getMessageGroupFactory()->createGroup( $conf );
 		if ( !$group instanceof self ) {
 			$actual = get_class( $group );
 			throw new DomainException( "Expected FileBasedMessageGroup, got $actual" );

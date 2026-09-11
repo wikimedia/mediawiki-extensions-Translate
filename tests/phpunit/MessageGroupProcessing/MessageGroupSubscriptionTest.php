@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
@@ -273,7 +275,10 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 		$testGroups = [];
 
 		$messageGroupMetadata = $this->createStub( MessageGroupMetadata::class );
-		$factory = new AggregateGroupMessageGroupFactory( $messageGroupMetadata );
+		$factory = new AggregateGroupMessageGroupFactory(
+			$messageGroupMetadata,
+			new MessageGroupFactory( new MessageGroupTypeRegistry() )
+		);
 		$aggGroup = [
 			'agg-group-id' => [
 				'BASIC' => [

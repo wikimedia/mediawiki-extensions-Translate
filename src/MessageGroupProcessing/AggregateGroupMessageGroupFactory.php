@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
-use MessageGroupBase;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
@@ -17,6 +17,7 @@ final class AggregateGroupMessageGroupFactory implements CachedMessageGroupFacto
 
 	public function __construct(
 		private readonly MessageGroupMetadata $messageGroupMetadata,
+		private readonly MessageGroupFactory $messageGroupFactory,
 	) {
 	}
 
@@ -69,7 +70,7 @@ final class AggregateGroupMessageGroupFactory implements CachedMessageGroupFacto
 
 		$groups = [];
 		foreach ( $data as $groupId => $groupData ) {
-			$groups[$groupId] = MessageGroupBase::factory(
+			$groups[$groupId] = $this->messageGroupFactory->createGroup(
 				array_merge_recursive( $template, $groupData )
 			);
 		}

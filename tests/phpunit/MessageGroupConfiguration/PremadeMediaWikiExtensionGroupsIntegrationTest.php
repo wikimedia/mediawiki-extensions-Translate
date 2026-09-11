@@ -7,12 +7,16 @@ use MediaWiki\Extension\Translate\Utilities\Yaml;
 use MediaWikiIntegrationTestCase;
 
 /**
- * Test for parsing the special definition file for mediawiki-extensions
+ * Integration test for PremadeMediaWikiExtensionGroups using the service
+ * container fallback in getMessageGroupFactory(). If the lazy fallback is
+ * removed in favour of mandatory constructor injection, this test will need
+ * to inject a MessageGroupFactory explicitly via setMessageGroupFactory().
+ *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\MessageGroupConfiguration\PremadeMediaWikiExtensionGroups
  */
-class MediaWikiExtensionsTest extends MediaWikiIntegrationTestCase {
+class PremadeMediaWikiExtensionGroupsIntegrationTest extends MediaWikiIntegrationTestCase {
 	public function testParsing(): void {
 		$defs = __DIR__ . '/../data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';

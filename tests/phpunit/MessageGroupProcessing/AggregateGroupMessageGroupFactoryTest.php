@@ -4,6 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 
 /**
@@ -15,7 +17,10 @@ class AggregateGroupMessageGroupFactoryTest extends \MediaWikiIntegrationTestCas
 	public function testCreateGroups() {
 		$messageGroupMetadata = $this->createStub( MessageGroupMetadata::class );
 
-		$factory = new AggregateGroupMessageGroupFactory( $messageGroupMetadata );
+		$factory = new AggregateGroupMessageGroupFactory(
+			$messageGroupMetadata,
+			new MessageGroupFactory( new MessageGroupTypeRegistry() )
+		);
 
 		$data = [
 			'my-group-id' => [

@@ -7,7 +7,6 @@ use FileDependency;
 use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
-use MessageGroupBase;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
@@ -24,6 +23,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 
 	public function __construct(
 		private readonly MessageGroupConfigurationParser $messageGroupConfigurationParser,
+		private readonly MessageGroupFactory $messageGroupFactory,
 		private readonly string $contentLanguageCode,
 		ServiceOptions $serviceOptions
 	) {
@@ -87,7 +87,7 @@ final class FileBasedMessageGroupFactory implements CachedMessageGroupFactory {
 		$groups = [];
 		foreach ( $data['groups'] as $id => $conf ) {
 			$conf['BASIC']['sourcelanguage'] ??= $this->contentLanguageCode;
-			$groups[$id] = MessageGroupBase::factory( $conf );
+			$groups[$id] = $this->messageGroupFactory->createGroup( $conf );
 		}
 
 		return $groups;

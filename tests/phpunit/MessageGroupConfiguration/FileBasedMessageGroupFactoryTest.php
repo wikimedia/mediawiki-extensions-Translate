@@ -20,6 +20,7 @@ class FileBasedMessageGroupFactoryTest extends MediaWikiIntegrationTestCase {
 
 		$this->factory = new FileBasedMessageGroupFactory(
 			new MessageGroupConfigurationParser(),
+			new MessageGroupFactory( new MessageGroupTypeRegistry() ),
 			'en',
 			new ServiceOptions( FileBasedMessageGroupFactory::SERVICE_OPTIONS, $config )
 		);

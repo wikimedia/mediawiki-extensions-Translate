@@ -6,11 +6,11 @@ namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 use FileDependency;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\UrlInsertablesSuggester;
 use MediaWikiExtensionMessageGroup;
 use MessageGroup;
-use MessageGroupBase;
 use RuntimeException;
 use UnexpectedValueException;
 
@@ -167,7 +167,7 @@ class PremadeMediaWikiExtensionGroups {
 			}
 		}
 
-		return MessageGroupBase::factory( $conf );
+		return Services::getInstance()->getMessageGroupFactory()->createGroup( $conf );
 	}
 
 	protected function parseFile(): array {

@@ -87,7 +87,8 @@ return [
 		MediaWikiServices $services
 	): AggregateGroupMessageGroupFactory {
 		return new AggregateGroupMessageGroupFactory(
-			$services->get( 'Translate:MessageGroupMetadata' )
+			$services->get( 'Translate:MessageGroupMetadata' ),
+			$services->get( 'Translate:MessageGroupFactory' ),
 		);
 	},
 
@@ -143,6 +144,7 @@ return [
 	): FileBasedMessageGroupFactory {
 		return new FileBasedMessageGroupFactory(
 			new MessageGroupConfigurationParser(),
+			$services->get( 'Translate:MessageGroupFactory' ),
 			$services->getContentLanguageCode()->toString(),
 			new ServiceOptions(
 				FileBasedMessageGroupFactory::SERVICE_OPTIONS,

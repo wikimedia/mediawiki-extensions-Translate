@@ -35,6 +35,18 @@ class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 		parent::tearDown();
 	}
 
+	public function testNewFromMessageGroupReturnsFileBasedMessageGroup() {
+		$conf = $this->groupConfiguration;
+		$group = MessageGroupBase::factory( $conf );
+		$fileGroup = FileBasedMessageGroup::newFromMessageGroup( $group );
+		$this->assertInstanceOf(
+			FileBasedMessageGroup::class,
+			$fileGroup,
+			'newFromMessageGroup should return a FileBasedMessageGroup'
+		);
+		$this->assertSame( $group->getId(), $fileGroup->getId() );
+	}
+
 	public function testGetConfiguration() {
 		$this->assertEquals(
 			$this->groupConfiguration,
