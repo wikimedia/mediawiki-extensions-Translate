@@ -45,12 +45,14 @@ use MediaWiki\Extension\Translate\TranslatorSandbox\TranslationStashSpecialPage;
 use MediaWiki\Extension\Translate\TranslatorSandbox\TranslatorSandboxActionApi;
 use MediaWiki\Extension\Translate\TtmServer\SearchableTtmServer;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use MediaWiki\Hook\LinkTargetIsAlwaysKnownBatchHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Logging\LogFormatter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Parser\Hook\ParserFirstCallInitHook;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
@@ -63,6 +65,7 @@ use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Search\SearchEngine;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Specials\SpecialSearch;
 use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
@@ -85,6 +88,7 @@ use Wikimedia\Rdbms\IConnectionProvider;
  */
 class HookHandler implements
 	ChangeTagsListActiveHook,
+	LinkTargetIsAlwaysKnownBatchHook,
 	ListDefinedTagsHook,
 	ParserFirstCallInitHook,
 	RevisionRecordInsertedHook,
@@ -101,6 +105,8 @@ class HookHandler implements
 		private readonly IConnectionProvider $dbProvider,
 		private readonly Config $config,
 		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly SpecialPageFactory $specialPageFactory,
 	) {
 	}
 
@@ -802,32 +808,47 @@ class HookHandler implements
 	}
 
 	/**
-	 * Hook: TitleIsAlwaysKnown
 	 * Make Special:MyLanguage links red if the target page doesn't exist.
-	 * A bit hacky because the core code is not so flexible.
-	 * @param Title $target Title object that is being checked
-	 * @param bool|null &$isKnown Whether MediaWiki currently thinks this page is known
-	 * @return bool True or no return value to continue or false to abort
+	 *
+	 * Page existence is checked via a single batched DB query to avoid one
+	 * query per Special:MyLanguage link.
+	 *
+	 * @inheritDoc
 	 */
-	public static function onTitleIsAlwaysKnown( $target, &$isKnown ): bool {
-		if ( !$target->inNamespace( NS_SPECIAL ) ) {
-			return true;
+	public function onLinkTargetIsAlwaysKnownBatch( array $links, array &$isAlwaysKnown ): void {
+		$targets = [];
+		foreach ( $links as $index => $link ) {
+			if ( isset( $isAlwaysKnown[$index] ) ) {
+				continue;
+			}
+			if ( !$link->inNamespace( NS_SPECIAL ) ) {
+				continue;
+			}
+			[ $name, $subpage ] = $this->specialPageFactory->resolveAlias( $link->getDBkey() );
+			if ( $name !== 'MyLanguage' || $subpage === null || $subpage === '' ) {
+				continue;
+			}
+			$realTarget = Title::newFromText( $subpage );
+			if ( $realTarget ) {
+				$targets[$index] = $realTarget;
+			} else {
+				$isAlwaysKnown[$index] = false;
+			}
 		}
 
-		[ $name, $subpage ] = MediaWikiServices::getInstance()
-			->getSpecialPageFactory()->resolveAlias( $target->getDBkey() );
-		if ( $name !== 'MyLanguage' || $subpage === null || $subpage === '' ) {
-			return true;
+		if ( !$targets ) {
+			return;
 		}
 
-		$realTarget = Title::newFromText( $subpage );
-		if ( !$realTarget || !$realTarget->exists() ) {
-			$isKnown = false;
+		$this->linkBatchFactory->newLinkBatch( $targets )
+			->setCaller( __METHOD__ )
+			->execute();
 
-			return false;
+		foreach ( $targets as $index => $realTarget ) {
+			if ( !$realTarget->exists() ) {
+				$isAlwaysKnown[$index] = false;
+			}
 		}
-
-		return true;
 	}
 
 	/** @inheritDoc */

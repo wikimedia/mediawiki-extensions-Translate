@@ -9,6 +9,7 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
 use MediaWiki\User\User;
 use MediaWikiLangTestCase;
 use MessageGroupTestTrait;
@@ -90,46 +91,64 @@ class HookHandlerTest extends MediaWikiLangTestCase {
 		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 
-	public function testOnTitleIsAlwaysKnown_nonSpecialNamespace_leavesKnownUnset(): void {
-		$isKnown = null;
-		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_MAIN, 'Foo' ), $isKnown );
-		$this->assertTrue( $result );
-		$this->assertNull( $isKnown );
-	}
-
-	public function testOnTitleIsAlwaysKnown_specialNotMyLanguage_leavesKnownUnset(): void {
-		$isKnown = null;
-		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_SPECIAL, 'RecentChanges' ), $isKnown );
-		$this->assertTrue( $result );
-		$this->assertNull( $isKnown );
-	}
-
-	public function testOnTitleIsAlwaysKnown_myLanguageNoSubpage_leavesKnownUnset(): void {
-		$isKnown = null;
-		$result = HookHandler::onTitleIsAlwaysKnown( Title::makeTitle( NS_SPECIAL, 'MyLanguage' ), $isKnown );
-		$this->assertTrue( $result );
-		$this->assertNull( $isKnown );
-	}
-
-	public function testOnTitleIsAlwaysKnown_myLanguageSubpageNotExists_setsKnownFalse(): void {
-		$isKnown = null;
-		$result = HookHandler::onTitleIsAlwaysKnown(
-			Title::makeTitle( NS_SPECIAL, 'MyLanguage/PageThatDoesNotExist' ),
-			$isKnown
+	private function getHookHandler(): HookHandler {
+		return new HookHandler(
+			$this->getServiceContainer()->getRevisionLookup(),
+			$this->getServiceContainer()->getConnectionProvider(),
+			$this->getServiceContainer()->getMainConfig(),
+			$this->getServiceContainer()->getLanguageNameUtils(),
+			$this->getServiceContainer()->getLinkBatchFactory(),
+			$this->getServiceContainer()->getSpecialPageFactory()
 		);
-		$this->assertFalse( $result );
-		$this->assertFalse( $isKnown );
 	}
 
-	public function testOnTitleIsAlwaysKnown_myLanguageSubpageExists_leavesKnownUnset(): void {
+	public function testOnLinkTargetIsAlwaysKnownBatch_nonSpecialNamespace_leavesKnownUnset(): void {
+		$isAlwaysKnown = [ null ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_MAIN, 'Foo' ) ], $isAlwaysKnown
+		);
+		$this->assertNull( $isAlwaysKnown[0] );
+	}
+
+	public function testOnLinkTargetIsAlwaysKnownBatch_specialNotMyLanguage_leavesKnownUnset(): void {
+		$isAlwaysKnown = [ null ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_SPECIAL, 'RecentChanges' ) ], $isAlwaysKnown
+		);
+		$this->assertNull( $isAlwaysKnown[0] );
+	}
+
+	public function testOnLinkTargetIsAlwaysKnownBatch_myLanguageNoSubpage_leavesKnownUnset(): void {
+		$isAlwaysKnown = [ null ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_SPECIAL, 'MyLanguage' ) ], $isAlwaysKnown
+		);
+		$this->assertNull( $isAlwaysKnown[0] );
+	}
+
+	public function testOnLinkTargetIsAlwaysKnownBatch_myLanguageSubpageNotExists_setsKnownFalse(): void {
+		$isAlwaysKnown = [ null ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_SPECIAL, 'MyLanguage/PageThatDoesNotExist' ) ], $isAlwaysKnown
+		);
+		$this->assertFalse( $isAlwaysKnown[0] );
+	}
+
+	public function testOnLinkTargetIsAlwaysKnownBatch_myLanguageSubpageExists_leavesKnownUnset(): void {
 		$this->editPage( 'ExistingPage', 'content' );
-		$isKnown = null;
-		$result = HookHandler::onTitleIsAlwaysKnown(
-			Title::makeTitle( NS_SPECIAL, 'MyLanguage/ExistingPage' ),
-			$isKnown
+		$isAlwaysKnown = [ null ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_SPECIAL, 'MyLanguage/ExistingPage' ) ], $isAlwaysKnown
 		);
-		$this->assertTrue( $result );
-		$this->assertNull( $isKnown );
+		$this->assertNull( $isAlwaysKnown[0] );
+	}
+
+	public function testOnLinkTargetIsAlwaysKnownBatch_respectsPriorDecision(): void {
+		$isAlwaysKnown = [ true ];
+		$this->getHookHandler()->onLinkTargetIsAlwaysKnownBatch(
+			[ new TitleValue( NS_SPECIAL, 'MyLanguage/PageThatDoesNotExist' ) ], $isAlwaysKnown
+		);
+		$this->assertTrue( $isAlwaysKnown[0] );
 	}
 
 	public function testSearchProfile() {

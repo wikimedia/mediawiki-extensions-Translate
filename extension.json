@@ -193,7 +193,7 @@
 		"SpecialSearchProfiles": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfile",
 		"SpecialSearchProfileForm": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileForm",
 		"SpecialSearchSetupEngine": "MediaWiki\\Extension\\Translate\\HookHandler::searchProfileSetupEngine",
-		"TitleIsAlwaysKnown": "MediaWiki\\Extension\\Translate\\HookHandler::onTitleIsAlwaysKnown",
+		"LinkTargetIsAlwaysKnownBatch": "main",
 		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\Translate\\HookHandler::addConfig",
 		"SidebarBeforeOutput": "legacyInterface",
 		"TranslateEventTranslationReview": [
@@ -239,7 +239,9 @@
 				"RevisionLookup",
 				"ConnectionProvider",
 				"MainConfig",
-				"LanguageNameUtils"
+				"LanguageNameUtils",
+				"LinkBatchFactory",
+				"SpecialPageFactory"
 			]
 		},
 		"legacyInterface": {
