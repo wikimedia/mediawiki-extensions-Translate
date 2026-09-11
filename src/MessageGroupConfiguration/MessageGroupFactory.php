@@ -47,24 +47,27 @@ class MessageGroupFactory {
 	/**
 	 * Resolve the implementation class from the configuration selector.
 	 *
-	 * @param array $conf
+	 * Useful for callers that need to inspect the implementation without
+	 * constructing the group (e.g. schema validation, aggregate detection).
+	 *
+	 * @param array $conf Parsed group configuration.
 	 * @return string Fully-qualified class name.
-	 * @throws InvalidArgumentException
+	 * @throws InvalidArgumentException on invalid or unknown selector.
 	 */
-	private function resolveClass( array $conf ): string {
+	public function resolveClass( array $conf ): string {
 		$basic = $conf['BASIC'] ?? [];
-		$hasType = array_key_exists( 'type', $basic );
-		$hasClass = array_key_exists( 'class', $basic );
+		$hasType = isset( $basic['type'] );
+		$hasClass = isset( $basic['class'] );
 
 		if ( $hasType && $hasClass ) {
-			throw new InvalidArgumentException(
+			throw new InvalidGroupConfigurationException(
 				"Message group configuration must not specify both 'type' and 'class' " .
 				"(group id: '{$basic['id']}')"
 			);
 		}
 
 		if ( !$hasType && !$hasClass ) {
-			throw new InvalidArgumentException(
+			throw new InvalidGroupConfigurationException(
 				"Message group configuration must specify either 'type' or 'class' " .
 				"(group id: '{$basic['id']}')"
 			);

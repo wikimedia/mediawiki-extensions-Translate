@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use AggregateMessageGroup;
 use FileBasedMessageGroup;
-use InvalidArgumentException;
 use MediaWikiExtensionMessageGroup;
 use MessagePrefixMessageGroup;
 
@@ -40,11 +39,11 @@ class MessageGroupTypeRegistry {
 	 *
 	 * @param string $type Registered type identifier.
 	 * @return array Construction specification.
-	 * @throws InvalidArgumentException if the type ID is not registered.
+	 * @throws InvalidGroupConfigurationException if the type ID is not registered.
 	 */
 	public function getSpec( string $type ): array {
 		if ( !isset( self::TYPES[$type] ) ) {
-			throw new InvalidArgumentException( "Unknown message group type: '$type'" );
+			throw new InvalidGroupConfigurationException( "Unknown message group type: '$type'" );
 		}
 		return self::TYPES[$type];
 	}
@@ -54,7 +53,7 @@ class MessageGroupTypeRegistry {
 	 *
 	 * @param string $type Registered type identifier.
 	 * @return string Fully-qualified class name.
-	 * @throws InvalidArgumentException if the type ID is not registered.
+	 * @throws InvalidGroupConfigurationException if the type ID is not registered.
 	 */
 	public function getClass( string $type ): string {
 		return $this->getSpec( $type )['class'];

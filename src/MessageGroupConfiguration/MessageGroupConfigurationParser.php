@@ -60,10 +60,15 @@ class MessageGroupConfigurationParser {
 			}
 		} else {
 			foreach ( $configurations as $index => $config ) {
-				if ( isset( $config['BASIC']['id'] ) ) {
-					$groups[$config['BASIC']['id']] = $config;
-				} else {
-					$callback( $index, $config, 'id is missing' );
+				try {
+					Services::getInstance()->getMessageGroupFactory()->resolveClass( $config );
+					if ( isset( $config['BASIC']['id'] ) ) {
+						$groups[$config['BASIC']['id']] = $config;
+					} else {
+						$callback( $index, $config, 'id is missing' );
+					}
+				} catch ( InvalidGroupConfigurationException $e ) {
+					$callback( $index, $config, $e->getMessage() );
 				}
 			}
 		}
@@ -101,15 +106,53 @@ class MessageGroupConfigurationParser {
 
 		if ( $template ) {
 			foreach ( $groups as $i => $group ) {
-				$groups[$i] = self::mergeTemplate( $template, $group );
+				$merged = self::mergeTemplate( $template, $group );
+				$merged = $this->resolveTemplateSelector( $group, $merged );
 				// Little hack to allow aggregate groups to be defined in same file with other groups.
-				if ( $groups[$i]['BASIC']['class'] === AggregateMessageGroup::class ) {
-					unset( $groups[$i]['FILES'] );
+				if ( $this->isAggregateGroup( $merged ) ) {
+					unset( $merged['FILES'] );
 				}
+				$groups[$i] = $merged;
 			}
 		}
 
 		return $groups;
+	}
+
+	/**
+	 * After template merging, ensure the effective configuration contains exactly
+	 * one implementation selector (type or class).
+	 *
+	 * Rules:
+	 *  1. Concrete specifies type → remove inherited class.
+	 *  2. Concrete specifies class → remove inherited type.
+	 *  3. Concrete specifies neither → inherit normally (already done by mergeTemplate).
+	 *  4. Concrete specifies both → left for validate() to reject.
+	 */
+	private function resolveTemplateSelector( array $specific, array $merged ): array {
+		$concreteBasic = $specific['BASIC'] ?? [];
+		$hasConcreteType = isset( $concreteBasic['type'] );
+		$hasConcreteClass = isset( $concreteBasic['class'] );
+
+		if ( $hasConcreteType && !$hasConcreteClass ) {
+			unset( $merged['BASIC']['class'] );
+		} elseif ( $hasConcreteClass && !$hasConcreteType ) {
+			unset( $merged['BASIC']['type'] );
+		}
+
+		return $merged;
+	}
+
+	/**
+	 * Return whether the effective configuration represents an aggregate group.
+	 */
+	private function isAggregateGroup( array $config ): bool {
+		try {
+			$class = Services::getInstance()->getMessageGroupFactory()->resolveClass( $config );
+			return is_a( $class, AggregateMessageGroup::class, allow_string: true );
+		} catch ( InvalidGroupConfigurationException ) {
+			return false;
+		}
 	}
 
 	public function getBaseSchema(): array {
@@ -118,9 +161,13 @@ class MessageGroupConfigurationParser {
 
 	/**
 	 * Validates group configuration against schema.
-	 * @throws Exception If configuration is not valid.
+	 * @throws InvalidGroupConfigurationException If the selector is invalid.
+	 * @throws Exception If configuration does not match the schema.
 	 */
 	public function validate( array $config ): void {
+		// Validate the selector resolves (catches unknown type IDs, missing/duplicate selectors).
+		$implClass = Services::getInstance()->getMessageGroupFactory()->resolveClass( $config );
+
 		$schema = $this->baseSchema;
 
 		foreach ( $config as $key => $section ) {
@@ -134,6 +181,8 @@ class MessageGroupConfigurationParser {
 				if ( $class === 'StringMatcher' ) {
 					$extra = StringMatcher::getExtraSchema();
 				}
+			} elseif ( $key === 'BASIC' ) {
+				$extra = $this->callGetExtraSchema( $implClass );
 			} else {
 				$extra = $this->callGetExtraSchema( $section[ 'class' ] ?? null );
 			}

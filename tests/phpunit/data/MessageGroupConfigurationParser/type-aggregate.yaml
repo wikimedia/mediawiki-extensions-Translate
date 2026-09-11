@@ -1,0 +1,8 @@
+BASIC:
+  id: type-aggregate-group
+  label: Type Aggregate Group
+  namespace: 8
+  type: aggregate
+
+GROUPS:
+  - some-subgroup

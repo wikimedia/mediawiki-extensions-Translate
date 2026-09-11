@@ -81,6 +81,15 @@ class MessageGroupFactoryTest extends MediaWikiIntegrationTestCase {
 		$this->factory->createGroup( $this->baseConf( [ 'class' => \stdClass::class ] ) );
 	}
 
+	// --- getImplementationClass() tests ---
+
+	public function testResolveClassReturnsClassForType(): void {
+		$this->assertSame(
+			FileBasedMessageGroup::class,
+			$this->factory->resolveClass( $this->baseConf( [ 'type' => 'file' ] ) )
+		);
+	}
+
 	// --- MessageGroupBase::factory() BC tests ---
 
 	public function testStaticFactoryWithFqcn(): void {

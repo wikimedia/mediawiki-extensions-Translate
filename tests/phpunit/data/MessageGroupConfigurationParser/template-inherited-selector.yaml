@@ -1,0 +1,12 @@
+TEMPLATE:
+  BASIC:
+    label: Template Group
+    namespace: 8
+    type: file
+  FILES:
+    format: Simple
+    sourcePattern: /tmp/%CODE%.txt
+
+---
+BASIC:
+  id: inherits-selector

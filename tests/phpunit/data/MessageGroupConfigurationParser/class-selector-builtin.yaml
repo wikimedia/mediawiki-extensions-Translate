@@ -1,0 +1,9 @@
+BASIC:
+  id: legacy
+  label: Legacy Group
+  namespace: 8
+  class: FileBasedMessageGroup
+
+FILES:
+  format: Simple
+  sourcePattern: /tmp/%CODE%.txt

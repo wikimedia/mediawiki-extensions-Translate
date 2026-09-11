@@ -1,0 +1,14 @@
+TEMPLATE:
+  BASIC:
+    label: Template Group
+    namespace: 8
+    class: FileBasedMessageGroup
+
+---
+BASIC:
+  id: concrete-with-type
+  type: file
+
+FILES:
+  format: Simple
+  sourcePattern: /tmp/%CODE%.txt

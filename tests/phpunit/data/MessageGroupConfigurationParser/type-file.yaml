@@ -1,0 +1,9 @@
+BASIC:
+  id: type-file-group
+  label: Type File Group
+  namespace: 8
+  type: file
+
+FILES:
+  format: Simple
+  sourcePattern: /tmp/%CODE%.txt

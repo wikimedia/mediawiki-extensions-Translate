@@ -1,0 +1,9 @@
+BASIC:
+  id: extra-schema
+  label: Extra Schema Group
+  namespace: 8
+  type: file
+
+FILES:
+  format: Simple
+  sourcePattern: /tmp/%CODE%.txt

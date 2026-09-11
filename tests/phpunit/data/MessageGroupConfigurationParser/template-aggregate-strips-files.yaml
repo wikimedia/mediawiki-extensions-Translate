@@ -1,0 +1,15 @@
+TEMPLATE:
+  BASIC:
+    label: Template Group
+    namespace: 8
+    type: file
+  FILES:
+    sourcePattern: /tmp/%CODE%.txt
+
+---
+BASIC:
+  id: aggregate-with-template-files
+  type: aggregate
+
+GROUPS:
+  - some-subgroup

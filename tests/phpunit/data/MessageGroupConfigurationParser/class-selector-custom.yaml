@@ -1,0 +1,9 @@
+BASIC:
+  id: custom
+  label: Custom Group
+  namespace: 8
+  class: MockFileBasedMessageGroup
+
+FILES:
+  format: Simple
+  sourcePattern: /tmp/%CODE%.txt

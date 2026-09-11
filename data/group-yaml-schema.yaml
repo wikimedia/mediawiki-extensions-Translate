@@ -9,6 +9,11 @@ root:
         class:
           _type: text
           _not_empty: true
+          _description: PHP implementation class; supported for existing configurations and custom implementations
+        type:
+          _type: text
+          _not_empty: true
+          _description: registered message group type identifier; preferred for registered Translate message group implementations
         codeBrowser:
           _type: text
         description:
