@@ -11,6 +11,8 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleStore;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslationLoader;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupManager;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
@@ -113,6 +115,16 @@ class Services implements ContainerInterface {
 	/** @since 2024.05 */
 	public function getFileBasedMessageGroupFactory(): FileBasedMessageGroupFactory {
 		return $this->get( 'Translate:FileBasedMessageGroupFactory' );
+	}
+
+	/** @since 2026.09 */
+	public function getMessageGroupFactory(): MessageGroupFactory {
+		return $this->get( 'Translate:MessageGroupFactory' );
+	}
+
+	/** @since 2026.09 */
+	public function getMessageGroupTypeRegistry(): MessageGroupTypeRegistry {
+		return $this->get( 'Translate:MessageGroupTypeRegistry' );
 	}
 
 	public function getFileFormatFactory(): FileFormatFactory {

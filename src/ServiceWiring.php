@@ -20,6 +20,8 @@ use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleTranslat
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\FileBasedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\HookDefinedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
+use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupManager;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\AggregateGroupMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CsvTranslationImporter;
@@ -205,6 +207,12 @@ return [
 		return new MessageBundleTranslationLoader( $services->getLanguageFallback() );
 	},
 
+	'Translate:MessageGroupFactory' => static function ( MediaWikiServices $services ): MessageGroupFactory {
+		return new MessageGroupFactory(
+			$services->get( 'Translate:MessageGroupTypeRegistry' )
+		);
+	},
+
 	'Translate:MessageGroupMetadata' => static function ( MediaWikiServices $services ): MessageGroupMetadata {
 		return new MessageGroupMetadata( $services->getConnectionProvider() );
 	},
@@ -259,6 +267,10 @@ return [
 		MediaWikiServices $services
 	): MessageGroupSubscriptionStore {
 		return new MessageGroupSubscriptionStore( $services->getConnectionProvider() );
+	},
+
+	'Translate:MessageGroupTypeRegistry' => static function (): MessageGroupTypeRegistry {
+		return new MessageGroupTypeRegistry();
 	},
 
 	'Translate:MessageIndex' => static function ( MediaWikiServices $services ): MessageIndex {

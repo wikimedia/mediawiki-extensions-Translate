@@ -35,11 +35,20 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	public static function factory( array $conf ): MessageGroup {
-		/** @var MessageGroupBase $obj */
-		$obj = new $conf['BASIC']['class']();
+		return Services::getInstance()->getMessageGroupFactory()->createGroup( $conf );
+	}
+
+	/**
+	 * Construct and initialise an instance of $class from $conf.
+	 *
+	 * Called by MessageGroupFactory; not intended for general use.
+	 * @internal
+	 */
+	public static function newFromConf( string $class, array $conf ): self {
+		/** @var self $obj */
+		$obj = new $class();
 		$obj->conf = $conf;
 		$obj->namespace = $obj->parseNamespace();
-
 		return $obj;
 	}
 
