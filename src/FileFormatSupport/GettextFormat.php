@@ -16,6 +16,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialVersion;
 use MediaWiki\Title\Title;
+use Psr\Log\LoggerInterface;
 use UtfNormal\Validator;
 
 /**
@@ -30,6 +31,12 @@ use UtfNormal\Validator;
 class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	private bool $allowPotMode = false;
 	private bool $offlineMode = false;
+	private ?LoggerInterface $logger = null;
+
+	private function getLogger(): LoggerInterface {
+		$this->logger ??= LoggerFactory::getInstance( LogNames::MAIN );
+		return $this->logger;
+	}
 
 	public function supportsFuzzy(): string {
 		return 'yes';
@@ -143,7 +150,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			try {
 				$pluralCount = GettextPlural::getPluralCount( $headers['Plural-Forms'] );
 			} catch ( GettextPluralException $e ) {
-				LoggerFactory::getInstance( LogNames::MAIN )->warning(
+				$this->getLogger()->warning(
 					'GettextFormat: malformed Plural-Forms header {rule} in group {group}',
 					[
 						'rule' => $headers['Plural-Forms'],
@@ -165,7 +172,10 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 
 			if ( $useCtxtAsKey ) {
 				if ( $item['ctxt'] === false ) {
-					error_log( "ctxt missing for: $section" );
+					$this->getLogger()->warning(
+						'GettextFormat: skipping message without msgctxt in CtxtAsKey mode: {section}',
+						[ 'section' => $section ]
+					);
 					continue;
 				}
 				$key = $item['ctxt'];
@@ -289,7 +299,10 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 					$actualForms[] = $this->formatForWiki( $match );
 				} else {
 					$actualForms[] = '';
-					error_log( "Plural $i not found, expecting total of $pluralCount for $section" );
+					$this->getLogger()->warning(
+						'GettextFormat: plural form {index} not found, expecting {count} forms in section: {section}',
+						[ 'index' => $i, 'count' => $pluralCount, 'section' => $section ]
+					);
 				}
 			}
 		}
@@ -402,7 +415,10 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		$tags = [];
 		foreach ( explode( "\n", $headers ) as $line ) {
 			if ( !str_contains( $line, ':' ) ) {
-				error_log( __METHOD__ . ": $line" );
+				$this->getLogger()->warning(
+					'GettextFormat: malformed header line: {line}',
+					[ 'line' => $line ]
+				);
 			}
 			[ $key, $value ] = explode( ':', $line, 2 );
 			$tags[trim( $key )] = trim( $value );
@@ -421,7 +437,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		$pluralRule = GettextPlural::getPluralRule( $code );
 		if ( !$pluralRule ) {
 			$pluralRule = GettextPlural::getPluralRule( 'en' );
-			LoggerFactory::getInstance( LogNames::MAIN )->warning(
+			$this->getLogger()->warning(
 				"T235180: Missing Gettext plural rule for '{languagecode}'",
 				[ 'languagecode' => $code ]
 			);
@@ -429,7 +445,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		try {
 			$pluralCount = GettextPlural::getPluralCount( $pluralRule );
 		} catch ( GettextPluralException $e ) {
-			LoggerFactory::getInstance( LogNames::MAIN )->warning(
+			$this->getLogger()->warning(
 				'GettextFormat: malformed plural rule {rule} for language {languagecode} in group {group}',
 				[
 					'rule' => $pluralRule,
