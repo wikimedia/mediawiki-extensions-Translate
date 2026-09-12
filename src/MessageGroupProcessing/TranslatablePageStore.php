@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use InvalidArgumentException;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Deferred\DeferredUpdates;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;

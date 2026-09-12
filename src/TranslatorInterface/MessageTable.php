@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use MediaWiki\Context\ContextSource;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
-use MessageGroup;
 
 /**
  * Display messages for translation & review

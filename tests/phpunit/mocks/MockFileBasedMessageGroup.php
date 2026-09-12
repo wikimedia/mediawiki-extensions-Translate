@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+
 /**
  * This file contains a managed message group implementation mock object.
  *

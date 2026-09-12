@@ -3,10 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use FileBasedMessageGroup;
 use LogicException;
 use MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -22,8 +24,6 @@ use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Widget\LanguageSelectWidget;
-use MessageGroup;
-use WikiPageMessageGroup;
 
 /**
  * This special page allows exporting groups for offline translation.

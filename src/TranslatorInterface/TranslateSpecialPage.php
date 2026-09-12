@@ -3,11 +3,12 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use AggregateMessageGroup;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\LanguageFactory;
@@ -16,7 +17,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\SpecialPage;
-use MessageGroup;
 use Psr\Log\LoggerInterface;
 
 /**

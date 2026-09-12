@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
-use AggregateMessageGroup;
 use Exception;
 use MediaWiki\Extension\Translate\FileFormatSupport\FileFormatFactory;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Yaml;

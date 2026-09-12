@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWikiIntegrationTestCase;
-use MessageGroupBase;
 
 /**
  * The JavaFormat class is responsible for loading messages from .properties

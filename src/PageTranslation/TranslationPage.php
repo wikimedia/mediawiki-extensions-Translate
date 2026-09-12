@@ -5,12 +5,12 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Content\Content;
 use MediaWiki\Content\ContentHandler;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Language\Language;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
-use WikiPageMessageGroup;
 
 /**
  * Generates wikitext source code for translation pages.

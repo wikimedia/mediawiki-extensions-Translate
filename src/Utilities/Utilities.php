@@ -7,6 +7,7 @@ use MediaWiki\Config\ConfigException;
 use MediaWiki\Content\Content;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks as PageTranslationHooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
@@ -18,7 +19,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
-use MessageGroup;
 use UnexpectedValueException;
 use Wikimedia\Rdbms\IReadableDatabase;
 
@@ -534,4 +534,5 @@ class Utilities {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( Utilities::class, 'TranslateUtils' );

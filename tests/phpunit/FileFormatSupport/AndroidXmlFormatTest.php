@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWikiIntegrationTestCase;
-use MessageGroupBase;
 
 /**
  * @author Niklas Laxström

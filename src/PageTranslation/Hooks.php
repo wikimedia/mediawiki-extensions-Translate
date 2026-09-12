@@ -18,6 +18,8 @@ use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleContent;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
@@ -55,11 +57,9 @@ use MediaWiki\StubObject\StubUserLang;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MessageGroup;
 use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
-use WikiPageMessageGroup;
 
 /**
  * Hooks for page translation.

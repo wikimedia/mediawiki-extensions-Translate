@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\InitGroupLoadersHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ModifyMessageGroupStatesHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\PostInitGroupsHook;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\ProcessAPIMessageGroupsPropertiesHook;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\TranslateTitleEnum;
 use MediaWiki\Extension\Translate\PageTranslation\TranslateTitlePageTranslationHook;
@@ -26,7 +27,6 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Page\PageIdentity;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MessageGroup;
 
 /**
  * Hook runner for the Translate extension.

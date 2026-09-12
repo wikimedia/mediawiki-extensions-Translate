@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
@@ -18,6 +20,8 @@ use MediaWiki\Title\Title;
 
 /**
  * @since 2013.06
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class SandboxMessageGroup extends WikiMessageGroup {
@@ -174,3 +178,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		return $group->getMessage( $key, $group->getSourceLanguage() );
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( SandboxMessageGroup::class, 'SandboxMessageGroup' );

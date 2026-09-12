@@ -751,6 +751,7 @@ class ElasticSearchTtmServer
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 // Translation memory configuration ($wgTranslateTranslationServices) uses class as ElasticSearchTTMServer
 // See: https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories#Configuration
 class_alias( ElasticSearchTtmServer::class, "ElasticSearchTTMServer" );

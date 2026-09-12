@@ -3,9 +3,9 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWikiIntegrationTestCase;
-use MessageGroupBase;
 
 /**
  * Tests for the opt-in Android resource-qualifier code-mapping algorithm on
@@ -18,7 +18,7 @@ use MessageGroupBase;
  *
  * @author Kiro
  * @license GPL-2.0-or-later
- * @covers \FileBasedMessageGroup::mapCode
+ * @covers \MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup::mapCode
  * @covers \MediaWiki\Extension\Translate\FileFormatSupport\AndroidCodeMapper::map
  */
 class AndroidCodeMapAlgorithmTest extends MediaWikiIntegrationTestCase {

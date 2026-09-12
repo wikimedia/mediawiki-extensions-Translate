@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use Exception;
-use FileBasedMessageGroup;
 use InvalidArgumentException;
 use LogicException;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Services;
@@ -334,4 +334,5 @@ class SimpleFormat implements FileFormatSupport {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( SimpleFormat::class, 'SimpleFFS' );

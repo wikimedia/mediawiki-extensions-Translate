@@ -100,4 +100,5 @@ class DtdFormat extends SimpleFormat {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( DtdFormat::class, 'DtdFFS' );

@@ -748,4 +748,5 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( GettextFormat::class, 'GettextFFS' );

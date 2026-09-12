@@ -3,21 +3,19 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
-use CachedMessageGroupLoader;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\RecentAdditionsMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\RecentMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\SandboxMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MessageGroup;
-use MessageGroupLoader;
-use RecentAdditionsMessageGroup;
-use RecentMessageGroup;
 use RuntimeException;
-use SandboxMessageGroup;
 use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
@@ -696,4 +694,5 @@ class MessageGroups {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( MessageGroups::class, 'MessageGroups' );

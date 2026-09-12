@@ -7,12 +7,12 @@ use EmptyIterator;
 use Iterator;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
-use MessageGroup;
 use Psr\Log\LoggerInterface;
 use StatusValue;
 

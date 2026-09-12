@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use CacheDependency;
-use MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**

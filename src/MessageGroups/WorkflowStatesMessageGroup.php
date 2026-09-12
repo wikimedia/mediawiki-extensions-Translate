@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Context\IContextSource;
@@ -20,7 +22,11 @@ use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 
-/** @ingroup MessageGroup */
+/** @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
+ * @ingroup MessageGroup
+ */
 class WorkflowStatesMessageGroup extends WikiMessageGroup {
 	// id and source are not needed
 	public function __construct() {
@@ -97,3 +103,6 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 		return $keys;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( WorkflowStatesMessageGroup::class, 'WorkflowStatesMessageGroup' );

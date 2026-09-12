@@ -1,11 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 
 /**
  * Message group for MediaWiki extensions.
+ * @since 2026.09
  * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  * @ingroup MessageGroup
  */
@@ -37,3 +41,6 @@ class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 		return $desc;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( MediaWikiExtensionMessageGroup::class, 'MediaWikiExtensionMessageGroup' );

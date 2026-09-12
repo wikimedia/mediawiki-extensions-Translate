@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -240,4 +240,5 @@ class JavaFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( JavaFormat::class, 'JavaFFS' );

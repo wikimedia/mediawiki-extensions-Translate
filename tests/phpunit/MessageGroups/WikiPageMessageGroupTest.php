@@ -6,12 +6,13 @@
  */
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * @group medium
  * @group Database
- * @covers \WikiPageMessageGroup
+ * @covers \MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup
  */
 class WikiPageMessageGroupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {

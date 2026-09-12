@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use Wikimedia\ObjectFactory\ObjectFactory;
 
 /**

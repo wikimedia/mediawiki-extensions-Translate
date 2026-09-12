@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Cdb\Reader;
 use Cdb\Writer;
-use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use RuntimeException;
 
 /**

@@ -207,4 +207,5 @@ class AppleFormat extends SimpleFormat {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( AppleFormat::class, 'AppleFFS' );

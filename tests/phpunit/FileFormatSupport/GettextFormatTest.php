@@ -4,9 +4,9 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use Generator;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWikiIntegrationTestCase;
-use MessageGroupBase;
 use ReflectionObject;
 
 /**

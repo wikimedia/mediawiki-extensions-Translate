@@ -9,10 +9,11 @@ declare( strict_types = 1 );
  */
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use FileBasedMessageGroup;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
@@ -20,7 +21,6 @@ use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFactory;
-use MessageGroup;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Throwable;

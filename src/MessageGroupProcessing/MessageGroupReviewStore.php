@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use InvalidArgumentException;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\User;
-use MessageGroup;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IResultWrapper;
 

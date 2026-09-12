@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
-use FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWikiIntegrationTestCase;
 use ReflectionMethod;
 use Wikimedia\ObjectCache\HashBagOStuff;

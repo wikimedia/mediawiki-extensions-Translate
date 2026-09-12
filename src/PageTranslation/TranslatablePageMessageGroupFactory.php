@@ -8,11 +8,11 @@ use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
-use MessageGroup;
 use Wikimedia\Rdbms\IReadableDatabase;
-use WikiPageMessageGroup;
 
 /**
  * @since 2024.05

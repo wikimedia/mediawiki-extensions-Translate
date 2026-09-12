@@ -3,15 +3,15 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Extension\Translate\HookRunner;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 use function array_key_exists;
 
@@ -176,7 +176,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 		}
 
 		if ( isset( $props['class'] ) ) {
-			$a['class'] = get_class( $g );
+			$a['class'] = ( new \ReflectionClass( $g ) )->getShortName();
 		}
 
 		if ( isset( $props['namespace'] ) ) {

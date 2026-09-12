@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 
 /**

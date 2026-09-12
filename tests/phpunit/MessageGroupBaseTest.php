@@ -1,6 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\Insertable;
@@ -11,7 +14,7 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \MessageGroupBase
+ * @covers \MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase
  */
 class MessageGroupBaseTest extends MediaWikiIntegrationTestCase {
 	private MessageGroup $group;

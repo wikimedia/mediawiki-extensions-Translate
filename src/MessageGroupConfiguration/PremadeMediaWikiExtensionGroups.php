@@ -5,11 +5,11 @@ namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use FileDependency;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\UrlInsertablesSuggester;
-use MessageGroup;
 use RuntimeException;
 use UnexpectedValueException;
 
@@ -305,4 +305,5 @@ class PremadeMediaWikiExtensionGroups {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( PremadeMediaWikiExtensionGroups::class, 'PremadeMediaWikiExtensionGroups' );

@@ -3,10 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
-use AggregateMessageGroup;
 use MediaWiki\Collation\Collation;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageIndex;
 use MediaWiki\Title\MalformedTitleException;
 use MediaWiki\Title\NamespaceInfo;
@@ -15,7 +16,6 @@ use MediaWiki\Title\TitleParser;
 use SplMinHeap;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\WANObjectCache;
-use WikiPageMessageGroup;
 
 /**
  * Service for searching message groups and message keys.

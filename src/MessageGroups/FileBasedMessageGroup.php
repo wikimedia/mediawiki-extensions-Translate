@@ -8,6 +8,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
+use DomainException;
+use InvalidArgumentException;
 use MediaWiki\Extension\Translate\FileFormatSupport\AndroidCodeMapper;
 use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MetaYamlSchemaExtender;
@@ -16,6 +20,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
+use RuntimeException;
 
 /**
  * This class implements default behavior for file based message groups.
@@ -23,6 +28,9 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * File based message groups are primary type of groups at translatewiki.net,
  * while other projects may use mainly page translation message groups, or
  * custom type of message groups.
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
@@ -355,3 +363,6 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 		return $this->conf['BASIC']['sourcelanguage'] ?? 'en';
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( FileBasedMessageGroup::class, 'FileBasedMessageGroup' );

@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\Message;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageProcessing\ArrayFlattener;
@@ -171,4 +171,5 @@ class JsonFormat extends SimpleFormat {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( JsonFormat::class, 'JsonFFS' );

@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWiki\MediaWikiServices;
@@ -15,6 +17,8 @@ use MediaWiki\RecentChanges\RecentChange;
 
 /**
  * @since 2012-11-01
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class RecentAdditionsMessageGroup extends RecentMessageGroup {
@@ -51,3 +55,6 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 		];
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( RecentAdditionsMessageGroup::class, 'RecentAdditionsMessageGroup' );

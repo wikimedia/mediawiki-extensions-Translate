@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
-use AggregateMessageGroup;
-use FileBasedMessageGroup;
 use InvalidArgumentException;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWikiIntegrationTestCase;
-use MessageGroupBase;
 
 /**
  * @author Niklas Laxström

@@ -10,11 +10,11 @@ use MediaWiki\Api\ApiQueryGeneratorBase;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\RecentMessageGroup;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Title\Title;
-use RecentMessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 

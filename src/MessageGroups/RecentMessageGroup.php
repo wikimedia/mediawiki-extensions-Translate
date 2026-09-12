@@ -9,6 +9,10 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
+use BadMethodCallException;
+use InvalidArgumentException;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -20,6 +24,8 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * @since 2011-11-28
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class RecentMessageGroup extends WikiMessageGroup {
@@ -172,3 +178,6 @@ class RecentMessageGroup extends WikiMessageGroup {
 		throw new InvalidArgumentException( 'Could not find group for ' . $handle->getKey() );
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( RecentMessageGroup::class, 'RecentMessageGroup' );

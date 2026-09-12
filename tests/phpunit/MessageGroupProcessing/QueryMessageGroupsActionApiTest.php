@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Extension\Translate\MessageGroups\WikiMessageGroup;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MessageGroupTestTrait;
-use WikiMessageGroup;
 
 /**
  * @author Harry Burt
@@ -76,8 +76,10 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 		$this->assertTrue( $items[1]['exists'] );
 		$this->assertSame( 5, $items[0]['namespace'] );
 		$this->assertSame( 5, $items[1]['namespace'] );
-		$this->assertSame( WikiMessageGroup::class, $items[0]['class'] );
-		$this->assertSame( WikiMessageGroup::class, $items[1]['class'] );
+		$this->assertSame( 'WikiMessageGroup', $items[0]['class'] );
+		$this->assertSame( 'WikiMessageGroup', $items[1]['class'] );
+		$this->assertStringNotContainsString( '\\', $items[0]['class'],
+			'class must be a short name without namespace separators' );
 	}
 
 	public function testAPIFilterAccuracy(): void {
@@ -122,7 +124,7 @@ class QueryMessageGroupsActionApiTest extends ApiTestCase {
 			$this->assertTrue( $item['exists'] );
 			$this->assertStringEndsWith( 'id', $item['id'] ); // theid, anotherid
 			$this->assertSame( 5, $item['namespace'] );
-			$this->assertSame( WikiMessageGroup::class, $item['class'] );
+			$this->assertSame( 'WikiMessageGroup', $item['class'] );
 		}
 	}
 

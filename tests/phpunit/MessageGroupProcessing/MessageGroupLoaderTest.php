@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\WikiMessageGroup;
 
 /**
  * @covers \MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups

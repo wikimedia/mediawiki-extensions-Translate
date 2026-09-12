@@ -1,6 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
+use InvalidArgumentException;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -13,6 +16,7 @@ use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use RuntimeException;
 
 /**
  * This class implements some basic functions that wrap around the YAML
@@ -20,8 +24,9 @@ use MediaWiki\MediaWikiServices;
  * and are managed with Special:ManageMessageGroups and
  * importExternalTranslations.php.
  *
+ * @since 2026.09
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013, Niklas Laxström
+ * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  * @ingroup MessageGroup
@@ -333,3 +338,6 @@ abstract class MessageGroupBase implements MessageGroup {
 		return null;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( MessageGroupBase::class, 'MessageGroupBase' );

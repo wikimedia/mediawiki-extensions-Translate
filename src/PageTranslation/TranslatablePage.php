@@ -8,6 +8,7 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundle;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
@@ -23,7 +24,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use RuntimeException;
 use Wikimedia\Rdbms\IDBAccessObject;
-use WikiPageMessageGroup;
 
 /**
  * Mixed bag of methods related to translatable pages.
@@ -557,4 +557,5 @@ class TranslatablePage extends TranslatableBundle {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( TranslatablePage::class, 'TranslatablePage' );

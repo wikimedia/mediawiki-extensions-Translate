@@ -143,4 +143,5 @@ class AmdFormat extends SimpleFormat {
 	}
 }
 
+/** @deprecated class alias since 2026.09 */
 class_alias( AmdFormat::class, 'AmdFFS' );

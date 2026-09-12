@@ -11,6 +11,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -19,11 +21,15 @@ use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Message\Message;
+use RuntimeException;
 
 /**
  * This is the interface and base implementation of unmanaged
  * message groups.
  * @todo Rename the class
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 abstract class MessageGroupOld implements MessageGroup {
@@ -302,3 +308,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( MessageGroupOld::class, 'MessageGroupOld' );

@@ -3,7 +3,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate;
 
-use AggregateMessageGroup;
 use ALItem;
 use ALTree;
 use MediaWiki\Api\ApiRawMessage;
@@ -24,6 +23,7 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptio
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MoveTranslatableBundleJob;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\TranslatableBundleLogFormatter;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\PageTranslation\DeleteTranslatableBundleSpecialPage;

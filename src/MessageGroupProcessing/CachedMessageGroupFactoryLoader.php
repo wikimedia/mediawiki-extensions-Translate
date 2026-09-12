@@ -3,10 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use CachedMessageGroupLoader;
 use DependencyWrapper;
-use MessageGroup;
-use MessageGroupLoader;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IConnectionProvider;

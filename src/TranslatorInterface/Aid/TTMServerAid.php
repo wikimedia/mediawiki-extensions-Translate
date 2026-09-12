@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 
 use Exception;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
@@ -16,7 +17,6 @@ use MediaWiki\Extension\Translate\WebService\RemoteTTMServerWebService;
 use MediaWiki\Extension\Translate\WebService\TranslationWebService;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MessageGroup;
 
 /**
  * Translation aid that provides suggestion from translation memory.

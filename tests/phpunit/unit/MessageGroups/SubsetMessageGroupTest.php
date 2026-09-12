@@ -1,12 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\SubsetMessageGroup;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 /**
  * @license GPL-2.0-or-later
- * @covers \SubsetMessageGroup
+ * @covers \MediaWiki\Extension\Translate\MessageGroups\SubsetMessageGroup
  */
 class SubsetMessageGroupTest extends MediaWikiUnitTestCase {
 	public function testGetKeys() {

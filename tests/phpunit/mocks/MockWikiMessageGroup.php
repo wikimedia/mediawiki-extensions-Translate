@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\Translate\MessageGroups\WikiMessageGroup;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 
 /**

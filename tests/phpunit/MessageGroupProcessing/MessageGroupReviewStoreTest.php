@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
+use MediaWiki\Extension\Translate\MessageGroups\WikiMessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\SystemUsers\FuzzyBot;
 use MediaWikiIntegrationTestCase;
-use WikiMessageGroup;
 
 /**
  * Unit tests for message group state change api.

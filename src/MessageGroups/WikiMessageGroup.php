@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 
 /**
@@ -18,6 +20,9 @@ use MediaWiki\Extension\Translate\Utilities\Utilities;
  * The page should contain list of page names in %MediaWiki namespace, without
  * the namespace prefix. Use underscores for spaces in page names, since
  * whitespace separates the page names from each other.
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class WikiMessageGroup extends MessageGroupOld {
@@ -87,3 +92,6 @@ class WikiMessageGroup extends MessageGroupOld {
 		}
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( WikiMessageGroup::class, 'WikiMessageGroup' );

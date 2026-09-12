@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 /** @defgroup FileFormatSupport File format support */
 
-use FileBasedMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 
 /**

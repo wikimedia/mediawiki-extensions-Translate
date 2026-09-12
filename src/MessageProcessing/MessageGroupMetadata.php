@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\Translate\MessageProcessing;
 
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscriptionStore;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
-use MessageGroup;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**

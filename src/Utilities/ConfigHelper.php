@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Utilities;
 
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Permissions\Authority;
-use MessageGroup;
 
 /**
  * A helper class added to work with configuration values of the Translate Extension

@@ -3,10 +3,10 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Tests\Utilities;
 
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Permissions\Authority;
 use MediaWikiIntegrationTestCase;
-use MessageGroup;
 
 /**
  * Tests for ConfigHelper.

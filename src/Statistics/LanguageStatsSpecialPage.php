@@ -3,12 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Statistics;
 
-use AggregateMessageGroup;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupReviewStore;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\Utilities\ConfigHelper;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Html\Html;
@@ -20,9 +22,7 @@ use MediaWiki\ObjectCache\ObjectCacheFactory;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Widget\LanguageSelectWidget;
-use MessageGroup;
 use Wikimedia\ObjectCache\BagOStuff;
-use WikiPageMessageGroup;
 
 /**
  * Implements includable special page Special:LanguageStats which provides
@@ -464,7 +464,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 
 				$rowParams = [];
 				$rowParams['data-groupid'] = $groupId;
-				$rowParams['class'] = get_class( $group );
+				$rowParams['class'] = ( new \ReflectionClass( $group ) )->getShortName();
 				if ( $isExcluded ) {
 					$rowParams['class'] .= ' tux-langstats-disabled';
 				}

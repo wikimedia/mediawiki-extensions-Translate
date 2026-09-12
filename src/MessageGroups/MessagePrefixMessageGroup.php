@@ -1,12 +1,15 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 
 /**
  * Contains an unmanaged message group for fetching stats using message prefixes
- * @author Abijeet Patro
  * @since 2023.02
+ * @author Abijeet Patro
+ * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  * @ingroup MessageGroup
  */
@@ -47,3 +50,6 @@ class MessagePrefixMessageGroup extends WikiMessageGroup {
 		return null;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( MessagePrefixMessageGroup::class, 'MessagePrefixMessageGroup' );

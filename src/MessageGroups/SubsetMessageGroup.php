@@ -1,6 +1,9 @@
 <?php
 declare( strict_types = 1 );
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
+use LogicException;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Logger\LoggerFactory;
@@ -9,7 +12,9 @@ use Psr\Log\LoggerInterface;
 /**
  * Message group that contains a subset of keys of another group.
  *
+ * @since 2026.09
  * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
 class SubsetMessageGroup extends MessageGroupOld {
@@ -148,3 +153,6 @@ class SubsetMessageGroup extends MessageGroupOld {
 		return $this->parentGroup;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( SubsetMessageGroup::class, 'SubsetMessageGroup' );

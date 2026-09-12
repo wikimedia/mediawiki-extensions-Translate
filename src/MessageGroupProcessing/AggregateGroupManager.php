@@ -3,14 +3,14 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageBundleTranslation\MessageBundleMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\AggregateMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
-use MessageGroup;
 use RuntimeException;
-use WikiPageMessageGroup;
 
 /**
  * Contains logic to manage aggregate groups and their subgroups

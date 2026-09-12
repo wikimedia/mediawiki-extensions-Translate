@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
@@ -24,6 +26,9 @@ use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Wraps the translatable page sections into a message group.
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends MessageGroupOld {
@@ -216,3 +221,6 @@ class WikiPageMessageGroup extends MessageGroupOld {
 		return $this->getTitle();
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( WikiPageMessageGroup::class, 'WikiPageMessageGroup' );

@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use MediaWiki\Exception\UserNotLoggedIn;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\HTMLForm\OOUIHTMLForm;
@@ -13,7 +14,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Specials\FormFields\EditWatchlistCheckboxSeriesField;
 use MediaWiki\Status\Status;
-use MessageGroup;
 
 /**
  * Allows users to manage message group subscriptions.

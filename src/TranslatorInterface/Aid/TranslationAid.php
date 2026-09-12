@@ -6,9 +6,9 @@ namespace MediaWiki\Extension\Translate\TranslatorInterface\Aid;
 /** @defgroup TranslationAids Translation Aids */
 
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 use MediaWiki\Extension\Translate\TranslatorInterface\TranslationHelperException;
-use MessageGroup;
 
 /**
  * Multipurpose class for translation aids:

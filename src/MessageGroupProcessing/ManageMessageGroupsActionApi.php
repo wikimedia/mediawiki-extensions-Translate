@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use Exception;
 use MediaWiki\Api\ApiBase;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\StringComparators\SimpleStringComparator;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
-use MessageGroup;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

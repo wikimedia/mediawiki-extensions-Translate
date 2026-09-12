@@ -5,6 +5,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
 use MediaWiki\Extension\Translate\MessageLoading\MessageDefinitions;
@@ -19,6 +21,9 @@ use MediaWiki\Title\Title;
  * Limitations:
  *  - Only groups in the same namespace.
  *  - Only groups with the same source language.
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 class AggregateMessageGroup extends MessageGroupBase {
@@ -187,3 +192,6 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $this->conf['BASIC']['sourcelanguage'] ?? self::UNDETERMINED_LANGUAGE_CODE;
 	}
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( AggregateMessageGroup::class, 'AggregateMessageGroup' );

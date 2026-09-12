@@ -4,8 +4,7 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use MediaWiki\Config\ServiceOptions;
-use MessageGroupLoader;
-use WorkflowStatesMessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\WorkflowStatesMessageGroup;
 
 /**
  * @author Abijeet Patro

@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 // phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 
 /**
  * This is a hook handler interface, see docs/Hooks.md in core.

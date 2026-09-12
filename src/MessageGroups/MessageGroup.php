@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+namespace MediaWiki\Extension\Translate\MessageGroups;
+
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupStates;
 use MediaWiki\Extension\Translate\MessageLoading\MessageCollection;
@@ -23,6 +25,9 @@ use MediaWiki\Linker\LinkTarget;
  * description, the class defines which mangler, validators and file
  * system support (FFS), if any, the group uses.
  *
+ * @since 2026.09
+ * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @ingroup MessageGroup
  */
 interface MessageGroup {
@@ -174,3 +179,6 @@ interface MessageGroup {
 	/** Returns the page where the messages in the group are defined. */
 	public function getRelatedPage(): ?LinkTarget;
 }
+
+/** @deprecated class alias since 2026.09 */
+class_alias( MessageGroup::class, 'MessageGroup' );

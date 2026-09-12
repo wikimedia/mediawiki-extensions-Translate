@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use InvalidArgumentException;
-use MessageGroup;
-use MessageGroupBase;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 
 /**
  * Canonical factory for constructing YAML-configured message groups.
