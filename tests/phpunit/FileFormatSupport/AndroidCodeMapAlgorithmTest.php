@@ -88,7 +88,7 @@ class AndroidCodeMapAlgorithmTest extends MediaWikiIntegrationTestCase {
 	private function makeGroup( array $files ): FileBasedMessageGroup {
 		$conf = [
 			'BASIC' => [
-				'class' => FileBasedMessageGroup::class,
+				'type' => 'file',
 				'id' => 'test-android-codemap',
 				'label' => 'Test',
 				'namespace' => 'NS_MEDIAWIKI',

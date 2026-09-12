@@ -77,6 +77,7 @@ class MessageGroupsTest extends MediaWikiIntegrationTestCase {
 		$enGroup2 = MessageGroups::getGroup( 'EnglishGroup2' );
 		$teGroup1 = MessageGroups::getGroup( 'TeluguGroup1' );
 
+		// @todo Assert groups are non-null before use to produce a clearer failure message
 		$this->assertEquals( 'en', MessageGroups::haveSingleSourceLanguage(
 			[ $enGroup1, $enGroup2 ] )
 		);

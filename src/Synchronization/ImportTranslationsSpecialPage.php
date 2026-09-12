@@ -208,7 +208,7 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 				'CtxtAsKey' => true,
 			],
 			'BASIC' => [
-				'class' => FileBasedMessageGroup::class,
+				'type' => 'file',
 				'namespace' => -1,
 			]
 		] );

@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use AggregateMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -63,7 +62,7 @@ final class AggregateGroupMessageGroupFactory implements CachedMessageGroupFacto
 		$template = [
 			'BASIC' => [
 				'meta' => 1,
-				'class' => AggregateMessageGroup::class,
+				'type' => 'aggregate',
 				'namespace' => NS_TRANSLATIONS,
 			]
 		];

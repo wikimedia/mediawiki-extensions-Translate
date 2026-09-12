@@ -1,5 +1,5 @@
 BASIC:
-  class: MediaWikiExtensionMessageGroup
+  type: mediawiki-extension
   id: ext-exampleextension2
   namespace: 8
   label: Example Extension 2

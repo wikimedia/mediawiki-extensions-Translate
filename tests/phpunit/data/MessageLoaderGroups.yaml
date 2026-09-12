@@ -3,5 +3,5 @@
 BASIC:
   id: message-loader-group
   label: Message Loader Group
-  class: FileBasedMessageGroup
+  type: file
   namespace: 10

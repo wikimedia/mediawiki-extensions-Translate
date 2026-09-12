@@ -9,7 +9,6 @@ use MediaWiki\Extension\Translate\MessageProcessing\StringMatcher;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\MediaWikiInsertablesSuggester;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\UrlInsertablesSuggester;
-use MediaWikiExtensionMessageGroup;
 use MessageGroup;
 use RuntimeException;
 use UnexpectedValueException;
@@ -80,7 +79,7 @@ class PremadeMediaWikiExtensionGroups {
 	protected function createMessageGroup( string $id, array $info ): MessageGroup {
 		$conf = [
 			'BASIC' => [
-				'class' => MediaWikiExtensionMessageGroup::class,
+				'type' => 'mediawiki-extension',
 				'id' => $id,
 				'namespace' => $this->getNamespace(),
 				'label' => $info['name'],

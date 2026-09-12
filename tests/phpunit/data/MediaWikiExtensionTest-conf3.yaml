@@ -1,5 +1,5 @@
 BASIC:
-  class: MediaWikiExtensionMessageGroup
+  type: mediawiki-extension
   id: ext-examplejsonextension
   namespace: 8
   label: Example JsonExtension

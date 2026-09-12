@@ -4,7 +4,8 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
 use MediaWikiIntegrationTestCase;
-use PHPUnit\Framework\MockObject\MockObject;
+use RuntimeException;
+use UnexpectedValueException;
 
 /**
  * @author Niklas Laxström
@@ -13,32 +14,65 @@ use PHPUnit\Framework\MockObject\MockObject;
  * @covers \MediaWiki\Extension\Translate\MessageGroupConfiguration\PremadeMediaWikiExtensionGroups
  */
 class PremadeMediaWikiExtensionGroupsTest extends MediaWikiIntegrationTestCase {
-	private string $definitionFile;
 
-	protected function setUp(): void {
-		parent::setUp();
-		$this->definitionFile = __DIR__ . '/../data/mediawiki-extensions.txt';
+	private function newGroups( string $definitionFile, string $path = '' ): PremadeMediaWikiExtensionGroups {
+		return new PremadeMediaWikiExtensionGroups( $definitionFile, $path );
 	}
 
-	public function testServiceFactoryIsUsed(): void {
-		$groups = new PremadeMediaWikiExtensionGroups(
-			$this->definitionFile,
+	public function testSetGroupPrefixIsApplied(): void {
+		$groups = $this->newGroups(
+			__DIR__ . '/../data/mediawiki-extensions.txt',
 			'%GROUPROOT%/mediawiki-extensions/extensions'
 		);
-
-		/** @var MessageGroupFactory&MockObject $factory */
-		$factory = $this->createMock( MessageGroupFactory::class );
-		$factory->expects( $this->atLeastOnce() )
-			->method( 'createGroup' )
-			->willReturnCallback( static function ( array $conf ) {
-				return \MessageGroupBase::newFromConf( $conf['BASIC']['class'], $conf );
-			} );
-
-		$this->setService( 'Translate:MessageGroupFactory', $factory );
+		$groups->setGroupPrefix( 'mw-' );
 
 		$list = $deps = [];
 		$groups->register( $list, $deps );
 
-		$this->assertNotEmpty( $list );
+		$this->assertArrayHasKey( 'mw-wikimediamessages', $list );
+		$this->assertArrayNotHasKey( 'ext-wikimediamessages', $list );
+	}
+
+	public function testSetNamespaceIsApplied(): void {
+		$groups = $this->newGroups(
+			__DIR__ . '/../data/mediawiki-extensions.txt',
+			'%GROUPROOT%/mediawiki-extensions/extensions'
+		);
+		$groups->setNamespace( NS_PROJECT );
+
+		$list = $deps = [];
+		$groups->register( $list, $deps );
+
+		$this->assertSame( NS_PROJECT, $list['ext-wikimediamessages']->getNamespace() );
+	}
+
+	public function testParseFileThrowsOnDuplicateName(): void {
+		$file = $this->getNewTempFile();
+		file_put_contents( $file, "Example\nExample\n" );
+
+		$this->expectException( RuntimeException::class );
+		$this->expectExceptionMessage( 'Trying to define name twice' );
+		$list = $deps = [];
+		$this->newGroups( $file )->register( $list, $deps );
+	}
+
+	public function testParseFileThrowsOnUnknownKey(): void {
+		$file = $this->getNewTempFile();
+		file_put_contents( $file, "Example\nunknownkey = value\n" );
+
+		$this->expectException( UnexpectedValueException::class );
+		$this->expectExceptionMessage( 'Unknown key' );
+		$list = $deps = [];
+		$this->newGroups( $file )->register( $list, $deps );
+	}
+
+	public function testParseFileThrowsOnMissingName(): void {
+		$file = $this->getNewTempFile();
+		file_put_contents( $file, "file = foo\n" );
+
+		$this->expectException( RuntimeException::class );
+		$this->expectExceptionMessage( 'Name missing' );
+		$list = $deps = [];
+		$this->newGroups( $file )->register( $list, $deps );
 	}
 }

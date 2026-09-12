@@ -4,28 +4,28 @@ BASIC:
   id: EnglishGroup1
   namespace: 8
   label: English Group 1
-  class: FileBasedMessageGroup
+  type: file
   sourcelanguage: en
 
 FILES:
-  class: SimpleFFS
+  format: Json
 ---
 BASIC:
   id: EnglishGroup2
   namespace: 8
   label: English Group 2
-  class: FileBasedMessageGroup
+  type: file
   sourcelanguage: en
 
 FILES:
-  class: SimpleFFS
+  format: Json
 ---
 BASIC:
   id: TeluguGroup1
   namespace: 8
   label: Telugu Group 1
-  class: FileBasedMessageGroup
+  type: file
   sourcelanguage: te
 
 FILES:
-  class: SimpleFFS
+  format: Json

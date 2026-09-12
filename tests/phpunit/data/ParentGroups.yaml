@@ -2,7 +2,7 @@ TEMPLATE:
   BASIC:
     label: TestGroup
     meta: yes
-    class: AggregateMessageGroup
+    type: aggregate
     namespace: 8
 
 # Test case 1 starts

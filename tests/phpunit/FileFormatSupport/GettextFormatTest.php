@@ -3,7 +3,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
-use FileBasedMessageGroup;
 use Generator;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
 use MediaWikiIntegrationTestCase;
@@ -25,7 +24,7 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [
-				'class' => FileBasedMessageGroup::class,
+				'type' => 'file',
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',

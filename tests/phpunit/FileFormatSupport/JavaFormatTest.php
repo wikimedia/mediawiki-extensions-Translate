@@ -20,7 +20,7 @@ class JavaFormatTest extends MediaWikiIntegrationTestCase {
 
 	private const GROUP_CONFIGURATION = [
 		'BASIC' => [
-			'class' => FileBasedMessageGroup::class,
+			'type' => 'file',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',

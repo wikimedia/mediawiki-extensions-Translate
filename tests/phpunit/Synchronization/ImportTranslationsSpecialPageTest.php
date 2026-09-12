@@ -98,7 +98,7 @@ PO;
 		$this->assertInstanceOf( FileBasedMessageGroup::class,
 			$this->getServiceContainer()->get( 'Translate:MessageGroupFactory' )
 				->createGroup( [
-					'BASIC' => [ 'class' => FileBasedMessageGroup::class, 'namespace' => -1 ],
+					'BASIC' => [ 'type' => 'file', 'namespace' => -1 ],
 					'FILES' => [ 'format' => 'Gettext', 'CtxtAsKey' => true ],
 				] )
 		);

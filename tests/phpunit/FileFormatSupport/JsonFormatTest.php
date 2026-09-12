@@ -23,7 +23,7 @@ class JsonFormatTest extends MediaWikiIntegrationTestCase {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [
-				'class' => FileBasedMessageGroup::class,
+				'type' => 'file',
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
