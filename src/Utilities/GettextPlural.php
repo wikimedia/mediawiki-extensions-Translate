@@ -33,6 +33,9 @@ class GettextPlural {
 			if ( trim( $line ) === '' ) {
 				continue;
 			}
+			if ( str_starts_with( trim( $line ), '#' ) ) {
+				continue;
+			}
 			[ $rulecode, $rule ] = explode( "\t", $line );
 			if ( $rulecode === $code ) {
 				return $rule;
