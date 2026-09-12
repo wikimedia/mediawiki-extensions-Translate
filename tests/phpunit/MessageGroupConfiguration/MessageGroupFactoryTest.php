@@ -47,6 +47,11 @@ class MessageGroupFactoryTest extends MediaWikiIntegrationTestCase {
 		$this->assertInstanceOf( FileBasedMessageGroup::class, $group );
 	}
 
+	public function testCustomClassProducesCorrectImplementation(): void {
+		$group = $this->factory->createGroup( $this->baseConf( [ 'class' => CustomTestMessageGroup::class ] ) );
+		$this->assertInstanceOf( CustomTestMessageGroup::class, $group );
+	}
+
 	public function testConfigurationIsInitialised(): void {
 		$conf = $this->baseConf( [ 'type' => 'file', 'label' => 'Test' ] );
 		$group = $this->factory->createGroup( $conf );
@@ -112,4 +117,8 @@ class MessageGroupFactoryTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( get_class( $viaStatic ), get_class( $viaFactory ) );
 		$this->assertSame( $viaStatic->getConfiguration(), $viaFactory->getConfiguration() );
 	}
+}
+
+/** Custom message group implementation for testing the custom class path. */
+class CustomTestMessageGroup extends FileBasedMessageGroup {
 }
