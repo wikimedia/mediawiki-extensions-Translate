@@ -156,6 +156,20 @@ class JsonFormatTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringNotContainsString( "\t", $data, 'no tabs when a custom indentation is set' );
 	}
 
+	public function testGenerateFileReturnsEmptyStringWhenNoMessages(): void {
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $this->groupConfiguration );
+		$jsonFormat = new JsonFormat( $group );
+
+		$result = $jsonFormat->generateFile( [
+			'MESSAGES' => [],
+			'AUTHORS' => [ 'SomeAuthor' ],
+			'EXTRA' => [ 'METADATA' => [] ],
+		] );
+
+		$this->assertSame( '', $result );
+	}
+
 	/** @dataProvider provideInvalidIndentStrings */
 	public function testExportWithInvalidIndentStringThrows( string $indent ): void {
 		$collection = new MockMessageCollectionForExport();

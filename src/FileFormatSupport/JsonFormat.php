@@ -80,11 +80,6 @@ class JsonFormat extends SimpleFormat {
 			}
 		}
 
-		// Do not create files without translations
-		if ( $messages === [] ) {
-			return '';
-		}
-
 		$template['MESSAGES'] = $messages;
 		$template['AUTHORS'] = $authors;
 
@@ -93,6 +88,9 @@ class JsonFormat extends SimpleFormat {
 
 	public function generateFile( array $template ): string {
 		$messages = $template['MESSAGES'];
+		if ( $messages === [] ) {
+			return '';
+		}
 		$authors = $template['AUTHORS'];
 
 		if ( $this->flattener ) {

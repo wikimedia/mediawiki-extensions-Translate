@@ -304,6 +304,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		$targetTemplate['MESSAGES'] = $combinedMessages;
 
 		$backportedContent = $fileFormat->generateFile( $targetTemplate );
+		if ( $backportedContent === '' ) {
+			return 'no translations';
+		}
 
 		$targetFilename = $targetPath . '/' . $group->getTargetFilename( $language );
 		if ( file_exists( $targetFilename ) ) {
