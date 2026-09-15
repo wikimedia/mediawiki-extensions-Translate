@@ -79,6 +79,7 @@
 	"translate-checks-plural": "Originalen bruger <nowiki>{{PLURAL:}}</nowiki>, men oversættelsen gør det ikke.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> fik {{PLURAL:$1|en form|$1 forme}}, men {{PLURAL:$2|kun en form|$2 forme}} er understøttet (fraregnet 0=- og 1=-forme).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> har en gentaget form til sidst. <nowiki>{{PLURAL:$1|får|får}}</nowiki> bør skrives som <nowiki>{{PLURAL:$1|får}}</nowiki>.",
+	"translate-checks-gender-dupe": "<nowiki>{{GENDER:}}</nowiki> har redundante former. <nowiki>{{GENDER:$1|hans|hans}}</nowiki> skal skrives som <nowiki>{{GENDER:$1|hans}}</nowiki> og <nowiki>{{GENDER:$1|hans|hende|hans}}</nowiki> som <nowiki>{{GENDER:$1|hans|hendes}}</nowiki>.",
 	"translate-checks-gettext-plural-missing": "Denne oversættelse skal have<nowiki> {{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Denne besked understøttes ikke<nowiki> {{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> accepterer præcis $1 {{PLURAL:$1|flertalsform|flertalsformer}}. I øjeblikket gives $2 {{PLURAL:$2|flertalsform|flertalsformer}}.",

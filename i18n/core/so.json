@@ -70,6 +70,7 @@
 	"translate-checks-plural": "Qeexitaanka wuxuu adeegsadaa <nowiki>{{PLURAL:}}</nowiki> laakiin tarjumaaddu ma adeegsato.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> waxaa la siiyay {{PLURAL:$1|hal qaab|$1 qaabab}} laakiin {{PLURAL:$2|hal qaab kaliya ayaa la taageeraa|$2 qaabab ayaa la taageeraa}} (marka laga reebo 0= iyo 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> wuxuu leeyahay qaabab isku mid ah dhammaadka. <nowiki>{{PLURAL:$1|ido|ido}}</nowiki> waa in loo qoraa <nowiki>{{PLURAL:$1|ido}}</nowiki>.",
+	"translate-checks-gender-dupe": "<nowiki>{{GENDER:}}</nowiki> waxay leedahay qaabab aan loo baahnayn. <nowiki>{{GENDER:$1|isaga|isaga}}</nowiki> waa in loo qoro <nowiki>{{GENDER:$1|isaga}}</nowiki>, halka <nowiki>{{GENDER:$1|isaga|iyada|isaga}}</nowiki> loo qoro <nowiki>{{GENDER:$1|isaga|iyada}}</nowiki>.",
 	"translate-checks-gettext-plural-missing": "Tarjumaadani waa inay lahaataa <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Fariintani ma taageerto <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> waxay aqbashaa si sax ah $1 {{PLURAL:$1|qaab jamac|qaabab jamac}}. Hadda $2 {{PLURAL:$2|qaab jamac ayaa la bixiyay|qaabab jamac ayaa la bixiyay}}.",
