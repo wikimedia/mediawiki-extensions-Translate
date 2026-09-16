@@ -29,7 +29,8 @@ final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory 
 	}
 
 	public function getCacheVersion(): int {
-		return 2;
+		// Bumped: the MessageGroups namespace move broke unserialization of objects cached under the old class names.
+		return 3;
 	}
 
 	public function getDependencies(): array {
