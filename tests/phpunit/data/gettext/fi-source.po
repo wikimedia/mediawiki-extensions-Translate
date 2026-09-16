@@ -1,0 +1,13 @@
+# Finnish source
+msgid ""
+msgstr ""
+"Project-Id-Version: Ajapaik\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+
+msgid "Hello"
+msgstr "Hei"
+
+msgid "Goodbye"
+msgstr "Näkemiin"

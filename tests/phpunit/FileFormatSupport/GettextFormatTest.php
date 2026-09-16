@@ -4,8 +4,10 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\Translate\FileFormatSupport;
 
 use Generator;
+use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroupBase;
 use MediaWiki\Extension\Translate\MessageLoading\FatMessage;
+use MediaWiki\Extension\Translate\Synchronization\ExternalMessageSourceStateComparator;
 use MediaWikiIntegrationTestCase;
 use ReflectionObject;
 
@@ -13,15 +15,19 @@ use ReflectionObject;
  * Tests for Gettext message file format.
  *
  * @author Niklas Laxström
+ * @author Siebrand Mazeland
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  * @covers \MediaWiki\Extension\Translate\FileFormatSupport\GettextFormat
+ * @group Database
  */
 class GettextFormatTest extends MediaWikiIntegrationTestCase {
 	private array $groupConfiguration;
 
 	protected function setUp(): void {
 		parent::setUp();
+		$this->overrideConfigValue( 'TranslateDocumentationLanguageCode', false );
+		$this->overrideConfigValue( 'TranslateCacheDirectory', $this->getNewTempDirectory() );
 		$this->groupConfiguration = [
 			'BASIC' => [
 				'type' => 'file',
@@ -363,6 +369,118 @@ class GettextFormatTest extends MediaWikiIntegrationTestCase {
 			'NFD input should be normalized to NFC' );
 		$this->assertStringNotContainsString( $nfdE, $translation,
 			'NFD sequences should not remain after normalization' );
+	}
+
+	public function testSourceLanguagePoFileUsesMsgidAsDefinition(): void {
+		$conf = [
+			'BASIC' => [
+				'type' => 'file',
+				'id' => 'test-id',
+				'label' => 'Test',
+				'namespace' => 'NS_MEDIAWIKI',
+				'description' => 'Test',
+				'sourcelanguage' => 'fi',
+			],
+			'FILES' => [
+				'format' => 'Gettext',
+				'sourcePattern' => __DIR__ . '/../data/gettext/fi-source.po',
+			],
+		];
+		$group = MessageGroupBase::factory( $conf );
+		$format = new GettextFormat( $group );
+
+		$result = $format->read( 'fi' );
+
+		// Definitions must come from msgid, not msgstr, even without #, fuzzy header
+		$messages = $result['MESSAGES'];
+		$this->assertContains( 'Hello', $messages );
+		$this->assertContains( 'Goodbye', $messages );
+		$this->assertNotContains( 'Hei', $messages );
+		$this->assertNotContains( 'Näkemiin', $messages );
+	}
+
+	public function testWriteRealUsesSourceLanguageForPotTemplate(): void {
+		$dataDir = __DIR__ . '/../data';
+		$conf = [
+			'BASIC' => [
+				'type' => 'file',
+				'id' => 'test-gettext-fi-source',
+				'label' => 'Test',
+				'namespace' => 'NS_MEDIAWIKI',
+				'description' => 'Test',
+				'sourcelanguage' => 'fi',
+			],
+			'FILES' => [
+				'format' => 'Gettext',
+				'definitionFile' => "$dataDir/gettext/fi-source.po",
+				'sourcePattern' => "$dataDir/gettext/de-translation.po",
+			],
+		];
+
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $conf );
+		$format = new GettextFormat( $group );
+
+		// Prime the source language cache so initCollection() has definitions
+		$group->getMessageGroupCache( 'fi' )->create();
+
+		$deData = $format->read( 'de' );
+
+		// Create wiki pages for each German translation
+		foreach ( $deData['MESSAGES'] as $key => $translation ) {
+			$this->editPage( $key . '/de', $translation, '', NS_MEDIAWIKI );
+		}
+
+		$collection = $group->initCollection( 'de' );
+		$collection->loadTranslations();
+		$output = $format->writeIntoVariable( $collection );
+
+		$this->assertStringContainsString( 'msgid "Hello"', $output );
+		$this->assertStringContainsString( 'msgstr "Hallo"', $output );
+		$this->assertStringContainsString( 'msgid "Goodbye"', $output );
+		$this->assertStringContainsString( 'msgstr "Auf Wiedersehen"', $output );
+	}
+
+	public function testNoSpuriousChangesWhenSourcePoFileHasDifferingMsgidAndMsgstr(): void {
+		$dataDir = __DIR__ . '/../data';
+		$conf = [
+			'BASIC' => [
+				'type' => 'file',
+				'id' => 'test-gettext-fi-source',
+				'label' => 'Test',
+				'namespace' => 'NS_MEDIAWIKI',
+				'description' => 'Test',
+				'sourcelanguage' => 'fi',
+			],
+			'FILES' => [
+				'format' => 'Gettext',
+				'definitionFile' => "$dataDir/gettext/fi-source.po",
+				'sourcePattern' => "$dataDir/gettext/de-translation.po",
+			],
+		];
+
+		/** @var FileBasedMessageGroup $group */
+		$group = MessageGroupBase::factory( $conf );
+		$format = new GettextFormat( $group );
+
+		$fiData = $format->read( 'fi' );
+
+		// Create wiki pages for the source language using msgid values (correct state)
+		foreach ( $fiData['MESSAGES'] as $key => $definition ) {
+			$this->editPage( $key, $definition, '', NS_MEDIAWIKI );
+		}
+
+		// Prime the cache from the current wiki+file state
+		$group->getMessageGroupCache( 'fi' )->create();
+
+		/** @var ExternalMessageSourceStateComparator $comparator */
+		$comparator = $this->getServiceContainer()
+			->get( 'Translate:ExternalMessageSourceStateComparator' );
+		$changes = $comparator->processGroup( $group );
+
+		$this->assertSame( [],
+			$changes->getModificationsForLanguage( 'fi' ),
+			'No spurious changes should be detected for source language when msgid != msgstr' );
 	}
 
 	private function getGettextInstance(): GettextFormat {

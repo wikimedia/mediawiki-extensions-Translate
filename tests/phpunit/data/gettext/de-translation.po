@@ -1,0 +1,13 @@
+# German translation
+msgid ""
+msgstr ""
+"Project-Id-Version: Ajapaik\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+
+msgid "Hello"
+msgstr "Hallo"
+
+msgid "Goodbye"
+msgstr "Auf Wiedersehen"

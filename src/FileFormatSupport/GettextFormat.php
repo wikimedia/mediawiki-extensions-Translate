@@ -98,8 +98,6 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
 		}
 
-		$potmode = false;
-
 		// Normalise newlines, to make processing easier
 		$data = str_replace( "\r\n", "\n", $data );
 
@@ -117,12 +115,6 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		if ( $match !== null ) {
 			$headerBlock = $this->formatForWiki( $match, 'trim' );
 			$headers = $this->parseHeaderTags( $headerBlock );
-
-			// Check for pot-mode by checking if the header is fuzzy
-			$flags = $this->parseFlags( $headerSection );
-			if ( in_array( 'fuzzy', $flags, true ) ) {
-				$potmode = $this->allowPotMode;
-			}
 		} else {
 			$message = "Gettext file header was not found:\n\n$headerSection";
 			throw new GettextParseException( $message );
@@ -144,7 +136,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		/* At this stage we are only interested how many plurals forms we should
 		 * be expecting when parsing the rest of this file. */
 		$pluralCount = null;
-		if ( $potmode ) {
+		if ( $this->allowPotMode ) {
 			$pluralCount = 2;
 		} elseif ( isset( $headers['Plural-Forms'] ) ) {
 			try {
@@ -184,7 +176,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 			}
 
 			$key = $mangler->mangle( $key );
-			$messages[$key] = $potmode ? $item['id'] : $item['str'];
+			$messages[$key] = $this->allowPotMode ? $item['id'] : $item['str'];
 			$template[$key] = $item;
 		}
 
@@ -428,8 +420,7 @@ class GettextFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 	}
 
 	protected function writeReal( MessageCollection $collection ): string {
-		// FIXME: this should be the source language
-		$pot = $this->read( 'en' ) ?? [];
+		$pot = $this->read( $this->getGroup()->getSourceLanguage() ) ?? [];
 		$code = $collection->code;
 		$template = $this->read( $code ) ?? [];
 		$output = $this->doGettextHeader( $collection, $template['EXTRA'] ?? [] );
