@@ -25,12 +25,11 @@ final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory 
 	}
 
 	public function getCacheKey(): string {
-		return 'hook-defined-groups';
+		return 'hook-defined-groups-v2';
 	}
 
 	public function getCacheVersion(): int {
-		// Bumped: the MessageGroups namespace move broke unserialization of objects cached under the old class names.
-		return 3;
+		return 1;
 	}
 
 	public function getDependencies(): array {
