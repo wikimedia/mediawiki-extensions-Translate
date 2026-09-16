@@ -126,6 +126,7 @@
 	"translate-checks-plural": "定义使用了<nowiki>{{PLURAL:}}</nowiki>，但翻译未使用。",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki>被赋予了$1种形式，但只有$2种形式被支持（排除0=和1=形式）。",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki>的尾部形式重复。<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki>应该写为<nowiki>{{PLURAL:$1|sheep}}</nowiki>。",
+	"translate-checks-gender-dupe": "<nowiki>{{GENDER:}}</nowiki>具有多余形式。<nowiki>{{GENDER:$1|他的|他的}}</nowiki>应写作<nowiki>{{GENDER:$1|他的}}</nowiki>，<nowiki>{{GENDER:$1|他的|她的|他的}}</nowiki>应写作<nowiki>{{GENDER:$1|他的|她的}}</nowiki>。",
 	"translate-checks-gettext-plural-missing": "这个翻译必须有<nowiki>{{PLURAL:GETTEXT|}}</nowiki>。",
 	"translate-checks-gettext-plural-unsupported": "此消息不支持<nowiki>{{PLURAL:GETTEXT|}}</nowiki>。",
 	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki>只接受$1个{{PLURAL:$1|复数形式}}。 目前给出了$2个 {{PLURAL:$2|复数形式}}。",
