@@ -260,7 +260,7 @@
 	"translate-smg-changeset-modified": "De wijzigingenreeks is aangepast door een andere gebruiker of een ander proces. Uw wijzigingen kunnen niet gepubliceerd worden omdat diens wijzigingen anders teniet gedaan kunnen worden. Laad de pagina opnieuw om de laatste wijzigingen te zien.",
 	"translate-smg-no-groups-in-sync": "Er zijn momenteel geen groepen in synchronisatie",
 	"translate-smg-strong-sync-help": "Hulp",
-	"translate-smg-groups-in-sync": "Groepen die momenteel in synchronisatie zijn",
+	"translate-smg-groups-in-sync": "Groepen die momenteel gesynchroniseerd worden",
 	"translate-smg-groups-in-sync-list": "Lijst met groepen die momenteel op de achtergrond worden verwerkt:",
 	"translate-smg-groups-with-error-title": "Groepen waarbij tijdens de synchronisatie fouten zijn opgetreden",
 	"translate-smg-groups-with-error-desc": "Lijst met groepen en hun berichten waarbij tijdens de synchronisatie fouten zijn opgetreden:",
