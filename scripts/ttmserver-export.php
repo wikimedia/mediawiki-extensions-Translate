@@ -18,6 +18,7 @@ use MediaWiki\Extension\Translate\TtmServer\WritableTtmServer;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 use Wikimedia\Assert\Assert;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -33,7 +34,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
-	private float $start;
+	private int|float $start;
 	private const FAKE_TTM = 'dry-run';
 
 	public function __construct() {
@@ -70,12 +71,12 @@ class TTMServerBootstrap extends Maintenance {
 		);
 		$this->setBatchSize( 500 );
 		$this->requireExtension( 'Translate' );
-		$this->start = microtime( true );
+		$this->start = ConvertibleTimestamp::hrtime();
 	}
 
 	public function statusLine( string $text, ?string $channel = null ) {
 		$pid = sprintf( '%5s', getmypid() );
-		$prefix = sprintf( '%6.2f', microtime( true ) - $this->start );
+		$prefix = sprintf( '%6.2f', ( ConvertibleTimestamp::hrtime() - $this->start ) / 1e9 );
 		$mem = sprintf( '%5.1fM', memory_get_usage( true ) / ( 1024 * 1024 ) );
 		$this->output( "$pid $prefix $mem  $text", $channel );
 	}
@@ -239,7 +240,7 @@ class TTMServerBootstrap extends Maintenance {
 	 */
 	private function exportGroup( MessageGroup $group, array $servers ): void {
 		$times = [
-			'total' => -microtime( true ),
+			'total' => -ConvertibleTimestamp::hrtime(),
 			'stats' => 0,
 			'init' => 0,
 			'trans' => 0,
@@ -249,13 +250,13 @@ class TTMServerBootstrap extends Maintenance {
 
 		$sourceLanguage = $group->getSourceLanguage();
 
-		$times[ 'init' ] -= microtime( true );
+		$times[ 'init' ] -= ConvertibleTimestamp::hrtime();
 		$collection = $this->getCollection( $group, $sourceLanguage );
-		$times[ 'init' ] += microtime( true );
+		$times[ 'init' ] += ConvertibleTimestamp::hrtime();
 
-		$times[ 'stats' ] -= microtime( true );
+		$times[ 'stats' ] -= ConvertibleTimestamp::hrtime();
 		$stats = MessageGroupStats::forGroup( $group );
-		$times[ 'stats' ] += microtime( true );
+		$times[ 'stats' ] += ConvertibleTimestamp::hrtime();
 		unset( $stats[ $sourceLanguage ] );
 
 		$translationCount = $definitionCount = 0;
@@ -267,13 +268,13 @@ class TTMServerBootstrap extends Maintenance {
 		foreach ( $this->getDefinitions( $collection, $sourceLanguage ) as $batch ) {
 			$definitionCount += count( $batch );
 			foreach ( $servers as $server ) {
-				$times[ 'writes' ] -= microtime( true );
+				$times[ 'writes' ] -= ConvertibleTimestamp::hrtime();
 				$server->batchInsertDefinitions( $batch );
-				$times[ 'writes' ] += microtime( true );
+				$times[ 'writes' ] += ConvertibleTimestamp::hrtime();
 			}
 		}
 
-		$times[ 'trans' ] -= microtime( true );
+		$times[ 'trans' ] -= ConvertibleTimestamp::hrtime();
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $numbers[MessageGroupStats::TRANSLATED] === 0 ) {
 				continue;
@@ -282,34 +283,34 @@ class TTMServerBootstrap extends Maintenance {
 			foreach ( $this->getTranslations( $collection, $sourceLanguage, $targetLanguage ) as $batch ) {
 				$translationCount += count( $batch );
 				foreach ( $servers as $server ) {
-					$transWrites -= microtime( true );
+					$transWrites -= ConvertibleTimestamp::hrtime();
 					$server->batchInsertTranslations( $batch );
-					$transWrites += microtime( true );
+					$transWrites += ConvertibleTimestamp::hrtime();
 				}
 			}
 		}
 
-		$times[ 'trans' ] += ( microtime( true ) - $transWrites );
+		$times[ 'trans' ] += ( ConvertibleTimestamp::hrtime() - $transWrites );
 		$times[ 'writes' ] += $transWrites;
 
 		foreach ( $servers as $server ) {
 			$server->endBatch();
 		}
 
-		$times[ 'total' ] += microtime( true );
+		$times[ 'total' ] += ConvertibleTimestamp::hrtime();
 		$countItems = $translationCount + $definitionCount;
 
 		if ( $countItems !== 0 ) {
 			$debug = sprintf(
 				"Total %.1f s for %d items on %d server(s) >> stats/init/trans/writes %%: %d/%d/%d/%d >> %.1f ms/item",
-				$times['total'],
+				$times['total'] / 1e9,
 				$countItems,
 				count( $servers ),
 				$times['stats'] / $times['total'] * 100,
 				$times['init'] / $times['total'] * 100,
 				$times['trans'] / $times['total'] * 100,
 				$times['writes'] / $times['total'] * 100,
-				$times['total'] / $countItems * 1000
+				$times['total'] / $countItems / 1e6
 			);
 			$this->logInfo( "Finished exporting {$group->getId()}. $debug\n" );
 		}

@@ -12,6 +12,7 @@ use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * MySQL/MariaDB-based based backend for translation memory.
@@ -279,13 +280,13 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 	}
 
 	private function processQueryResults( IResultWrapper $res, string $text, string $targetLanguage ): array {
-		$timeLimit = microtime( true ) + 5;
+		$timeLimit = ConvertibleTimestamp::hrtime() + 5_000_000_000;
 
 		$lenA = mb_strlen( $text );
 		$results = [];
 		$stringComparator = new EditDistanceStringComparator();
 		foreach ( $res as $row ) {
-			if ( microtime( true ) > $timeLimit ) {
+			if ( ConvertibleTimestamp::hrtime() > $timeLimit ) {
 				// Having no suggestions is better than preventing translation
 				// altogether by timing out the request :(
 				break;

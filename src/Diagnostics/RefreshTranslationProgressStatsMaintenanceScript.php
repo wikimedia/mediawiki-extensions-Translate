@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\RawMessage;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * This maintenance script is responsible for refreshing the cached translation progress stats
@@ -67,7 +68,7 @@ class RefreshTranslationProgressStatsMaintenanceScript extends BaseMaintenanceSc
 		$jobCount = count( $groupIds ) * count( $languages );
 		$counter = 0;
 
-		$startTime = microtime( true );
+		$startTime = ConvertibleTimestamp::hrtime();
 
 		foreach ( $groupIds as $groupId ) {
 			$jobs = [];
@@ -81,7 +82,7 @@ class RefreshTranslationProgressStatsMaintenanceScript extends BaseMaintenanceSc
 				if ( !$useJobQueue ) {
 					$job->run();
 				}
-				$elapsed = microtime( true ) - $startTime;
+				$elapsed = ( ConvertibleTimestamp::hrtime() - $startTime ) / 1e9;
 				$this->output( "\033[0K\r" . $this->cliProgressBar( $jobCount, ++$counter, $elapsed ) );
 			}
 

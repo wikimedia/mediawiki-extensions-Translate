@@ -16,6 +16,7 @@ use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\MapCacheLRU;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
@@ -178,15 +179,15 @@ class MessageIndex {
 
 		$this->logger->info( '[MessageIndex] Started rebuild.' );
 
-		$tsStart = microtime( true );
+		$tsStart = ConvertibleTimestamp::hrtime();
 		if ( !$this->lock() ) {
 			throw new MessageIndexException( __CLASS__ . ': unable to acquire lock' );
 		}
 
-		$lockWaitDuration = microtime( true ) - $tsStart;
+		$lockWaitDuration = ConvertibleTimestamp::hrtime() - $tsStart;
 		$this->logger->info(
 			'[MessageIndex] Got lock in {duration}',
-			[ 'duration' => $lockWaitDuration ]
+			[ 'duration' => $lockWaitDuration / 1e9 ]
 		);
 
 		$groups = MessageGroups::singleton()->getGroups();
@@ -248,10 +249,10 @@ class MessageIndex {
 		}
 
 		$this->unlock();
-		$criticalSectionDuration = microtime( true ) - $tsStart - $lockWaitDuration;
+		$criticalSectionDuration = ConvertibleTimestamp::hrtime() - $tsStart - $lockWaitDuration;
 		$this->logger->info(
 			'[MessageIndex] Finished critical section in {duration}',
-			[ 'duration' => $criticalSectionDuration ]
+			[ 'duration' => $criticalSectionDuration / 1e9 ]
 		);
 
 		// Other caches can check this key to know when they need to refresh
@@ -260,7 +261,7 @@ class MessageIndex {
 		$this->clearMessageGroupStats( $diff );
 		$this->logger->info(
 			'[MessageIndex] Finished everything in {duration}',
-			[ 'duration' => microtime( true ) - $tsStart ]
+			[ 'duration' => ( ConvertibleTimestamp::hrtime() - $tsStart ) / 1e9 ]
 		);
 
 		$recursion--;

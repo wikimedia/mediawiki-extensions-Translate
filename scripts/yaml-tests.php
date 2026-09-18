@@ -12,6 +12,7 @@
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupConfigurationParser;
 use MediaWiki\Extension\Translate\Utilities\Yaml;
 use MediaWiki\Maintenance\Maintenance;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
@@ -39,7 +40,7 @@ class YamlTests extends Maintenance {
 		foreach ( [ 'spyc', 'phpyaml' ] as $driver ) {
 			$mempeaks[$driver] = -memory_get_peak_usage( true );
 			$mems[$driver] = -memory_get_usage( true );
-			$times[$driver] = -microtime( true );
+			$times[$driver] = -ConvertibleTimestamp::hrtime();
 			$wgTranslateYamlLibrary = $driver;
 			$documents[$driver] = [];
 			foreach ( $wgTranslateGroupFiles as $file ) {
@@ -48,7 +49,8 @@ class YamlTests extends Maintenance {
 				}
 			}
 
-			$times[$driver] += microtime( true );
+			$times[$driver] += ConvertibleTimestamp::hrtime();
+			$times[$driver] /= 1e9;
 			$mems[$driver] += memory_get_usage( true );
 			$mempeaks[$driver] += memory_get_peak_usage( true );
 

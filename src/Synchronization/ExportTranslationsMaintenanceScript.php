@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\Statistics\MessageGroupStats;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * Script to export translations of message groups to files.
@@ -119,7 +120,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			'Starting exports for groups {groups}',
 			[ 'groups' => $groupPattern ]
 		);
-		$exportStartTime = microtime( true );
+		$exportStartTime = ConvertibleTimestamp::hrtime();
 
 		$target = $this->getOption( 'target' );
 		if ( !is_writable( $target ) ) {
@@ -159,7 +160,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			if ( $exportThreshold !== null || $removalThreshold !== null ) {
 				$logger->info( 'Calculating stats for group {groupId}', [ 'groupId' => $groupId ] );
-				$tStartTime = microtime( true );
+				$tStartTime = ConvertibleTimestamp::hrtime();
 
 				$languageExportActions = $this->getLanguageExportActions(
 					$groupId,
@@ -169,12 +170,12 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					(int)$removalThreshold
 				);
 
-				$tEndTime = microtime( true );
+				$tEndTime = ConvertibleTimestamp::hrtime();
 				$logger->info(
 					'Finished calculating stats for group {groupId}. Time: {duration} secs',
 					[
 						'groupId' => $groupId,
-						'duration' => round( $tEndTime - $tStartTime, 3 ),
+						'duration' => round( ( $tEndTime - $tStartTime ) / 1e9, 3 ),
 					]
 				);
 			} else {
@@ -228,7 +229,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 			$languagesExportedCount = 0;
 
-			$langStartTime = microtime( true );
+			$langStartTime = ConvertibleTimestamp::hrtime();
 			foreach ( $languageExportActions as $lang => $action ) {
 				// Check for customized list of translatable languages
 				if ( $inclusionList !== MessageGroup::DEFAULT_LANGUAGES && !isset( $inclusionList[$lang] ) ) {
@@ -249,7 +250,7 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					continue;
 				}
 
-				$startTime = microtime( true );
+				$startTime = ConvertibleTimestamp::hrtime();
 				$collection->resetForNewLanguage( $lang );
 				$collection->loadTranslations();
 				// Don't export ignored, unless it is the source language
@@ -267,22 +268,22 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 
 				$languagesExportedCount++;
 
-				$endTime = microtime( true );
+				$endTime = ConvertibleTimestamp::hrtime();
 				$langExportTimes['collection'] += ( $endTime - $startTime );
 
-				$startTime = microtime( true );
+				$startTime = ConvertibleTimestamp::hrtime();
 				$fileFormat->write( $collection );
-				$endTime = microtime( true );
+				$endTime = ConvertibleTimestamp::hrtime();
 				$langExportTimes['ffs'] += ( $endTime - $startTime );
 			}
-			$langEndTime = microtime( true );
+			$langEndTime = ConvertibleTimestamp::hrtime();
 
 			$logger->info(
 				'Done exporting {count} languages for group {groupId}. Time taken {duration} secs.',
 				[
 					'count' => $languagesExportedCount,
 					'groupId' => $groupId,
-					'duration' => round( $langEndTime - $langStartTime, 3 ),
+					'duration' => round( ( $langEndTime - $langStartTime ) / 1e9, 3 ),
 				]
 			);
 
@@ -292,18 +293,18 @@ class ExportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 					[
 						'groupId' => $groupId,
 						'type' => $type,
-						'duration' => round( $time, 3 ),
+						'duration' => round( $time / 1e9, 3 ),
 					]
 				);
 			}
 		}
 
-		$exportEndTime = microtime( true );
+		$exportEndTime = ConvertibleTimestamp::hrtime();
 		$logger->info(
 			'Finished export process for groups {groups}. Time: {duration} secs.',
 			[
 				'groups' => $groupPattern,
-				'duration' => round( $exportEndTime - $exportStartTime, 3 ),
+				'duration' => round( ( $exportEndTime - $exportStartTime ) / 1e9, 3 ),
 			]
 		);
 	}

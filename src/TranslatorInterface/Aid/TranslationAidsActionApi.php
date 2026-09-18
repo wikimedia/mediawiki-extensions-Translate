@@ -13,6 +13,7 @@ use MediaWiki\Extension\Translate\WebService\QueryAggregatorAware;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * Api module for querying message aids.
@@ -100,13 +101,13 @@ class TranslationAidsActionApi extends ApiBase {
 		}
 
 		// Execute all web service queries asynchronously to save time
-		$start = microtime( true );
+		$start = ConvertibleTimestamp::hrtime();
 		$aggregator->run();
-		$times['query_aggregator'] = round( microtime( true ) - $start, 3 );
+		$times['query_aggregator'] = round( ( ConvertibleTimestamp::hrtime() - $start ) / 1e9, 3 );
 
 		// Construct the result data structure
 		foreach ( $aids as $type => $obj ) {
-			$start = microtime( true );
+			$start = ConvertibleTimestamp::hrtime();
 
 			try {
 				$aid = $obj->getData();
@@ -120,7 +121,7 @@ class TranslationAidsActionApi extends ApiBase {
 			}
 
 			$data[$type] = $aid;
-			$times[$type] = round( microtime( true ) - $start, 3 );
+			$times[$type] = round( ( ConvertibleTimestamp::hrtime() - $start ) / 1e9, 3 );
 		}
 
 		$result->addValue( null, 'helpers', $data );
