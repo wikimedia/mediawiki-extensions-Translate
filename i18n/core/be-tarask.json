@@ -63,7 +63,7 @@
 	"translate-export-form-format": "Фармат",
 	"translate-export-format-notsupported": "Гэткі фармат экспарта не падтрымліваецца для гэтай групы радкоў.",
 	"translate-export-format-file-empty": "Няма радкоў на экспарт.",
-	"translate-export-group-too-large": "Абраная група радкоў завялікая. Трэба выбраць групу, дзе меньш за $1 {{PLURAL:$1|радок|радкоў}}, альбо зьвярнуцца да адміністратара за радай.",
+	"translate-export-group-too-large": "Абраная група радкоў завялікая. Трэба выбраць групу, дзе менш за $1 {{PLURAL:$1|радок|радкоў}}, альбо зьвярнуцца да адміністратара за радай.",
 	"translate-checks-parameters": "{{PLURAL:$2|1=Наступны парамэтар не выкарыстоўваецца|Наступныя парамэтры не выкарыстоўваюцца}}:\n<strong>$1</strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|1=Невядомы парамэтар|Невядомыя парамэтры}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Няпарная колькасьць {{PLURAL:$2|дужкі|дужак|дужак}}:\n<strong><nowiki>$1</nowiki></strong>",
