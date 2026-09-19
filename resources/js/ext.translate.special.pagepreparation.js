@@ -252,11 +252,11 @@
 		if ( $errorMessage === undefined ) {
 			$errorMessage = mw.message( 'pp-unexpected-error' ).parseDom();
 		}
+		var content = document.createElement( 'div' );
+		$( content ).append( $errorMessage );
 		$( '.messageDiv' )
 			.empty()
-			.removeClass( 'hide' )
-			.append( $errorMessage )
-			.addClass( 'mw-message-box-error' );
+			.append( mw.util.messageBox( content, 'error' ) );
 	}
 	function displayErrorsFromData( data ) {
 		var errors = data.errors;
@@ -291,14 +291,14 @@
 		var pageContent;
 		function handlePublish() {
 			var pageName = $input.val().trim();
-			$messageDiv.removeClass( 'mw-message-box-error mw-message-box-success' );
+			$messageDiv.empty();
 			savePage( pageName, pageContent, $( '#pp-summary' ).val() ).done( function () {
 				var pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
+				var content = document.createElement( 'div' );
+				$( content ).append( mw.message( 'pp-save-message', pageUrl ).parseDom() );
 				$messageDiv
 					.empty()
-					.append( mw.message( 'pp-save-message', pageUrl ).parseDom() )
-					.addClass( 'mw-message-box-success' )
-					.removeClass( 'hide' );
+					.append( mw.util.messageBox( content, 'success' ) );
 				$( '.divDiff' ).addClass( 'hide' );
 				$( '#action-prepare' ).removeClass( 'hide' );
 				$input.val( '' );
@@ -322,7 +322,7 @@
 
 		function doPrepare() {
 			var pageName = $input.val().trim();
-			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
+			$messageDiv.empty();
 			if ( pageName === '' ) {
 				displayError( mw.message( 'pp-pagename-missing' ).parseDom() );
 				return;
@@ -351,7 +351,6 @@
 				getDiff( pageName, pageContent ).done( function ( diffData ) {
 					var diff = diffData.compare.body;
 					togglePrepareButtons( enableButton );
-					$messageDiv.removeClass( 'hide' );
 					if ( diff === undefined ) {
 						onPrepareFailure( mw.message( 'pp-diff-error' ).parseDom() );
 						return $.Deferred().reject();
@@ -361,7 +360,9 @@
 						isReadyToSave = true;
 						$( '.diff tbody' ).html( diff );
 						$( '.divDiff' ).removeClass( 'hide' );
-						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
+						$messageDiv
+							.empty()
+							.append( mw.util.messageBox( mw.msg( 'pp-prepare-message' ), 'notice' ) );
 						$prepareBtn.addClass( 'hide' );
 						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					} else {
@@ -406,8 +407,6 @@
 				getDiff( pageName, pageContent ).done( function ( diffData ) {
 					const diff = diffData.compare.body;
 					togglePrepareButtons( enableButton );
-					$messageDiv.removeClass( 'hide' );
-
 					if ( diff === undefined ) {
 						onPrepareFailure( mw.message( 'pp-diff-error' ).parseDom() );
 						return;
@@ -417,7 +416,9 @@
 						isReadyToSave = true;
 						$( '.diff tbody' ).html( diff );
 						$( '.divDiff' ).removeClass( 'hide' );
-						$messageDiv.text( mw.msg( 'pp-prepare-message' ) );
+						$messageDiv
+							.empty()
+							.append( mw.util.messageBox( mw.msg( 'pp-prepare-message' ), 'notice' ) );
 						$prepareBtn.add( $prepareTranslateTaggerBtn ).addClass( 'hide' );
 						$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 					} else {
@@ -440,7 +441,7 @@
 				throw new Error( 'Unexpected condition: Translate tagger API URL not found' );
 			}
 			const pageName = $input.val().trim();
-			$messageDiv.addClass( 'hide' ).removeClass( 'mw-message-box-error mw-message-box-success' );
+			$messageDiv.empty();
 			if ( pageName === '' ) {
 				displayError( mw.message( 'pp-pagename-missing' ).parseDom() );
 				return;

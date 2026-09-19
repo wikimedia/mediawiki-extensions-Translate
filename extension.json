@@ -606,6 +606,7 @@
 			"scripts": "resources/js/ext.translate.messagetable.js",
 			"styles": "resources/css/ext.translate.messagetable.less",
 			"dependencies": [
+				"mediawiki.codex.messagebox.styles",
 				"ext.translate.base",
 				"ext.translate.loader",
 				"ext.translate.parsers",
@@ -888,7 +889,7 @@
 				"resources/css/ext.translate.proofread.less"
 			],
 			"dependencies": [
-				"mediawiki.legacy.messageBox",
+				"mediawiki.codex.messagebox.styles",
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.eventlogginghelpers",
@@ -1026,7 +1027,7 @@
 		"ext.translate.special.pagepreparation": {
 			"scripts": "resources/js/ext.translate.special.pagepreparation.js",
 			"dependencies": [
-				"mediawiki.legacy.messageBox",
+				"mediawiki.codex.messagebox.styles",
 				"mediawiki.util",
 				"mediawiki.Title",
 				"mediawiki.diff.styles",
@@ -1073,7 +1074,7 @@
 				"vector": "resources/css/ext.translate.navitoggle.less"
 			},
 			"dependencies": [
-				"mediawiki.legacy.messageBox",
+				"mediawiki.codex.messagebox.styles",
 				"ext.translate.base",
 				"ext.translate.dropdownmenu",
 				"ext.translate.editor",
@@ -1084,7 +1085,8 @@
 				"mediawiki.language",
 				"mediawiki.jqueryMsg",
 				"mediawiki.storage",
-				"ext.translate.languages"
+				"ext.translate.languages",
+				"mediawiki.util"
 			],
 			"messages": [
 				"pagetitle",

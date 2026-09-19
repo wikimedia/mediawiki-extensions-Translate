@@ -803,9 +803,10 @@
 				var errorInfo = results && results.error && results.error.info || 'Unknown error';
 				this.$editor.find( '.infocolumn .loading' ).remove();
 				this.$editor.find( '.infocolumn' ).append(
-					$( '<div>' )
-						.text( mw.msg( 'tux-editor-loading-failed', errorInfo ) )
-						.addClass( 'mw-message-box-warning mw-message-box tux-translation-aid-error' )
+					$( mw.util.messageBox(
+						mw.msg( 'tux-editor-loading-failed', errorInfo ),
+						'warning'
+					) ).addClass( 'tux-translation-aid-error' )
 				);
 				mw.log.error( 'Error loading translation aids:', errorCode, results );
 			}.bind( this ) );

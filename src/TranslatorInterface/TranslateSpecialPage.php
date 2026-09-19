@@ -358,14 +358,15 @@ class TranslateSpecialPage extends SpecialPage {
 	}
 
 	private function tuxGroupWarning(): string {
+		// Outer container is always present; message boxes are children only.
+		$warning = '';
 		if ( $this->options['group'] === '' ) {
-			return Html::warningBox(
-				$this->msg( 'tux-translate-page-no-such-group' )->parse(),
-				'tux-group-warning twelve column'
+			$warning = Html::warningBox(
+				$this->msg( 'tux-translate-page-no-such-group' )->parse()
 			);
 		}
 
-		return '';
+		return Html::rawElement( 'div', [ 'class' => 'tux-group-warning twelve column' ], $warning );
 	}
 
 	private function tuxWorkflowSelector(): string {

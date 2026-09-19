@@ -508,7 +508,7 @@
 					for ( var i = 0; i !== result.warnings.length; i++ ) {
 						var currentWarning = result.warnings[ i ];
 						if ( currentWarning.code === 'translate-language-disabled-source' ) {
-							self.handleLoadErrors( [ currentWarning ] );
+							self.handleLoadErrors( 'warning', [ currentWarning ] );
 							logger.logEvent(
 								'message_prompt',
 								'change_lang'
@@ -517,7 +517,7 @@
 							return;
 						}
 						if ( currentWarning.code === 'translate-language-targetlang-variant-of-source' ) {
-							self.displayLoadErrors( [ currentWarning ] );
+							self.displayLoadErrors( 'warning', [ currentWarning ] );
 							break;
 						}
 					}
@@ -578,7 +578,7 @@
 				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
 			} ).fail( function ( errorCode, response ) {
-				self.handleLoadErrors( response.errors, errorCode );
+				self.handleLoadErrors( 'error', response.errors, errorCode );
 			} ).always( function () {
 				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 				self.loading = false;
@@ -803,28 +803,31 @@
 		},
 
 		/**
-		 * Display errors encountered during the loading state.
+		 * Display errors/warnings encountered during the loading state.
 		 *
 		 * @private
+		 * @param {'error'|'warning'} type Codex message type
 		 * @param {Array} errors
-		 * @param {string} errorCode
+		 * @param {string} [errorCode]
 		 */
-		displayLoadErrors: function ( errors, errorCode ) {
+		displayLoadErrors: function ( type, errors, errorCode ) {
 			var $warningContainer = $( '.tux-editor-header .tux-group-warning' );
 
 			if ( errors ) {
 				errors.forEach( function ( error ) {
+					var content = document.createElement( 'div' );
+					content.innerHTML = error.html;
 					$warningContainer.append(
-						$( '<p>' )
+						$( mw.util.messageBox( content, type ) )
 							.addClass( 'tux-api-load-error' )
-							.html( error.html )
 					);
 				} );
 			} else {
 				$warningContainer.append(
-					$( '<p>' )
-						.addClass( 'tux-api-load-error' )
-						.text( mw.msg( 'api-error-unknownerror', errorCode ) )
+					$( mw.util.messageBox(
+						mw.msg( 'api-error-unknownerror', errorCode ),
+						type
+					) ).addClass( 'tux-api-load-error' )
 				);
 			}
 		},
@@ -833,11 +836,12 @@
 		 * Displays the errors and updates the state of the table.
 		 *
 		 * @private
+		 * @param {'error'|'warning'} type Codex message type
 		 * @param {Array} errors
-		 * @param {string} errorCode
+		 * @param {string} [errorCode]
 		 */
-		handleLoadErrors: function ( errors, errorCode ) {
-			this.displayLoadErrors( errors, errorCode );
+		handleLoadErrors: function ( type, errors, errorCode ) {
+			this.displayLoadErrors( type, errors, errorCode );
 
 			$( '.tux-workflow' ).addClass( 'hide' );
 			this.$loader.data( 'offset', -1 ).addClass( 'hide' );

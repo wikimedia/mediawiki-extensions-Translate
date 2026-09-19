@@ -281,16 +281,26 @@
 		} );
 	}
 
-	function updateGroupPriorityWarnings( group, language ) {
-		var $groupWarning = $( '.tux-editor-header .tux-group-warning' );
+	/**
+	 * Append a Codex warning message box into the group warning container.
+	 *
+	 * @param {jQuery[]} contentNodes
+	 */
+	function appendGroupWarningBox( contentNodes ) {
+		var $container = $( '.tux-editor-header .tux-group-warning' );
+		var content = document.createElement( 'div' );
+		$( content ).append( contentNodes );
+		$container.append( mw.util.messageBox( content, 'warning' ) );
+	}
 
+	function updateGroupPriorityWarnings( group, language ) {
 		if ( group.priority === 'discouraged' ) {
-			$groupWarning.append(
+			appendGroupWarningBox( [
 				$( '<p>' ).append( $( '<strong>' )
 					.text( mw.message( 'tpt-discouraged-translation-header' ).text() )
 				),
 				$( '<p>' ).append( mw.message( 'tpt-discouraged-translation-content' ).parseDom() )
-			);
+			] );
 		}
 
 		var headerMessage, languagesMessage;
@@ -300,10 +310,10 @@
 				$.uls.data.getAutonym( language )
 			);
 			languagesMessage = mw.message( 'tpt-translation-restricted-no-priority-languages-no-reason' );
-			$groupWarning.append(
+			appendGroupWarningBox( [
 				$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
 				$( '<p>' ).text( languagesMessage.text() )
-			);
+			] );
 			return;
 		}
 
@@ -345,10 +355,10 @@
 			);
 		}
 
-		$groupWarning.append(
+		appendGroupWarningBox( [
 			$( '<p>' ).append( $( '<strong>' ).text( headerMessage.text() ) ),
 			$( '<p>' ).append( languagesMessage.parseDom() )
-		);
+		] );
 	}
 
 	function updateGroupSubscription( group ) {
@@ -386,8 +396,7 @@
 	}
 
 	function removeGroupWarnings() {
-		var $tuxHeader = $( '.tux-editor-header' );
-		$tuxHeader.find( '.tux-group-warning' ).empty();
+		$( '.tux-editor-header .tux-group-warning' ).empty();
 	}
 
 	function isPriorityLanguage( language, priorityLanguages ) {
@@ -471,16 +480,6 @@
 			};
 
 			$element.uls( ulsOptions );
-		}
-	}
-
-	function addTuxGroupWarningContainer() {
-		var $tuxEditorHeader = $( '.tux-editor-header' );
-		var $tuxWarning = $tuxEditorHeader.find( 'tux-group-warning' );
-		if ( !$tuxWarning.length ) {
-			$tuxWarning = $( '<div>' )
-				.addClass( 'mw-message-box-warning mw-message-box tux-group-warning twelve column' );
-			$tuxEditorHeader.append( $tuxWarning );
 		}
 	}
 
@@ -679,8 +678,6 @@
 				$( '#tux-option-optional' ).prop( 'checked', true );
 			}
 		}
-
-		addTuxGroupWarningContainer();
 
 		var position = {
 			my: 'left top',
