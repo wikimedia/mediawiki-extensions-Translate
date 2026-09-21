@@ -4,6 +4,7 @@
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
+use Collator;
 use Exception;
 use MediaWiki\Category\Category;
 use MediaWiki\CommentStore\CommentStoreComment;
@@ -608,8 +609,12 @@ class Hooks {
 			$languages[ $name ] = Html::rawElement( 'li', [], $contents );
 		}
 
-		// Sort languages by autonym
-		ksort( $languages );
+		// Sort languages by autonym, case- and diacritic-insensitive (T385230)
+		$collator = Collator::create( 'root' );
+		uksort(
+			$languages,
+			$collator->compare( ... )
+		);
 		$languages = array_values( $languages );
 		$languages = implode( "\n", $languages );
 
