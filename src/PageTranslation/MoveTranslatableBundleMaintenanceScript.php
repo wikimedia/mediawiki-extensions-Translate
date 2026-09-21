@@ -65,6 +65,11 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			'Skip moving talk pages under pages being moved'
 		);
 
+		$this->addOption(
+			'really',
+			'Skip the confirmation prompt and start the move immediately'
+		);
+
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -308,7 +313,20 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 	}
 
 	private function getConfirmation(): bool {
-		$line = self::readconsole( 'Type "MOVE" to begin the move operation: ' );
+		if ( $this->hasOption( 'really' ) ) {
+			return true;
+		}
+
+		$line = static::readconsole( 'Type "MOVE" to begin the move operation: ' );
+		if ( $line === false ) {
+			// readconsole() gives false when stdin is not available. This happens when the
+			// script runs, for example, as a Kubernetes job without stdin.
+			$this->error(
+				'Cannot read the confirmation. Use --really to move without a prompt, or attach stdin.'
+			);
+			return false;
+		}
+
 		return strtolower( $line ) === 'move';
 	}
 
