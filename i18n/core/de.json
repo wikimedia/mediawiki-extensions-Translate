@@ -194,6 +194,8 @@
 	"translate-translations-history-short": "V",
 	"translate-translations-last-edit-header": "Letzte Bearbeitung",
 	"translate-translations-last-edit": "$1 durch $2",
+	"translate-translations-status-header": "Status",
+	"translate-translations-status-outdated": "Veraltet",
 	"languagestats": "Statistiken zu Sprachen",
 	"languagestats-summary": "Diese Seite zeigt Statistiken zu Übersetzungen für alle Nachrichtengruppen einer Sprache.",
 	"messagegroupstats-summary": "Diese Seite zeigt Statistiken zu Nachrichtengruppen.",
