@@ -145,7 +145,7 @@ class MessageGroupStatsSpecialPage extends SpecialPage {
 				$this->noEmpty
 			) : '';
 			// If description is present parse it to HTML and show it above the stats
-			if ( $description ) {
+			if ( $description && !$this->including() ) {
 				$this->getOutput()->addWikiTextAsContent( $description );
 			}
 
