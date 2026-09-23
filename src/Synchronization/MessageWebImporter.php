@@ -183,7 +183,7 @@ class MessageWebImporter {
 				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-new' )->rawParams( $para )
 					->escaped();
-				$text = Utilities::convertWhiteSpaceToHTML( $value );
+				$text = htmlspecialchars( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
 				// No changes at all, ignore
@@ -321,7 +321,7 @@ class MessageWebImporter {
 			foreach ( $diff as $s ) {
 				$para = '<code class="mw-tmi-deleted">' . htmlspecialchars( $s ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-deleted' )->rawParams( $para )->escaped();
-				$text = Utilities::convertWhiteSpaceToHTML( $collection[$s]->translation() );
+				$text = htmlspecialchars( $collection[$s]->translation() );
 				$changed[] = self::makeSectionElement( $name, 'deleted', $text );
 			}
 		}

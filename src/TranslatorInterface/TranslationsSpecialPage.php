@@ -229,16 +229,14 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 			$isFuzzy = MessageHandle::hasFuzzyString( $pageText ) || $tHandle->isFuzzy();
 			$class = $isFuzzy ? 'mw-sp-translate-fuzzy' : '';
 
-			$languageAttributes = [];
+			$contentCellAttributes = [ 'class' => 'mw-translate-table-message-cell' ];
 			if ( $this->languageNameUtils->isKnownLanguageTag( $code ) ) {
 				$language = $tHandle->getEffectiveLanguage();
-				$languageAttributes = [
-					'lang' => $language->getHtmlCode(),
-					'dir' => $language->getDir(),
-				];
+				$contentCellAttributes['lang'] = $language->getHtmlCode();
+				$contentCellAttributes['dir'] = $language->getDir();
 			}
 
-			$formattedContent = Utilities::convertWhiteSpaceToHTML( $pageText );
+			$formattedContent = htmlspecialchars( $pageText );
 
 			// Build the last-edit cell with a sortable Unix timestamp and a linked username.
 			$revTimestamp = $revision->getTimestamp();
@@ -269,7 +267,7 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 				'tr',
 				[ 'class' => $class ],
 				Html::rawElement( 'td', [], $tools['history'] . $tools['edit'] ) .
-					Html::rawElement( 'td', $languageAttributes, $formattedContent ) .
+					Html::rawElement( 'td', $contentCellAttributes, $formattedContent ) .
 					Html::rawElement( 'td', [ 'data-sort-value' => $unixTimestamp ], $lastEditHtml ) .
 					Html::rawElement( 'td', [], $statusCellHtml )
 			);

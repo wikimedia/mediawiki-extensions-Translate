@@ -213,27 +213,6 @@ class Utilities {
 	}
 
 	/**
-	 * Escapes the message, and does some mangling to whitespace, so that it is
-	 * preserved when outputted as-is to html page. Line feeds are converted to
-	 * \<br /> and occurrences of leading and trailing and multiple consecutive
-	 * spaces to non-breaking spaces.
-	 *
-	 * This is also implemented in JavaScript in ext.translate.quickedit.
-	 *
-	 * @param string $message Plain text string.
-	 * @return string Text string that is ready for outputting.
-	 */
-	public static function convertWhiteSpaceToHTML( string $message ): string {
-		$msg = htmlspecialchars( $message );
-		$msg = preg_replace( '/^ /m', '&#160;', $msg );
-		$msg = preg_replace( '/ $/m', '&#160;', $msg );
-		$msg = preg_replace( '/  /', '&#160; ', $msg );
-		$msg = str_replace( "\n", '<br />', $msg );
-
-		return $msg;
-	}
-
-	/**
 	 * Gets the path for cache files. The cache directory must be configured to use this method.
 	 * @param string $filename
 	 * @return string Full path.

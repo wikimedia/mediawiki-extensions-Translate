@@ -884,7 +884,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 				);
 				$text = $checkLabel->toString() . $text;
 			} else {
-				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
+				$text = htmlspecialchars( $s->getText() );
 			}
 
 			# For changed text, the language is set by $diff->setTextLanguage()
@@ -921,7 +921,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 
 			foreach ( $operation->getDeletedUnits() as $s ) {
 				$name = $this->msg( 'tpt-section-deleted', $s->id, $this->getTranslationsLink( $page, $s ) )->parse();
-				$text = Utilities::convertWhiteSpaceToHTML( $s->getText() );
+				$text = htmlspecialchars( $s->getText() );
 				$out->addHTML( MessageWebImporter::makeSectionElement(
 					$name,
 					'deleted',

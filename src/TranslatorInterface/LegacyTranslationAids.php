@@ -93,13 +93,13 @@ class LegacyTranslationAids {
 
 		$sl = $this->languageFactory->getLanguage( $this->group->getSourceLanguage() );
 
-		$msg = Html::rawElement( 'div',
+		$msg = Html::element( 'div',
 			[
 				'class' => 'mw-translate-edit-deftext',
 				'dir' => $sl->getDir(),
 				'lang' => $sl->getHtmlCode(),
 			],
-			Utilities::convertWhiteSpaceToHTML( $definition )
+			$definition
 		);
 
 		$class = [ 'class' => 'mw-sp-translate-edit-definition' ];

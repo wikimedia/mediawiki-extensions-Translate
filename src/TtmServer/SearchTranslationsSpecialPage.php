@@ -221,7 +221,7 @@ class SearchTranslationsSpecialPage extends SpecialPage {
 			if ( $text === null ) {
 				continue;
 			}
-			$text = Utilities::convertWhiteSpaceToHTML( $text );
+			$text = htmlspecialchars( $text );
 
 			[ $pre, $post ] = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-search-highlight">', $text );

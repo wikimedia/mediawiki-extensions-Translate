@@ -53,7 +53,10 @@ class ImportTranslationsSpecialPage extends SpecialPage {
 	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();
-		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$this->getOutput()->addModuleStyles( [
+			'mediawiki.codex.messagebox.styles',
+			'ext.translate.specialpages.styles'
+		] );
 
 		// Security and validity checks
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
