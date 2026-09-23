@@ -229,6 +229,8 @@
 	"translate-translations-history-short": "史",
 	"translate-translations-last-edit-header": "最新编辑",
 	"translate-translations-last-edit": "$1由$2做出",
+	"translate-translations-status-header": "状态",
+	"translate-translations-status-outdated": "已过时",
 	"languagestats": "语言统计",
 	"languagestats-summary": "本页面显示某种语言所有消息组的翻译统计。",
 	"messagegroupstats-summary": "此页面显示消息组统计。",

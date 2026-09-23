@@ -189,6 +189,8 @@
 	"translate-translations-history-short": "h",
 	"translate-translations-last-edit-header": "Viimeisin muokkaus",
 	"translate-translations-last-edit": "$1 – $2",
+	"translate-translations-status-header": "Tila",
+	"translate-translations-status-outdated": "Vanhentunut",
 	"languagestats": "Kielitilastot",
 	"languagestats-summary": "Tämä sivu näyttää valitun kielen käännöstilastot kaikille viestiryhmille.",
 	"messagegroupstats-summary": "Tällä sivulla on tilastoja viestiryhmistä.",

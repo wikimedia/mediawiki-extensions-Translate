@@ -172,6 +172,7 @@
 	"translate-translations-project": "Progetto:",
 	"translate-translations-including-no-param": "Specificare una chiave di messaggio valida nella sottopagina-parametro",
 	"translate-translations-history-short": "h",
+	"translate-translations-status-outdated": "Da aggiornare",
 	"languagestats": "Statistiche della lingua",
 	"languagestats-summary": "Questa pagina mostra le statistiche delle traduzioni per tutti i gruppi di messaggi di una lingua.",
 	"messagegroupstats-summary": "Questa pagina mostra le statistiche per i gruppi di messaggi.",

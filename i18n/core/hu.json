@@ -172,6 +172,8 @@
 	"translate-translations-project": "Projekt:",
 	"translate-translations-including-no-param": "Adj meg egy érvényes üzenetazonosítót, allapként.",
 	"translate-translations-history-short": "t",
+	"translate-translations-status-header": "Állapot",
+	"translate-translations-status-outdated": "Elavult",
 	"languagestats": "Nyelvi statisztika",
 	"languagestats-summary": "Ezen a lapon az egy nyelvhez tartozó összes üzenetcsoport fordítási statisztikái láthatóak.",
 	"messagegroupstats-summary": "Ezen a lapon az egyes üzenetcsoportok statisztikái láthatóak.",

@@ -201,6 +201,7 @@
 	"translate-translations-project": "Projekt:",
 	"translate-translations-including-no-param": "Podaj prawidłową nazwę strony w parametrze podstrony",
 	"translate-translations-history-short": "h",
+	"translate-translations-status-header": "Status",
 	"languagestats": "Statystyka językowa",
 	"languagestats-summary": "Strona pokazuje statystyki tłumaczeń dla wszystkich grup komunikatów we wskazanym języku.",
 	"messagegroupstats-summary": "Ta strona pokazuje statystyki grupy komunikatów.",

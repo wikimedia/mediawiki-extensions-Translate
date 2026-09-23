@@ -182,6 +182,8 @@
 	"translate-translations-history-short": "h",
 	"translate-translations-last-edit-header": "Seneste redigering",
 	"translate-translations-last-edit": "$1 af $2",
+	"translate-translations-status-header": "Status",
+	"translate-translations-status-outdated": "Forældet",
 	"languagestats": "Sprogstatistik",
 	"languagestats-summary": "Denne side viser oversættelsesstatistik for alle beskedgrupper for et sprog.",
 	"messagegroupstats-summary": "Denne side viser statistik for beskedgrupper.",

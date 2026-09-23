@@ -173,6 +173,8 @@
 	"translate-translations-history-short": "T",
 	"translate-translations-last-edit-header": "Wax ka beddelkii ugu dambeeyay",
 	"translate-translations-last-edit": "$1 oo uu sameeyay $2",
+	"translate-translations-status-header": "Xaaladda",
+	"translate-translations-status-outdated": "Dhacay waqtigiisii",
 	"languagestats": "Tirakoobka luqadda",
 	"languagestats-summary": "Boggaan waxaa lagu soo bandhigay tirakoobka turjumaadda qayba kasta oo ka mid ah fariimaha luaqadaha.",
 	"messagegroupstats-summary": "Boggan wuxuu muujinayaa tirakoobka kooxaha farriimaha.",
