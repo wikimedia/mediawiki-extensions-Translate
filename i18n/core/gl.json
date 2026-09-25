@@ -177,6 +177,8 @@
 	"translate-translations-history-short": "h",
 	"translate-translations-last-edit-header": "Última edición",
 	"translate-translations-last-edit": "$1 por $2",
+	"translate-translations-status-header": "Estado",
+	"translate-translations-status-outdated": "Anticuada",
 	"languagestats": "Estatísticas da lingua",
 	"languagestats-summary": "Esta páxina amosa as estatísticas de tradución dos grupos de mensaxes dunha lingua.",
 	"messagegroupstats-summary": "Esta páxina amosa as estatísticas dos grupos de mensaxes.",
