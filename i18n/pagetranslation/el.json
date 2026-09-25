@@ -13,7 +13,8 @@
 			"Nikosgranturismogt",
 			"Norhorn",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"PrinceAzuka134"
 		]
 	},
 	"pagetranslation": "Μετάφραση σελίδων",
@@ -98,6 +99,7 @@
 	"tpt-aggregategroup-add": "Προσθήκη",
 	"tpt-aggregategroup-save": "Αποθήκευση",
 	"tpt-aggregategroup-add-new": "Προσθήκη νέας συγκεντρωτικής ομάδας",
+	"tpt-aggregategroup-language-none": "(Κανένας)",
 	"tpt-aggregategroup-remove-confirm": "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτήν τη συγκεντρωτική ομάδα;",
 	"tpt-aggregategroup-invalid-group": "Η ομάδα δεν υπάρχει",
 	"tpt-aggregategroup-edit-name": "Όνομα",
