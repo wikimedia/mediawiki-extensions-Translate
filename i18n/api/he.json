@@ -23,8 +23,11 @@
 	"apihelp-query+languagestats-summary": "ביצוע שאילתה על סטטיסטיקות של שפה.",
 	"apihelp-query+languagestats-param-language": "קוד השפה.",
 	"apihelp-query+languagestats-param-group": "מזהה קבוצת הודעות. ר' <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+languagestats-param-suppresscomplete": "לא לכלול קבוצות עם תרגומים מלאים.",
+	"apihelp-query+languagestats-param-suppressempty": "לא לכלול קבוצות ללא תרגומים.",
 	"apihelp-query+languagestats-example-1": "רשימת סטטיסטיקות השלמות תרגומים עבור פינית",
 	"apihelp-query+languagestats-example-2": "רשימת הסטטיסטיקה של השלמת תרגום לפינית עבור הקבוצה A",
+	"apihelp-query+languagestats-example-3": "רשימת סטטיסטיקות השלמת תרגום לפינית, עם הסתרת קבוצות מתורגמות במלואן וקבוצות ריקות",
 	"apihelp-query+managemessagegroups-summary": "אחזור שינויי שם אפשריים עבור הודעה בקבוצה בעת פעולות יבוא",
 	"apihelp-query+managemessagegroups-param-groupId": "מזהה קבוצה. ר' <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+managemessagegroups-param-messageKey": "מפתח הודעה",
@@ -190,5 +193,14 @@
 	"apihelp-translationentitysearch-param-entitytype": "סוג הישות שהשאילתה מתייחסת אליה",
 	"apihelp-translationentitysearch-param-grouptypes": "סוגי הקבוצות שיש לסנן לפיהן",
 	"apihelp-translationentitysearch-param-query": "שאילתת חיפוש",
-	"apihelp-translationentitysearch-param-limit": "מספר מרבי של תוצאות חיפוש"
+	"apihelp-translationentitysearch-param-limit": "מספר מרבי של תוצאות חיפוש",
+	"apierror-discouragetranslation-invalidtitle": "הכותרת המבוקשת אינה מסומנת לתרגום.",
+	"apierror-discouragetranslation-alreadydone": "לכותרת המבוקשת כבר יש מוגדר המצב המבוקש של המלצה לא לתרגם.",
+	"apihelp-discouragetranslation-summary": "לסמן את הדף בתור מומלץ או לא מומלץ לתרגום. [https://mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#discourage דפים לא מומלצים] מוסתרים מממשק התרגום בעת חיפוש דפים לתרגום, אבל עדיין אפשר לתרגם אותם ישירות.",
+	"apihelp-discouragetranslation-param-title": "כותרת הדף שצריך לפעול עליו. חובה להגדיר <var>title</var> או <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-pageid": "מזהה הדף שצריך לפעול עליו. חובה להגדיר <var>title</var> או <var>pageid</var>.",
+	"apihelp-discouragetranslation-param-do": "הפעולה הרצויה שצריך לבצע בדף.",
+	"apihelp-discouragetranslation-paramvalue-do-discourage": "לסמן את הדף כלא מומלץ, מה שיגרום להסתרתו מרשימות הדפים לתרגום.",
+	"apihelp-discouragetranslation-paramvalue-do-encourage": "להסיר מהדף את ההמלצה לא לתרגם, מה שיגרום להצגתו מרשימות הדפים לתרגום.",
+	"apihelp-discouragetranslation-param-reason": "תקציר לשימוש בעת רישום ליומן [[Special:Log/pagetranslation]]"
 }
