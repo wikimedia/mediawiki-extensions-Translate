@@ -44,7 +44,7 @@
 	"translate-page-language": "שפה",
 	"translate-page-limit": "מגבלה",
 	"translate-page-limit-option": "עד {{PLURAL:$1|הודעה אחת|$1 הודעות}} בדף",
-	"translate-submit": "הצגה",
+	"translate-submit": "לשלוף",
 	"translate-page-navigation-legend": "ניווט",
 	"translate-page-showing": "מוצגות הודעות מ־$1 עד $2 מתוך $3.",
 	"translate-page-showing-all": "{{PLURAL:$1|מוצגת הודעה אחת|מוצגות $1 הודעות}}.",
