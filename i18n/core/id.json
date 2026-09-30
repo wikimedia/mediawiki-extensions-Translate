@@ -19,6 +19,7 @@
 			"Rachmat04",
 			"Rex",
 			"Uchup19",
+			"Veracious",
 			"William Surya Permana",
 			"WillsonEP09",
 			"පසිඳු කාවින්ද"
@@ -174,6 +175,7 @@
 	"translate-translations-project": "Proyek:",
 	"translate-translations-including-no-param": "Harap gunakan kunci pesan yang sah dalam parameter subhalaman",
 	"translate-translations-history-short": "r",
+	"translate-translations-status-header": "Status",
 	"languagestats": "Statistik bahasa",
 	"languagestats-summary": "Halaman ini menampilkan statistik terjemahan untuk semua kelompok pesan dalam suatu bahasa tertentu.",
 	"messagegroupstats-summary": "Laman ini menampilkan statistik kelompok pesan.",
