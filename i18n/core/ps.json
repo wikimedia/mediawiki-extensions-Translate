@@ -6,6 +6,7 @@
 			"Amjad Khan",
 			"Baloch Khan",
 			"Waldir",
+			"باران",
 			"شاه زمان پټان"
 		]
 	},
@@ -380,10 +381,11 @@
 	"tux-editor-loading": "رابرسېرېږي...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|بله ژبه|نورې ژبې}}",
 	"translate-statsbar-tooltip": "$1% ژباړل شوي، $2% مخکتل شوي",
-	"translate-statsbar-tooltip-with-fuzzy": "$1% ژباړل شوي، $2% مخکتل شوي, $3% نېټه اوښتي",
+	"translate-statsbar-tooltip-with-fuzzy": "$1٪ ژباړل شوي، $2٪ مخکتل شوي, $3٪ نېټه اوښتي",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|بله ډله|نورې ډلې}}",
 	"specialpages-group-translation": "ژباړه",
 	"content-model-translate-messagebundle": "ژباړې وړ پيغام‌بنډل",
+	"translate-messagebundle-error-invalid-sourcelanguage": "د سرچينې ژبې کوډ \"$1\" نه ملاتړ کېږي.",
 	"translate-messagebundle-error-invalid-label": "اومتوک‌پېژند کې د پيغام بستې ناسمه نښکه. نښکه بايد يوه لړۍ وي",
 	"translate-messagebundle-group-description": "د پيغام بستو پيغامونه چې په [[$2|$1]] مخ کې څرگند شوې دي.",
 	"translate-messagebundle-change-sourcelanguage": " د اومتوک‌پېژند سره سم د پيغام بستې د سرچينې ژبه اوڼل.",
