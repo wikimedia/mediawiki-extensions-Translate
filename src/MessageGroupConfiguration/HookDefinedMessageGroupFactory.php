@@ -3,9 +3,9 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupConfiguration;
 
-use CacheDependency;
 use MediaWiki\Extension\Translate\HookRunner;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
+use MediaWiki\Language\Dependency\CacheDependency;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
@@ -25,7 +25,7 @@ final class HookDefinedMessageGroupFactory implements CachedMessageGroupFactory 
 	}
 
 	public function getCacheKey(): string {
-		return 'hook-defined-groups-v2';
+		return 'hook-defined-groups-v3';
 	}
 
 	public function getCacheVersion(): int {

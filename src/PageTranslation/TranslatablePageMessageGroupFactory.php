@@ -3,13 +3,13 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use CacheDependency;
-use MainConfigDependency;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\CachedMessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
+use MediaWiki\Language\Dependency\CacheDependency;
+use MediaWiki\Language\Dependency\MainConfigDependency;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -33,7 +33,7 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	}
 
 	public function getCacheKey(): string {
-		return 'translatable-pages';
+		return 'translatable-pages-v2';
 	}
 
 	public function getCacheVersion(): int {

@@ -3,8 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
-use CacheDependency;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
+use MediaWiki\Language\Dependency\CacheDependency;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
