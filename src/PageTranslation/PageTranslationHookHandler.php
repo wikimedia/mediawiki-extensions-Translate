@@ -9,15 +9,14 @@ use MediaWiki\SpecialPage\Hook\SpecialPageBeforeFormDisplayHook;
 use MediaWiki\Specials\Hook\LonelyPagesQueryHook;
 use MediaWiki\Specials\Hook\SpecialPrefixIndexGetFormFiltersHook;
 use MediaWiki\Specials\Hook\SpecialPrefixIndexQueryHook;
-use MediaWiki\Specials\Hook\SpecialWhatLinksHereQueryHook;
+use MediaWiki\Specials\Hook\SpecialWhatLinksHereBacklinkQueryHook;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements
 	SpecialPrefixIndexGetFormFiltersHook,
 	SpecialPrefixIndexQueryHook,
 	LonelyPagesQueryHook,
-	SpecialPageBeforeFormDisplayHook,
-	SpecialWhatLinksHereQueryHook
+	SpecialPageBeforeFormDisplayHook
 {
 	/** @inheritDoc */
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
@@ -56,8 +55,8 @@ class PageTranslationHookHandler implements
 
 	/** @inheritDoc */
 	public function onSpecialPageBeforeFormDisplay( $name, $form ): void {
-		// Temporarily disabled: https://phabricator.wikimedia.org/T385139#10559646
-		if ( $name === 'Whatlinkshere' ) {
+		// The filter needs the SpecialWhatLinksHereBacklinkQuery hook added in MW 1.48
+		if ( $name === 'Whatlinkshere' && interface_exists( SpecialWhatLinksHereBacklinkQueryHook::class ) ) {
 			$form->addFields( [
 				'translate-hidetranslations' => [
 					'type' => 'check',
@@ -66,24 +65,6 @@ class PageTranslationHookHandler implements
 					'section' => 'whatlinkshere-filter',
 				]
 			] );
-		}
-	}
-
-	/** @inheritDoc */
-	public function onSpecialWhatLinksHereQuery( $table, $data, $queryBuilder ) {
-		// Temporarily disabled: https://phabricator.wikimedia.org/T385139#10559646
-		$isSupportedTable = in_array( $table, [ 'pagelinks', 'templatelinks', 'imagelinks' ] );
-
-		if ( $data[ 'translate-hidetranslations' ] && $isSupportedTable ) {
-			$queryBuilder->leftJoin(
-				'page_props',
-				'translate_pp',
-				[
-					'translate_pp.pp_page=page_id',
-					'translate_pp.pp_propname' => 'translate-is-translation',
-				]
-			)
-			->andWhere( [ 'translate_pp.pp_value' => null ] );
 		}
 	}
 }

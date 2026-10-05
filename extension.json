@@ -221,6 +221,8 @@
 		"AfterImportPage": "translatableBundleImporter",
 		"LonelyPagesQuery": "pageTranslation",
 		"ArticleViewHeader": "messageBundle",
+		"SpecialPageBeforeFormDisplay": "pageTranslation",
+		"SpecialWhatLinksHereBacklinkQuery": "whatLinksHere",
 		"TitleQuickPermissions": "translateSandbox",
 		"ResourceLoaderRegisterModules": "main"
 	},
@@ -254,10 +256,10 @@
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
 		},
 		"pageTranslation": {
-			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler",
-			"services": [
-				"MainConfig"
-			]
+			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler"
+		},
+		"whatLinksHere": {
+			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\WhatLinksHereHookHandler"
 		},
 		"recentChangesTranslationFilter": {
 			"class": "MediaWiki\\Extension\\Translate\\RecentChangesTranslationFilterHookHandler",
