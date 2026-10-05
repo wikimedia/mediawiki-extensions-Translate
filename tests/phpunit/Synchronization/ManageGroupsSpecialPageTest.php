@@ -41,9 +41,9 @@ class ManageGroupsSpecialPageTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	private function newGroup(): MessageGroup {
+	private function newGroup( string $groupId = 'large-group' ): MessageGroup {
 		$group = $this->createMock( MessageGroup::class );
-		$group->method( 'getId' )->willReturn( 'large-group' );
+		$group->method( 'getId' )->willReturn( $groupId );
 		$group->method( 'getNamespace' )->willReturn( NS_MAIN );
 		$group->method( 'getSourceLanguage' )->willReturn( 'qqq' );
 		return $group;
@@ -165,6 +165,38 @@ class ManageGroupsSpecialPageTest extends MediaWikiIntegrationTestCase {
 			array_column( $postponed['large-group']['en'][MessageSourceChange::CHANGE], 'key' )
 		);
 		$this->assertSame( [ 2, 2 ], $batchSizes );
+	}
+
+	public function testSubmittingDeletionDoesNotAcknowledgeCollidingTranslation(): void {
+		$page = $this->newPage();
+		$group = $this->newGroup( 'ohm-website3' );
+		$englishKey = 'ohm-activerecord.attributes.user.pass_crypt';
+		$chechenKey = 'ohm-geocoder.search_osm_nominatim.prefix.leisure.yes';
+		$englishId = $this->changeId( 'ohm-website3', 'en', MessageSourceChange::DELETION, $englishKey );
+		$chechenId = $this->changeId( 'ohm-website3', 'ce', MessageSourceChange::DELETION, $chechenKey );
+		// These real migration entries collide when the hash is truncated to seven characters.
+		$this->assertStringStartsWith( 'smg/e45545c', $englishId );
+		$this->assertStringStartsWith( 'smg/e45545c', $chechenId );
+		$this->assertNotSame( $englishId, $chechenId );
+
+		$changes = new MessageSourceChange();
+		$changes->addDeletion( 'en', $englishKey, 'old' );
+		$changes->addDeletion( 'ce', $chechenKey, 'old' );
+		$this->insertPage( "$englishKey/en", 'old' );
+		$this->insertPage( "$chechenKey/ce", 'old' );
+		$request = new FauxRequest( [ $englishId => 1 ], true );
+		$postponed = $jobs = [];
+		$submit = new ReflectionMethod( ManageGroupsSpecialPage::class, 'handleModificationsSubmit' );
+		foreach ( $changes->getLanguages() as $language ) {
+			$submit->invokeArgs( $page, [ $group, $changes, $request, $language, &$postponed, &$jobs ] );
+		}
+
+		$this->assertArrayNotHasKey( 'en', $postponed['ohm-website3'] );
+		$this->assertSame(
+			$changes->getDeletions( 'ce' ),
+			$postponed['ohm-website3']['ce'][MessageSourceChange::DELETION]
+		);
+		$this->assertSame( [], $jobs );
 	}
 
 	private function changeId( string $groupId, string $language, string $type, string $key ): string {

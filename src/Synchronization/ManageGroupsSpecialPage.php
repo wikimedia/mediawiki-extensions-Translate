@@ -628,7 +628,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		string $type,
 		string $key
 	): string {
-		return 'smg/' . substr( sha1( "$groupId/$language/$type/$key" ), 0, 7 );
+		return 'smg/' . substr( sha1( "$groupId/$language/$type/$key" ), 0, 20 );
 	}
 
 	/**
