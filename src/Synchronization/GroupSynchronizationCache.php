@@ -271,22 +271,19 @@ class GroupSynchronizationCache {
 		return $groupIds;
 	}
 
-	/** Fetch information about a particular group that has errors including messages that failed */
-	public function getGroupErrorInfo( string $groupId ): GroupSynchronizationResponse {
-		$groupMessageErrorTag = $this->getGroupMessageErrorTag( $groupId );
-		$groupMessageEntries = $this->cache->getByTag( $groupMessageErrorTag );
+	/** Return the number of messages with synchronization errors for a group. */
+	public function getGroupErrorCount( string $groupId ): int {
+		return $this->cache->countByTag( $this->getGroupMessageErrorTag( $groupId ) );
+	}
 
-		$groupErrorKey = $this->getGroupErrorKey( $groupId );
-		$groupResponseEntry = $this->cache->get( $groupErrorKey );
-		$groupResponse = $groupResponseEntry[0] ? $groupResponseEntry[0]->value() : null;
-		if ( $groupResponse ) {
-			if ( !$groupResponse instanceof GroupSynchronizationResponse ) {
-				// Should not happen, but handle primarily to keep phan happy.
-				throw $this->invalidArgument( $groupResponse, GroupSynchronizationResponse::class );
-			}
-		} else {
-			throw new LogicException( 'Requested to fetch errors for a group that has no errors.' );
-		}
+	/** Fetch information about a particular group that has errors including messages that failed */
+	public function getGroupErrorInfo(
+		string $groupId,
+		?int $messageLimit = null
+	): GroupSynchronizationResponse {
+		$groupMessageErrorTag = $this->getGroupMessageErrorTag( $groupId );
+		$groupMessageEntries = $this->cache->getByTag( $groupMessageErrorTag, $messageLimit );
+		$groupResponse = $this->getGroupErrorResponse( $groupId );
 
 		$messageParams = [];
 		foreach ( $groupMessageEntries as $messageEntries ) {
@@ -351,6 +348,21 @@ class GroupSynchronizationCache {
 		$this->cache->delete( $groupErrorKey );
 
 		return $groupSyncResponse;
+	}
+
+	private function getGroupErrorResponse( string $groupId ): GroupSynchronizationResponse {
+		$groupErrorKey = $this->getGroupErrorKey( $groupId );
+		$groupResponseEntry = $this->cache->get( $groupErrorKey );
+		$groupResponse = isset( $groupResponseEntry[0] ) ? $groupResponseEntry[0]->value() : null;
+		if ( !$groupResponse ) {
+			throw new LogicException( 'Requested to fetch errors for a group that has no errors.' );
+		}
+		if ( !$groupResponse instanceof GroupSynchronizationResponse ) {
+			// Should not happen, but handle primarily to keep phan happy.
+			throw $this->invalidArgument( $groupResponse, GroupSynchronizationResponse::class );
+		}
+
+		return $groupResponse;
 	}
 
 	/**

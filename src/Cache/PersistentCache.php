@@ -15,7 +15,9 @@ interface PersistentCache {
 	public function setExpiry( string $keyname, int $expiryTime ): void;
 
 	/** @return PersistentCacheEntry[] */
-	public function getByTag( string $tag ): array;
+	public function getByTag( string $tag, ?int $limit = null ): array;
+
+	public function countByTag( string $tag ): int;
 
 	public function set( PersistentCacheEntry ...$cacheEntry ): void;
 

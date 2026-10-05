@@ -41,16 +41,29 @@ class PersistentDatabaseCache implements PersistentCache {
 	}
 
 	/** @return PersistentCacheEntry[] */
-	public function getByTag( string $tag ): array {
+	public function getByTag( string $tag, ?int $limit = null ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
-		$rows = $dbr->newSelectQueryBuilder()
+		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'tc_key', 'tc_value', 'tc_exptime', 'tc_tag' ] )
 			->from( self::TABLE_NAME )
 			->where( [ 'tc_tag' => $tag ] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
+			->caller( __METHOD__ );
+		if ( $limit !== null ) {
+			$queryBuilder->limit( $limit );
+		}
+		$rows = $queryBuilder->fetchResultSet();
 
 		return $this->buildEntries( $rows );
+	}
+
+	public function countByTag( string $tag ): int {
+		$dbr = $this->dbProvider->getReplicaDatabase( self::VIRTUAL_DOMAIN );
+		return (int)$dbr->newSelectQueryBuilder()
+			->select( 'COUNT(*)' )
+			->from( self::TABLE_NAME )
+			->where( [ 'tc_tag' => $tag ] )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
 	public function has( string $keyname ): bool {

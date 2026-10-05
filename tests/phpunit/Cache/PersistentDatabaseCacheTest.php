@@ -147,6 +147,18 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		$this->assertCount( $expectedEntryCount, $entries );
 	}
 
+	public function testGetByTagLimitAndCount(): void {
+		$entries = $this->getEntriesFromInput(
+			[ 'key' => 'value', 'key2' => 'value2', 'key3' => 'value3' ],
+			null,
+			'test'
+		);
+		$this->persistentCache->set( ...$entries );
+
+		$this->assertCount( 2, $this->persistentCache->getByTag( 'test', 2 ) );
+		$this->assertSame( 3, $this->persistentCache->countByTag( 'test' ) );
+	}
+
 	public function testDelete() {
 		$testTag = 'test';
 		$entry = new PersistentCacheEntry( 'hello', null, null, $testTag );

@@ -188,6 +188,8 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 			$this->groupSyncCache->getGroupErrorInfo( $groupId ),
 			'Multiple additions of group errors don\'t duplicate entries in cache'
 		);
+		$this->assertSame( 3, $this->groupSyncCache->getGroupErrorCount( $groupId ) );
+		$this->assertCount( 2, $this->groupSyncCache->getGroupErrorInfo( $groupId, 2 )->getRemainingMessages() );
 	}
 
 	public function testMarkGroupAsResolved() {

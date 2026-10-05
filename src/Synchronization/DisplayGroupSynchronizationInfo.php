@@ -16,6 +16,7 @@ use MediaWiki\Title\Title;
  * @since 2021.02
  */
 class DisplayGroupSynchronizationInfo {
+	private const ERROR_MESSAGE_DISPLAY_LIMIT = 100;
 
 	public function __construct(
 		private readonly MessageLocalizer $localizer,
@@ -62,8 +63,17 @@ class DisplayGroupSynchronizationInfo {
 
 		$htmlGroupItems = [];
 		foreach ( $groupsWithErrors as $groupId ) {
-			$groupErrorResponse = $groupSynchronizationCache->getGroupErrorInfo( $groupId );
-			$htmlGroupItems[] = $this->getHtmlForGroupErrors( $groupErrorResponse, $currentLang, $wrapperClass );
+			$totalMessageCount = $groupSynchronizationCache->getGroupErrorCount( $groupId );
+			$groupErrorResponse = $groupSynchronizationCache->getGroupErrorInfo(
+				$groupId,
+				self::ERROR_MESSAGE_DISPLAY_LIMIT
+			);
+			$htmlGroupItems[] = $this->getHtmlForGroupErrors(
+				$groupErrorResponse,
+				$totalMessageCount,
+				$currentLang,
+				$wrapperClass
+			);
 		}
 
 		return $this->getGroupSyncInfoHtml(
@@ -111,6 +121,7 @@ class DisplayGroupSynchronizationInfo {
 
 	private function getHtmlForGroupErrors(
 		GroupSynchronizationResponse $groupErrorResponse,
+		int $totalMessageCount,
 		Language $language,
 		string $wrapperClass
 	): string {
@@ -132,7 +143,9 @@ class DisplayGroupSynchronizationInfo {
 		$output .= Html::rawElement(
 			'summary',
 			[],
-			$groupId . ' ' .
+			$groupId . $this->localizer->msg( 'colon-separator' )->escaped() .
+			$this->localizer->msg( 'translate-smg-group-with-error-summary' )
+				->numParams( $totalMessageCount )->escaped() . ' ' .
 			Html::rawElement(
 				'span',
 				[ 'class' => "{$wrapperClass}__sync-actions" ],
@@ -153,6 +166,15 @@ class DisplayGroupSynchronizationInfo {
 			);
 		}
 		$output .= Html::closeElement( 'ol' );
+		$omittedMessageCount = $totalMessageCount - count( $errorMessages );
+		if ( $omittedMessageCount > 0 ) {
+			$output .= Html::element(
+				'p',
+				[ 'class' => "{$wrapperClass}__message-errors-omitted" ],
+				$this->localizer->msg( 'translate-smg-group-message-errors-omitted' )
+					->numParams( $omittedMessageCount )->text()
+			);
+		}
 
 		$output .= Html::closeElement( 'details' );
 
