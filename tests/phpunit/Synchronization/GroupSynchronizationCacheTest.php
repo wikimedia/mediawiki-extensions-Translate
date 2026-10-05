@@ -197,8 +197,10 @@ class GroupSynchronizationCacheTest extends MediaWikiIntegrationTestCase {
 		$this->addTestGroupError( $groupId );
 
 		$this->assertContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
-		$this->groupSyncCache->markGroupAsResolved( $groupId );
+		$response = $this->groupSyncCache->markGroupAsResolved( $groupId );
 		$this->assertNotContains( $groupId, $this->groupSyncCache->getGroupsWithErrors() );
+		$this->assertSame( [], $response->getRemainingMessages() );
+		$this->assertTrue( $response->hasTimedOut() );
 	}
 
 	public function testMarkMessageAsResolved() {

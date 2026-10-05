@@ -305,16 +305,11 @@ class GroupSynchronizationCache {
 
 	/** Marks all messages in a group and the group itself as resolved */
 	public function markGroupAsResolved( string $groupId ): GroupSynchronizationResponse {
-		$groupSyncResponse = $this->getGroupErrorInfo( $groupId );
-		$errorMessages = $groupSyncResponse->getRemainingMessages();
+		$groupResponse = $this->getGroupErrorResponse( $groupId );
+		$this->cache->deleteEntriesWithTag( $this->getGroupMessageErrorTag( $groupId ) );
+		$this->cache->delete( $this->getGroupErrorKey( $groupId ) );
 
-		$errorMessageKeys = [];
-		foreach ( $errorMessages as $message ) {
-			$errorMessageKeys[] = $this->getMessageErrorKey( $groupId, $message->getPageName() )[0];
-		}
-
-		$this->cache->delete( ...$errorMessageKeys );
-		return $this->syncGroupErrors( $groupId );
+		return new GroupSynchronizationResponse( $groupId, [], $groupResponse->hasTimedOut() );
 	}
 
 	/** Marks errors for a message as resolved */
