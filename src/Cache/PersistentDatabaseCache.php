@@ -6,6 +6,8 @@ namespace MediaWiki\Extension\Translate\Cache;
 use Iterator;
 use MediaWiki\Json\JsonCodec;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\RawSQLValue;
 
 /**
  * A persistent cache implementation using the database.
@@ -16,6 +18,8 @@ use Wikimedia\Rdbms\IConnectionProvider;
 class PersistentDatabaseCache implements PersistentCache {
 	private const VIRTUAL_DOMAIN = 'virtual-translate';
 	private const TABLE_NAME = 'translate_cache';
+	private const SET_BATCH_SIZE = 100;
+	private const SET_BATCH_BYTES = 1_000_000;
 
 	public function __construct(
 		private readonly IConnectionProvider $dbProvider,
@@ -75,27 +79,66 @@ class PersistentDatabaseCache implements PersistentCache {
 
 	public function set( PersistentCacheEntry ...$entries ): void {
 		$dbw = $this->dbProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
+		$rows = [];
+		$batchBytes = 0;
 
 		foreach ( $entries as $entry ) {
 			$value = $this->jsonCodec->serialize( $entry->value() );
-			$dbw->newInsertQueryBuilder()
-				->insertInto( self::TABLE_NAME )
-				->row( [
-					'tc_key' => $entry->key(),
-					'tc_value' => $value,
-					'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
-					'tc_tag' => $entry->tag()
-				] )
-				->onDuplicateKeyUpdate()
-				->uniqueIndexFields( [ 'tc_key' ] )
-				->set( [
-					'tc_value' => $value,
-					'tc_exptime' => $dbw->timestampOrNull( $entry->exptime() ),
-					'tc_tag' => $entry->tag()
-				] )
-				->caller( __METHOD__ )
-				->execute();
+			$key = $entry->key();
+			$expiry = $dbw->timestampOrNull( $entry->exptime() );
+			$tag = $entry->tag();
+			$row = [
+				'tc_key' => $key,
+				'tc_value' => $value,
+				'tc_exptime' => $expiry,
+				'tc_tag' => $tag
+			];
+
+			// A multi-row upsert cannot contain the same unique key more than once on
+			// all supported databases. Preserve the existing last-write-wins behavior.
+			if ( isset( $rows[$key] ) ) {
+				$batchBytes -= self::getRowSize( $rows[$key] );
+			}
+			$rows[$key] = $row;
+			$batchBytes += self::getRowSize( $row );
+
+			if ( count( $rows ) >= self::SET_BATCH_SIZE || $batchBytes >= self::SET_BATCH_BYTES ) {
+				$this->setRows( $dbw, array_values( $rows ) );
+				$rows = [];
+				$batchBytes = 0;
+			}
 		}
+
+		if ( $rows !== [] ) {
+			$this->setRows( $dbw, array_values( $rows ) );
+		}
+	}
+
+	/**
+	 * @param IDatabase $dbw
+	 * @param array<int,array<string,mixed>> $rows
+	 */
+	private function setRows( IDatabase $dbw, array $rows ): void {
+		$dbw->newInsertQueryBuilder()
+			->insertInto( self::TABLE_NAME )
+			->rows( $rows )
+			->onDuplicateKeyUpdate()
+			->uniqueIndexFields( [ 'tc_key' ] )
+			->set( [
+				'tc_value' => new RawSQLValue( $dbw->buildExcludedValue( 'tc_value' ) ),
+				'tc_exptime' => new RawSQLValue( $dbw->buildExcludedValue( 'tc_exptime' ) ),
+				'tc_tag' => new RawSQLValue( $dbw->buildExcludedValue( 'tc_tag' ) )
+			] )
+			->caller( __METHOD__ )
+			->execute();
+	}
+
+	/** @param array{tc_key:string,tc_value:string,tc_exptime:?string,tc_tag:?string} $row */
+	private static function getRowSize( array $row ): int {
+		return strlen( $row['tc_key'] ) +
+			strlen( $row['tc_value'] ) +
+			strlen( $row['tc_exptime'] ?? '' ) +
+			strlen( $row['tc_tag'] ?? '' );
 	}
 
 	public function setExpiry( string $keyname, int $expiryTime ): void {

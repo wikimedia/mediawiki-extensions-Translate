@@ -64,6 +64,35 @@ class PersistentDatabaseCacheTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
+	public function testSetMultiUpdatesEachEntryWithItsOwnValue(): void {
+		$this->persistentCache->set(
+			new PersistentCacheEntry( 'key', 'old value' ),
+			new PersistentCacheEntry( 'key2', 'old value' )
+		);
+
+		$entries = [
+			new PersistentCacheEntry( 'key', 'new value', null, 'tag' ),
+			new PersistentCacheEntry( 'key2', 'different value', null, 'different-tag' )
+		];
+		$this->persistentCache->set( ...$entries );
+
+		$actualEntries = $this->persistentCache->get( 'key', 'key2' );
+		foreach ( $entries as $index => $entry ) {
+			$this->assertCacheEntryEqual( $entry, $actualEntries[$index] );
+		}
+	}
+
+	public function testSetMultiUsesLastDuplicateEntry(): void {
+		$expected = new PersistentCacheEntry( 'key', 'last value', null, 'last-tag' );
+		$this->persistentCache->set(
+			new PersistentCacheEntry( 'key', 'first value', null, 'first-tag' ),
+			$expected
+		);
+
+		$actualEntries = $this->persistentCache->get( 'key' );
+		$this->assertCacheEntryEqual( $expected, $actualEntries[0] );
+	}
+
 	public function testHas() {
 		$entry = new PersistentCacheEntry( 'hello', null, null, null );
 		$this->persistentCache->set( $entry );
