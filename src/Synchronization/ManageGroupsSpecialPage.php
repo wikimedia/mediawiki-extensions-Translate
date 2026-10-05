@@ -374,9 +374,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->parse() );
 			$isReusedKey = true;
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
-			// Count it so the prefetch slice in showModificationChanges() stays bounded.
+			// Uses budget, and lets POST remove this entry once its form is submitted.
 			$limit--;
-			return '';
+			return Html::hidden( $id, 'stale' );
 		}
 
 		$text = '';
@@ -613,6 +613,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			}
 			MessageChangeStorage::writeChanges( $postponedSourceChanges, $this->cdb );
 
+			// showChanges() deserializes the postponed CDB again. Release the previous
+			// representation first; for large change sets both copies may not fit in memory.
+			unset( $postponedSourceChanges, $postponed, $sourceChanges, $changes );
 			$this->showChanges( $this->getLimit() );
 		} elseif ( $errorGroups === [] ) {
 			$out->addWikiMsg( 'translate-smg-submitted' );
@@ -1040,21 +1043,33 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		// Handle additions, deletions, and changes.
 		foreach ( $subChanges as $type => $messages ) {
+			$submitted = [];
 			foreach ( $messages as $index => $params ) {
-				$key = $params['key'];
-				$id = self::changeId( $groupId, $language, $type, $key );
-				$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
+				$id = self::changeId( $groupId, $language, $type, $params['key'] );
+				if ( !$req->getCheck( $id ) ) {
+					$postponed[$groupId][$language][$type][$index] = $params;
+				} else {
+					$submitted[$index] = $params;
+				}
+			}
 
+			// Hidden IDs also submit stale entries. Only this form's entries need title work.
+			if ( $submitted !== [] && $type !== MessageSourceChange::ADDITION ) {
+				$this->preloadTitles( $group, $language, array_column( $submitted, 'key' ) );
+			}
+			foreach ( $submitted as $index => $params ) {
+				$key = $params['key'];
+				$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
 				if ( !$this->isTitlePresent( $title, $type ) ) {
 					continue;
 				}
 
-				if ( !$req->getCheck( $id ) ) {
-					// We probably hit the limit with number of post parameters.
+				$id = self::changeId( $groupId, $language, $type, $key );
+				if ( $req->getVal( $id ) === 'stale' ) {
+					// The page was recreated since GET. Show it for review on the next form.
 					$postponed[$groupId][$language][$type][$index] = $params;
 					continue;
 				}
-
 				$selectedVal = $req->getVal( "msg/$id" );
 				if ( $type === MessageSourceChange::DELETION || $selectedVal === 'ignore' ) {
 					continue;
