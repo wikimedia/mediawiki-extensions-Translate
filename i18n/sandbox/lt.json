@@ -3,12 +3,13 @@
 		"authors": [
 			"Eitvys200",
 			"Manvydasz",
+			"Mindaur",
 			"Nokeoo"
 		]
 	},
 	"managetranslatorsandbox": "Tvarkyti vertėjo smėlio dėžę",
 	"tsb-filter-pending": "Neišnagrinėti prašymai",
-	"tsb-reminder-title-generic": "Užbaigti įvadą ir tapti vertėju",
+	"tsb-reminder-title-generic": "Užbaikite įvadinį kursą ir tapkite vertėju",
 	"tsb-reminder-sending": "Siunčiamas priminimas...",
 	"tsb-reminder-sent": "{{PLURAL:$1|Išsiųstas $1 priminimas. Laikas: $2.|Išsiųsti $1 priminimai. Paskutinio laikas: $2.}}",
 	"tsb-reminder-sent-new": "Išsiųstas priminimas",
