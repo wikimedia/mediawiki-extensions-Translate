@@ -186,33 +186,29 @@ class MessageSourceChange {
 	 * @return array|null
 	 */
 	public function findMessage( $language, $key, $possibleStates = [], &$modificationType = null ) {
-		$allChanges = [
-			self::ADDITION => $this->getAdditions( $language ),
-			self::DELETION => $this->getDeletions( $language ),
-			self::CHANGE => $this->getChanges( $language ),
-			self::RENAME => $this->getRenames( $language ),
-		];
-
 		if ( $possibleStates === [] ) {
 			$possibleStates = [ self::ADDITION, self::CHANGE, self::DELETION, self::RENAME ];
 		}
 
-		foreach ( $allChanges as $type => $modifications ) {
+		// Keep the existing lookup order
+		foreach ( [ self::ADDITION, self::DELETION, self::CHANGE, self::RENAME ] as $type ) {
 			if ( !in_array( $type, $possibleStates ) ) {
 				continue;
 			}
 
 			if ( $type === self::RENAME ) {
-				if ( isset( $modifications[$key] ) ) {
+				$rename = $this->changes[$language][self::RENAME][$key] ?? null;
+				if ( $rename !== null ) {
+					// Same shape as getRenames()
+					$rename['key'] = $key;
 					$modificationType = $type;
-					return $modifications[$key];
+					return $rename;
 				}
 				continue;
 			}
 
-			foreach ( $modifications as $modification ) {
-				$currentKey = $modification['key'];
-				if ( $currentKey === $key ) {
+			foreach ( $this->getModification( $language, $type ) as $modification ) {
+				if ( $modification['key'] === $key ) {
 					$modificationType = $type;
 					return $modification;
 				}
