@@ -51,6 +51,8 @@ use Throwable;
  * @license GPL-2.0-or-later
  */
 class ManageGroupsSpecialPage extends SpecialPage {
+	/** Maximum number of titles included in a single LinkBatch query. */
+	private const LINK_BATCH_SIZE = 1000;
 	private const GROUP_SYNC_INFO_WRAPPER_CLASS = 'smg-group-sync-cache-info';
 	private const RIGHT = 'translate-manage';
 	protected DifferenceEngine $diff;
@@ -220,6 +222,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 
 		$reader = Reader::open( $this->cdb );
 		$groups = self::getGroupsFromCdb( $reader );
+		$limitReached = false;
 		foreach ( $groups as $id => $group ) {
 			$sourceChanges = MessageSourceChange::loadModifications(
 				Utilities::deserialize( $reader->get( $id ) )
@@ -232,26 +235,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				);
 			}
 
-			// Reduce page existence queries to one per group
-			$lb = $this->linkBatchFactory->newLinkBatch();
-			$ns = $group->getNamespace();
-			$isCap = $this->nsInfo->isCapitalized( $ns );
 			$languages = $sourceChanges->getLanguages();
-
-			foreach ( $languages as $language ) {
-				$languageChanges = $sourceChanges->getModificationsForLanguage( $language );
-				foreach ( $languageChanges as $changes ) {
-					foreach ( $changes as $params ) {
-						// Constructing title objects is way slower
-						$key = $params['key'];
-						if ( $isCap ) {
-							$key = $this->contLang->ucfirst( $key );
-						}
-						$lb->add( $ns, "$key/$language" );
-					}
-				}
-			}
-			$lb->execute();
 
 			foreach ( $languages as $language ) {
 				// Handle and generate UI for additions, deletions, change
@@ -262,22 +246,30 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				];
 
 				foreach ( $changes as $type => $messages ) {
-					foreach ( $messages as $params ) {
-						$change = $this->formatChange( $group, $sourceChanges, $language, $type, $params, $limit );
-						$out->addHTML( $change );
-
-						if ( $limit <= 0 ) {
-							// We need to restrict the changes per page per form submission
-							// limitations as well as performance.
-							$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
-							break 4;
-						}
+					if ( $this->showModificationChanges(
+						$group,
+						$sourceChanges,
+						$out,
+						$language,
+						$type,
+						$messages,
+						$limit
+					) ) {
+						$limitReached = true;
+						break 3;
 					}
 				}
 
 				// Handle and generate UI for renames
-				$this->showRenames( $group, $sourceChanges, $out, $language, $limit );
+				if ( $this->showRenames( $group, $sourceChanges, $out, $language, $limit ) ) {
+					$limitReached = true;
+					break 2;
+				}
 			}
+		}
+		if ( $limitReached ) {
+			// Restrict changes per page due to form submission limitations as well as performance.
+			$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
 		}
 
 		$out->enableOOUI();
@@ -291,6 +283,69 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		] );
 		$out->addHTML( (string)$button );
 		$out->addHTML( Html::closeElement( 'form' ) );
+	}
+
+	/**
+	 * Prefetch only modifications that could fit in the remaining form variable budget.
+	 *
+	 * @param MessageGroup $group
+	 * @param MessageSourceChange $sourceChanges
+	 * @param OutputPage $out
+	 * @param string $language
+	 * @param string $type
+	 * @param array[] $messages
+	 * @param int &$limit
+	 * @return bool Whether the form variable limit was reached
+	 */
+	private function showModificationChanges(
+		MessageGroup $group,
+		MessageSourceChange $sourceChanges,
+		OutputPage $out,
+		string $language,
+		string $type,
+		array $messages,
+		int &$limit
+	): bool {
+		if ( $limit <= 0 ) {
+			return true;
+		}
+
+		// Every entry uses at least one hidden ID, including stale entries needing cleanup.
+		$messages = array_slice( $messages, 0, $limit );
+		if ( $messages === [] ) {
+			return false;
+		}
+		$this->preloadTitles( $group, $language, array_column( $messages, 'key' ) );
+
+		foreach ( $messages as $params ) {
+			$out->addHTML( $this->formatChange( $group, $sourceChanges, $language, $type, $params, $limit ) );
+			if ( $limit <= 0 ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * @param MessageGroup $group
+	 * @param string $language
+	 * @param iterable<string> $keys
+	 */
+	private function preloadTitles( MessageGroup $group, string $language, iterable $keys ): void {
+		$linkBatch = $this->linkBatchFactory->newLinkBatch();
+		$namespace = $group->getNamespace();
+		$isCapitalized = $this->nsInfo->isCapitalized( $namespace );
+
+		foreach ( $keys as $key ) {
+			// Constructing Title objects just to populate LinkBatch is comparatively expensive.
+			if ( $isCapitalized ) {
+				$key = $this->contLang->ucfirst( $key );
+			}
+			$linkBatch->add( $namespace, "$key/$language" );
+		}
+
+		$linkBatch->setCaller( __METHOD__ )->execute();
 	}
 
 	protected function formatChange(
@@ -319,8 +374,8 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$noticeHtml .= Html::warningBox( $this->msg( 'translate-manage-key-reused' )->parse() );
 			$isReusedKey = true;
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
-			// This happens if a message key has been renamed
-			// The change can be ignored.
+			// Count it so the prefetch slice in showModificationChanges() stays bounded.
+			$limit--;
 			return '';
 		}
 
@@ -637,8 +692,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		OutputPage $out,
 		string $language,
 		int &$limit
-	): void {
+	): bool {
 		$changes = $sourceChanges->getRenames( $language );
+		$renameBatch = [];
 		foreach ( $changes as $key => $params ) {
 			// Since we're removing items from the array within the loop add
 			// a check here to ensure that the current key is still set.
@@ -675,26 +731,69 @@ class ManageGroupsSpecialPage extends SpecialPage {
 				$deletedMsg = $firstMsg;
 			}
 
-			$change = $this->formatRename(
-				$group,
-				$addedMsg,
-				$deletedMsg,
-				$language,
-				$sourceChanges->isEqual( $language, $key ),
-				$limit
-			);
-			$out->addHTML( $change );
+			$renameBatch[] = [
+				'added' => $addedMsg,
+				'deleted' => $deletedMsg,
+				'isEqual' => $sourceChanges->isEqual( $language, $key ),
+			];
 
 			// no need to process the second key again.
 			unset( $changes[$secondKey] );
 
-			if ( $limit <= 0 ) {
-				// We need to restrict the changes per page per form submission
-				// limitations as well as performance.
-				$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
-				break;
+			// Each rename prefetches two titles: the added and the deleted key.
+			if ( count( $renameBatch ) >= self::LINK_BATCH_SIZE / 2 ) {
+				if ( $this->showRenameBatch( $group, $out, $language, $renameBatch, $limit ) ) {
+					return true;
+				}
+				$renameBatch = [];
 			}
 		}
+
+		return $this->showRenameBatch( $group, $out, $language, $renameBatch, $limit );
+	}
+
+	/**
+	 * @param MessageGroup $group
+	 * @param OutputPage $out
+	 * @param string $language
+	 * @param array[] $renameBatch
+	 * @param int &$limit
+	 * @return bool Whether the form variable limit was reached
+	 */
+	private function showRenameBatch(
+		MessageGroup $group,
+		OutputPage $out,
+		string $language,
+		array $renameBatch,
+		int &$limit
+	): bool {
+		if ( $renameBatch === [] ) {
+			return false;
+		}
+
+		$keys = [];
+		foreach ( $renameBatch as $rename ) {
+			$keys[] = $rename['added']['key'];
+			$keys[] = $rename['deleted']['key'];
+		}
+		$this->preloadTitles( $group, $language, $keys );
+
+		foreach ( $renameBatch as $rename ) {
+			$out->addHTML( $this->formatRename(
+				$group,
+				$rename['added'],
+				$rename['deleted'],
+				$language,
+				$rename['isEqual'],
+				$limit
+			) );
+
+			if ( $limit <= 0 ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	private function formatRename(
