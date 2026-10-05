@@ -13,6 +13,7 @@ use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroups;
 use MediaWiki\Extension\Translate\MessageGroupProcessing\MessageGroupSubscription;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroups\FileBasedMessageGroup;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
@@ -28,7 +29,8 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Revision\MutableRevisionRecord;
-use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\DisabledSpecialPage;
@@ -38,6 +40,7 @@ use MediaWiki\Title\Title;
 use OOUI\ButtonInputWidget;
 use RuntimeException;
 use Throwable;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -67,7 +70,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 	public function __construct(
 		private readonly Language $contLang,
 		private readonly NamespaceInfo $nsInfo,
-		private readonly RevisionLookup $revLookup,
+		private readonly RevisionStore $revisionStore,
 		private readonly GroupSynchronizationCache $synchronizationCache,
 		private readonly JobQueueGroup $jobQueueGroup,
 		private readonly MessageIndex $messageIndex,
@@ -316,15 +319,76 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			return false;
 		}
 		$this->preloadTitles( $group, $language, array_column( $messages, 'key' ) );
+		$currentRevisions = $this->loadCurrentRevisions( $group, $language, $messages );
 
 		foreach ( $messages as $params ) {
-			$out->addHTML( $this->formatChange( $group, $sourceChanges, $language, $type, $params, $limit ) );
+			$current = $currentRevisions[$params['key']] ?? null;
+			$out->addHTML( $this->formatChange(
+				$group, $sourceChanges, $language, $type, $params, $limit,
+				$current['revision'] ?? null, $current['fuzzy'] ?? false
+			) );
 			if ( $limit <= 0 ) {
 				return true;
 			}
 		}
 
 		return false;
+	}
+
+	/**
+	 * Load current revisions, main-slot content and fuzzy status for the bounded render slice.
+	 *
+	 * @param MessageGroup $group
+	 * @param string $language
+	 * @param array[] $messages
+	 * @return array<string,array{revision:RevisionRecord,fuzzy:bool}> Indexed by message key
+	 */
+	private function loadCurrentRevisions( MessageGroup $group, string $language, array $messages ): array {
+		$titles = [];
+		$pageIds = [];
+		foreach ( $messages as $params ) {
+			$key = $params['key'];
+			$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
+			if ( $title && $title->exists() ) {
+				$titles[$key] = $title;
+				$pageIds[] = $title->getArticleID();
+			}
+		}
+		if ( $pageIds === [] ) {
+			return [];
+		}
+
+		$flags = Utilities::shouldReadFromPrimary() ? IDBAccessObject::READ_LATEST : 0;
+		$rows = $this->revisionStore->newSelectQueryBuilder( Utilities::getSafeReadDB() )
+			->joinPage()
+			->joinComment()
+			->joinUser()
+			->field( 'rt_type', 'smg_fuzzy' )
+			->leftJoin( 'revtag', null, [
+				'rt_page=page_id', 'rt_revision=page_latest', 'rt_type' => RevTagStore::FUZZY_TAG,
+			] )
+			->where( [ 'page_id' => array_unique( $pageIds ), 'rev_id=page_latest' ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+		$revisions = $this->revisionStore->newRevisionsFromBatch(
+			$rows, [ 'slots' => [ SlotRecord::MAIN ], 'content' => true ], $flags
+		)->getValue();
+		$byPageId = [];
+		foreach ( $rows as $row ) {
+			$revision = $revisions[$row->rev_id] ?? null;
+			if ( $revision !== null ) {
+				$byPageId[$row->page_id] = [ 'revision' => $revision, 'fuzzy' => $row->smg_fuzzy !== null ];
+			}
+		}
+		$rows->free();
+
+		$result = [];
+		foreach ( $titles as $key => $title ) {
+			if ( isset( $byPageId[$title->getArticleID()] ) ) {
+				$result[$key] = $byPageId[$title->getArticleID()];
+			}
+		}
+		return $result;
 	}
 
 	/**
@@ -354,7 +418,9 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		string $language,
 		string $type,
 		array $params,
-		int &$limit
+		int &$limit,
+		?RevisionRecord $currentRevision = null,
+		bool $isFuzzy = false
 	): string {
 		$key = $params['key'];
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
@@ -383,7 +449,7 @@ class ManageGroupsSpecialPage extends SpecialPage {
 		$titleLink = $this->getLinkRenderer()->makeLink( $title );
 
 		if ( $type === 'deletion' ) {
-			$revTitle = $this->revLookup->getRevisionByTitle( $title );
+			$revTitle = $currentRevision;
 			if ( !$revTitle ) {
 				wfWarn( "[ManageGroupSpecialPage] No revision associated with {$title->getPrefixedText()}" );
 			}
@@ -447,7 +513,10 @@ class ManageGroupsSpecialPage extends SpecialPage {
 			$this->diff->setRevisions( $oldRevision, $newRevision );
 			$text = $this->diff->getDiff( '', $titleLink . $menu, $noticeHtml );
 		} elseif ( $type === 'change' ) {
-			$wiki = Utilities::getContentForTitle( $title, true );
+			$wiki = Utilities::getTextFromContentOrNull( $currentRevision?->getContent( SlotRecord::MAIN ) );
+			if ( $wiki !== null && $isFuzzy ) {
+				$wiki = TRANSLATE_FUZZY . str_replace( TRANSLATE_FUZZY, '', $wiki );
+			}
 
 			$actions = '';
 			$sourceLanguage = $group->getSourceLanguage();

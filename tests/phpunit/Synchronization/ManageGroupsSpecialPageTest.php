@@ -4,12 +4,16 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\Synchronization;
 
 use MediaWiki\Diff\DifferenceEngine;
+use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Page\LinkBatch;
 use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -32,7 +36,7 @@ class ManageGroupsSpecialPageTest extends MediaWikiIntegrationTestCase {
 		return new ManageGroupsSpecialPage(
 			$services->getContentLanguage(),
 			$services->getNamespaceInfo(),
-			$services->getRevisionLookup(),
+			$services->getRevisionStore(),
 			$services->get( 'Translate:GroupSynchronizationCache' ),
 			$services->getJobQueueGroup(),
 			$services->get( 'Translate:MessageIndex' ),
@@ -308,5 +312,92 @@ class ManageGroupsSpecialPageTest extends MediaWikiIntegrationTestCase {
 		}
 		$id = $this->changeId( 'large-group', 'en', MessageSourceChange::CHANGE, 'next-stale' );
 		$this->assertStringNotContainsString( 'name="' . $id . '"', $html );
+	}
+
+	public function testBatchLoadsLatestContentAndCurrentFuzzyTags(): void {
+		$page = $this->newPage();
+		$group = $this->newGroup();
+		$messages = [];
+		foreach ( [ 'current-fuzzy', 'old-fuzzy' ] as $key ) {
+			$this->insertPage( "$key/en", 'previous content' );
+			$title = Title::newFromText( "$key/en" );
+			$store = $this->getServiceContainer()->getRevisionStore();
+			$oldRevision = $store->getRevisionByTitle( $title );
+			$this->editPage( $title, 'latest content' );
+			$currentRevision = $store->getRevisionByTitle( $title );
+			$this->getDb()->newInsertQueryBuilder()
+				->insertInto( 'revtag' )
+				->row( [
+					'rt_page' => $title->getArticleID(),
+					'rt_revision' => $key === 'current-fuzzy' ? $currentRevision->getId() : $oldRevision->getId(),
+					'rt_type' => RevTagStore::FUZZY_TAG,
+				] )
+				->caller( __METHOD__ )
+				->execute();
+			$messages[] = [ 'key' => $key, 'content' => 'incoming' ];
+		}
+		$messages[] = [ 'key' => 'missing-page', 'content' => 'incoming' ];
+		$load = new ReflectionMethod( ManageGroupsSpecialPage::class, 'loadCurrentRevisions' );
+		$current = $load->invoke( $page, $group, 'en', $messages );
+
+		$this->assertArrayNotHasKey( 'missing-page', $current );
+		$this->assertTrue( $current['current-fuzzy']['fuzzy'] );
+		$this->assertFalse( $current['old-fuzzy']['fuzzy'] );
+		$diff = new ReflectionProperty( ManageGroupsSpecialPage::class, 'diff' );
+		$diff->setValue( $page, new DifferenceEngine( $page->getContext() ) );
+		$format = new ReflectionMethod( ManageGroupsSpecialPage::class, 'formatChange' );
+		foreach ( array_slice( $messages, 0, 2 ) as $params ) {
+			$entry = $current[$params['key']];
+			$this->assertSame( 'latest content', $entry['revision']->getContent( SlotRecord::MAIN )->getText() );
+			$limit = 2;
+			$html = $format->invokeArgs( $page, [
+				$group, new MessageSourceChange(), 'en', MessageSourceChange::CHANGE, $params, &$limit,
+				$entry['revision'], $entry['fuzzy'],
+			] );
+			$this->assertSame( $entry['fuzzy'], str_contains( strip_tags( $html ), TRANSLATE_FUZZY ) );
+		}
+	}
+
+	public function testReusedAdditionRendersCurrentContentFromBatch(): void {
+		$page = $this->newPage();
+		$group = $this->newGroup();
+		$this->insertPage( 'reused-addition/en', 'existing reused content' );
+		$diff = new ReflectionProperty( ManageGroupsSpecialPage::class, 'diff' );
+		$diff->setValue( $page, new DifferenceEngine( $page->getContext() ) );
+		$changes = new MessageSourceChange();
+		$changes->addAddition( 'en', 'reused-addition', 'incoming' );
+		$limit = 2;
+		$render = new ReflectionMethod( ManageGroupsSpecialPage::class, 'showModificationChanges' );
+		$render->invokeArgs( $page, [
+			$group, $changes, $page->getOutput(), 'en', MessageSourceChange::ADDITION,
+			$changes->getAdditions( 'en' ), &$limit,
+		] );
+
+		$html = $page->getOutput()->getHTML();
+		$this->assertStringContainsString( 'smg-change-change', $html );
+		$this->assertStringContainsString( 'existing reused content', strip_tags( $html ) );
+		$this->assertSame( 0, $limit );
+	}
+
+	public function testBatchPreservesHiddenMetadataVisibility(): void {
+		$page = $this->newPage();
+		$this->insertPage( 'hidden-metadata/en', 'public content' );
+		$title = Title::newFromText( 'hidden-metadata/en' );
+		$revision = $this->getServiceContainer()->getRevisionStore()->getRevisionByTitle( $title );
+		$this->getDb()->newUpdateQueryBuilder()
+			->update( 'revision' )
+			->set( [ 'rev_deleted' => RevisionRecord::DELETED_USER | RevisionRecord::DELETED_COMMENT ] )
+			->where( [ 'rev_id' => $revision->getId() ] )
+			->caller( __METHOD__ )
+			->execute();
+		$load = new ReflectionMethod( ManageGroupsSpecialPage::class, 'loadCurrentRevisions' );
+		$current = $load->invoke( $page, $this->newGroup(), 'en', [
+			[ 'key' => 'hidden-metadata', 'content' => 'incoming' ],
+		] );
+
+		$record = $current['hidden-metadata']['revision'];
+		$this->assertNull( $record->getUser( RevisionRecord::FOR_PUBLIC ) );
+		$this->assertNull( $record->getComment( RevisionRecord::FOR_PUBLIC ) );
+		$this->assertSame( 'public content', $record->getContent( SlotRecord::MAIN )->getText() );
 	}
 }

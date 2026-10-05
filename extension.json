@@ -355,7 +355,7 @@
 			"services": [
 				"ContentLanguage",
 				"NamespaceInfo",
-				"RevisionLookup",
+				"RevisionStore",
 				"Translate:GroupSynchronizationCache",
 				"JobQueueGroup",
 				"Translate:MessageIndex",
