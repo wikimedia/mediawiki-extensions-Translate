@@ -8,7 +8,8 @@
 			"Huji",
 			"Jeeputer",
 			"Ladsgroup",
-			"Reza1615"
+			"Reza1615",
+			"Mohammad ebz"
 		]
 	},
 	"apihelp-aggregategroups-summary": "مدیریت گروه‌های پیام انبوه",
@@ -50,6 +51,7 @@
 	"apihelp-ttmserver-param-targetlanguage": "کد زبان پیشنهاد.",
 	"apihelp-ttmserver-param-text": "متن برای یافتن پیشنهادات",
 	"apihelp-searchtranslations-summary": "جستجوی ترجمه‌ها.",
+	"apihelp-searchtranslations-param-service": "از کدام یک از خدمات ترجمه موجود استفاده کنیم.",
 	"apihelp-searchtranslations-param-query": "رشته برای جستجو.",
 	"apihelp-searchtranslations-param-limit": "اندازۀ نتیجه.",
 	"apihelp-translationcheck-summary": "اعتبارسنجی ترجمه‌ها.",

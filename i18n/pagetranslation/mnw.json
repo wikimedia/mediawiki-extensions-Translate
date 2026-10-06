@@ -7,5 +7,7 @@
 	},
 	"tpt-languages-nonzero": "$1 ($2% ကၠာဲစၠောအ်လဝ်)",
 	"tpt-aggregategroup-add": "ဗပေၚ်စုတ်",
-	"pt-deletepage-current": "ယၟုမုက်လိက်:"
+	"pt-deletepage-current": "ယၟုမုက်လိက်:",
+	"pt-deletepage-reason-details": "တၞဟ်/ပရေၚ်ပရောမထပ်ပၠန်:",
+	"pt-deletepage-reason-other": "ပရေၚ်ပရောဟိုတ်တၞဟ်"
 }
