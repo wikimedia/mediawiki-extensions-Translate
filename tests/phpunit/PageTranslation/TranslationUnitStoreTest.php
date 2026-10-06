@@ -4,12 +4,14 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWikiIntegrationTestCase;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * @author Siebrand Mazeland
  * @license GPL-2.0-or-later
  * @since 2026.09
  * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStore
+ * @covers \MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory
  * @covers \MediaWiki\Extension\Translate\PageTranslation\WritableTranslationUnitStore
  * @group Database
  */
@@ -91,5 +93,37 @@ class TranslationUnitStoreTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( [], $this->store->getUnits() );
 		$this->assertSame( [ '1' ], $otherStore->getNames() );
 		$this->assertSame( 'Other page text', $otherStore->getUnits()['1']->getText() );
+	}
+
+	/** @dataProvider provideRenderingContext */
+	public function testReaderForTitleUsesSafeReadConnection( bool $renderingContext ): void {
+		$page = $this->insertPage( 'Safe read test' )['title'];
+		$db = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
+		$writer = new WritableTranslationUnitStore( $db, $page->getId() );
+		$writer->store( [ new TranslationUnit( 'Safe read text', '1' ) ] );
+
+		$connectionProvider = $this->createMock( IConnectionProvider::class );
+		$connectionProvider->expects( $renderingContext ? $this->never() : $this->once() )
+			->method( 'getPrimaryDatabase' )->willReturn( $db );
+		$connectionProvider->expects( $renderingContext ? $this->once() : $this->never() )
+			->method( 'getReplicaDatabase' )->willReturn( $db );
+		$factory = new TranslationUnitStoreFactory( $connectionProvider );
+
+		$previousRenderingContext = Hooks::$renderingContext;
+		Hooks::$renderingContext = $renderingContext;
+		try {
+			$reader = $factory->getReaderForTitle( $page );
+			$this->assertSame( [ '1' ], $reader->getNames() );
+			$this->assertSame( 'Safe read text', $reader->getUnits()['1']->getText() );
+		} finally {
+			Hooks::$renderingContext = $previousRenderingContext;
+		}
+	}
+
+	public static function provideRenderingContext(): array {
+		return [
+			'CLI reads use primary' => [ false ],
+			'rendering reads use replica' => [ true ],
+		];
 	}
 }

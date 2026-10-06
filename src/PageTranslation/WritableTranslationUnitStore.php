@@ -18,7 +18,7 @@ use Wikimedia\Rdbms\IDatabase;
 class WritableTranslationUnitStore extends TranslationUnitStore {
 	public function __construct(
 		private readonly IDatabase $dbw,
-		int $pageId
+		private readonly int $pageId
 	) {
 		parent::__construct( $dbw, $pageId );
 	}

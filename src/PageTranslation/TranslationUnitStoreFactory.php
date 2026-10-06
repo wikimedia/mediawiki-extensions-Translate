@@ -4,7 +4,9 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use LogicException;
+use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\Page\PageReference;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -27,6 +29,18 @@ class TranslationUnitStoreFactory {
 		}
 
 		return new TranslationUnitStore( $this->connectionProvider->getReplicaDatabase(), $pageId );
+	}
+
+	/**
+	 * Get a read-only store that resolves the page by title, including missing pages.
+	 * Uses a primary connection when needed to avoid reading stale data.
+	 */
+	public function getReaderForTitle( PageReference $page ): TranslationUnitStore {
+		$db = Utilities::shouldReadFromPrimary()
+			? $this->connectionProvider->getPrimaryDatabase()
+			: $this->connectionProvider->getReplicaDatabase();
+
+		return new TranslationUnitStore( $db, $page );
 	}
 
 	/** Get a read-write store backed by a primary database connection. */

@@ -27,6 +27,7 @@ class TranslationUnitStoreUnitTest extends MediaWikiUnitTestCase {
 		$selectBuilder->method( 'select' )->willReturnSelf();
 		$selectBuilder->method( 'from' )->willReturnSelf();
 		$selectBuilder->method( 'where' )->willReturnSelf();
+		$selectBuilder->method( 'orderBy' )->willReturnSelf();
 		$selectBuilder->method( 'caller' )->willReturnSelf();
 		$selectBuilder->method( 'fetchResultSet' )->willReturn( $resultWrapper );
 
@@ -50,6 +51,7 @@ class TranslationUnitStoreUnitTest extends MediaWikiUnitTestCase {
 		$selectBuilder->method( 'select' )->willReturnSelf();
 		$selectBuilder->method( 'from' )->willReturnSelf();
 		$selectBuilder->method( 'where' )->willReturnSelf();
+		$selectBuilder->method( 'orderBy' )->willReturnSelf();
 		$selectBuilder->method( 'caller' )->willReturnSelf();
 		$selectBuilder->method( 'fetchResultSet' )->willReturn( $resultWrapper );
 

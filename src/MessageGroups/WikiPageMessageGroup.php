@@ -14,9 +14,8 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Translate\PageTranslation\Hooks;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageInsertablesSuggester;
-use MediaWiki\Extension\Translate\PageTranslation\TranslationUnit;
+use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\TranslatorInterface\Insertable\InsertablesSuggester;
-use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\Extension\Translate\Validation\ValidationRunner;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
@@ -75,24 +74,12 @@ class WikiPageMessageGroup extends MessageGroupOld {
 
 		$title = $this->getTitle();
 
-		$dbr = Utilities::getSafeReadDB();
-		$res = $dbr->newSelectQueryBuilder()
-			->select( [ 'trs_key', 'trs_text' ] )
-			->from( 'page' )
-			->join( 'translate_sections', null, 'page_id = trs_page' )
-			->where( [
-				'page_namespace' => $title->getNamespace(),
-				'page_title' => $title->getDBkey(),
-			] )
-			->caller( __METHOD__ )
-			->orderBy( 'trs_order' )
-			->fetchResultSet();
+		$store = Services::getInstance()->getTranslationUnitStoreFactory()->getReaderForTitle( $title );
 
 		$defs = [];
 
-		foreach ( $res as $r ) {
-			$section = new TranslationUnit( $r->trs_text );
-			$defs[$r->trs_key] = $section->getTextWithVariables();
+		foreach ( $store->getUnits() as $key => $section ) {
+			$defs[$key] = $section->getTextWithVariables();
 		}
 
 		$groupKeys = $this->makeGroupKeys( array_keys( $defs ) );
