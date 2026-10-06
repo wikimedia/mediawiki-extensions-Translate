@@ -1,0 +1,54 @@
+TEMPLATE:
+  BASIC:
+    type: file
+    namespace: NS_MEDIAWIKI
+    sourcelanguage: en
+  FILES:
+    format: PlainText
+    codeMap:
+      en: en-US
+      fi: fi-FI
+  MANGLER:
+    class: StringMatcher
+    patterns:
+      - message
+
+---
+BASIC:
+  id: wiki-say-it-metadata-title
+  label: Wiki-Say-It! app title
+FILES:
+  sourcePattern: "%GROUPROOT%/wiki-say-it/fastlane/metadata/android/%CODE%/title.txt"
+  targetPattern: "fastlane/metadata/android/%CODE%/title.txt"
+MANGLER:
+  prefix: wiki-say-it-metadata-title-
+
+---
+BASIC:
+  id: wiki-say-it-metadata-short-description
+  label: Wiki-Say-It! short description
+FILES:
+  sourcePattern: "%GROUPROOT%/wiki-say-it/fastlane/metadata/android/%CODE%/short_description.txt"
+  targetPattern: "fastlane/metadata/android/%CODE%/short_description.txt"
+MANGLER:
+  prefix: wiki-say-it-metadata-short-description-
+
+---
+BASIC:
+  id: wiki-say-it-metadata-full-description
+  label: Wiki-Say-It! full description
+FILES:
+  sourcePattern: "%GROUPROOT%/wiki-say-it/fastlane/metadata/android/%CODE%/full_description.txt"
+  targetPattern: "fastlane/metadata/android/%CODE%/full_description.txt"
+MANGLER:
+  prefix: wiki-say-it-metadata-full-description-
+
+---
+BASIC:
+  type: aggregate
+  id: wiki-say-it-metadata
+  label: Wiki-Say-It! app metadata
+GROUPS:
+  - wiki-say-it-metadata-title
+  - wiki-say-it-metadata-short-description
+  - wiki-say-it-metadata-full-description

@@ -31,6 +31,7 @@ class FileFormatFactory {
 		'Ini' => IniFormat::class,
 		'Java' => JavaFormat::class,
 		'Json' => JsonFormat::class,
+		'PlainText' => PlainTextFormat::class,
 		'Yaml' => YamlFormat::class
 	];
 
