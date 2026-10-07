@@ -9,6 +9,7 @@ use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Content\TextContentHandler;
 use MediaWiki\Content\ValidationParams;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Parser\Sanitizer;
 use StatusValue;
 use const CONTENT_FORMAT_JSON;
 
@@ -65,7 +66,8 @@ class MessageBundleContentHandler extends TextContentHandler {
 
 		$label = $content->getMetadata()->getLabel();
 		if ( $label !== null ) {
-			$parserOutput->setDisplayTitle( $label );
+			// The label is raw user input, but the display title must be safe HTML
+			$parserOutput->setDisplayTitle( Sanitizer::removeSomeTags( $label ) );
 		}
 
 		if ( $cpoParams->getGenerateHtml() ) {
