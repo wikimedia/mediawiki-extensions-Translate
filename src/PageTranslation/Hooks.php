@@ -31,6 +31,7 @@ use MediaWiki\Page\PageIdentity;
 use MediaWiki\Page\PageReference;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RenderedRevision;
 use MediaWiki\Revision\RevisionRecord;
@@ -119,6 +120,9 @@ class Hooks {
 				$langConv = MediaWikiServices::getInstance()->getLanguageConverterFactory()
 					->getLanguageConverter( $wikitextParser->getTargetLanguage() );
 				$name = $langConv->convert( $name );
+				// The display title must be safe HTML; it is also stored in the
+				// 'displaytitle' page property, which is output unescaped.
+				$name = Sanitizer::removeSomeTags( $name );
 				$wikitextParser->getOutput()->setDisplayTitle( $name );
 			}
 			self::$renderingContext = false;
