@@ -1599,7 +1599,10 @@
 						"Translate:TranslatablePageParser"
 					]
 				}
-			}
+			},
+			"domProcessors": [
+				{ "class": "MediaWiki\\Extension\\Translate\\ParsoidDOMProcessor" }
+			]
 		}
 	],
 	"DatabaseVirtualDomains": [

@@ -74,6 +74,8 @@ use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MediaWiki\User\User;
 use MediaWiki\Xml\XmlSelect;
 use StatusValue;
+use Wikimedia\Parsoid\Core\ContentMetadataCollector;
+use Wikimedia\Parsoid\Core\LinkTarget;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
@@ -704,17 +706,12 @@ class HookHandler implements
 		}
 	}
 
-	/** Hook: ParserAfterTidy */
-	public static function preventCategorization( Parser $parser, string &$html ): void {
-		if ( $parser->getOptions()->getInterfaceMessage() ) {
-			return;
-		}
-		$pageReference = $parser->getPage();
-
-		$linkTarget = TitleValue::newFromPage( $pageReference );
+	public static function maybeRemoveCategories(
+		LinkTarget $linkTarget, ContentMetadataCollector $parserOutput
+	) {
 		$handle = new MessageHandle( $linkTarget );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
-			$parserOutput = $parser->getOutput();
+			'@phan-var ParserOutput $parserOutput';
 			$names = $parserOutput->getCategoryNames();
 			$parserCategories = [];
 			foreach ( $names as $name ) {
@@ -723,6 +720,17 @@ class HookHandler implements
 			$parserOutput->setExtensionData( 'translate-fake-categories', $parserCategories );
 			$parserOutput->setCategories( [] );
 		}
+	}
+
+	/** Hook: ParserAfterTidy */
+	public static function preventCategorization( Parser $parser, string &$html ): void {
+		if ( $parser->getOptions()->getInterfaceMessage() ) {
+			return;
+		}
+		self::maybeRemoveCategories(
+			TitleValue::newFromPage( $parser->getPage() ),
+			$parser->getOutput()
+		);
 	}
 
 	/** Hook: OutputPageParserOutput */

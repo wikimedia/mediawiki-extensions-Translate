@@ -10,11 +10,11 @@ use MediaWiki\Extension\Translate\MessageGroupProcessing\RevTagStore;
 use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Language\Language;
-use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use RuntimeException;
+use Wikimedia\Parsoid\Core\LinkTarget;
 
 /**
  * Class for pointing to messages, like Title class is for titles.
