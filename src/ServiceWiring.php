@@ -515,7 +515,7 @@ return [
 	'Translate:TranslationUnitStoreFactory' => static function (
 		MediaWikiServices $services
 	): TranslationUnitStoreFactory {
-		return new TranslationUnitStoreFactory( $services->getDBLoadBalancer() );
+		return new TranslationUnitStoreFactory( $services->getConnectionProvider() );
 	},
 
 	'Translate:TranslatorActivity' => static function ( MediaWikiServices $services ): TranslatorActivity {

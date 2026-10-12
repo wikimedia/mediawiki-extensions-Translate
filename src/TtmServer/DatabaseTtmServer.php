@@ -24,14 +24,14 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class DatabaseTtmServer extends TtmServer implements WritableTtmServer, ReadableTtmServer {
 	private array $sids;
 
-	private function getDB( int $mode = DB_REPLICA ): IDatabase|IReadableDatabase {
-		$connectionProvider = MediaWikiServices::getInstance()->getConnectionProvider();
+	private function getReplicaDB(): IReadableDatabase {
+		return MediaWikiServices::getInstance()->getConnectionProvider()
+			->getReplicaDatabase( $this->config['database'] );
+	}
 
-		if ( $mode === DB_REPLICA ) {
-			return $connectionProvider->getReplicaDatabase( $this->config['database'] );
-		}
-
-		return $connectionProvider->getPrimaryDatabase( $this->config['database'] );
+	private function getPrimaryDB(): IDatabase {
+		return MediaWikiServices::getInstance()->getConnectionProvider()
+			->getPrimaryDatabase( $this->config['database'] );
 	}
 
 	public function update( MessageHandle $handle, ?string $targetText ): bool {
@@ -56,7 +56,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		}
 
 		$context = Title::makeTitle( $handle->getTitle()->getNamespace(), $mKey );
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		/* Check that the definition exists and fetch the sid. If not, add
 		 * the definition and retrieve the sid. If the definition changes,
 		 * we will create a new entry - otherwise we could at some point
@@ -104,7 +104,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 	}
 
 	private function insertSource( Title $context, string $sourceLanguage, string $text ): int {
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'translate_tms' )
 			->row( [
@@ -156,7 +156,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 	}
 
 	public function beginBootstrap(): void {
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'translate_tms' )
 			->where( '*' )
@@ -211,7 +211,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 			];
 		}
 
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'translate_tmt' )
 			->rows( $rows )
@@ -227,7 +227,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 	}
 
 	public function endBootstrap(): void {
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$table = $dbw->tableName( 'translate_tmf' );
 		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)", __METHOD__ );
 	}
@@ -250,7 +250,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		$max = floor( $len / $this->config['cutoff'] );
 
 		// We could use fulltext index to narrow the results further
-		$dbr = $this->getDB();
+		$dbr = $this->getReplicaDB();
 		$tables = [ 'translate_tmt', 'translate_tms' ];
 		$fields = [ 'tms_context', 'tms_text', 'tmt_lang', 'tmt_text' ];
 

@@ -3,7 +3,7 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * @author Niklas Laxström
@@ -12,10 +12,10 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class TranslationUnitStore implements TranslationUnitReader {
 	private const TABLE = 'translate_sections';
-	private IDatabase $db;
+	private IReadableDatabase $db;
 	private int $pageId;
 
-	public function __construct( IDatabase $db, int $pageId ) {
+	public function __construct( IReadableDatabase $db, int $pageId ) {
 		$this->db = $db;
 		$this->pageId = $pageId;
 	}
@@ -44,13 +44,5 @@ class TranslationUnitStore implements TranslationUnitReader {
 			->where( [ 'trs_page' => $this->pageId ] )
 			->caller( __METHOD__ )
 			->fetchFieldValues();
-	}
-
-	public function delete(): void {
-		$this->db->newDeleteQueryBuilder()
-			->deleteFrom( self::TABLE )
-			->where( [ 'trs_page' => $this->pageId ] )
-			->caller( __METHOD__ )
-			->execute();
 	}
 }
