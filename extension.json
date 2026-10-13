@@ -1465,6 +1465,10 @@
 			"value": [],
 			"description": "The newest and recommended way of adding custom groups is YAML files."
 		},
+		"TranslateBackportExclusionRules": {
+			"value": [],
+			"description": "Rules for translations that must not be backported by the backport script. Each rule has a name as its array key and can have these optional criteria: 'branches' (list of target branch names, matched exactly), 'languages' (list of language codes) and 'content' (regular expression matched against the translation from the development branch). All criteria in a rule must match. A missing criterion matches everything. Rules apply only to added or changed translations. If a rule uses 'branches', the script must be run with --target-branch.\n\nExample:\n'T384157-plural' => [\n  'branches' => [ 'REL1_43', 'REL1_45' ],\n  'languages' => [ 'ru' ],\n  'content' => '/\\{\\{PLURAL:/i'\n]"
+		},
 		"TranslateWorkflowStates": {
 			"value": false,
 			"description": "List of possible message group review workflow states and properties for each state. The currently supported properties are 'color', the color that is used for displaying the state in the tables, and 'right', the additional right that is needed to set the state. Users who have the translate-groupreview right can set this in Special:Translate. The state is visible in Special:Translate, Special:MessageGroupStats and Special:LanguageStats. If the value is false, the workflow states feature is disabled. State name can be up to 32 characters maximum.\n\nExample:\n'TranslateWorkflowStates': {\n  'new': { 'color': 'FF0000' },\n  'needs_proofreading': { 'color': '0000FF' },\n  'ready': { 'color': 'FFFF00'},\n  'published': { 'color': '00FF00', 'right': 'centralnotice-admin' }\n}"

@@ -3,6 +3,8 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\Synchronization;
 
+use InvalidArgumentException;
+use MediaWiki\Extension\Translate\ConfigNames;
 use MediaWiki\Extension\Translate\FileFormatSupport\JsonFormat;
 use MediaWiki\Extension\Translate\FileFormatSupport\SimpleFormat;
 use MediaWiki\Extension\Translate\LogNames;
@@ -26,6 +28,11 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 	 * Translations are never removed for these languages to avoid disturbances in stable releases.
 	 */
 	private const CHANGED_CODES = [ 'cdo', 'nan', 'sh', 'wuu', 'yue' ];
+
+	private BackportExclusionRules $exclusionRules;
+	private ?string $targetBranch = null;
+	/** @var array<string,int> Number of skipped translations per exclusion rule name */
+	private array $skipCounts = [];
 
 	public function __construct() {
 		parent::__construct();
@@ -61,6 +68,13 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			self::OPTIONAL,
 			self::HAS_ARG
 		);
+		$this->addOption(
+			'target-branch',
+			'Name of the branch receiving the backport, for example REL1_43. ' .
+				'Required if an exclusion rule in $wgTranslateBackportExclusionRules uses branches.',
+			self::OPTIONAL,
+			self::HAS_ARG
+		);
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -83,6 +97,8 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 		if ( !is_writable( $targetPath ) ) {
 			$this->fatalError( "Target directory is not writable ($targetPath)." );
 		}
+
+		$this->initExclusionRules();
 
 		$groupIds = MessageGroups::expandWildcards( explode( ',', trim( $groupPattern ) ) );
 		$groups = MessageGroups::getGroupsById( $groupIds );
@@ -172,6 +188,25 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				);
 			}
 		}
+
+		foreach ( $this->skipCounts as $ruleName => $count ) {
+			$this->output( "Exclusion rule $ruleName: skipped $count translations\n" );
+		}
+	}
+
+	private function initExclusionRules(): void {
+		try {
+			$this->exclusionRules = new BackportExclusionRules(
+				$this->getConfig()->get( ConfigNames::BackportExclusionRules )
+			);
+		} catch ( InvalidArgumentException $e ) {
+			$this->fatalError( 'Invalid $wgTranslateBackportExclusionRules: ' . $e->getMessage() );
+		}
+
+		$this->targetBranch = $this->getOption( 'target-branch' );
+		if ( $this->targetBranch === null && $this->exclusionRules->hasBranchRules() ) {
+			$this->fatalError( 'Option --target-branch is required because an exclusion rule uses branches.' );
+		}
 	}
 
 	private function csv2array( string $input ): array {
@@ -252,6 +287,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 			);
 		}
 
+		// Branch and language are fixed here, so only the content patterns are checked per message
+		$contentPatterns = $this->exclusionRules->getContentPatterns( $this->targetBranch, $language );
+
 		$combinedMessages = [];
 		// $keyCompatibilityMap has the target (stable branch) source language key order
 		foreach ( $keyCompatibilityMap as $key => $isDefinitionCompatible ) {
@@ -277,8 +315,9 @@ class BackportTranslationsMaintenanceScript extends BaseMaintenanceScript {
 				$hasUpdates = true;
 				unset( $combinedMessages[$key] );
 			} elseif ( !$fileFormat->isContentEqual( $sourceValue, $targetValue ) ) {
-				// {{#FORMAL:}} magic word was introduced in 1.43. Temporary skip backporting translations using it.
-				if ( str_contains( $sourceValue, '#FORMAL:' ) ) {
+				$ruleName = BackportExclusionRules::getMatchingRule( $contentPatterns, $sourceValue );
+				if ( $ruleName !== null ) {
+					$this->skipCounts[$ruleName] = ( $this->skipCounts[$ruleName] ?? 0 ) + 1;
 					continue;
 				}
 

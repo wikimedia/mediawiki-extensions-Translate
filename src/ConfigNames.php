@@ -193,6 +193,22 @@ class ConfigNames {
 	public const GroupFiles = 'TranslateGroupFiles';
 
 	/**
+	 * Rules for translations that must not be backported by the backport script. Each rule has a name as its array key
+	 * and can have these optional criteria: 'branches' (list of target branch names, matched exactly), 'languages'
+	 * (list of language codes) and 'content' (regular expression matched against the translation from the development
+	 * branch). All criteria in a rule must match. A missing criterion matches everything. Rules apply only to added or
+	 * changed translations. If a rule uses 'branches', the script must be run with --target-branch.
+	 *
+	 * Example:
+	 * 'T384157-plural' => [
+	 *   'branches' => [ 'REL1_43', 'REL1_45' ],
+	 *   'languages' => [ 'ru' ],
+	 *   'content' => '/\{\{PLURAL:/i'
+	 * ]
+	 */
+	public const BackportExclusionRules = 'TranslateBackportExclusionRules';
+
+	/**
 	 * List of possible message group review workflow states and properties for each state. The currently supported
 	 * properties are 'color', the color that is used for displaying the state in the tables, and 'right', the
 	 * additional right that is needed to set the state. Users who have the translate-groupreview right can set this in
