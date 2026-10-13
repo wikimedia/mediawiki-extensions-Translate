@@ -62,5 +62,7 @@
 	"translate-checks-percent-not-indexed": "विवज्जन किच्चे % लक्खणं अनन्तरं संख्या न अहोसि॥ इंटर पैरामीटर %1$s निब्बत्तति॥ अत्थतो लिथारो % दस्सेतुं %% लिखितब्बं॥",
 	"translate-rcfilters-translations-filter-label": "न भासान्तर करण नामोकासेसु",
 	"translate-documentation-language": "सासननिद्देसं निद्दिसतु",
+	"tux-editor-placeholder-language": "तव भासापरिवत्तनं $1 स्मिं",
+	"tux-editor-skip-button-label": "तावक्कालिं सुञ्ञं",
 	"tux-empty-list-other": "परिवत्तनत्थाय वत्थु न सन्दिस्सति"
 }
