@@ -115,7 +115,7 @@ class ValidatorFactory {
 	/**
 	 * Takes a Validator class name, and returns an instance of that class.
 	 *
-	 * @param string $class Custom validator class name
+	 * @param class-string<MessageValidator> $class Custom validator class name
 	 * @param mixed|null $params
 	 * @throws InvalidArgumentException
 	 * @return MessageValidator

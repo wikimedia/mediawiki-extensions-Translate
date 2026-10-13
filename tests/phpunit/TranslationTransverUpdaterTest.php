@@ -22,7 +22,7 @@ use MediaWiki\User\UserIdentity;
  * Tests for transver flag change on edits.
  * @group Database
  * @group medium
- * @covers MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
+ * @covers \MediaWiki\Extension\Translate\TranslatorInterface\TranslateEditAddons
  */
 class TranslationTransverUpdaterTest extends MediaWikiIntegrationTestCase {
 	use MessageGroupTestTrait;

@@ -36,7 +36,7 @@ class MessageGroupConfigurationParser {
 	 * @param string $data Yaml
 	 * @param callable|null $callback Optional callback which is called on errors. Parameters are
 	 * document index, processed configuration and error message.
-	 * @return array Group configurations indexed by message group id.
+	 * @return array<string,array> Group configurations indexed by message group id.
 	 */
 	public function getHopefullyValidConfigurations( string $data, ?callable $callback = null ): array {
 		if ( !is_callable( $callback ) ) {
@@ -88,7 +88,8 @@ class MessageGroupConfigurationParser {
 	 * Returns group configurations from YAML documents. If there is document containing template,
 	 * it will be merged with other configurations.
 	 *
-	 * @return array[][] Unvalidated group configurations
+	 * @param string[] $documents
+	 * @return array<int,array<string,array>> Unvalidated group configurations
 	 */
 	public function parseDocuments( array $documents ): array {
 		$groups = [];

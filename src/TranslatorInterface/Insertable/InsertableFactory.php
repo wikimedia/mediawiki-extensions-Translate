@@ -14,7 +14,7 @@ use InvalidArgumentException;
 class InsertableFactory {
 	/**
 	 * Takes a InsertableSuggester class name, and returns an instance of that class.
-	 * @param string $class
+	 * @param class-string<InsertablesSuggester> $class
 	 * @param array|string|null $params
 	 * @throws InvalidArgumentException
 	 */
