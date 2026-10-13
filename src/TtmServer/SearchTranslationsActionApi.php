@@ -9,6 +9,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\Translate\LogNames;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
@@ -22,7 +23,7 @@ class SearchTranslationsActionApi extends ApiBase {
 	private $options;
 
 	private const CONSTRUCTOR_OPTIONS = [
-		'LanguageCode',
+		MainConfigNames::LanguageCode,
 		'TranslateTranslationDefaultService',
 		'TranslateTranslationServices',
 	];
@@ -119,7 +120,7 @@ class SearchTranslationsActionApi extends ApiBase {
 			],
 			'sourcelanguage' => [
 				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_DEFAULT => $this->options->get( 'LanguageCode' ),
+				ParamValidator::PARAM_DEFAULT => $this->options->get( MainConfigNames::LanguageCode ),
 			],
 			'language' => [
 				ParamValidator::PARAM_TYPE => 'string',

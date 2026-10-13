@@ -8,6 +8,7 @@ use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupFactory;
 use MediaWiki\Extension\Translate\MessageGroupConfiguration\MessageGroupTypeRegistry;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Notification\Notification;
 use MediaWiki\Notification\NotificationService;
 use MediaWiki\Notification\RecipientSet;
@@ -36,7 +37,7 @@ class MessageGroupSubscriptionTest extends MediaWikiIntegrationTestCase {
 		$this->setupTestData();
 		$this->overrideConfigValues( [
 			'TranslateEnableMessageGroupSubscription' => true,
-			'JobClasses' => [
+			MainConfigNames::JobClasses => [
 				'MessageGroupSubscriptionNotificationJob' => MessageGroupSubscriptionNotificationJob::class
 			]
 		] );

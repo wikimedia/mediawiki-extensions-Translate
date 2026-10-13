@@ -7,6 +7,7 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\MainConfigNames;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -22,7 +23,7 @@ class TtmServerActionApi extends ApiBase {
 	private $options;
 
 	private const CONSTRUCTOR_OPTIONS = [
-		'LanguageCode',
+		MainConfigNames::LanguageCode,
 		'TranslateTranslationDefaultService',
 		'TranslateTranslationServices',
 	];

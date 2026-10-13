@@ -10,6 +10,7 @@ use MediaWiki\Extension\Translate\MessageGroups\MessageGroup;
 use MediaWiki\Extension\Translate\MessageGroups\WikiPageMessageGroup;
 use MediaWiki\Language\Dependency\CacheDependency;
 use MediaWiki\Language\Dependency\MainConfigDependency;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Page\PageReferenceValue;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -22,7 +23,7 @@ use Wikimedia\Rdbms\IReadableDatabase;
 final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFactory {
 	public const SERVICE_OPTIONS = [
 		'EnablePageTranslation',
-		'LanguageCode',
+		MainConfigNames::LanguageCode,
 	];
 
 	private ServiceOptions $options;
@@ -73,7 +74,7 @@ final class TranslatablePageMessageGroupFactory implements CachedMessageGroupFac
 	 * @return MessageGroup[]
 	 */
 	public function createGroups( $data ): array {
-		$defaultLanguage = $this->options->get( 'LanguageCode' );
+		$defaultLanguage = $this->options->get( MainConfigNames::LanguageCode );
 
 		$groups = [];
 		foreach ( $data as [ $namespace, $text, $language ] ) {

@@ -14,6 +14,7 @@ use MediaWiki\Extension\Translate\SystemUsers\TranslateUserManager;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Mail\MailAddress;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -37,7 +38,7 @@ use Wikimedia\ScopedCallback;
  */
 class TranslateSandbox {
 	public const CONSTRUCTOR_OPTIONS = [
-		'EmergencyContact',
+		MainConfigNames::EmergencyContact,
 		'TranslateSandboxPromotedGroup',
 	];
 
@@ -241,7 +242,7 @@ class TranslateSandbox {
 	 * @throws UserNotSandboxedException
 	 */
 	public function sendEmail( User $sender, User $target, string $type ): void {
-		$emergencyContact = $this->options->get( 'EmergencyContact' );
+		$emergencyContact = $this->options->get( MainConfigNames::EmergencyContact );
 
 		$targetLang = $this->userOptionsManager->getOption( $target, 'language' );
 
