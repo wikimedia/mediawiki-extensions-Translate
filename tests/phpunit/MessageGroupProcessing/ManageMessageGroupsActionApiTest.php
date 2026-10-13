@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Translate\MessageGroupProcessing;
 
 use DateInterval;
 use DateTime;
-use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Extension\Translate\MessageSync\MessageSourceChange;
 use MediaWiki\Extension\Translate\Synchronization\MessageChangeStorage;
 use MediaWiki\Extension\Translate\Utilities\Utilities;
@@ -161,7 +160,7 @@ class ManageMessageGroupsActionApiTest extends ApiTestCase {
 		// subtract period of 1 day
 		$date->sub( new DateInterval( 'P1D' ) );
 
-		$this->expectException( ApiUsageException::class );
+		$this->expectApiErrorCode( 'translate-changeset-modified' );
 		$this->doApiRequestWithToken(
 			[
 				'action' => 'managemessagegroups',

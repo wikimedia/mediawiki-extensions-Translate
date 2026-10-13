@@ -4,7 +4,6 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\TranslatorInterface;
 
 use InvalidArgumentException;
-use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
@@ -59,7 +58,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 
 	/** @dataProvider provideTestGetReviewBlockers */
 	public function testGetReviewBlockers(
-		string $exceptionMessage,
+		string $errorCode,
 		string $reviewerName,
 		string $editorName,
 		string $titleString,
@@ -76,9 +75,8 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 			->getRevisionByTitle( $title );
 		$this->assertNotNull( $revRecord );
 
-		if ( $exceptionMessage ) {
-			$this->expectException( ApiUsageException::class );
-			$this->expectExceptionMessageMatches( '/' . $exceptionMessage . '/i' );
+		if ( $errorCode ) {
+			$this->expectApiErrorCode( $errorCode );
 		}
 
 		$result = $this->doApiRequestWithToken( [
@@ -86,14 +84,14 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 			'revision' => $revRecord->getId()
 		], null, $this->getUser( $reviewerName ) );
 
-		if ( !$exceptionMessage ) {
+		if ( !$errorCode ) {
 			$this->assertArrayHasKey( 'translationreview', $result[0] );
 		}
 	}
 
 	public static function provideTestGetReviewBlockers() {
 		yield [
-			"don't have permission",
+			'permissiondenied',
 			'plainUser',
 			'superUser1',
 			'Ugakey1/fi',
@@ -102,7 +100,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		];
 
 		yield [
-			'own translations',
+			'translate-owntranslation',
 			'superUser1',
 			'superUser1',
 			'Ugakey1/fi',
@@ -111,7 +109,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		];
 
 		yield [
-			'Cannot review fuzzy',
+			'translate-fuzzymessage',
 			'superUser1',
 			'superUser2',
 			'Ugakey2/fi',
@@ -120,7 +118,7 @@ class ReviewTranslationActionApiTest extends ApiTestCase {
 		];
 
 		yield [
-			'Unknown message',
+			'translate-unknownmessage',
 			'superUser1',
 			'superUser2',
 			'Ugakey3/fi',

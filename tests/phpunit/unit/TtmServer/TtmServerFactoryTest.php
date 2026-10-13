@@ -71,13 +71,9 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 	}
 
 	/** @dataProvider provideGetWritable */
-	public function testGetWritable( array $servers, ?string $default, ?string $return ): void {
+	public function testGetWritable( array $servers, ?string $default, array $expectedIds ): void {
 		$ttmFactory = new TtmServerFactory( $servers, $default );
-		if ( $return ) {
-			$this->assertEquals( $return, array_keys( $ttmFactory->getWritable() )[0] );
-		} else {
-			$this->assertEquals( [], $ttmFactory->getWritable() );
-		}
+		$this->assertSame( $expectedIds, array_keys( $ttmFactory->getWritable() ) );
 	}
 
 	public static function provideGetWritable(): Generator {
@@ -96,7 +92,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 		yield 'no writable servers' => [
 			[ '1' => $dummyTtm ],
 			null,
-			null
+			[],
 		];
 
 		yield 'writable server is not default' => [
@@ -105,7 +101,7 @@ class TtmServerFactoryTest extends MediaWikiUnitTestCase {
 				'fake' => $dummyTtm
 			],
 			null,
-			'writable'
+			[ 'writable' ],
 		];
 	}
 

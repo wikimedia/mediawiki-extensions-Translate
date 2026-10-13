@@ -34,7 +34,10 @@ class TranslatableBundleStatusStoreTest extends MediaWikiUnitTestCase {
 		// Set status should replace the record if it exists, or insert
 		$mock = $this->createMock( Database::class );
 		$rqb = $this->createMock( ReplaceQueryBuilder::class );
-		$rqb->method( $this->logicalOr( 'replaceInto', 'uniqueIndexFields', 'row', 'caller' ) )->willReturnSelf();
+		$rqb->method( 'replaceInto' )->willReturnSelf();
+		$rqb->method( 'uniqueIndexFields' )->willReturnSelf();
+		$rqb->method( 'row' )->willReturnSelf();
+		$rqb->method( 'caller' )->willReturnSelf();
 		$mock->expects( $this->once() )
 			->method( 'newReplaceQueryBuilder' )
 			->willReturn( $rqb );
