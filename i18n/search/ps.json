@@ -10,7 +10,7 @@
 	"tux-sst-view-foreign": "په $1 باندې کتل",
 	"tux-sst-search": "پلټل",
 	"tux-sst-search-ph": "ژباړې پلټل",
-	"tux-sst-search-info": "د لټون چارو د لاښه کولو لپاره <code>language:</code> or <code>group:</code> چلوونکي وکاروئ",
+	"tux-sst-search-info": "د لټون چارو د لاښه کولو لپاره <code>language:</code> يا <code>group:</code> چلوونکي وکاروئ",
 	"tux-sst-count": "{{PLURAL:$1|يوه پايله وموندل شوه|$1 پايلې وموندل شوې}}",
 	"tux-sst-facet-language": "ژبې",
 	"tux-sst-facet-group": "پيغام ډلې",
