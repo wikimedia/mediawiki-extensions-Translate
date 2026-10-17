@@ -125,7 +125,9 @@ class PoImporter {
 
 	/**
 	 * @see Maintenance::output for param docs
-	 * @inheritDoc
+	 * @param string $text
+	 * @param string|null $channel
+	 * @param string $severity
 	 */
 	protected function reportProgress( $text, $channel = null, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
@@ -268,7 +270,9 @@ class WikiWriter {
 
 	/**
 	 * @see Maintenance::output for param docs
-	 * @inheritDoc
+	 * @param string $text
+	 * @param string|null $channel
+	 * @param string $severity
 	 */
 	protected function reportProgress( $text, $channel, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
@@ -311,10 +315,10 @@ class WikiWriter {
 
 			return;
 		}
-		$this->reportProgress( "Updating {$title->getPrefixedText()}... ", $title );
+		$this->reportProgress( "Updating {$title->getPrefixedText()}... ", $title->getPrefixedText() );
 
 		if ( $this->dryrun ) {
-			$this->reportProgress( 'DRY RUN!', $title );
+			$this->reportProgress( 'DRY RUN!', $title->getPrefixedText() );
 
 			return;
 		}
@@ -332,9 +336,9 @@ class WikiWriter {
 		$status = $updater->getStatus();
 
 		if ( $status->isOK() ) {
-			$this->reportProgress( 'OK!', $title );
+			$this->reportProgress( 'OK!', $title->getPrefixedText() );
 		} else {
-			$this->reportProgress( 'Failed!', $title );
+			$this->reportProgress( 'Failed!', $title->getPrefixedText() );
 		}
 	}
 }
