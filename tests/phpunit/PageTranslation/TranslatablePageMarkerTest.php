@@ -57,6 +57,29 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	/** Services needed to mark a page for translation, with jobs not run */
+	private function getServicesForMarking(): array {
+		$services = $this->getServiceContainer();
+		return $this->createMockWithMethods( JobQueueGroup::class, [ 'push' => null ] ) +
+			$this->createMockWithMethods( LanguageNameUtils::class, [ 'getLanguageNames' => [ 'en' => 'English' ] ] ) +
+			[
+				IConnectionProvider::class => $services->getConnectionProvider(),
+				TitleParser::class => $services->getTitleParser(),
+				TitleFormatter::class => $services->getTitleFormatter(),
+				WikiPageFactory::class => $services->getWikiPageFactory(),
+				MessageIndex::class => $services->get( 'Translate:MessageIndex' ),
+				TranslatablePageParser::class => $services->get( 'Translate:TranslatablePageParser' ),
+				TranslatablePageStateStore::class => $services->get( 'Translate:TranslatablePageStateStore' ),
+				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
+				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
+				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
+				MessageGroupSubscription::class => $services->get( 'Translate:MessageGroupSubscription' ),
+				FormatterFactory::class => $services->getFormatterFactory(),
+				HookRunner::class => $services->get( 'Translate:HookRunner' ),
+				TranslatablePageStore::class => $services->get( 'Translate:TranslatablePageStore' ),
+			];
+	}
+
 	private function createMockWithMethods( string $className, array $methods, int $callCounts = 1 ): array {
 		$mock = $this->createNoOpMock( $className, array_keys( $methods ) );
 		foreach ( $methods as $name => $returnValue ) {
@@ -120,25 +143,7 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 
 	public function testMarkAndUnmarkPage(): void {
 		$services = $this->getServiceContainer();
-		$markPage = $this->createTranslatableMarkPage(
-			$this->createMockWithMethods( JobQueueGroup::class, [ 'push' => null ] ) +
-			$this->createMockWithMethods( LanguageNameUtils::class, [ 'getLanguageNames' => [ 'en' => 'English' ] ] ) +
-			[
-				IConnectionProvider::class => $services->getConnectionProvider(),
-				TitleParser::class => $services->getTitleParser(),
-				TitleFormatter::class => $services->getTitleFormatter(),
-				WikiPageFactory::class => $services->getWikiPageFactory(),
-				MessageIndex::class => $services->get( 'Translate:MessageIndex' ),
-				TranslatablePageParser::class => $services->get( 'Translate:TranslatablePageParser' ),
-				TranslatablePageStateStore::class => $services->get( 'Translate:TranslatablePageStateStore' ),
-				TranslationUnitStoreFactory::class => $services->get( 'Translate:TranslationUnitStoreFactory' ),
-				MessageGroupMetadata::class => $services->get( 'Translate:MessageGroupMetadata' ),
-				TranslatablePageView::class => $services->get( 'Translate:TranslatablePageView' ),
-				MessageGroupSubscription::class => $services->get( 'Translate:MessageGroupSubscription' ),
-				FormatterFactory::class => $services->getFormatterFactory(),
-				HookRunner::class => $services->get( 'Translate:HookRunner' )
-			]
-		);
+		$markPage = $this->createTranslatableMarkPage( $this->getServicesForMarking() );
 
 		$pageTitle = str_repeat( 'A', 220 );
 		$page = $this->insertPageAndGetRecord( '<translate>Foo</translate><translate>Bar</translate>', $pageTitle );
@@ -255,6 +260,59 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 			->getContent( SlotRecord::MAIN )
 			->getText();
 		$this->assertEquals( 'FooBar', $currentText );
+	}
+
+	public static function provideMarkAndUnmarkEditsBotFlag(): array {
+		return [
+			'translation administrator' => [ [ 'sysop' ], '0' ],
+			'bot' => [ [ 'sysop', 'bot' ], '1' ],
+		];
+	}
+
+	/** @dataProvider provideMarkAndUnmarkEditsBotFlag */
+	public function testMarkAndUnmarkEditsBotFlag( array $groups, string $expectedBotFlag ): void {
+		$marker = $this->createTranslatableMarkPage( $this->getServicesForMarking() );
+		$revisionLookup = $this->getServiceContainer()->getRevisionLookup();
+		$user = $this->getTestUser( $groups )->getUser();
+
+		$page = $this->insertPageAndGetRecord( '<translate>Foo</translate>' );
+		$originalRevisionId = $page->getLatest();
+		$operation = $marker->getMarkOperation( $page, null, true );
+		$marker->markForTranslation(
+			$operation,
+			new TranslatablePageSettings( [], false, '', [], false, true, false ),
+			RequestContext::getMain(),
+			$user
+		);
+		$this->runDeferredUpdates();
+
+		$markRevisionId = $revisionLookup->getRevisionByTitle( $page )->getId();
+		$this->assertNotSame( $originalRevisionId, $markRevisionId, 'Marking should add unit markers to the page' );
+		$this->assertSame(
+			$expectedBotFlag,
+			$this->getRecentChangeBotFlag( $markRevisionId ),
+			'Bot flag of the edit adding unit markers'
+		);
+
+		$marker->unmarkPage( TranslatablePage::newFromTitle( $page ), $user, RequestContext::getMain(), true );
+		$this->runDeferredUpdates();
+
+		$unmarkRevisionId = $revisionLookup->getRevisionByTitle( $page )->getId();
+		$this->assertNotSame( $markRevisionId, $unmarkRevisionId, 'Unmarking should remove the markup' );
+		$this->assertSame(
+			$expectedBotFlag,
+			$this->getRecentChangeBotFlag( $unmarkRevisionId ),
+			'Bot flag of the edit removing translation markup'
+		);
+	}
+
+	private function getRecentChangeBotFlag( int $revisionId ): string {
+		return (string)$this->getDb()->newSelectQueryBuilder()
+			->select( 'rc_bot' )
+			->from( 'recentchanges' )
+			->where( [ 'rc_this_oldid' => $revisionId ] )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
 	public static function provideValidatePriorityLanguages(): array {

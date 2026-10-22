@@ -130,7 +130,7 @@ class TranslatablePageMarker {
 			if ( $user->authorizeWrite( 'autopatrol', $pageTitle ) ) {
 				$updater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
 			}
-			$updater->saveRevision( $summary, EDIT_FORCE_BOT | EDIT_UPDATE );
+			$updater->saveRevision( $summary, $this->getEditFlags( $user ) );
 			$this->throwIfEditFailed( $updater, $localizer );
 		}
 
@@ -569,6 +569,14 @@ class TranslatablePageMarker {
 		return [ $units, $deletedUnits ];
 	}
 
+	/**
+	 * Flags for the edits made when marking or unmarking a page. They are only bot
+	 * edits if the user performing the action has the bot right.
+	 */
+	private function getEditFlags( Authority $authority ): int {
+		return $authority->isAllowed( 'bot' ) ? EDIT_FORCE_BOT | EDIT_UPDATE : EDIT_UPDATE;
+	}
+
 	private function updateSectionMarkers(
 		TranslatablePage $page,
 		Authority $authority,
@@ -589,7 +597,7 @@ class TranslatablePageMarker {
 		if ( $authority->authorizeWrite( 'autopatrol', $page->getTitle() ) ) {
 			$pageUpdater->setRcPatrolStatus( RecentChange::PRC_AUTOPATROLLED );
 		}
-		$newRevisionRecord = $pageUpdater->saveRevision( $comment, EDIT_FORCE_BOT | EDIT_UPDATE );
+		$newRevisionRecord = $pageUpdater->saveRevision( $comment, $this->getEditFlags( $authority ) );
 
 		$this->throwIfEditFailed( $pageUpdater, $localizer );
 
