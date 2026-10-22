@@ -1425,7 +1425,12 @@
 				$( this ).data( 'translateeditor' ).hide();
 			} );
 
-			this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
+			// If the documentation editor was left open, the save access key belongs to it
+			if ( this.$editor.find( '.message-desc-editor' ).not( '.hide' ).length ) {
+				this.$editor.find( '.tux-editor-savedoc-button' ).attr( 'accesskey', 's' );
+			} else {
+				this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
+			}
 			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
 			this.$editor.find( '.tux-input-editsummary' ).attr( 'accesskey', 'b' );
 			// @todo access key for the cancel button
@@ -1471,8 +1476,9 @@
 				this.$editor.addClass( 'hide' );
 
 				// Remove access keys to avoid duplicates in DOM (T306141)
-				this.$editor.find( '.tux-editor-save-button, .tux-editor-skip-button, .tux-input-editsummary' )
-					.removeAttr( 'accesskey' );
+				this.$editor.find(
+					'.tux-editor-save-button, .tux-editor-savedoc-button, .tux-editor-skip-button, .tux-input-editsummary'
+				).removeAttr( 'accesskey' );
 			}
 
 			this.hideShortcuts();

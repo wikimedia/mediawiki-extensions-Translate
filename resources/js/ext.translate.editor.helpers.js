@@ -48,6 +48,10 @@
 			$messageDescEditor.removeClass( 'hide' );
 			$messageDescEditor.find( '.tux-textarea-documentation' ).trigger( 'focus' );
 
+			// Make the save access key save the documentation while it is being edited
+			this.$editor.find( '.tux-editor-save-button' ).removeAttr( 'accesskey' );
+			$messageDescEditor.find( '.tux-editor-savedoc-button' ).attr( 'accesskey', 's' );
+
 			// So that the link won't be followed
 			return false;
 		},
@@ -68,6 +72,12 @@
 
 			$messageDescEditor.addClass( 'hide' );
 			$messageDescViewer.removeClass( 'hide' );
+
+			$messageDescEditor.find( '.tux-editor-savedoc-button' ).removeAttr( 'accesskey' );
+			// Access keys are only set while the editor is shown (T306141)
+			if ( !this.$editor.hasClass( 'hide' ) ) {
+				this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
+			}
 		},
 
 		/**
