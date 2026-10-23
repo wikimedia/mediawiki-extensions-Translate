@@ -47,14 +47,17 @@
 		position: relative;
 
 		.tux-editor-copy-original-button {
-			.cdx-mixin-css-icon( @cdx-icon-copy );
 			position: absolute;
 			top: 3px;
 			right: -30px;
 			padding: 16px;
-			cursor: @cursor-base--hover;
 			border: 0;
-			opacity: 0;
+
+			&:not( .copied ) {
+				.cdx-mixin-css-icon( @cdx-icon-copy );
+				cursor: @cursor-base--hover;
+				opacity: 0;
+			}
 
 			&.copied {
 				.cdx-mixin-css-icon( @cdx-icon-check );
