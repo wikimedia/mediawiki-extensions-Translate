@@ -6,6 +6,7 @@
 			"Ebrahim",
 			"Ebraminio",
 			"Huji",
+			"LProfo",
 			"Mohammad ebz",
 			"Reza1615"
 		]
@@ -22,7 +23,7 @@
 	"tux-sst-nosolr-title": "جستجو در دسترس نیست",
 	"tux-sst-nosolr-body": "این ویکی خدمت جستجوی ترجمه ندارد.",
 	"tux-sst-solr-offline-title": "جستجوی در دسترس نیست.",
-	"tux-sst-solr-offline-body": "خدمت جستجو به طور موقت در دسترس نیست.",
+	"tux-sst-solr-offline-body": "سرویس جستجو به‌طور موقت در دسترس نیست.",
 	"tux-sst-next": "بعدی ›",
 	"tux-sst-prev": "‹ قبلی",
 	"tux-sst-default": "ترجمه‌ها",
