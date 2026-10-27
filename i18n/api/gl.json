@@ -40,7 +40,7 @@
 	"apihelp-query+messagecollection-param-limit": "Número de mensaxes a amosar (despois de filtrar).",
 	"apihelp-query+messagecollection-param-offset": "Enteiro ou desprazamento clave para comezar.",
 	"apihelp-query+messagecollection-param-filter": "Filtros de coleccións de mensaxes. Utiliza <kbd>!</kbd> para negar a condición. Por exemplo, <kbd>!fuzzy</kbd> quere dicir que se listen só todas as mensaxes que non están obsoletas. Os filtros aplícanse na orde dada.\n;fuzzy:Mensaxes coa etiqueta \"fuzzy\" (obsoletas).\n;optional:Mensaxes que deben ser traducidas só se son necesarios cambios.\n;ignored:Mensaxes que nunca son traducidas.\n;hastranslation:Mensaxes que teñen unha tradución sen ter en conta se está obsoleta ou non.\n;translated:Mensaxes que teñen unha tradución que non está obsoleta.\n;changed:Mensaxes que foron traducidas ou cambiadas desde a última exportación.\n;reviewer&#58;N:Mensaxes onde o número de usuario <kbd>N</kbd> está entre os revisores.\n;last-translator&#58;N:Mensaxes onde o número de usuario <kbd>N</kbd> é o último tradutor.",
-	"apihelp-query+messagecollection-param-prop": "Que propiedades obter:",
+	"apihelp-query+messagecollection-param-prop": "Que propiedades recuperar:",
 	"apihelp-query+messagecollection-paramvalue-prop-definition": "Definición da mensaxe.",
 	"apihelp-query+messagecollection-paramvalue-prop-translation": "Tradución actual (sen a cadea de texto $1, se houbese; usa as etiquetas para marcar as traducións anticuadas ou rotas).",
 	"apihelp-query+messagecollection-paramvalue-prop-tags": "Etiquetas da mensaxe, como \"optional\", \"ignored\" e \"fuzzy\".",
