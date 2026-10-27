@@ -45,7 +45,7 @@
 	"tsb-delete-userpage-summary": "Edit summary for deleting the user page of a sandboxed user.",
 	"tsb-reject-confirmation": "Bubble notification confirming user(s) has been rejected",
 	"tsb-accept-confirmation": "Bubble notification confirming user(s) has been accepted",
-	"translationstash": "Page title for [[Special:TranslationStash]].\n{{Identical|Welcome}}",
+	"translationstash": "Name of [[Special:TranslationStash]], the page where new translators make their first translations before they are given full translator rights. Shown on [[Special:SpecialPages]] and in the browser title of the page.",
 	"translate-translationstash-welcome": "Title text shown for the [[Special:TranslationStash]]. Parameters:\n* $1 - user name of the new translator",
 	"translate-translationstash-welcome-note": "Title note for the [[Special:TranslationStash]].",
 	"translate-translationstash-initialtranslation": "Header for messages showing the progress of translations in [[Special:TranslationStash]].\n\nSee also:\n* {{msg-mw|Translate-translationstash-translations}}",
