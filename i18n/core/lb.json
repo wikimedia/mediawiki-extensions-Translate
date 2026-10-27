@@ -298,7 +298,7 @@
 	"right-translate-sandboxaction": "Aktiounen ausféieren, déi fir Sandkëschtbenotzer erlaabt sinn",
 	"action-translate-sandboxaction": "Aktiounen auszeféieren, déi fir Sandkëschtbenotzer erlaabt sinn",
 	"translate-workflow-state-": "(net agestallt)",
-	"translate-workflowstatus": "Statut: $1",
+	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-doing": "Astellen...",
 	"translate-workflow-autocreated-summary": "Automatescht Uleeë vun der Säit fir de Statut vum Workflow $1",
 	"translate-stats-workflow": "Status",
