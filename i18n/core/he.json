@@ -394,7 +394,7 @@
 	"tux-notices-hide": "להסתיר",
 	"tux-editor-save-failed": "פרסום התרגום נכשל: $1",
 	"tux-editor-n-uses": "שימש {{PLURAL:$1|פעם אחת|פעמיים|$1 פעמים}}",
-	"tux-editor-message-desc-more": "להציג עוד",
+	"tux-editor-message-desc-more": "להציג יותר",
 	"tux-editor-message-desc-less": "להציג פחות",
 	"tux-editor-clear-translated": "הסתרת הודעות מתורגמות",
 	"tux-editor-proofreading-mode": "סקירה",

@@ -78,6 +78,8 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "د سرچينې ليک ژبکوډ.",
 	"apihelp-searchtranslations-param-limit": "د پايلې کچه.",
 	"apihelp-searchtranslations-example-1": "د ټاکلې ژبې ژباړې ښکاره کول.",
+	"apierror-translate-language-disabled": "$1 ته ژباړل يې ناچارن شوې دي.",
+	"apierror-translate-language-disabled-reason": "$1 ته ژباړل ناچارن شوې دي: $2",
 	"apierror-translate-unknownmessage": "ناپېژانده پيغام",
 	"apihelp-translationentitysearch-param-query": "تپوس پلټل"
 }

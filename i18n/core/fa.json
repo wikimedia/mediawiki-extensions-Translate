@@ -372,7 +372,7 @@
 	"tux-editor-skip-button-label": "پرش به بعدی",
 	"tux-editor-cancel-button-label": "لغو",
 	"tux-editor-confirm-button-label": "تأیید ترجمه",
-	"tux-editor-proofread-button-label": "علامت‌گذاری به عنوان بررسی‌شده",
+	"tux-editor-proofread-button-label": "نشانه‌گذاری به‌عنوان بررسی‌شده",
 	"tux-editor-shortcut-info": "برای تأیید و انتقال به پیام بعدی «$1»، برای پرش به بعدی «$2»، برای ارائه دادن خلاصه «$4» فشار دهید و یا «$3» نگه دارید تا سایر میانبرها را ببینید.",
 	"tux-editor-edit-desc": "ویرایش مستندات",
 	"tux-editor-add-desc": "افزودن مستندات",
