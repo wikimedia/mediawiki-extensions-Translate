@@ -41,8 +41,7 @@ use MediaWiki\MediaWikiServices;
  * @since 2019.06
  */
 class ValidatorFactory {
-	/** @var string[] */
-	private static $validators = [
+	private const VALIDATORS = [
 		'BraceBalance' => BraceBalanceValidator::class,
 		'EscapeCharacter' => EscapeCharacterValidator::class,
 		'FluentVariable' => FluentVariableValidator::class,
@@ -95,11 +94,11 @@ class ValidatorFactory {
 	 * @return MessageValidator
 	 */
 	public static function get( $id, $params = null ) {
-		if ( !isset( self::$validators[ $id ] ) ) {
+		if ( !isset( self::VALIDATORS[ $id ] ) ) {
 			throw new InvalidArgumentException( "Could not find validator with id - '$id'. " );
 		}
 
-		$spec = self::$validators[ $id ];
+		$spec = self::VALIDATORS[ $id ];
 		if ( is_string( $spec ) ) {
 			$spec = [ 'class' => $spec ];
 		}

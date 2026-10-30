@@ -40,7 +40,7 @@ use Wikimedia\ObjectCache\BagOStuff;
  */
 class LanguageStatsSpecialPage extends SpecialPage {
 	private StatsTable $table;
-	private array $targetValueName = [ 'code', 'language' ];
+	private const array TARGET_VALUE_NAME = [ 'code', 'language' ];
 	/** Most of the displayed numbers added together at the bottom of the table. */
 	private array $totals;
 	/** Flag to set if nothing to show. */
@@ -133,7 +133,7 @@ class LanguageStatsSpecialPage extends SpecialPage {
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
 		// Default booleans to false if the form was submitted
-		foreach ( $this->targetValueName as $key ) {
+		foreach ( self::TARGET_VALUE_NAME as $key ) {
 			$this->target = $request->getVal( $key, $this->target );
 		}
 		$this->noComplete = $request->getBool(

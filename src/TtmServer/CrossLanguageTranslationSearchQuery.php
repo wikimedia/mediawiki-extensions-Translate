@@ -23,7 +23,7 @@ class CrossLanguageTranslationSearchQuery {
 
 	private ?ResultSet $resultSet = null;
 	private int $total = 0;
-	private array $hl = [ '', '' ];
+	private const array HIGHLIGHTS = [ '', '' ];
 
 	public function __construct(
 		private readonly array $params,
@@ -49,7 +49,7 @@ class CrossLanguageTranslationSearchQuery {
 		$options['offset'] = 0;
 
 		// @phan-suppress-next-line PhanUndeclaredMethod
-		$search = $this->server->createSearch( $this->params['query'], $options, $this->hl );
+		$search = $this->server->createSearch( $this->params['query'], $options, self::HIGHLIGHTS );
 		$scroll = $search->scroll( '5s' );
 
 		// Used for aggregations. Only the first scroll response has them.

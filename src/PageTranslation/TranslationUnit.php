@@ -53,8 +53,8 @@ class TranslationUnit {
 	private $canWrap = true;
 	/** @var int Version number for the serialization. */
 	private $version = 1;
-	/** @var string[] List of properties to serialize. */
-	private static $properties = [ 'version', 'id', 'text', 'type', 'oldText', 'inline' ];
+	/** List of properties to serialize. */
+	private const PROPERTIES = [ 'version', 'id', 'text', 'type', 'oldText', 'inline' ];
 
 	public function __construct(
 		string $text,
@@ -179,7 +179,7 @@ class TranslationUnit {
 	/** Serialize this object to a PHP array */
 	public function serializeToArray(): array {
 		$data = [];
-		foreach ( self::$properties as $index => $property ) {
+		foreach ( self::PROPERTIES as $index => $property ) {
 			// Because this is used for the JobQueue, use a list
 			// instead of an array to save space.
 			$data[$index] = $this->$property;
@@ -191,7 +191,7 @@ class TranslationUnit {
 	public static function unserializeFromArray( array $data ): self {
 		// Give dummy default text, will be overridden
 		$unit = new self( '' );
-		foreach ( self::$properties as $index => $property ) {
+		foreach ( self::PROPERTIES as $index => $property ) {
 			$unit->$property = $data[$index];
 		}
 
