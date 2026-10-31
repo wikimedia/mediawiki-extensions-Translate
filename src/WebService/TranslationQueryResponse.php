@@ -12,10 +12,13 @@ namespace MediaWiki\Extension\Translate\WebService;
 class TranslationQueryResponse {
 	private int $code;
 	private string $reason;
-	private array $headers;
 	private string $body;
 	private string $error;
 
+	/**
+	 * @param array $data One of the arrays returned by \Wikimedia\Http\MultiHttpClient::runMulti()
+	 * @param TranslationQuery $query
+	 */
 	public function __construct(
 		array $data,
 		private readonly TranslationQuery $query,
@@ -24,7 +27,6 @@ class TranslationQueryResponse {
 
 		$this->code = (int)$response['code'];
 		$this->reason = $response['reason'];
-		$this->headers = $response['headers'];
 		$this->body = $response['body'];
 		$this->error = $response['error'];
 	}
