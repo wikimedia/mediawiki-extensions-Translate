@@ -141,6 +141,7 @@
 	"translate-msggroupselector-search-placeholder": "Төркемнәрне эзләү",
 	"translate-msggroupselector-search-all": "Барысы",
 	"translate-msggroupselector-search-recent": "Соңгы",
+	"translate-msggroupselector-search-watched": "Күзәтелә",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|төркемчә}}",
 	"tux-languageselector": "Тәрҗемә итү теле",
 	"tux-tab-all": "Барысы",

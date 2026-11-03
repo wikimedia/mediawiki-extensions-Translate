@@ -50,5 +50,6 @@
 	"apierror-translate-invalid-operation": "Ongülteg Operatioun: $1. Gülteg Wäerter – $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass",
 	"apiwarn-translate-language-disabled-source": "D'Ausgangssprooch vun dëser Grupp ass $1. Wielt wgl. eng aner Sprooch, op déi Dir iwwersetze wëllt.",
+	"apihelp-translationentitysearch-param-entitytype": "Entitéitstyp, deen ofgefrot gëtt",
 	"apihelp-translationentitysearch-param-limit": "Maximal Zuel vu Sichresultater"
 }
