@@ -204,7 +204,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 	 * Get a list of message group labels on a user's subscriptions, excluding talk pages,
 	 * and return as a two-dimensional array with namespace and title.
 	 *
-	 * @return array
+	 * @return array<int,array<string,MessageGroup|string>>
 	 */
 	private function getMessageGroupSubscriptionInfo(): array {
 		$labels = [];

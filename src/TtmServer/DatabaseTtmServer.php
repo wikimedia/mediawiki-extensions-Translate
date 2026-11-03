@@ -185,6 +185,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		$this->sids = [];
 	}
 
+	/** @param array<int,array{0:MessageHandle,1:string,2:string}> $batch */
 	public function batchInsertDefinitions( array $batch ): void {
 		$mwInstance = MediaWikiServices::getInstance();
 		$titleFactory = $mwInstance->getTitleFactory();
@@ -197,6 +198,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 		$mwInstance->getDBLoadBalancerFactory()->waitForReplication( [ 'ifWritesSince' => 10 ] );
 	}
 
+	/** @param array<int,array{0:MessageHandle,1:string,2:string}> $batch */
 	public function batchInsertTranslations( array $batch ): void {
 		if ( $batch === [] ) {
 			return;

@@ -397,10 +397,7 @@ class ElasticSearchTtmServer
 	public function beginBatch(): void {
 	}
 
-	/**
-	 * @param array[] $batch
-	 * @phan-param array<int,array{0:MessageHandle,1:string,2:string}> $batch
-	 */
+	/** @param array<int,array{0:MessageHandle,1:string,2:string}> $batch */
 	public function batchInsertDefinitions( array $batch ): void {
 		$lb = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 		foreach ( $batch as $data ) {
@@ -411,6 +408,7 @@ class ElasticSearchTtmServer
 		$this->batchInsertTranslations( $batch );
 	}
 
+	/** @param array<int,array{0:MessageHandle,1:string,2:string}> $batch */
 	public function batchInsertTranslations( array $batch ): void {
 		$docs = [];
 		foreach ( $batch as [ $handle, $sourceLanguage, $text ] ) {
@@ -739,7 +737,10 @@ class ElasticSearchTtmServer
 		}
 	}
 
-	/** @param mixed $resultSet */
+	/**
+	 * @param mixed $resultSet
+	 * @phan-assert ResultSet $resultSet
+	 */
 	private function assertResultSetInstance( $resultSet ): void {
 		if ( $resultSet instanceof ResultSet ) {
 			return;

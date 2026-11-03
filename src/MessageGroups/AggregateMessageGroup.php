@@ -92,6 +92,10 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $this->groups;
 	}
 
+	/**
+	 * @param MessageGroup[] $groups
+	 * @return string[]
+	 */
 	protected function loadMessagesFromCache( array $groups ): array {
 		$messages = [];
 		foreach ( $groups as $group ) {

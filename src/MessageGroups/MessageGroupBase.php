@@ -48,9 +48,10 @@ abstract class MessageGroupBase implements MessageGroup {
 	 *
 	 * Called by MessageGroupFactory; not intended for general use.
 	 * @internal
+	 * @param class-string<self> $class
+	 * @param array $conf
 	 */
 	public static function newFromConf( string $class, array $conf ): self {
-		/** @var self $obj */
 		$obj = new $class();
 		$obj->conf = $conf;
 		$obj->namespace = $obj->parseNamespace();

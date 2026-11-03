@@ -330,7 +330,10 @@ class MessageGroupSubscription {
 		return $groupIdAggregateMapped;
 	}
 
-	/** @return array<string, string[]> */
+	/**
+	 * @param (MessageGroup|array)[] $subGroupList
+	 * @return array<string, string[]>
+	 */
 	private function mapGroups( array $subGroupList, string $groupId ): array {
 		$groupIdAggregateMapped = [];
 		foreach ( $subGroupList as $subGroups ) {
