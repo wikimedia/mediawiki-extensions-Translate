@@ -75,6 +75,8 @@
 		this.editFontClass = 'mw-editfont-' + mw.user.options.get( 'editfont' );
 		this.delayValidation = delayer();
 		this.validating = null;
+		this.captchaWidget = null;
+		this.captchaPending = false;
 	}
 
 	TranslateEditor.prototype = {
@@ -224,9 +226,26 @@
 		 * Save the translation
 		 *
 		 * @private
+		 * @param {Object} [captchaData] CAPTCHA fields to send with the edit
 		 */
-		save: function () {
+		save: function ( captchaData ) {
 			var translateEditor = this;
+
+			// Get the CAPTCHA data before the editor moves to the next message.
+			// A hidden editor cannot show a CAPTCHA challenge.
+			if ( this.captchaWidget && !captchaData ) {
+				if ( this.captchaPending ) {
+					return;
+				}
+				this.captchaPending = true;
+				this.saving = true;
+				this.markSaving();
+				this.captchaWidget.getCaptchaDataForSubmission().then( function ( data ) {
+					translateEditor.captchaPending = false;
+					translateEditor.save( data );
+				}, this.onCaptchaError.bind( this ) );
+				return;
+			}
 
 			logger.logClickEvent(
 				'edit',
@@ -252,7 +271,10 @@
 
 			// For responsiveness and efficiency,
 			// immediately move to the next message.
-			translateEditor.next();
+			// The user may have left this message while the CAPTCHA token was pending.
+			if ( translateEditor.$editTrigger.hasClass( 'open' ) ) {
+				translateEditor.next();
+			}
 
 			// Now the message definitely has a history,
 			// so make sure the history menu item is shown
@@ -270,7 +292,8 @@
 			this.storage.save(
 				translateEditor.message.title,
 				translation,
-				editSummary
+				editSummary,
+				captchaData
 			).done( function ( response, xhr ) {
 				var editResp = response.edit;
 				if ( editResp.result === 'Success' ) {
@@ -303,11 +326,15 @@
 					}
 
 					translateEditor.onSaveSuccess();
+				} else if ( editResp.captcha ) {
+					translateEditor.onCaptchaFailure( editResp.captcha );
 				} else {
+					translateEditor.resetCaptcha();
 					translateEditor.onSaveFail( [ mw.msg( 'tux-save-unknown-error' ) ] );
 					mw.log( response, xhr );
 				}
 			} ).fail( function ( errorCode, response ) {
+				translateEditor.resetCaptcha();
 				if ( errorCode === 'http' || errorCode === 'ok-but-empty' ) {
 					var api = new mw.Api();
 					translateEditor.displayNotices(
@@ -381,12 +408,100 @@
 		},
 
 		/**
+		 * Show a CAPTCHA after the save fails because the edit needs one.
+		 *
+		 * @private
+		 * @param {Object} captcha The captcha object from the edit API response
+		 */
+		onCaptchaFailure: function ( captcha ) {
+			var translateEditor = this;
+			var resubmit = false;
+
+			mw.loader.using( 'ext.confirmEdit.CaptchaWidget' ).then( function () {
+				if ( !translateEditor.captchaWidget ) {
+					var $captchaContainer = $( '<div>' ).addClass( 'tux-editor-captcha' );
+					translateEditor.$editor.find( '.tux-notices-block' ).after( $captchaContainer );
+					translateEditor.captchaWidget = new mw.libs.confirmEdit.CaptchaWidget( {
+						container: $captchaContainer[ 0 ],
+						interfaceName: 'translate',
+						showLoadingIndicator: true
+					} );
+				}
+				return translateEditor.captchaWidget.updateForFailure( captcha );
+			} ).then( function ( shouldResubmit ) {
+				resubmit = shouldResubmit;
+				// updateForFailure() already re-renders a rendered widget.
+				if ( !translateEditor.captchaWidget.captchaRendered ) {
+					return translateEditor.captchaWidget.renderCaptcha();
+				}
+			} ).then( function () {
+				// The save restarts by itself, so do not ask the user to publish again.
+				translateEditor.onSaveFail(
+					resubmit ? [] : [ mw.message( 'tux-save-captcha-required' ).escaped() ]
+				);
+				if ( resubmit ) {
+					translateEditor.save();
+					return;
+				}
+				// Runs after onSaveFail(), because show() focuses the translation textarea.
+				$( translateEditor.captchaWidget.getInputField() ).find( 'input' )
+					.on( 'keydown', function ( e ) {
+						var $saveButton = translateEditor.$editor.find( '.tux-editor-save-button' );
+						// Same as Ctrl+Enter: the button is disabled while a save is running.
+						if ( e.key === 'Enter' && !$saveButton.prop( 'disabled' ) ) {
+							$saveButton.trigger( 'click' );
+						}
+					} )
+					.trigger( 'focus' );
+			}, this.onCaptchaError.bind( this ) );
+		},
+
+		/**
+		 * Show an error when the CAPTCHA cannot load or give a token.
+		 *
+		 * @private
+		 * @param {Error|string} error
+		 */
+		onCaptchaError: function ( error ) {
+			this.captchaPending = false;
+			// An unrendered widget can never give a token, so drop it and let the next save retry.
+			if ( this.captchaWidget && !this.captchaWidget.captchaRendered ) {
+				this.removeCaptcha();
+			}
+			this.onSaveFail( [
+				error instanceof Error ? mw.html.escape( error.message ) : mw.msg( 'tux-save-unknown-error' )
+			] );
+		},
+
+		/**
+		 * Remove the CAPTCHA widget from the editor.
+		 *
+		 * @private
+		 */
+		removeCaptcha: function () {
+			this.$editor.find( '.tux-editor-captcha' ).remove();
+			this.captchaWidget = null;
+		},
+
+		/**
+		 * Reset the CAPTCHA token after a failed save, because each save needs a new token.
+		 *
+		 * @private
+		 */
+		resetCaptcha: function () {
+			if ( this.captchaWidget ) {
+				this.captchaWidget.updateForFailure();
+			}
+		},
+
+		/**
 		 * Success handler for the translation saving.
 		 *
 		 * @private
 		 */
 		onSaveSuccess: function () {
 			this.markTranslated();
+			this.removeCaptcha();
 			this.$editTrigger.find( '.tux-list-translation' )
 				.text( this.message.translation );
 			this.saving = false;

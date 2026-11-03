@@ -370,6 +370,7 @@
 	"tux-status-translated": "Translated",
 	"tux-status-saving": "Publishing...",
 	"tux-status-unsaved": "Unpublished",
+	"tux-save-captcha-required": "Publish again to complete the security check.",
 	"tux-save-unknown-error": "Unknown error occurred.",
 	"tux-editor-placeholder-documentation": "Add message documentation",
 	"tux-editor-placeholder-language": "Your translation in $1",

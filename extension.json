@@ -159,6 +159,7 @@
 		"TitleGetEditNotices": "legacyInterface",
 		"AlternateEdit": "legacyInterface",
 		"ApiCheckCanExecute": "translateSandbox",
+		"APIGetAllowedParams": "apiEditPage",
 		"getUserPermissionsErrorsExpensive": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\TranslateEditAddons::disallowLangTranslations",
 		"LanguageGetTranslatedLanguageNames": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
 		"TranslateSupportedLanguages": "MediaWiki\\Extension\\Translate\\HookHandler::translateMessageDocumentationLanguage",
@@ -227,6 +228,9 @@
 		"ResourceLoaderRegisterModules": "main"
 	},
 	"HookHandlers": {
+		"apiEditPage": {
+			"class": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\ApiEditPageHookHandler"
+		},
 		"cleanChanges": {
 			"class": "MediaWiki\\Extension\\Translate\\TranslatorInterface\\CleanChangesFilters",
 			"services": [
@@ -961,6 +965,7 @@
 				"tux-status-saving",
 				"tux-status-translated",
 				"tux-status-unsaved",
+				"tux-save-captcha-required",
 				"tux-save-unknown-error",
 				"tux-notices-hide",
 				"tux-notices-more",

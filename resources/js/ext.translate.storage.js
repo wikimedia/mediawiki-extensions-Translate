@@ -19,18 +19,20 @@
 		 *   to store the translation.
 		 * @param {string} translation The translation of the message
 		 * @param {string} editSummary The edit summary
+		 * @param {Object} [captchaData] CAPTCHA fields to send with the edit
 		 * @return {jQuery.Promise}
 		 */
-		save: function ( title, translation, editSummary ) {
+		save: function ( title, translation, editSummary, captchaData ) {
 			var api = new mw.Api();
 
-			return api.postWithToken( 'csrf', {
+			return api.postWithToken( 'csrf', Object.assign( {
 				format: 'json',
 				formatversion: 2,
 				action: 'edit',
 				title: title,
 				text: translation,
 				summary: editSummary,
+				editorinterface: 'translate',
 				errorformat: 'html',
 				errorlang: 'uselang',
 				errorsuselocal: 1,
@@ -39,7 +41,7 @@
 				// as an anonymous user (if anonymous can save).
 				// When undefined, the parameter is not included in the request
 				assert: mw.user.isAnon() ? undefined : 'user'
-			} );
+			}, captchaData ) );
 		}
 	};
 

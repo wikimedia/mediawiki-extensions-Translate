@@ -209,5 +209,6 @@
 	"apihelp-discouragetranslation-param-do": "{{doc-apihelp-param|discouragetranslation|do}}.",
 	"apihelp-discouragetranslation-paramvalue-do-discourage": "{{doc-apihelp-paramvalue|discouragetranslation|do|discourage}}",
 	"apihelp-discouragetranslation-paramvalue-do-encourage": "{{doc-apihelp-paramvalue|discouragetranslation|do|encourage}}",
-	"apihelp-discouragetranslation-param-reason": "{{doc-apihelp-param|discouragetranslation|reason}}"
+	"apihelp-discouragetranslation-param-reason": "{{doc-apihelp-param|discouragetranslation|reason}}",
+	"apihelp-translate-edit-param-editorinterface": "Documentation for the <code>editorinterface</code> parameter of the <code>edit</code> API module, added by the Translate extension. MobileFrontend defines the same parameter with the key <code>apihelp-edit-param-editorinterface</code>."
 }

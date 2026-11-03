@@ -414,6 +414,7 @@
 	"tux-status-translated": "Status label in [[Special:Translate]] indicating that a message is translated. An adjective that refers to a message.\n{{Identical|Translated}}",
 	"tux-status-saving": "Status label in [[Special:Translate]] indicating that the translation is being saved.\n{{Identical|Saving}}",
 	"tux-status-unsaved": "Status label in [[Special:Translate]] indicating that the translation is not saved yet.",
+	"tux-save-captcha-required": "Error message shown on [[Special:Translate]] when saving the translation needs a CAPTCHA. Used as $1 in {{msg-mw|tux-editor-save-failed}}. A CAPTCHA is shown below the message.",
 	"tux-save-unknown-error": "Error message shown on [[Special:Translate]] when an unknown error occurs while attempting to save the translation.",
 	"tux-editor-placeholder-documentation": "Placeholder text for the translation editor textbox if target language is message documentation",
 	"tux-editor-placeholder-language": "Placeholder text for the translation editor textbox if target language is not message documentation. Parameters:\n* $1 - Language name",

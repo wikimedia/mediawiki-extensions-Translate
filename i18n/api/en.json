@@ -199,5 +199,6 @@
 	"apihelp-discouragetranslation-param-do": "The desired action to perform to the page.",
 	"apihelp-discouragetranslation-paramvalue-do-discourage": "Mark the page as discouraged, causing it to be hidden from lists of pages to translate.",
 	"apihelp-discouragetranslation-paramvalue-do-encourage": "Mark the page as no longer discouraged, causing it to be shown on lists of pages to translate.",
-	"apihelp-discouragetranslation-param-reason": "Log summary to use when logging to [[Special:Log/pagetranslation]]"
+	"apihelp-discouragetranslation-param-reason": "Log summary to use when logging to [[Special:Log/pagetranslation]]",
+	"apihelp-translate-edit-param-editorinterface": "Name of the editor interface used (such as translate)"
 }
