@@ -18,7 +18,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWTimestamp;
 use UnexpectedValueException;
 use Wikimedia\HtmlArmor\HtmlArmor;
-use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Implements a special page which shows all translations for a message.
@@ -34,7 +33,6 @@ class TranslationsSpecialPage extends IncludableSpecialPage {
 	public function __construct(
 		private readonly Language $contentLanguage,
 		private readonly LanguageNameUtils $languageNameUtils,
-		private readonly IConnectionProvider $dbProvider,
 		private readonly SearchEngineFactory $searchEngineFactory,
 	) {
 		parent::__construct( 'Translations' );

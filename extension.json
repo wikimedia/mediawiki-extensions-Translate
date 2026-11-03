@@ -302,7 +302,6 @@
 			"services": [
 				"ContentLanguage",
 				"LanguageNameUtils",
-				"ConnectionProvider",
 				"SearchEngineFactory"
 			]
 		},
