@@ -21,7 +21,6 @@ use MediaWiki\Title\TitleFactory;
 class TranslatableBundleImportTitleFactory implements ImportTitleFactory {
 
 	private PageTitleRenamer $pageTitleRenamer;
-	private ForeignTitle $sourcePage;
 
 	public function __construct(
 		private readonly NamespaceInfo $namespaceInfo,
@@ -49,7 +48,6 @@ class TranslatableBundleImportTitleFactory implements ImportTitleFactory {
 
 		$titleFromForeignTitle = $this->titleFactory->makeTitle( $foreignTitleNamespaceId, $foreignTitleText );
 		// Assume that the first title is the source title
-		$this->sourcePage ??= $foreignTitle;
 		$this->pageTitleRenamer ??= new PageTitleRenamer( $titleFromForeignTitle, $this->targetPage );
 
 		return $this->pageTitleRenamer->getNewTitle( $titleFromForeignTitle );
