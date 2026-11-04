@@ -83,7 +83,9 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 
 	private function markAsResolved( string $groupId, ?string $messageTitle = null ): void {
 		if ( $messageTitle === null ) {
-			$currentGroupStatus = $this->groupSyncCache->markGroupAsResolved( $groupId );
+			$remainingMessageCount = count(
+				$this->groupSyncCache->markGroupAsResolved( $groupId )->getRemainingMessages()
+			);
 			$this->groupSyncLog->info(
 				'{user} resolved group {groupId}.',
 				[
@@ -93,7 +95,7 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 			);
 		} else {
 			$this->groupSyncCache->markMessageAsResolved( $groupId, $messageTitle );
-			$currentGroupStatus = $this->groupSyncCache->syncGroupErrors( $groupId );
+			$remainingMessageCount = $this->groupSyncCache->syncGroupErrors( $groupId );
 			$this->groupSyncLog->info(
 				'{user} resolved message {messageTitle} in group {groupId}.',
 				[
@@ -107,7 +109,7 @@ class ManageGroupSynchronizationCacheActionApi extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'success' => 1,
 			'data' => [
-				'groupRemainingMessageCount' => count( $currentGroupStatus->getRemainingMessages() )
+				'groupRemainingMessageCount' => $remainingMessageCount
 			]
 		] );
 	}

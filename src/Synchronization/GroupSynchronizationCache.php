@@ -331,18 +331,18 @@ class GroupSynchronizationCache {
 		return $this->cache->has( $groupErrorKey );
 	}
 
-	/** Checks if group has unresolved error messages. If not clears the group from error list */
-	public function syncGroupErrors( string $groupId ): GroupSynchronizationResponse {
-		$groupSyncResponse = $this->getGroupErrorInfo( $groupId );
-		if ( $groupSyncResponse->getRemainingMessages() ) {
-			return $groupSyncResponse;
+	/**
+	 * Checks if group has unresolved error messages. If not clears the group from error list
+	 * @return int Number of remaining messages with errors
+	 */
+	public function syncGroupErrors( string $groupId ): int {
+		$remainingMessageCount = $this->getGroupErrorCount( $groupId );
+		if ( $remainingMessageCount === 0 ) {
+			// No remaining messages left, remove group from errors list.
+			$this->cache->delete( $this->getGroupErrorKey( $groupId ) );
 		}
 
-		// No remaining messages left, remove group from errors list.
-		$groupErrorKey = $this->getGroupErrorKey( $groupId );
-		$this->cache->delete( $groupErrorKey );
-
-		return $groupSyncResponse;
+		return $remainingMessageCount;
 	}
 
 	private function getGroupErrorResponse( string $groupId ): GroupSynchronizationResponse {
