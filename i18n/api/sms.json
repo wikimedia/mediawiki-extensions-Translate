@@ -4,11 +4,11 @@
 			"Yupik"
 		]
 	},
-	"apihelp-groupreview-param-group": "Saakkjoukk.",
+	"apihelp-groupreview-param-group": "Saakkjoukk. Ǩiõčč <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-groupreview-param-language": "Ǩiõllkoodd.",
 	"apihelp-query+languagestats-param-language": "Ǩiõllkoodd.",
-	"apihelp-query+languagestats-param-group": "Saakkjoouk ǩeâlǥal.",
-	"apihelp-query+messagecollection-param-group": "Saakkjoukk.",
+	"apihelp-query+languagestats-param-group": "Saakkjoouk ǩeâlǥal. Ǩiõčč <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
+	"apihelp-query+messagecollection-param-group": "Saakkjoukk. Ǩiõčč <kbd>[[Special:ApiHelp/query+messagegroups|action=query&meta=messagegroups]]</kbd>.",
 	"apihelp-query+messagecollection-param-language": "Ǩiõllkoodd.",
 	"apihelp-query+messagecollection-example-1": "Listt tuärjjuum ǩiõlin",
 	"apihelp-query+messagegroups-example-1": "Čuäʹjet saakkjooukid",
