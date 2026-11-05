@@ -42,7 +42,7 @@
 	"tsb-delete-userpage-summary": "Gebruikerspagina van een zandbakgebruiker verwijderd",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Gebruiker|Gebruikers}} afgewezen",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Gebruiker|Gebruikers}} toegelaten",
-	"translationstash": "Welkomstpagina voor vertalers",
+	"translationstash": "Kladblok voor nieuwe vertalers",
 	"translate-translationstash-welcome": "Welkom {{GENDER:$1|$1}}, u bent nu vertaler",
 	"translate-translationstash-welcome-note": "Raak vertrouwd met de vertaalhulpmiddelen. Vertaal een aantal willekeurig geselecteerde berichten en krijg volledige vertaalrechten voor uw favoriete projecten.",
 	"translate-translationstash-initialtranslation": "Uw vertaling",

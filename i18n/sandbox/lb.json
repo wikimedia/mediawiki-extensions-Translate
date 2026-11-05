@@ -34,7 +34,7 @@
 	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandkaul-Benotzer geläscht",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Benotzer}} refuséiert",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Benotzer}} akzeptéiert",
-	"translationstash": "Wëllkomm",
+	"translationstash": "Sandkaul fir nei Iwwersetzer",
 	"translate-translationstash-welcome": "Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer",
 	"translate-translationstash-initialtranslation": "Är éischt Iwwersetzung",
 	"translate-translationstash-translations": "{{PLURAL:$1|eng komplett Iwwersetzung|$1 komplett Iwwersetzungen}}",

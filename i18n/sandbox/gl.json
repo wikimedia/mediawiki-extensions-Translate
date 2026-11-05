@@ -35,7 +35,7 @@
 	"tsb-delete-userpage-summary": "Borro a páxina de usuario dunha zona de probas de usuario",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Usuario rexeitado|Usuarios rexeitados}}",
 	"tsb-accept-confirmation": "{{PLURAL:$1|Usuario aceptado|Usuarios aceptados}}",
-	"translationstash": "Benvido",
+	"translationstash": "Zona de probas para tradutores aprendices",
 	"translate-translationstash-welcome": "{{GENDER:$1|Benvido|Benvida}}, $1; xa es {{GENDER:$1|un novo tradutor|unha nova tradutora}}",
 	"translate-translationstash-welcome-note": "Familiarícese coas ferramentas de tradución. Traduza algunhas mensaxes e obteña todos os dereitos de tradutor para participar nos seus proxectos favoritos.",
 	"translate-translationstash-initialtranslation": "A súa tradución inicial",

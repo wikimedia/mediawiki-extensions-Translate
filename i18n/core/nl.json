@@ -273,7 +273,7 @@
 	"translate-smg-groups-in-sync-list": "Lijst met groepen die momenteel op de achtergrond worden verwerkt:",
 	"translate-smg-groups-with-error-title": "Groepen waarbij tijdens de synchronisatie fouten zijn opgetreden",
 	"translate-smg-groups-with-error-desc": "Lijst met groepen en hun berichten waarbij tijdens de synchronisatie fouten zijn opgetreden:",
-	"translate-smg-group-with-error-summary": "$1 bericht{{PLURAL:$1||en}} met fouten:",
+	"translate-smg-group-with-error-summary": "$1 bericht{{PLURAL:$1||en}} met fouten",
 	"translate-smg-group-message-action-history": "Geschiedenis",
 	"translate-smg-group-action-resolve": "Als opgelost markeren",
 	"translate-smg-group-sync-error-warn": "Er is een fout opgetreden bij het synchroniseren van deze groep. Los de fouten op voordat u deze groep verwerkt.",
