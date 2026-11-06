@@ -236,7 +236,7 @@
 	"translate-smg-rename-no-msg": "Nessun messaggio trovato.",
 	"translate-smg-rename-new": "Aggiungi come nuovo...",
 	"translate-smg-strong-sync-help": "Aiuto",
-	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|messaggio|messaggi}} con errori:",
+	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|messaggio|messaggi}} con errori",
 	"translate-smg-group-message-tag-rename": "Rinomina",
 	"translate-smg-group-message-tag-label": "{{PLURAL:$1|Etichetta|Etichette}}:",
 	"translate-smg-group-message-message-content": "Contenuto:",
