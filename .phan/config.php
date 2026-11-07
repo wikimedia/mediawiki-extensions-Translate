@@ -14,7 +14,6 @@ $cfg['suppress_issue_types'][] = 'PhanCoalescingNeverNull';
 $cfg['directory_list'] = array_merge(
 	$cfg['directory_list'],
 	[
-		'messagegroups',
 		'scripts',
 		'src',
 		'../../extensions/AbuseFilter',
