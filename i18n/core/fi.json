@@ -270,7 +270,7 @@
 	"translate-smg-groups-in-sync-list": "Luettelo tällä hetkellä taustalla käsiteltävinä olevista ryhmistä:",
 	"translate-smg-groups-with-error-title": "Ryhmät, joissa tapahtui virheitä synkronoinnin aikana",
 	"translate-smg-groups-with-error-desc": "Luettelo ryhmistä ja niiden viesteistä, joissa tapahtui virheitä synkronoinnin aikana:",
-	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|viesti, jossa|viestiä, joissa}} on virheitä:",
+	"translate-smg-group-with-error-summary": "$1 {{PLURAL:$1|viesti, jossa|viestiä, joissa}} on virheitä",
 	"translate-smg-group-message-action-history": "Historia",
 	"translate-smg-group-action-resolve": "Merkitse ratkaistuksi",
 	"translate-smg-group-sync-error-warn": "Tässä ryhmässä tapahtui virhe synkronoinnin aikana. Korjaa virheet ennen ryhmän käsittelyä.",

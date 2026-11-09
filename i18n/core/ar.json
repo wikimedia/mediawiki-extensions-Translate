@@ -276,7 +276,7 @@
 	"translate-smg-groups-in-sync-list": "قائمة المجموعات التي تتم معالجتها حاليًا في الخلفية:",
 	"translate-smg-groups-with-error-title": "المجموعات التي واجهت أخطاء أثناء المزامنة",
 	"translate-smg-groups-with-error-desc": "قائمة المجموعات ورسائلها التي حدثت بها أخطاء أثناء المزامنة:",
-	"translate-smg-group-with-error-summary": "{{PLURAL:$1||رسالة واحدة|رسالتان|$1 رسائل|$1 رسالة}} مع أخطاء.",
+	"translate-smg-group-with-error-summary": "{{PLURAL:$1||رسالة واحدة|رسالتان|$1 رسائل|$1 رسالة}} مع أخطاء",
 	"translate-smg-group-message-action-history": "تاريخ",
 	"translate-smg-group-action-resolve": "وضع علامة على الحل",
 	"translate-smg-group-sync-error-warn": "حدث خطأ أثناء مزامنة هذه المجموعة. يُرجى إصلاح الأخطاء قبل معالجة هذه المجموعة.",

@@ -188,6 +188,8 @@
 	"translate-translations-history-short": "역",
 	"translate-translations-last-edit-header": "마지막 편집",
 	"translate-translations-last-edit": "$1에 $2님이 바꿈",
+	"translate-translations-status-header": "상태",
+	"translate-translations-status-outdated": "오래됨",
 	"languagestats": "언어 통계",
 	"languagestats-summary": "이 문서는 특정 언어에 대한 모든 메시지 그룹에 대한 번역 통계를 보여줍니다.",
 	"messagegroupstats-summary": "이 페이지는 메시지 그룹 통계를 보여줍니다.",

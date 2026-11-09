@@ -280,7 +280,7 @@
 	"translate-smg-groups-in-sync-list": "目前在背景處理的群組清單：",
 	"translate-smg-groups-with-error-title": "同步時出現錯誤的群組",
 	"translate-smg-groups-with-error-desc": "在同步時出現錯誤的群組清單及其訊息：",
-	"translate-smg-group-with-error-summary": "帶有錯誤的 $1 個{{PLURAL:$1|訊息}}：",
+	"translate-smg-group-with-error-summary": "$1 個帶有錯誤的{{PLURAL:$1|訊息}}",
 	"translate-smg-group-message-action-history": "歷史",
 	"translate-smg-group-action-resolve": "標記為已解決",
 	"translate-smg-group-sync-error-warn": "此群組在同步期間發生錯誤。請在處理該群組前修正錯誤。",
