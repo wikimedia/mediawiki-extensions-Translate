@@ -443,9 +443,8 @@ class MessageSourceChange {
 	 * @return bool
 	 */
 	public function isPreviousState( $languageCode, $key, array $types ) {
-		$msg = $this->findMessage( $languageCode, $key, [ self::RENAME ] );
-
-		return isset( $msg['previous_state'] ) && in_array( $msg['previous_state'], $types );
+		$previousState = $this->changes[$languageCode][self::RENAME][$key]['previous_state'] ?? null;
+		return $previousState !== null && in_array( $previousState, $types );
 	}
 
 	/**
@@ -480,9 +479,7 @@ class MessageSourceChange {
 	 * @return float|null
 	 */
 	public function getSimilarity( $languageCode, $key ) {
-		$msg = $this->findMessage( $languageCode, $key, [ self::RENAME ] );
-
-		return $msg[ 'similarity' ] ?? null;
+		return $this->changes[$languageCode][self::RENAME][$key]['similarity'] ?? null;
 	}
 
 	/**
@@ -492,8 +489,9 @@ class MessageSourceChange {
 	 * @return bool
 	 */
 	public function isEqual( $languageCode, $key ) {
-		$msg = $this->findMessage( $languageCode, $key, [ self::RENAME ] );
-		return $msg && $this->areStringsEqual( $msg[ 'similarity' ] );
+		$similarity = $this->getSimilarity( $languageCode, $key );
+		// Comparators may return int 1 or float 1.0
+		return $similarity !== null && $similarity >= 1;
 	}
 
 	/**
@@ -504,8 +502,8 @@ class MessageSourceChange {
 	 * @return bool
 	 */
 	public function isSimilar( $languageCode, $key ) {
-		$msg = $this->findMessage( $languageCode, $key, [ self::RENAME ] );
-		return $msg && $this->areStringsSimilar( $msg[ 'similarity' ] );
+		$similarity = $this->getSimilarity( $languageCode, $key );
+		return $similarity !== null && $this->areStringsSimilar( $similarity );
 	}
 
 	/**
@@ -515,14 +513,5 @@ class MessageSourceChange {
 	 */
 	public function areStringsSimilar( $similarity ) {
 		return $similarity >= self::SIMILARITY_THRESHOLD;
-	}
-
-	/**
-	 * Checks if the similarity percent passed
-	 * @param float $similarity
-	 * @return bool
-	 */
-	public function areStringsEqual( $similarity ) {
-		return $similarity === 1;
 	}
 }
