@@ -162,6 +162,14 @@ class ConfigHelperTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'wgTranslateDisabledTargetLanguages',
 			$reason === null ? [] : [ '*' => [ 'de' => $reason ] ]
 		);
+		// Core supplies only autonyms. Supply translated names here, so that
+		// the test does not depend on the cldr extension.
+		$this->setTemporaryHook(
+			'LanguageGetTranslatedLanguageNames',
+			static function ( array &$names, string $inLanguage ): void {
+				$names += [ 'en' => [ 'de' => 'German' ], 'fr' => [ 'de' => 'allemand' ] ][$inLanguage] ?? [];
+			}
+		);
 		$group = $this->createMock( MessageGroup::class );
 		$group->method( 'getId' )->willReturn( 'test-group' );
 		$group->method( 'getTranslatableLanguages' )->willReturn( [ 'en' => 'en' ] );
