@@ -20,7 +20,6 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\TitleFormatter;
 use MediaWiki\Title\TitleParser;
 use MediaWikiIntegrationTestCase;
-use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -37,7 +36,6 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 	private function createTranslatableMarkPage( array $services = [] ): TranslatablePageMarker {
 		$getServiceOrMock = fn ( string $className ) => $services[$className] ?? $this->createNoOpMock( $className );
 		return new TranslatablePageMarker(
-			$getServiceOrMock( IConnectionProvider::class ),
 			$getServiceOrMock( JobQueueGroup::class ),
 			$getServiceOrMock( LinkRenderer::class ),
 			MessageGroups::singleton(),
@@ -63,7 +61,6 @@ class TranslatablePageMarkerTest extends MediaWikiIntegrationTestCase {
 		return $this->createMockWithMethods( JobQueueGroup::class, [ 'push' => null ] ) +
 			$this->createMockWithMethods( LanguageNameUtils::class, [ 'getLanguageNames' => [ 'en' => 'English' ] ] ) +
 			[
-				IConnectionProvider::class => $services->getConnectionProvider(),
 				TitleParser::class => $services->getTitleParser(),
 				TitleFormatter::class => $services->getTitleFormatter(),
 				WikiPageFactory::class => $services->getWikiPageFactory(),

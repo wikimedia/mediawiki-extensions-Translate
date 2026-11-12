@@ -6,20 +6,24 @@ namespace MediaWiki\Extension\Translate\PageTranslation;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
+ * Provides read access to the translate_sections table for a single page.
+ *
+ * Reads use a replica connection. For write access use {@see WritableTranslationUnitStore}.
+ *
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  * @since 2021.05
  */
-class TranslationUnitStore implements TranslationUnitReader {
-	private const TABLE = 'translate_sections';
-	private IReadableDatabase $db;
-	private int $pageId;
+class TranslationUnitStore {
+	protected const TABLE = 'translate_sections';
 
-	public function __construct( IReadableDatabase $db, int $pageId ) {
-		$this->db = $db;
-		$this->pageId = $pageId;
+	public function __construct(
+		protected readonly IReadableDatabase $db,
+		protected readonly int $pageId,
+	) {
 	}
 
+	/** @return array<string,TranslationUnit> */
 	public function getUnits(): array {
 		$res = $this->db->newSelectQueryBuilder()
 			->select( [ 'trs_key', 'trs_text' ] )

@@ -36,7 +36,6 @@ use MediaWiki\Title\TitleParser;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\Message\ListType;
-use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Service to mark/unmark pages from translation and perform related validations
@@ -46,7 +45,6 @@ class TranslatablePageMarker {
 	public const LATEST_SYNTAX_VERSION = '2';
 	public const DEFAULT_SYNTAX_VERSION = '1';
 
-	private IConnectionProvider $dbProvider;
 	private JobQueueGroup $jobQueueGroup;
 	private LinkRenderer $linkRenderer;
 	private MessageGroups $messageGroups;
@@ -65,7 +63,6 @@ class TranslatablePageMarker {
 	private HookRunner $hookRunner;
 
 	public function __construct(
-		IConnectionProvider $dbProvider,
 		JobQueueGroup $jobQueueGroup,
 		LinkRenderer $linkRenderer,
 		MessageGroups $messageGroups,
@@ -83,7 +80,6 @@ class TranslatablePageMarker {
 		FormatterFactory $formatterFactory,
 		HookRunner $hookRunner,
 	) {
-		$this->dbProvider = $dbProvider;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
 		$this->messageIndex = $messageIndex;
@@ -335,12 +331,10 @@ class TranslatablePageMarker {
 		// Could also occur on the off chance $newRevisionRecord->getId() returns null
 		$newRevisionId ??= $title->getLatestRevID();
 
-		$inserts = [];
 		$changed = [];
 		$groupId = $page->getMessageGroupId();
 		$maxId = (int)$this->messageGroupMetadata->get( $groupId, 'maxid' );
 
-		$pageId = $title->getId();
 		if ( $pageSettings->shouldTranslateTitle() &&
 			$operation->titleTranslationState === TranslateTitleEnum::DISABLED
 		) {
@@ -357,7 +351,7 @@ class TranslatablePageMarker {
 				static fn ( TranslationUnit $s ) => $s->id !== TranslatablePage::DISPLAY_TITLE_UNIT_ID
 			);
 
-		foreach ( array_values( $sections ) as $index => $s ) {
+		foreach ( $sections as $s ) {
 			$maxId = max( $maxId, (int)$s->id );
 			$changed[] = $s->id;
 
@@ -365,29 +359,9 @@ class TranslatablePageMarker {
 				// UpdateTranslatablePageJob will only fuzzy when type is changed
 				$s->type = 'old';
 			}
-
-			$inserts[] = [
-				'trs_page' => $pageId,
-				'trs_key' => $s->id,
-				'trs_text' => $s->getText(),
-				'trs_order' => $index
-			];
 		}
 
-		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->newDeleteQueryBuilder()
-			->deleteFrom( 'translate_sections' )
-			->where( [ 'trs_page' => $pageId ] )
-			->caller( __METHOD__ )
-			->execute();
-
-		if ( $inserts ) {
-			$dbw->newInsertQueryBuilder()
-				->insertInto( 'translate_sections' )
-				->rows( $inserts )
-				->caller( __METHOD__ )
-				->execute();
-		}
+		$this->translationUnitStoreFactory->getWriter( $title )->store( $sections );
 
 		$this->saveMetadata( $operation, $pageSettings, $maxId, $user );
 

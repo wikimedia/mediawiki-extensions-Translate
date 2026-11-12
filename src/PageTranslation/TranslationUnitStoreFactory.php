@@ -13,18 +13,29 @@ use Wikimedia\Rdbms\IConnectionProvider;
  * @since 2021.05
  */
 class TranslationUnitStoreFactory {
-	private IConnectionProvider $connectionProvider;
 
-	public function __construct( IConnectionProvider $connectionProvider ) {
-		$this->connectionProvider = $connectionProvider;
+	public function __construct(
+		private readonly IConnectionProvider $connectionProvider,
+	) {
 	}
 
-	public function getReader( PageIdentity $page ): TranslationUnitReader {
+	/** Get a read-only store backed by a replica database connection. */
+	public function getReader( PageIdentity $page ): TranslationUnitStore {
 		$pageId = $page->getId();
 		if ( $pageId === 0 ) {
 			throw new LogicException( 'Page must exist' );
 		}
 
 		return new TranslationUnitStore( $this->connectionProvider->getReplicaDatabase(), $pageId );
+	}
+
+	/** Get a read-write store backed by a primary database connection. */
+	public function getWriter( PageIdentity $page ): WritableTranslationUnitStore {
+		$pageId = $page->getId();
+		if ( $pageId === 0 ) {
+			throw new LogicException( 'Page must exist' );
+		}
+
+		return new WritableTranslationUnitStore( $this->connectionProvider->getPrimaryDatabase(), $pageId );
 	}
 }

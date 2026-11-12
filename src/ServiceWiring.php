@@ -404,7 +404,6 @@ return [
 
 	'Translate:TranslatablePageMarker' => static function ( MediaWikiServices $services ): TranslatablePageMarker {
 		return new TranslatablePageMarker(
-			$services->getConnectionProvider(),
 			$services->getJobQueueGroup(),
 			$services->getLinkRenderer(),
 			MessageGroups::singleton(),
@@ -457,7 +456,7 @@ return [
 			$services->get( 'Translate:MessageIndex' ),
 			$services->getJobQueueGroup(),
 			$services->get( 'Translate:RevTagStore' ),
-			$services->getConnectionProvider(),
+			$services->get( 'Translate:TranslationUnitStoreFactory' ),
 			$services->get( 'Translate:TranslatableBundleStatusStore' ),
 			$services->get( 'Translate:TranslatablePageParser' ),
 			$services->get( 'Translate:MessageGroupMetadata' )

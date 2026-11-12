@@ -12,6 +12,7 @@ use MediaWiki\Extension\Translate\MessageLoading\RebuildMessageIndexJob;
 use MediaWiki\Extension\Translate\MessageProcessing\MessageGroupMetadata;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePage;
 use MediaWiki\Extension\Translate\PageTranslation\TranslatablePageParser;
+use MediaWiki\Extension\Translate\PageTranslation\TranslationUnitStoreFactory;
 use MediaWiki\Extension\Translate\PageTranslation\UpdateTranslatablePageJob;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Page\PageIdentity;
@@ -19,7 +20,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
 use RuntimeException;
-use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -34,7 +34,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 		private readonly MessageIndex $messageIndex,
 		private readonly JobQueueGroup $jobQueue,
 		private readonly RevTagStore $revTagStore,
-		private readonly IConnectionProvider $dbProvider,
+		private readonly TranslationUnitStoreFactory $translationUnitStoreFactory,
 		private readonly TranslatableBundleStatusStore $translatableBundleStatusStore,
 		private readonly TranslatablePageParser $translatablePageParser,
 		private readonly MessageGroupMetadata $messageGroupMetadata,
@@ -85,12 +85,7 @@ class TranslatablePageStore implements TranslatableBundleStore {
 
 	/** Delete a translatable page */
 	public function delete( Title $title ): void {
-		$dbw = $this->dbProvider->getPrimaryDatabase();
-		$dbw->newDeleteQueryBuilder()
-			->deleteFrom( 'translate_sections' )
-			->where( [ 'trs_page' => $title->getId() ] )
-			->caller( __METHOD__ )
-			->execute();
+		$this->translationUnitStoreFactory->getWriter( $title )->delete();
 
 		$this->unmark( $title );
 	}
