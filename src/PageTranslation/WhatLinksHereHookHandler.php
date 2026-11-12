@@ -22,7 +22,8 @@ class WhatLinksHereHookHandler implements SpecialWhatLinksHereBacklinkQueryHook 
 		SpecialWhatLinksHereBacklinkQueryData $data,
 		SelectQueryBuilder $queryBuilder
 	): void {
-		if ( $data->formData[ 'translate-hidetranslations' ] ) {
+		// The field is absent when PageTranslationHookHandler does not add it (T444583)
+		if ( $data->formData[ 'translate-hidetranslations' ] ?? false ) {
 			$queryBuilder->leftJoin(
 				'page_props',
 				'translate_pp',

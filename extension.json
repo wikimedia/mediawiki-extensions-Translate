@@ -256,7 +256,10 @@
 			"factory": "MediaWiki\\Extension\\Translate\\MessageBundleTranslation\\Hooks::getInstance"
 		},
 		"pageTranslation": {
-			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler"
+			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\PageTranslationHookHandler",
+			"services": [
+				"DBLoadBalancerFactory"
+			]
 		},
 		"whatLinksHere": {
 			"class": "MediaWiki\\Extension\\Translate\\PageTranslation\\WhatLinksHereHookHandler"

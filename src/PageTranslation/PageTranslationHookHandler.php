@@ -4,12 +4,14 @@ declare( strict_types = 1 );
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Deferred\LinksUpdate\LinksTable;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeFormDisplayHook;
 use MediaWiki\Specials\Hook\LonelyPagesQueryHook;
 use MediaWiki\Specials\Hook\SpecialPrefixIndexGetFormFiltersHook;
 use MediaWiki\Specials\Hook\SpecialPrefixIndexQueryHook;
 use MediaWiki\Specials\Hook\SpecialWhatLinksHereBacklinkQueryHook;
+use Wikimedia\Rdbms\ILBFactory;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PageTranslationHookHandler implements
@@ -18,6 +20,9 @@ class PageTranslationHookHandler implements
 	LonelyPagesQueryHook,
 	SpecialPageBeforeFormDisplayHook
 {
+	public function __construct( private readonly ILBFactory $lbFactory ) {
+	}
+
 	/** @inheritDoc */
 	public function onSpecialPrefixIndexGetFormFilters( IContextSource $contextSource, array &$filters ) {
 		$filters[ 'translate-hidetranslations' ] = [
@@ -56,7 +61,13 @@ class PageTranslationHookHandler implements
 	/** @inheritDoc */
 	public function onSpecialPageBeforeFormDisplay( $name, $form ): void {
 		// The filter needs the SpecialWhatLinksHereBacklinkQuery hook added in MW 1.48
-		if ( $name === 'Whatlinkshere' && interface_exists( SpecialWhatLinksHereBacklinkQueryHook::class ) ) {
+		// The filter joins page_props to the link tables. This join fails when the link
+		// tables are on a separate cluster (T444583), thus do not show the filter then.
+		if (
+			$name === 'Whatlinkshere' &&
+			interface_exists( SpecialWhatLinksHereBacklinkQueryHook::class ) &&
+			!$this->linkTablesAreOnSeparateCluster()
+		) {
 			$form->addFields( [
 				'translate-hidetranslations' => [
 					'type' => 'check',
@@ -66,5 +77,9 @@ class PageTranslationHookHandler implements
 				]
 			] );
 		}
+	}
+
+	private function linkTablesAreOnSeparateCluster(): bool {
+		return $this->lbFactory->getLoadBalancer( LinksTable::VIRTUAL_DOMAIN ) !== $this->lbFactory->getMainLB();
 	}
 }
