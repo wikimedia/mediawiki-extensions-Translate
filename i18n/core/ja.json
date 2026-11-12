@@ -289,6 +289,7 @@
 	"translate-smg-group-message-message-target": "対象：",
 	"translate-smg-group-message-message-other-langs": "その他の言語:",
 	"translate-smg-loading": "読み込み中...",
+	"translate-smg-unknown-error": "要求を処理中に不明なエラーが発生しました。",
 	"translate-manage-import-diff": "メッセージ $1 | 操作: $2",
 	"translate-manage-import-new": "新しいメッセージ $1",
 	"translate-manage-import-deleted": "削除されたメッセージ $1",
