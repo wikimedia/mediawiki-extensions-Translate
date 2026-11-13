@@ -35,7 +35,6 @@
 	"translate-taction-disabled": "Гэта дзеянне адключана ў гэтай вікі.",
 	"translate-page-no-such-language": "Перададзены няслушны код мовы",
 	"translate-page-no-such-group": "Няслушна ўказана група.",
-	"translate-page-disabled": "У гэтым раздзеле пераклады на даную мову адключаны. Прычына:\n\n<em>$1</em>",
 	"translate-language-disabled": "Магчымасць перакладу на гэту мову адключана.",
 	"translate-page-settings-legend": "Параметры",
 	"translate-page-group": "Група:",

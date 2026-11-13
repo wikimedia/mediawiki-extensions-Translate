@@ -170,8 +170,6 @@
 	"apierror-translate-invalidstate": "요청한 상태는 유효하지 않습니다.",
 	"apierror-translate-invalidlanguage": "$1 언어 코드는 유효하지 않습니다.",
 	"apierror-translate-invalidupdate": "유효하지 않은 업데이트",
-	"apierror-translate-language-disabled": "$1로의 번역이 비활성화되어 있습니다.",
-	"apierror-translate-language-disabled-reason": "$1로의 번역이 비활성화되어 있습니다: $2",
 	"apierror-translate-nodynamicgroups": "여기서는 동적 메시지 그룹이 지원되지 않습니다",
 	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 메시지와 일치하지 않습니다",
 	"apierror-translate-notranslationservices": "공용 번역 서비스가 구성되지 않았습니다. 위키 관리자는 <var>$wgTranslateTranslationServices</var>를 적절하게 설정해야 이 기능을 사용할 수 있습니다.",

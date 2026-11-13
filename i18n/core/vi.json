@@ -30,7 +30,6 @@
 	"translate-taction-disabled": "Tác vụ này đã bị tắt trên wiki này.",
 	"translate-page-no-such-language": "Ngôn ngữ chỉ định không đúng.",
 	"translate-page-no-such-group": "Nhóm chỉ định không đúng.",
-	"translate-page-disabled": "Các bản dịch trong ngôn ngữ này trong nhóm đã bị tắt. Lý do:\n\n<em>$1</em>",
 	"translate-language-disabled": "Đã tắt chức năng dịch sang ngôn ngữ này.",
 	"translate-page-settings-legend": "Thiết lập",
 	"translate-page-group": "Nhóm:",

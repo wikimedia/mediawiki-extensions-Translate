@@ -53,7 +53,6 @@
 	"translate-taction-disabled": "本 wiki 已關閉此操作功能。",
 	"translate-page-no-such-language": "選擇的語言錯誤。",
 	"translate-page-no-such-group": "選擇的群組錯誤。",
-	"translate-page-disabled": "已對本群組停用翻譯至此語言的選項。原因：\n\n<em>$1</em>",
 	"translate-language-disabled": "已停用翻譯至此語言的選項。",
 	"translate-page-settings-legend": "設定",
 	"translate-page-group": "群組：",

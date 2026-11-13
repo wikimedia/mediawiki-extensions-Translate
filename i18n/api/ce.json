@@ -162,8 +162,6 @@
 	"apierror-translate-invalidstate": "Дехар дина хьал нийса дац.",
 	"apierror-translate-invalidlanguage": "Меттан код $1 нийса йац.",
 	"apierror-translate-invalidupdate": "Нийса доцу карладаккхар.",
-	"apierror-translate-language-disabled": "$1 тӀе гочдар дӀадайина ду.",
-	"apierror-translate-language-disabled-reason": "$1 тӀе гочдар дӀадайина ду: $2",
 	"apierror-translate-nodynamicgroups": "Динамикин хаамийн тобанаш кхузахь ловш йац.",
 	"apierror-translate-nomessagefortitle": "ЦӀе гочбечу хаамца йогӀуш йац.",
 	"apierror-translate-notranslationservices": "Цхьа а йукъара гочдаран сервисаш дӀахӀиттийна йац. Вики-администраторна оьшу <var>$wgTranslateTranslationServices</var> нийса хӀотто, хӀара функци лело йиш хилале.",

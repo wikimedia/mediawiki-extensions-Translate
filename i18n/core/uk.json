@@ -50,7 +50,6 @@
 	"translate-taction-disabled": "Ця дія недоступна у цій вікі.",
 	"translate-page-no-such-language": "Зазначена неправильна мова.",
 	"translate-page-no-such-group": "Зазначена неправильна група.",
-	"translate-page-disabled": "Переклади на цю мову в цій групі вимкнені. Причина:\n\n<em>$1</em>",
 	"translate-language-disabled": "Переклад цією мовою вимкнено.",
 	"translate-page-settings-legend": "Параметри",
 	"translate-page-group": "Група:",

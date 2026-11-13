@@ -148,8 +148,6 @@
 	"apierror-translate-invalidstate": "Запитуваний стан недійсний.",
 	"apierror-translate-invalidlanguage": "Код мови $1 недійсний.",
 	"apierror-translate-invalidupdate": "Недійсне оновлення",
-	"apierror-translate-language-disabled": "Переклад мовою «$1» вимкнено",
-	"apierror-translate-language-disabled-reason": "Переклад мовою «$1» вимкнено: $2",
 	"apierror-translate-nodynamicgroups": "Динамічні групи повідомлень не підтримуються тут",
 	"apierror-translate-nomessagefortitle": "Назва не відповідає перекладному повідомленню",
 	"apierror-translate-notranslationservices": "Не налаштовано ще жодного публічного сервісу перекладу. Адміністратор цієї вікі повинен належним чином налаштувати <var>$wgTranslateTranslationServices</var>, перш ніж цю функцію можна буде використовувати.",

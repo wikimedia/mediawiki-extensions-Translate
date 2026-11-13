@@ -166,8 +166,6 @@
 	"apierror-translate-invalidstate": "Побараната состојба е неважечка.",
 	"apierror-translate-invalidlanguage": "Јазичниот код $1 е неважечки.",
 	"apierror-translate-invalidupdate": "Неважечка поднова",
-	"apierror-translate-language-disabled": "Преведувањето на $1 е оневозможено.",
-	"apierror-translate-language-disabled-reason": "Преведувањето на $1 е оневозможено: $2",
 	"apierror-translate-nodynamicgroups": "Динамичките групи пораки не се поддржани овде",
 	"apierror-translate-nomessagefortitle": "Насловот не соодветствува на преводлива порака",
 	"apierror-translate-notranslationservices": "Нема поставено јавни преводни служби. Администраторот на викито треба соодветно да го постави <var>$wgTranslateTranslationServices</var> пред да може да се користи оваа можност.",

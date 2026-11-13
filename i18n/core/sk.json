@@ -33,7 +33,6 @@
 	"translate-taction-disabled": "Táto akcia je na tejto wiki vypnutá.",
 	"translate-page-no-such-language": "Zadaný jazyk bol neplatný.",
 	"translate-page-no-such-group": "Zadaná skupina bola neplatná.",
-	"translate-page-disabled": "Preklady v tejto skupine do tohto jazyka boli zakázané. Dôvod:\n\n<em>$1</em>",
 	"translate-language-disabled": "Preklad do tohto jazyka je zakázaný.",
 	"translate-page-settings-legend": "Možnosti",
 	"translate-page-group": "Skupina:",

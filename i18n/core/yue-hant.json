@@ -26,7 +26,6 @@
 	"translate-taction-disabled": "呢個wiki唔畀做呢個動作。",
 	"translate-page-no-such-language": "所指定嘅語言唔正確。",
 	"translate-page-no-such-group": "所指定嘅組唔正確。",
-	"translate-page-disabled": "呢個群組入面嘅呢種語言嘅翻譯已經停用。\n原因：\n\n<em>$1</em>",
 	"translate-language-disabled": "呢種語言嘅翻譯已經停用。",
 	"translate-page-settings-legend": "自定喜好",
 	"translate-page-group": "組",

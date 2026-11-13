@@ -46,7 +46,6 @@
 	"translate-taction-disabled": "Tämä toiminto ei ole käytössä tässä wikissä.",
 	"translate-page-no-such-language": "Tuntematon kieli.",
 	"translate-page-no-such-group": "Tuntematon ryhmä.",
-	"translate-page-disabled": "Käännökset tälle kielelle tässä ryhmässä on estetty.\nSyy:\n\n<em>$1</em>",
 	"translate-language-disabled": "Kääntäminen tälle kielelle ei ole mahdollista.",
 	"translate-page-settings-legend": "Asetukset",
 	"translate-page-group": "Ryhmä:",

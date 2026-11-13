@@ -39,8 +39,6 @@
 	"apierror-translate-invalidaggregategroupname": "Nieprawidłowa nazwa zbiorczej grupy komunikatów",
 	"apierror-translate-invalidgroup": "Grupa nie istnieje lub jest nieprawidłowa",
 	"apierror-translate-invalidupdate": "Nieprawidłowa aktualizacja",
-	"apierror-translate-language-disabled": "Tłumaczenie na $1 jest wyłączone.",
-	"apierror-translate-language-disabled-reason": "Tłumaczenie na $1 jest wyłączone: $2",
 	"apierror-translate-nodynamicgroups": "Dynamiczne grupy komunikatów nie są tutaj obsługiwane",
 	"apierror-translate-nomessagefortitle": "Tytuł nie odpowiada komunikatowi do tłumaczenia",
 	"apierror-translate-owntranslation": "Nie można przeglądać własnych tłumaczeń",

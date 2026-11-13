@@ -20,7 +20,6 @@
 	"translate-taction-disabled": "See toiming on selles vikis keelatud.",
 	"translate-page-no-such-language": "Keelevalik oli kõlbmatu.",
 	"translate-page-no-such-group": "Rühm ei sobi.",
-	"translate-page-disabled": "Selle rühma sõnumite tõlkimine selles keeles on keelatud.\nPõhjus:\n\n<em>$1</em>",
 	"translate-language-disabled": "Sellesse keelde tõlkimine on keelatud.",
 	"translate-page-settings-legend": "Seadistused",
 	"translate-page-group": "Rühm:",

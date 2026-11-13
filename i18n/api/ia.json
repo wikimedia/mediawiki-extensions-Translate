@@ -162,8 +162,6 @@
 	"apierror-translate-invalidstate": "Le stato requestate non es valide.",
 	"apierror-translate-invalidlanguage": "Le codice de lingua $1 non es valide.",
 	"apierror-translate-invalidupdate": "Actualisation invalide.",
-	"apierror-translate-language-disabled": "Le traduction in $1 es disactivate.",
-	"apierror-translate-language-disabled-reason": "Le traduction in $1 es disactivate: $2",
 	"apierror-translate-nodynamicgroups": "Le gruppos de messages dynamic non es supportate hic.",
 	"apierror-translate-nomessagefortitle": "Le titulo non corresponde a un message traducibile.",
 	"apierror-translate-notranslationservices": "Nulle servicios de traduction public ha essite configurate. Le administrator del wiki debe configurar <var>$wgTranslateTranslationServices</var> correctemente ante que iste function pote esser usate.",

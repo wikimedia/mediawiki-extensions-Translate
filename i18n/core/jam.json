@@ -10,7 +10,6 @@
 	"translate-desc": "[[Special:Translate|Special page]] fi chransliet MediaWiki ahn biyan",
 	"translate-page-no-such-language": "Spesifai langwij ehn invalid.",
 	"translate-page-no-such-group": "Spesifai gruup ehn invalid.",
-	"translate-page-disabled": "Chranslieshan tu dis langwij ina dis gruup disiebl.\nRiizn:\n\n<em>$1</em>",
 	"translate-page-settings-legend": "Setndem",
 	"translate-page-group": "Gruup",
 	"translate-page-language": "Langwij",

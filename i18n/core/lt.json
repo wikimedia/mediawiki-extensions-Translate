@@ -27,7 +27,6 @@
 	"translate-taction-disabled": "Šis veiksmas yra išjungtas šiame wiki.",
 	"translate-page-no-such-language": "Buvo nurodytas klaidingas kalbos kodas",
 	"translate-page-no-such-group": "Nurodyta nekorektiška grupė.",
-	"translate-page-disabled": "Vertimai į šią kalbą šioje grupėje buvo išjungti.\nPriežastis:\n\n<em>$1</em>",
 	"translate-language-disabled": "Vertimai į šią kalbą yra išjungtas.",
 	"translate-page-settings-legend": "Nustatymai",
 	"translate-page-group": "Grupė:",

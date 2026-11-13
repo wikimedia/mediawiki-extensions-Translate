@@ -25,7 +25,6 @@
 	"translate-taction-disabled": "Ni ellir gwneud y weithred hon ar y wici hwn.",
 	"translate-page-no-such-language": "Mae'r iaith honno'n annilys.",
 	"translate-page-no-such-group": "Mae'r grŵp hwnnw'n annilys.",
-	"translate-page-disabled": "Analluogwyd cyfieithu i'r iaith honno yn y grŵp hwn.\nRheswm:\n\n<em>$1</em>",
 	"translate-language-disabled": "Analluogwyd cyfieithu i'r iaith hon.",
 	"translate-page-settings-legend": "Gosodiadau",
 	"translate-page-group": "Grŵp",

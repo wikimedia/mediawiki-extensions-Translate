@@ -38,7 +38,6 @@
 	"translate-taction-disabled": "הפעולה הזאת אינה מופעלת בוויקי הזה",
 	"translate-page-no-such-language": "השפה שצוינה שגויה.",
 	"translate-page-no-such-group": "הקבוצה שצוינה שגויה.",
-	"translate-page-disabled": "התרגומים לשפה זו בקבוצה זו בוטלו.\nהסיבה לכך היא:\n\n<em>$1</em>",
 	"translate-language-disabled": "תרגום לשפה הזאת כבוי.",
 	"translate-page-settings-legend": "הגדרות",
 	"translate-page-group": "קבוצה:",

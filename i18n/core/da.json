@@ -34,7 +34,6 @@
 	"translate-taction-disabled": "Denne handling er deaktiveret på denne wiki.",
 	"translate-page-no-such-language": "Det angivne sprog er ugyldigt.",
 	"translate-page-no-such-group": "Den angivne gruppe er ugyldig.",
-	"translate-page-disabled": "Oversættelser til dette sprog i denne gruppe er slået fra.\nÅrsag:\n\n<em>$1</em>",
 	"translate-language-disabled": "Oversættelse til dette sprog er slået fra.",
 	"translate-page-settings-legend": "Indstillinger",
 	"translate-page-group": "Gruppe:",

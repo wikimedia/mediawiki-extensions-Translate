@@ -37,7 +37,6 @@
 	"translate-taction-disabled": "इस कार्य को इस विकि पर अक्षम किया गया है।",
 	"translate-page-no-such-language": "निर्दिष्ट भाषा अमान्य है।",
 	"translate-page-no-such-group": "निर्दिष्ट समूह अमान्य है।",
-	"translate-page-disabled": "इस भाषा में अनुवादों को अक्षम किया गया है।\nकारण:\n\n<em>$1</em>",
 	"translate-language-disabled": "इस भाषा में अनुवाद को अक्षम किया गया है।",
 	"translate-page-settings-legend": "सेटिंग्स",
 	"translate-page-group": "समूह:",

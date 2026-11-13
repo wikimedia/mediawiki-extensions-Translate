@@ -24,7 +24,6 @@
 	"translate-taction-disabled": "Бұл уикиде бұл әрекет сөндірілген.",
 	"translate-page-no-such-language": "Келтірілген тіл дұрыс емес.",
 	"translate-page-no-such-group": "Келтірілген топ дұрыс емес.",
-	"translate-page-disabled": "Осы топтағы аудармаларды бұл тілге аударуы сөндірілген. \nСебебі:\n\n<em>$1</em>",
 	"translate-language-disabled": "Бұл тілге аудару ажыратылған.",
 	"translate-page-settings-legend": "Бапталымдар",
 	"translate-page-group": "Хабар тобы",

@@ -21,7 +21,6 @@
 	"translate-taction-disabled": "Die aksie is afgeskakel op hierdie wiki.",
 	"translate-page-no-such-language": "Gespesifiseerde taal is ongeldig.",
 	"translate-page-no-such-group": "Die gespesifiseerde groep bestaan nie.",
-	"translate-page-disabled": "Vertalings in die taal vir hierdie groep is gedeaktiveer. Rede:\n\n<em>$1</em>",
 	"translate-language-disabled": "Vertaling van die taal is gedeaktiveer.",
 	"translate-page-settings-legend": "Instellings",
 	"translate-page-group": "Groep",

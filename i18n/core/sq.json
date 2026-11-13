@@ -28,7 +28,6 @@
 	"translate-taction-disabled": "Ky veprim është i çaktivizuar në këtë wiki.",
 	"translate-page-no-such-language": "Gjuha e specifikuar ishte e pavlefshme.",
 	"translate-page-no-such-group": "Grupi i specifikuar ishte i pavlefshëm.",
-	"translate-page-disabled": "Përkthimet në këtë gjuhë në këtë grup janë çaktivizuar.\nArsyeja:\n\n<em>$1</em>",
 	"translate-language-disabled": "Përkthimi në këtë gjuhë është i çaktivizuar.",
 	"translate-page-settings-legend": "Cilësimet",
 	"translate-page-group": "Grupi",

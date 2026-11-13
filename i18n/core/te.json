@@ -23,7 +23,6 @@
 	"translate-taction-disabled": "ఈవికీలో ఈ చర్యను అచేతనం చేసారు.",
 	"translate-page-no-such-language": "ఎంచుకున్న భాష సరైనది కాదు.",
 	"translate-page-no-such-group": "ఇచ్చిన సమూహం సరైనది కాదు.",
-	"translate-page-disabled": "ఈ భాషకి ఈ సమూహంలో అనువాదాలని అచేతనం చేసారు.\nకారణం:\n\n<em>$1</em>",
 	"translate-language-disabled": "ఈ భాషలోకి అనువాదం నిలిపివేయబడింది",
 	"translate-page-settings-legend": "అమరికలు",
 	"translate-page-group": "సమూహం",

@@ -32,7 +32,6 @@
 	"translate-taction-disabled": "Radnja je onemogućena na ovom vikiju.",
 	"translate-page-no-such-language": "Navedeni jezik nije važeći.",
 	"translate-page-no-such-group": "Navedena grupa nije važeća.",
-	"translate-page-disabled": "Prevođenje na ovaj jezik u ovoj grupi je onemogućeno.\nRazlog:\n\n<em>$1</em>",
 	"translate-language-disabled": "Prevođenje na ovaj jezik je onemogućeno.",
 	"translate-page-settings-legend": "Podešavanja",
 	"translate-page-group": "Grupa",

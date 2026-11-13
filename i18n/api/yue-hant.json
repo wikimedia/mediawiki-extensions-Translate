@@ -167,8 +167,6 @@
 	"apierror-translate-invalidstate": "要求嘅狀態無效。",
 	"apierror-translate-invalidlanguage": "語言代碼$1無效。",
 	"apierror-translate-invalidupdate": "更新無效",
-	"apierror-translate-language-disabled": "停用咗翻譯成$1嘅功能。",
-	"apierror-translate-language-disabled-reason": "轉換成$1已經停用：$2",
 	"apierror-translate-nodynamicgroups": "呢度唔支援動態嘅訊息谷",
 	"apierror-translate-nomessagefortitle": "標題同可翻譯嘅訊息唔對應",
 	"apierror-translate-notranslationservices": "未設定任何公開翻譯服務，維基管理員需要適當噉設定<var>$wgTranslateTranslationServices</var>喺可以用得呢個功能之前。",

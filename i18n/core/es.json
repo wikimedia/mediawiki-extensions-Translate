@@ -61,7 +61,6 @@
 	"translate-taction-disabled": "Esta acción está desactivada en esta wiki.",
 	"translate-page-no-such-language": "No se especificó un idioma válido.",
 	"translate-page-no-such-group": "El grupo especificado no es válido.",
-	"translate-page-disabled": "Se han desactivado las traducciones a este idioma en este grupo.\nMotivo:\n\n<em>$1</em>",
 	"translate-language-disabled": "Se desactivó la traducción a este idioma.",
 	"translate-page-settings-legend": "Preferencias",
 	"translate-page-group": "Grupo",

@@ -28,7 +28,6 @@
 	"translate-taction-disabled": "இந்த செயல் இந்த விக்கியில் செயலிழக்கம் செய்யப்பட்டுள்ளது.",
 	"translate-page-no-such-language": "குறித்த மொழி செல்லுபடியற்றதாகும்.",
 	"translate-page-no-such-group": "குறித்த குழு செல்லுபடியற்றதாகும்.",
-	"translate-page-disabled": "இந்த குழுவில் இந்த மொழிக்கான மொழிபெயப்பு  செயலிழக்கம் செய்யப்பட்டுள்ளது.\nகாரணம்:\n\n<em>$1</em>",
 	"translate-page-settings-legend": "அமைப்புகள்",
 	"translate-page-group": "குழு",
 	"translate-page-language": "மொழி",

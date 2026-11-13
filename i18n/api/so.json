@@ -165,8 +165,6 @@
 	"apierror-translate-invalidstate": "Xaaladda la codsaday ma ansaxna.",
 	"apierror-translate-invalidlanguage": "Koodhka luqadda $1 ma ansaxna.",
 	"apierror-translate-invalidupdate": "Cusbooneysiin aan sax ahayn",
-	"apierror-translate-language-disabled": "Turjumaadda $1 waa naafo.",
-	"apierror-translate-language-disabled-reason": "Tarjumaadda $1 waa naafo: $2",
 	"apierror-translate-nodynamicgroups": "Kooxaha farriimaha firfircoon lagama taageero halkan",
 	"apierror-translate-nomessagefortitle": "Cinwaanku kuma habboona farriin la tarjumi karo",
 	"apierror-translate-notranslationservices": "Adeegyada tarjumaadda dadweynaha lama habayn. Maamulaha wikigu waa inuu si habboon u dejiyaa <var>$wgTranslateTranslationServices</var> ka hor inta aan sifadan la adeegsan.",

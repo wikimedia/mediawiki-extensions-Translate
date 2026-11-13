@@ -15,7 +15,5 @@
 	"apihelp-translationcheck-summary": "ਤਰਜਮੇ ਤਸਦੀਕ ਕਰੋ।",
 	"apihelp-translationcheck-param-translation": "ਤਸਦੀਕ ਕਰਨ ਲਈ ਤਰਜਮਾ।",
 	"apihelp-translationstats-summary": "ਉਲਥਾ ਅੰਕੜੇ ਲਿਆਓ",
-	"apihelp-translationstats-param-scale": "ਉਲਥਾ ਅੰਕੜਿਆਂ ਦਾ ਮਾਪਕ",
-	"apierror-translate-language-disabled": "$1 ਵਿੱਚ ਉਲਥਾ ਕਰਨਾ ਬੰਦ ਕੀਤਾ ਹੋਇਆ ਏ",
-	"apierror-translate-language-disabled-reason": "$1 ਲਈ ਉਲਥਾ ਬੰਦ ਕੀਤਾ ਗਿਆ ਏ: $2"
+	"apihelp-translationstats-param-scale": "ਉਲਥਾ ਅੰਕੜਿਆਂ ਦਾ ਮਾਪਕ"
 }

@@ -6,7 +6,6 @@
 	},
 	"translate-page-no-such-language": "Gjuha e specifikuara ishte i pavlefshëm.",
 	"translate-page-no-such-group": "Grupi specifikuara ishte i pavlefshëm.",
-	"translate-page-disabled": "Përkthime të kësaj gjuhe në këtë grup kanë qenë të paaftë. Reason:<em>$1</em>",
 	"translate-page-settings-legend": "Paneli i punëve",
 	"translate-page-group": "Grup",
 	"translate-page-language": "Gjuhë",

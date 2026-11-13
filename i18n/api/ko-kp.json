@@ -37,7 +37,6 @@
 	"apihelp-searchtranslations-example-1": "이 언어에 대한 번역 보이기",
 	"apihelp-translationcheck-summary": "번역을 확인합니다.",
 	"apierror-translate-invalidgroup": "집단이 존재하지 않거나 잘못되였습니다",
-	"apierror-translate-language-disabled": "이 언어로의 번역이 비활성화되여있습니다",
 	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 통보문과 일치하지 않습니다",
 	"apierror-translate-notranslationservices": "공용 번역봉사가 구성되지 않았습니다. 위키 관리자는 <var>$wgTranslateTranslationServices</var>를 적절하게 설정하여야 이 기능을 사용할수 있습니다.",
 	"apierror-translate-sandboxdisabled": "련습장기능을 사용하고있지 않습니다",

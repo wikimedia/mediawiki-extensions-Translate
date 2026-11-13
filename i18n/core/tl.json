@@ -19,7 +19,6 @@
 	"translate-taction-disabled": "Hindi pinagagana sa wiking ito ang galaw na ito",
 	"translate-page-no-such-language": "Hindi tanggap ang tinukoy na wika.",
 	"translate-page-no-such-group": "Hindi tanggap ang tinukoy na pangkat.",
-	"translate-page-disabled": "Hindi pinagana ang mga salinwika para sa wikang ito na nasa loob ng pangkat na ito. Dahilan:\n\n<em>$1</em>",
 	"translate-language-disabled": "Hindi pinagagana ang pagsasalinwika papunta sa wikang ito.",
 	"translate-page-settings-legend": "Mga pagtatakda",
 	"translate-page-group": "Pangkat",

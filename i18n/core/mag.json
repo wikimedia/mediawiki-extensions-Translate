@@ -20,7 +20,6 @@
 	"translate-taction-disabled": "ई कार्य ई विकि पर अक्षम कैल गेलै हे ।",
 	"translate-page-no-such-language": "निर्दिष्ट भाषा अमान्य हे ।",
 	"translate-page-no-such-group": "निर्दिष्ट समूह अमान्य हे ।",
-	"translate-page-disabled": "ई भाषामे अनुवादके अक्षम कैल गेलै हे ।\nकारण:\n\n<em>$1</em>",
 	"translate-language-disabled": "ई भाषामे अनुवादके अक्षम कैल गेलै हे ।",
 	"translate-page-settings-legend": "सेटिङ्ग",
 	"translate-page-group": "समूह:",

@@ -37,7 +37,6 @@
 	"translate-taction-disabled": "Αυτή η ενέργεια είναι απενεργοποιημένη σε αυτό wiki.",
 	"translate-page-no-such-language": "Η καθορισμένη γλώσσα δεν ήταν έγκυρη.",
 	"translate-page-no-such-group": "Η καθορισμένη ομάδα δεν ήταν έγκυρη.",
-	"translate-page-disabled": "Οι μεταφράσεις προς αυτήν τη γλώσσα έχουν απενεργοποιηθεί σε αυτήν την ομάδα. \nΑιτία: \n\n<em>$1</em>",
 	"translate-language-disabled": "Η μετάφραση στη γλώσσα αυτή είναι απενεργοποιημένη.",
 	"translate-page-settings-legend": "Ρυθμίσεις",
 	"translate-page-group": "Ομάδα",

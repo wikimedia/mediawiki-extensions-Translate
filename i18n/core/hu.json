@@ -34,7 +34,6 @@
 	"translate-taction-disabled": "Ez a művelet le van tiltva ebben a wikiben.",
 	"translate-page-no-such-language": "A megadott nyelv érvénytelen",
 	"translate-page-no-such-group": "A megadott csoport érvénytelen",
-	"translate-page-disabled": "Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:\n\n<em>$1</em>",
 	"translate-language-disabled": "Erre a nyelvre a fordítás le van tiltva.",
 	"translate-page-settings-legend": "Beállítások",
 	"translate-page-group": "Csoport:",

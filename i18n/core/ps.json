@@ -27,7 +27,6 @@
 	"translate-taction-disabled": "په دې ويکي باندې دا کړنه ناچارنه شوې.",
 	"translate-page-no-such-language": "ځانگړې شوې ژبه سمه نه وه.",
 	"translate-page-no-such-group": "ځانگړې شوې ډله سمه نه وه.",
-	"translate-page-disabled": "په دې ډله کې د همدې ژبې ژباړې ناچارنده شوي.\nلامل:\n\n<em>$1</em>",
 	"translate-language-disabled": "دې ژبې ته ژباړه ناچارنه شوې.",
 	"translate-page-settings-legend": "اوڼنې",
 	"translate-page-group": "ډله:",

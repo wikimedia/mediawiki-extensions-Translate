@@ -21,7 +21,6 @@
 	"translate-taction-disabled": "ഈ വിക്കിയിൽ ഈ പ്രവൃത്തി പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.",
 	"translate-page-no-such-language": "തിരഞ്ഞെടുത്ത ഭാഷ അസാധുവാണ്‌.",
 	"translate-page-no-such-group": "തിരഞ്ഞെടുത്ത ഗണം അസാധുവാണ്‌.",
-	"translate-page-disabled": "ഈ ഗണത്തിലുള്ള സന്ദേശങ്ങൾക്ക് ഈ ഭാഷയിലുള്ള പരിഭാഷ നിരോധിച്ചിരിക്കുന്നു. കാരണം:\n\n<em>$1</em>",
 	"translate-language-disabled": "ഈ ഭാഷയിലേയ്ക്കുള്ള പരിഭാഷ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്.",
 	"translate-page-settings-legend": "സജ്ജീകരണങ്ങൾ",
 	"translate-page-group": "ഗണം",

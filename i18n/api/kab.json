@@ -31,6 +31,5 @@
 	"apihelp-searchtranslations-param-filter": "Imzizdeg n waddad n tsuqilt n yizen.",
 	"apihelp-searchtranslations-example-1": "Sken tisuqilin i tutlayt.",
 	"apierror-translate-fuzzymessage": "Ur tezmireḍ ara ad alseḍ taɣuri n tsuqilt ur yemmiden ara",
-	"apierror-translate-language-disabled": "Tasuqilt ar tutlayt-agi tensa",
 	"apierror-translate-owntranslation": "Ur tezmireḍ ara ad alseḍ taɣuri n tsuqilt i teggid"
 }

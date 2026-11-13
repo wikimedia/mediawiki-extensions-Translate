@@ -164,8 +164,6 @@
 	"apierror-translate-invalidstate": "Den forespurte tilstanden er ugyldig.",
 	"apierror-translate-invalidlanguage": "Språkkoden $1 er ugyldig.",
 	"apierror-translate-invalidupdate": "Ugyldig oppdatering",
-	"apierror-translate-language-disabled": "Oversettelse til $1 er slått av.",
-	"apierror-translate-language-disabled-reason": "Oversettelse til $1 er slått av: $2",
 	"apierror-translate-nodynamicgroups": "Dynamiske beskjedgrupper støttes ikke her",
 	"apierror-translate-nomessagefortitle": "Tittelen samsvarer ikke med en oversettbar melding",
 	"apierror-translate-notranslationservices": "Ingen offentlige oversettelsestjenester har blitt satt opp. Wikiadministratoren må sette <var>$wgTranslateTranslationServices</var> før denne funksjonen kan brukes.",

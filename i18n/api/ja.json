@@ -90,8 +90,6 @@
 	"apierror-translate-invalidstate": "要求された状態は無効です。",
 	"apierror-translate-invalidlanguage": "言語コード$1は無効です。",
 	"apierror-translate-invalidupdate": "更新が無効です",
-	"apierror-translate-language-disabled": "$1への翻訳はできません。",
-	"apierror-translate-language-disabled-reason": "$1への翻訳はできません。$2",
 	"apierror-translate-nodynamicgroups": "動的メッセージ群はここではサポートしていません",
 	"apierror-translate-nomessagefortitle": "題名が翻訳可能なメッセージと対応しません",
 	"apierror-translate-owntranslation": "自分の翻訳の査読はできません",

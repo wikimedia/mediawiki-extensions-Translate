@@ -39,7 +39,6 @@
 	"translate-taction-disabled": "Aquesta acció està desactivada a aquest wiki.",
 	"translate-page-no-such-language": "L'idioma especificat no és vàlid.",
 	"translate-page-no-such-group": "El grup especificat no és vàlid.",
-	"translate-page-disabled": "Les traduccions a aquest idioma en aquest grup han estat suspeses. Motiu:\n\n<em>$1</em>",
 	"translate-language-disabled": "La traducció a aquest idioma està desactivada.",
 	"translate-page-settings-legend": "Preferències",
 	"translate-page-group": "Grup",

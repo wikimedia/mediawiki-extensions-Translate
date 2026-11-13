@@ -147,8 +147,6 @@
 	"apierror-translate-invalidstate": "O estado pedido é inválido.",
 	"apierror-translate-invalidlanguage": "O código do idioma $1 não é válido.",
 	"apierror-translate-invalidupdate": "Atualização inválida",
-	"apierror-translate-language-disabled": "A tradução para $1 está desativada.",
-	"apierror-translate-language-disabled-reason": "A tradução para $1 está desativada: $2",
 	"apierror-translate-nodynamicgroups": "Não são suportados aqui grupos de mensagens dinâmicos",
 	"apierror-translate-nomessagefortitle": "O título não corresponde a uma mensagem traduzível",
 	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",

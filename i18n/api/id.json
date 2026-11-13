@@ -86,8 +86,6 @@
 	"apierror-translate-invalidgroup": "Kelompok tidak ada atau tidak valid",
 	"apierror-translate-invalidlanguage": "Kode bahasa $1 tidak valid.",
 	"apierror-translate-invalidupdate": "Pembaruan tidak valid",
-	"apierror-translate-language-disabled": "Terjemahan ke $1 dimatikan.",
-	"apierror-translate-language-disabled-reason": "Terjemahan ke $1 dimatikan: $2",
 	"apierror-translate-nodynamicgroups": "Kelompok pesan dinamis tidak didukung di sini",
 	"apierror-translate-notranslationservices": "Tiada layanan penerjemahan publik yang dikonfigurasi. Pengurus wiki perlu mengatur <var>$wgTranslateTranslationServices</var> dengan benar sebelum fitur ini bisa digunakan.",
 	"apierror-translate-owntranslation": "Tidak bisa meninjau terjemahan sendiri",

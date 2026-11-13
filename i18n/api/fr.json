@@ -183,8 +183,6 @@
 	"apierror-translate-invalidstate": "L’état demandé n’est pas valide.",
 	"apierror-translate-invalidlanguage": "Le code de langue $1 n’est pas valide.",
 	"apierror-translate-invalidupdate": "Mise à jour non valide",
-	"apierror-translate-language-disabled": "La traduction en $1 est désactivée.",
-	"apierror-translate-language-disabled-reason": "La traduction en $1 est désactivée : $2",
 	"apierror-translate-nodynamicgroups": "Les groupes de messages dynamiques ne sont pas pris en charge ici",
 	"apierror-translate-nomessagefortitle": "Le titre ne correspond pas à un message traductible",
 	"apierror-translate-notranslationservices": "Aucun service de traduction public n’a été configuré. L’administrateur du wiki doit convenablement positionner <var>$wgTranslateTranslationServices</var> avant que cette fonctionnalité puisse être utilisée.",

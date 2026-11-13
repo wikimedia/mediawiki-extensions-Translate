@@ -19,7 +19,6 @@
 	"translate-taction-disabled": "Тота дїя на тій вікі заказана.",
 	"translate-page-no-such-language": "Заданый код языка не є правилный.",
 	"translate-page-no-such-group": "Задана ґрупа была неправилна.",
-	"translate-page-disabled": "Переклады до того языка были у тій ґрупі заказаны. Причіна:\n\n<em>$1</em>",
 	"translate-language-disabled": "Переклад до того языка є заказаный.",
 	"translate-page-settings-legend": "Параметры",
 	"translate-page-group": "Ґрупа",

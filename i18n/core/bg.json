@@ -27,7 +27,6 @@
 	"translate-taction-disabled": "Действието е изключено в това уики.",
 	"translate-page-no-such-language": "Избраният език е невалиден.",
 	"translate-page-no-such-group": "Избраната група е невалидна.",
-	"translate-page-disabled": "Преводите на този език в тази група са изключени.\nПричина:\n\n<em>$1</em>",
 	"translate-language-disabled": "Преводът на този език е изключен.",
 	"translate-page-settings-legend": "Настройки",
 	"translate-page-group": "Група:",

@@ -28,7 +28,6 @@
 	"translate-taction-disabled": "Dejanje je v tem vikiju onemogočeno.",
 	"translate-page-no-such-language": "Izbran jezik je neveljaven.",
 	"translate-page-no-such-group": "Izbrana skupina je neveljavna.",
-	"translate-page-disabled": "Prevodi v ta jezik v tej skupini so bili onemogočeni.\nRazlog:\n\n<em>$1</em>",
 	"translate-language-disabled": "Prevodi v ta jezik so onemogočeni.",
 	"translate-page-settings-legend": "Nastavitve",
 	"translate-page-group": "Skupina",

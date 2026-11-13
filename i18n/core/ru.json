@@ -77,7 +77,6 @@
 	"translate-taction-disabled": "Это действие отключено в этой вики.",
 	"translate-page-no-such-language": "Передан неверный код языка",
 	"translate-page-no-such-group": "Неверно указана группа.",
-	"translate-page-disabled": "В этом разделе переводы на данный язык отключены. Причина:\n\n<em>$1</em>",
 	"translate-language-disabled": "Возможность перевода на этот язык отключена.",
 	"translate-page-settings-legend": "Параметры",
 	"translate-page-group": "Группа",

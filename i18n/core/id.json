@@ -39,7 +39,6 @@
 	"translate-taction-disabled": "Tindakan ini dinonaktifkan di wiki ini.",
 	"translate-page-no-such-language": "Bahasa yang dipilih tidak sah.",
 	"translate-page-no-such-group": "Kelompok yang dipilih tidak sah.",
-	"translate-page-disabled": "Penerjemahan kelompok pesan ini ke bahasa ini telah dinonaktifkan.\nAlasan:\n\n<em>$1</em>",
 	"translate-language-disabled": "Penerjemahan ke bahasa ini telah dinonaktifkan.",
 	"translate-page-settings-legend": "Pengaturan",
 	"translate-page-group": "Kelompok",

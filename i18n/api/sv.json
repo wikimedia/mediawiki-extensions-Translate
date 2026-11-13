@@ -106,8 +106,6 @@
 	"apierror-translate-invalidstate": "Den begärda statusen är ogiltig.",
 	"apierror-translate-invalidlanguage": "Språkkoden $1 är inte giltigt.",
 	"apierror-translate-invalidupdate": "Ogiltig uppdatering",
-	"apierror-translate-language-disabled": "Översättning till $1 är inaktiverat.",
-	"apierror-translate-language-disabled-reason": "Översättning till $1 är inaktiverat: $2",
 	"apierror-translate-nodynamicgroups": "Dynamiska meddelandegrupper stöds inte här",
 	"apierror-translate-nomessagefortitle": "Titeln motsvarar inget översättbart meddelande",
 	"apierror-translate-notranslationservices": "Inga offentliga översättningstjänster har konfigurerats. Wikiadministratörerna behöver ändra set <var>$wgTranslateTranslationServices</var> på lämpligt sätt innan denna funktion kan användas.",

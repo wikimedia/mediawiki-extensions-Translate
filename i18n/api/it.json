@@ -54,7 +54,6 @@
 	"apierror-translate-invalidstate": "Lo stato richiesto non è valido.",
 	"apierror-translate-invalidlanguage": "Il codice lingua $1 non è valido.",
 	"apierror-translate-invalidupdate": "Aggiornamento non valido",
-	"apierror-translate-language-disabled": "Le traduzioni in $1 sono disabilitate.",
 	"apierror-translate-nodynamicgroups": "I gruppi messaggi dinamici non sono supportati qui",
 	"apierror-translate-nomessagefortitle": "Il titolo non corrisponde a un messaggio traducibile",
 	"apierror-translate-owntranslation": "Non puoi revisionare le tue traduzioni",

@@ -25,7 +25,6 @@
 	"translate-taction-disabled": "Din l-azzjoni hija mitfija fuq dal-wiki.",
 	"translate-page-no-such-language": "Il-lingwa speċifikata hi invalida.",
 	"translate-page-no-such-group": "Il-grupp speċifikat huwa invalidu.",
-	"translate-page-disabled": "Traduzzjonijiet f'dil-lingwa għal dan il-grupp ġew mitfija.\nRaġuni:\n\n<em>$1</em>",
 	"translate-language-disabled": "It-traduzzjoni għal din il-lingwa hija mitfija.",
 	"translate-page-settings-legend": "Għażliet",
 	"translate-page-group": "Grupp:",

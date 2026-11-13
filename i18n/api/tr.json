@@ -135,8 +135,6 @@
 	"apierror-translate-invalidstate": "İstenen durum geçersiz.",
 	"apierror-translate-invalidlanguage": "$1 dil kodu geçersiz.",
 	"apierror-translate-invalidupdate": "Geçersiz güncelleme",
-	"apierror-translate-language-disabled": "$1 çevirisi devre dışı.",
-	"apierror-translate-language-disabled-reason": "$1 çevirisi devre dışı: $2",
 	"apierror-translate-nodynamicgroups": "Dinamik mesaj grupları burada desteklenmiyor",
 	"apierror-translate-nomessagefortitle": "Başlık çevrilebilir bir iletiye karşılık gelmiyor",
 	"apierror-translate-notranslationservices": "Hiçbir genel çeviri hizmeti yapılandırılmadı. Viki hizmetlisi, bu özelliğin kullanılabilmesi için önce <var>$wgTranslateTranslationServices</var> ayarını doğru yapması gerekir.",

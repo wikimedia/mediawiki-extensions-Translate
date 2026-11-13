@@ -23,7 +23,6 @@
 	"translate-taction-disabled": "Tindakan ini tidak dibenarkan di wiki ini.",
 	"translate-page-no-such-language": "Bahasa yang dinyatakan tidak sah.",
 	"translate-page-no-such-group": "Kumpulan yang dinyatakan tidak sah.",
-	"translate-page-disabled": "Penterjemahan kepada bahasa ini dalam kumpulan ini telah dimatikan.\nSebab:\n\n<em>$1</em>",
 	"translate-language-disabled": "Terjemahan kepada bahasa ini tidak dibenarkan.",
 	"translate-page-settings-legend": "Tetapan",
 	"translate-page-group": "Kumpulan:",

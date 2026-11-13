@@ -12,7 +12,6 @@
 	"translate-taction-lstats": "إحصاءات اللغه",
 	"translate-page-no-such-language": "لم تكن اللغه المحدده صحيحه.",
 	"translate-page-no-such-group": "المجموعه المحدده غير صحيحه.",
-	"translate-page-disabled": "الترجمات إلى هذه اللغه فى هذه المجموعه تم تعطيلها. السبب:\n\n<em>$1</em>",
 	"translate-page-settings-legend": "الإعدادات",
 	"translate-page-group": "مجموعة:",
 	"translate-page-language": "اللغة",

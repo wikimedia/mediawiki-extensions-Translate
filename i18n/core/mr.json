@@ -23,7 +23,6 @@
 	"translate-taction-disabled": "या विकिवर या क्रियेस अनुपलब्ध केले आहे.",
 	"translate-page-no-such-language": "दिलेली भाषा अवैध आहे.",
 	"translate-page-no-such-group": "दिलेला गट अवैध आहे.",
-	"translate-page-disabled": "या गटातील या भाषेत भाषांतर अनुपलब्ध आहे.\nकारण:\n\n\n<em>$1</em>",
 	"translate-language-disabled": "या भाषेत भाषांतर करणे अक्षम करण्यात आले आहे.",
 	"translate-page-settings-legend": "रुपरेषा",
 	"translate-page-group": "गट",

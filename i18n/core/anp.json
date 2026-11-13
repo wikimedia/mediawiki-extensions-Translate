@@ -23,7 +23,6 @@
 	"translate-taction-disabled": "हैय कार्य क इ विकि प अक्षम करलौ गेलौ छै।",
 	"translate-page-no-such-language": "निर्दिष्ट भाषा अमान्य छौं।",
 	"translate-page-no-such-group": "निर्दिष्ट समूह अमान्य छौं।",
-	"translate-page-disabled": "हैय भाषा मँ अनुवादौ क अक्षम करलौ गेलौ छै।\nकारण:\n\n<em>$1</em>",
 	"translate-language-disabled": "हैय भाषा मँ अनुवाद क अक्षम करलौ गेलौ छै।",
 	"translate-page-settings-legend": "सेटिंग्स",
 	"translate-page-group": "समूह",

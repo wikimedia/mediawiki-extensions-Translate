@@ -58,8 +58,6 @@
 	"apierror-translate-fuzzymessage": "Ohlapnih prevodov ni mogoče pregledovati",
 	"apierror-translate-invalidgroup": "Skupina ne obstaja ali je neveljavna",
 	"apierror-translate-invalidlanguage": "Oznaka jezika $1 ni veljavna.",
-	"apierror-translate-language-disabled": "Prevajanje v $1 je onemogočeno.",
-	"apierror-translate-language-disabled-reason": "Prevajanje v $1 je onemogočeno: $2",
 	"apierror-translate-owntranslation": "Lastnih prevodov ni mogoče pregledovati",
 	"apierror-translate-sandboxdisabled": "Možnost peskovnika ni v uporabi",
 	"apierror-translate-sandbox-user-add": "Med dodajanjem novega uporabnika je prišlo do napake",

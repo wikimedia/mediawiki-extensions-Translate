@@ -168,8 +168,6 @@
 	"apierror-translate-invalidstate": "請求的狀態無效。",
 	"apierror-translate-invalidlanguage": "語言代碼 $1 無效。",
 	"apierror-translate-invalidupdate": "無效更新",
-	"apierror-translate-language-disabled": "已停用翻譯至$1的選項。",
-	"apierror-translate-language-disabled-reason": "已停用翻譯至$1的選項：$2",
 	"apierror-translate-nodynamicgroups": "此處不支援動態訊息群組",
 	"apierror-translate-nomessagefortitle": "標題與可翻譯訊息不一致",
 	"apierror-translate-notranslationservices": "未設定公開翻譯服務。在此功能可使用前，wiki 管理員需適當設定 <var>$wgTranslateTranslationServices</var>。",

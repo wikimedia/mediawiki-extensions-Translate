@@ -96,8 +96,6 @@
 	"apierror-translate-invalidstate": "L'estáu solicitáu nun ye válidu.",
 	"apierror-translate-invalidlanguage": "La llingua solicitada ye inválida.",
 	"apierror-translate-invalidupdate": "Anovamientu inválidu",
-	"apierror-translate-language-disabled": "La traducción a $1 ta desactivada",
-	"apierror-translate-language-disabled-reason": "La traducción a $1 ta desactivada: $2",
 	"apierror-translate-nodynamicgroups": "Nun s'almiten equí los grupos de mensaxes dinámicos",
 	"apierror-translate-nomessagefortitle": "El títulu nun casa con un mensaxe traducible",
 	"apierror-translate-notranslationservices": "Nun se configuró nengún serviciu públicu de traducciones. L'alministrador de la wiki tien de configurar <var>$wgTranslateTranslationServices</var> afechiscamente pa poder utilizar esta función.",

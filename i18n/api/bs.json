@@ -92,7 +92,6 @@
 	"apierror-translate-invalidgroup": "Grupa ne postoji ili nije ispravna",
 	"apierror-translate-invalidstate": "Traženo stanje nije ispravno.",
 	"apierror-translate-invalidupdate": "Neispravno ažuriranje",
-	"apierror-translate-language-disabled": "Prijevod na ovaj jezik je onemogućen",
 	"apierror-translate-nodynamicgroups": "Dinamičke grupe poruka ovdje nisu podržane",
 	"apierror-translate-nomessagefortitle": "Naslov ne odgovara prevodivoj poruci",
 	"apierror-translate-owntranslation": "Ne možete pregledati vlastite prijevode",

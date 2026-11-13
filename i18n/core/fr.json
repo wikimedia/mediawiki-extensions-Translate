@@ -70,7 +70,6 @@
 	"translate-taction-disabled": "Cette action est désactivée sur ce wiki.",
 	"translate-page-no-such-language": "Le code langue indiqué est incorrect.",
 	"translate-page-no-such-group": "Le groupe de messages spécifié n’est pas valide.",
-	"translate-page-disabled": "Les traductions dans cette langue ont été désactivées pour ce groupe de messages.\nMotif :\n\n<em>$1</em>",
 	"translate-language-disabled": "La traduction dans cette langue est désactivée.",
 	"translate-page-settings-legend": "Configuration",
 	"translate-page-group": "Groupe :",

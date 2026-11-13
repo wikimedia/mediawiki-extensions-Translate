@@ -27,7 +27,6 @@
 	"translate-taction-disabled": "Această acțiune este dezactivată pe acest wiki.",
 	"translate-page-no-such-language": "Limba specificată este incorectă.",
 	"translate-page-no-such-group": "Grupul specificat este incorect.",
-	"translate-page-disabled": "Posibilitatea de a traduce acest grup în această limbă a fost dezactivată.\nMotiv:\n\n<em>$1</em>",
 	"translate-language-disabled": "Traducerile în această limbă sunt dezactivate.",
 	"translate-page-settings-legend": "Setări",
 	"translate-page-group": "Grup",

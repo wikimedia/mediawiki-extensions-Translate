@@ -17,7 +17,6 @@
 	"translate-taction-disabled": "This action is disabled oan this wiki.",
 	"translate-page-no-such-language": "Speceefied leid wis onvalit.",
 	"translate-page-no-such-group": "Speceefied groop wis onvalit.",
-	"translate-page-disabled": "Owersets intil this leid in this groop hae been disabled.\nRaison:\n\n<em>$1</em>",
 	"translate-language-disabled": "Owersetin intil this lied is disabled.",
 	"translate-page-settings-legend": "Settins",
 	"translate-page-group": "Groop",
