@@ -618,7 +618,7 @@
 
 		resetTimer(); // Initial timer setup
 
-		window.addEventListener( 'unload', function () {
+		window.addEventListener( 'pagehide', function () {
 			logger.logEvent( 'exit', 'browser_tab_close' );
 		} );
 	}
