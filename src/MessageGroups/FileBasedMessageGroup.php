@@ -333,12 +333,14 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 				return $msg;
 			}
 
-			// Try harder
-			$nkey = str_replace( ' ', '_', strtolower( $key ) );
+			// Try harder. Only the first letter of a title is case-insensitive, so normalise
+			// the key the same way as MessageIndex does. Keys that differ in other letters
+			// are different messages.
+			$nkey = str_replace( ' ', '_', lcfirst( $key ) );
 			$keys = $cache->getKeys();
 
 			foreach ( $keys as $k ) {
-				if ( $nkey === str_replace( ' ', '_', strtolower( $k ) ) ) {
+				if ( $nkey === str_replace( ' ', '_', lcfirst( $k ) ) ) {
 					return $cache->get( $k );
 				}
 			}
