@@ -8,7 +8,7 @@ use MediaWiki\Extension\Translate\MessageLoading\MessageHandle;
 /**
  * NO-OP version of TtmServer when it is disabled.
  * Keeps other code simpler when they can just do
- * TTMServer::primary()->update( ... );
+ * TtmServer::primary()->update( ... );
  *
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström

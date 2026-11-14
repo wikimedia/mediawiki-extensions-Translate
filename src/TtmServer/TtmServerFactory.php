@@ -80,7 +80,7 @@ class TtmServerFactory {
 				case 'ttmserver':
 					return new DatabaseTtmServer( $config );
 				case 'remote-ttmserver':
-					return new RemoteTTMServer( $config );
+					return new RemoteTtmServer( $config );
 				default:
 					throw new ServiceCreationFailure( "Unknown type for name '$name': $type" );
 			}

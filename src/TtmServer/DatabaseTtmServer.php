@@ -319,7 +319,7 @@ class DatabaseTtmServer extends TtmServer implements WritableTtmServer, Readable
 			}
 		}
 
-		return TTMServer::sortSuggestions( $results );
+		return TtmServer::sortSuggestions( $results );
 	}
 
 	public function setDoReIndex(): void {
