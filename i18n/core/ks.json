@@ -1,12 +1,14 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Iflaq"
+		]
 	},
 	"translate": "تَرجَمہٕ",
 	"translate-extensionname": "تَرجَمہٕ",
 	"translate-taction-translate": "تَرجَمہٕ",
 	"translate-page-settings-legend": "طَرٕز",
-	"translate-page-group": "جَماعت",
+	"translate-page-group": "جَماتھ",
 	"translate-page-language": "زَبان",
 	"translate-page-limit": "حَد",
 	"translate-prev": "پٔتِم صَفہٕ",

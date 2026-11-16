@@ -41,7 +41,7 @@
 	"translate-taction-disabled": "Questa azione è disabilitata su questo wiki.",
 	"translate-page-no-such-language": "La lingua specificata non è valida.",
 	"translate-page-no-such-group": "Il gruppo specificato non è valido.",
-	"translate-language-disabled": "Le traduzioni verso questa lingua sono disabilitate.",
+	"translate-language-disabled": "La traduzione in $1 non è abilitata per questo gruppo di messaggi.",
 	"translate-page-settings-legend": "Impostazioni",
 	"translate-page-group": "Gruppo:",
 	"translate-page-language": "Lingua",
