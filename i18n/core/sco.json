@@ -3,7 +3,8 @@
 		"authors": [
 			"AmaryllisGardener",
 			"CiphriusKane",
-			"John Reid"
+			"John Reid",
+			"Monospaced"
 		]
 	},
 	"translate": "Owerset",
@@ -202,7 +203,7 @@
 	"tux-tab-outdated": "Ootdated",
 	"tux-tab-translated": "Owerset",
 	"tux-tab-unproofread": "Naw luikt ower",
-	"tux-edit": "Eedit",
+	"tux-edit": "Edit",
 	"tux-status-optional": "Aen Optie",
 	"tux-status-fuzzy": "Ootdated",
 	"tux-status-proofread": "Luikt ower",
@@ -231,7 +232,7 @@
 	"tux-editor-proofreading-hide-own-translations": "Skauk yer owersets",
 	"tux-editor-proofreading-show-own-translations": "Shaw yer owersets",
 	"tux-proofread-action-tooltip": "Maurk aes luikt ower",
-	"tux-proofread-edit-label": "Eedit",
+	"tux-proofread-edit-label": "Edit",
 	"tux-editor-outdated-notice": "This owerset micht need tae be updated.",
 	"tux-editor-outdated-notice-diff-link": "Shaw differances",
 	"tux-editor-doc-editor-save": "Hain documentation",
