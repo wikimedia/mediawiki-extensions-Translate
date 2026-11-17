@@ -53,6 +53,10 @@
 	"tux-editor-skip-button-label": "ⵙⵙⵉⴽⵉ ⵙ ⵉⵏⴹⴼⵕ",
 	"tux-editor-suggestions-title": "ⵉⵙⵓⵎⴰⵔ",
 	"tux-notices-hide": "ⵙⵙⵏⵜⵍ",
+	"tux-editor-clear-translated": "ⵙⵙⵏⵜⵍ ⴰⵏⵜⵜⵓⵙⵓⵖⵍ",
+	"tux-proofread-edit-label": "ⵙⵏⴼⵍ",
+	"tux-editor-page-mode": "ⵜⴰⵙⵏⴰ",
+	"tux-editor-doc-editor-cancel": "ⵙⵙⵔ",
 	"tux-message-filter-advanced-button": "ⴰⵙⵉⴳⴳⵍ ⵢⵉⵜⵜⵉⵏ",
 	"tux-message-filter-optional-messages-label": "ⵜⵉⴱⵔⴰⵜⵉⵏ ⵜⵉⵔⵓⵛⵛⵉⵍⵉⵏ",
 	"tux-proofread-translated-by-self": "ⵉⵜⵜⵓⵙⵓⵖⵍ ⵙⵔ ⴽⵢⵢⵉ",
@@ -64,6 +68,9 @@
 	"tux-editor-expand-tooltip": "ⴼⵙⵉ",
 	"tux-editor-collapse-tooltip": "ⵙⵎⵓⵏ",
 	"tux-editor-message-tools-history": "ⴰⵎⵣⵔⵓⵢ",
+	"tux-editor-message-tools-delete": "ⴽⴽⵙ",
+	"log-action-filter-translationreview": "ⴰⵏⴰⵡ ⵏ ⵜⵉⴳⴰⵡⵜ:",
 	"translate-hidetranslations": "ⵙⵙⵏⵜⵍ ⵜⴰⵙⵏⵉⵡⵉⵏ ⵏ ⵓⵙⵓⵖⵍ",
-	"tpt-cleanchanges-language": "ⵜⵓⵜⵍⴰⵢⵜ:"
+	"tpt-cleanchanges-language": "ⵜⵓⵜⵍⴰⵢⵜ:",
+	"tpt-cleanchanges-language-na": "ⵢⴰⵍ"
 }
