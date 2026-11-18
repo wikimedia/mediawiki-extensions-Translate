@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"Wikuiser"
 		]
 	},
 	"tsb-filter-pending": "Күтудегі сұраулар",
@@ -24,7 +25,7 @@
 	"tsb-translations-source": "Қайнары",
 	"tsb-translations-user": "{{GENDER:$1|Қатысушы}} аудармалары",
 	"tsb-translations-current": "Бар аудармалар",
-	"translationstash": "Қош келдіңіз!",
+	"translationstash": "Жаңа аудармашылар зертханасы",
 	"translate-translationstash-welcome": "Қош келдіңіз {{GENDER:$1|$1}}, сіз жаңа аудармашысыз",
 	"translate-translationstash-initialtranslation": "Сіздің алғашқы аудармаңыз",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|аударма|аудармалар}} жасады",

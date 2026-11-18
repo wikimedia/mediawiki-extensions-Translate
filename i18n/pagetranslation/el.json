@@ -14,6 +14,7 @@
 			"Norhorn",
 			"PrinceAzuka134",
 			"Protnet",
+			"Warudo",
 			"ZaDiak"
 		]
 	},
@@ -21,7 +22,7 @@
 	"nstab-translations": "Μεταφραστική ενότητα",
 	"right-pagetranslation": "Σήμανση εκδόσεων σελίδων προς μετάφραση",
 	"action-pagetranslation": "διαχειριστείτε σελίδες προς μετάφραση",
-	"tps-edit-sourcepage-text": "Επεξεργάζεστε μια πηγαία σελίδα μετάφρασης. Βεβαιωθείτε ότι είστε εξοικειωμένοι με την ακόλουθη τεκμηρίωση:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Αλλαγή του πηγαίου κειμένου]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Παράδειγμα σήμανσης προς χρήση]",
+	"tps-edit-sourcepage-text": "Επεξεργάζεστε μια πηγαία σελίδα μετάφρασης. Βεβαιωθείτε ότι είστε {{GENDER:|εξοικειωμένος|εξοικειωμένη}} με την ακόλουθη τεκμηρίωση:\n\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Changing_the_source_text Αλλαγή του πηγαίου κειμένου]\n* [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Extension:Translate/Page_translation_administration#Markup_examples Παράδειγμα σήμανσης προς χρήση]",
 	"tps-edit-sourcepage-ve-warning-limited-text": "Ορισμένες μεταφράσιμες περιοχές ενδέχεται να μην είναι επεξεργάσιμες σε αυτόν τον επεξεργαστή. Χρησιμοποιήστε τον επεξεργαστή πηγαίου κώδικα για να τις επεξεργαστείτε.",
 	"tpt-section": "Μεταφραστική ενότητα $1",
 	"tpt-section-new": "Νέα μεταφραστική ενότητα.\nΌνομα: $1",
@@ -100,7 +101,7 @@
 	"tpt-aggregategroup-save": "Αποθήκευση",
 	"tpt-aggregategroup-add-new": "Προσθήκη νέας συγκεντρωτικής ομάδας",
 	"tpt-aggregategroup-language-none": "(Κανένας)",
-	"tpt-aggregategroup-remove-confirm": "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτήν τη συγκεντρωτική ομάδα;",
+	"tpt-aggregategroup-remove-confirm": "Είστε {{GENDER:|σίγουρος|σίγουρη}} ότι θέλετε να διαγράψετε αυτήν τη συγκεντρωτική ομάδα;",
 	"tpt-aggregategroup-invalid-group": "Η ομάδα δεν υπάρχει",
 	"tpt-aggregategroup-edit-name": "Όνομα",
 	"tpt-aggregategroup-edit-description": "Περιγραφή",
