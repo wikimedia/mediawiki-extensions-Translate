@@ -15,5 +15,6 @@
 	"translationstash": "Vítejte",
 	"translate-translationstash-welcome": "Vítejte, {{GENDER:$1|uživateli|uživatelko}} $1, jste {{GENDER:$1|nový překladatel|nová překladatelka}}",
 	"translate-translationstash-welcome-note": "Seznamte se s překládacími nástroji. Abyste se mohli účastnit oblíbených projektů, přeložte některé zprávy a získejte plná překladatelská oprávnění.",
-	"tsb-limit-reached-title": "Děkujeme za vaše překlady"
+	"tsb-limit-reached-title": "Děkujeme za vaše překlady",
+	"log-name-translatorsandbox": "Kniha překladového pískoviště"
 }

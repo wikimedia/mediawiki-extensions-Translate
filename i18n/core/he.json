@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"A100Star",
 			"Agbad",
 			"Amire80",
 			"Guycn1",
@@ -38,7 +39,8 @@
 	"translate-taction-disabled": "הפעולה הזאת אינה מופעלת בוויקי הזה",
 	"translate-page-no-such-language": "השפה שצוינה שגויה.",
 	"translate-page-no-such-group": "הקבוצה שצוינה שגויה.",
-	"translate-language-disabled": "תרגום לשפה הזאת כבוי.",
+	"translate-language-disabled": "התרגום לשפה $1 אינו מופעל עבור קבוצת ההודעות הזאת.",
+	"translate-language-disabled-reason": "התרגום לשפה $1 מושבת: $2",
 	"translate-page-settings-legend": "הגדרות",
 	"translate-page-group": "קבוצה:",
 	"translate-page-language": "שפה",
@@ -270,7 +272,7 @@
 	"translate-smg-groups-in-sync-list": "רשימת קבוצות שמעובדות ברקע כעת:",
 	"translate-smg-groups-with-error-title": "קבוצות שהיו בהן שגיאות בעת סנכרון",
 	"translate-smg-groups-with-error-desc": "רשימת קבוצות והודעות שהיו בהן שגיאות בעת סנכרון:",
-	"translate-smg-group-with-error-summary": "{{PLURAL:$1|הודעה אחת|$1 הודעות}} עם שגיאות:",
+	"translate-smg-group-with-error-summary": "{{PLURAL:$1|הודעה אחת|$1 הודעות}} עם שגיאות",
 	"translate-smg-group-message-action-history": "היסטוריה",
 	"translate-smg-group-action-resolve": "סימון הבעיה כפתורה",
 	"translate-smg-group-sync-error-warn": "בקבוצה הזאת אירעה שגיאה בעת הסנכרון. נא לתקן את השגיאות לפני עיבוד הקבוצה הזאת.",

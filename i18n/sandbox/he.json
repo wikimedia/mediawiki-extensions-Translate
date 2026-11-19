@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"A100Star",
 			"Amire80"
 		]
 	},
@@ -34,7 +35,7 @@
 	"tsb-delete-userpage-summary": "מחיקת דף משתמש של משתמש בארגז חול",
 	"tsb-reject-confirmation": "{{PLURAL:$1|משתמש נדחה|משתמשים נדחו}}",
 	"tsb-accept-confirmation": "{{PLURAL:$1|משתמש התקבל|משתמשים התקבלו}}",
-	"translationstash": "ברוך בואך",
+	"translationstash": "ארגז החול של מתרגמים חדשים",
 	"translate-translationstash-welcome": "{{GENDER:$1|ברוך הבא $1, אתה מתרגם חדש|ברוכה הבאה $1, את מתרגמת חדשה}}",
 	"translate-translationstash-welcome-note": "עכשיו נכיר לך את כלי התרגום. אנו מבקשים ממך לתרגם מספר מחרוזות כדי לקבל הרשאות תרגום מלאות ולהשתתף במיזמים שמעניינים אותך.",
 	"translate-translationstash-initialtranslation": "התרגום ההתחלתי שלך",
