@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Miilehti"
 		]
 	},
 	"translate": "Jåårǥlââʹtt",
@@ -129,6 +130,7 @@
 	"translate-import-err-ul-failed": "Teâttõõzz ruõkkmõš ij oʹnnstam",
 	"translate-import-err-invalid-title": "Uvddum teâttõsnõmm <nowiki>$1</nowiki> lij vââǥǥlaž.",
 	"translate-js-support-unsaved-warning": "Tuʹst lie jåårǥlõõzz, koid jiõk lah ruõkkâm.",
+	"translate-documentation-language": "Saaǥǥ dokumentâsttmõš",
 	"translate-searchprofile": "Jåårǥlõõzz",
 	"translate-searchprofile-tooltip": "Ooʒʒ puk jåårǥlõõzzin",
 	"translate-workflowstatus": "Status: $1",
