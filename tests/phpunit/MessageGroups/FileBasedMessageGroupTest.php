@@ -25,6 +25,9 @@ class FileBasedMessageGroupTest extends MediaWikiIntegrationTestCase {
 				'test-defaultwiki' => 'lowercase value',
 				'test-defaultWiki' => 'camel-case value',
 				'test-with_underscore' => 'underscore value',
+				// The key with a space comes first, so the loop over all keys finds it first.
+				'test-two words' => 'space value',
+				'test-two_words' => 'two underscore value',
 			] )
 		);
 
@@ -54,6 +57,8 @@ class FileBasedMessageGroupTest extends MediaWikiIntegrationTestCase {
 		yield 'title key, lowercase' => [ 'Test-defaultwiki', 'lowercase value' ];
 		yield 'title key, camel case' => [ 'Test-defaultWiki', 'camel-case value' ];
 		yield 'title key with space' => [ 'Test-with underscore', 'underscore value' ];
+		yield 'title key prefers the key with the same spelling' => [ 'Test-two_words', 'two underscore value' ];
+		yield 'title key with space, key has space' => [ 'Test-two words', 'space value' ];
 		yield 'different case after the first letter' => [ 'Test-DefaultWiki', null ];
 		yield 'unknown key' => [ 'Test-unknown', null ];
 	}

@@ -333,10 +333,19 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 				return $msg;
 			}
 
+			// The key often comes from a page title, which has the first letter in upper
+			// case. Try the key with a lower case first letter before the slow loop below.
+			$lcKey = lcfirst( $key );
+			$msg = $lcKey !== $key ? $cache->get( $lcKey ) : false;
+
+			if ( $msg !== false ) {
+				return $msg;
+			}
+
 			// Try harder. Only the first letter of a title is case-insensitive, so normalise
 			// the key the same way as MessageIndex does. Keys that differ in other letters
 			// are different messages.
-			$nkey = str_replace( ' ', '_', lcfirst( $key ) );
+			$nkey = str_replace( ' ', '_', $lcKey );
 			$keys = $cache->getKeys();
 
 			foreach ( $keys as $k ) {
