@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"Monospaced"
 		]
 	},
 	"searchtranslations": "Rake owersets",
 	"tux-sst-edit": "Eedit owerset",
-	"tux-sst-search": "Rake",
+	"tux-sst-search": "Sairch",
 	"tux-sst-search-ph": "Rake owersets",
 	"tux-sst-count": "{{PLURAL:$1|Yin ootcome foond|$1 ootcomes foond}}",
 	"tux-sst-facet-language": "Leids",
