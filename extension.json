@@ -1053,7 +1053,6 @@
 		"ext.translate.special.searchtranslations": {
 			"scripts": "resources/js/ext.translate.special.searchtranslations.js",
 			"dependencies": [
-				"ext.translate.editor",
 				"ext.translate.groupselector",
 				"ext.uls.mediawiki",
 				"mediawiki.language",
