@@ -53,6 +53,12 @@ class YamlFormat extends SimpleFormat implements MetaYamlSchemaExtender {
 		}
 
 		$messages = $this->flattener->flatten( $messages );
+		foreach ( $messages as $key => $value ) {
+			// A key without a value (such as "key:" or "key: ~") gives null.
+			if ( $value === null ) {
+				throw new RuntimeException( "Message $key has no value." );
+			}
+		}
 		$messages = $this->group->getMangler()->mangleArray( $messages );
 		foreach ( $messages as &$value ) {
 			$value = rtrim( $value, "\n" );
