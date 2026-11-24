@@ -364,6 +364,7 @@
 	"tux-status-translated": "La turjumay",
 	"tux-status-saving": "Daabacaya...",
 	"tux-status-unsaved": "Aan la daabicin",
+	"tux-save-captcha-required": "Mar kale daabac si aad u dhammaystirto hubinta amniga.",
 	"tux-save-unknown-error": "Khalad aan la aqoon ayaa dhacay.",
 	"tux-editor-placeholder-documentation": "Ku dar dukumeenti farriinta",
 	"tux-editor-placeholder-language": "Turjumaaddaada ee $1",

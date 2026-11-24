@@ -37,7 +37,7 @@
 	"translate-taction-disabled": "Радња је онемогућена на овом викију.",
 	"translate-page-no-such-language": "Наведени језик није важећи.",
 	"translate-page-no-such-group": "Наведена група није важећа.",
-	"translate-language-disabled": "Превођење на овај језик је онемогућено.",
+	"translate-language-disabled": "Превођење на $1 за ову групу порука је онемогућено.",
 	"translate-page-settings-legend": "Подешавања",
 	"translate-page-group": "Група:",
 	"translate-page-language": "Језик",

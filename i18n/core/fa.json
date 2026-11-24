@@ -50,7 +50,7 @@
 	"translate-taction-disabled": "این عمل در این ویکی غیرفعال شده است.",
 	"translate-page-no-such-language": "زبان مشخص‌شده نامعتبر است.",
 	"translate-page-no-such-group": "گروه مشخص‌شده نامعتبر است.",
-	"translate-language-disabled": "ترجمه به این زبان غیرفعال شده است.",
+	"translate-language-disabled": "ترجمه به $1 برای این گروه پیامی فعال نشده است.",
 	"translate-page-settings-legend": "تنظیمات",
 	"translate-page-group": "گروه:",
 	"translate-page-language": "زبان",
