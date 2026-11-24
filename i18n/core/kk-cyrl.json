@@ -8,7 +8,8 @@
 			"Marat",
 			"Nurlan",
 			"U.ayaao.p",
-			"СеніңШешең"
+			"СеніңШешең",
+			"Wikuiser"
 		]
 	},
 	"translate": "Аудару",
@@ -81,7 +82,7 @@
 	"translate-rc-translation-filter-only": "Тек аудармаларды көрсету",
 	"translate-rc-translation-filter-filter": "Аудармаларды сүзгілеп тастау",
 	"translate-rc-translation-filter-site": "Тек сайт хабарларының өзгерістері",
-	"translationstats": "Аударма статискасы",
+	"translationstats": "Аударма статистикасы",
 	"translate-stats-edits": "Өңдемелер",
 	"translate-stats-users": "Аудармашылар",
 	"translate-stats-registrations": "Тіркеулер",
@@ -132,7 +133,7 @@
 	"translate-languagestats-overall": "Барлық хабарлама топтары бірге",
 	"translate-ls-submit": "Статистикаларды көрсету",
 	"translate-ls-column-group": "Хабарлама тобы",
-	"translate-mgs-pagename": "Хабарлама тобы статистикаслары",
+	"translate-mgs-pagename": "Хабарлама тобы статистикалары",
 	"translate-mgs-fieldset": "Баптауларын көрсету",
 	"translate-mgs-group": "Хабарлама тобы:",
 	"translate-mgs-nocomplete": "Толықтай аударған тілдерді көрсетпеу",
