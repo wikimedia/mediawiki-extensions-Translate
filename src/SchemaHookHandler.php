@@ -153,23 +153,6 @@ class SchemaHookHandler implements LoadExtensionSchemaUpdatesHook {
 			] );
 		}
 
-		// 1.39
-		$updater->dropExtensionIndex(
-			'translate_messageindex',
-			'tmi_key',
-			"{$dir}/{$dbType}/patch-translate_messageindex-unique-to-pk.sql"
-		);
-		$updater->dropExtensionIndex(
-			'translate_tmt',
-			'tms_sid_lang',
-			"{$dir}/{$dbType}/patch-translate_tmt-unique-to-pk.sql"
-		);
-		$updater->dropExtensionIndex(
-			'revtag',
-			'rt_type_page_revision',
-			"{$dir}/{$dbType}/patch-revtag-unique-to-pk.sql"
-		);
-
 		// MW 1.43
 		$updater->modifyExtensionTable(
 			'revtag',
