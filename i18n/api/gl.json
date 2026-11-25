@@ -204,5 +204,6 @@
 	"apihelp-discouragetranslation-param-do": "A acción que se quere realizar sobre a páxina.",
 	"apihelp-discouragetranslation-paramvalue-do-discourage": "Marcar a páxina como desaconsellada, facendo que se agoche nas listas de páxinas para traducir.",
 	"apihelp-discouragetranslation-paramvalue-do-encourage": "Marcar a páxina como que xa non está desaconsellada, facendo que se mostre nas listas de páxinas para traducir.",
-	"apihelp-discouragetranslation-param-reason": "Resumo de rexistro a utilizar cando se crea unha entrada en [[Special:Log/pagetranslation]]"
+	"apihelp-discouragetranslation-param-reason": "Resumo de rexistro a utilizar cando se crea unha entrada en [[Special:Log/pagetranslation]]",
+	"apihelp-translate-edit-param-editorinterface": "Nome da interface empregada para o editor (como «translate»)"
 }

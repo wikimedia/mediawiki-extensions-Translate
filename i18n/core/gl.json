@@ -368,6 +368,7 @@
 	"tux-status-translated": "Traducida",
 	"tux-status-saving": "Publicando...",
 	"tux-status-unsaved": "Sen publicar",
+	"tux-save-captcha-required": "Publica de novo para completares a comprobación de seguranza.",
 	"tux-save-unknown-error": "Houbo un erro descoñecido.",
 	"tux-editor-placeholder-documentation": "Engadir documentación da mensaxe",
 	"tux-editor-placeholder-language": "A súa tradución en $1",

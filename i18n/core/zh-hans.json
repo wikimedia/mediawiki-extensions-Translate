@@ -420,6 +420,7 @@
 	"tux-status-translated": "已翻译",
 	"tux-status-saving": "正在发布...",
 	"tux-status-unsaved": "未发布",
+	"tux-save-captcha-required": "请再次发布以完成安全检查。",
 	"tux-save-unknown-error": "出现未知错误。",
 	"tux-editor-placeholder-documentation": "添加消息文档",
 	"tux-editor-placeholder-language": "$1的翻译",
