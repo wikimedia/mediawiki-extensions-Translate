@@ -27,10 +27,6 @@ class TranslatablePageStatus implements TranslatableBundleStatus {
 		$this->status = $status;
 	}
 
-	public function isEqual( int $status ): bool {
-		return $this->status === $status;
-	}
-
 	public function getId(): int {
 		return $this->status;
 	}

@@ -467,11 +467,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 		);
 	}
 
-	/**
-	 * TODO: Move this function to SyncTranslatableBundleStatusMaintenanceScript once we
-	 * start using the translatable_bundles table for fetching the translatabale pages
-	 */
-	public static function loadPagesFromDB(): IResultWrapper {
+	private function loadPagesFromDB(): IResultWrapper {
 		$dbr = Utilities::getSafeReadDB();
 		return $dbr->newSelectQueryBuilder()
 			->select( [
@@ -493,11 +489,7 @@ class PageTranslationSpecialPage extends SpecialPage {
 			->fetchResultSet();
 	}
 
-	/**
-	 * TODO: Move this function to SyncTranslatableBundleStatusMaintenanceScript once we
-	 * start using the translatable_bundles table for fetching the translatabale pages
-	 */
-	public static function buildPageArray( IResultWrapper $res ): array {
+	private function buildPageArray( IResultWrapper $res ): array {
 		$pages = [];
 		foreach ( $res as $r ) {
 			// We have multiple rows for same page, because of different tags
@@ -579,8 +571,8 @@ class PageTranslationSpecialPage extends SpecialPage {
 	public function listPages(): void {
 		$out = $this->getOutput();
 
-		$res = self::loadPagesFromDB();
-		$allPages = self::buildPageArray( $res );
+		$res = $this->loadPagesFromDB();
+		$allPages = $this->buildPageArray( $res );
 
 		$pagesWithProposedState = [];
 		if ( $this->translatablePageView->isTranslationBannerNamespaceConfigured() ) {
