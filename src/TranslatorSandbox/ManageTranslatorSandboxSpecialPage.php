@@ -158,7 +158,7 @@ class ManageTranslatorSandboxSpecialPage extends SpecialPage {
 		}
 
 		// Sort the requests based on translations and registration date
-		usort( $requests, [ $this, 'translatorRequestSort' ] );
+		usort( $requests, $this->translatorRequestSort( ... ) );
 
 		foreach ( $requests as $request ) {
 			$items[] = $this->makeRequestItem( $request );

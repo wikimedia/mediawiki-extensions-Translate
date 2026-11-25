@@ -46,15 +46,15 @@ class MessageSourceChange {
 	public function __construct( $changes = [] ) {
 		$this->changes = $changes;
 		$this->addFunctionMap = [
-			self::ADDITION => [ $this, 'addAddition' ],
-			self::DELETION => [ $this, 'addDeletion' ],
-			self::CHANGE => [ $this, 'addChange' ]
+			self::ADDITION => $this->addAddition( ... ),
+			self::DELETION => $this->addDeletion( ... ),
+			self::CHANGE => $this->addChange( ... )
 		];
 
 		$this->removeFunctionMap = [
-			self::ADDITION => [ $this, 'removeAdditions' ],
-			self::DELETION => [ $this, 'removeDeletions' ],
-			self::CHANGE => [ $this, 'removeChanges' ]
+			self::ADDITION => $this->removeAdditions( ... ),
+			self::DELETION => $this->removeDeletions( ... ),
+			self::CHANGE => $this->removeChanges( ... )
 		];
 	}
 

@@ -268,7 +268,7 @@ class MessageGroupStats {
 	 * @return MessageGroup[]
 	 */
 	private static function getSortedGroupsForClearing( array $ids ): array {
-		$groups = array_map( [ MessageGroups::class, 'getGroup' ], $ids );
+		$groups = array_map( MessageGroups::getGroup( ... ), $ids );
 		// Sanity: Remove any invalid groups
 		$groups = array_filter( $groups );
 
@@ -309,7 +309,7 @@ class MessageGroupStats {
 	 */
 	private static function extractResults( iterable $res, array $ids, array $stats = [] ): array {
 		// Map the internal ids back to real ids
-		$idMap = array_combine( array_map( [ self::class, 'getDatabaseIdForGroupId' ], $ids ), $ids );
+		$idMap = array_combine( array_map( self::getDatabaseIdForGroupId( ... ), $ids ), $ids );
 
 		foreach ( $res as $row ) {
 			if ( !isset( $idMap[$row->tgs_group] ) ) {
@@ -416,7 +416,7 @@ class MessageGroupStats {
 
 		$conditions = [];
 		if ( $ids !== null ) {
-			$dbids = array_map( [ self::class, 'getDatabaseIdForGroupId' ], $ids );
+			$dbids = array_map( self::getDatabaseIdForGroupId( ... ), $ids );
 			$conditions['tgs_group'] = $dbids;
 		}
 

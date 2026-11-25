@@ -32,7 +32,7 @@ class CleanupTranslationProgressStatsMaintenanceScript extends Maintenance {
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 		$knownGroupIds = array_map(
-			[ MessageGroupStats::class, 'getDatabaseIdForGroupId' ],
+			MessageGroupStats::getDatabaseIdForGroupId( ... ),
 			array_keys( MessageGroups::singleton()->getGroups() )
 		);
 		$unknownGroupIds = array_diff( $dbGroupIds, $knownGroupIds );

@@ -52,7 +52,7 @@ class QueryMessageGroupsActionApi extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
-				usort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
+				usort( $groups, MessageGroups::groupLabelSort( ... ) );
 			}
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option

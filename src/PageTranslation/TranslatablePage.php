@@ -481,7 +481,7 @@ class TranslatablePage extends TranslatableBundle {
 				return $cache->getWithSetCallback(
 					$cacheKey,
 					$cache::TTL_HOUR * 2,
-					[ TranslatablePage::class, 'getCacheValue' ],
+					self::getCacheValue( ... ),
 					[
 						'checkKeys' => [ $cacheKey ],
 						'pcTTL' => $cache::TTL_PROC_SHORT,
@@ -540,10 +540,9 @@ class TranslatablePage extends TranslatableBundle {
 
 	/**
 	 * Get list of translatable page ids to be stored in the cache
-	 * @internal
 	 * @return string
 	 */
-	public static function getCacheValue(): string {
+	private static function getCacheValue(): string {
 		$ids = RevTagStore::getTranslatableBundleIds(
 			// Find pages where the latest revision can be marked for translation ...
 			[ RevTagStore::TP_READY_TAG ],

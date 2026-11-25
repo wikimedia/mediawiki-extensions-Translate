@@ -67,7 +67,7 @@ class TranslatableBundleExporter {
 
 	/** @param callable(Title[],string):void $callable */
 	public function setExportPageCallback( callable $callable ) {
-		$this->exportPageCallback = Closure::fromCallable( $callable );
+		$this->exportPageCallback = $callable( ... );
 	}
 
 	/**

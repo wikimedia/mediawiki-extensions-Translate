@@ -35,7 +35,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders', HookContainer::NOOP );
-		$this->setTemporaryHook( 'TranslatePostInitGroups', [ $this, 'getTestGroups' ] );
+		$this->setTemporaryHook( 'TranslatePostInitGroups', $this->getTestGroups( ... ) );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
@@ -43,7 +43,7 @@ class MessageIndexTest extends MediaWikiIntegrationTestCase {
 		$mg->recache();
 	}
 
-	public function getTestGroups( &$list ): bool {
+	private function getTestGroups( &$list ): bool {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',

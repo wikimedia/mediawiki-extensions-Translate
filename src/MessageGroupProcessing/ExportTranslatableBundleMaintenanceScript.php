@@ -60,7 +60,7 @@ class ExportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$includeSubPages = $this->hasOption( 'include-subpages' );
 		$exportFilename = $this->getExportFilename();
 
-		$this->translatableBundleExporter->setExportPageCallback( [ $this, 'exportPageCallback' ] );
+		$this->translatableBundleExporter->setExportPageCallback( $this->exportPageCallback( ... ) );
 		$output = $this->translatableBundleExporter->export(
 			$bundle,
 			$includeTalkPages,
@@ -103,7 +103,7 @@ class ExportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		return $filename;
 	}
 
-	public function exportPageCallback( array $pages, string $pageType ): void {
+	private function exportPageCallback( array $pages, string $pageType ): void {
 		$this->output( 'Exporting ' . count( $pages ) . " page(s) of type $pageType.\n" );
 	}
 }

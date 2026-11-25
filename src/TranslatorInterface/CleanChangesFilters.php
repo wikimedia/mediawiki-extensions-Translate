@@ -69,7 +69,7 @@ class CleanChangesFilters implements
 		// SEE https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/1053288/comment/5303b6a3_aaef9399/
 		$default = $context->getRequest()->getVal( 'trailer', '' );
 
-		if ( is_callable( [ LanguageNames::class, 'getNames' ] ) ) {
+		if ( class_exists( LanguageNames::class ) ) {
 			// cldr extension
 			$languages = LanguageNames::getNames(
 				$context->getLanguage()->getCode(),

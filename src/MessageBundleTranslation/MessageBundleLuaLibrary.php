@@ -20,8 +20,8 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	public function register() {
 		$extensionLuaPath = __DIR__ . '/lua/MessageBundleLibrary.lua';
 		$lib = [
-			'validate' => [ $this, 'validate' ],
-			'getMessageBundleTranslations' => [ $this, 'getMessageBundleTranslations' ]
+			'validate' => $this->validate( ... ),
+			'getMessageBundleTranslations' => $this->getMessageBundleTranslations( ... ),
 		];
 		$opts = [
 			'pageLanguageCode' => $this->getTitle()->getPageLanguage()->getCode()
@@ -31,7 +31,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	}
 
 	/** @throws LuaError */
-	public function validate( string $messageBundleTitle ): void {
+	private function validate( string $messageBundleTitle ): void {
 		$titleFactory = MediaWikiServices::getInstance()->getTitleFactory();
 		$mbTitle = $titleFactory->newFromText( $messageBundleTitle );
 		// Record template transclusion to the message bundle. We do it before isSourcePage check because
@@ -44,7 +44,7 @@ class MessageBundleLuaLibrary extends LibraryBase {
 	}
 
 	/** @throws LuaError */
-	public function getMessageBundleTranslations(
+	private function getMessageBundleTranslations(
 		string $messageBundleTitle,
 		string $languageCode,
 		bool $skipFallbacks

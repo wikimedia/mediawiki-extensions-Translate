@@ -116,7 +116,7 @@ class TranslatableBundleImporter implements AfterImportPageHook {
 
 	/** @param callable(Title,ForeignTitle):void $callable */
 	public function setPageImportCompleteCallback( callable $callable ): void {
-		$this->pageImportCompleteCallback = Closure::fromCallable( $callable );
+		$this->pageImportCompleteCallback = $callable( ... );
 	}
 
 	private function logImport( UserIdentity $user, Title $bundle, ?string $comment ): void {

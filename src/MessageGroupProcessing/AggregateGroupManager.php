@@ -161,7 +161,7 @@ class AggregateGroupManager {
 		$this->messageGroupMetadata->preloadGroups( array_keys( $groupsPreload ), __METHOD__ );
 
 		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
+		uasort( $groups, MessageGroups::groupLabelSort( ... ) );
 		$aggregates = [];
 		foreach ( $groups as $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {

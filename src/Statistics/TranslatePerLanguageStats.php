@@ -48,7 +48,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$database->expr( 'rc_source', '!=', RecentChange::SRC_LOG ),
 		];
 
-		$this->groups = array_map( [ MessageGroups::class, 'normalizeId' ], $this->opts->getGroups() );
+		$this->groups = array_map( MessageGroups::normalizeId( ... ), $this->opts->getGroups() );
 
 		$namespaces = self::namespacesFromGroups( $this->groups );
 		if ( count( $namespaces ) ) {

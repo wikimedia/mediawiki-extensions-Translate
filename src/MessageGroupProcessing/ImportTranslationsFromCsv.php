@@ -98,7 +98,7 @@ class ImportTranslationsFromCsv extends BaseMaintenanceScript {
 		// Start the actual import of translations
 		$this->output( "\nProceeding with import...\n\n" );
 		$importStatus = $csvImporter->importData(
-			$status->getValue(), $user, trim( $summary ), [ $this, 'progressReporter' ]
+			$status->getValue(), $user, trim( $summary ), $this->progressReporter( ... )
 		);
 
 		if ( $importStatus->isOK() ) {
@@ -123,7 +123,7 @@ class ImportTranslationsFromCsv extends BaseMaintenanceScript {
 	 * @param int $total
 	 * @param int $processed
 	 */
-	public function progressReporter(
+	private function progressReporter(
 		Title $title,
 		array $messageImportStatuses,
 		int $total,

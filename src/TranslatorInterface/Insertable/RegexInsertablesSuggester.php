@@ -95,10 +95,10 @@ class RegexInsertablesSuggester implements InsertablesSuggester {
 		$matches = [];
 		preg_match_all( $this->regex, $text, $matches, PREG_SET_ORDER );
 
-		return array_map( [ $this, 'mapInsertables' ], $matches );
+		return array_map( $this->mapInsertables( ... ), $matches );
 	}
 
-	protected function mapInsertables( array $match ): Insertable {
+	private function mapInsertables( array $match ): Insertable {
 		if ( $this->display === null ) {
 			return new Insertable( $match[0], $match[0] );
 		}

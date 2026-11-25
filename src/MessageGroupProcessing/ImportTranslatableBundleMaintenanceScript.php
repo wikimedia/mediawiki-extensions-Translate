@@ -121,7 +121,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$this->totalPagesBeingImported = substr_count( file_get_contents( $importFilePath ), '</page>' );
 			$importer = Services::getInstance()->getTranslatableBundleImporter();
 			$this->output( "Starting import for file '$importFilePath'...\n" );
-			$importer->setPageImportCompleteCallback( [ $this, 'logPageImportComplete' ] );
+			$importer->setPageImportCompleteCallback( $this->logPageImportComplete( ... ) );
 			$bundleTitle = $importer->import(
 				$importFilePath,
 				$interwikiPrefix,
@@ -147,7 +147,7 @@ class ImportTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 		$this->markPageForTranslation( $bundleTitle, $translatablePageSettings, $importUser );
 	}
 
-	public function logPageImportComplete( Title $title, ForeignTitle $foreignTitle ): void {
+	private function logPageImportComplete( Title $title, ForeignTitle $foreignTitle ): void {
 		++$this->pageImportCount;
 		$currentProgress = str_pad(
 			(string)$this->pageImportCount,

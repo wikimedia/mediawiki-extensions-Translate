@@ -117,7 +117,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		];
 	}
 
-	public function submitRaw( array $data ): bool {
+	private function submitRaw( array $data ): bool {
 		$retainedLines = trim( $data['Titles'] );
 		$retainedGroups = $retainedLines ? array_map( 'trim', explode( "\n", $retainedLines ) ) : [];
 		$current = $this->messageGroupSubscription->getUserSubscriptions( $this->getUser() );
@@ -227,7 +227,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		return $labels;
 	}
 
-	public function submitNormal( array $data ): bool {
+	private function submitNormal( array $data ): bool {
 		$toRemove = [];
 
 		foreach ( $data as $messageGroups ) {
@@ -296,7 +296,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		$form->setSubmitTooltip( 'tpt-manage-message-group-subscriptions-normal-submit' );
 		$form->setWrapperLegendMsg( 'tpt-manage-message-group-subscriptions-normal-legend' );
 		$form->addHeaderHtml( $this->msg( 'tpt-manage-message-group-subscriptions-normal-explain' )->parse() );
-		$form->setSubmitCallback( [ $this, 'submitNormal' ] );
+		$form->setSubmitCallback( $this->submitNormal( ... ) );
 
 		return $form;
 	}
@@ -331,7 +331,7 @@ class ManageMessageGroupSubscriptionsSpecialPage extends UnlistedSpecialPage {
 		$form->setSubmitTooltip( 'tpt-manage-message-group-subscriptions-raw-submit' );
 		$form->setWrapperLegendMsg( 'tpt-manage-message-group-subscriptions-raw-legend' );
 		$form->addHeaderHtml( $this->msg( 'tpt-manage-message-group-subscriptions-raw-explain' )->parse() );
-		$form->setSubmitCallback( [ $this, 'submitRaw' ] );
+		$form->setSubmitCallback( $this->submitRaw( ... ) );
 
 		return $form;
 	}

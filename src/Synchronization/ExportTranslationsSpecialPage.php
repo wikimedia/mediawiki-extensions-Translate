@@ -143,7 +143,7 @@ class ExportTranslationsSpecialPage extends SpecialPage {
 
 	private function getGroupOptions(): array {
 		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
+		uasort( $groups, MessageGroups::groupLabelSort( ... ) );
 
 		$options = [];
 		foreach ( $groups as $id => $group ) {

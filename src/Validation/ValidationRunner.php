@@ -52,7 +52,7 @@ class ValidationRunner {
 	}
 
 	/** Normalise validator keys. */
-	protected static function foldValue( string $value ): string {
+	private static function foldValue( string $value ): string {
 		return str_replace( ' ', '_', strtolower( $value ) );
 	}
 
@@ -226,7 +226,7 @@ class ValidationRunner {
 				} elseif ( is_array( $pattern[$checkKey] ) ) {
 					$list[$key][$checkKey] =
 						array_map(
-							[ self::class, 'foldValue' ],
+							self::foldValue( ... ),
 							$pattern[$checkKey]
 						);
 				} else {

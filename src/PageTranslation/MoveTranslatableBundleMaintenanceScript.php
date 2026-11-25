@@ -3,7 +3,6 @@ declare( strict_types = 1 );
 
 namespace MediaWiki\Extension\Translate\PageTranslation;
 
-use Closure;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Translate\Services;
 use MediaWiki\Extension\Translate\Utilities\BaseMaintenanceScript;
@@ -159,7 +158,7 @@ class MoveTranslatableBundleMaintenanceScript extends BaseMaintenanceScript {
 			$pagesToRedirect,
 			$user,
 			$reason,
-			Closure::fromCallable( [ $this, 'progressCallback' ] )
+			$this->progressCallback( ... )
 		);
 
 		$this->logSeparator();

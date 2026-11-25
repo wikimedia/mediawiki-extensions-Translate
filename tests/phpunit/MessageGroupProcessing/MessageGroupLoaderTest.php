@@ -16,13 +16,13 @@ class MessageGroupLoaderTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 		$config = new MessageGroupTestConfig();
-		$config->groupInitLoaders = [ [ $this, 'registerLoader' ] ];
+		$config->groupInitLoaders[] = $this->registerLoader( ... );
 		$config->skipMessageIndexRebuild = true;
 		$this->cacheLoaderMock = $this->createMock( MockCacheMessageGroupLoader::class );
 		$this->setupGroupTestEnvironmentWithConfig( $this, $config );
 	}
 
-	public function registerLoader( array &$groupLoader, array $deps ) {
+	private function registerLoader( array &$groupLoader, array $deps ) {
 		$groupLoader[] = $this->cacheLoaderMock;
 	}
 

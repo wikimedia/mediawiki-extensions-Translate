@@ -122,7 +122,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/** @inheritDoc */
 	public function mangleList( array $list ): array {
-		return array_map( [ $this, 'mangle' ], $list );
+		return array_map( $this->mangle( ... ), $list );
 	}
 
 	/** @inheritDoc */

@@ -58,7 +58,7 @@ class Poimport extends Maintenance {
 	public function execute() {
 		// Parse the po file.
 		$p = new PoImporter( $this->getOption( 'file' ) );
-		$p->setProgressCallback( [ $this, 'myOutput' ] );
+		$p->setProgressCallback( $this->myOutput( ... ) );
 		[ $changes, $group ] = $p->parse();
 
 		if ( !count( $changes ) ) {
@@ -81,18 +81,16 @@ class Poimport extends Maintenance {
 			!$this->hasOption( 'really' )
 		);
 
-		$w->setProgressCallback( [ $this, 'myOutput' ] );
+		$w->setProgressCallback( $this->myOutput( ... ) );
 		$w->execute();
 	}
 
 	/**
-	 * Public alternative for protected Maintenance::output() as we need to get
-	 * messages from the ChangeSyncer class to the commandline.
 	 * @param string $text The text to show to the user
 	 * @param string|null $channel Unique identifier for the channel.
 	 * @param bool $error Whether this is an error message
 	 */
-	public function myOutput( $text, $channel = null, $error = false ) {
+	private function myOutput( $text, $channel = null, $error = false ) {
 		if ( $error ) {
 			$this->error( $text );
 		} else {

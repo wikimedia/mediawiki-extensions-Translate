@@ -97,7 +97,7 @@ class AggregateGroupsSpecialPage extends SpecialPage {
 	/** @param string[] $subGroupIds */
 	private function getSubGroupInfoForTemplate( array $subGroupIds ): array {
 		$subGroups = MessageGroups::getGroupsById( $subGroupIds );
-		uasort( $subGroups, [ MessageGroups::class, 'groupLabelSort' ] );
+		uasort( $subGroups, MessageGroups::groupLabelSort( ... ) );
 
 		$groupCache = $this->getGroupCache( $subGroups );
 
