@@ -1,10 +1,14 @@
 <?php
+declare( strict_types = 1 );
+
 /**
  * @file
  * @license GPL-2.0-or-later
  */
 
 namespace MediaWiki\Extension\Translate\Utilities;
+
+use function strlen;
 
 /**
  * Implements partial support for SmartFormat plural syntax parsing.
@@ -44,21 +48,64 @@ class SmartFormatPlural {
 
 		// Named variables seem to be supported by the spec, but we limit ourselves
 		// only to numbers. Example syntax {0:message|messages}
-		$regex = '/\{(\d+):([^}]+)\}/Us';
+		// Allow nested balanced braces inside forms (e.g. {0:one|{0} many})
+		// and escaped characters (e.g. \{ or \}).
+		$regex = '/\{(\d+):(?<content>(?:[^{}\\\\]++|\\\\.|\{(?&content)\})*)\}/s';
 		$matches = [];
-		preg_match_all( $regex, $text, $matches, PREG_SET_ORDER );
+		$matched = preg_match_all( $regex, $text, $matches, PREG_SET_ORDER );
+		if ( $matched === false ) {
+			return [];
+		}
 
 		foreach ( $matches as $instance ) {
-			$original = $instance[ 0 ];
-			$variable = $instance[ 1 ];
-			$forms = explode( '|', $instance[ 2 ] );
-			$ldns[ $variable ] ??= [];
-			$ldns[ $variable ][] = [
+			$original = $instance[0];
+			$variable = $instance[1];
+			$forms = self::splitForms( $instance['content'] );
+			$ldns[$variable] ??= [];
+			$ldns[$variable][] = [
 				'forms' => $forms,
 				'original' => $original,
 			];
 		}
 
 		return $ldns;
+	}
+
+	/**
+	 * Splits plural forms by pipe '|' at the top level, ignoring pipes inside nested braces.
+	 *
+	 * @return string[]
+	 */
+	private static function splitForms( string $content ): array {
+		$forms = [];
+		$depth = 0;
+		$current = '';
+		$len = strlen( $content );
+
+		for ( $i = 0; $i < $len; $i++ ) {
+			$char = $content[$i];
+			if ( $char === '\\' && $i + 1 < $len ) {
+				$current .= $char . $content[++$i];
+				continue;
+			}
+
+			if ( $char === '{' ) {
+				$depth++;
+				$current .= $char;
+			} elseif ( $char === '}' ) {
+				if ( $depth > 0 ) {
+					$depth--;
+				}
+				$current .= $char;
+			} elseif ( $char === '|' && $depth === 0 ) {
+				$forms[] = $current;
+				$current = '';
+			} else {
+				$current .= $char;
+			}
+		}
+
+		$forms[] = $current;
+		return $forms;
 	}
 }

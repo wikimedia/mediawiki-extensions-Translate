@@ -41,6 +41,21 @@ class SmartFormatPluralValidatorTest extends BaseValidatorTestCase {
 			[],
 			'Correct plural forms are not an issue'
 		];
+
+		yield [
+			'{0:message|messages}',
+			'{0:message|{0} messages}',
+			[],
+			'Parameter used inside a plural form is not an issue'
+		];
+
+		yield [
+			'{0:second|seconds}',
+			'{0:שנייה אחת|{0} שניות|{0} שניות|{0} שניות}',
+			[],
+			'Parameter used inside plural form with multiple forms is not an issue',
+			'he'
+		];
 	}
 
 	/** @dataProvider provideInsertable */
