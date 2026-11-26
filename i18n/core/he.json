@@ -40,7 +40,6 @@
 	"translate-page-no-such-language": "השפה שצוינה שגויה.",
 	"translate-page-no-such-group": "הקבוצה שצוינה שגויה.",
 	"translate-language-disabled": "התרגום לשפה $1 אינו מופעל עבור קבוצת ההודעות הזאת.",
-	"translate-language-disabled-reason": "התרגום לשפה $1 מושבת: $2",
 	"translate-page-settings-legend": "הגדרות",
 	"translate-page-group": "קבוצה:",
 	"translate-page-language": "שפה",
