@@ -195,6 +195,7 @@
 	"log-action-filter-messagebundle": "Rodzaj działania:",
 	"log-action-filter-messagebundle-move": "Przenoszenie pakietu wiadomości",
 	"log-action-filter-messagebundle-delete": "Usunięcia pakietów wiadomości",
+	"pt-cta-mark-translation": "Tę stronę można oznaczyć do tłumaczenia przez społeczność. Dostosuj [$1 ustawienia tłumaczenia strony], aby dać redaktorom znać, że mogą zacząć tłumaczenie jej treści.",
 	"pt-movepage-title": "Przenieś przetłumaczalną stronę $1",
 	"pt-movepage-blockers": "Przetłumaczalna strona nie może zostać przeniesiona pod nową nazwę ponieważ {{PLURAL:$1|wystąpił następujący błąd|wystąpiły następujące błędy:}}",
 	"pt-movepage-block-base-invalid": "Nazwa docelowej strony do tłumaczenia nie jest poprawnym tytułem.",

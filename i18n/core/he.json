@@ -18,7 +18,8 @@
 			"חיים",
 			"ערן",
 			"פוילישער",
-			"IKhitron"
+			"IKhitron",
+			"A100Star"
 		]
 	},
 	"translate": "תרגום",
@@ -61,7 +62,7 @@
 	"translate-edit-title": "עריכת \"$1\"",
 	"translate-edit-definition": "הגדרת ההודעה",
 	"translate-edit-contribute": "לתרום תיעוד",
-	"translate-edit-no-information": "<em>להודעה זו אין תיעוד.\nאם ידוע לך היכן או כיצד משתמשים בהודעה הזאת, באפשרותך לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.</em>",
+	"translate-edit-no-information": "<em>להודעה הזאת אין תיעוד.\nאם ידוע לך איפה או איך משתמשים בהודעה הזאת, באפשרותך לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה הזאת.</em>",
 	"translate-edit-information": "מידע על ההודעה ($1)",
 	"translate-edit-warnings": "אזהרות על תרגומים חלקיים",
 	"translate-edit-tmmatch-source": "טקסט המקור של התרגום: $1",
