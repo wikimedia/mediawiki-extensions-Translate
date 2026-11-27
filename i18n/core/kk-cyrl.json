@@ -139,7 +139,7 @@
 	"translate-mgs-column-language": "Тіл",
 	"translate-mgs-totals": "Барлық $1 {{PLURAL:$1|тіл}} бірге",
 	"translate-mgs-invalid-group": "Көрсетілген $1 тобы жоқ.",
-	"translate-mgs-nothing": "Сұралған статисканы көруге ештеңе жоқ.",
+	"translate-mgs-nothing": "Сұралған статистика үшін көрсетілетін ештеңе жоқ.",
 	"supportedlanguages": "Белсенді тілдер",
 	"supportedlanguages-recenttranslations": "жуықтағы аудармалар",
 	"supportedlanguages-count": "Барлығы $1 {{PLURAL:$1|тіл|тіл}}.",
